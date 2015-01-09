@@ -1,0 +1,133 @@
+Local debugging
+---------------
+
+In the game console or bound to a key:
+scriptDebugger
+
+Remote debugging
+----------------
+
+In the debugger console:
+net_listen
+scriptDebugger
+
+In the game console:
+net_connect <optional game ip address>
+
+Global
+------
+
+F1				display help
+1				display script window
+2				display watch window
+3				display scripts list
+4				display call stack
+5				display open scripts list
+pause			pause game
+F3				find next in script window
+shift-F3		find previous in script window
+F5				continue
+F10				step over
+F11				step into
+shift-F11		step out
+ctrl-tab		cycle script forward
+ctrl-shift-tab	cycle script back
+left mouse		select, move scroll bars, move center divider up and down
+escape			exit debugger
+ctrl-f			find next text in script window
+
+All windows
+-----------
+
+page up			page up
+page down		page down
+mousewheel up	scroll 3 lines up
+mousewheel down	scroll 3 lines down
+ctrl-up			scroll 1 line up
+ctrl-down		scroll 1 line down
+ctrl-left		scroll 1 character left
+ctrl-right		scroll 1 character right
+ctrl-page up	go to top of page
+ctrl-page down	go to bottom of page
+ctrl-home		go to top
+ctrl-end		go to bottom
+ctrl-g			go to line
+up				up 1 line
+down			down 1 line
+
+Script window
+-------------
+
+F7				add builtin command breakpoint
+F9				toggle breakpoint
+ctrl-F7			add disabled builtin command breakpoint
+ctrl-F9			toggle enable breakpoint
+ctrl-F10		run to cursor
+enter			go to function (and leave a breakpoint marker)
+left mouse dbl	go to function (and leave a breakpoint marker)
+
+Script list window
+------------------
+
+enter			add script file to open scripts list
+left mouse dbl	add script file to open scripts list
+
+Watch window
+------------
+
+enter			clone element, go to breakpoint
+left mouse dbl	clone element, go to breakpoint
+left			collapse element
+right			expand element
+ins				insert element
+backspace		delete element
+del				delete element
+F8				toggle conditional breakpoint
+F7				enable builtin command breakpoint
+F9				toggle breakpoint
+~				edit element (change name or value)
+ctrl-F7			disable builtin command breakpoint
+ctrl-F9			toggle enable breakpoint
+ctrl-x			cut element
+ctrl-c			copy element
+ctrl-v			paste element
+shift-del		cut element
+ctrl-ins		copy element
+shift-ins		paste element
+
+Console
+-------
+
+enter			commit choice
+~				cancel choice
+escape			cancel choice
+
+Open scripts list
+-----------------
+
+backspace		delete entry
+del				delete entry
+ctrl-x			cut entry
+ctrl-c			copy entry
+ctrl-v			paste entry
+shift-del		cut entry
+ctrl-ins		copy entry
+shift-ins		paste entry
+
+
+Watch window notes
+------------------
+
+1) Changed variable values turn yellow and fade to white over a second when not at a breakpoint.
+2) When script location hits a disabled line breakpoint, it turns yellow and fades to white over a second when not at a breakpoint.
+
+Watch window special expression key
+-----------------------------------
+
+$t		thread
+$a		builtin command argument
+$e		entity
+$h		hudelem
+$p		pathnode
+$v		vehiclenode
+<entity> breakon( <string> )		Current hit count of specified notify - set breakpoint on this.

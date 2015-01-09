@@ -1,0 +1,370 @@
+// syntax:
+// float	floatVar
+// int 		intVar
+// string	stringVar
+
+vector	origin
+vector	angles
+int		export
+int		spawnflags
+int		radius
+int 	speed
+string	target
+string	targetname
+string	groupname
+string	name
+
+int 	script_noenemyinfo 			// setting to 1 makes a guy spawn with no enemy info
+
+float	script_wait					// Script will wait this long between actions
+float	script_wait_min				// Minimum wait time between actions
+float	script_wait_max				// Maximum wait time between actions
+float	script_wait_add				// Additive delay is the # of seconds extra added between actions
+
+float	script_delay				// Action will be delayed for this long before triggering
+float	script_delay_min			// Minimum delay before action is triggered
+float	script_delay_max			// Maximum delay before action is triggered
+
+float	script_burst            	
+float	script_burst_min 			// Put on an mg turret, min time of a burst
+float	script_burst_max 			// Put on an mg turret, max time of a burst
+
+float	script_reuse            	
+float	script_reuse_min			// Minimum time before a new AI will use this turret.
+float	script_reuse_max			// Maximum time before a new AI will use this turret.
+
+float	delay                   	
+float	script_suppression			// Suppression wait for this AI
+float	height                  	
+float	script_falldirection		// Used to specify the direction a treeburst tree trunk falls towards
+float	script_timeout          	
+float	script_accuracy				// Set this on AI to have them spawn with a modified accuracy 
+
+int		script_cheap				// makes vehicles lose some functionality but be far fewer variables
+int		script_pacifist             
+int		script_ignoreme				// If this setting exists on a spawner this guy will have his .ignoreme set to true
+int		script_ignore_suppression	// sets .ignoreSuppression to true if its set.
+int		script_ignoreall			// sets .ignoreall to true if its set.
+
+
+int		script_repeat				// # of times an effect in an exploder will repeat
+int		script_fxstart				// Identifies effects so they can be turned on by grouping with a trigger
+int		script_fxstop				// Identifies effects so they can be turned off by grouping with a trigger
+int		script_damage				// Damage of radius damage on an exploder
+float	script_firefxdelay			// repetition rate on a firefx for exploders
+float	script_firefxtimeout		// Amount of time before a looping effect fades out
+string	script_firefx				// Fx to play infinitely from a used exploder
+string	script_presound				// To play sounds on exploders before the explosion, for pathfinder only
+string	script_ender				// Stop a looping effect
+string	script_firefxsound			// Looping sound for an exploder firefx
+
+vector	script_angles				// generic angles storage
+int		script_delete               	
+int		script_increment            	
+int		script_patroller            	
+int		script_offtime				// Number of milliseconds before guys get off a flak when you hit the off-trigger, defaults to 20000
+int		script_offradius			// Guys get off a flak if a player gets this close to a flak after hitting the off-trigger, default 350
+string	script_autosavename     	
+int		script_autosave             	
+int		count
+int		script_timer				// Timeout for friendly_chat
+int		script_delayed_playerseek   
+int		script_triggered_playerseek	// group a trigger and an ai with this and he the grouped ai will do playerseek behaviour when the trigger is hit
+int		script_playerseek           
+int		script_seekgoal             
+int		script_start                
+int		script_radius				// Sets an AI's starting goal radius. On an exploder this sets the radius damage's radius.
+int		script_followmin
+int		script_followmax
+int		script_startinghealth
+int		script_fallback
+int		script_grenades
+int		script_fightdist			// Spawners will spawn with this pathEnemyFightDist
+int		script_maxdist				// Spawners will spawn with this pathEnemyLookAhead
+int		script_moveoverride 		// Spawners with this will go to their (targetted) node before fighting.
+
+int		script_killspawner 			// When you go through a trigger with this on it, any spawners that have the same # will be deleted.
+int 	script_emptyspawner 		// When you go through a trigger with this on it, any spawners that have the same # will have their count set to 0.
+
+int		script_vehiclenodegroup 	// used for getting an array of vehicle nodes
+int		script_mg42auto				// When you hit this trigger any grouped mg42s will go into auto mode and clear target.
+int		script_requires_player      
+int		script_sightrange           
+int		script_fallback_group		// Makes stray spawned guys part of bigger falling back movements.
+int		script_vehiclegroup			// links a vehicle to its spawners
+int		script_vehicle_selfremove	// vehicle will delete itself when it reaches the end of its path
+int		script_exploder				// Grouping things that explode
+int		script_prefab_exploder		// Override an exploder since exploders in prefabs get unique'd.
+int		script_balcony				// current mechanism for flagging an actor to test for balcony death
+int		script_mgturret				// Group AI with a node that targets an mg42 and the AI will keep the gun in use.
+int		script_plane				// Specifies which plane set this is, so they can all be started together.
+int		script_explode				// Tells a plane to explode with this exploder.
+int		dontdropweapon				// If set, the AI will not drop a weapon when he dies
+int		dontdrawoncompass			// If set, the AI will not be drawn on the player's compass. Only matters for friendlies
+int		script_usemg42				// If set to false, a friendly will not use be told by friendly_mg42 triggers to use an mg42.
+int		script_stoptoshoot			// used for tanks, setting this to greater than zero will make a tank stop before firing it's main cannon
+int		script_startingposition		// used for riders of vehicles to manually designate riding postions (also used for walkers)
+int		script_turretmg         	
+int		script_forcegrenade			// Set to 1 to enable AI to throw as many grenades as they want rather than extremely rarely.
+int		script_goalvolume			// groups guys so they use a goalvolume
+int 	script_stack				// for walls where friendlies hang out 
+int		script_nofriendlywave		// disables tracking of this ai for friendly_wave's
+int		script_forcegoal			// forces an AI to use the goal radius of the node they target, rather than switch to 2000 (for flood_and_secure spawners)
+int		script_disconnectpaths		// makes exploder script_brushes connectpaths when hidden and disconnect when shown. could be used to disable cover nodes.
+int 	script_nowall				// make AI play a special set of corner animations that dont require a wall
+int 	script_longdeath			// set to 0 disable long death animations like lying on the ground and shooting
+int		script_displaceable			// makes an AI able to change his goal radius from animscript.
+int 	script_grenadespeed			// used for setting magic grenade launch speeds on script origins
+int 	script_maxspawn				// used on flood spawn trigger to regulate the max number of ai
+int 	script_breach_id			// used on a door to force a special type of breach.
+int 	script_battlechatter    	
+int		script_trigger_group		// used to disable a group of triggers when one gets hit.
+
+int 	script_airspeed				// used in checks for setting speed on helicopter path origins or nodes
+int 	script_yawspeed				// used in checks for setting yaw speed on helicopter path origins or nodes
+int 	script_forceyaw				// used in checks for a target or goal yaw on helicopter path origins or nodes
+int 	script_cleartargetyaw		// used in checks to reset a target yaw on helicopter path origins or nodes
+int 	script_accel				// used in checks to change the acceleration on helicopter path origins or nodes
+int 	script_decel				// used in checks to change the deceleration on helicopter path origins or nodes
+int 	script_engage				// used in checks to fire weapons on helicopter path origins or nodes
+int 	script_engageDelay			// used in checks to delay weapons firing on helicopter path origins or nodes
+int 	script_hoverwait			// used in checks to set hovering times on helicopter path origins or nodes
+int 	script_pilottalk			// used in checks to trigger dialogue on helicopter path origins or nodes
+string 	script_attackPattern		// used in checks to control weapons firing on helicopter path origins or nodes
+
+string	script_objective        	
+string	script_friendname       	
+string	script_noteworthy  			// Used to get a string for scripted sequences mainly.
+string	script_parameters			// generic string used for similar purpose as script_noteworthy
+string	script_triggername			// Z: used for elevators in the dam
+string	script_fxcommand			// What to do with the effect
+string	script_fxid					// The id of the effect to do
+string	weaponinfo              	
+string	script_hidden				// the thing which is hidden and appears later (mortars)
+string	vehicletype             	
+string	script_personality			// This guy will use this personality type
+string  script_squadname			// squad (spawner cluster) identifier
+string 	script_nodestate			// generic identifier for nodes
+string	script_assaultnode			// generic identifier for nodes
+string 	script_team					// how to know which team a tank is on (needed to free up target/targetname for radiant linkability)
+string 	script_mortargroup			// to group mortars with their triggers
+string	ambient						// String index of the level.ambient_track to play on this trigger.
+string  script_gameobjectname 		// Used in multiplayer to add/remove entities based on gametype.
+string	script_gametype_dm			// Preston: Used in multiplayer to add/remove entities based on gametype.
+string	script_gametype_tdm			// Preston: Used in multiplayer to add/remove entities based on gametype.
+string	script_gametype_ctf			// Preston: Used in multiplayer to add/remove entities based on gametype.
+string	script_gametype_hq			// Preston: Used in multiplayer to add/remove entities based on gametype.
+string	script_gametype_sd			// Preston: Used in multiplayer to add/remove entities based on gametype.
+string	script_mapsize_08			// Preston: Used in multiplayer to add/remove entities based on the set mapsize.
+string	script_mapsize_16			// Preston: Used in multiplayer to add/remove entities based on the set mapsize.
+string	script_mapsize_32			// Preston: Used in multiplayer to add/remove entities based on the set mapsize.
+string	script_mapsize_64			// Preston: Used in multiplayer to add/remove entities based on the set mapsize.
+string	script_sound				// Plays level.scr_sound ["string"]
+string	script_animation			// If defined, patrollers will play a random pause animation at this node.
+
+string	script_destructable_area 	// used to let destructable walls block off areas of the map (affects spawning, for instance)
+
+string	script_earthquake			// References level.earthquake variables to do an earthquake
+string	script_followmode
+string	script_skilloverride
+string	script_bctrigger
+int 	script_bcdialog				//set to 0 on a spawner/ai when you want to turn off battlechatter forever on that individual
+string	script_aigroup
+string	script_objective_active 	// used with flood_and_Secure and "friendlychain"s to only be active if this objective 
+string	script_objective_inactive 	// is active
+string	script_threatbiasgroup		// adds spawned ai to this threatbiasgroup
+
+string	script_squad				// Group spawners/ai so they share enemy information
+
+string	script_area					// used by battlechatter system
+string	script_location				// used by battlechatter system
+string	script_landmark				// used by battlechatter system
+
+string	script_flag_true			// This entity should not activate unless at least one of the flags in this string is true
+string	script_flag_false			// This entity should not activate unless all the flags in this string are false
+string	script_flag					// the flag that gets enabled/disabled by targetname flag_set and flag_unset
+string	script_flag_set				// helis using helipath will set this flag when they reach this point
+string	script_flag_wait			// helis using helipath will wait at this point until this flag is set
+string	script_flag_clear			// clears the flag when it hits this spot
+string	script_color_allies			// groups allied AI with nodes/triggers of that color
+string	script_color_axis			// groups axis AI with nodes/triggers of that color
+string  script_forcecolor			// forces an AI to use all nodes of this color
+
+string	script_linkName				// Works with script_linkTo
+string	script_linkTo				// A compound string that is a list of script_linkname'd entities that this entity links to.
+string 	script_wtf          		
+
+string 	script_stance				// General purpose string identifier useful for stance related scripting
+
+string 	script_namenumber			// General purpose string identifier that used to be in this file that I use frequently
+
+// destructable stuff           	
+int     script_accumulate 			// damage that must accumulate for destruction to occur
+int     script_threshold  			// min damage that has any effect
+
+// vehicle stuff
+int		script_turret
+int		script_gatetrigger			// vehicles will wait at vehicle nodes with this untill the trigger is hit.
+int		script_VehicleSpawngroup 	// spawns associated vehicles and their aigroups (as still designated by script_vehiclegroup on the vehicles and the ai's)
+int		script_VehicleStartMove 	// initiates associated vehicles movement on its path, note that if no script_vehicleStart nodes or triggers exist then the vehicle will stay and wait for the level script to initiate it's movement stacking this with script_VehicleSpawngroup will make spawn and go right away.
+int		script_vehicleGroupDelete 	// Deletes associated vehicles and their aigroups (as still designated by script_vehiclegroup on the vehicles and the ai's)
+int		script_physicsjolt 			// toggle tanks shaking physics as it drives by.
+string 	script_unload 				// tells the vehicle to unload this group of guys
+
+int		script_deathroll			// turns on and off deathroll for vehicles crossing paths
+string	script_crashtype			// designates a crashpath
+string	script_crashtypeoverride	// override the type of crash a vehicle will do when it dies values are "tank", "mobile"
+int		script_nomg					// makes machineguns not spawn at all on a tank. used for big tank battles where they aren't necessary on all the tanks.
+int		script_badplace				// no badplaces on tanks.  for tanks that won't be near ai. on big tank battles.
+float	script_dronelag				// amount of timed space between drones following vehicle paths
+int		script_fireondrones			// toggles machineguns firing on drones behavior
+
+int		script_vehicleride				
+int		script_unloadmgguy			// set this on the halftrack to make the mg guy unload.
+int		script_keepdriver			// set this on the vehicle to make the vehilce driver not unload.
+
+int		script_vehicledetour
+int		script_avoidvehicles		// setting to 0 on a tank will make it not do collision avoidance stuff
+int 	script_avoidplayer 			// setting to 1 will cause the tank to perform collision avoidance on the player
+float	script_playerconeradius 	// used optionally with script_avoidplayer if you want a cone radius other than 200.  		
+string	script_vehicledetourtype	// describing how a vehicledetour node works,  first non default type being "scriptswitch" which will let the script notify the path to become a switch node. Useful in situations where a tank will fight in circles and then procede on whatever script condition.
+float	script_attackspeed
+int		script_unloaddelay			// make a vehicle delay this long before unloading at the end of a path. < 1 means never unload // nate we should remove this or make it work on all of the unloads.
+int		script_cobratarget			// set to 1 to create a target for this entity on pilotcobra missions
+string	script_targettype			// "air" or "ground" - used for helicopter pilot levels
+float	script_targetoffset_z		// offset from model where missiles should aim - used for helicopter pilot levels
+int		script_wingman
+
+string	script_turningdir			// set this to the direction of the anim set you want a vehicle to use.  "right","hard_right","left","hard_left","forward"
+int		script_bombmode_original
+int		script_bombmode_single
+int		script_bombmode_dual
+string	script_label
+int		script_flakaicount			// for setting the amount of ai to spawn on a flak
+string	script_tankgroup			// used to add a tankgroup to vehicles.
+float	script_chance				// chance that an exploder will explode, checked every 4 seconds or whatever script_delay is on the trigger.
+
+// Duhoc_Assault
+int		script_forcespawn
+string	script_deleteai
+int		script_allowdeath
+float	script_death
+float	script_death_min
+float	script_death_max
+int		script_drones_min
+int		script_drones_max
+int		script_droneStartMove
+int		script_looping
+int		script_trace
+int		script_smokegroup
+int		script_minspec_level
+int		script_minspec_hooks_level
+int		script_spawn_here			// for camper_spawner
+
+// decoytown
+string 	script_layer
+string 	script_vehicleaianim  		// this will be a radiant drop down list that tells the ai on the vehicle which animations to play
+
+// flashbang
+int		script_immunetoflash
+int		script_health 				// bringing it back!
+
+int		script_stopnode 			// tells helicopters to stop at a node. 
+string	script_turret_share 		// shares turret spots for portable mgs
+string	script_turret_ambush 		// shares turret spots for portable mgs
+int		script_dont_link_turret
+string	ambience_inner
+string	ambience_outer
+int		script_mg_angle				// this gives option to start the machinegun at an angle
+int		script_deathchain
+int		script_nohealth				// makes the guy not drop health
+
+// destructible object
+string	destructible_type			// identifier
+
+vector	script_bg_offset 			// I'm using this in cobrapilot to move the background pieces into place
+int		script_flashbangs   		// set this to > 0 to give an AI flashbangs instead of frag grenades.
+
+float	script_dot 					// used on targetname trigger_lookat triggers to change the fov
+int 	script_drone 				// setting to 1 makes the spawner a script drone
+int 	squadnum
+
+string	script_hint					// put on trigger_hint
+
+int 	script_anglevehicle
+
+// when all the ai and spawners with the same string die
+// (or their count depletes to zero), a flag with this string
+// gets set
+string	script_deathflag
+
+string	script_delay_goto_goalmin   // z: an AI will spawn, but not run to his goal for a random amount of time
+string	script_delay_goto_goalmax   // z: an AI will spawn, but not run to his goal for a random amount of time
+
+int 	script_random_killspawner 	// group a trigger with some spawners
+int 	script_randomspawn 			// use with a script_random_killspawner - script will randomly spawn one of the groups 
+int		script_killspawner_group
+
+int 	script_wheeldirection 		// 1 goes forward 0 goes backwards.
+int 	script_light_toggle 		// set to 1 on vehicle enables vehicles ability to turn on and off lights.
+string 	script_vehicle_lights_on  	// set to a group of lights to turn them on
+string 	script_vehicle_lights_off 	// set to a group of lights to turn them off
+int 	script_fixednode			// can force .fixednode on an AI
+float	fixednodesaferadius			// the safe radius
+
+string 	spawner_id 					// using this for jeepride, guh, grunt, blarg! -nate 
+int 	script_vehicledetourgroup 	// use this for telling a detour node to only detour vehicles in matching groups
+int 	script_vehicletriggergroup 	// a more generic grouping.  I'm using this so that paths can be shared easier.   setting this on a node with other vehicle trigger functions will only effect vehicles in the matching group.
+
+string 	script_ghettotag 			// for jeepride.
+
+
+int		script_growl				// makes a dog growl as he runs, instead of barking
+string 	script_attackmetype 		// for jeepride.  set this on nodes to tell it to fire missiles
+int 	script_shotcount 			// for jeepride.  how many missiles to fire at a moving point
+int 	script_index 				// can be used generically as an index for whatever reason
+
+int 	script_dontshootwhilemoving
+int 	script_goalyaw 				// set to true to set the goal yaw
+float 	script_physics 				// used for exploder_chunk to use physics throw
+float 	script_decel_fraction 		// for Jeepride platforms smoother movements
+float 	script_accel_fraction 		// for Jeepride platforms smoother movements
+
+int 	script_stealth_dontseek		// dont set your goalpos to the enemy's goalpos on combat
+
+string 	script_force_count 			// set to true on spawner - flood spawner will not increment this spawners count if the player didnt see the guy die
+
+int 	script_ammo_clip 			// weapon placed in radiant - this many rounds in the clip - must be used with script_ammo_extra
+int 	script_ammo_extra 			// weapon placed in radiant - this many rounds outside the clip - must be used with script_ammo_clip
+int 	script_ammo_40mm 			// does nothing right now
+
+int 	script_godmode 				// makes a vehicle be god mode
+
+int 	script_node_pausetime		// used for attack routing, amount of time to wait at marked goalnode
+
+int		script_bulletshield 		// used to apply toggleable bullet shields to vehicles that have them enabled.
+
+int		script_deathflag_longdeath 	// set to on and script_deathflag guys will notify on death OR longpaindeath
+
+// fog stuff
+vector	start_color
+vector	end_color
+int		start_neardist
+int		end_neardist
+int		start_fardist
+int		end_fardist
+
+int		script_char_index			// overwrite the character index
+int		script_char_group			// indicate this guy is a member of a group of same chars
+string	script_rumble 				// rumble file to play on an exploder
+
+float 	script_volumeramp  			// time to ramp in a vehicles engine noise.
+int 	script_volume				// set to 1 if you want to control the vehicle's volume in your script rather than have it lerp automatically
+int		script_onlyidle
+float 	script_volumeup				// on a vehicle node this makes the vehicle go to max volume over this much time
+float 	script_volumedown			// on a vehicle node this makes the vehicle go to no sound over this much time
+
+float 	script_duration
+string  script_soundalias  			// play this soundalias on exploders
+
+float 	script_savetrigger_timer	//used to set minimum required times on autosave triggers in timed missions

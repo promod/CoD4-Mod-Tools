@@ -388,11 +388,8 @@ setPlayerModels()
 	alliesCharSet = tableLookup( "mp/mapsTable.csv", 0, getDvar( "mapname" ), 1 );
 	if ( !isDefined( alliesCharSet ) || alliesCharSet == "" )
 	{
-		if ( !isDefined( game["allies_soldiertype"] ) || !isDefined( game["allies"] ) )	
-		{
-			game["allies_soldiertype"] = "desert";
-			game["allies"] = "marines";
-		}
+		game["allies_soldiertype"] = "desert";
+		game["allies"] = "marines";
 	}
 	else
 		game["allies_soldiertype"] = alliesCharSet;
@@ -400,11 +397,8 @@ setPlayerModels()
 	axisCharSet = tableLookup( "mp/mapsTable.csv", 0, getDvar( "mapname" ), 2 );
 	if ( !isDefined( axisCharSet ) || axisCharSet == "" )
 	{
-		if ( !isDefined( game["axis_soldiertype"] ) || !isDefined( game["axis"] ) )
-		{
-			game["axis_soldiertype"] = "desert";
-			game["axis"] = "arab";
-		}
+		game["axis_soldiertype"] = "desert";
+		game["axis"] = "arab";
 	}
 	else
 		game["axis_soldiertype"] = axisCharSet;
@@ -507,7 +501,7 @@ setPlayerModels()
 	}
 	else if ( game["axis_soldiertype"] == "urban" )
 	{
-		assert( game["axis"] == "opfor" );
+		assert( game["allies"] == "sas" );
 
 		mptype\mptype_axis_urban_sniper::precache();
 		mptype\mptype_axis_urban_support::precache();
@@ -530,7 +524,7 @@ setPlayerModels()
 	}
 	else
 	{
-		assert( game["axis"] == "opfor" );
+		assert( game["allies"] == "sas" );
 
 		mptype\mptype_axis_woodland_rifleman::precache();
 		mptype\mptype_axis_woodland_cqb::precache();

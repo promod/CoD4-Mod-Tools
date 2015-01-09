@@ -1,0 +1,19 @@
+
+// You can specify particular movies to play for particular maps
+// by using a line like this per map:
+// getmapname <name_of_map> strcmp ! if <name_of_movie_to_play> play then
+
+							// Credits special cases
+							//
+getmapname ac130 strcmp !	// push whether this is ac130
+credits_load getdvar *		// ..and it with whether credits_load is nonzero
+if							// if so..
+	credits_load play		// play 'credits_load'
+then						//
+
+						// Default case
+						//
+getmapname				// Take the map name
+_load strcat			// append a '_load' at the end
+play					// and play it.
+
