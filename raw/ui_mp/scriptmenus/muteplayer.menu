@@ -1,0 +1,280 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define OPTIONS_STYLE			1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef 
+	{
+		name 			muteplayer
+		fullScreen 		0				
+		rect 			0 0 640 480				// Size and position of the menu
+		focusColor 		COLOR_FOCUSED			// Menu focus color for text and items
+		blurWorld		7.0
+		onEsc 			{close self; open class; }
+		PREPROC_SHADER_DRAW( -120 0 880 480, 0 0, "white", 0 0 0 0.75, 0, 1, 0 0 0 0 )
+
+		#undef BACK_OPEN
+		#define BACK_OPEN exec "wait";
+		#include "ui_mp/navcontrols.inc"
+		CHOICE_MENU_TITLE( "@MPUI_MUTEPLAYERS" )
+
+		CHOICE_BUTTON( 2, "@MP_PLAYER_TOGGLE_MUTE", close self; uiScript mutePlayer; )
+		//CHOICE_BUTTON( 14, "@MPUI_ENABLE_VOICE_CHAT", close self; setdvar cl_voice "1"; )
+		//CHOICE_BUTTON( 14, "@MPUI_DISABLE_VOICE_CHAT", close self; setdvar cl_voice "0"; )
+
+		itemDef 
+		{
+			name			playermutelist
+			visible			1
+			rect			-160 80 320 300 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			style			WINDOW_STYLE_FILLED
+			type			ITEM_TYPE_LISTBOX
+			textscale		CHOICE_TEXTSIZE
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			elementtype		LISTBOX_TEXT
+			elementwidth	120
+			elementheight	24
+			textalignx 		6
+			textaligny 		0
+			border			1
+			forecolor 		CHOICE_TEXTCOLOR
+			backcolor 		0 0 0 0
+			bordersize		1
+			bordercolor		1 1 1 0.15
+			outlinecolor	1 1 1 0.2
+			feeder			FEEDER_MUTELIST
+			columns			2 	2  62 	10
+							  	64 172  25
+			doubleclick
+			{
+				play "mouse_click";
+				uiScript mutePlayer;
+			}
+			mouseEnter 		{ setitemcolor maplist bordercolor 1 1 1 0.55 }
+			mouseExit 		{ setitemcolor maplist bordercolor 1 1 1 0.15 }
+		}
+
+	}
+}
+
+/*
+#include "ui/menudef.h"
+
+#define ORIGIN_INGAMECHOICE1	80 84
+#define ORIGIN_INGAMECHOICE2	80 308
+
+{
+	menuDef
+	{
+		name			"muteplayer"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		6.0
+		onEsc 
+		{
+			close muteplayer;
+		}
+
+		// Gradient
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			//rect			-107 0 554 480
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			background		"gradient"
+			visible			1
+			decoration
+		}
+
+		// Black bars
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-128 0 896 65
+			backcolor		0 0 0 1
+			visible			1
+			decoration
+		}
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-128 416 896 64
+			backcolor		0 0 0 1
+			visible			1
+			decoration
+		}
+	
+		// Lines
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-128 64 896 1
+			backcolor		1 1 1 0.5
+			visible			1
+			decoration
+		}
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-128 416 896 1
+			backcolor		1 1 1 0.5
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		1 1 1 1
+			text			"@MPUI_MUTE_PLAYERS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			decoration
+		}
+		
+// MUTE PLAYER
+/*
+		itemDef 
+		{
+			name			playermutelist
+			visible			1
+			rect			0 0 210 210
+			type			ITEM_TYPE_LISTBOX
+			style			WINDOW_STYLE_FILLED
+			elementwidth	119
+			elementheight	16
+			origin			ORIGIN_INGAMECHOICE1
+			textfont		UI_FONT_NORMAL
+			textscale		0.25
+			elementtype		LISTBOX_TEXT
+			feeder			FEEDER_MUTELIST
+			textstyle		6
+			textaligny		0
+			border			1
+			bordercolor		.5 .5 .5 .5
+			forecolor		1 1 1 1
+			backcolor		0 0 0 .6
+			outlinecolor	.1 .1 .7 .5
+			columns			2 2 20 5 40 172 25
+			doubleclick
+			{
+				play "mouse_click";
+				uiScript mutePlayer;
+			}
+			mouseEnter 
+			{
+				play "mouse_over";
+			}
+			mouseExit 
+			{
+				setitemcolor playlist bordercolor .5 .5 .5 .5
+			} 
+		}
+		*/
+		/*
+		itemDef 
+		{
+			name			playermutetoggle
+			visible			1
+			rect			0 0 100 22
+			origin			ORIGIN_INGAMECHOICE2
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"@MP_PLAYER_TOGGLE_MUTE"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		8
+			textaligny		16
+			border			1
+			bordercolor		.5 .5 .5 .5
+			backcolor		1 1 1 .2
+			action
+			{
+				play "mouse_click";
+				uiScript mutePlayer;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			112 0 100 22
+			origin			ORIGIN_INGAMECHOICE2
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_ENABLE_VOICE_CHAT"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		8
+			textaligny		16
+			border			1
+			bordercolor		.5 .5 .5 .5
+			backcolor		1 1 1 .2
+			dvartest		"cl_voice"
+			hidedvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				setdvar cl_voice "1";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			visible			1
+			rect			112 0 100 22
+			origin			ORIGIN_INGAMECHOICE2
+			forecolor		1 1 1 1
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_DISABLE_VOICE_CHAT"
+			textfont		UI_FONT_NORMAL
+			textscale		.24
+			textalignx		8
+			textaligny		16
+			border			1
+			bordercolor		.5 .5 .5 .5
+			backcolor		1 1 1 .2
+			dvartest		"cl_voice"
+			hidedvar		{ "0" }
+			action
+			{
+				play "mouse_click";
+				setdvar cl_voice "0";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef 
+		{
+			#include "ui_mp/button_mainmenu.menu"
+
+			action
+			{
+				play "mouse_click";
+				close muteplayer;
+				open main;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+}
+*/

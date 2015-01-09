@@ -1,0 +1,15 @@
+{
+	stateMap "wireframe";
+
+	vertexShader 1.1 "vertcol_untextured_dtex.hlsl"
+	{
+	}
+
+	pixelShader 1.1 "vertcol_untextured.hlsl"
+	{
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+
+}

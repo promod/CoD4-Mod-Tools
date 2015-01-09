@@ -1,0 +1,22 @@
+{
+	stateMap "default";
+
+	vertexShader 3.0 "lm_s_tc0n0_nc_sm3.hlsl"
+	{
+	}
+
+	pixelShader 3.0 "lm_t0c0n0s0_nc_sm3.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		normalMapSampler = material.normalMap;
+		specularMapSampler = material.specularMap;
+		envMapParms = material.envMapParms;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.texcoord[2] = code.tangent;
+
+}

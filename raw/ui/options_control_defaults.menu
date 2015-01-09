@@ -1,0 +1,256 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define OPTIONS_STYLE			1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#undef	CHOICE_SIZE_X
+#define CHOICE_SIZE_X		220
+
+{
+	menuDef 
+	{
+		name options_control_defaults
+		fullScreen 0				
+		rect 0 0 640 480				// Size and position of the menu
+		focusColor COLOR_FOCUSED			// Menu focus color for text and items
+		soundloop ""
+		onOpen
+		{
+			setLocalVarBool ui_hideBack 1;
+			setdvar ui_finishreset	"0";
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+		}
+		onESC 
+		{ 
+			close options_control_defaults;		
+		}
+		
+		#include "ui_mp/leftside_controls.inc"
+		
+		CHOICE_SECTION_TITLE( 21, "@MENU_SET_DEFAULT_CONTROLS" )
+		
+		PREPROC_TEXT_DRAW_ALIGNED( CHOICE_ORIGIN( 23 ) 300 80 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN, 0 0, text "@MENU_RESTORE_EACH_SETTING", TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_CENTER, CHOICE_TEXTCOLOR autowrapped visible when( dvarInt( ui_finishreset ) == 0 ); )
+
+		#define LOCAL_MP_ACTION \
+			play "mouse_click"; \
+			exec "set ui_finishreset 1" \
+			exec "exec default_mp_controls.cfg" 
+
+		#define LOCAL_SP_ACTION \
+			play "mouse_click"; \
+			exec "set ui_finishreset 1" \
+			exec "exec default.cfg" 
+			
+		CHOICE_BUTTON_BG( 26, 1 )
+		CHOICE_HIGHLIGHT( 26, 1 )
+		CHOICE_BUTTON_VIS_NOHI( 26, "@MENU_OK", close self; open main_controls;, when ( dvarInt( ui_finishreset ) ); )
+		CHOICE_BUTTON_VIS_NOHI( 26, "@MENU_YES", LOCAL_MP_ACTION, when( dvarInt( ui_multiplayer ) == 1 && dvarInt( ui_finishreset ) == 0 ); )
+		CHOICE_BUTTON_VIS_NOHI( 26, "@MENU_YES", LOCAL_SP_ACTION, when( dvarInt( ui_multiplayer ) == 0 && dvarInt( ui_finishreset ) == 0 ); )
+
+		CHOICE_BUTTON_VIS( 27, "@MENU_NO", close self;, when( dvarInt( ui_finishreset ) == 0 ); )
+		
+		PREPROC_TEXT_DRAW_ALIGNED( CHOICE_ORIGIN( 23 ) 300 80 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN, 0 0, text "@MENU_SETTINGS_RESET", TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_CENTER, CHOICE_TEXTCOLOR autowrapped visible when( dvarInt( ui_finishreset ) ); )
+	}
+
+}
+/*
+	itemDef 
+	{
+		name keyBindStatus
+		rect 0 322 640 30 
+		ownerdraw UI_KEYBINDSTATUS
+		text "-"      
+		forecolor 1 .75 0 1
+		textscale .23
+		textalignx -99
+		textalign ITEM_ALIGN_CENTER
+		textaligny 20
+		visible 1
+		decoration 
+	}
+*/
+/*
+	itemDef
+	{
+		type			ITEM_TYPE_TEXT
+		origin			ORIGIN_TITLE
+		forecolor		1 1 1 1
+		text			"@MENU_SET_DEFAULT_CONTROLS"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_TITLE
+		visible			1
+		decoration
+	}
+
+	itemDef 
+	{
+		name look
+		group grpControls
+		text "@MENU_THIS_WILL_RESTORE_ALL_SETTINGS"
+		type 1
+		textscale .23
+		group grpControls
+		rect 135 40 35 10
+		origin 50 120
+		textalign ITEM_ALIGN_CENTER
+		textaligny 10
+		forecolor 1 1 1 .9
+		visible 1
+		decoration
+	}
+	itemDef 
+	{
+		name look
+		group grpControls
+		text "@MENU_TO_THEIR_DEFAULT_VALUE"
+		type 1
+		textscale .23
+		group grpControls
+		rect 135 55 35 10
+		origin 50 120
+		textalign ITEM_ALIGN_CENTER
+		textaligny 10
+		forecolor 1 1 1 .9
+		visible 1
+		decoration
+	}
+	itemDef 
+	{
+		name areyousure
+		group grpControls
+		text "@MENU_ARE_YOU_SURE"
+		type 1
+		textscale .3
+		group grpControls
+		rect 135 80 35 10
+		origin 50 120
+		textalign ITEM_ALIGN_CENTER
+		textaligny 10
+		forecolor 1 1 1 .9
+		visible 1
+		decoration
+	}
+		itemDef 
+		{
+			name yes
+			text "@MENU_YES"
+			group grpdefault
+			type 1
+			textfont UI_FONT_NORMAL
+			textscale .3
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 67.5 105 70 26
+			origin 50 120
+			textalign ITEM_ALIGN_CENTER
+			textaligny 18
+			forecolor .9 .9 .95 1
+			visible 1
+			dvartest "ui_multiplayer"
+			showDvar { "0" }
+			action 
+			{ 
+				play "mouse_click"; 
+				hide grpdefault;
+				hide areyousure;
+				show grpfinish; 
+				exec "exec default.cfg" 
+			}
+
+			mouseEnter { play "mouse_over"; } 
+		}
+		itemDef 
+		{
+			name yes
+			text "@MENU_YES"
+			group grpdefault
+			type 1
+			textfont UI_FONT_NORMAL
+			textscale .3
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 67.5 105 70 26
+			origin 50 120
+			textalign ITEM_ALIGN_CENTER
+			textaligny 18
+			forecolor .9 .9 .95 1
+			visible 1
+			dvartest "ui_multiplayer"
+			hideDvar { "0" }
+			action 
+			{ 
+				play "mouse_click"; 
+				hide grpdefault;
+				hide areyousure;
+				show grpfinish; 
+				exec "exec default_mp.cfg" 
+			}
+			mouseEnter { play "mouse_over"; } 
+		}
+		itemDef 
+		{
+			name no
+			text "@MENU_NO"
+			group grpdefault
+			type 1
+			textfont UI_FONT_NORMAL
+			textscale .3
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 167.5 105 70 26
+			origin 50 120
+			textalign ITEM_ALIGN_CENTER
+			textaligny 18
+			forecolor .9 .9 .95 1
+			visible 1
+			action { 
+//				close options_menu; 
+//				open options_menu;
+//				open options_look;
+				close options_control_defaults;
+				play "mouse_click";
+			}
+			mouseEnter { play "mouse_over"; } 
+		}
+
+		itemDef 
+		{
+			name finish_message 
+			group grpfinish
+			style 0
+			text "@MENU_YOUR_CONTROLS_ARE_NOW_SET"
+			rect 135 110 35 10
+			origin 50 120
+			textalign ITEM_ALIGN_CENTER
+			textaligny 10
+			textscale .333        
+			forecolor 1 1 1 1
+			visible 0 
+			decoration
+		}
+		itemDef 
+		{
+			name finish_message 
+			group grpfinish
+			style 0
+			text "@MENU_TO_THEIR_ORIGINAL_DEFAULT_VALUES"
+			rect 135 130 35 10
+			origin 50 120
+			textalign ITEM_ALIGN_CENTER
+			textaligny 10
+			textscale .333        
+			forecolor 1 1 1 1
+			visible 0 
+			decoration
+		}
+
+
+}
+
+}//
+
+*/

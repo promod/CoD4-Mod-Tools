@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 5 5 0 ) ( -7 5 0 ) ( -7 -6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -6 377 ) ( -7 5 377 ) ( 5 5 377 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -6 373 ) ( 5 -6 373 ) ( 5 -6 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -6 373 ) ( 5 5 373 ) ( 5 5 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 5 373 ) ( -7 5 373 ) ( -7 5 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 5 373 ) ( -5 -6 373 ) ( -5 -6 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 35 5 322 ) ( -22 5 322 ) ( -22 -6 322 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -33 -6 347 ) ( -33 5 347 ) ( 24 5 347 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -33 -6 347 ) ( 24 -6 347 ) ( 24 -6 332 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 -6 348 ) ( 34 5 348 ) ( 34 5 333 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -2 347 ) ( -33 -2 347 ) ( -33 -2 332 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -33 5 347 ) ( -33 -6 347 ) ( -33 -6 332 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 0 0"
+"model" "xmodel/me_telegraphpole2"
+"classname" "misc_model"
+}

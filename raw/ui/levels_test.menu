@@ -1,0 +1,21 @@
+#include "ui/menudef.h"
+
+#define CHOICE_SIZE_X		250
+#define CHOICE_SIZE_Y		20
+#include "ui/choices_setup_common.menu"
+#include "ui/choices_setup_levels.menu"
+
+{
+	menuDef
+	{
+		LEVELS_CHOICES_SETUP( levels_test )
+
+		#include "ui/background_main_blurred.menu"
+
+		CHOICE_MENU_TITLE( "TEST LEVELS" )
+
+		CHOICE_BUTTON( 1, "vehicledamage (03-13-07)", exec "devmap vehicledamage" )
+		CHOICE_BUTTON( 2, "Bog_a (03-06-07)", exec "devmap bog_a" )
+		CHOICE_BUTTON( 3, "Firing Range: Assault Rifles (03-20-07)", exec "devmap firingrange_assaultrifles" )
+	}
+}

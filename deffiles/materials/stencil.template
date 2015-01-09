@@ -1,0 +1,21 @@
+#if "@stencil@" == "Disable"
+
+	stencil( Disable );
+
+#elif "@stencil@" == "One-sided" || "@stencil@" == "Two-sided"
+
+	#if "@stencil@" == "Two-sided"
+		stencil( TwoSided );
+		stencilFunc( Back, @stencilFunc2@ );
+		stencilOp( Back, @stencilOpFail2@, @stencilOpZFail2@, @stencilOpPass2@ );
+	#else
+		stencil( OneSided );
+	#endif
+	stencilFunc( Front, @stencilFunc1@ );
+	stencilOp( Front, @stencilOpFail1@, @stencilOpZFail1@, @stencilOpPass1@ );
+
+#else
+
+	#error "Unknown stencil '@stencil@'"
+
+#endif

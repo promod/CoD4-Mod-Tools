@@ -1,0 +1,17 @@
+#if "@cullFace@" == "Back"
+
+	cull( Back );
+
+#elif "@cullFace@" == "Front"
+
+	cull( Front );
+
+#elif "@cullFace@" == "None"
+
+	cull( None );
+
+#else
+
+	#error "unknown cull \"@cullFace@\""
+
+#endif

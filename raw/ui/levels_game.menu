@@ -1,0 +1,54 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START			45
+#define CHOICE_Y_START			72
+
+#define CHOICE_SEP_OFFSET_Y		-2
+#define CHOICE_Y_COUNT			11
+#define CHOICE_GROUP			"levels"
+
+#include "ui_mp/menustyle.inc"
+
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			220
+#define CHOICE_X_SPACING		280
+#include "ui/choices_setup_common.menu"
+
+#include "ui/choices_setup_levels.menu"
+{
+	menuDef
+	{
+		LEVELS_CHOICES_SETUP( levels_game )
+
+		#include "ui/blurredbg.inc"
+#include "ui_mp/navcontrols.inc"
+
+		CHOICE_MENU_TITLE( "GAME LEVELS" )
+		
+		#define LOCAL_MAP_ACTION( p_mapname ) \
+			setdvar ui_load_level p_mapname; open popmenu_difficulty;
+
+		CHOICE_BUTTON( 1, "KillHouse (06-06-07)", LOCAL_MAP_ACTION("killhouse") )
+		CHOICE_BUTTON( 2, "Cargoship (05-22-07)", LOCAL_MAP_ACTION("cargoship") )
+		CHOICE_BUTTON( 3, "Coup (06-01-07)", LOCAL_MAP_ACTION("coup") )
+		CHOICE_BUTTON( 4, "Blackout (06-07-07)", LOCAL_MAP_ACTION("blackout") )
+		CHOICE_BUTTON( 5, "Armada (06-07-07)", LOCAL_MAP_ACTION("armada") )
+		CHOICE_BUTTON( 6, "Bog_a (05-22-07)", LOCAL_MAP_ACTION("bog_a") )
+		CHOICE_BUTTON( 7, "Hunted (06-07-07)", LOCAL_MAP_ACTION("hunted") )
+		CHOICE_BUTTON( 8, "AC130 (06-07-07)", LOCAL_MAP_ACTION("ac130") )
+		CHOICE_BUTTON( 9, "Bog_b (06-04-07)", LOCAL_MAP_ACTION("bog_b") )
+		CHOICE_BUTTON( 10, "Airlift (06-07-07)", LOCAL_MAP_ACTION("airlift") )
+		CHOICE_BUTTON( 11, "Aftermath (06-04-06)", LOCAL_MAP_ACTION("aftermath") )
+		CHOICE_BUTTON( 12, "Village_assault (05-30-07)", LOCAL_MAP_ACTION("village_assault") )
+		CHOICE_BUTTON( 13, "Scout Sniper (06-07-07)", LOCAL_MAP_ACTION("scoutsniper") )
+		CHOICE_BUTTON( 14, "Sniper Escape (06-06-07)", LOCAL_MAP_ACTION("sniperescape") )
+		CHOICE_BUTTON( 15, "Village Defend (06-04-07)", LOCAL_MAP_ACTION("village_defend") )
+		CHOICE_BUTTON( 16, "Ambush (06-06-06)", LOCAL_MAP_ACTION("ambush") )
+		CHOICE_BUTTON( 17, "ICBM (06-07-07)", LOCAL_MAP_ACTION("icbm") )
+		CHOICE_BUTTON( 18, "Launch Facility A (06-07-07)", LOCAL_MAP_ACTION("launchfacility_a") )
+		CHOICE_BUTTON( 19, "Launch Facility B (06-07-07)", LOCAL_MAP_ACTION("launchfacility_b") )
+		CHOICE_BUTTON( 20, "Jeepride (06-07-07)", LOCAL_MAP_ACTION("jeepride") )
+		CHOICE_BUTTON( 21, "*Airplane* (04-13-07)", LOCAL_MAP_ACTION("airplane") )
+	}
+}

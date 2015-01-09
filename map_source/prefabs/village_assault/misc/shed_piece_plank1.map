@@ -1,0 +1,17 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents nonColliding;
+ ( -62 -4 6 ) ( -62 -4 -10 ) ( -78 -4 -10 ) me_woodplanks01 128 128 4 190 180 0 lightmap_gray 16384 16384 222 30 90 0
+ ( -77 4 -10 ) ( -61 4 -10 ) ( -61 4 6 ) me_woodplanks01 128 -128 -156 -20 180 0 lightmap_gray 16384 16384 222 30 90 0
+ ( -70 -40 2 ) ( -70 -24 2 ) ( -54 -24 2 ) me_woodplanks01 128 -128 -156 -20 180 0 lightmap_gray 16384 -16384 -30 0 180 0
+ ( -36 -40 -4 ) ( -36 -24 -4 ) ( -36 -24 12 ) me_woodbeam_end_01 16 17.5 28 239.35086 180 0 lightmap_gray 16384 16384 222 0 0 0
+ ( -62 -40 0 ) ( -62 -24 0 ) ( -78 -24 0 ) me_woodplanks01 128 -128 -156 -20 180 0 lightmap_gray 16384 -16384 -30 0 -180 0
+ ( 35 -3 14 ) ( 30 5 14 ) ( 30 5 -18 ) me_woodbeam_end_01 16 17.5 28 239.35086 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

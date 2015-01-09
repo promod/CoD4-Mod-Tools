@@ -1,0 +1,607 @@
+/*
+#include "ui/menudef.h"
+
+#define ORIGIN_POPUPTITLE	320 160
+
+#define ORIGIN_CHOICE1		200 200
+#define ORIGIN_CHOICE2		200 220
+#define ORIGIN_CHOICE3		200 240
+#define ORIGIN_CHOICE4		200 260
+#define ORIGIN_CHOICE5		200 280
+#define ORIGIN_CHOICE6		200 300
+
+#define ORIGIN_VOTEMAP1		320 200
+#define ORIGIN_VOTEMAP2		320 220
+#define ORIGIN_VOTEMAP3		320 240
+#define ORIGIN_VOTEMAP4		320 260
+#define ORIGIN_VOTEMAP5		320 280
+
+#define ORIGIN_VOTECOUNT1	440 200
+#define ORIGIN_VOTECOUNT2	440 220
+#define ORIGIN_VOTECOUNT3	440 240
+#define ORIGIN_VOTECOUNT4	440 260
+#define ORIGIN_VOTECOUNT5	440 280
+
+#define DVAR_VOTEMAP1		"ui_votemap1"
+#define DVAR_VOTEMAP2		"ui_votemap2"
+#define DVAR_VOTEMAP3		"ui_votemap3"
+#define DVAR_VOTEMAP4		"ui_votemap4"
+#define DVAR_VOTEMAP5		"ui_votemap5"
+
+#define DVAR_VOTECOUNT1		"ui_votecount1"
+#define DVAR_VOTECOUNT2		"ui_votecount2"
+#define DVAR_VOTECOUNT3		"ui_votecount3"
+#define DVAR_VOTECOUNT4		"ui_votecount4"
+#define DVAR_VOTECOUNT5		"ui_votecount5"
+
+#define NAME_CRASH			"Crash"			// war, sab, sd
+#define NAME_FACILITY		"Facility"		// war, dom, sab
+#define NAME_STRIKE			"Strike"		// war, dom
+#define NAME_PALACE			"Palace"		// war, sd
+#define NAME_BACKLOT		"Backlot"		// war, sd
+#define NAME_CITYSTREETS	"City Streets"	// war, sd
+#define NAME_ARGUN			"Argun"			// sab
+#define NAME_CONVOY			"Convoy"		// sab
+#define NAME_DUSK			"Dusk"			// war
+//#define NAME_PIPELINE		"Pipeline"		// war
+
+#define VALUE_CRASH			0
+#define VALUE_FACILITY		1
+#define VALUE_STRIKE		2
+#define VALUE_PALACE		3
+#define VALUE_BACKLOT		4
+#define VALUE_CITYSTREETS	5
+//#define VALUE_PIPELINE	6
+
+{
+	menuDef
+	{
+		name			"votemap"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		6.0
+		legacySplitScreenScale
+		onOpen
+		{
+			show maps; // needed or else map options are hidden on subsequent votes
+			setfocus maps_focus;
+		}
+
+		// background overlay
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.50
+			visible			1
+			decoration
+		}
+
+		// gradient_top
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 55 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+
+		// gradient_bottom
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 351 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+
+		
+		#include "ui/navcontrols.menu"
+		#include "ui_mp/leavegame.menu"
+
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			160 120 320 224
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			ORIGIN_POPUPTITLE
+			forecolor		COLOR_TITLE
+			text			"NEXT MAP"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			visible			1
+			decoration
+		}
+
+		// WAR MAPS
+		itemDef
+		{
+			name			maps_focus
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE1
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_CRASH
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "war" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_CRASH;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE2
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_FACILITY
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "war" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_FACILITY;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE3
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_STRIKE
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "war" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_STRIKE;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE4
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_PALACE
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "war" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_PALACE;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE5
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_BACKLOT
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "war" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_BACKLOT;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE6
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_CITYSTREETS
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "war" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_CITYSTREETS;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		// SABOTAGE MAPS
+		itemDef
+		{
+			name			maps_focus
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE1
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_CRASH
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "sab" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_CRASH;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE2
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_FACILITY
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "sab" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_FACILITY;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE3
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_ARGUN
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "sab" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_ARGUN;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE4
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_CONVOY
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "sab" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_CONVOY;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		// DOMINATION MAPS
+		itemDef
+		{
+			name			maps_focus
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE1
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_FACILITY
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "dom" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_FACILITY;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE2
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_STRIKE
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "dom" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_STRIKE;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		// SD MAPS
+		itemDef
+		{
+			name			maps_focus
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE1
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_CRASH
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "sd" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_CRASH;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE2
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_PALACE
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "sd" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_PALACE;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE3
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_BACKLOT
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "sd" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_BACKLOT;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef
+		{
+			group			maps
+			visible			1
+			origin			ORIGIN_CHOICE4
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			NAME_CITYSTREETS
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			//textalign		ITEM_ALIGN_CENTER
+			dvartest		"g_gametype"
+			showDvar		{ "sd" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse VALUE_CITYSTREETS;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		#include "ui/templates/votemap_1st.menu"
+		#include "ui/templates/votemap_2nd.menu"
+		#include "ui/templates/votemap_3rd.menu"
+		#include "ui/templates/votemap_4th.menu"
+		#include "ui/templates/votemap_5th.menu"
+
+		itemDef
+		{
+			origin			ORIGIN_VOTECOUNT1
+			type			ITEM_TYPE_TEXT
+			dvar			DVAR_VOTECOUNT1
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			origin			ORIGIN_VOTECOUNT2
+			type			ITEM_TYPE_TEXT
+			dvar			DVAR_VOTECOUNT2
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			origin			ORIGIN_VOTECOUNT3
+			type			ITEM_TYPE_TEXT
+			dvar			DVAR_VOTECOUNT3
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			origin			ORIGIN_VOTECOUNT4
+			type			ITEM_TYPE_TEXT
+			dvar			DVAR_VOTECOUNT4
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			origin			ORIGIN_VOTECOUNT5
+			type			ITEM_TYPE_TEXT
+			dvar			DVAR_VOTECOUNT5
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			decoration
+		}
+	}
+}
+*/

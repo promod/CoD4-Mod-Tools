@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 11.5 4 0 ) ( -2 4 0 ) ( -2 -16 0 ) clip_nosight_nothing 64 64 -2 -4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -16 18.5 ) ( -2 4 18.5 ) ( 11.5 4 18.5 ) clip_nosight_nothing 64 64 -2 -4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -16 12.5 ) ( 11.5 -16 12.5 ) ( 11.5 -16 0 ) clip_nosight_nothing 64 64 -2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 -16 12.5 ) ( 10.5 4 12.5 ) ( 10.5 4 0 ) clip_nosight_nothing 64 64 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 11.5 16 12.5 ) ( -2 16 12.5 ) ( -2 16 0 ) clip_nosight_nothing 64 64 -2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 4 12.5 ) ( -10 -16 12.5 ) ( -10 -16 0 ) clip_nosight_nothing 64 64 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 12.5 -6.5 11.5 ) ( 0 -6.5 11.5 ) ( 0 -15 11.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -15 12.5 ) ( 0 -6.5 12.5 ) ( 12.5 -6.5 12.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -14 12.5 ) ( 12.5 -14 12.5 ) ( 12.5 -14 11 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 -15 12.5 ) ( 7 -6.5 12.5 ) ( 7 -6.5 11 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 11.5 -6.5 12.5 ) ( -1 -6.5 12.5 ) ( -1 -6.5 11 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5.5 -7.5 12.5 ) ( 5.5 -16 12.5 ) ( 5.5 -16 11 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "tv_video_monitor"
+"classname" "misc_model"
+}

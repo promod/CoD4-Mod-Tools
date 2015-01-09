@@ -1,0 +1,19 @@
+{
+	stateMap "premulalpha";
+
+	vertexShader 3.0 "lm_sm_sun_tc0_sm3.hlsl"
+	{
+	}
+
+	pixelShader 3.0 "lm_sm_sun_b0c0_sm3.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

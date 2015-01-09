@@ -1,0 +1,70 @@
+#name "locdmgtable"
+#dll "all" "configstringconvert"
+#target_dir "info/"
+#file_ext "*"
+
+// This tells the configstring converter what the file type identifier should be
+enum { "LOCDMGTABLE" } configstringFileType
+
+float 1.0 0 10 none
+float 4.0 0 10 helmet
+float 4.0 0 10 head
+float 5.0 0 10 neck
+float 1.0 0 10 torso_upper
+float 0.9 0 10 torso_lower
+float 0.8 0 10 right_arm_upper
+float 0.6 0 10 right_arm_lower
+float 0.4 0 10 right_hand
+float 0.8 0 10 left_arm_upper
+float 0.6 0 10 left_arm_lower
+float 0.4 0 10 left_hand
+float 0.8 0 10 right_leg_upper
+float 0.6 0 10 right_leg_lower
+float 0.4 0 10 right_foot
+float 0.8 0 10 left_leg_upper
+float 0.6 0 10 left_leg_lower
+float 0.4 0 10 left_foot
+float 0 0 10 gun
+
+vcontainer
+{
+	floatedit(none, 0.1, 0.2)
+	floatedit(helmet, 0.1, 0.2)
+	floatedit(head, 0.1, 0.2)
+	floatedit(neck, 0.1, 0.2)
+	floatedit(torso_upper, 0.1, 0.2)
+	floatedit(torso_lower, 0.1, 0.2)
+
+	hcontainer
+	{
+		floatedit(left_arm_upper, 0.1, 0.2)
+		floatedit(right_arm_upper, 0.1, 0.2)
+	}
+	hcontainer
+	{
+		floatedit(left_arm_lower, 0.1, 0.2)
+		floatedit(right_arm_lower, 0.1, 0.2)
+	}
+	hcontainer
+	{
+		floatedit(left_hand, 0.1, 0.2)
+		floatedit(right_hand, 0.1, 0.2)
+	}
+	
+	hcontainer
+	{
+		floatedit(left_leg_upper, 0.1, 0.2)
+		floatedit(right_leg_upper, 0.1, 0.2)
+	}
+	hcontainer
+	{
+		floatedit(left_leg_lower, 0.1, 0.2)
+		floatedit(right_leg_lower, 0.1, 0.2)
+	}
+	hcontainer
+	{
+		floatedit(left_foot, 0.1, 0.2)
+		floatedit(right_foot, 0.1, 0.2)
+	}
+	floatedit(gun, 0.1, 0.2)
+}

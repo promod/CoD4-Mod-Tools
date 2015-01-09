@@ -1,0 +1,44 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"radiosityScale" "1"
+"sunRadiosity" "2"
+"contrastGain" "0.15"
+"diffusefraction" "0.05"
+"_color" "0.90 0.90 1"
+"sunlight" "1.5"
+"sundirection" "-155 136 0"
+"sundiffusecolor" ".43 .39 1"
+"suncolor" ".9 .98 1"
+"ambient" ".1"
+"bouncefraction" ".1"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 10 26 42 ) ( -10 26 42 ) ( -10 -26 42 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -26 81 ) ( -10 26 81 ) ( 10 26 81 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -26 81 ) ( 10 -26 81 ) ( 10 -26 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -26 81 ) ( 10 26 81 ) ( 10 26 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 26 42 ) ( 10 26 42 ) ( 10 26 81 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 26 81 ) ( -10 -26 81 ) ( -10 -26 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 26 74 ) ( 10.5 9 42 ) ( 42.5 26 74 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 -9 42 ) ( 10.5 -26 74 ) ( 42.5 -9 42 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 10 5 0 ) ( -10 5 0 ) ( -10 -3 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -3 42 ) ( -10 5 42 ) ( 10 5 42 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -3 42 ) ( 10 -3 42 ) ( 10 -3 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 -3 42 ) ( 7 5 42 ) ( 7 5 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 3 42 ) ( -10 3 42 ) ( -10 3 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 5 42 ) ( -7 -3 42 ) ( -7 -3 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "me_phonebooth"
+"classname" "misc_model"
+}

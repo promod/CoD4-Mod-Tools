@@ -1,0 +1,30 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 4 4 0 ) ( -4 4 0 ) ( -4 -4 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -4 430 ) ( -4 4 430 ) ( 4 4 430 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -3 430 ) ( 4 -3 430 ) ( 4 -3 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 -4 430 ) ( 3 4 430 ) ( 3 4 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 3 430 ) ( -4 3 430 ) ( -4 3 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 4 430 ) ( -3 -4 430 ) ( -3 -4 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"modelscale" ".8"
+"origin" "0.0 0.0 0.0"
+"model" "me_streetlight_on"
+"classname" "misc_model"
+}
+// entity 2
+{
+"angles" "84.7 180 -180"
+"targetname" "me_streetlight_01_FX_origin"
+"origin" "-49.5 0.0 422.0"
+"classname" "script_struct"
+}

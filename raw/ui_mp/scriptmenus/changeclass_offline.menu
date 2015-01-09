@@ -1,0 +1,216 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+//#define CHOICE_SEP_1			2
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#undef CHOICE_SIZE_Y
+#define CHOICE_SIZE_Y			20
+
+#define MENU_LOCKED_COLOR		0.25 0.25 0.25 1
+
+#define ORIGIN_BUTTON_BACK			52 438
+#define ORIGIN_MENU_TREE			54 64
+#define ORIGIN_MENU_TITLE_MARINES	178 64
+#define ORIGIN_MENU_TITLE_OPFOR		170 64
+#define TREE_COLOR					1 1 1 0.5
+#define LABEL_TEXT_COLOR		0.7 0.75 0.75 1
+
+// ------
+
+{
+	menuDef
+	{
+		name			"changeclass_offline"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		7.0
+		onOpen
+		{
+			// update player's XP
+			//STAT_XP
+		}
+		onEsc 
+		{
+			scriptMenuResponse "back";
+		}
+		
+		#ifndef PC
+		execkeyint BUTTON_START
+		{
+			close self;
+		}
+		#endif
+		
+		// background overlay
+		itemDef	{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.75 //0 0.05 0.15 0.5
+			visible			1
+			decoration
+		}
+		// gradient_top
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+		// gradient_bottom
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 400 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+		
+		// ------------------ TREE TITLE ------------------
+		
+		CHOICE_MENU_TITLE( "@MPUI_CHOOSE_CLASS_CAP" )
+
+		// ------------------ buttons ---------------------
+
+		#include "ui_mp/navcontrols.inc"
+		
+		//=========================================================================
+		//================ MENU SELECTION FOR ONLINE/OFFLINE GAME =================
+		//=========================================================================
+		/*
+		#define OFFLINE_ASSAULT \
+		setdvar ui_offline_primary "25"; \
+		setdvar ui_offline_primary_attachment "5"; \
+		setdvar ui_offline_secondary "0"; \
+		setdvar ui_offline_secondary_attachment "0"; \
+		setdvar ui_offline_perk1 "191"; \
+		setdvar ui_offline_perk2 "160"; \
+		setdvar ui_offline_perk3 "165"; \
+		setdvar ui_offline_sgrenade "101"; \
+		setdvar ui_offline_camo	"0"
+		
+		#define OFFLINE_SPECOPS \
+		setdvar ui_offline_primary "10"; \
+		setdvar ui_offline_primary_attachment "3"; \
+		setdvar ui_offline_secondary "0"; \
+		setdvar ui_offline_secondary_attachment "0"; \
+		setdvar ui_offline_perk1 "176"; \
+		setdvar ui_offline_perk2 "157"; \
+		setdvar ui_offline_perk3 "154"; \
+		setdvar ui_offline_sgrenade "101"; \
+		setdvar ui_offline_camo	"0"
+		
+		#define OFFLINE_HEAVYGUNNER \
+		setdvar ui_offline_primary "81"; \
+		setdvar ui_offline_primary_attachment "0"; \
+		setdvar ui_offline_secondary "0"; \
+		setdvar ui_offline_secondary_attachment "0"; \
+		setdvar ui_offline_perk1 "186"; \
+		setdvar ui_offline_perk2 "167"; \
+		setdvar ui_offline_perk3 "162"; \
+		setdvar ui_offline_sgrenade "102"; \
+		setdvar ui_offline_camo	"0"
+		
+		#define OFFLINE_DEMOLITIONS \
+		setdvar ui_offline_primary "71"; \
+		setdvar ui_offline_primary_attachment "0"; \
+		setdvar ui_offline_secondary "0"; \
+		setdvar ui_offline_secondary_attachment "0"; \
+		setdvar ui_offline_perk1 "184"; \
+		setdvar ui_offline_perk2 "158"; \
+		setdvar ui_offline_perk3 "156"; \
+		setdvar ui_offline_sgrenade "103"; \
+		setdvar ui_offline_camo	"0"
+		
+		#define OFFLINE_SNIPER \
+		setdvar ui_offline_primary "65"; \
+		setdvar ui_offline_primary_attachment "0"; \
+		setdvar ui_offline_secondary "0"; \
+		setdvar ui_offline_secondary_attachment "0"; \
+		setdvar ui_offline_perk1 "151"; \
+		setdvar ui_offline_perk2 "161"; \
+		setdvar ui_offline_perk3 "152"; \
+		setdvar ui_offline_sgrenade "103"; \
+		setdvar ui_offline_camo	"0"
+		*/
+		//-------------------------- assault class unlocked by default ------------------------------
+		#include "ui_mp/teamicon.inc"
+		CHOICE_BUTTON_FOCUS( 1, "@CLASS_OFFLINE_CLASS1", scriptMenuResponse "offline_class1_mp,0"; close self, execnow "set ui_class_offset 200", ; )
+		CHOICE_BUTTON_FOCUS( 2, "@CLASS_OFFLINE_CLASS2", scriptMenuResponse "offline_class2_mp,0"; close self, execnow "set ui_class_offset 210", ; )
+		CHOICE_BUTTON_FOCUS( 3, "@CLASS_OFFLINE_CLASS3", scriptMenuResponse "offline_class3_mp,0"; close self, execnow "set ui_class_offset 220", ; )		
+		CHOICE_BUTTON_FOCUS( 4, "@CLASS_OFFLINE_CLASS4", scriptMenuResponse "offline_class4_mp,0"; close self, execnow "set ui_class_offset 230", ; )
+		CHOICE_BUTTON_FOCUS( 5, "@CLASS_OFFLINE_CLASS5", scriptMenuResponse "offline_class5_mp,0"; close self, execnow "set ui_class_offset 240", ; )	
+		
+		CHOICE_BUTTON_FOCUS( 6, "@CLASS_OFFLINE_CLASS6", scriptMenuResponse "offline_class6_mp,0"; close self, execnow "set ui_class_offset 250", ; )
+		CHOICE_BUTTON_FOCUS( 7, "@CLASS_OFFLINE_CLASS7", scriptMenuResponse "offline_class7_mp,0"; close self, execnow "set ui_class_offset 260", ; )
+		CHOICE_BUTTON_FOCUS( 8, "@CLASS_OFFLINE_CLASS8", scriptMenuResponse "offline_class8_mp,0"; close self, execnow "set ui_class_offset 270", ; )		
+		CHOICE_BUTTON_FOCUS( 9, "@CLASS_OFFLINE_CLASS9", scriptMenuResponse "offline_class9_mp,0"; close self, execnow "set ui_class_offset 280", ; )
+		CHOICE_BUTTON_FOCUS( 10, "@CLASS_OFFLINE_CLASS10", scriptMenuResponse "offline_class10_mp,0"; close self, execnow "set ui_class_offset 290", ; )	
+		
+		#include "ui/safearea.menu"
+		
+		/* ================================================================================= */
+		/* ================================ LOADOUT DISPLAY ================================ */
+		/* ================================================================================= */
+		#define LOCAL_DATATABLE		"mp/offline_classTable.csv"
+		
+		#define STAT_CAC_PRIMARY				tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( LOCAL_DATATABLE, 1, (dvarInt("ui_class_offset")+9), 5 )
+		/*
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/statsTable.csv", 4, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+1), 4 ), 0 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/attachmentTable.csv", 4, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+2), 4 ), 9 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/statsTable.csv", 4, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+3), 4 ), 0 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/attachmentTable.csv", 4, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+4), 4) , 9 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/statsTable.csv", 6, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+5), 4 ), 1 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/statsTable.csv", 6, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+6), 4 ), 1 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/statsTable.csv", 6, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+7), 4 ), 1 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/statsTable.csv", 4, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+8), 4 ), 0 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/attachmentTable.csv", 4, tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+9), 4) , 11 )
+
+		#define STAT_CAC_PRIMARY				dvarString( ui_offline_primary )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		dvarString( ui_offline_primary_attachment )
+		#define STAT_CAC_SECONDARY				dvarString( ui_offline_secondary )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	dvarString( ui_offline_secondary_attachment )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	dvarString( ui_offline_perk1 )
+		#define STAT_CAC_SPECIALTY_WEAPON		dvarString( ui_offline_perk2 )
+		#define STAT_CAC_SPECIALTY_ABILITY		dvarString( ui_offline_perk3 )
+		#define STAT_CAC_SPECIAL_GRENADE		dvarString( ui_offline_sgrenade )
+		#define STAT_CAC_CAMO					dvarString( ui_offline_camo )
+		*/
+		
+		// enable positioning tweaks
+		#define REPOSITIONING	1
+		
+		#define WEAPON_X					300
+		#define WEAPON_Y					72
+		#define WEAPON_SIZEX				311
+		#define WEAPON_SIZEY				180
+		#define WEAPON_ORIGIN				WEAPON_X WEAPON_Y
+		
+		#define INV_X						300
+		#define INV_Y						260
+		#define INV_SIZEX					311
+		#define INV_SIZEY					146
+		#define INV_ORIGIN					INV_X INV_Y
+		
+		#include "ui_mp/cac_loadout.inc"
+	}
+}

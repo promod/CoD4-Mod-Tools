@@ -1,0 +1,594 @@
+//======================================
+//    End of Game Summary & Unlocks
+//				   EOG
+//======================================
+
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	// ANIMATION SPEEDS
+	#define POPUP_MOVE_SPEED		400 	//milliseconds
+	#define PROGRESS_BAR_SPEED		1000	//milliseconds
+	#define ANIMATE_DISTANCE		400		//units
+	
+	// top bar position/size
+	#define WIDTH_TOPBAR			460
+	#define HEIGHT_TOPBAR			34
+	#define ORIGIN_TOPBAR_X			0 //(-(WIDTH_TOPBAR/2))
+	#define ORIGIN_TOPBAR_Y			0 //80
+	#define ORIGIN_TOPBAR			ORIGIN_TOPBAR_X ORIGIN_TOPBAR_Y
+	#define RECT_TOPBAR				ORIGIN_TOPBAR WIDTH_TOPBAR HEIGHT_TOPBAR
+	#define RECT_TOPBAR_ALIGNED 	RECT_TOPBAR HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+	
+	// main frame position/size
+	#define WIDTH_MAINFRAME			WIDTH_TOPBAR
+	#define HEIGHT_MAINFRAME		240
+	#define ORIGIN_MAINFRAME_X		ORIGIN_TOPBAR_X
+	#define ORIGIN_MAINFRAME_Y		(ORIGIN_TOPBAR_Y+HEIGHT_TOPBAR+6)
+	#define ORIGIN_MAINFRAME		ORIGIN_MAINFRAME_X ORIGIN_MAINFRAME_Y
+	#define RECT_MAINFRAME			ORIGIN_MAINFRAME WIDTH_MAINFRAME HEIGHT_MAINFRAME
+	#define RECT_MAINFRAME_ALIGNED	RECT_MAINFRAME HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+	
+	// summary content positioning
+	#define ORIGIN_XP_SLOT1				14 162
+	#define ORIGIN_XP_SLOT2				14 186
+	#define ORIGIN_XP_SLOT3				14 210
+	#define ORIGIN_XP_SLOT4				14 238
+	
+	// colors/border
+	#define EOG_BASE_COLOR			0.25 0.25 0.27 1
+	#define EOG_BG_COLOR			0.1 0.1 0.12 0.85
+	#define EOG_SHINE_COLOR			0.9 0.9 0.9 0.45
+	#define EOG_BORDER_SIZE			1
+	#define EOG_BORDER_COLOR		0.35 0.35 0.37 1
+	#define EOG_BORDER				WINDOW_BORDER_RAISED
+	#define EOG_TEXT_COLOR			0.7 0.7 0.72 1
+	#define EOG_TITLE_COLOR			COLOR_TITLE
+	#define EOG_INNER_COLOR			0 0 0 0.3
+	
+	#define TITLE_BG_COLOR_OFF		1 1 1 0.075
+	#define TITLE_BG_COLOR_ON		1 0.8 0.4 0.6 //0.95 0.80 0.3 0.6
+	
+	#define ZERO_TO_ONE				milliseconds()-dvarInt(ui_time_marker)
+	#define UNIT_GROWTH				sin( sin( min( ZERO_TO_ONE, POPUP_MOVE_SPEED )*(1.5707/POPUP_MOVE_SPEED) )*1.5707 )
+	
+	#define FRAME_ANIMATE( offset ) \
+		offset-offset*UNIT_GROWTH
+	
+	#define PC_NEXT_BUTTON( prect1, prect2, visArg )\
+		FRAMING_VIS( prect1, visArg )\
+		FRAMING_VIS( prect2, !(visArg) )\
+		PREPROC_TEXT_DRAW( prect1, 0 0, exp text("@MENU_GOTO_NEXT"), TEXTSIZE_DEFAULT, 0, 1, ITEM_ALIGN_MIDDLE_CENTER, 1 1 1 0.15 textfont UI_FONT_OBJECTIVE visible when( visArg ); )\
+		PREPROC_TEXT_DRAW( prect2, 0 -2, exp text("@MENU_GOTO_NEXT"), TEXTSIZE_DEFAULT, 0, 1, ITEM_ALIGN_MIDDLE_CENTER, 1 1 1 0.15 textfont UI_FONT_OBJECTIVE visible when( !(visArg) ); )\
+		PREPROC_TEXT_DRAW( prect1, 0 0, exp text("@MENU_GOTO_NEXT"), TEXTSIZE_DEFAULT, 0, 1, ITEM_ALIGN_MIDDLE_CENTER, COLOR_TITLE textfont UI_FONT_OBJECTIVE visible when( visArg ); name highlighted_next )\			
+		PREPROC_TEXT_DRAW( prect2, 0 -2, exp text("@MENU_GOTO_NEXT"), TEXTSIZE_DEFAULT, 0, 1, ITEM_ALIGN_MIDDLE_CENTER, COLOR_TITLE textfont UI_FONT_OBJECTIVE visible when( !(visArg) ); name highlighted_next )\
+		itemDef { \
+			type			ITEM_TYPE_BUTTON \
+			rect			prect1 0 0\
+			text			""\
+			textfont		UI_FONT_NORMAL \
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER \
+			visible			when( visArg );\
+			onfocus			{ show highlighted_next; }\
+			leavefocus		{ hide highlighted_next; }\
+			mouseEnter 		{ play "mouse_over"; }\
+			action 			{ play "mouse_click"; close self; }	}\
+		itemDef { \
+			type			ITEM_TYPE_BUTTON \
+			rect			prect2 0 0\
+			text			""\
+			textfont		UI_FONT_NORMAL \
+			textAlign		ITEM_ALIGN_MIDDLE_CENTER \
+			visible			when( !(visArg) );\
+			onfocus			{ show highlighted_next; }\
+			leavefocus		{ hide highlighted_next; }\
+			mouseEnter 		{ play "mouse_over"; }\
+			action 			{ play "mouse_click"; close self; }\
+		}
+	
+	menuDef
+	{
+		name 			"popup_summary"
+		rect			(-(WIDTH_TOPBAR/2)) 68 WIDTH_TOPBAR (HEIGHT_TOPBAR+HEIGHT_MAINFRAME) HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		onOpen			
+		{ 
+			open "popup_summary_body"; 					// open child popup page
+			play "mp_ingame_summary"; 
+			exec "setdvartotime ui_time_marker"; 	// animation start marker
+		}
+		onESC 			
+		{ 
+			close self; 
+		}
+		onClose	
+		{ 	;	}	
+			
+		// Fullscreen darkened backdrop
+		PREPROC_SHADER_DRAW( -800 -800 2000 2000, 0 0, "white", 0 0 0 0.6, 0, 0, 0 0 0 0 )
+
+		// ==================== TOP BAR ===================
+		// Top bar frame
+		#define FRAMING_VIS( prect, visArg ) \
+			PREPROC_SHADER_DRAW( prect, 0 0, "white", EOG_BASE_COLOR, EOG_BORDER, EOG_BORDER_SIZE, 0 0 0 0 visible when(visArg) )\
+			PREPROC_SHADER_DRAW( prect, 0 0, "white", EOG_BG_COLOR, EOG_BORDER, EOG_BORDER_SIZE, EOG_BORDER_COLOR visible when(visArg) )\
+			PREPROC_SHADER_DRAW( prect, 0 0, "line_horizontal", EOG_SHINE_COLOR, EOG_BORDER, EOG_BORDER_SIZE, 0 0 0 0 visible when(visArg) )
+			
+		#define FRAMING( prect ) \
+			FRAMING_VIS( prect, 1 )
+		
+		FRAMING( RECT_TOPBAR )
+		
+		// Top bar perforations
+		PREPROC_PERFORATION( (ORIGIN_TOPBAR_X+2), (ORIGIN_TOPBAR_Y+2), 64, 16, 0, 0, 0, 0 )
+		PREPROC_PERFORATION( (ORIGIN_TOPBAR_X+2), (ORIGIN_TOPBAR_Y+2), 64, 16, 0, 16, 0, 0 )
+		PREPROC_PERFORATION( (ORIGIN_TOPBAR_X+WIDTH_TOPBAR-64), (ORIGIN_TOPBAR_Y+2), -64, 16, 0, 0, 0, 0 )
+		PREPROC_PERFORATION( (ORIGIN_TOPBAR_X+WIDTH_TOPBAR-64), (ORIGIN_TOPBAR_Y+2), -64, 16, 0, 16, 0, 0 )
+		// Top bar title
+		PREPROC_TEXT_DRAW( RECT_TOPBAR, 0 0, exp text("@MPUI_GAME_SUMMARY"), TEXTSIZE_DEFAULT, 0, 1, ITEM_ALIGN_MIDDLE_CENTER, EOG_TITLE_COLOR visible when( dvarString(ui_lobbypopup_text) != "promotion" ); ) 
+		PREPROC_TEXT_DRAW( RECT_TOPBAR, 0 0, exp text("@RANK_PROMOTED"), TEXTSIZE_DEFAULT, 0, 1, ITEM_ALIGN_MIDDLE_CENTER, EOG_TITLE_COLOR visible when( dvarString(ui_lobbypopup_text) == "promotion" ); ) 
+	}
+		
+	menuDef	
+	{
+		name 			"popup_summary_body"
+		exp				rect X (-(WIDTH_TOPBAR/2)) 
+		#ifdef PC
+			exp				rect Y (68+FRAME_ANIMATE(ANIMATE_DISTANCE))
+		#else
+			exp				rect Y (68)
+		#endif
+		rect			0 0 WIDTH_TOPBAR (HEIGHT_TOPBAR+HEIGHT_MAINFRAME+HEIGHT_TOPBAR) HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		onOpen			{ ; }
+		execkeyint BUTTON_A { close self; }
+		onESC 			
+		{ 
+			close self; 
+		}
+		onClose			
+		{ 
+			close "popup_summary"; 
+		}
+
+		// ==================== SUMMARY FRAME ====================
+
+		// Summary frame
+		FRAMING( RECT_MAINFRAME )
+		FRAMING( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_X+HEIGHT_TOPBAR) WIDTH_TOPBAR 6 )
+		PREPROC_SHADER_DRAW( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_X+HEIGHT_TOPBAR) WIDTH_TOPBAR 6, 0 0, "white", 1 1 1 0.15, EOG_BORDER, EOG_BORDER_SIZE, 0 0 0 0 )
+		
+		#define ALIGNED_IN_X	140
+		#define ALIGNED_IN_Y	8
+
+		#define BAR_FIXED 178*((stat(2301)-int(tablelookup( "mp/ranktable.csv", 0, string(stat(252)), 2)))/int(tablelookup("mp/ranktable.csv",0,stat(252),3)))
+		#define ANIMATE_BAR	min( BAR_FIXED, BAR_FIXED*((milliseconds()-dvarInt(ui_time_marker))/PROGRESS_BAR_SPEED) )
+		
+		#define REQUIRED_XP int(stat(2301)-int(tablelookup( "mp/ranktable.csv", 0, string(stat(252)), 2)))
+		#define ANIMATE_NUM int(min( REQUIRED_XP, REQUIRED_XP*((milliseconds()-dvarInt(ui_time_marker))/PROGRESS_BAR_SPEED) ))
+		#define REQUIRED_XP_STRING string(int(tablelookup( "mp/ranktable.csv", 0, string(stat(252)), 3 ))-ANIMATE_NUM) //locString( "@MPUI_X_SLASH_Y", ANIMATE_NUM, int(tablelookup( "mp/ranktable.csv", 0, string(stat(252)), 3 )) )
+		
+		// rank
+		PREPROC_TEXT_DRAW( ORIGIN_MAINFRAME 0 0, ALIGNED_IN_X (ALIGNED_IN_Y+24), text "@MPUI_RANK_PRE", TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR )
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 32 32, (ALIGNED_IN_X+8) (ALIGNED_IN_Y-3), tablelookup( "mp/rankIconTable.csv", 0, stat(252), stat(2326)+1 ), 1 1 1 1, 0, 2, 0.6 0.55 0.45 1 )
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, (ALIGNED_IN_X+46) (ALIGNED_IN_Y+24), exp text( "@"+tablelookup( "mp/ranktable.csv", 0, stat(252), 5 ) ), TEXTSIZE_DEFAULT, 0, 0, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR )
+
+		// xp required
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, (ALIGNED_IN_X+194) (ALIGNED_IN_Y+58), exp text( REQUIRED_XP_STRING ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( stat(252) < MAX_RANK ); )
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ALIGNED_IN_X (ALIGNED_IN_Y+58), exp text( "@MPUI_XP_REQUIRED_PRE" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR visible when( stat(252) < MAX_RANK ); )
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 180 14 , (ALIGNED_IN_X+6) (ALIGNED_IN_Y+42), "white", EOG_INNER_COLOR, WINDOW_BORDER_SUNKEN, 1, EOG_BORDER_COLOR visible when( stat(252) < MAX_RANK ); )
+		// xp bar meter markers
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 1 8 , (ALIGNED_IN_X+52) (ALIGNED_IN_Y+46), "line_vertical", 0.5 0.5 0.6 0.8, 0, 0, EOG_BORDER_COLOR visible when( stat(252) < MAX_RANK ); )
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 1 16 , (ALIGNED_IN_X+98) (ALIGNED_IN_Y+42), "line_vertical", 0.5 0.5 0.6 0.75, 0, 0, EOG_BORDER_COLOR visible when( stat(252) < MAX_RANK ); )
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 1 8 , (ALIGNED_IN_X+142) (ALIGNED_IN_Y+46), "line_vertical", 0.5 0.5 0.6 0.8, 0, 0, EOG_BORDER_COLOR visible when( stat(252) < MAX_RANK ); )
+		// xp bar
+		PREPROC_SHADER_DRAW_ADV( (ORIGIN_MAINFRAME_X+ALIGNED_IN_X+8), (ORIGIN_MAINFRAME_Y+ALIGNED_IN_Y+44), ANIMATE_BAR, 12, "line_vertical", 0.85 0.9 1 1, 0, 1, 1 1 1 1 visible when( stat(252) < MAX_RANK ); )
+
+		// next rank
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ALIGNED_IN_X (ALIGNED_IN_Y+92), exp text( "@MPUI_NEXT_RANK_PRE" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR visible when( stat(252) < MAX_RANK ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 24 24, (ALIGNED_IN_X+12) (ALIGNED_IN_Y+74), tablelookup( "mp/rankIconTable.csv", 0, stat(252)+1, stat(2326)+1 ), 1 1 1 1, 0, 2, 0.6 0.55 0.45 1 visible when( stat(252) < MAX_RANK ); ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, (ALIGNED_IN_X+46) (ALIGNED_IN_Y+92), exp text( "@"+tablelookup( "mp/ranktable.csv", 0, string(stat(252)+1), 5 ) ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( stat(252) < MAX_RANK ); ) 
+
+		// xp gained
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-14) 28, 8 206, "white", 1 1 1 0.075, 0, 0, 0 0 0 0 ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-12) (HEIGHT_MAINFRAME-116), 6 110, "white", EOG_INNER_COLOR, WINDOW_BORDER_SUNKEN, 1, EOG_BORDER_COLOR ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_XP_SLOT1, exp text( "@MPUI_SCORE_PRE" ), TEXTSIZE_SMALL, 144, -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_XP_SLOT2, exp text( "@MPUI_CHALLENGES_PRE" ), TEXTSIZE_SMALL, 144, -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR )	
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_XP_SLOT3, exp text( "@MPUI_MATCHBONUS_PRE" ), TEXTSIZE_SMALL, 144, -10, ITEM_ALIGN_RIGHT, EOG_TEXT_COLOR ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_XP_SLOT4, exp text( "@MPUI_TOTALXP_PRE" ), TEXTSIZE_SMALL, 144, -10, ITEM_ALIGN_RIGHT, COLOR_TITLE ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_XP_SLOT1, exp text( dvarString( player_summary_score ) + " XP" ), TEXTSIZE_SMALL, 152, -10, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( dvarString( player_summary_score ) != "" ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_XP_SLOT2, exp text( dvarString( player_summary_challenge ) + " XP" ), TEXTSIZE_SMALL, 152, -10, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( dvarString( player_summary_challenge ) != "" ) )	
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_XP_SLOT3, exp text( dvarString( player_summary_match ) + " XP" ), TEXTSIZE_SMALL, 152, -10, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR visible when( dvarString( player_summary_match ) != "" ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 0 0, ORIGIN_XP_SLOT4, exp text( dvarString( player_summary_xp ) ), TEXTSIZE_SMALL, 152, -10, ITEM_ALIGN_LEFT, COLOR_TITLE ) 
+		
+		#ifdef PC
+			// @param: prect1, prect2, visArg :: visArg->prect1||prect2
+			PC_NEXT_BUTTON( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_Y+HEIGHT_TOPBAR+6+HEIGHT_MAINFRAME) WIDTH_TOPBAR HEIGHT_TOPBAR, 0 0 0 0, 1 )
+		#endif
+	}
+	
+	#define VIS_WEAPON		dvarInt(player_unlockweapons)!=0
+	#define VIS_PERKS		dvarInt(player_unlockperks)!=0
+	
+	menuDef
+	{
+		name 			"popup_unlock"
+		rect			(-(WIDTH_TOPBAR/2)) 68 WIDTH_TOPBAR (HEIGHT_TOPBAR+HEIGHT_MAINFRAME) HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		onOpen			
+		{ 
+			play "mp_ingame_summary"; 
+			exec "setdvartotime ui_time_marker";		// animation start marker
+			//execnow "set ui_keep_unlock_open 0";
+			setdvar ui_keep_unlock_open "0";
+			
+			uiScript openMenuOnDvar player_unlock_page "1" popup_unlock_page1;	// unlock page 1 only
+			uiScript openMenuOnDvar player_unlock_page "2" popup_unlock_page2;	// unlock page 2 only
+			uiScript openMenuOnDvar player_unlock_page "3" popup_unlock_page1;	// both pages visible
+			
+			#ifdef PC
+				hide highlighted_next;
+			#endif
+
+			uiScript closeMenuOnDvar ui_keep_unlock_open "0" popup_unlock;
+		}
+		onESC 			{ close self; }
+		execkeyint BUTTON_A { close self; }
+		onClose			
+		{ 
+			open popup_summary; 	// when last child page closes this parent topbar, we continue to game summary menu
+		}	
+			
+		// Fullscreen darkened backdrop
+		PREPROC_SHADER_DRAW( -800 -800 2000 2000, 0 0, "white", 0 0 0 0.6, 0, 0, 0 0 0 0 )
+
+		// ==================== TOP BAR ===================
+			
+		FRAMING( RECT_TOPBAR )
+		
+		// Top bar perforations
+		PREPROC_PERFORATION( (ORIGIN_TOPBAR_X+2), (ORIGIN_TOPBAR_Y+2), 64, 16, 0, 0, 0, 0 )
+		PREPROC_PERFORATION( (ORIGIN_TOPBAR_X+2), (ORIGIN_TOPBAR_Y+2), 64, 16, 0, 16, 0, 0 )
+		PREPROC_PERFORATION( (ORIGIN_TOPBAR_X+WIDTH_TOPBAR-64), (ORIGIN_TOPBAR_Y+2), -64, 16, 0, 0, 0, 0 )
+		PREPROC_PERFORATION( (ORIGIN_TOPBAR_X+WIDTH_TOPBAR-64), (ORIGIN_TOPBAR_Y+2), -64, 16, 0, 16, 0, 0 )
+		// Top bar title
+		PREPROC_TEXT_DRAW( RECT_TOPBAR, 0 0, exp text("@MPUI_UNLOCKED"), TEXTSIZE_DEFAULT, 0, 1, ITEM_ALIGN_MIDDLE_CENTER, EOG_TITLE_COLOR ) 
+	}
+	
+	menuDef	
+	{
+		name 			"popup_unlock_page1"
+		exp				rect X (-(WIDTH_TOPBAR/2)) 
+		#ifdef PC
+			exp				rect Y (68+FRAME_ANIMATE(ANIMATE_DISTANCE))
+		#else
+			exp				rect Y (68)
+		#endif
+		rect			0 0 WIDTH_TOPBAR (HEIGHT_TOPBAR+HEIGHT_MAINFRAME+HEIGHT_TOPBAR) HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		onOpen			{ /*execnow "set ui_keep_unlock_open 1";*/ setdvar ui_keep_unlock_open "1"; }
+		onClose			{ uiScript openMenuOnDvar player_unlock_page "3" popup_unlock_page2; uiScript closeMenuOnDvar player_unlock_page "1" popup_unlock;}
+		execkeyint BUTTON_A { close self; }
+		onESC 			{ close self; }
+		
+		/*with weap*/		FRAMING_VIS( RECT_MAINFRAME, VIS_WEAPON )
+		/*without weap*/ 	FRAMING_VIS( ORIGIN_MAINFRAME WIDTH_MAINFRAME 93, !(VIS_WEAPON) )
+		FRAMING( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_X+HEIGHT_TOPBAR) WIDTH_TOPBAR 6 )
+		PREPROC_SHADER_DRAW( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_X+HEIGHT_TOPBAR) WIDTH_TOPBAR 6, 0 0, "white", 1 0 0 0.1, EOG_BORDER, EOG_BORDER_SIZE, 0 0 0 0 )
+		
+		// inner frames
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-12) 81, 6 6, "white", EOG_INNER_COLOR, WINDOW_BORDER_SUNKEN, 1, EOG_BORDER_COLOR ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-12) 140, 6 93, "white", EOG_INNER_COLOR, WINDOW_BORDER_SUNKEN, 1, EOG_BORDER_COLOR visible when(VIS_WEAPON); ) 
+		
+		// camo title shade
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 87 10, 10 8, "white", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockcamo0a) == "" ); ) 		
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 80 28, 10 18, "white", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockcamo0a) == "" ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 -28, 90 18, "button_highlight_end", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockcamo0a) == "" ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 87 10, 10 8, "white", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockcamo0a) != "" ); ) 		
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 80 28, 10 18, "white", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockcamo0a) != "" ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 -28, 90 18, "button_highlight_end", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockcamo0a) != "" ); ) 
+		
+		// attachment title shade
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 87 10, 10 76, "white", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockattachment0a) == "" ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 80 28, 10 48, "white", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockattachment0a) == "" ); )  
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 28, 90 48, "button_highlight_end", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockattachment0a) == "" ); )  
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 87 10, 10 76, "white", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockattachment0a) != "" ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 80 28, 10 48, "white", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockattachment0a) != "" ); )  
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 28, 90 48, "button_highlight_end", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockattachment0a) != "" ); )  
+
+		// weapon title shade
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 80 28, 10 95, "white", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockweapon0) == "" && VIS_WEAPON ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 -28, 90 95, "button_highlight_end", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockweapon0) == "" && VIS_WEAPON ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 80 28, 10 95, "white", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockweapon0) != "" &&VIS_WEAPON ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 -28, 90 95, "button_highlight_end", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockweapon0) != "" && VIS_WEAPON ); ) 
+						
+		// weapon & camo & attachment title text
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 80 20, 10 116, exp text( "@MPUI_WEAPON_PRE" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, 1 1 0.8 0.9 visible when(VIS_WEAPON); )
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 80 20, 10 34, exp text( "@MPUI_CAMO_PRE" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, 1 1 0.8 0.9 visible when( dvarString(player_unlockcamo0a) != "" ); )
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 80 20, 10 74, exp text( "@MPUI_ATTACHMENT_PRE" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, 1 1 0.8 0.9 visible when( dvarString(player_unlockattachment0a) != "" ); )
+
+		// weapon display ( max 2 slots unlocked at once )
+		#define WEAPON_SLOT_WIDTH	216
+		#define WEAPON_SLOT_HEIGHT	100
+		
+		#define WEAPON_SLOT1_X		12
+		#define WEAPON_SLOT2_X		(WEAPON_SLOT_WIDTH+(6)+WEAPON_SLOT1_X)
+		#define WEAPON_SLOT_Y		(HEIGHT_TOPBAR+134)
+
+		#define WEAPON_NAME( pref ) \
+			"@"+tablelookup("mp/statstable.csv",4,pref,3)
+		
+		#define WEAPON_IMAGE( pref ) \
+			tablelookup("mp/statstable.csv",4,pref,6)
+		
+		#define WEAPON_GROUP( pref ) \
+			tablelookup("mp/statstable.csv",4,pref,2)
+		
+		#define WEAPON_DESC( pref ) \
+			"@"+tablelookup("mp/statstable.csv",4,pref,7)
+		
+		// individual unlocked weapon
+		#define WEAPON_SLOT_SET( px, py, pw, ph, pref, visArg )\
+			/*name*/PREPROC_SHADER_DRAW( (px+82) (py-20) -20 80, 0 0, "button_highlight_end", EOG_BASE_COLOR, 0, 0, 0 0 0 0 visArg ) \
+			/*name*/PREPROC_SHADER_DRAW( (px+102) (py-20) (pw-102) 80, 0 0, "white", EOG_BASE_COLOR, 0, 0, 0 0 0 0 visArg ) \
+			/*name*/PREPROC_SHADER_DRAW( (px+88) (py-18) -20 80, 0 0, "button_highlight_end", 0 0 0 0.45, 0, 0, 0 0 0 0 visArg ) \
+			/*name*/PREPROC_SHADER_DRAW( (px+108) (py-18) (pw-108) 80, 0 0, "white", 0 0 0 0.45, 0, 0, 0 0 0 0 visArg ) \
+			PREPROC_SHADER_DRAW( px py pw ph, 0 0, "white", EOG_BASE_COLOR, 0, 0, 0 0 0 0 visArg ) \
+			PREPROC_SHADER_DRAW( px py pw (ph/2), 0 0, "gradient_bottom", 1 1 1 0.5, 0, 0, 0 0 0 0 visArg ) \
+			PREPROC_SHADER_DRAW( px (py+(ph/2)) pw (ph/2), 0 0, "gradient_top", 1 1 1 0.5, 0, 0, 0 0 0 0 visArg ) \
+			PREPROC_TEXT_DRAW_EXP( px py (pw-4) 20, 0 0, exp text(WEAPON_NAME(pref)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, COLOR_TITLE visArg ) \
+			PREPROC_TEXT_DRAW_EXP( (px+4) (py+20) (pw-6) 20, 0 0, exp text(WEAPON_DESC(pref)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, 1 1 1 0.6 autowrapped visArg ) \
+			PREPROC_SHADER_DRAW( (px+90) (py+42) 120 60, 0 0, WEAPON_IMAGE( pref ), 1 1 1 1, 0, 0, 0 0 0 0 visible when( pref != "" && WEAPON_GROUP( pref ) != "weapon_pistol" && VIS_WEAPON ); ) \
+			PREPROC_SHADER_DRAW( (px+150) (py+42) 60 60, 0 0, WEAPON_IMAGE( pref ), 1 1 1 1, 0, 0, 0 0 0 0 visible when( pref != "" && WEAPON_GROUP( pref ) == "weapon_pistol" && VIS_WEAPON ); ) \
+			PREPROC_SHADER_DRAW( (px+2) (py+98) (-(pw-6)) 18, 0 -18, "gradient_fadein", 0 0 0 0.45, 0, 0, 0 0 0 0 visArg ) \
+			PREPROC_TEXT_DRAW_EXP( (px+4) (py+98) (pw-6) 20, 0 -1, exp text("@"+tablelookup("mp/attributesTable.csv",0,WEAPON_GROUP(pref),1)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, 1 1 1 0.6 autowrapped visArg )
+		
+		WEAPON_SLOT_SET( WEAPON_SLOT1_X, WEAPON_SLOT_Y, WEAPON_SLOT_WIDTH, WEAPON_SLOT_HEIGHT, dvarString(player_unlockweapon0), visible when(dvarString(player_unlockweapon0)!="" && VIS_WEAPON ); )
+		WEAPON_SLOT_SET( WEAPON_SLOT2_X, WEAPON_SLOT_Y, WEAPON_SLOT_WIDTH, WEAPON_SLOT_HEIGHT, dvarString(player_unlockweapon1), visible when(dvarString(player_unlockweapon1)!="" && VIS_WEAPON ); )
+		
+		// individual unlocked camo/attachment item block
+		#define BLOCK_WIDTH		108 //114
+		
+		// camo unlocks =================================================================
+		#define CAMO_SET( px, py, pref_a, pref_b )\
+			PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (BLOCK_WIDTH/3) 36, px py, tablelookup("mp/attachmenttable.csv",4,pref_b,6), 1 1 1 1, 0, 0, 0 0 0 0 visible when( pref_a != "" ); ) \
+			PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (BLOCK_WIDTH/3) 36, (px+(BLOCK_WIDTH/3)) py, tablelookup("mp/attachmenttable.csv",4,pref_b,6), 1 1 1 1, 0, 0, 0 0 0 0 visible when( pref_a != "" ); ) \
+			PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (BLOCK_WIDTH/3) 36, (px+((BLOCK_WIDTH/3)*2)) py, tablelookup("mp/attachmenttable.csv",4,pref_b,6), 1 1 1 1, 0, 0, 0 0 0 0 visible when( pref_a != "" ); ) \
+			PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME BLOCK_WIDTH 36, px py, "gradient_bottom", 1 1 1 0.75, 0, 0, 0 0 0 0 visible when( pref_a != "" ); ) \
+			PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (BLOCK_WIDTH-6) 16, (px+6) (py+2), "white", 0.15 0.15 0.15 1, 0, 0, 0 0 0 0 visible when( pref_a != "" ); ) \
+			PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME (BLOCK_WIDTH-6) 20, (px+4) (py-1), exp text("@"+tablelookup("mp/statstable.csv",4,pref_a,3)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_MIDDLE_RIGHT, COLOR_TITLE visible when( pref_a != "" ); ) \
+			PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME BLOCK_WIDTH 20, (px+4) (py+16), exp text("@"+tablelookup("mp/attachmentTable.csv",4,pref_b,3)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_MIDDLE_LEFT, EOG_TEXT_COLOR visible when( pref_a != "" ); )
+			
+		CAMO_SET( 100, 10, dvarString(player_unlockcamo0a), dvarString(player_unlockcamo0b) )
+		CAMO_SET( 212, 10, dvarString(player_unlockcamo1a), dvarString(player_unlockcamo1b) )
+		CAMO_SET( 324, 10, dvarString(player_unlockcamo2a), dvarString(player_unlockcamo2b) )
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 20 30, 434 10, exp text( "..." ), TEXTSIZE_DEFAULT, 0, 0, ITEM_ALIGN_MIDDLE_LEFT, COLOR_TITLE visible when(dvarInt(player_unlockcamos)>3); )
+
+		// attachment unlocks ===========================================================		
+		#define ATTACHMENT_SET( px, py, pref_a, pref_b )\
+			PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME BLOCK_WIDTH 36, px py, "white", 0.37 0.37 0.4 1, 0, 0, 0 0 0 0 visible when( pref_a != "" ); ) \
+			PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME BLOCK_WIDTH 36, px py, "gradient_bottom", 1 1 1 0.625, 0, 0, 0 0 0 0 visible when( pref_a != "" ); ) \
+			PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (BLOCK_WIDTH-6) 16, (px+6) (py+2), "white", 0.15 0.15 0.15 1, 0, 0, 0 0 0 0 visible when( pref_a != "" ); ) \
+			PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME (BLOCK_WIDTH-6) 20, (px+4) (py-1), exp text("@"+tablelookup("mp/statstable.csv",4,pref_a,3)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_MIDDLE_RIGHT, COLOR_TITLE visible when( pref_a != "" ); ) \
+			PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME BLOCK_WIDTH 20, (px+4) (py+16), exp text("@"+tablelookup("mp/attachmentTable.csv",4,pref_b,3)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_MIDDLE_LEFT, EOG_TEXT_COLOR visible when( pref_a != "" ); )
+			
+		ATTACHMENT_SET( 100, 48, dvarString(player_unlockattachment0a), dvarString(player_unlockattachment0b) )
+		ATTACHMENT_SET( 212, 48, dvarString(player_unlockattachment1a), dvarString(player_unlockattachment1b) )
+		ATTACHMENT_SET( 324, 48, dvarString(player_unlockattachment2a), dvarString(player_unlockattachment2b) )		
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 20 30, 434 48, exp text( "..." ), TEXTSIZE_DEFAULT, 0, 0, ITEM_ALIGN_MIDDLE_LEFT, COLOR_TITLE visible when(dvarInt(player_unlockattachments)>3); )
+	
+		#ifdef PC
+			// @param: prect1, prect2, visArg :: visArg->prect1||prect2
+			PC_NEXT_BUTTON( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_Y+HEIGHT_TOPBAR+6+HEIGHT_MAINFRAME) WIDTH_TOPBAR HEIGHT_TOPBAR, ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_Y+HEIGHT_TOPBAR+99) WIDTH_TOPBAR HEIGHT_TOPBAR, VIS_WEAPON )
+		#endif
+	}
+	
+	menuDef	
+	{
+		name 			"popup_unlock_page2"
+		exp				rect X (-(WIDTH_TOPBAR/2)) 
+		#ifdef PC
+			exp				rect Y (68+FRAME_ANIMATE(ANIMATE_DISTANCE))
+		#else
+			exp				rect Y (68)
+		#endif
+		rect			0 0 WIDTH_TOPBAR (HEIGHT_TOPBAR+HEIGHT_MAINFRAME+HEIGHT_TOPBAR) HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		onOpen			{ /*execnow "set ui_keep_unlock_open 1";*/ setdvar ui_keep_unlock_open "1"; }
+		execkeyint BUTTON_A {  close self; }
+		onESC 			{ close self; }
+		onClose			
+		{ 
+			close "popup_unlock"; 					// last popup page in this set, closing parent topbar
+		}
+		
+		// Unlock frame
+		/*with perks*/		FRAMING_VIS( RECT_MAINFRAME, VIS_PERKS )
+		/*without perks*/ 	FRAMING_VIS( ORIGIN_MAINFRAME WIDTH_MAINFRAME 73, !(VIS_PERKS) )
+		
+		// color strip
+		FRAMING( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_X+HEIGHT_TOPBAR) WIDTH_TOPBAR 6 )
+		PREPROC_SHADER_DRAW( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_X+HEIGHT_TOPBAR) WIDTH_TOPBAR 6, 0 0, "white", 0 0 1 0.1, EOG_BORDER, EOG_BORDER_SIZE, 0 0 0 0 )
+		
+		// inner frames
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-12) 61, 6 6, "white", EOG_INNER_COLOR, WINDOW_BORDER_SUNKEN, 1, EOG_BORDER_COLOR ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-12-24) 160, 30 73, "white", EOG_INNER_COLOR, WINDOW_BORDER_SUNKEN, 1, EOG_BORDER_COLOR visible when( VIS_PERKS ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-12-28) 88, 34 144, "white", 1 1 1 0.075, 0, 0, EOG_BORDER_COLOR visible when( VIS_PERKS ); ) 
+
+		#define LOCAL_FEATURES			dvarString(player_unlockfeatures) != 0 || dvarString(player_unlockchallenges) != 0
+		#define LOCAL_FEATURES_NOT		dvarString(player_unlockfeatures) == 0 && dvarString(player_unlockchallenges) == 0
+
+		// feature title shade
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 80 28, 10 9, "white", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( LOCAL_FEATURES_NOT ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 -28, 90 9, "button_highlight_end", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( LOCAL_FEATURES_NOT ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 80 28, 10 9, "white", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( LOCAL_FEATURES ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 -28, 90 9, "button_highlight_end", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( LOCAL_FEATURES ); ) 
+		
+		// perk title shade	
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 63 33, 34 75, "white", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockperk0) == "" && VIS_PERKS ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 56 28, 34 108, "white", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockperk0) == "" && VIS_PERKS ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 -28, 90 108, "button_highlight_end", TITLE_BG_COLOR_OFF, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockperk0) == "" && VIS_PERKS ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 63 33, 34 75, "white", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockperk0) != "" && VIS_PERKS ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 56 28, 34 108, "white", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockperk0) != "" && VIS_PERKS ); ) 
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 7 -28, 90 108, "button_highlight_end", TITLE_BG_COLOR_ON, 0, 0, 0 0 0 0 visible when( dvarString(player_unlockperk0) != "" && VIS_PERKS ); ) 
+											
+		// feature & perk title text
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 80 20, 10 30, exp text( "@MPUI_FEATURE_PRE" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, 1 1 0.8 0.9 visible when( LOCAL_FEATURES ); )
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 80 20, 10 96, exp text( "@MPUI_PERK_PRE" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, 1 1 0.8 0.9 visible when( VIS_PERKS ); )
+		
+		// ================================== feature display =============================
+		
+		#define LOCAL_FEATURE( ptext, visArg ) \
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 348 38, 104 30, exp text( ptext ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, COLOR_TITLE visible when (visArg ); autowrapped )
+		
+		// localized feature list
+		/*
+		#define LOCAL_LOCSTRING0_CH locString( "@MENU_UNLOCK_CH_FEATURE0", dvarInt(player_unlockchallenges) )
+		#define LOCAL_LOCSTRING1_CH LOCAL_LOCSTRING0_CH + " " + locString("@"+dvarString(player_unlockfeature0))
+		#define LOCAL_LOCSTRING2_CH LOCAL_LOCSTRING1_CH + ", " + locString("@"+dvarString(player_unlockfeature1)) 
+		#define LOCAL_LOCSTRING3_CH LOCAL_LOCSTRING2_CH + ", " + locString("@"+dvarString(player_unlockfeature2)) 
+		#define LOCAL_LOCSTRING4_CH LOCAL_LOCSTRING3_CH + ", " + locString("@"+dvarString(player_unlockfeature3)) 
+			
+		#define LOCAL_LOCSTRING1 locString( "@MENU_UNLOCK_1VAR",locString("@"+dvarString(player_unlockfeature0)) )
+		#define LOCAL_LOCSTRING2 LOCAL_LOCSTRING1 + ", " + locString( "@MENU_UNLOCK_1VAR",locString("@"+dvarString(player_unlockfeature1)) )
+		#define LOCAL_LOCSTRING3 LOCAL_LOCSTRING2 + ", " + locString( "@MENU_UNLOCK_1VAR",locString("@"+dvarString(player_unlockfeature2)) )
+		#define LOCAL_LOCSTRING4 LOCAL_LOCSTRING3 + ", " + locString( "@MENU_UNLOCK_1VAR",locString("@"+dvarString(player_unlockfeature3)) )
+		*/
+
+		// challenges merged with features unlock
+		#define LOCAL_LOCSTRING0_CH locString("@MPUI_NEW_CHALLENGES") //#define LOCAL_LOCSTRING0_CH dvarInt(player_unlockchallenges) + " New Challenge(s)"
+		#define LOCAL_LOCSTRING1_CH LOCAL_LOCSTRING0_CH + ", " + locString("@"+dvarString(player_unlockfeature0))
+		#define LOCAL_LOCSTRING2_CH LOCAL_LOCSTRING1_CH + ", " + locString("@"+dvarString(player_unlockfeature1))
+		#define LOCAL_LOCSTRING3_CH LOCAL_LOCSTRING2_CH + ", " + locString("@"+dvarString(player_unlockfeature2))
+		#define LOCAL_LOCSTRING4_CH LOCAL_LOCSTRING3_CH + ", " + locString("@"+dvarString(player_unlockfeature3))
+		
+		// features unlock, no challenges
+		#define LOCAL_LOCSTRING1 locString("@"+dvarString(player_unlockfeature0))
+		#define LOCAL_LOCSTRING2 LOCAL_LOCSTRING1 + ", " + locString("@"+dvarString(player_unlockfeature1))
+		#define LOCAL_LOCSTRING3 LOCAL_LOCSTRING2 + ", " + locString("@"+dvarString(player_unlockfeature2))
+		#define LOCAL_LOCSTRING4 LOCAL_LOCSTRING3 + ", " + locString("@"+dvarString(player_unlockfeature3))
+		
+		// unlock string display conditions
+		#define VIS_CH_FEATURE(features) dvarInt(player_unlockchallenges)!=0 && dvarInt(player_unlockfeatures)==features
+		#define VIS_FEATURE(features) dvarInt(player_unlockchallenges)==0 && dvarInt(player_unlockfeatures)==features
+		
+		// with challenges
+		LOCAL_FEATURE( LOCAL_LOCSTRING0_CH, VIS_CH_FEATURE(0) )
+		LOCAL_FEATURE( LOCAL_LOCSTRING1_CH, VIS_CH_FEATURE(1) )
+		LOCAL_FEATURE( LOCAL_LOCSTRING2_CH, VIS_CH_FEATURE(2) )
+		LOCAL_FEATURE( LOCAL_LOCSTRING3_CH, VIS_CH_FEATURE(3) )
+		LOCAL_FEATURE( LOCAL_LOCSTRING4_CH, VIS_CH_FEATURE(4) )
+		// without challenges
+		LOCAL_FEATURE( LOCAL_LOCSTRING1, VIS_FEATURE(1) )
+		LOCAL_FEATURE( LOCAL_LOCSTRING2, VIS_FEATURE(2) )
+		LOCAL_FEATURE( LOCAL_LOCSTRING3, VIS_FEATURE(3) )
+		LOCAL_FEATURE( LOCAL_LOCSTRING4, VIS_FEATURE(4) )
+		
+		// ==================== perk map layout ( all perk display elements will hide when no perks unlocked: VIS_PERKS ) ==========================		
+		#define PERK_SIZE		32 32
+		#define PERK_SIZE2		40 40
+		
+		#define MAP_START_X		52//24//60//106 //72
+		#define MAP_START_Y		144//78//38
+		#define MAP_ORIGIN		MAP_START_X MAP_START_Y
+		
+		#define MAP_V_SPACING	28
+		#define MAP_H_SPACING	50//46
+		
+		// row and columns for perk chart
+		#define ROW1 			MAP_START_Y
+		#define ROW2			(ROW1+MAP_V_SPACING)
+		#define ROW3			(ROW2+MAP_V_SPACING)
+		#define COL1			MAP_START_X
+		#define COL2			(COL1+MAP_H_SPACING)
+		#define COL3			(COL2+MAP_H_SPACING)
+		#define COL4			(COL3+MAP_H_SPACING)
+		#define COL5			(COL4+MAP_H_SPACING)
+		#define COL6			(COL5+MAP_H_SPACING)
+		#define COL7			(COL6+MAP_H_SPACING)
+		#define COL8			(COL7+MAP_H_SPACING)
+		
+		// get perk data from weaponinfo
+		#include "ui_mp/weaponinfo.menu"
+		
+		// preproc of individual perk items in chart
+		#define PERK_MAP_ITEM( porigin, pref )\
+			/*locked*/	 PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME PERK_SIZE, porigin, tablelookup("mp/statsTable.csv",4,pref,6), \
+			0.125 0.125 0.125 0.5, 0, 0, 0 0 0 0 visible when( stat(int(tablelookup("mp/statsTable.csv",4,pref,1)))==0 && VIS_PERKS ); ) \
+			/*unlocked*/ PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME PERK_SIZE, porigin, tablelookup("mp/statsTable.csv",4,pref,6), \
+			1 1 1 0.6, 0, 0, 0 0 0 0 visible when( stat(int(tablelookup("mp/statsTable.csv",4,pref,1)))>0 && \
+			pref != dvarString(player_unlockperk0) && pref != dvarString(player_unlockperk1) && pref != dvarString(player_unlockperk2) && VIS_PERKS ); ) \
+			/*new*/		 PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME_X ORIGIN_MAINFRAME_Y PERK_SIZE, porigin, tablelookup("mp/statsTable.csv",4,pref,6), \
+			1 1 1 1 exp forecolor A( 0.5+(max( 0+sin(milliseconds()/200), 0-sin(milliseconds()/200) )/2) ), 0, 0, 1 0.9 0.75 0.85 visible when( ( stat(int(tablelookup("mp/statsTable.csv",4,pref,1)))>0 && \
+			pref == dvarString(player_unlockperk0) || pref == dvarString(player_unlockperk1) || pref == dvarString(player_unlockperk2) ) && VIS_PERKS ); )
+
+		//PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME 32 118 , (WIDTH_TOPBAR-38) 9, "white", 1 1 1 0.075, 0, 0, 0 0 0 0 ) 
+		PREPROC_TEXT_DRAW_EXP( (0) (ROW1+6) 34 20, ORIGIN_MAINFRAME, exp text( "1" ), 0.8, 0, 0, ITEM_ALIGN_MIDDLE_CENTER, 0.8 0.85 0.9 0.1 visible when( VIS_PERKS ); textfont UI_FONT_OBJECTIVE )
+		PREPROC_TEXT_DRAW_EXP( (0) (ROW2+6) 34 20, ORIGIN_MAINFRAME, exp text( "2" ), 0.8, 0, 0, ITEM_ALIGN_MIDDLE_CENTER, 0.8 0.85 0.9 0.1 visible when( VIS_PERKS ); textfont UI_FONT_OBJECTIVE )
+		PREPROC_TEXT_DRAW_EXP( (0) (ROW3+6) 34 20, ORIGIN_MAINFRAME, exp text( "3" ), 0.8, 0, 0, ITEM_ALIGN_MIDDLE_CENTER, 0.8 0.85 0.9 0.1 visible when( VIS_PERKS ); textfont UI_FONT_OBJECTIVE )
+
+		// perk 1 group
+		PERK_MAP_ITEM( COL1 ROW1 , REF_C4_X2 )
+		PERK_MAP_ITEM( COL2 ROW1 , REF_SPECIALGRENADE_X3 )
+		PERK_MAP_ITEM( COL3 ROW1 , REF_RPG_X2 )
+		PERK_MAP_ITEM( COL4 ROW1 , REF_CLAYMORE_X2 )
+		PERK_MAP_ITEM( COL5 ROW1 , REF_FRAG_X3 )
+		PERK_MAP_ITEM( COL6 ROW1 , REF_EXTRAAMMO )
+		PERK_MAP_ITEM( COL7 ROW1 , REF_DETECTEXPLOSIVE )
+		PERK_MAP_ITEM( COL8 ROW1 , REF_NULL )
+		
+		// perk 2 group
+		PERK_MAP_ITEM( COL1 ROW2 , REF_BULLETDAMAGE )
+		PERK_MAP_ITEM( COL2 ROW2 , REF_ARMORVEST )
+		PERK_MAP_ITEM( COL3 ROW2 , REF_FASTRELOAD )
+		PERK_MAP_ITEM( COL4 ROW2 , REF_ROF )
+		PERK_MAP_ITEM( COL5 ROW2 , REF_TWOPRIMARIES )
+		PERK_MAP_ITEM( COL6 ROW2 , REF_GPSJAMMER )
+		PERK_MAP_ITEM( COL7 ROW2 , REF_EXPLOSIVEDAMAGE )
+		PERK_MAP_ITEM( COL8 ROW2 , REF_NULL )
+		
+		// perk 3 group
+		PERK_MAP_ITEM( COL1 ROW3 , REF_LONGERSPRINT )
+		PERK_MAP_ITEM( COL2 ROW3 , REF_BULLETACCURACY )
+		PERK_MAP_ITEM( COL3 ROW3 , REF_PISTOLDEATH )
+		PERK_MAP_ITEM( COL4 ROW3 , REF_GRENADEPULLDEATH )
+		PERK_MAP_ITEM( COL5 ROW3 , REF_BULLETPENETRATION )
+		PERK_MAP_ITEM( COL6 ROW3 , REF_HOLDBREATH )
+		PERK_MAP_ITEM( COL7 ROW3 , REF_QUIETER )
+		PERK_MAP_ITEM( COL8 ROW3 , REF_PARABOLIC )		
+
+		#define PERK_NAME( pref_dvar ) \
+			"@"+tablelookup("mp/statsTable.csv",4,dvarString(pref_dvar),3)
+		
+		#define PERK_DESC( pref_dvar ) \
+			"@"+tablelookup("mp/statsTable.csv",4,dvarString(pref_dvar),7)
+		
+		#define PERK_MAP_ITEM_FIXED( porigin, pref ) \
+		PREPROC_SHADER_DRAW( ORIGIN_MAINFRAME PERK_SIZE, porigin, tablelookup("mp/statsTable.csv",4,pref,6), \
+		1 1 1 0.6, 0, 0, 0 0 0 0 visible when( pref != "" && VIS_PERKS ); ) \
+			
+		// unlocked perk item 1
+		PERK_MAP_ITEM_FIXED( 102 75, dvarString(player_unlockperk0) )
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 140 20, 140 91, exp text( PERK_NAME(player_unlockperk0) ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, COLOR_TITLE autowrapped visible when( VIS_PERKS ) ) 
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-98) 20, 140 106, exp text( PERK_DESC(player_unlockperk0) ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR autowrapped visible when( VIS_PERKS ) )  
+
+		// unlocked perk item 2
+		PERK_MAP_ITEM_FIXED( 102 108, dvarString(player_unlockperk1) )
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME 140 20, 140 124, exp text( PERK_NAME(player_unlockperk1) ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, COLOR_TITLE autowrapped visible when( VIS_PERKS ) )  
+		PREPROC_TEXT_DRAW_EXP( ORIGIN_MAINFRAME (WIDTH_MAINFRAME-98) 20, 140 138, exp text( PERK_DESC(player_unlockperk1) ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, EOG_TEXT_COLOR autowrapped visible when( VIS_PERKS ) )  
+
+		#ifdef PC
+			// @param: prect1, prect2, visArg :: visArg->prect1||prect2
+			PC_NEXT_BUTTON( ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_Y+HEIGHT_TOPBAR+6+HEIGHT_MAINFRAME) WIDTH_TOPBAR HEIGHT_TOPBAR, ORIGIN_TOPBAR_X (ORIGIN_TOPBAR_Y+HEIGHT_TOPBAR+79) WIDTH_TOPBAR HEIGHT_TOPBAR, VIS_PERKS )
+		#endif
+
+	}
+}

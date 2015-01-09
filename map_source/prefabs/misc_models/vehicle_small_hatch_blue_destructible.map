@@ -1,0 +1,76 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"target" "auto1"
+"destructible_type" "vehicle_small_hatch_blue"
+"targetname" "destructible"
+"origin" "0.0 0.0 0.0"
+"model" "vehicle_small_hatch_blue_destructible"
+"classname" "script_model"
+}
+// entity 2
+{
+"targetname" "delete_on_load"
+"origin" "51.5 22.0 12.0"
+"model" "vehicle_small_hatch_blue_wheel_lf"
+"classname" "script_model"
+}
+// entity 3
+{
+"targetname" "delete_on_load"
+"origin" "-43.0 22.0 12.0"
+"model" "vehicle_small_hatch_blue_wheel_lf"
+"classname" "script_model"
+}
+// entity 4
+{
+"angles" "0 0 180"
+"targetname" "delete_on_load"
+"origin" "51.5 -22.5 12.0"
+"model" "vehicle_small_hatch_blue_wheel_lf"
+"classname" "script_model"
+}
+// entity 5
+{
+"angles" "0 0 180"
+"targetname" "delete_on_load"
+"origin" "-43.0 -22.5 12.0"
+"model" "vehicle_small_hatch_blue_wheel_lf"
+"classname" "script_model"
+}
+// entity 6
+{
+"origin" "0.0 0.0 0.0"
+"model" "prefabs/misc_models/shared/vehicle_small_hatchback.map"
+"classname" "misc_prefab"
+}
+// entity 7
+{
+"targetname" "auto1"
+"spawnflags" "1"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 80 8 0 ) ( -80 8 0 ) ( -80 -8 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -9 66 ) ( -80 7 66 ) ( 80 7 66 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -32 58 ) ( 80 -32 58 ) ( 80 -32 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -8 58 ) ( 68 8 58 ) ( 68 8 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 32 58 ) ( -80 32 58 ) ( -80 32 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -70 8 58 ) ( -70 -8 58 ) ( -70 -8 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 80 8 -12 ) ( -80 8 -12 ) ( -80 -8 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -8 12 ) ( -80 8 12 ) ( 80 8 12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -76 -12 46 ) ( 84 -12 46 ) ( 84 -12 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -20 46 ) ( 12 -4 46 ) ( 12 -4 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 12 46 ) ( -84 12 46 ) ( -84 12 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 12 46 ) ( -12 -4 46 ) ( -12 -4 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

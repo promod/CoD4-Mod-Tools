@@ -1,0 +1,74 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"northyaw" "225"
+"radiosityScale" "1"
+"sunRadiosity" "2"
+"contrastGain" "0.15"
+"diffusefraction" "0.05"
+"_color" "0.90 0.90 1"
+"sunlight" "1.5"
+"sundirection" "-155 136 0"
+"sundiffusecolor" ".43 .39 1"
+"suncolor" ".9 .98 1"
+"ambient" ".1"
+"bouncefraction" ".1"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 -21 30 ) ( -16 -21 30 ) ( -16 -27 30 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -27 32 ) ( -16 -21 32 ) ( 16 -21 32 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -27 32 ) ( 16 -27 32 ) ( 16 -27 30 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -27 32 ) ( 16 -21 32 ) ( 16 -21 30 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 27 32 ) ( -16 27 32 ) ( -16 27 30 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -21 32 ) ( -16 -27 32 ) ( -16 -27 30 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 2 27 1 ) ( -2 27 1 ) ( -2 -27 1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -27 30 ) ( -2 27 30 ) ( 2 27 30 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2 28 ) ( 2 -2 28 ) ( 2 -2 -1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -27 30 ) ( 2 27 30 ) ( 2 27 1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 2 30 ) ( -2 2 30 ) ( -2 2 1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 27 30 ) ( -2 -27 30 ) ( -2 -27 1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 9 2 0 ) ( -9 2 0 ) ( -9 -2 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -2 2 ) ( -9 2 2 ) ( 9 2 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -9 2 ) ( 9 -9 2 ) ( 9 -9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -2 2 ) ( 9 2 2 ) ( 9 2 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 9 2 ) ( -9 9 2 ) ( -9 9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 2 2 ) ( -9 -2 2 ) ( -9 -2 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 9 30 ) ( 9 -7 30 ) ( -7 9 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 -9 30 ) ( -9 7 30 ) ( 7 -9 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 9 2 0 ) ( -9 2 0 ) ( -9 -2 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -2 2 ) ( -9 2 2 ) ( 9 2 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -2 2 ) ( 9 2 2 ) ( 9 2 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 9 2 ) ( -9 9 2 ) ( -9 9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -7 30 ) ( -7 9 30 ) ( -7 9 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -7 2 ) ( 7 9 2 ) ( 7 9 34 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 7 2 ) ( -7 -9 2 ) ( 9 7 34 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( 9 2 0 ) ( -9 2 0 ) ( -9 -2 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -2 2 ) ( -9 2 2 ) ( 9 2 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -9 2 ) ( 9 -9 2 ) ( 9 -9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 2 2 ) ( -9 -2 2 ) ( -9 -2 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 7 30 ) ( 7 -9 30 ) ( 7 -9 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -7 2 ) ( 7 9 2 ) ( 7 9 34 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 7 2 ) ( -7 -9 2 ) ( 9 7 34 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "ch_dinerboothtable_2"
+"classname" "misc_model"
+}

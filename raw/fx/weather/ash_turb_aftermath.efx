@@ -1,0 +1,187 @@
+iwfx 1
+
+{
+	name "snow";
+	editorFlags useRandSize0 useRandSize1 useRandRotDelta nonUniformScale useRandVel0;
+	flags spawnOffsetNone runRelToWorld useCollision dieOnTouch;
+	spawnRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 18 6;
+	spawnOneShot 5 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 7000 0;
+	spawnOrgX -800 1600;
+	spawnOrgY -200 1600;
+	spawnOrgZ 0 0;
+	spawnOffsetRadius 625 0;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 5 0;
+	angleVelYaw 5 0;
+	angleVelRoll 5 0;
+	initialRot -360 720;
+	gravity 1.5 0;
+	elasticity 1 0;
+	atlasBehavior startFixed;
+	atlasIndex 0;
+	atlasFps 1;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 300
+	{
+		{
+			0 -0.15
+			1 -0.5
+		}
+		{
+			0 0.15
+			1 0.5
+		}
+	};
+	velGraph0Y -450
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0
+			1 0.495215
+		}
+	};
+	velGraph0Z 75
+	{
+		{
+			0 0.423445
+			1 -0.5
+		}
+		{
+			0 -0.2134
+			1 -0.2134
+		}
+	};
+	velGraph1X 1
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 50
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 0
+	{
+		{
+			0 -0.5
+			1 -0.5
+		}
+		{
+			0 0.5
+			1 0.5
+		}
+	};
+	sizeGraph0 15
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.519481
+			1 0.519481
+		}
+	};
+	sizeGraph1 15
+	{
+		{
+			0 0.75
+			1 0.75
+		}
+		{
+			0 1
+			1 1
+		}
+	};
+	scaleGraph 300
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0
+			1 1
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.501961 0.501961 0.501961
+			0.258721 0.627451 0.627451 0.627451
+			0.476744 0.411765 0.411765 0.411765
+			0.761628 0.658824 0.658824 0.658824
+			1 0.501961 0.501961 0.501961
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.165698 0.157895
+			0.325581 0.23445
+			0.511628 0.258373
+			0.761628 0.196172
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	cloud
+	{
+		"cloud_snowflake01"
+		"cloud_snowflake02"
+		"cloud_snowflake03"
+		"cloud_snowflake04"
+	};
+}

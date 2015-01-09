@@ -1,0 +1,397 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START				-360
+#define CHOICE_Y_START				76
+
+#define CHOICE_GROUP				"profile"
+
+#define STYLE_PC					1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#undef	CHOICE_SIZE_X
+#define CHOICE_SIZE_X				320
+
+#undef  CHOICE_TEXT_OFFSET_X
+#define CHOICE_TEXT_OFFSET_X		(-(CHOICE_SIZE_X)+100)
+
+#define TEXT_ON_BG_STYLE 			3	//
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN HORIZONTAL_ALIGN_RIGHT
+
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN VERTICAL_ALIGN_TOP
+
+{
+
+	/////////////////////
+	//
+	//	player profile menu
+	//
+	/////////////////////
+	
+	menuDef 
+	{
+	   	name "player_profile"
+	   	visible 1
+	   	fullscreen 1
+		rect 0 0 640 480
+		soundloop 		"music_mainmenu_mp"
+	   	focusColor COLOR_FOCUSED
+	   	style 1
+	   	border 0
+		onOpen
+		{
+			//execnow "set ui_close_main 1";
+			close main_text;
+			setdvar ui_separator_show "1";
+			setdvar ui_version_show "0";
+			uiScript closeMenuOnDvar ui_playerProfileAlreadyChosen 1 player_profile;
+			uiScript addPlayerProfiles;
+			uiScript selectActivePlayerProfile;
+			uiScript openMenuOnDvar ui_playerProfileCount 0 profile_create_popmenu;
+			
+			setfocus profilelist;
+		}
+		onClose
+		{
+			//execnow "set ui_close_main 0";
+			setdvar ui_separator_show "1";
+			setdvar ui_version_show "1";
+			open main_text;
+		}
+		onEsc
+		{
+			setdvar ui_playerProfileAlreadyChosen 1;
+			uiScript closeMenuOnDvarNot com_playerProfile "" player_profile;
+		}
+	
+		//#include "ui/bg.inc"
+		#include "ui/blurredbg.inc"
+		
+		// back drop shadow
+		//PREPROC_SHADER_DRAW( 0 0 640 480, 0 0, "white", 0 0 0 0.75, 0, 1, 0 0 0 0 )
+		//PREPROC_SHADER_DRAW( ORIGIN_OPTIONS_FRAME 100 480, 0 0, "gradient_fadein", 0 0 0 0.2, 0, 1, 0 0 0 0 )
+		PREPROC_SHADER_DRAW_ALIGNED( ORIGIN_OPTIONS_FRAME 600 480 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN, 100 0, "gradient_fadein", 0 0 0 0.75, 0, 1, 0 0 0 0 )
+		
+		itemDef
+		{
+			name 				profilelist
+			rect 				-300 144 249 260 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN
+			type 				ITEM_TYPE_LISTBOX
+			style 				WINDOW_STYLE_FILLED
+			textstyle 			ITEM_TEXTSTYLE_SHADOWED
+			elementwidth 		120
+			elementheight 		22
+			textscale 			CHOICE_TEXTSIZE
+			elementtype 		LISTBOX_TEXT
+			feeder 				FEEDER_PLAYER_PROFILES
+			textalignx 			6
+			textaligny 			0
+			forecolor 			1 1 1 0.9
+			backcolor 			0 0 0 0
+			border				1
+			bordersize			1
+			bordercolor			1 1 1 0.15
+			outlinecolor 		1 1 1 0.2
+			visible 			MENU_TRUE
+			mouseEnter {  		play "mouse_over"; setitemcolor profilelist bordercolor 1 1 1 0.55 }
+			mouseExit {  		setitemcolor profilelist bordercolor 1 1 1 0.15 }
+			doubleclick
+			{
+				play "mouse_click";
+				setdvar ui_playerProfileAlreadyChosen 1;
+				uiScript loadPlayerProfile;
+				close player_profile;
+			}
+			execkeyint 13
+			{
+				play "mouse_click";
+				setdvar ui_playerProfileAlreadyChosen 1;
+				uiScript loadPlayerProfile;
+				close player_profile;
+			}
+		}
+				
+		CHOICE_SECTION_TITLE( 1, "@MENU_SELECT_PROFILE" )
+		CHOICE_BUTTON( 3, "@MENU_NAME", play "mouse_click";	uiScript sortPlayerProfiles 0 )
+		
+/*
+		itemDef 
+		{
+			type			ITEM_TYPE_LISTBOX
+			feeder			FEEDER_PLAYLISTS
+			rect			0 4 224 280//TEMPLATE_ORIGIN 214 280
+			origin			0 0
+			elementwidth	20
+			elementheight	18
+			noscrollbars
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			forecolor		CHOICE_TEXTCOLOR
+			outlinecolor	0.9 0.9 0.925 0.2 //0.3 0.35 0.55 0.25
+			selectBorder	0.8 0.95 1 0
+			selectIcon		ALTERNATE_HINT_SHADER			
+			disablecolor	0.3 0.3 0.3 1
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			columns			1 22 190 64
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			doubleclick
+			{
+				play "mouse_click";
+				execnow "party_timerVisible 0";
+				execnow "sv_privateclients 1";
+				execnow "ui_gametype random";
+				execnow "xstartparty";
+				execnow "updategamerprofile";
+				close popup_findgame;
+				open menu_xboxlive_lobby;
+				close menu_xboxlive_party;
+			}
+		}
+*/
+
+		itemDef
+		{
+			name load
+			text "@MENU_OK"
+			type 1
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect -300 420 60 20 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN
+			textalign ITEM_ALIGN_CENTER
+			textscale .33
+			textaligny 15
+			forecolor CHOICE_TEXTCOLOR
+			visible MENU_TRUE
+			dvarTest "ui_playerProfileSelected"
+			hideDvar { "" }
+			mouseEnter { play "mouse_over"; }
+			action
+			{
+				play "mouse_click";
+				setdvar ui_playerProfileAlreadyChosen 1;
+				uiScript loadPlayerProfile;
+				close player_profile;
+			}
+  		}
+
+		itemDef
+		{
+			name load
+			text "@MENU_CANCEL"
+			type 1
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect -240 420 60 20 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN
+			textalign ITEM_ALIGN_CENTER
+			textscale .33
+			textaligny 15
+			forecolor CHOICE_TEXTCOLOR
+			visible MENU_TRUE
+			dvarTest "com_playerProfile"
+			hideDvar { "" }
+			mouseEnter { play "mouse_over"; }
+			action
+			{
+				play "mouse_click";
+				setdvar ui_playerProfileAlreadyChosen 1;
+				close player_profile;
+			}
+  		}
+		itemDef
+		{
+			name create
+			text "@MENU_NEW"
+			type 1
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect -180 420 60 20 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN
+			textalign ITEM_ALIGN_CENTER
+			textscale .33
+			textaligny 15
+			forecolor CHOICE_TEXTCOLOR
+			visible MENU_TRUE
+			action { play "mouse_click"; open profile_create_popmenu;  }
+			mouseEnter { play "mouse_over"; }
+		}
+
+		itemDef
+		{
+			name del
+			text "@MENU_DELETE"
+			type 1
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect -120 420 60 20 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN
+			textalign ITEM_ALIGN_CENTER
+			textscale .33
+			textaligny 15
+			forecolor CHOICE_TEXTCOLOR
+			visible MENU_TRUE
+			mouseEnter { play "mouse_over"; }
+			action { play "mouse_click"; open profile_del_sure_popmenu }
+  		}
+  		
+	}	// end player_profile menudef
+	
+	#undef  CHOICE_X_START
+	#undef  CHOICE_Y_START
+	#define CHOICE_X_START			0
+	#define CHOICE_Y_START			150
+	
+	#undef  CHOICE_GROUP
+	#define CHOICE_GROUP			"profile_popup"
+	
+	#include "ui_mp/popupstyle.inc"	
+	#include "ui/choices_setup_popmenu.menu"
+	
+	#undef	CHOICE_SIZE_X
+	#define CHOICE_SIZE_X				320
+	
+	#undef CHOICE_HORIZONTAL_ALIGN
+	#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+	#undef CHOICE_VERTICAL_ALIGN
+	#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+	
+	#undef  CHOICE_TEXT_OFFSET_X
+	#define CHOICE_TEXT_OFFSET_X		(-(CHOICE_SIZE_Y-12))
+	
+	#define SIDE_MARGIN		40
+	
+	/////////////////////
+	//
+	// Create profile popup
+	//
+	/////////////////////
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( profile_create_popmenu, 5, ;, 1 )
+		onOpen { setfocus createprofile; }
+		onClose { uiScript openMenuOnDvar ui_playerProfileCount 0 profile_must_create_popmenu; }
+		
+		CHOICE_POPMENU_TITLE( "@MENU_CREATE_PLAYER_PROFILE" )
+		itemDef {
+			name			createprofile
+			TYPE			ITEM_TYPE_VALIDFILEFIELD
+			text			"@MENU_NAME1"
+			dvar			"ui_playerProfileNameNew"
+			rect			CHOICE_ORIGIN( 3 ) (CHOICE_SIZE_X-(SIDE_MARGIN*2)) 18
+			origin			SIDE_MARGIN -8
+			textaligny		-2
+			maxchars		12
+			maxpaintchars	12
+			textalign		ITEM_ALIGN_MIDDLE_LEFT
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 .3
+			visible			1
+			accept			{ uiScript createPlayerProfile; close self; }
+		}
+		CHOICE_BUTTON( 4, "@MENU_OK", uiScript createPlayerProfile; close self; )
+		CHOICE_BUTTON( 5, "@MENU_CANCEL", close self; )
+	}
+
+	/////////////////////
+	//
+	// Must create new profile popup
+	//
+	/////////////////////
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( profile_must_create_popmenu, 4, ;, 1 )
+		onClose { open profile_create_popmenu; }
+		
+		CHOICE_POPMENU_SUBTITLE( "@MENU_NEED_PLAYER_PROFILE" )
+
+		CHOICE_BUTTON( 4, "@MENU_OK", close self; )
+	}
+	
+	
+	/////////////////////
+	//
+	// Delete for sure? popup
+	//
+	/////////////////////
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( profile_del_sure_popmenu, 5, ;, 1 )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_DELETE_PROFILE" )
+		
+		CHOICE_BUTTON( 4, "@MENU_YES", uiScript deletePlayerProfile; uiScript openMenuOnDvar ui_playerProfileCount 0 profile_must_create_popmenu; close self; )
+		CHOICE_BUTTON( 5, "@MENU_NO", close self; )
+	}
+	
+	/////////////////////
+	//
+	// Profile already exist!
+	//
+	/////////////////////
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( profile_exists_popmenu, 4, ;, 1 )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_A_PROFILE_WITH_THE_SAME_NAME_ALREADY_EXISTS" )
+
+		CHOICE_BUTTON( 4, "@MENU_OK", close self; )
+	}
+		
+	/////////////////////
+	//
+	// Failed to create profile!
+	//
+	/////////////////////
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( profile_create_fail_popmenu, 4, ;, 1 )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_PROFILE_CREATION_FAILED" )
+
+		CHOICE_BUTTON( 4, "@MENU_OK", close self; )
+	}
+		
+	/////////////////////
+	//
+	// Too many profiles!
+	//
+	/////////////////////
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( profile_create_too_many_popmenu, 4, ;, 1 )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_PROFILE_CREATE_TOO_MANY" )
+
+		CHOICE_BUTTON( 4, "@MENU_OK", close self; )
+	}
+	
+		
+	/////////////////////
+	//
+	// Delete profile failed
+	//
+	/////////////////////
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( profile_delete_fail_popmenu, 5, ;, 1 )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_PROFILE_DELETION_FAILED" )
+
+		CHOICE_BUTTON( 5, "@MENU_OK", close self; )
+	}	
+
+}

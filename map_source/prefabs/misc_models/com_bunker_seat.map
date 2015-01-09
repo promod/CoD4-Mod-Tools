@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 10 11 0 ) ( -11 11 0 ) ( -11 -11 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 -11 20 ) ( -11 11 20 ) ( 10 11 20 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 -11 20 ) ( 10 -11 20 ) ( 10 -11 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -11 20 ) ( 8 11 20 ) ( 8 11 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 11 20 ) ( -11 11 20 ) ( -11 11 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 11 19 ) ( -8 -11 19 ) ( -8 -11 -1 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_bunker_seat"
+"classname" "misc_model"
+}

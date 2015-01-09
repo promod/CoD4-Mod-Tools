@@ -1,0 +1,160 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"type" "patchCapped"
+"classname" "func_group"
+// brush 0
+ {
+  curve
+  {
+  contents detail;
+  toolFlags splitGeo;
+   ch_woodwall01
+   lightmap_gray
+   3 3 16 5
+   (
+	v 16 192 0 t 1207.5825 0 1 0
+	v 16 192 16 t 1207.5825 -339.6218 1 -1
+	v 0 192 16 t 0 -339.6218 0 -1
+   )
+   (
+	v 0 192 0 t 0 0 0 0
+	v 0 192 0 t 0 0 0 0
+	v 0 192 0 t 0 0 0 0
+   )
+   (
+	v 0 192 0 t 0 0 0 0
+	v 0 192 0 t 0 0 0 0
+	v 0 192 0 t 0 0 0 0
+   )
+  }
+ }
+// brush 1
+ {
+  curve
+  {
+  contents detail;
+   ch_woodwall01
+   lightmap_gray
+   3 3 16 3
+   (
+	v 0 -64 16 t 0 -339.6218 2.5 -1.5
+	v 8 -64 16 t 603.79126 -339.6218 3 -1.5
+	v 16 -64 0 t 1207.5825 0 3.5 -0.5
+   )
+   (
+	v 0 -64 0 t 0 0 2.5 -0.5
+	v 0 -64 0 t 0 0 2.5 -0.5
+	v 0 -64 0 t 0 0 2.5 -0.5
+   )
+   (
+	v 0 -64 0 t 0 0 2.5 -0.5
+	v 0 -64 0 t 0 0 2.5 -0.5
+	v 0 -64 0 t 0 0 2.5 -0.5
+   )
+  }
+ }
+// brush 2
+ {
+  curve
+  {
+  contents detail;
+  toolFlags splitGeo;
+   ch_woodwall01
+   lightmap_gray
+   5 3 16 8
+   (
+	v 16 192 0 t 0 0 1 1
+	v 80 56 0 t 0 -1536 1 25
+	v 16 -64 0 t 0 -3072 1 45
+   )
+   (
+	v 16 192 16 t 768 0 9 1
+	v 40 56 64 t 768 -1536 9 25
+	v 8 -64 16 t 768 -3072 9 45
+   )
+   (
+	v 0 192 16 t 1536 0 13 1
+	v 0 56 64 t 1536 -1536 13 25
+	v 0 -64 16 t 1536 -3072 13 45
+   )
+   (
+	v -16 192 16 t 2304 0 17 1
+	v -40 56 64 t 2304 -1536 17 25
+	v -8 -64 16 t 2304 -3072 17 45
+   )
+   (
+	v -16 192 0 t 3072 0 25 1
+	v -80 56 0 t 3072 -1536 25 25
+	v -16 -64 0 t 3072 -3072 25 45
+   )
+  }
+ }
+}
+// entity 2
+{
+"type" "patchCapped"
+"classname" "func_group"
+// brush 0
+ {
+  curve
+  {
+  contents detail;
+  toolFlags splitGeo;
+   ch_woodwall01
+   lightmap_gray
+   3 3 16 5
+   (
+	v 0 192 16 t 0 -339.6218 2.5 -1.5
+	v -16 192 16 t -1207.5825 -339.6218 1.5 -1.5
+	v -16 192 0 t -1207.5825 0 1.5 -0.5
+   )
+   (
+	v 0 192 0 t 0 0 2.5 -0.5
+	v 0 192 0 t 0 0 2.5 -0.5
+	v 0 192 0 t 0 0 2.5 -0.5
+   )
+   (
+	v 0 192 0 t 0 0 2.5 -0.5
+	v 0 192 0 t 0 0 2.5 -0.5
+	v 0 192 0 t 0 0 2.5 -0.5
+   )
+  }
+ }
+}
+// entity 3
+{
+"type" "patchCapped"
+"classname" "func_group"
+// brush 0
+ {
+  curve
+  {
+  contents detail;
+   ch_woodwall01
+   lightmap_gray
+   3 3 16 3
+   (
+	v -16 -64 0 t -1207.5825 0 1.5 -0.5
+	v -8 -64 16 t -603.79126 -339.6218 2 -1.5
+	v 0 -64 16 t 0 -339.6218 2.5 -1.5
+   )
+   (
+	v 0 -64 0 t 0 0 2.5 -0.5
+	v 0 -64 0 t 0 0 2.5 -0.5
+	v 0 -64 0 t 0 0 2.5 -0.5
+   )
+   (
+	v 0 -64 0 t 0 0 2.5 -0.5
+	v 0 -64 0 t 0 0 2.5 -0.5
+	v 0 -64 0 t 0 0 2.5 -0.5
+   )
+  }
+ }
+}

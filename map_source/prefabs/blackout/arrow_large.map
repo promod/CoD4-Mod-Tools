@@ -1,0 +1,112 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"targetname" "brush_guide"
+"classname" "script_brushmodel"
+// brush 0
+ {
+  mesh
+  {
+  contents nonColliding;
+   color_red
+   lightmap_gray
+   3 3 16 8
+   (
+	v -48 0 16 t -384 -1024 -3 -7.5
+	v 0 0 16 t 0 -1024 0 -7.5
+	v 48 0 16 t 384 -1024 3 -7.5
+   )
+   (
+	v -48 0 0 t -384 -896 -3 -6.75
+	v 0 0 0 t 0 -896 0 -6.75
+	v 48 0 0 t 384 -896 3 -6.75
+   )
+   (
+	v -48 0 -16 t -384 -768 -3 -6
+	v 0 0 -16 t 0 -768 0 -6
+	v 48 0 -16 t 384 -768 3 -6
+   )
+  }
+ }
+// brush 1
+ {
+  mesh
+  {
+  contents nonColliding;
+   color_red
+   lightmap_gray
+   3 3 16 8
+   (
+	v 120 0 0 t 960 -896 7.5 -7
+	v 48 0 32 t 384 -1152 3 -9
+	v 48 0 0 t 384 -896 3 -7
+   )
+   (
+	v 120 0 0 t 960 -896 7.5 -7
+	v 88 0 0 t 704 -896 5.5 -7
+	v 48 0 0 t 384 -896 3 -7
+   )
+   (
+	v 120 0 0 t 960 -896 7.5 -7
+	v 48 0 -32 t 384 -640 3 -5
+	v 48 0 0 t 384 -896 3 -7
+   )
+  }
+ }
+// brush 2
+ {
+  mesh
+  {
+  contents nonColliding;
+   color_red
+   lightmap_gray
+   3 3 16 8
+   (
+	v 48 0 0 t 384 -896 3 -7
+	v 48 0 32 t 384 -1152 3 -9
+	v 120 0 0 t 960 -896 7.5 -7
+   )
+   (
+	v 48 0 0 t 384 -896 3 -7
+	v 88 0 0 t 704 -896 5.5 -7
+	v 120 0 0 t 960 -896 7.5 -7
+   )
+   (
+	v 48 0 0 t 384 -896 3 -7
+	v 48 0 -32 t 384 -640 3 -5
+	v 120 0 0 t 960 -896 7.5 -7
+   )
+  }
+ }
+// brush 3
+ {
+  mesh
+  {
+  contents nonColliding;
+   color_red
+   lightmap_gray
+   3 3 16 8
+   (
+	v 48 0 16 t 384 -1024 3 -7.5
+	v 0 0 16 t 0 -1024 0 -7.5
+	v -48 0 16 t -384 -1024 -3 -7.5
+   )
+   (
+	v 48 0 0 t 384 -896 3 -6.75
+	v 0 0 0 t 0 -896 0 -6.75
+	v -48 0 0 t -384 -896 -3 -6.75
+   )
+   (
+	v 48 0 -16 t 384 -768 3 -6
+	v 0 0 -16 t 0 -768 0 -6
+	v -48 0 -16 t -384 -768 -3 -6
+   )
+  }
+ }
+}

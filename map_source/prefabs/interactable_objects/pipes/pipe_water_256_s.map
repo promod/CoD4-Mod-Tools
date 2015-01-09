@@ -1,0 +1,29 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 8 -128 ) ( -8 8 -128 ) ( -8 -8 -128 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 128 ) ( -8 8 128 ) ( 8 8 128 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 3 64 ) ( 0 4 64 ) ( 0 4 96 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 0 0 ) ( -3 3 0 ) ( -3 3 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 3 128 ) ( 4 0 128 ) ( 4 0 160 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 4 64 ) ( 3 3 64 ) ( 3 3 96 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 -3 128 ) ( 0 -4 128 ) ( 0 -4 160 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 0 128 ) ( 3 -3 128 ) ( 3 -3 160 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 -3 0 ) ( -4 0 0 ) ( -4 0 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -4 0 ) ( -3 -3 0 ) ( -3 -3 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"angles" "270 0 0"
+"origin" "0.0 0.0 0.0"
+"script_noteworthy" "water"
+"targetname" "pipe_shootable"
+"model" "com_pipe_4x256_ceramic"
+"classname" "script_model"
+}

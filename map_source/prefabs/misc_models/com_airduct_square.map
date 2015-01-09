@@ -1,0 +1,33 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"sunRadiosity" "2"
+"radiosityScale" "1.2"
+"northyaw" "245"
+"diffusefraction" "0.2"
+"_color" ".8 .9 1"
+"sunlight" "1.3"
+"sundirection" "-55 19.5 0"
+"sundiffusecolor" ".9 1 .75"
+"suncolor" "1 1 0.95"
+"ambient" ".1"
+"bouncefraction" ".7"
+"classname" "worldspawn"
+// brush 0
+{
+ ( -31.5 -10 -6.5 ) ( 31.5 -10 -6.5 ) ( 31.5 10 -6.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -31.5 10 6.5 ) ( 31.5 10 6.5 ) ( 31.5 -10 6.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -31.5 -10 -6.5 ) ( -31.5 -10 6.5 ) ( 31.5 -10 6.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 31.5 10 -6.5 ) ( 31.5 -10 -6.5 ) ( 31.5 -10 6.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 31.5 10 -6.5 ) ( 31.5 10 6.5 ) ( -31.5 10 6.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -31.5 10 6.5 ) ( -31.5 -10 6.5 ) ( -31.5 -10 -6.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_airduct_square"
+"classname" "misc_model"
+}

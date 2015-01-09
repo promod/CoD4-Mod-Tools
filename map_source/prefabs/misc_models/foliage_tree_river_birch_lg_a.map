@@ -1,0 +1,72 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 14 0 -16 ) ( -26 0 -16 ) ( -26 -104 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -104 98 ) ( 14 0 98 ) ( 14 0 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 20 98 ) ( -26 20 98 ) ( -26 20 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 0 98 ) ( -18 -104 98 ) ( -18 -104 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 112 85 ) ( -16 112 85 ) ( -16 144 85 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -2 30 ) ( -4 -2 30 ) ( -4 -2 62 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -48 -6 124 ) ( -48 -104 124 ) ( 32 -104 124 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 46 334 ) ( -12 46 334 ) ( -12 46 126 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -104 124 ) ( -48 -6 124 ) ( -104 -6 240 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -104 -104 240 ) ( -104 -6 240 ) ( 82 -6 414 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 140 -6 388 ) ( 140 -104 388 ) ( 82 -104 414 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -6 124 ) ( 32 -104 124 ) ( 140 -104 388 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 145.5 -60 126 ) ( 145.5 -144 320 ) ( 177.5 -60 126 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 145.5 -144 320 ) ( 145.5 -14 414 ) ( 177.5 -144 320 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 145.5 -18 414 ) ( 145.5 46 364 ) ( 177.5 -18 414 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -144 414 ) ( -104 -14 414 ) ( -18 -144 446 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 140 -48 414 ) ( 20 -144 414 ) ( 140 -48 446 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 28 -2 214 ) ( -60 -2 214 ) ( -60 20 214 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 214 ) ( 28 -2 214 ) ( 8 -2 30 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 20 98 ) ( -26 20 98 ) ( -26 20 -16 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 20 214 ) ( -60 -12 214 ) ( -18 -12 30 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 7259 30 ) ( -18 7259 36 ) ( -18 7291 30 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( -2 -108 300 ) ( -2 -92 300 ) ( 14 -92 300 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -18 30 ) ( 2 -18 30 ) ( 2 -104 300 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -6 30 ) ( 14 -18 30 ) ( 14 -104 300 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -6 30 ) ( 10 -6 30 ) ( 10 -92 300 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -18 30 ) ( -2 -6 30 ) ( -2 -92 300 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -18 34 ) ( -18 -18 30 ) ( 14 -18 34 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( 14 -6 30 ) ( 14 -18 30 ) ( 14 -104 300 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -1 184 ) ( 10 -1 184 ) ( 10 -87 454 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -18 30 ) ( -2 -6 30 ) ( -2 -92 300 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -2 34 ) ( 14 -2 31 ) ( 46 -2 31 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -18 32 ) ( 14 -18 35 ) ( 46 -18 32 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 0 -16 ) ( -26 0 -16 ) ( -26 -104 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+ ( -18 20 214 ) ( 28 20 214 ) ( 28 -2 214 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -2 214 ) ( 28 -2 214 ) ( 14 -2 85 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 20 214 ) ( 14 20 85 ) ( 14 -2 85 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 20 85 ) ( 14 20 85 ) ( 28 20 214 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -2 214 ) ( -18 -2 85 ) ( -18 20 85 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -2 85 ) ( 14 -2 85 ) ( 14 20 85 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"angles" "0 300 0"
+"model" "foliage_tree_river_birch_lg_a"
+"classname" "misc_model"
+}

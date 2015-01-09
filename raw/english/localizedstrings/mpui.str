@@ -1,0 +1,1339 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           BOG
+LANG_ENGLISH        "Bog"
+
+REFERENCE           SABOTAGE
+LANG_ENGLISH        "Sabotage"
+
+REFERENCE           SABOTAGE_CUSTOM
+LANG_ENGLISH        "Sabotage (Custom)"
+
+REFERENCE           DEATHMATCH
+LANG_ENGLISH        "Free-for-all"
+
+REFERENCE           TEAM_DEATHMATCH
+LANG_ENGLISH        "Team Deathmatch"
+
+REFERENCE           CAPTURE_THE_FLAG
+LANG_ENGLISH        "Capture the Flag"
+
+REFERENCE           HEADQUARTERS
+LANG_ENGLISH        "Headquarters"
+
+REFERENCE           SEARCH_AND_DESTROY
+LANG_ENGLISH        "Search and Destroy"
+
+REFERENCE           SEARCH_AND_DESTROY_CUSTOM
+LANG_ENGLISH        "Search and Destroy (Custom)"
+
+REFERENCE           WAR
+LANG_ENGLISH        "Team Deathmatch"
+
+REFERENCE           DOMINATION
+LANG_ENGLISH        "Domination"
+
+REFERENCE           KING_OF_THE_HILL
+LANG_ENGLISH        "King of the Hill"
+
+REFERENCE           WAR_HARDCORE
+LANG_ENGLISH        "Hardcore Team Deathmatch"
+
+REFERENCE           DM_HARDCORE
+LANG_ENGLISH        "Hardcore Free-for-all"
+
+REFERENCE           MAIN_MENU
+LANG_ENGLISH        "Main Menu"
+
+REFERENCE           TEAM
+LANG_ENGLISH        "Team"
+
+REFERENCE           WEAPON
+LANG_ENGLISH        "Weapon"
+
+REFERENCE           VIEW_MAP
+LANG_ENGLISH        "View Map"
+
+REFERENCE           CALL_VOTE
+LANG_ENGLISH        "Call Vote"
+
+REFERENCE           AUTOASSIGN
+LANG_ENGLISH        "Auto-Assign"
+
+REFERENCE           AMERICAN
+LANG_ENGLISH        "American"
+
+REFERENCE           BRITISH
+LANG_ENGLISH        "British"
+
+REFERENCE           RUSSIAN
+LANG_ENGLISH        "Russian"
+
+REFERENCE           MARINES
+LANG_ENGLISH        "Marine Force Recon"
+
+REFERENCE           SPETSNAZ
+LANG_ENGLISH        "Spetsnaz"
+
+REFERENCE           OPFOR
+LANG_ENGLISH        "OpFor"
+
+REFERENCE           SAS
+LANG_ENGLISH        "S.A.S."
+
+REFERENCE           MARINES_SHORT
+LANG_ENGLISH        "Marines"
+
+REFERENCE           SPETSNAZ_SHORT
+LANG_ENGLISH        "Spetsnaz"
+
+REFERENCE           OPFOR_SHORT
+LANG_ENGLISH        "OpFor"
+
+REFERENCE           SAS_SHORT
+LANG_ENGLISH        "S.A.S."
+
+REFERENCE           SPECTATE
+LANG_ENGLISH        "Spectate"
+
+REFERENCE           MP44
+LANG_ENGLISH        "MP44"
+
+REFERENCE           1_AMERICAN
+LANG_ENGLISH        "1. American"
+
+REFERENCE           2_AMERICAN
+LANG_ENGLISH        "2. American"
+
+REFERENCE           1_BRITISH
+LANG_ENGLISH        "1. British"
+
+REFERENCE           2_BRITISH
+LANG_ENGLISH        "2. British"
+
+REFERENCE           1_RUSSIAN
+LANG_ENGLISH        "1. Russian"
+
+REFERENCE           2_RUSSIAN
+LANG_ENGLISH        "2. Russian"
+
+REFERENCE           1_AUTOASSIGN
+LANG_ENGLISH        "1. Auto-Assign"
+
+REFERENCE           2_AUTOASSIGN
+LANG_ENGLISH        "2. Auto-Assign"
+
+REFERENCE           3_AUTOASSIGN
+LANG_ENGLISH        "3. Auto-Assign"
+
+REFERENCE           2_SPECTATE
+LANG_ENGLISH        "2. Spectate"
+
+REFERENCE           4_SPECTATE
+LANG_ENGLISH        "4. Spectate"
+
+REFERENCE           CHANGE_MAP
+LANG_ENGLISH        "Change Map"
+
+REFERENCE           3_CHANGE_MAP
+LANG_ENGLISH        "3. Change Map"
+
+REFERENCE           CHANGE_GAME_TYPEMAP
+LANG_ENGLISH        "Change Game Type/Map"
+
+REFERENCE           4_CHANGE_GAME_TYPEMAP
+LANG_ENGLISH        "4. Change Game Type/Map"
+
+REFERENCE           CHANGE_GAME_TYPE
+LANG_ENGLISH        "Change Game Type"
+
+REFERENCE           KICK_PLAYER
+LANG_ENGLISH        "Kick Player"
+
+REFERENCE           5_KICK_PLAYER
+LANG_ENGLISH        "5. Kick Player"
+
+REFERENCE           OK
+LANG_ENGLISH        "Ok"
+
+REFERENCE           TEMPORARY_BAN
+LANG_ENGLISH        "Temporary Ban"
+
+REFERENCE           TEMPORARILY_BAN_PLAYER
+LANG_ENGLISH        "Temporarily Ban Player"
+
+REFERENCE           NEXT_MAP
+LANG_ENGLISH        "Next Map"
+
+REFERENCE           2_NEXT_MAP
+LANG_ENGLISH        "2. Next Map"
+
+REFERENCE           CHANGE_GAMETYPEMAP
+LANG_ENGLISH        "Change Gametype/Map"
+
+REFERENCE           ON
+LANG_ENGLISH        "On"
+
+REFERENCE           OFF
+LANG_ENGLISH        "Off"
+
+REFERENCE           REFLECT
+LANG_ENGLISH        "Reflect"
+
+REFERENCE           ENABLE_VOTING
+LANG_ENGLISH        "Enable Voting"
+
+REFERENCE           RECONNECT_LIMIT
+LANG_ENGLISH        "Reconnect Limit"
+
+REFERENCE           RESTART_MAP
+LANG_ENGLISH        "Restart Map"
+
+REFERENCE           1_RESTART_MAP
+LANG_ENGLISH        "1. Restart Map"
+
+REFERENCE           PLAYERSUSING
+LANG_ENGLISH        "Players Using:"
+
+REFERENCE           CLICK_TO_CONTINUE
+LANG_ENGLISH        "Click to Continue"
+
+REFERENCE           PRESS_A_TO_CONTINUE
+LANG_ENGLISH        "Press (A) to Continue"
+
+REFERENCE           PUNKBUSTER
+LANG_ENGLISH        "PunkBuster"
+
+REFERENCE           ENABLEPUNKBUSTERTOCONNECT
+LANG_ENGLISH        "You must enable PunkBuster on the client to connect to a PunkBuster enabled server.\nEnable PunkBuster and connect?"
+
+REFERENCE           SYNCPUNKBUSTERSTARTLISTENSERVER
+LANG_ENGLISH        "You must enable PunkBuster on the client before starting a non-dedicated server.\nEnable PunkBuster and start?"
+
+REFERENCE           PUNKBUSTERWITHCOLON
+LANG_ENGLISH        "PunkBuster:"
+
+REFERENCE           PUNKBUSTERWITHCOLONANDTWOSPACES
+LANG_ENGLISH        "PunkBuster:  "
+
+REFERENCE           1_CHANGE_WEAPON
+LANG_ENGLISH        "1. Change Weapon"
+
+REFERENCE           2_CHANGE_TEAM
+LANG_ENGLISH        "2. Change Team"
+
+REFERENCE           3_MUTE_PLAYERS
+LANG_ENGLISH        "3. Mute Players"
+
+REFERENCE           4_CALL_VOTE
+LANG_ENGLISH        "4. Call Vote"
+
+REFERENCE           5_LEAVE_GAME
+LANG_ENGLISH        "5. Leave Game"
+
+REFERENCE           CHANGE_WEAPON
+LANG_ENGLISH        "Change Weapon"
+
+REFERENCE           CHANGE_TEAM
+LANG_ENGLISH        "Change Team"
+
+REFERENCE           LEAVE_GAME
+LANG_ENGLISH        "Leave Game"
+
+REFERENCE           LEAVE_GAME1
+LANG_ENGLISH        "Leave Game?"
+
+REFERENCE           THUMBSTICK_LAYOUT
+LANG_ENGLISH        "Stick Layout:"
+
+REFERENCE           BUTTON_LAYOUT
+LANG_ENGLISH        "Button Layout:"
+
+REFERENCE           LOOK_SENSITIVITY
+LANG_ENGLISH        "Look Sensitivity:"
+
+REFERENCE           LOOK_INVERSION
+LANG_ENGLISH        "Look Inversion:"
+
+REFERENCE           CONTROLLER_VIBRATION
+LANG_ENGLISH        "Controller Vibration:"
+
+REFERENCE           END_GAME
+LANG_ENGLISH        "End Game"
+
+REFERENCE           END_GAME1
+LANG_ENGLISH        "End Game?"
+
+REFERENCE           TEAMS
+LANG_ENGLISH        "Teams"
+
+REFERENCE           1_YES
+LANG_ENGLISH        "1. Yes"
+
+REFERENCE           2_NO
+LANG_ENGLISH        "2. No"
+
+REFERENCE           MUTE_PLAYERS
+LANG_ENGLISH        "Mute Players"
+
+REFERENCE           ENABLE_VOICE_CHAT
+LANG_ENGLISH        "Enable Voice Chat"
+
+REFERENCE           DISABLE_VOICE_CHAT
+LANG_ENGLISH        "Disable Voice Chat"
+
+REFERENCE           SABOTAGE_COUNTDOWN
+LANG_ENGLISH        "Gridiron"
+
+REFERENCE           SEARCH_AND_DESTROY_MULTI
+LANG_ENGLISH        "Search and Destroy"
+
+REFERENCE           CRASH
+LANG_ENGLISH        "Crash"
+
+REFERENCE           FACILITY
+LANG_ENGLISH        "Facility"
+
+REFERENCE           ARGUN
+LANG_ENGLISH        "Argun"
+
+REFERENCE           STRIKE
+LANG_ENGLISH        "Strike"
+
+REFERENCE           BACKLOT
+LANG_ENGLISH        "Backlot"
+
+REFERENCE           DUSK
+LANG_ENGLISH        "Dusk"
+
+REFERENCE           CONVOY
+LANG_ENGLISH        "Ambush"
+
+REFERENCE           CITYSTREETS
+LANG_ENGLISH        "District"
+
+REFERENCE           PIPELINE
+LANG_ENGLISH        "Pipeline"
+
+REFERENCE           CELLBLOCK
+LANG_ENGLISH        "Cellblock"
+
+REFERENCE           MANSION
+LANG_ENGLISH        "Mansion"
+
+REFERENCE           PALACE
+LANG_ENGLISH        "Palace"
+
+REFERENCE           SHIPMENT
+LANG_ENGLISH        "Shipment"
+
+REFERENCE           SHIPMENTSS
+LANG_ENGLISH        "Shipment(Splitscreen)"
+
+REFERENCE           ENDROUND
+LANG_ENGLISH        "End Round"
+
+REFERENCE           MENU
+LANG_ENGLISH        "Menu"
+
+REFERENCE           SEARCH_AND_DESTROY_CLASSIC
+LANG_ENGLISH        "Search and Destroy"
+
+REFERENCE           SABOTAGE_HOTPOTATO
+LANG_ENGLISH        "Sabotage"
+
+REFERENCE           TEAM_HARDPOINT
+LANG_ENGLISH        "Team Deathmatch"
+
+REFERENCE           HARDPOINT
+LANG_ENGLISH        "Free-for-all"
+
+REFERENCE           ROOFTOPS
+LANG_ENGLISH        "Rooftops"
+
+REFERENCE           OVERGROWN
+LANG_ENGLISH        "Overgrown"
+
+REFERENCE           OVERGROWN_NIGHT
+LANG_ENGLISH        "Overgrown Night"
+
+REFERENCE           CITYSTREETS_NIGHT
+LANG_ENGLISH        "Citystreets Night"
+
+REFERENCE           STRIKE_NIGHT
+LANG_ENGLISH        "Strike Night"
+
+REFERENCE           HILL
+LANG_ENGLISH        "Hill"
+
+REFERENCE           CROSSFIRE
+LANG_ENGLISH        "Crossfire"
+
+REFERENCE           FARM
+LANG_ENGLISH        "Downpour"
+
+REFERENCE           VACANT
+LANG_ENGLISH        "Vacant"
+
+REFERENCE           BLOC
+LANG_ENGLISH        "Bloc"
+
+REFERENCE           CARGOSHIP
+LANG_ENGLISH        "Wet Work"
+
+REFERENCE           COUNTDOWN
+LANG_ENGLISH        "Countdown"
+
+REFERENCE           SHOWDOWN
+LANG_ENGLISH        "Showdown"
+
+REFERENCE           FIND_GAME
+LANG_ENGLISH        "Find Game"
+
+REFERENCE           PRIVATE_MATCH
+LANG_ENGLISH        "Private Match"
+
+REFERENCE           CREATE_A_CLASS
+LANG_ENGLISH        "Create a Class"
+
+REFERENCE           BARRACKS
+LANG_ENGLISH        "Barracks"
+
+REFERENCE           INVITE_FRIENDS
+LANG_ENGLISH        "Invite Friends"
+
+REFERENCE           PARTY_INVITE
+LANG_ENGLISH        "Party Invite"
+
+REFERENCE           CREATE_PARTY
+LANG_ENGLISH        "Create Party"
+
+REFERENCE           GAME_SUMMARY
+LANG_ENGLISH        "Game Summary"
+
+REFERENCE           N_XP
+LANG_ENGLISH        "&&1 XP"
+
+REFERENCE           RANK
+LANG_ENGLISH        "Rank"
+
+REFERENCE           NAME
+LANG_ENGLISH        "Name"
+
+REFERENCE           X_SLASH_Y
+LANG_ENGLISH        "&&1/&&2"
+
+REFERENCE           MATCHBONUS
+LANG_ENGLISH        "Match Bonus"
+
+REFERENCE           SCORE_PRE
+LANG_ENGLISH        "Score:"
+
+REFERENCE           CHALLENGES_PRE
+LANG_ENGLISH        "Challenge Completed:"
+
+REFERENCE           MATCHBONUS_PRE
+LANG_ENGLISH        "Match Bonus:"
+
+REFERENCE           TOTALXP_PRE
+LANG_ENGLISH        "Total XP Earned:"
+
+REFERENCE           RANK_PRE
+LANG_ENGLISH        "Rank:"
+
+REFERENCE           XP_REQUIRED_PRE
+LANG_ENGLISH        "XP Required:"
+
+REFERENCE           NEXT_RANK_PRE
+LANG_ENGLISH        "Next Rank:"
+
+REFERENCE           WEAPON_PRE
+LANG_ENGLISH        "Weapon:"
+
+REFERENCE           PERK_PRE
+LANG_ENGLISH        "Perk:"
+
+REFERENCE           CHALLENGE_PRE
+LANG_ENGLISH        "Challenge:"
+
+REFERENCE           CAMO_PRE
+LANG_ENGLISH        "Camo:"
+
+REFERENCE           XP_PRE
+LANG_ENGLISH        "XP:"
+
+REFERENCE           ATTACHMENT_PRE
+LANG_ENGLISH        "Attachment:"
+
+REFERENCE           FEATURE_PRE
+LANG_ENGLISH        "Feature:"
+
+REFERENCE           START_MATCH
+LANG_ENGLISH        "Start Match"
+
+REFERENCE           GAME_SETUP
+LANG_ENGLISH        "Game Setup"
+
+REFERENCE           SCORE
+LANG_ENGLISH        "Score"
+
+REFERENCE           LEVEL_N
+LANG_ENGLISH        "Lv &&1"
+
+REFERENCE           KILLS_PRE
+LANG_ENGLISH        "Kills:"
+
+REFERENCE           ASSISTS_PRE
+LANG_ENGLISH        "Assists:"
+
+REFERENCE           STREAK_PRE
+LANG_ENGLISH        "Streak:"
+
+REFERENCE           DEATHS_PRE
+LANG_ENGLISH        "Deaths:"
+
+REFERENCE           TIME_PLAYED_PRE
+LANG_ENGLISH        "Time Played:"
+
+REFERENCE           WINS
+LANG_ENGLISH        "Wins"
+
+REFERENCE           LOSSES
+LANG_ENGLISH        "Losses"
+
+REFERENCE           RATIO
+LANG_ENGLISH        "Ratio"
+
+REFERENCE           ACCURACY
+LANG_ENGLISH        "Accuracy"
+
+REFERENCE           KILLS
+LANG_ENGLISH        "Kills"
+
+REFERENCE           PLAYER
+LANG_ENGLISH        "Player"
+
+REFERENCE           TIME_PLAYED
+LANG_ENGLISH        "Time Played"
+
+REFERENCE           LEVEL
+LANG_ENGLISH        "Level"
+
+REFERENCE           MISSES
+LANG_ENGLISH        "Misses"
+
+REFERENCE           HITS
+LANG_ENGLISH        "Hits"
+
+REFERENCE           FRIENDS
+LANG_ENGLISH        "Friends"
+
+REFERENCE           SCORE_GLOBAL
+LANG_ENGLISH        "Score (Global)"
+
+REFERENCE           SCORE_FRIENDS
+LANG_ENGLISH        "Score (Friends)"
+
+REFERENCE           KILLS_GLOBAL
+LANG_ENGLISH        "Kills (Global)"
+
+REFERENCE           KILLS_FRIENDS
+LANG_ENGLISH        "Kills (Friends)"
+
+REFERENCE           ACCURACY_GLOBAL
+LANG_ENGLISH        "Accuracy (Global)"
+
+REFERENCE           ACCURACY_FRIENDS
+LANG_ENGLISH        "Accuracy (Friends)"
+
+REFERENCE           WINS_GLOBAL
+LANG_ENGLISH        "Wins (Global)"
+
+REFERENCE           WINS_FRIENDS
+LANG_ENGLISH        "Wins (Friends)"
+
+REFERENCE           CLAN_TAG
+LANG_ENGLISH        "Clan Tag"
+
+REFERENCE           PRESTIGE_MODE
+LANG_ENGLISH        "Prestige Mode"
+
+REFERENCE           YOUR_CLASSES
+LANG_ENGLISH        "Your Custom Classes"
+
+REFERENCE           PERK1
+LANG_ENGLISH        "Perk 1"
+
+REFERENCE           PERK2
+LANG_ENGLISH        "Perk 2"
+
+REFERENCE           PERK3
+LANG_ENGLISH        "Perk 3"
+
+REFERENCE           RENAME
+LANG_ENGLISH        "Rename"
+
+REFERENCE           PRIMARY_WEAPON
+LANG_ENGLISH        "Primary Weapon"
+
+REFERENCE           SECONDARY_WEAPON
+LANG_ENGLISH        "Secondary Weapon"
+
+REFERENCE           SIDE_ARM
+LANG_ENGLISH        "Side Arm"
+
+REFERENCE           OFFHAND_GRENADE
+LANG_ENGLISH        "Offhand Grenade"
+
+REFERENCE           TIME_LIMIT_PRE
+LANG_ENGLISH        "Time Limit:"
+
+REFERENCE           ROUND_LENGTH_PRE
+LANG_ENGLISH        "Round Length:"
+
+REFERENCE           SCORE_LIMIT_PRE
+LANG_ENGLISH        "Score Limit:"
+
+REFERENCE           SPECTATING_PRE
+LANG_ENGLISH        "Spectating:"
+
+REFERENCE           KILLCAM_PRE
+LANG_ENGLISH        "Allow Killcam:"
+
+REFERENCE           FORCE_RESPAWN_PRE
+LANG_ENGLISH        "Force Respawn:"
+
+REFERENCE           FRIENDY_FIRE_PRE
+LANG_ENGLISH        "Friendly Fire:"
+
+REFERENCE           NUMLIVES_PRE
+LANG_ENGLISH        "Number of Lives:"
+
+REFERENCE           RESPAWN_DELAY_PRE
+LANG_ENGLISH        "Respawn Delay:"
+
+REFERENCE           MAX_HEALTH_PRE
+LANG_ENGLISH        "Max Health:"
+
+REFERENCE           HEALTH_REGEN_PRE
+LANG_ENGLISH        "Health Regeneration:"
+
+REFERENCE           SPRINT_PRE
+LANG_ENGLISH        "Allow Sprint:"
+
+REFERENCE           HEADSHOTS_PRE
+LANG_ENGLISH        "Headshots:"
+
+REFERENCE           HEADSHOTS_ONLY_PRE
+LANG_ENGLISH        "Headshots Only:"
+
+REFERENCE           PERKS_PRE
+LANG_ENGLISH        "Allow Perks:"
+
+REFERENCE           OLDSCHOOL_PRE
+LANG_ENGLISH        "Old School Mode:"
+
+REFERENCE           HARDCORE_PRE
+LANG_ENGLISH        "Hardcore Mode:"
+
+REFERENCE           BOMB_TIMER_PRE
+LANG_ENGLISH        "Bomb Timer:"
+
+REFERENCE           PLANT_TIME_PRE
+LANG_ENGLISH        "Bomb Plant Time:"
+
+REFERENCE           DEFUSE_PRE
+LANG_ENGLISH        "Bomb Defuse Time:"
+
+REFERENCE           MULTIBOMB_PRE
+LANG_ENGLISH        "Multi-Bomb Mode:"
+
+REFERENCE           HOT_POTATO_PRE
+LANG_ENGLISH        "Hot Potato Mode:"
+
+REFERENCE           ROUND_LIMIT_PRE
+LANG_ENGLISH        "Number of Rounds:"
+
+REFERENCE           ROUND_SWITCH_PRE
+LANG_ENGLISH        "Round Switch:"
+
+REFERENCE           CHANGE_RULES
+LANG_ENGLISH        "Change Rules"
+
+REFERENCE           MOTD
+LANG_ENGLISH        "Message of the Day"
+
+REFERENCE           PLAYER_OPTIONS
+LANG_ENGLISH        "Player Options"
+
+REFERENCE           YES
+LANG_ENGLISH        "Yes"
+
+REFERENCE           NO
+LANG_ENGLISH        "No"
+
+REFERENCE           CHALLENGES
+LANG_ENGLISH        "Challenges"
+
+REFERENCE           DESC_FIND_GAME
+LANG_ENGLISH        "Pick a game mode and quickly join a game online."
+
+REFERENCE           DESC_FIND_GAME_LOCKED
+LANG_ENGLISH        "Only the party host can find games."
+
+REFERENCE           DESC_PRIVATE_MATCH
+LANG_ENGLISH        "Host a custom game where you can play with your friends."
+
+REFERENCE           DESC_PRIVATE_MATCH_LOCKED
+LANG_ENGLISH        "Only the party host can start a private match."
+
+REFERENCE           DESC_CREATE_A_CLASS_LOCKED
+LANG_ENGLISH        "Unlocked at Lance Corporal (Lv4)."
+
+REFERENCE           DESC_CREATE_A_CLASS
+LANG_ENGLISH        "Create your own custom classes."
+
+REFERENCE           DESC_BARRACKS
+LANG_ENGLISH        "Challenges, Clan Tag, Player Stats and Leaderboards."
+
+REFERENCE           DESC_PARTY_INVITE
+LANG_ENGLISH        "Invite friends to your party."
+
+REFERENCE           DESC_PLAYER_OPTIONS
+LANG_ENGLISH        "Open player options menu."
+
+REFERENCE           DESC_START_MATCH
+LANG_ENGLISH        "Start the match."
+
+REFERENCE           DESC_START_MATCH_LOCKED
+LANG_ENGLISH        "Only the lobby host can start the match."
+
+REFERENCE           DESC_GAME_SETUP
+LANG_ENGLISH        "Change map, game type and rules."
+
+REFERENCE           DESC_GAME_SETUP_LOCKED
+LANG_ENGLISH        "Only the lobby host can change the game options."
+
+REFERENCE           DESC_CHANGE_MAP
+LANG_ENGLISH        "Choose a different map."
+
+REFERENCE           DESC_CHANGE_GAMETYPE
+LANG_ENGLISH        "Choose a different Game Mode."
+
+REFERENCE           DESC_CHANGE_RULES
+LANG_ENGLISH        "Edit the rules for this match."
+
+REFERENCE           DESC_INVITE_FRIENDS
+LANG_ENGLISH        "Invite friends to your game."
+
+REFERENCE           PRIVATE_MATCH_LOBBY
+LANG_ENGLISH        "PRIVATE MATCH LOBBY"
+
+REFERENCE           PUBLIC_MATCH_LOBBY
+LANG_ENGLISH        "PUBLIC MATCH LOBBY"
+
+REFERENCE           UNLOCKXP
+LANG_ENGLISH        "Unlocked at &&1 (Lv&&2)"
+
+REFERENCE           MAXPARTYSIZE
+LANG_ENGLISH        "Maximum party size of &&1"
+
+REFERENCE           NOPUNKBUSTER
+LANG_ENGLISH        "Unable to initialize Punkbuster.  Punkbuster is disabled."
+
+REFERENCE           NONE
+LANG_ENGLISH        "None"
+
+REFERENCE           PRESTIGE
+LANG_ENGLISH        "Prestige"
+
+REFERENCE           CALLVOTE
+LANG_ENGLISH        "CALL VOTE"
+
+REFERENCE           VOTE
+LANG_ENGLISH        "Vote"
+
+REFERENCE           END_GAME2
+LANG_ENGLISH        "End Game?"
+
+REFERENCE           PRIMARY_WEAPON1
+LANG_ENGLISH        "Primary Weapon"
+
+REFERENCE           SPECTATOR
+LANG_ENGLISH        "Spectator"
+
+REFERENCE           CHOOSE_CLASS
+LANG_ENGLISH        "Choose Class"
+
+REFERENCE           CHANGE_GAME_MODE
+LANG_ENGLISH        "Change Game Mode"
+
+REFERENCE           GAME_RULES
+LANG_ENGLISH        "Game Rules"
+
+REFERENCE           JOININPROGRESS_ALLOWED
+LANG_ENGLISH        "Join-in-progress: Allowed"
+
+REFERENCE           JOININPROGRESS_NOT_ALLOWED
+LANG_ENGLISH        "Join-in-progress: Not Allowed"
+
+REFERENCE           SIDE_ARM1
+LANG_ENGLISH        "Side Arm"
+
+REFERENCE           SPECIAL_GRENADE
+LANG_ENGLISH        "Special Grenade"
+
+REFERENCE           PERK_1
+LANG_ENGLISH        "Perk 1"
+
+REFERENCE           PERK_2
+LANG_ENGLISH        "Perk 2"
+
+REFERENCE           PERK_3
+LANG_ENGLISH        "Perk 3"
+
+REFERENCE           NO_ATTACHMENT
+LANG_ENGLISH        "No Attachment"
+
+REFERENCE           ACOG_SCOPE
+LANG_ENGLISH        "ACOG Scope"
+
+REFERENCE           RED_DOT_SIGHT
+LANG_ENGLISH        "Red Dot Sight"
+
+REFERENCE           SILENCER
+LANG_ENGLISH        "Silencer"
+
+REFERENCE           GRENADE_LAUNCHER
+LANG_ENGLISH        "Grenade Launcher"
+
+REFERENCE           DESERT
+LANG_ENGLISH        "Desert"
+
+REFERENCE           WOODLAND
+LANG_ENGLISH        "Woodland"
+
+REFERENCE           DIGITAL
+LANG_ENGLISH        "Digital"
+
+REFERENCE           RED_TIGER
+LANG_ENGLISH        "Red Tiger"
+
+REFERENCE           BLUE_TIGER
+LANG_ENGLISH        "Blue Tiger"
+
+REFERENCE           GOLDEN
+LANG_ENGLISH        "Golden"
+
+REFERENCE           PRESTIGE1
+LANG_ENGLISH        "Prestige"
+
+REFERENCE           ASSAULT_RIFLES
+LANG_ENGLISH        "Assault Rifles"
+
+REFERENCE           SUB_MACHINE_GUNS
+LANG_ENGLISH        "Sub Machine Guns"
+
+REFERENCE           LIGHT_MACHINE_GUNS
+LANG_ENGLISH        "Light Machine Guns"
+
+REFERENCE           SHOTGUNS
+LANG_ENGLISH        "Shotguns"
+
+REFERENCE           SNIPER_RIFLES
+LANG_ENGLISH        "Sniper Rifles"
+
+REFERENCE           RENAME_CLASS
+LANG_ENGLISH        "Rename Class"
+
+REFERENCE           CHOOSE_TEAM
+LANG_ENGLISH        "CHOOSE TEAM"
+
+REFERENCE           DESC_PRIVATE_JIP
+LANG_ENGLISH        "Toggle to allow friends to join session in progress."
+
+REFERENCE           PISTOL
+LANG_ENGLISH        "Pistol"
+
+REFERENCE           SNIPER_RIFLE
+LANG_ENGLISH        "Sniper Rifle"
+
+REFERENCE           ASSAULT_RIFLE
+LANG_ENGLISH        "Assault Rifle"
+
+REFERENCE           SUB_MACHINE_GUN
+LANG_ENGLISH        "Sub Machine Gun"
+
+REFERENCE           SHOTGUN
+LANG_ENGLISH        "Shotgun"
+
+REFERENCE           LIGHT_MACHINE_GUN
+LANG_ENGLISH        "Light Machine Gun"
+
+REFERENCE           UNLOCKED
+LANG_ENGLISH        "You have unlocked..."
+
+REFERENCE           NEW_CHALLENGES
+LANG_ENGLISH        "New Challenges"
+
+REFERENCE           DESC_LEADERBOARDS
+LANG_ENGLISH        "Compare your statistics to the rest of the world."
+
+REFERENCE           DESC_CHALLENGES
+LANG_ENGLISH        "Complete Challenges to gain XP rewards and weapon addons."
+
+REFERENCE           DESC_CHALLENGES2
+LANG_ENGLISH        "Unlocked at Lance Corporal I (Lv5)."
+
+REFERENCE           DESC_CLANTAG
+LANG_ENGLISH        "Set your clan tag."
+
+REFERENCE           DESC_CLANTAG2
+LANG_ENGLISH        "Unlocked at Sergeant II (Lv12)."
+
+REFERENCE           DESC_PRESTIGE
+LANG_ENGLISH        "Gain prestige... at a price."
+
+REFERENCE           DESC_PRESTIGE2
+LANG_ENGLISH        "Unlocked after Commander (Lv55)."
+
+REFERENCE           DESC_LEADERBOARD_WINS
+LANG_ENGLISH        "Compare your win/loss record to your friends and the world."
+
+REFERENCE           DESC_LEADERBOARD_KILLS
+LANG_ENGLISH        "See your total kills, deaths, k/d ratio, and best kill streak."
+
+REFERENCE           DESC_LEADERBOARD_ACCURACY
+LANG_ENGLISH        "Find out how well you're doing with your shot placement."
+
+REFERENCE           GRIP
+LANG_ENGLISH        "Grip"
+
+REFERENCE           END_GAME_WARNING
+LANG_ENGLISH        "Are you sure you wish to end the session for all players?"
+
+REFERENCE           CHOOSE_CLASS_CAP
+LANG_ENGLISH        "CHOOSE CLASS"
+
+REFERENCE           CUSTOM_CLASSES
+LANG_ENGLISH        "Custom Classes"
+
+REFERENCE           DEFAULT_CLASSES
+LANG_ENGLISH        "Default Classes"
+
+REFERENCE           PERKS_AND_INVENTORY
+LANG_ENGLISH        "Perks & Inventory"
+
+REFERENCE           CREATE_A_CLASS_CAP
+LANG_ENGLISH        "CREATE A CLASS"
+
+REFERENCE           VOTE_TO_SKIP
+LANG_ENGLISH        "Vote to Skip"
+
+REFERENCE           DESC_VOTE_TO_SKIP
+LANG_ENGLISH        "Vote to skip current selection. If passed, you can't vote to skip the next one."
+
+REFERENCE           VOTE_CAST
+LANG_ENGLISH        "Vote Cast"
+
+REFERENCE           LAST_STAND
+LANG_ENGLISH        "Last Stand!"
+
+REFERENCE           DESC_MAP_BACKLOT
+LANG_ENGLISH        "Medium sized construction site.  Great level for any mode."
+
+REFERENCE           DESC_MAP_BLOC
+LANG_ENGLISH        "Large Russian apartment bloc.  Intense Domination matches."
+
+REFERENCE           DESC_MAP_BOG
+LANG_ENGLISH        "Small desert bog.  Open level, excellent for smaller groups."
+
+REFERENCE           DESC_MAP_CARGOSHIP
+LANG_ENGLISH        "Medium-large cargoship.  Fast-paced Search and Destroy matches."
+
+REFERENCE           DESC_MAP_CITYSTREETS
+LANG_ENGLISH        "Large urban town with a market in the middle.  Great for team games."
+
+REFERENCE           DESC_MAP_CONVOY
+LANG_ENGLISH        "Large desert town.  Excels in Sabotage matches."
+
+REFERENCE           DESC_MAP_COUNTDOWN
+LANG_ENGLISH        "Open launch pad.  Huge sight lines and dangerous maneuvering."
+
+REFERENCE           DESC_MAP_CRASH
+LANG_ENGLISH        "Downed Sea Knight in a desert town.  Fantastic team games."
+
+REFERENCE           DESC_MAP_CROSSFIRE
+LANG_ENGLISH        "Small desert town.  Intense interior fighting and strong firefights."
+
+REFERENCE           DESC_MAP_FARM
+LANG_ENGLISH        "Big rainy Russian farm.  Excellent for Sabotage matches."
+
+REFERENCE           DESC_MAP_OVERGROWN
+LANG_ENGLISH        "Large overgrown rural Russian area. Sniper ghillie suits make for good cover..."
+
+REFERENCE           DESC_PIPELINE
+LANG_ENGLISH        "Russian trainyard. Excellent team games."
+
+REFERENCE           DESC_MAP_SHIPMENT
+LANG_ENGLISH        "Tiny Russian shipyard.  Fast paced action with no hiding."
+
+REFERENCE           DESC_MAP_SHOWDOWN
+LANG_ENGLISH        "Small desert arena.  Great fast gameplay for small numbers of players."
+
+REFERENCE           DESC_MAP_STRIKE
+LANG_ENGLISH        "Large urban desert town.  Excellent team games."
+
+REFERENCE           DESC_MAP_VACANT
+LANG_ENGLISH        "Deserted Russian office.  Intense interior fighting."
+
+REFERENCE           DESC_MAP_BROADCAST
+LANG_ENGLISH        "TV Station."
+
+REFERENCE           DESC_MAP_PIPELINE
+LANG_ENGLISH        "Russian trainyard.  Excellent team games."
+
+REFERENCE           RULES_PLAYER_OPTIONS
+LANG_ENGLISH        "Player Options"
+
+REFERENCE           RULES_GAMEPLAY_OPTIONS
+LANG_ENGLISH        "Gameplay Options"
+
+REFERENCE           RULES_TEAM_OPTIONS
+LANG_ENGLISH        "Team Options"
+
+REFERENCE           GAME_RULES_CAP
+LANG_ENGLISH        "GAME RULES"
+
+REFERENCE           RULES_ITEM_2LIVES
+LANG_ENGLISH        "2 Lives"
+
+REFERENCE           RULES_ITEM_LIFE
+LANG_ENGLISH        "1 Life"
+
+REFERENCE           RULES_UNLIMITED
+LANG_ENGLISH        "Unlimited"
+
+REFERENCE           RULES_NUMBER_OF_LIVES
+LANG_ENGLISH        "Number of Lives:"
+
+REFERENCE           RULES_RESPAWN_DELAY
+LANG_ENGLISH        "Respawn Delay:"
+
+REFERENCE           RULES_NONE
+LANG_ENGLISH        "None"
+
+REFERENCE           RULES_5SECONDS
+LANG_ENGLISH        "5 Seconds"
+
+REFERENCE           RULES_MAX_HEALTH
+LANG_ENGLISH        "Max Health:"
+
+REFERENCE           RULES_MINISCULE
+LANG_ENGLISH        "Miniscule"
+
+REFERENCE           RULES_HALF
+LANG_ENGLISH        "Half"
+
+REFERENCE           RULES_NORMAL
+LANG_ENGLISH        "Normal"
+
+REFERENCE           RULES_DOUBLE
+LANG_ENGLISH        "Double"
+
+REFERENCE           RULES_HEALTH_REGEN
+LANG_ENGLISH        "Health Regeneration:"
+
+REFERENCE           RULES_ALLOW_SPRINT
+LANG_ENGLISH        "Allow Sprint:"
+
+REFERENCE           RULES_SLOW
+LANG_ENGLISH        "Slow"
+
+REFERENCE           RULES_SPECTATING
+LANG_ENGLISH        "Spectating:"
+
+REFERENCE           RULES_ITEM_3LIVES
+LANG_ENGLISH        "3 Lives"
+
+REFERENCE           RULES_ITEM_5LIVES
+LANG_ENGLISH        "5 Lives"
+
+REFERENCE           RULES_ITEM_9LIVES
+LANG_ENGLISH        "9 Lives"
+
+REFERENCE           RULES_10SECONDS
+LANG_ENGLISH        "10 Seconds"
+
+REFERENCE           RULES_15SECONDS
+LANG_ENGLISH        "15 Seconds"
+
+REFERENCE           RULES_30SECONDS
+LANG_ENGLISH        "30 Seconds"
+
+REFERENCE           RULES_TEAM_ONLY
+LANG_ENGLISH        "Team Only"
+
+REFERENCE           RULES_FREE
+LANG_ENGLISH        "Free"
+
+REFERENCE           RULES_PLAYERS_ONLY
+LANG_ENGLISH        "Players Only"
+
+REFERENCE           RULES_RADAR_ALWAYS_ON
+LANG_ENGLISH        "Radar Always On:"
+
+REFERENCE           RULE_ALLOW_KILLCAM
+LANG_ENGLISH        "Allow KillCam:"
+
+REFERENCE           RULES_FORCE_RESPAWN
+LANG_ENGLISH        "Force Respawn:"
+
+REFERENCE           RULES_FRIENDLY_FIRE
+LANG_ENGLISH        "Friendly Fire:"
+
+REFERENCE           RULES_REFLECT
+LANG_ENGLISH        "Reflect"
+
+REFERENCE           RULES_SHARED
+LANG_ENGLISH        "Shared"
+
+REFERENCE           RULES_HEADSHOTS_ONLY
+LANG_ENGLISH        "Headshots Only:"
+
+REFERENCE           RULES_ALLOW_PERKS
+LANG_ENGLISH        "Allow Perks:"
+
+REFERENCE           RULES_OLDSCHOOL
+LANG_ENGLISH        "Old School Mode:"
+
+REFERENCE           RULES_HARDCORE
+LANG_ENGLISH        "Hardcore Mode:"
+
+REFERENCE           RULES_AIRSUPPORT
+LANG_ENGLISH        "Allow Air Support:"
+
+REFERENCE           RULES_TIME_LIMIT
+LANG_ENGLISH        "Time Limit:"
+
+REFERENCE           RULES_5MINUTES
+LANG_ENGLISH        "5 Minutes"
+
+REFERENCE           RULES_10MINUTES
+LANG_ENGLISH        "10 Minutes"
+
+REFERENCE           RULES_15MINUTES
+LANG_ENGLISH        "15 Minutes"
+
+REFERENCE           RULES_20MINUTES
+LANG_ENGLISH        "20 Minutes"
+
+REFERENCE           RULES_30MINUTES
+LANG_ENGLISH        "30 Minutes"
+
+REFERENCE           RULES_SCORE_LIMIT
+LANG_ENGLISH        "Score Limit:"
+
+REFERENCE           RULES_3POINTS
+LANG_ENGLISH        "3 Points"
+
+REFERENCE           RULES_5POINTS
+LANG_ENGLISH        "5 Points"
+
+REFERENCE           RULES_10POINTS
+LANG_ENGLISH        "10 Points"
+
+REFERENCE           RULES_20POINTS
+LANG_ENGLISH        "20 Points"
+
+REFERENCE           RULES_30POINTS
+LANG_ENGLISH        "30 Points"
+
+REFERENCE           RULES_100POINTS
+LANG_ENGLISH        "100 Points"
+
+REFERENCE           RULES_200POINTS
+LANG_ENGLISH        "200 Points"
+
+REFERENCE           RULES_300POINTS
+LANG_ENGLISH        "300 Points"
+
+REFERENCE           RULES_500POINTS
+LANG_ENGLISH        "500 Points"
+
+REFERENCE           RULES_700POINTS
+LANG_ENGLISH        "700 Points"
+
+REFERENCE           RULES_1000POINTS
+LANG_ENGLISH        "1000 Points"
+
+REFERENCE           RULES_50POINTS
+LANG_ENGLISH        "50 Points"
+
+REFERENCE           RULES_750POINTS
+LANG_ENGLISH        "750 Points"
+
+REFERENCE           RULES_250POINTS
+LANG_ENGLISH        "250 Points"
+
+REFERENCE           RULES_1500POINTS
+LANG_ENGLISH        "1500 Points"
+
+REFERENCE           RULES_HQ_HOLD_TIME
+LANG_ENGLISH        "HQ Lifetime:"
+
+REFERENCE           RULES_3MINUTES
+LANG_ENGLISH        "3 Minutes"
+
+REFERENCE           RULES_2MINUTES
+LANG_ENGLISH        "2 Minutes"
+
+REFERENCE           RULES_1_5MINUTES
+LANG_ENGLISH        "1.5 Minutes"
+
+REFERENCE           RULES_1MINUTE
+LANG_ENGLISH        "1 Minute"
+
+REFERENCE           RULES_HQ_RESPAWN_DELAY
+LANG_ENGLISH        "HQ Activate Delay:"
+
+REFERENCE           RULES_INSTANT
+LANG_ENGLISH        "Instant"
+
+REFERENCE           RULES_CLASSIC_HQ
+LANG_ENGLISH        "Classic HQ Mode:"
+
+REFERENCE           RULES_45SECONDS
+LANG_ENGLISH        "45 Seconds"
+
+REFERENCE           RULES_BOMB_TIMER
+LANG_ENGLISH        "Bomb Timer:"
+
+REFERENCE           RULES_PLANT_TIME
+LANG_ENGLISH        "Plant Time:"
+
+REFERENCE           RULES_1SECOND
+LANG_ENGLISH        "1 Second"
+
+REFERENCE           RULES_2_5SECONDS
+LANG_ENGLISH        "2.5 Seconds"
+
+REFERENCE           RULES_7_5SECONDS
+LANG_ENGLISH        "7.5 Seconds"
+
+REFERENCE           RULES_DEFUSE_TIME
+LANG_ENGLISH        "Defuse Time:"
+
+REFERENCE           RULES_HOT_POTATO
+LANG_ENGLISH        "Hot Potato:"
+
+REFERENCE           RULES_ROUND_LIMIT
+LANG_ENGLISH        "Round Limit:"
+
+REFERENCE           RULES_1ROUND
+LANG_ENGLISH        "1 Round"
+
+REFERENCE           RULES_2ROUNDS
+LANG_ENGLISH        "2 Rounds"
+
+REFERENCE           RULES_4ROUNDS
+LANG_ENGLISH        "4 Rounds"
+
+REFERENCE           RULES_6ROUNDS
+LANG_ENGLISH        "6 Rounds"
+
+REFERENCE           RULES_8ROUNDS
+LANG_ENGLISH        "8 Rounds"
+
+REFERENCE           RULES_ROUND_SWITCH
+LANG_ENGLISH        "Round Switch:"
+
+REFERENCE           RULES_NEVER
+LANG_ENGLISH        "Never"
+
+REFERENCE           RULES_EVERY_ROUND
+LANG_ENGLISH        "Every Round"
+
+REFERENCE           RULES_EVERY_2ROUNDS
+LANG_ENGLISH        "Every 2 Rounds"
+
+REFERENCE           RULES_EVERY_3ROUNDS
+LANG_ENGLISH        "Every 3 Rounds"
+
+REFERENCE           RULES_EVERY_4ROUNDS
+LANG_ENGLISH        "Every 4 Rounds"
+
+REFERENCE           RULES_ROUND_LENGTH
+LANG_ENGLISH        "Round Length:"
+
+REFERENCE           RULES_2_5MINUTES
+LANG_ENGLISH        "2.5 Minutes"
+
+REFERENCE           RULES_8MINUTES
+LANG_ENGLISH        "8 Minutes"
+
+REFERENCE           RULES_MULTI_BOMB
+LANG_ENGLISH        "Multi Bomb:"
+
+REFERENCE           RULES_150POINTS
+LANG_ENGLISH        "150 Points"
+
+REFERENCE           RULES_FAST
+LANG_ENGLISH        "Fast"
+
+REFERENCE           BARRACKS_CAP
+LANG_ENGLISH        "BARRACKS"
+
+REFERENCE           RECOMMENDEDPLAYERS
+LANG_ENGLISH        "Recommended Max Players: &&1"
+
+REFERENCE           RULES_WAVE_DELAY
+LANG_ENGLISH        "Wave Spawn Delay:"
+
+REFERENCE           RULES_1POINT
+LANG_ENGLISH        "1 Point"
+
+REFERENCE           RULES_4POINTS
+LANG_ENGLISH        "4 Points"
+
+REFERENCE           RULES_8POINTS
+LANG_ENGLISH        "8 Points"
+
+REFERENCE           RULES_12POINTS
+LANG_ENGLISH        "12 Points"
+
+REFERENCE           RULES_24POINTS
+LANG_ENGLISH        "24 Points"
+
+REFERENCE           RULES_SHARE_BOMB_TIMER
+LANG_ENGLISH        "Shared Bomb Timer:"
+
+REFERENCE           DESC_INVITE_FRIENDS_FULL
+LANG_ENGLISH        "Lobby is full."
+
+REFERENCE           MUTEPLAYERS
+LANG_ENGLISH        "MUTE PLAYERS"
+
+REFERENCE           RULES_2POINTS
+LANG_ENGLISH        "2 Points"
+
+REFERENCE           FIND_MATCH
+LANG_ENGLISH        "Find Match"
+
+
+ENDMARKER
+
+

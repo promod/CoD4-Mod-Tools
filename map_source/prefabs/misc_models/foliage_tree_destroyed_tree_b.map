@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 8 0 ) ( -8 8 0 ) ( -8 -16 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 8 0 0
+ ( 0 -16 112 ) ( 0 8 112 ) ( 24 8 112 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 8 0 0
+ ( -8 -8 384 ) ( 16 -8 384 ) ( 16 -8 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -8 384 ) ( 8 16 384 ) ( 8 16 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 0 0 0
+ ( 16 8 384 ) ( -8 8 384 ) ( -8 8 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 384 ) ( -8 -16 384 ) ( -8 -16 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 0 0 0
+}
+// brush 1
+{
+ ( 16 8 112 ) ( -8 8 112 ) ( -8 -16 112 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 8 0 0
+ ( 40 24 320 ) ( 40 48 320 ) ( 64 48 320 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 8 0 0
+ ( 32 32 320 ) ( 48 32 320 ) ( 8 -8 112 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -112 0 0
+ ( 48 32 320 ) ( 48 48 320 ) ( 8 8 112 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 -112 0 0
+ ( 48 48 320 ) ( 32 48 320 ) ( -8 8 112 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -112 0 0
+ ( 32 48 320 ) ( 32 32 320 ) ( -8 -8 112 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 -112 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "foliage_tree_destroyed_tree_b"
+"classname" "misc_model"
+}

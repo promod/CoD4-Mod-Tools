@@ -1,0 +1,23 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 4 0 ) ( -32 4 0 ) ( -32 -4 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -4 36 ) ( -32 4 36 ) ( 16 4 36 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -1 36 ) ( 16 -1 36 ) ( 16 -1 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -4 36 ) ( 16 4 36 ) ( 16 4 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 1 36 ) ( -32 1 36 ) ( -32 1 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 4 36 ) ( -32 -4 36 ) ( -32 -4 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "-8.0 0.0 0.0"
+"angles" "0 90 0"
+"model" "cs_handrail_64_end"
+"classname" "misc_model"
+}

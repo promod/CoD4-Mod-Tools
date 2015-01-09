@@ -1,0 +1,51 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 18 14 0 ) ( -8 14 0 ) ( -8 -12 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -12 34 ) ( -10 14 34 ) ( 16 14 34 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -12 98 ) ( 12 -12 98 ) ( 12 -12 62 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -12 98 ) ( 12 14 98 ) ( 12 14 62 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 12 98 ) ( -10 12 98 ) ( -10 12 62 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 12 98 ) ( -12 -14 98 ) ( -12 -14 62 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 3.0"
+"angles" "360 180 90"
+"model" "prefabs/misc_models/com_junktire.map"
+"classname" "misc_prefab"
+}
+// entity 2
+{
+"origin" "1.0 -1.0 10.0"
+"angles" "360 180 90"
+"model" "prefabs/misc_models/com_junktire.map"
+"classname" "misc_prefab"
+}
+// entity 3
+{
+"origin" "-1.0 0.0 17.0"
+"angles" "360 180 90"
+"model" "prefabs/misc_models/com_junktire.map"
+"classname" "misc_prefab"
+}
+// entity 4
+{
+"origin" "2.0 2.0 24.0"
+"angles" "360 180 90"
+"model" "prefabs/misc_models/com_junktire.map"
+"classname" "misc_prefab"
+}
+// entity 5
+{
+"origin" "0.0 0.0 31.0"
+"angles" "360 180 90"
+"model" "prefabs/misc_models/com_junktire.map"
+"classname" "misc_prefab"
+}

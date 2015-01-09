@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 23 -12 0 ) ( -23 -12 0 ) ( -23 -35 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -23 -44 79 ) ( -23 -21 79 ) ( 23 -21 79 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -23 -24 97.5 ) ( 23 -24 97.5 ) ( 23 -24 76 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 21 -43 102.5 ) ( 21 -20 102.5 ) ( 21 -20 81 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 23 0 102.5 ) ( -23 0 102.5 ) ( -23 0 81 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -20 102.5 ) ( -21 -43 102.5 ) ( -21 -43 81 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_northafrica_armoire_tall"
+"classname" "misc_model"
+}

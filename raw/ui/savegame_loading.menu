@@ -1,0 +1,27 @@
+#include "ui/menudef.h"
+
+{
+	// Pause menu
+	menuDef
+	{
+		name			"savegameloading"
+		fullScreen		0				
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		popup
+		
+		// "now saving" text
+		itemDef
+		{
+			name			"savingMsg"
+			text			"@CGAME_NOW_SAVING"
+			rect			0 64 640 120
+			forecolor		COLOR_TITLE
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			textfont		UI_FONT_DEFAULT
+			visible			when ( dvarbool( sv_saveDeviceAvailable ) );
+			decoration
+		}
+	}	
+}

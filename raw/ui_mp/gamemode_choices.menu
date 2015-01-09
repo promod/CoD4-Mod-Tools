@@ -1,0 +1,1035 @@
+// ------------ highlight parameters ------------
+
+#define HIGHLIGHT_BORDER		1
+#define HIGHLIGHT_SHADER		"white"
+#define MENU_FONT_SIZE			TEXTSIZE_DEFAULT
+#define MENU_FONT_COLOR			1 1 1 0.65
+#define HIGHLIGHT_SIZE			250 20
+#define A_BUTTON_SIZE			18 18
+#define HIGHLIGHT_COLOR			0.2 0.25 0.35 0.25
+#define A_BUTTON_COLOR			1 1 1 1
+#define HIGHLIGHT_BORDER_COLOR	0.8 0.95 1 0.4
+#define A_BUTTON_SHADER			"hud_dpad"
+
+#define ORIGIN_CHOICE1_HL		54 108
+#define ORIGIN_CHOICE2_HL		54 128
+#define ORIGIN_CHOICE3_HL		54 148
+#define ORIGIN_CHOICE4_HL		54 168
+#define ORIGIN_CHOICE5_HL		54 188
+#define ORIGIN_CHOICE6_HL		54 208
+#define ORIGIN_CHOICE7_HL		54 228
+#define ORIGIN_CHOICE8_HL		54 248
+#define ORIGIN_CHOICE9_HL		54 268
+
+#define ORIGIN_CHOICE1_A		60 110
+#define ORIGIN_CHOICE2_A		60 130
+#define ORIGIN_CHOICE3_A		60 150
+#define ORIGIN_CHOICE4_A		60 170
+#define ORIGIN_CHOICE5_A		60 190
+#define ORIGIN_CHOICE6_A		60 210
+#define ORIGIN_CHOICE7_A		60 230
+#define ORIGIN_CHOICE8_A		60 250
+#define ORIGIN_CHOICE9_A		60 270
+
+		// CHOICE 1
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE1
+			textfont		UI_FONT_NORMAL
+			text			CHOICE1_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE1_SHOW
+			onFocus
+			{
+				CHOICE1_FOCUS
+				setItemColor choice1_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 1";
+				play "mouse_over";
+				show highlight_choice1;
+				show a_button_choice1;
+			}
+			leaveFocus
+			{
+				setItemColor choice1_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice1;
+				hide a_button_choice1;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE1_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE1_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE1_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE1_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			choice1_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING1
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE1_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE1_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING1
+			background		"ui_arrow_left"
+			visible			CHOICE1_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "1" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING1
+			background		"ui_arrow_right"
+			visible			CHOICE1_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "1" }
+			decoration
+		}
+		
+		// CHOICE 2
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE2
+			textfont		UI_FONT_NORMAL
+			text			CHOICE2_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE2_SHOW
+			onFocus
+			{
+				CHOICE2_FOCUS
+				setItemColor choice2_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 2";
+				play "mouse_over";
+				show highlight_choice2;
+				show a_button_choice2;
+			}
+			leaveFocus
+			{
+				setItemColor choice2_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice2;
+				hide a_button_choice2;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE2_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE2_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE2_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE2_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			choice2_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING2
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE2_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE2_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING2
+			background		"ui_arrow_left"
+			visible			CHOICE2_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "2" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING2
+			background		"ui_arrow_right"
+			visible			CHOICE2_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "2" }
+			decoration
+		}
+		
+		// CHOICE 3
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE3
+			textfont		UI_FONT_NORMAL
+			text			CHOICE3_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE3_SHOW
+			onFocus
+			{
+				CHOICE3_FOCUS
+				setItemColor choice3_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 3";
+				play "mouse_over";
+				show highlight_choice3;
+				show a_button_choice3;
+			}
+			leaveFocus
+			{
+				setItemColor choice3_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice3;
+				hide a_button_choice3;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE3_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE3_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE3_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE3_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			choice3_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING3
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE3_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE3_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING3
+			background		"ui_arrow_left"
+			visible			CHOICE3_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "3" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING3
+			background		"ui_arrow_right"
+			visible			CHOICE3_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "3" }
+			decoration
+		}
+		
+		// CHOICE 4
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE4
+			textfont		UI_FONT_NORMAL
+			text			CHOICE4_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE4_SHOW
+			onFocus
+			{
+				CHOICE4_FOCUS
+				setItemColor choice4_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 4";
+				play "mouse_over";
+				show highlight_choice4;
+				show a_button_choice4;
+			}
+			leaveFocus
+			{
+				setItemColor choice4_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice4;
+				hide a_button_choice4;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE4_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE4_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE4_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE4_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			choice4_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING4
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE4_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE4_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING4
+			background		"ui_arrow_left"
+			visible			CHOICE4_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "4" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING4
+			background		"ui_arrow_right"
+			visible			CHOICE4_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "4" }
+			decoration
+		}
+		
+		// CHOICE 5
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE5
+			textfont		UI_FONT_NORMAL
+			text			CHOICE5_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE5_SHOW
+			onFocus
+			{
+				CHOICE5_FOCUS
+				setItemColor choice5_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 5";
+				play "mouse_over";
+				show highlight_choice5;
+				show a_button_choice5;
+			}
+			leaveFocus
+			{
+				setItemColor choice5_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice5;
+				hide a_button_choice5;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE5_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE5_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE5_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE5_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			choice5_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING5
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE5_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE5_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING5
+			background		"ui_arrow_left"
+			visible			CHOICE5_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "5" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING5
+			background		"ui_arrow_right"
+			visible			CHOICE5_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "5" }
+			decoration
+		}
+		
+		// CHOICE 6
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE6
+			textfont		UI_FONT_NORMAL
+			text			CHOICE6_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE6_SHOW
+			onFocus
+			{
+				CHOICE6_FOCUS
+				setItemColor choice6_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 6";
+				play "mouse_over";
+				show highlight_choice6;
+				show a_button_choice6;
+			}
+			leaveFocus
+			{
+				setItemColor choice6_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice6;
+				hide a_button_choice6;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE6_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE6_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE6_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE6_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			choice6_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING6
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE6_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE6_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING6
+			background		"ui_arrow_left"
+			visible			CHOICE6_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "6" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING6
+			background		"ui_arrow_right"
+			visible			CHOICE6_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "6" }
+			decoration
+		}			
+		
+		
+		// CHOICE 7
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE7
+			textfont		UI_FONT_NORMAL
+			text			CHOICE7_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE7_SHOW
+			onFocus
+			{
+				CHOICE7_FOCUS
+				setItemColor CHOICE7_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 7";
+				play "mouse_over";
+				show highlight_choice7;
+				show a_button_choice7;
+			}
+			leaveFocus
+			{
+				setItemColor choice7_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice7;
+				hide a_button_choice7;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE7_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE7_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE7_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE7_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			CHOICE7_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING7
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE7_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE7_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING7
+			background		"ui_arrow_left"
+			visible			CHOICE7_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "7" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING7
+			background		"ui_arrow_right"
+			visible			CHOICE7_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "7" }
+			decoration
+		}
+		
+		// CHOICE 8
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE8
+			textfont		UI_FONT_NORMAL
+			text			CHOICE8_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE8_SHOW
+			onFocus
+			{
+				CHOICE8_FOCUS
+				setItemColor CHOICE8_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 8";
+				play "mouse_over";
+				show highlight_choice8;
+				show a_button_choice8;
+			}
+			leaveFocus
+			{
+				setItemColor choice8_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice8;
+				hide a_button_choice8;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE8_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE8_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE8_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE8_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			CHOICE8_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING8
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE8_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE8_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING8
+			background		"ui_arrow_left"
+			visible			CHOICE8_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "8" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING8
+			background		"ui_arrow_right"
+			visible			CHOICE8_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "8" }
+			decoration
+		}
+		
+		
+		// CHOICE 9
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE9
+			textfont		UI_FONT_NORMAL
+			text			CHOICE9_TEXT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE9_SHOW
+			onFocus
+			{
+				CHOICE9_FOCUS
+				setItemColor CHOICE9_setting forecolor COLOR_FOCUSED
+				exec "set ui_choice 9";
+				play "mouse_over";
+				show highlight_choice9;
+				show a_button_choice9;
+			}
+			leaveFocus
+			{
+				setItemColor choice9_setting forecolor MENU_FONT_COLOR
+				hide highlight_choice9;
+				hide a_button_choice9;
+			}
+			execKeyInt DPAD_RIGHT
+			{
+				CHOICE9_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				CHOICE9_DPAD_LEFT
+				play "mouse_click";
+			}
+			execKeyInt APAD_RIGHT
+			{
+				CHOICE9_DPAD_RIGHT
+				play "mouse_click";
+			}
+			execKeyInt APAD_LEFT
+			{
+				CHOICE9_DPAD_LEFT
+				play "mouse_click";
+			}
+		}
+		itemDef
+		{
+			name			CHOICE9_setting
+			type			ITEM_TYPE_TEXT
+			rect			32 0 1 16
+			origin			ORIGIN_SETTING9
+			textfont		UI_FONT_NORMAL
+			dvar			CHOICE9_DVARTEXT
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		16
+			forecolor		MENU_FONT_COLOR
+			backcolor		0 0 0 0
+			visible			CHOICE9_SHOW
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-16 0 16 16
+			origin			ORIGIN_SETTING9
+			background		"ui_arrow_left"
+			visible			CHOICE9_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "9" }
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			64 0 16 16
+			origin			ORIGIN_SETTING9
+			background		"ui_arrow_right"
+			visible			CHOICE9_SHOW
+			dvartest		"ui_choice"
+			showdvar		{ "9" }
+			decoration
+		}							
+		
+		// ---------------------------- quick options highlight------------------------
+		//----- choice 1 ------
+		itemDef
+		{
+			name			highlight_choice1
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE1_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible 		CHOICE1_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice1
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE1_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible 		CHOICE1_SHOW
+			decoration
+		}
+		//---- choice 2 ------
+		itemDef
+		{
+			name			highlight_choice2
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE2_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible			CHOICE2_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice2
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE2_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible			CHOICE2_SHOW
+			decoration
+		}
+		//---- choice 3 ------
+		itemDef
+		{
+			name			highlight_choice3
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE3_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible			CHOICE3_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice3
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE3_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible			CHOICE3_SHOW
+			decoration
+		}
+		//---- choice 4 ------
+		itemDef
+		{
+			name			highlight_choice4
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE4_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible			CHOICE4_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice4
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE4_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible			CHOICE4_SHOW
+			decoration
+		}
+		//---- choice 5 ------
+		itemDef
+		{
+			name			highlight_choice5
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE5_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible			CHOICE5_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice5
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE5_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible			CHOICE5_SHOW
+			decoration
+		}
+		//---- choice 6 ------
+		itemDef
+		{
+			name			highlight_choice6
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE6_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible			CHOICE6_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice6
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE6_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible			CHOICE6_SHOW
+			decoration
+		}
+		//---- choice 7 ------
+		itemDef
+		{
+			name			highlight_choice7
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE7_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible			CHOICE7_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice7
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE7_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible			CHOICE7_SHOW
+			decoration
+		}
+		//---- choice 8 ------
+		itemDef
+		{
+			name			highlight_choice8
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE8_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible			CHOICE8_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice8
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE8_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible			CHOICE8_SHOW
+			decoration
+		}
+		//---- choice 9 ------
+		itemDef
+		{
+			name			highlight_choice9
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE9_HL  HIGHLIGHT_SIZE
+			background		HIGHLIGHT_SHADER
+			forecolor		HIGHLIGHT_COLOR
+			border			HIGHLIGHT_BORDER
+			bordersize		1
+			bordercolor		HIGHLIGHT_BORDER_COLOR
+			visible			CHOICE9_SHOW
+			decoration
+		}
+		itemDef
+		{
+			name			a_button_choice9
+			background		A_BUTTON_SHADER
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_CHOICE9_A A_BUTTON_SIZE
+			forecolor		A_BUTTON_COLOR
+			visible			CHOICE9_SHOW
+			decoration
+		}

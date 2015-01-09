@@ -1,0 +1,20 @@
+{
+	stateMap "effect_add";
+
+	vertexShader 1.1 "vertcol_simple_dfa.hlsl"
+	{
+		falloffParms = material.falloffParms;
+		falloffBeginColor = material.falloffBeginColor;
+		falloffEndColor = material.falloffEndColor;
+	}
+
+	pixelShader 2.0 "vertcol_simple_add.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

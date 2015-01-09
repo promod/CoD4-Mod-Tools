@@ -1,0 +1,35 @@
+#if "@blendFunc@" == "Add"
+
+	blendFunc( Add, One, One );
+	separateAlphaBlendFunc( Disable, One, Zero );
+
+#elif "@blendFunc@" == "Blend"
+
+	blendFunc( Add, SrcAlpha, InvSrcAlpha );
+	separateAlphaBlendFunc( Disable, One, Zero );
+
+#elif "@blendFunc@" == "Multiply"
+
+	blendFunc( Add, Zero, SrcColor );
+	separateAlphaBlendFunc( Disable, One, Zero );
+
+#elif "@blendFunc@" == "Replace"
+
+	blendFunc( Disable, One, Zero );
+	separateAlphaBlendFunc( Disable, One, Zero );
+
+#elif "@blendFunc@" == "Screen Add"
+
+	blendFunc( Add, InvDestColor, One );
+	separateAlphaBlendFunc( Disable, One, Zero );
+
+#elif "@blendFunc@" == "Custom"
+
+    blendFunc( @customBlendOpRgb@, @srcCustomBlendFunc@, @destCustomBlendFunc@ );
+    separateAlphaBlendFunc( @customBlendOpAlpha@, @srcCustomBlendFuncAlpha@, @destCustomBlendFuncAlpha@ );
+
+#else
+
+	#error "unknown blendFunc \"@blendFunc@\""
+
+#endif

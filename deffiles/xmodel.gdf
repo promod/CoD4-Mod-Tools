@@ -1,0 +1,237 @@
+#name "xmodel"
+#dll "all" "xmodel"
+#target_dir "xmodel/"
+#target_dir "xmodelparts/"
+#target_dir "xmodelsurfs/"
+#target_dir "xmodelpieces/"
+#file_ext "*;*.dds;*.tga;*.jpg"
+#version 32
+
+enum { "rigid", "animated", "multiplayer body", "viewhands", "pieces" } type
+string filename
+float 0 0 1000000 highLodDist
+int 0 0 1 forceMediumLodRigid
+string mediumLod
+float 0 0 1000000 mediumLodDist
+int 0 0 1 forceLowLodRigid
+string lowLod
+float 0 0 1000000 lowLodDist
+int 0 0 1 forceLowestLodRigid
+string lowestLod
+float 0 0 1000000 lowestLodDist
+
+int 0 0 1 groundLit
+int 0 0 1 noRadialNormals
+float 0 -1000000 1000000 radialOriginX
+float 0 -1000000 1000000 radialOriginY
+float 0 -1000000 1000000 radialOriginZ
+
+int 0 0 1 allowHidingAllParts
+
+enum { "None", "High", "Medium", "Low", "Lowest" } collisionLOD
+
+string hitBoxModel
+string skinOverride
+string boneControllers
+string boneStabilizers
+string physicsPreset
+
+
+vcontainer
+{
+	hcontainer
+	{
+		scrollbox(type)
+		[
+			exec
+			{
+				tooltip("Rigid is for non-animated objects, animated is for objects that must animate.")
+				width(320)
+			}
+		]
+	}
+
+	fileedit(filename)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	floatedit(highLodDist, 1, 10)
+
+	hcontainer
+	{
+		checkbox(forceMediumLodRigid)
+		[
+			exec
+			{
+				labelwidth(160)
+			}
+		]
+	}
+
+	fileedit(mediumLod)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	floatedit(mediumLodDist, 1, 10)
+
+	hcontainer
+	{
+		checkbox(forceLowLodRigid)
+		[
+			exec
+			{
+				labelwidth(160)
+			}
+		]
+	}
+
+	fileedit(lowLod)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	floatedit(lowLodDist, 1, 10)
+
+	hcontainer
+	{
+		checkbox(forceLowestLodRigid)
+		[
+			exec
+			{
+				labelwidth(160)
+			}
+		]
+	}
+
+	fileedit(lowestLod)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	floatedit(lowestLodDist, 1, 10)
+	
+	hcontainer
+	{
+		scrollbox(collisionLOD)
+		[
+			exec
+			{
+				tooltip( "The lod that will be used for bullet collision.  Leaving this on 'None' means this model will not block bullets" )
+			}
+		]
+	}
+
+	vcontainer
+	{
+		checkbox(groundLit)
+		[
+			exec
+			{
+				tooltip("The model takes its lighting value from the ground beneath it, instead of from the light probes around it.  Good for grass and small rubble.")
+				visible( type == "rigid" )
+			}
+		]
+	}
+	
+	vcontainer
+	{
+		checkbox(allowHidingAllParts)
+		[
+			exec
+			{
+				tooltip("Allows hiding of any independent parts.")
+				visible( type == "rigid" || type == "animated" )
+			}
+		]
+	}
+	
+	vcontainer
+	{
+		checkbox(noRadialNormals)
+		hcontainer
+		{
+			floatedit(radialOriginX, 1, 10)
+			[
+				exec
+				{
+					width(190)
+					labelwidth(100)
+				}
+			]
+			floatedit(radialOriginY, 1, 10)
+			[
+				exec
+				{
+					width(190)
+					labelwidth(100)
+				}
+			]
+			floatedit(radialOriginZ, 1, 10)
+			[
+				exec
+				{
+					width(190)
+					labelwidth(100)
+				}
+			]
+		}
+	}
+
+	fileedit(hitBoxModel)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	multiedit(skinOverride)
+	[
+		exec
+		{
+			tooltip("To make this work, first put the name of the material assigned to the model you as exported, followed by a space and then the name of the new material you wish to replace it with.  Multiple materials may be overridden by using multiple lines.")
+			width(640)
+			height(80)
+		}
+	]
+
+	multiedit(boneControllers)
+	[
+		exec
+		{
+			width(640)
+			height(80)
+		}
+	]
+	
+	multiedit(boneStabilizers)
+	[
+		exec
+		{
+			width(640)
+			height(80)
+		}
+	]	
+
+	fileedit(physicsPreset)
+	[
+		exec
+		{
+			reldir("raw/physic/")
+		}
+	]
+}

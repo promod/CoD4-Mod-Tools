@@ -1,0 +1,1230 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_GROUP			"errors"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"
+#include "ui/choices_setup_popmenu.menu"
+
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			520
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+
+#undef CHOICE_POPUP_TITLE_HEIGHT
+#define CHOICE_POPUP_TITLE_HEIGHT	24
+
+{
+	/*
+	menuDef
+	{
+		name			"error_popmenu"
+    	visible			0
+   		fullscreen		1
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+   		style			WINDOW_STYLE_FILLED
+		onClose	{	uiScript clearError;	setLocalVarBool	ui_centerPopup 0; 	}
+		onOpen
+		{
+			setLocalVarBool	ui_centerPopup 1; 
+			// execnow "xstopprivateparty; xstopparty";
+		}
+		onESC
+		{
+			setLocalVarBool	ui_centerPopup 0; 
+			close error_popmenu;
+			open main;
+		}
+#ifdef CONSOLE
+		execKeyInt 15
+		{
+			uiScript clearError;
+			close self;
+		}
+		execKeyInt 27
+		{
+			uiScript clearError;
+			close error_popmenu;
+			open main;
+		}
+#endif // #ifdef CONSOLE
+
+		itemDef 
+		{ 
+			style			WINDOW_STYLE_SHADER 
+			rect			(0-(CHOICE_POPUP_WIDTH/2)) (0-(CHOICE_POPUP_HEIGHT(10)/2)) (CHOICE_POPUP_WIDTH-(CHOICE_POPUP_BORDER_WIDTH*2)) (CHOICE_POPUP_HEIGHT(10)-(CHOICE_POPUP_BORDER_WIDTH*2)) HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			background		"white" 
+			forecolor		0.2 0.2 0.22 0.85 
+			border			1
+			backcolor		0 0 0 0
+			bordersize		CHOICE_POPUP_BORDER_WIDTH
+			bordercolor		CHOICE_POPUP_BORDER_COLOR
+			visible			1 
+			decoration 
+		}
+		itemDef 
+		{ 
+			type			ITEM_TYPE_BUTTON 
+			rect			(0-(CHOICE_POPUP_WIDTH/2)) (2-(CHOICE_POPUP_HEIGHT(10)/2)) CHOICE_POPUP_WIDTH CHOICE_POPUP_TITLE_HEIGHT HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			dvar			"com_errorTitle"
+			textfont		UI_FONT_NORMAL 
+			textscale		CHOICE_POPUP_TITLE_TEXTSIZE 
+			textAlign		ITEM_ALIGN_TOP_CENTER 
+			textstyle		CHOICE_TEXTSTYLE 
+			forecolor		CHOICE_TEXTCOLOR 
+			visible			1	decoration 
+		}
+		itemDef 
+		{ 
+			type			ITEM_TYPE_BUTTON 
+			rect			(CHOICE_POPUP_BORDER_X-(CHOICE_POPUP_WIDTH/2)) ((CHOICE_POPUP_BORDER_Y + CHOICE_POPUP_TITLE_HEIGHT)-(CHOICE_POPUP_HEIGHT(10)/2)) (CHOICE_POPUP_WIDTH - (CHOICE_POPUP_BORDER_Y*2)) CHOICE_POPUP_SUBTITLE_HEIGHT HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			textalignx		4
+			dvar			"com_errorMessage"
+			textfont		UI_FONT_NORMAL 
+			textscale		CHOICE_POPUP_SUBTITLE_TEXTSIZE 
+			textAlign		ITEM_ALIGN_TOP_LEFT 
+			textstyle		CHOICE_TEXTSTYLE 
+			forecolor		CHOICE_TEXTCOLOR 
+			visible			1	decoration 		autowrapped 
+		}
+		
+		#undef	CHOICE_X_START
+		#undef	CHOICE_Y_START
+		#define CHOICE_X_START			(2-(CHOICE_POPUP_WIDTH/2))
+		#define CHOICE_Y_START			(28-(CHOICE_POPUP_HEIGHT(9)/2))
+
+		CHOICE_BUTTON( 10, "@MENU_EXIT", uiScript clearError; close error_popmenu; open main; )
+	}*/
+	
+	menuDef
+	{
+		name			"error_popmenu"
+		visible			0
+		fullscreen		1
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			1
+		onClose
+		{
+			uiScript clearError
+		}
+#ifdef CONSOLE
+		onOpen
+		{
+			// execnow "xstopprivateparty; xstopparty";
+		}
+#endif // #ifdef CONSOLE
+		onESC
+		{
+			uiScript clearError;
+			close error_popmenu;
+			open main;
+		}
+#ifdef CONSOLE
+		execKeyInt 27
+		{
+			uiScript clearError;
+			close error_popmenu;
+			open main;
+		}
+#endif // #ifdef CONSOLE
+
+		itemDef
+		{
+			name			backimage2fade
+			style			WINDOW_STYLE_SHADER
+			rect			-128 0 896 480
+			background		"white"
+			forecolor		0 0 0 0.3
+			backcolor		0 0 0 0.3
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			backimage2fade
+			style			WINDOW_STYLE_SHADER
+			rect			50 177 535 200
+			background		"popmenu_bg"
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			confirm
+			dvar			"com_errorTitle"
+			style			WINDOW_STYLE_EMPTY
+			textscale		TEXTSIZE_TITLE
+			rect			326 200 110 20
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		-62
+			textaligny		5
+			decoration
+			forecolor		COLOR_TITLE
+			visible			1
+		}
+
+		itemDef
+		{
+			name			errorinfo
+			rect			120 210 400 255
+			type			ITEM_TYPE_TEXT
+			style			WINDOW_STYLE_FILLED
+			autowrapped
+			dvar			"com_errorMessage"
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		23
+			textscale		.35
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			back
+			text			"@MENU_EXIT"
+			type			ITEM_TYPE_BUTTON
+			textscale		.3
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			rect			270 360 100 17
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		13
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				uiScript clearError;
+				close error_popmenu;
+				open main
+			}
+		}
+	}
+	
+	#undef CHOICE_POPUP_TITLE_HEIGHT
+	#define CHOICE_POPUP_TITLE_HEIGHT	24
+
+	#undef	CHOICE_X_START
+	#undef	CHOICE_Y_START
+	#define CHOICE_X_START			2
+	#define CHOICE_Y_START			28
+		
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X			480
+	
+	#ifdef PS3
+		// PS3 controller removed warning
+		menuDef
+		{
+			CENTER_POPUP_SETUP( controllerremoved_popmenu, 1, ;, 1 )
+			CHOICE_POPMENU_TITLE( "@PLATFORM_CONTROLLER_DISCONNECTED" )
+			itemDef 
+			{ 
+				type			ITEM_TYPE_BUTTON 
+				rect			0 0 0 0 0 0 
+				exp				text(""); 
+				visible			1
+			}
+		}
+	#endif
+
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X			320
+	
+	// save game data corrupted warning
+	menuDef 
+	{
+		CENTER_POPUP_SETUP( save_corrupted, 5, ;, 1 )
+		
+		CHOICE_POPMENU_TITLE( "@MENU_SAVE_CORRUPTED" )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_SAVEDATA_CORRUPTED" )
+		
+		CHOICE_BUTTON( 5, "@MENU_OK", close self; )
+	}
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( popup_gettingdata, 2, focusFirst;, 1 )
+		onESC 
+		{ 
+			close menu_xboxlive;
+			close popup_findgame;
+			close popup_gettingdata;
+			close live_cac_popup;
+			close popup_gamesetup_private;
+			close private_cac_popup;
+			exec "onlinegame 0";
+			exec "xstopprivateparty";
+			exec "xstopparty";
+			exec "splitscreencontrols";
+		}
+		
+		#define LOCAL_DL_ANIMATION (sin(milliseconds()*0.005)+1)*0.5
+		
+		#define DL_TITLE( textArg, visArg ) \
+		itemDef \
+		{ \
+			type			ITEM_TYPE_BUTTON \
+			rect			20 24 0 0 0 0 \
+			exp				text(textArg); \
+			textfont		UI_FONT_NORMAL \
+			textscale		CHOICE_POPUP_TITLE_TEXTSIZE \
+			textAlign		ITEM_ALIGN_TOP_LEFT \
+			textstyle		CHOICE_TEXTSTYLE \
+			forecolor		CHOICE_TEXTCOLOR \
+			visible			visArg \
+		}
+		
+		DL_TITLE( "", when( 1 ); )
+		
+		DL_TITLE( locString( "@MENU_DOWNLOADING_GAME_SETTINGS" ), when( LOCAL_DL_ANIMATION <= 0.25 ); )
+		DL_TITLE( locString( "@MENU_DOWNLOADING_GAME_SETTINGS" ) + "." , when( LOCAL_DL_ANIMATION > 0.25 && LOCAL_DL_ANIMATION <= 0.5 ); )
+		DL_TITLE( locString( "@MENU_DOWNLOADING_GAME_SETTINGS" ) + ".." , when( LOCAL_DL_ANIMATION > 0.5 && LOCAL_DL_ANIMATION <= 0.75 ); )
+		DL_TITLE( locString( "@MENU_DOWNLOADING_GAME_SETTINGS" ) + "..." , when( LOCAL_DL_ANIMATION > 0.75 ); )
+	}
+
+	menuDef 
+	{
+		CENTER_POPUP_SETUP( error_popmenu_party, 4, focusFirst; uiScript clearError; close error_popmenu_party;, 1 )
+		execKeyInt 27
+		{
+			focusFirst;
+			uiScript clearError;
+			close error_popmenu_party;
+		}
+		
+		CHOICE_POPMENU_TITLE( dvarSTring("com_errorTitle") )
+		CHOICE_POPMENU_SUBTITLE( dvarSTring("com_errorMessage") )
+		
+		CHOICE_BUTTON( 4, "@MENU_OK", uiScript clearError; close error_popmenu_party; )
+	}	
+	
+	menuDef 
+	{
+		CENTER_POPUP_SETUP( error_popmenu_lobby, 4, focusFirst;	uiScript clearError; close error_popmenu_lobby;, 1 )
+		execKeyInt 27
+		{
+			focusFirst;
+			uiScript clearError;
+			close error_popmenu_lobby;
+		}
+		
+		CHOICE_POPMENU_TITLE( dvarSTring("com_errorTitle") )
+		CHOICE_POPMENU_SUBTITLE( dvarSTring("com_errorMessage") )
+		
+		CHOICE_BUTTON( 4, "@MENU_OK", uiScript clearError; close error_popmenu_lobby; )
+	}
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( popup_reconnectingtoparty, 2, close menu_xboxlive; close popup_gettingdata;, 1 )
+		
+		#define LOCAL_RECON_ANIMATION (sin(milliseconds()*0.005)+1)*0.5
+		
+		#define RECON_TITLE( textArg, visArg ) \
+		itemDef \
+		{ \
+			type			ITEM_TYPE_BUTTON \
+			rect			40 24 0 0 0 0 \
+			exp				text(textArg); \
+			textfont		UI_FONT_NORMAL \
+			textscale		CHOICE_POPUP_TITLE_TEXTSIZE \
+			textAlign		ITEM_ALIGN_TOP_LEFT \
+			textstyle		CHOICE_TEXTSTYLE \
+			forecolor		CHOICE_TEXTCOLOR \
+			visible			visArg \
+			decoration \
+		}
+		RECON_TITLE( locString( "@MENU_RECONNECTING_TO_PARTY" ), when( LOCAL_RECON_ANIMATION <= 0.25 ); )
+		RECON_TITLE( locString( "@MENU_RECONNECTING_TO_PARTY" ) + ".", when( LOCAL_RECON_ANIMATION > 0.25 && LOCAL_RECON_ANIMATION <= 0.5 ); )
+		RECON_TITLE( locString( "@MENU_RECONNECTING_TO_PARTY" ) + "..", when( LOCAL_RECON_ANIMATION > 0.5 && LOCAL_RECON_ANIMATION <= 0.75 ); )
+		RECON_TITLE( locString( "@MENU_RECONNECTING_TO_PARTY" ) + "...", when( LOCAL_RECON_ANIMATION > 0.75 ); )
+	}
+
+	menuDef 
+	{
+		CENTER_POPUP_SETUP( acceptinvite_warning, 5, close "acceptinvite_warning";, 1 )
+		
+		CHOICE_POPMENU_TITLE( "@MENU_ACCEPTINVITETITLE" )
+		CHOICE_POPMENU_SUBTITLE_VIS( "@MENU_LEAVEMPGAMEWARNINGPARTYHOST", when( privatepartyhost() && !aloneinparty() ); )
+		CHOICE_POPMENU_SUBTITLE_VIS( "@MENU_LEAVEPARTYWARNING", when( !privatepartyhost() && !inlobby() ); )
+		CHOICE_POPMENU_SUBTITLE_VIS( "@MENU_LEAVEMPGAMEWARNING", when( !privatepartyhost() && inlobby() ); )
+		
+		CHOICE_BUTTON( 4, "@MENU_RESUMEGAME", close self; )
+		CHOICE_BUTTON( 5, "@MENU_ACCEPTINVITE", close self; exec "acceptInvite"; )
+	}		
+	
+	/*
+	menuDef 
+	{
+		name acceptinvite_warning
+	    visible 0
+   		fullscreen 0
+		rect 204 135 235 160
+		focusColor COLOR_FOCUSED
+   		style WINDOW_STYLE_FILLED
+   		border 1
+		popup
+		blurWorld		4.8
+		onOpen
+		{ 
+			setfocus re;
+		}
+		onEsc
+		{
+			close "acceptinvite_warning";
+		}
+	
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -210 2 655 180
+	 		background "popmenu_bg"
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MENU_ACCEPTINVITETITLE"
+			style WINDOW_STYLE_EMPTY
+			textscale TEXTSIZE_TITLE 
+			rect 126 25 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -62
+			textaligny 5
+			decoration
+			forecolor		COLOR_TITLE
+			visible 1
+		}
+
+		itemDef 
+		{
+			name txt
+			text "@MENU_LEAVEMPGAMEWARNINGPARTYHOST"
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect -50 35 350 60
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible when ( privatepartyhost() && !aloneinparty() )
+			decoration
+			autowrapped
+		}
+
+		itemDef 
+		{
+			name txt
+			text "@MENU_LEAVEPARTYWARNING" 
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect -50 35 350 60
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible when ( !privatepartyhost() && !inlobby() )
+			decoration
+			autowrapped
+		}
+
+		itemDef 
+		{
+			name txt
+			text "@MENU_LEAVEMPGAMEWARNING" 
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect -50 35 350 60
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible when ( !privatepartyhost() && inlobby() )
+			decoration
+			autowrapped
+		}
+
+		itemDef 
+		{
+			name re
+			text "@MENU_RESUMEGAME"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 100 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "acceptinvite_warning";
+			}
+		}
+		
+		itemDef 
+		{
+			name rs
+			text "@MENU_ACCEPTINVITE"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 125 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "acceptinvite_warning";
+				exec "acceptInvite";
+			}
+		}
+	}*/	
+	/*
+	menuDef
+	{
+		name			popup_reconnectingtoparty
+    	visible			0
+   		fullscreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+   		style			WINDOW_STYLE_FILLED
+		popup
+		onESC 
+		{ 
+			close menu_xboxlive;
+			close popup_gettingdata;
+		}
+
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			160 120 320 224
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+	
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			ORIGIN_POPUPTITLE
+			forecolor		COLOR_TITLE
+			text			"@MENU_PARTYRECONNECT"
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			visible			1
+			decoration
+		}
+		
+		// bottom bar
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-128 416 896 64
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			text			"@PLATFORM_BACK"
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_DEFAULT
+			origin			505 438
+			visible			1
+			decoration
+		}
+	}*/
+	/*
+	menuDef
+	{
+		name			"error_popmenu"
+		visible			0
+		fullscreen		1
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			1
+#ifdef PC
+		onClose
+		{
+			uiScript clearError
+		}
+#endif // #ifdef PC
+#ifdef CONSOLE
+		onOpen
+		{
+			// execnow "xstopprivateparty; xstopparty";
+		}
+#endif // #ifdef CONSOLE
+		onESC
+		{
+			close error_popmenu;
+			open main;
+		}
+#ifdef CONSOLE
+		execKeyInt 15
+		{
+			uiScript clearError;
+			close self;
+		}
+		execKeyInt 27
+		{
+			uiScript clearError;
+			close error_popmenu;
+			open main;
+		}
+#endif // #ifdef CONSOLE
+
+		itemDef
+		{
+			name			backimage2fade
+			style			WINDOW_STYLE_SHADER
+			rect			-128 0 896 480
+			background		"white"
+			forecolor		0 0 0 0.3
+			backcolor		0 0 0 0.3
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			backimage2fade
+			style			WINDOW_STYLE_SHADER
+			rect			50 177 535 200
+			background		"popmenu_bg"
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			confirm
+			dvar			"com_errorTitle"
+			style			WINDOW_STYLE_EMPTY
+			textscale		TEXTSIZE_TITLE
+			rect			326 200 110 20
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		-62
+			textaligny		5
+			decoration
+			forecolor		COLOR_TITLE
+			visible			1
+		}
+
+		itemDef
+		{
+			name			errorinfo
+			rect			120 210 400 255
+			type			ITEM_TYPE_TEXT
+			style			WINDOW_STYLE_FILLED
+			autowrapped
+			dvar			"com_errorMessage"
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		23
+			textscale		.35
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			back
+			text			"@MENU_EXIT"
+			type			ITEM_TYPE_BUTTON
+			textscale		.3
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			rect			270 360 100 17
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		13
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				uiScript clearError;
+				close error_popmenu;
+				open main
+			}
+		}
+	}*/
+	/*
+	menuDef 
+	{
+		name "error_popmenu_party"
+		visible 0
+		fullscreen 0
+		rect 204 135 235 135
+		focusColor COLOR_FOCUSED
+		style WINDOW_STYLE_FILLED
+		border 1
+		popup
+		onEsc
+		{
+			focusFirst;
+			uiScript clearError;
+			close error_popmenu_party;
+		}
+		execKeyInt 27
+		{
+			focusFirst;
+			uiScript clearError;
+			close error_popmenu_party;
+		}
+
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -332 -162 896 484
+	 		background "white"
+			forecolor 0 0 0 0.3
+			backcolor 0 0 0 0.3
+			visible 1
+			decoration
+		}
+	
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -150 2 535 200
+	 		background "popmenu_bg"
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name title
+			dvar "com_errorTitle" 
+			style WINDOW_STYLE_EMPTY
+			textscale TEXTSIZE_TITLE 
+			origin 109 25
+			textalign ITEM_ALIGN_CENTER
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+		
+		itemDef 
+		{
+			name errorinfo
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_DEFAULT
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect -60 55 355 80
+			textalign ITEM_ALIGN_CENTER
+			textalignx -7
+			textaligny 5
+			decoration
+			autowrapped
+			dvar "com_errorMessage"
+			forecolor 1 1 1 1
+			visible 1
+		}
+		
+		itemDef
+		{
+		        name back
+		        text "@MENU_EXIT"
+		        origin 107 170
+		        type ITEM_TYPE_BUTTON
+		        textscale TEXTSIZE_SMALL
+		        style WINDOW_STYLE_FILLED
+		        textfont UI_FONT_DEFAULT
+		        textalign ITEM_ALIGN_CENTER
+		        forecolor COLOR_UNFOCUSED
+		        visible 1
+		        onfocus { play "mouse_over"; }
+		        action
+		        {
+		                play "mouse_click";
+						uiScript clearError;
+		                close error_popmenu_party;
+		        }
+		}
+	}*/
+	/*
+	menuDef
+	{
+		name			popup_gettingdata
+    	visible			0
+   		fullscreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+   		style			WINDOW_STYLE_FILLED
+		popup
+		onESC 
+		{ 
+			close menu_xboxlive;
+			close popup_findgame;
+			close popup_gettingdata;
+		}
+
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			160 120 320 224
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+	
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			ORIGIN_POPUPTITLE
+			forecolor		COLOR_TITLE
+			text			"DOWNLOADING GAME SETTINGS"
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			visible			1
+			decoration
+		}
+		
+		// bottom bar
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-128 416 896 64
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			text			"@PLATFORM_BACK"
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			origin			505 438
+			visible			1
+			decoration
+		}
+
+		itemDef 
+		{
+			name			popup_custommatch_focus
+			type			ITEM_TYPE_BUTTON
+			visible			1
+		}
+	}*/
+	/*
+	menuDef 
+	{
+		name "error_popmenu_lobby"
+		visible 0
+		fullscreen 0
+		rect 204 160 235 135
+		focusColor COLOR_FOCUSED
+		style WINDOW_STYLE_FILLED
+		border 1
+		popup
+		onEsc
+		{
+			focusFirst;
+			uiScript clearError;
+			close error_popmenu_lobby;
+		}
+		execKeyInt 27
+		{
+			focusFirst;
+			uiScript clearError;
+			close error_popmenu_lobby;
+		}
+
+		itemDef 
+		{
+			name window
+			group grpControlbutton
+			rect 0 2 235 135
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .5
+			visible 0
+			decoration
+		}
+
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -332 -162 896 484
+	 		background "white"
+			forecolor 0 0 0 0.3
+			backcolor 0 0 0 0.3
+			visible 1
+			decoration
+		}
+	
+		itemDef 
+		{
+			name window2
+			group grpControlbutton
+			rect 2 3 231 20	
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .2
+			forecolor 1 1 1 1
+			backcolor 1 1 .3 .3
+			visible 0
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -150 2 535 150
+	 		background "popmenu_bg"
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name title
+			dvar "com_errorTitle" 
+			style WINDOW_STYLE_EMPTY
+			textscale TEXTSIZE_TITLE 
+			origin 109 25
+			textalign ITEM_ALIGN_CENTER
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+		
+		itemDef 
+		{
+			name errorinfo
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 10 45 215 80
+			textalign ITEM_ALIGN_CENTER
+			textalignx -7
+			textaligny 5
+			decoration
+			autowrapped
+			dvar "com_errorMessage"
+			forecolor 1 1 1 1
+			visible 1
+		}
+		
+		itemDef
+		{
+		        name back
+		        text "@MENU_EXIT"
+		        origin 107 115
+		        type ITEM_TYPE_BUTTON
+		        textscale TEXTSIZE_SMALL
+		        style WINDOW_STYLE_FILLED
+		        textfont UI_FONT_NORMAL
+		        textalign ITEM_ALIGN_CENTER
+		        forecolor COLOR_UNFOCUSED
+		        visible 1
+		        onfocus { play "mouse_over"; }
+		        action
+		        {
+		                play "mouse_click";
+						uiScript clearError;
+		                close error_popmenu_lobby;
+		        }
+		}
+	}*/
+	
+	//#define VIS_PRESS_START ( dvarstring( mapname ) != "bog_a" && dvarstring( mapname ) != "bog_b" )
+	#define VIS_PRESS_START 1
+		
+	menuDef
+	{
+		name			"pregame_loaderror"
+		rect			0 0 640 480
+		fullScreen		1
+		focusColor		COLOR_FOCUSED
+		backcolor		1 1 1 0
+		style			WINDOW_STYLE_FILLED
+		onClose
+		{
+			uiScript clearError
+		}
+		onOpen
+		{
+			setdvar ui_SaveLoadVisible "0";
+		}
+		onEsc
+		{
+			uiScript playerstart
+		}
+
+		// background
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			FULLSCREEN_WIDE
+			backcolor		1 1 1 1
+			visible			1
+			background		cinematic
+			ownerdraw		UI_CINEMATIC
+			decoration
+		}
+
+		itemDef
+		{
+			name			"profile"
+			visible			1
+			rect			40 40 560 400
+			ownerdraw		UI_LOADPROFILING
+			decoration
+		}
+
+		itemDef
+		{
+			name			errorinfo
+			rect			120 142 400 255
+			type			ITEM_TYPE_TEXT
+			style			WINDOW_STYLE_FILLED
+			textalign		ITEM_ALIGN_TOP_CENTER
+			autowrapped
+			dvar			"com_errorMessage"
+			textscale		.8
+			forecolor		1 .2 .2 1
+			visible			1
+			decoration
+		}
+
+#ifdef PS3
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			text			"@PLATFORM_UI_PRESS_BUTTONSELECTCHOICE"
+			style			WINDOW_STYLE_FILLED
+			textscale		TEXTSIZE_SMALL
+			border			0
+			bordercolor		1 1 1 1
+			rect			0 388 640 45
+			textalign		ITEM_ALIGN_TOP_CENTER
+			textaligny		4
+			forecolor		1 1 1 0.4
+			backcolor		0 0 0 0
+			visible when ( !dvarbool( ui_isSaving ) && VIS_PRESS_START );
+			decoration
+		}
+#endif
+
+#ifdef XENON
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			text			"@MENU_PRESS_START_TO_SKIP"
+			style			WINDOW_STYLE_FILLED
+			textscale		TEXTSIZE_SMALL
+			border			0
+			bordercolor		1 1 1 1
+			rect			0 388 640 45
+			textalign		ITEM_ALIGN_TOP_CENTER
+			textaligny		4
+			forecolor		1 1 1 0.4
+			backcolor		0 0 0 0
+			visible when ( !dvarbool( ui_isSaving ) && VIS_PRESS_START );
+			decoration
+		}
+#endif
+
+#ifdef PC
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			text			"@MENU_CLICK_TO_START_THE_MISSION"
+			style			WINDOW_STYLE_FILLED
+			textscale		TEXTSIZE_SMALL
+			border			0
+			bordercolor		1 1 1 1
+			rect			0 388 640 45
+			textalign		ITEM_ALIGN_TOP_CENTER
+			textaligny		4
+			forecolor		1 1 1 0.4
+			backcolor		0 0 0 0
+			visible when ( !dvarbool( ui_isSaving ) && dvarstring( credits ) != "1" && VIS_PRESS_START );
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			text			"@MENU_CLICK_TO_CONTINUE"
+			style			WINDOW_STYLE_FILLED
+			textscale		TEXTSIZE_SMALL
+			border			0
+			bordercolor		1 1 1 1
+			rect			0 388 640 45
+			textalign		ITEM_ALIGN_TOP_CENTER
+			textaligny		4
+			forecolor		1 1 1 0.4
+			backcolor		0 0 0 0
+			visible when ( !dvarbool( ui_isSaving ) && dvarstring( mapname ) == "credits" && VIS_PRESS_START );
+			decoration
+		}
+#endif // #ifdef PC
+
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			rect			-128 0 896 480
+			style			WINDOW_STYLE_EMPTY
+			visible			1
+			forecolor		0 0 0 0
+			backcolor		0 0 0 0
+			action
+			{
+				uiScript playerstart
+			}
+		}
+
+		#include "ui/safearea.menu"
+	}
+
+	menuDef
+	{
+		name			"pregame_loaderror_mp"
+		rect			0 0 640 480
+		fullScreen		0
+		focusColor		COLOR_FOCUSED
+		backcolor		1 1 1 0
+		style			WINDOW_STYLE_FILLED
+		blurWorld		6.0
+		onClose
+		{
+			uiScript clearError
+		}
+		onOpen
+		{
+			setdvar ui_SaveLoadVisible "0";
+		}
+
+		// background
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			FULLSCREEN_WIDE
+			backcolor		0.2 0.2 0.2 .5
+			visible			1
+			decoration
+		}
+
+		
+
+		itemDef
+		{
+			name			"profile"
+			visible			1
+			rect			40 40 560 400
+			ownerdraw		UI_LOADPROFILING
+			decoration
+		}
+
+		itemDef
+		{
+			name			errorinfo
+			rect			120 142 400 255
+			type			ITEM_TYPE_TEXT
+			style			WINDOW_STYLE_FILLED
+			textalign		ITEM_ALIGN_TOP_CENTER
+			autowrapped
+			dvar			"com_errorMessage"
+			textscale		.8
+			forecolor		1 .2 .2 1
+			visible			1
+			decoration
+		}
+
+		// the button
+		// Text message saying you should click to continue
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			text			"@MENU_PRESS_START"
+			style			WINDOW_STYLE_FILLED
+			textscale		TEXTSIZE_TITLE
+			rect			0 388 640 45
+			textalign		ITEM_ALIGN_TOP_CENTER
+			textaligny		4
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			rect			-128 0 896 480
+			style			WINDOW_STYLE_EMPTY
+			visible			1
+			forecolor		0 0 0 0
+			backcolor		0 0 0 0
+			action
+			{
+				uiScript clearLoadErrorsSummary
+			}
+		}
+
+		#include "ui/safearea.menu"
+	}
+
+}

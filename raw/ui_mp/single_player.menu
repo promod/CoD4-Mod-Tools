@@ -1,0 +1,107 @@
+#include "ui/menudef.h"
+
+{
+// SINGLE PLAYER POPUP MENU //
+
+	menuDef 
+	{
+		name "single_player_menu"
+		visible 0
+		fullscreen 0
+		//rect 217 200 210 85
+		rect 204 160 235 135
+		focusColor COLOR_FOCUSED
+		style WINDOW_STYLE_FILLED
+		border 1
+		popup
+		onESC { close single_player_menu ; open main }
+
+		itemDef 
+		{
+			name window
+			group grpControlbutton
+			rect 0 2 235 135
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .25
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name window2
+			group grpControlbutton
+			rect 2 4 231 20	
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .2
+			forecolor 1 1 1 1
+			backcolor .3 0.5 0.2 .25
+			visible 1
+			decoration
+		}
+
+	// SINGLE PLAYER //
+
+		itemDef 
+		{
+			name confirm
+			text "@MENU_GO_TO_SINGLE_PLAYER_CALL_OF_DUTY" 
+			style WINDOW_STYLE_EMPTY
+			textscale TEXTSIZE_SMALL
+			rect 116 20 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -55
+			textaligny 0
+			textfont UI_FONT_NORMAL
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+
+		itemDef 
+		{
+			name yes
+			text "@MENU_YES"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_SMALL
+			style WINDOW_STYLE_FILLED
+			rect 45 60 50 20
+			textalign ITEM_ALIGN_CENTER
+			textaligny 15
+			textfont UI_FONT_NORMAL
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			action 
+			{ 
+				play "mouse_click"; 
+				close main ;
+				close single_player_menu ; 
+				uiScript startSingleplayer 
+			}
+		}
+	
+		itemDef 
+		{
+			name no
+			text "@MENU_NO"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_SMALL
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .3
+			rect 142 60 50 20
+			textalign ITEM_ALIGN_CENTER
+			textaligny 15
+			textfont UI_FONT_NORMAL
+			forecolor 1 1 1 1
+			backcolor .3 0.5 0.2 .25
+			visible 1
+			action { play "mouse_click" ; 
+			close single_player_menu ; open main }		
+		}
+	}
+}

@@ -1,0 +1,96 @@
+#include "ui/menudef.h"
+{
+menuDef 
+{
+	name options_driverinfo
+	fullScreen 0				
+	rect 20 10 325 325				// Size and position of the menu
+	focusColor COLOR_FOCUSED			// Menu focus color for text and items
+	soundloop ""
+	popup
+	onESC 
+	{ 
+//		open main;
+		close options_driverinfo;		
+	}
+	onClose
+	{
+		open options_menu;
+		open options_look;
+	}
+
+/*
+	itemDef 
+	{
+		name keyBindStatus
+		rect 0 322 640 30 
+		ownerdraw UI_KEYBINDSTATUS
+		text "-"      
+		forecolor 1 .75 0 1
+		textscale .23
+		textalignx -99
+		textalign ITEM_ALIGN_CENTER
+		textaligny 20
+		visible 1
+		decoration 
+	}
+*/
+	itemDef 
+	{
+		name di_back
+		rect 0 0 325 325	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .5
+		visible 0
+		decoration
+	}
+	itemDef 
+	{
+		name di_back
+		rect 0 60 600 400	
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .8
+		visible 1
+//		decoration
+		action { play "mouse_click"; close options_driverinfo; }
+	}	
+
+	itemDef
+	{
+		name driver
+		group grpSystem
+		rect 10 80 545 400
+		ownerdraw UI_GLINFO 
+		textscale .2
+		forecolor 1 1 1 1
+		visible 1
+		decoration
+	}
+	itemDef
+	{
+		name closes
+		text "@MENU_CLOSE"
+		rect 290 440 55 15
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textalign ITEM_ALIGN_CENTER
+		textscale .3
+		textaligny 12
+		forecolor .9 .9 .95 1
+		visible 1
+		textfont UI_FONT_NORMAL
+		mouseEnter { play "mouse_over"; } 
+		action { play "mouse_click"; close options_driverinfo; }
+	}
+
+}
+
+}

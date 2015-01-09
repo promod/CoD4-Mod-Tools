@@ -1,0 +1,202 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 20 20 29 ) ( -20 20 29 ) ( -20 -20 29 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -20 66 ) ( -20 20 66 ) ( 20 20 66 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -20 64 ) ( 20 -20 64 ) ( 20 -20 60 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -20 64 ) ( 20 20 64 ) ( 20 20 60 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 20 64 ) ( -20 20 64 ) ( -20 20 60 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 20 64 ) ( -20 -20 64 ) ( -20 -20 60 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 29.0"
+"model" "me_ac_big"
+"classname" "misc_model"
+}
+// entity 2
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 17 -23 29 ) ( 16 -23 29 ) ( 16 -24 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -19 -24 62 ) ( -19 -23 62 ) ( -18 -23 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 20 27 ) ( 18 20 27 ) ( 18 20 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -24 29 ) ( -20 -23 29 ) ( -20 -23 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 21 27 ) ( 16 21 27 ) ( 16 21 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -21 61 ) ( -21 -22 61 ) ( -21 -22 59 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 29 -23 29 ) ( 28 -23 29 ) ( 28 -24 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -24 62 ) ( -7 -23 62 ) ( -6 -23 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 29 20 27 ) ( 30 20 27 ) ( 30 20 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -24 29 ) ( -8 -23 29 ) ( -8 -23 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 29 21 27 ) ( 28 21 27 ) ( 28 21 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -21 87 ) ( -10 -22 87 ) ( -10 -22 85 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 43 -23 29 ) ( 42 -23 29 ) ( 42 -24 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 -24 62 ) ( 7 -23 62 ) ( 8 -23 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 43 20 27 ) ( 44 20 27 ) ( 44 20 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -24 29 ) ( 6 -23 29 ) ( 6 -23 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 43 21 27 ) ( 42 21 27 ) ( 42 21 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -21 87 ) ( 4 -22 87 ) ( 4 -22 85 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 17 -23 27 ) ( 16 -23 27 ) ( 16 -24 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -24 29 ) ( -20 -23 29 ) ( -19 -23 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -21 27 ) ( 17 -21 27 ) ( 17 -21 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -24 29 ) ( 20 -23 29 ) ( 20 -23 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 21 27 ) ( 16 21 27 ) ( 16 21 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -21 28 ) ( -21 -22 28 ) ( -21 -22 26 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( -64 -17 62 ) ( -64 -16 62 ) ( -65 -16 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -63 20 64 ) ( -62 20 64 ) ( -62 19 64 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 21 62 ) ( -21 21 64 ) ( -21 -21 64 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -21 62 ) ( -21 -21 64 ) ( -20 -20 64 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -17 62 ) ( -20 -16 62 ) ( -20 -16 60 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 21 64 ) ( -21 21 62 ) ( -20 20 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -64 -31 29 ) ( -64 -30 29 ) ( -65 -30 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -65 5 62 ) ( -64 5 62 ) ( -64 4 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -31 27 ) ( -21 -32 27 ) ( -21 -32 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -65 6 29 ) ( -64 6 29 ) ( -64 6 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -31 27 ) ( -20 -30 27 ) ( -20 -30 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 8 87 ) ( -63 8 87 ) ( -63 8 85 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( -64 -45 29 ) ( -64 -44 29 ) ( -65 -44 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -65 -9 62 ) ( -64 -9 62 ) ( -64 -10 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -45 27 ) ( -21 -46 27 ) ( -21 -46 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -65 -8 29 ) ( -64 -8 29 ) ( -64 -8 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -45 27 ) ( -20 -44 27 ) ( -20 -44 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -6 87 ) ( -63 -6 87 ) ( -63 -6 85 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( 17 -23 62 ) ( 16 -23 62 ) ( 16 -24 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -22 64 ) ( -20 -21 64 ) ( -19 -21 64 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 20 62 ) ( 20 20 62 ) ( 20 20 60 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 -24 64 ) ( 19 -23 64 ) ( 19 -23 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 21 64 ) ( -21 21 62 ) ( 19 21 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 21 62 ) ( -21 21 64 ) ( -20 20 64 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( 17 -64 29 ) ( 16 -64 29 ) ( 16 -65 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -19 -65 62 ) ( -19 -64 62 ) ( -18 -64 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 -21 27 ) ( 18 -21 27 ) ( 18 -21 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -65 29 ) ( -20 -64 29 ) ( -20 -64 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 -20 27 ) ( 16 -20 27 ) ( 16 -20 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -62 61 ) ( -21 -63 61 ) ( -21 -63 59 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( 17 -64 62 ) ( 16 -64 62 ) ( 16 -65 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -63 64 ) ( -20 -62 64 ) ( -19 -62 64 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -21 62 ) ( -21 -21 64 ) ( 19 -21 64 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 -65 64 ) ( 19 -64 64 ) ( 19 -64 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 -20 62 ) ( 16 -20 62 ) ( 16 -20 60 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -21 64 ) ( -21 -21 62 ) ( -20 -20 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 10
+{
+  contents detail;
+ ( 29 -64 29 ) ( 28 -64 29 ) ( 28 -65 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -65 62 ) ( -7 -64 62 ) ( -6 -64 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 29 -21 27 ) ( 30 -21 27 ) ( 30 -21 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -65 29 ) ( -8 -64 29 ) ( -8 -64 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 29 -20 27 ) ( 28 -20 27 ) ( 28 -20 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -62 87 ) ( -10 -63 87 ) ( -10 -63 85 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 11
+{
+  contents detail;
+ ( 43 -64 29 ) ( 42 -64 29 ) ( 42 -65 29 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 -65 62 ) ( 7 -64 62 ) ( 8 -64 62 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 43 -21 27 ) ( 44 -21 27 ) ( 44 -21 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -65 29 ) ( 6 -64 29 ) ( 6 -64 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 43 -20 27 ) ( 42 -20 27 ) ( 42 -20 25 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -62 87 ) ( 4 -63 87 ) ( 4 -63 85 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 3
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 18 -62 -4 ) ( 17 -62 -4 ) ( 17 -63 -4 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17 -63 27 ) ( -17 -62 27 ) ( -16 -62 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 -20 -8 ) ( 20 -20 -8 ) ( 20 -20 -10 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -63 -6 ) ( -18 -62 -6 ) ( -18 -62 -8 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 -19 -11 ) ( 18 -19 -11 ) ( 18 -19 -13 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -60 52 ) ( -20 -61 52 ) ( -20 -61 50 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 4
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 51 -62 -4 ) ( 50 -62 -4 ) ( 50 -63 -4 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -63 27 ) ( 16 -62 27 ) ( 17 -62 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 -20 -8 ) ( 53 -20 -8 ) ( 53 -20 -10 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 15 -63 -6 ) ( 15 -62 -6 ) ( 15 -62 -8 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 -19 -11 ) ( 51 -19 -11 ) ( 51 -19 -13 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 13 -60 52 ) ( 13 -61 52 ) ( 13 -61 50 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 5
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 18 -24 -4 ) ( 17 -24 -4 ) ( 17 -25 -4 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17 -25 27 ) ( -17 -24 27 ) ( -16 -24 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 19 -11 ) ( 20 19 -11 ) ( 20 19 -13 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -25 -6 ) ( -18 -24 -6 ) ( -18 -24 -8 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 20 -8 ) ( 18 20 -8 ) ( 18 20 -10 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -22 52 ) ( -20 -23 52 ) ( -20 -23 50 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 6
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 51 -24 -4 ) ( 50 -24 -4 ) ( 50 -25 -4 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -25 27 ) ( 16 -24 27 ) ( 17 -24 27 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 19 -11 ) ( 53 19 -11 ) ( 53 19 -13 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 15 -25 -6 ) ( 15 -24 -6 ) ( 15 -24 -8 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 20 -8 ) ( 51 20 -8 ) ( 51 20 -10 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 13 -22 52 ) ( 13 -23 52 ) ( 13 -23 50 ) me_metal_rust_03 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

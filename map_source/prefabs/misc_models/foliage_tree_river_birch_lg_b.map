@@ -1,0 +1,24 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -13 -15 -18 ) ( 10 -8 -18 ) ( 13 1 -18 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -19 -8 210 ) ( -18 10 210 ) ( -12 16 210 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -13 -16 -18 ) ( -13 -16 210 ) ( 9 -5 210 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -8 210 ) ( -20 -8 -18 ) ( -18 10 -18 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 16 -18 ) ( -12 16 210 ) ( -18 10 210 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -5 -18 ) ( 9 -5 210 ) ( 11 4 210 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -8 -18 ) ( -20 -8 210 ) ( -13 -16 210 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 11 4 -18 ) ( 11 4 210 ) ( -12 16 210 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "foliage_tree_river_birch_lg_b"
+"classname" "misc_model"
+}

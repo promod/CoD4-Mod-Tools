@@ -1,0 +1,23 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 128 40 0 ) ( -128 40 0 ) ( -128 -36 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -128 -36 84 ) ( -128 40 84 ) ( 128 40 84 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -108 -72 92 ) ( 148 -72 92 ) ( 148 -72 8 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 -36 84 ) ( 128 40 84 ) ( 128 40 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 68 80 ) ( -136 68 80 ) ( -136 68 -4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -128 40 84 ) ( -128 -36 84 ) ( -128 -36 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"model" "vehicle_bradley"
+"classname" "misc_model"
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+}

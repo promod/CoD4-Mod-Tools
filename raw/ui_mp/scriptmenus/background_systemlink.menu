@@ -1,0 +1,249 @@
+#include "ui/menudef.h"
+
+#define ORIGIN_CHOICE1		80 100
+#define ORIGIN_CHOICE2		80 120
+#define ORIGIN_CHOICE3		80 140
+#define ORIGIN_CHOICE4		80 160
+
+#define ORIGIN_SETTING1		208 100
+#define ORIGIN_SETTING2		208 120
+#define ORIGIN_SETTING3		208 140
+#define ORIGIN_SETTING4		208 160
+
+#define GAMESETUP_CFG	"default_systemlink.cfg"
+#define START_EXEC		uiScript StartServer;
+
+#define SETTINGS_MAP	settings_map
+
+{
+    assetGlobalDef
+    {
+        fadeClamp       1.0                     // sets the fadeup alpha
+        fadeCycle       1                       // how often fade happens in milliseconds
+        fadeAmount      0.1                     // amount to adjust alpha per cycle
+    }
+    
+	menuDef
+	{
+		name			background_systemlink
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		onOpen
+		{
+            //execnow "nosplitscreen";
+			uiScript UpdateFilter;
+			setfocus serverlist;
+		}
+		onEsc
+		{
+			scriptmenuresponse "popMenu";
+			close background_systemlink;
+			open background_main;
+			//exec "splitscreencontrols";
+		}
+
+		#include "ui/navcontrols.menu"
+		
+		itemDef
+		{
+			name			refresh
+			text			"@PLATFORM_REFRESH"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			origin			200 438
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			name			refresh
+			type			ITEM_TYPE_BUTTON
+			rect			200 438 0 0
+			visible			1
+			decoration
+			execKeyInt BUTTON_X
+			{
+				play "mouse_click";
+				uiScript RefreshServers;
+			}
+		}
+
+		itemDef
+		{
+			name			creategame
+			text			"@PLATFORM_CREATEGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			origin			290 438
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			name			creategame
+			type			ITEM_TYPE_BUTTON
+			rect			290 438 0 0
+			visible			1
+			decoration
+			execKeyInt BUTTON_Y
+			{
+				play "mouse_click";
+				close background_systemlink;
+				//open background_systemlink_setup;
+				scriptmenuresponse "gamesetup_systemlink";
+			}
+		}
+		
+		//SERVER LIST HEADER SORT TABS
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			51 64
+			text			"@MENU_HOST_NAME"
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_NORMAL
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			260 64
+			text			"@MENU_MAP_NAME"
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_NORMAL
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			432 64
+			text			"@MENU_NUMPLAYERS"
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_NORMAL
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			513 64
+			text			"@MENU_TYPE1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+
+		// column dividers
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			256 66 1 349
+			backcolor		1 1 1 .5
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			428 66 1 349
+			backcolor		1 1 1 .5
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			510 66 1 349
+			backcolor		1 1 1 .5
+			visible			1
+			decoration
+		}
+
+		// SERVER LIST TEXT
+		itemDef
+		{
+			name			serverlist
+			rect			45 63 564 352
+			type			ITEM_TYPE_LISTBOX
+			style			WINDOW_STYLE_FILLED
+			elementwidth	120
+			elementheight	18
+			textfont		UI_FONT_NORMAL
+			textalignx		1
+			textscale		TEXTSIZE_DEFAULT
+			elementtype		LISTBOX_TEXT
+			feeder			FEEDER_SERVERS
+			forecolor		COLOR_UNFOCUSED
+			outlinecolor	0.19 0.3 0.2 0.45
+//			numcols			xpos	xwidth	textlen
+			columns	4		0		35		40
+							209		45		25
+							381		5		10
+							462		20		10
+			visible			1
+			noscrollbars
+			doubleClick
+			{
+				uiScript JoinServer;
+				close background_systemlink;
+			}
+		}
+
+		#include "ui/safearea.menu"
+	}
+	
+	menuDef
+	{
+		name			background_systemlink_setup
+		//fullscreen		1
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			0
+		onOpen
+		{
+			execNow "set ui_mapname mp_argun"
+			execNow "set ui_mapname_text @MPUI_ARGUN"
+			execNow "set ui_gametype war"
+			execNow "set ui_gametype_text @MPUI_WAR"
+		}
+		onEsc
+		{
+			//open main;
+			exec "splitscreencontrols";
+			close background_systemlink_setup;
+			open background_systemlink;
+		}
+
+		#include "ui/navcontrols.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		COLOR_TITLE
+			text			"SYSTEMLINK GAME SETUP"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			decoration
+		}
+
+		//#include "ui_mp/playerlist_offline.menu"
+	}
+}

@@ -1,0 +1,37 @@
+#if "@depthWrite@" == "Off"
+
+	depthWrite( Disable );
+
+#elif "@depthWrite@" == "On"
+
+	depthWrite( Enable );
+
+#elif "@blendFunc@" == "Add"
+
+	depthWrite( Disable );
+
+#elif "@blendFunc@" == "Blend"
+
+	depthWrite( Disable );
+
+#elif "@blendFunc@" == "Multiply"
+
+	depthWrite( Disable );
+
+#elif "@blendFunc@" == "Replace"
+
+	depthWrite( Enable );
+
+#elif "@blendFunc@" == "Screen Add"
+
+	depthWrite( Disable );
+
+#elif "@blendFunc@" == "Custom"
+
+	depthWrite( Disable );
+
+#else
+
+	#error "unknown blendFunc \"@blendFunc@\""
+
+#endif

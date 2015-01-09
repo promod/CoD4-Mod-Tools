@@ -1,0 +1,12 @@
+{
+	menuDef
+	{
+		name			"class_opfor"
+		onOpen
+		{
+			setLocalVarString ui_team "opfor"
+			open class
+			close self
+		}
+	}
+}

@@ -1,0 +1,27 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents nonColliding;
+ ( 208 32 160 ) ( -56 32 160 ) ( -56 -32 160 ) me_woodboard_02 128 64 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( -560 -16 208 ) ( -560 48 208 ) ( -296 48 208 ) me_woodboard_02 128 64 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( 1088 -16 304 ) ( 1088 48 304 ) ( 1088 48 232 ) me_woodboard_02 128 64 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( -624 32 304 ) ( -624 -32 304 ) ( -624 -32 232 ) me_woodboard_02 128 64 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( -88 -64 160 ) ( -88 -8 208 ) ( -56 -64 160 ) me_woodboard_02 128 64 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( -88 8 208 ) ( -88 64 160 ) ( -56 8 208 ) me_woodboard_02 128 64 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+}
+// brush 1
+{
+  contents nonColliding;
+ ( -304 32 0 ) ( -568 32 0 ) ( -568 -32 0 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( -48 -32 160 ) ( -48 32 160 ) ( 216 32 160 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( -560 -48 144 ) ( -296 -48 144 ) ( -296 -48 72 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( 1088 -16 144 ) ( 1088 48 144 ) ( 1088 48 72 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( -304 48 96 ) ( -568 48 96 ) ( -568 48 24 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+ ( -624 32 144 ) ( -624 -32 144 ) ( -624 -32 72 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 524288 524288 0 0 0 0
+}
+}

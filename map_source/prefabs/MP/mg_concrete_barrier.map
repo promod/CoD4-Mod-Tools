@@ -1,0 +1,50 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 37 13 19 ) ( -36 13 19 ) ( -36 -16 19 ) mantle_over 64 64 28 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -14 37 ) ( -36 15 37 ) ( 37 15 37 ) mantle_over 64 64 28 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -11 39 ) ( 37 -11 39 ) ( 37 -11 17 ) mantle_over 64 64 28 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -14 39 ) ( 42 15 39 ) ( 42 15 17 ) mantle_over 64 64 2 26 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 37 11 39 ) ( -36 11 39 ) ( -36 11 17 ) mantle_over -64 64 28 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -41 16 39 ) ( -41 -13 39 ) ( -41 -13 17 ) mantle_over 64 64 2 26 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -36 -6 0 ) ( 37 -6 0 ) ( 37 6 0 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 5 31 ) ( 37 5 31 ) ( 37 -7 31 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 37 -7 0 ) ( -36 -7 0 ) ( -36 -7 17 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 37 -11 46 ) ( 37 11 46 ) ( 37 11 7 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 7 0 ) ( 37 7 0 ) ( 37 7 17 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 11 44 ) ( -36 -11 44 ) ( -36 -11 5 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -36 -6 31 ) ( 37 -6 31 ) ( 37 6 31 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 4 35 ) ( 37 4 35 ) ( 37 -4 35 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -4 35 ) ( 37 -4 35 ) ( 37 -7 31 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 37 -11 50 ) ( 37 11 50 ) ( 37 11 11 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 37 4 35 ) ( -36 4 35 ) ( -36 7 31 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 11 48 ) ( -36 -11 48 ) ( -36 -11 9 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "me_concrete_barrier"
+"classname" "misc_model"
+}
+// entity 2
+{
+"spawnflags" "1"
+"model" "weapon_saw_MG_setup"
+"weaponinfo" "saw_bipod_stand_mp"
+"classname" "misc_turret"
+"origin" "0.0 0.0 35.5"
+"export" "1"
+"angles" "0 90 0"
+}

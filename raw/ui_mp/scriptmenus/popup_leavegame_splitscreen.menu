@@ -1,0 +1,252 @@
+#include "ui/menudef.h"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_GROUP			"xboxlive_lobby"
+
+#define CHOICE_SEP_1			3
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#define ORIGIN_POPUPTITLE_SS	320 220
+
+#define ORIGIN_YES_SS	230 260
+#define ORIGIN_NO_SS	310 260
+
+{
+	#include "ui_mp/popupstyle.inc"
+	#include "ui/choices_setup_popmenu.menu"
+
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X			180
+
+	#undef CHOICE_HORIZONTAL_ALIGN
+	#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+	#undef CHOICE_VERTICAL_ALIGN
+	#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+	
+	#undef CHOICE_POPUP_TITLE_HEIGHT
+	#define CHOICE_POPUP_TITLE_HEIGHT	24
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP_ONOPEN( popup_leavegame_splitscreen, 2, ;, setfocus cancel_button, 1 )
+		legacySplitScreenScale
+		
+		#define LOCAL_ACCEPT_LEAVEGAME_SS \
+			play "mouse_click"; \
+			close popup_leavegame_splitscreen;  \
+			exec "disconnect";
+				
+		CHOICE_POPMENU_TITLE( "@MPUI_LEAVE_GAME1")
+
+		CHOICE_BUTTON_BG( 1, 1 )
+		CHOICE_HIGHLIGHT( 1, 1 )
+		CHOICE_BUTTON( 1, "@MENU_YES", LOCAL_ACCEPT_LEAVEGAME_SS )
+		CHOICE_BUTTON_EX( 2, "@MENU_NO", close self, name cancel_button )
+	}		
+	
+	/*
+	menuDef 
+	{
+		name			"popup_leavegame_splitscreen"
+		visible			0
+		fullscreen		0
+		rect			-320 -240 640 480 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_CENTER_SAFEAREA
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			1
+		visible 		1
+		legacySplitScreenScale
+		popup
+		onESC
+		{
+			close popup_leavegame_splitscreen;
+		}
+		execKeyInt BUTTON_A
+		{ 
+			play "mouse_click";
+			close popup_leavegame_splitscreen; 
+			exec "disconnect"
+		}
+		execKeyInt BUTTON_B
+		{
+			play "mouse_click"; 
+			close popup_leavegame_splitscreen; 
+		}
+
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			240 180 160 120
+			backcolor		0.1 0.1 0.1 0.9
+			border			1
+			bordercolor		1 1 1 0.5
+			bordersize		1
+			visible			1
+			decoration
+		}
+	
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			ORIGIN_POPUPTITLE_SS
+			forecolor		COLOR_TITLE
+			text			"Leave Game?"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			visible 		1
+			decoration
+		}
+
+		itemDef 
+		{
+			name yes
+			text "@PLATFORM_YES"
+			type 1
+			textscale .4
+			style ITEM_TYPE_BUTTON
+			textfont UI_FONT_NORMAL
+			textstyle ITEM_TEXTSTYLE_NORMAL
+			rect ORIGIN_YES_SS 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name re
+			text "@PLATFORM_NO"
+			type 1
+			textscale .4
+			style ITEM_TYPE_BUTTON
+			textfont UI_FONT_NORMAL
+			textstyle ITEM_TEXTSTYLE_NORMAL
+			rect ORIGIN_NO_SS 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			visible 1
+			decoration
+		}
+	}
+	*/
+	#undef CHOICE_POPUP_TITLE_HEIGHT
+	#define CHOICE_POPUP_TITLE_HEIGHT	0
+	menuDef
+	{
+		CENTER_POPUP_SETUP_ONOPEN( popup_endgame_splitscreen, 6, ;, setfocus cancel_button, 1 )
+		legacySplitScreenScale
+		
+		#define LOCAL_ACCEPT_ENDGAME_SS \
+			play "mouse_click"; \
+			close popup_endgame_splitscreen;  \
+			scriptMenuResponse "endgame";
+				
+		CHOICE_POPMENU_SUBTITLE( "@MPUI_END_GAME_WARNING")
+
+		CHOICE_HIGHLIGHT( 1, 1 )
+		CHOICE_BUTTON( 5, "@MENU_YES", LOCAL_ACCEPT_ENDGAME_SS )
+		CHOICE_BUTTON_EX( 6, "@MENU_NO", close self, name cancel_button )
+	}
+	
+	/*
+	menuDef 
+	{
+		name			"popup_endgame_splitscreen"
+		visible			0
+		fullscreen		0
+		rect			-320 -240 640 480 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_CENTER_SAFEAREA
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			1
+		visible 		1
+		legacySplitScreenScale
+		popup
+		onESC
+		{
+			close popup_endgame_splitscreen;
+		}
+		execKeyInt BUTTON_A
+		{ 
+			play "mouse_click";
+			close popup_endgame_splitscreen; 
+			scriptMenuResponse "endgame";
+		}
+		execKeyInt BUTTON_B
+		{
+			play "mouse_click"; 
+			close popup_endgame_splitscreen; 
+		}
+
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			240 180 160 120
+			backcolor		0.1 0.1 0.1 0.9
+			border			1
+			bordercolor		1 1 1 0.5
+			bordersize		1
+			visible			1
+			decoration
+		}
+	
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			ORIGIN_POPUPTITLE_SS
+			forecolor		COLOR_TITLE
+			text			"@MPUI_END_GAME1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			visible 		1
+			decoration
+		}
+
+		itemDef 
+		{
+			name yes
+			text "@PLATFORM_YES"
+			type 1
+			textscale .4
+			style ITEM_TYPE_BUTTON
+			textfont UI_FONT_NORMAL
+			textstyle ITEM_TEXTSTYLE_NORMAL
+			rect ORIGIN_YES_SS 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name re
+			text "@PLATFORM_NO"
+			type 1
+			textscale .4
+			style ITEM_TYPE_BUTTON
+			textfont UI_FONT_NORMAL
+			textstyle ITEM_TEXTSTYLE_NORMAL
+			rect ORIGIN_NO_SS 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			visible 1
+			decoration
+		}
+	}*/
+}

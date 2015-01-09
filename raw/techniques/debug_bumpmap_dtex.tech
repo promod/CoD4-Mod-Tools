@@ -1,0 +1,18 @@
+{
+	stateMap "default";
+
+	vertexShader 2.0 "debug_normals_dtex.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "debug_normals.hlsl"
+	{
+		normalMapSampler = material.normalMap;
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.texcoord[1] = code.tangent;
+
+}

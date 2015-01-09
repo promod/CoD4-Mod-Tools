@@ -1,0 +1,152 @@
+#include "ui/menudef.h"
+
+#define COLOR_LOCKED			0.5 0.5 0.5 0.5
+#define COLOR_UNLOCKED			0.2 1.0 0.2 0.75
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_GROUP			"special_features"
+
+#include "ui_mp/menustyle.inc"
+
+#undef  CHOICE_SIZE_X
+#undef  CHOICE_SIZE_Y
+#define CHOICE_SIZE_X			267
+#define CHOICE_SIZE_Y			22
+
+#undef 	CHOICE_DVAR_OFFSET_X
+#define CHOICE_DVAR_OFFSET_X	(CHOICE_SIZE_X+24)
+
+#undef 	CHOICE_DVAR_TEXTALIGN	
+#define CHOICE_DVAR_TEXTALIGN 	ITEM_ALIGN_MIDDLE_LEFT
+
+#include "ui/choices_setup_common.menu"
+
+#define LOCAL_ACTION_CHAPLIN exec "set sf_use_bw 0; set sf_use_invert 0; set sf_use_contrast 0; set sf_use_slowmo 0";
+#define LOCAL_ACTION_CHAPLIN_DISABLE exec "set sf_use_chaplin 0";
+
+#define	CHOICE_SF_TOGGLE_BUTTON( itemIndex, textArg, hintArg, hintArg2, costVal, toggleDvarArg, extraExec, mapArg ) \
+	CHOICE_DBUTTON_VIS( itemIndex, textArg, when( ( dvarInt(cheat_points)<int(costVal) || dvarString(mapname)== mapArg ) && dvarInt(mis_01)>=20 ); ) \
+	CHOICE_BUTTON_FOCUS_VIS_NOHI( itemIndex, "", ;, exec "set ui_hint_text "hintArg;, CLEARUIHINT, when( dvarInt(cheat_points)<int(costVal) && dvarInt(mis_01)>=20 ); ) \
+	CHOICE_DVARFLOATLIST_FOCUS_VIS( itemIndex, textArg, toggleDvarArg, { "@MENU_ENABLED" 1 "@MENU_DISABLED" 0 }, \
+	scriptMenuResponse toggleDvarArg; extraExec, exec "set ui_hint_text "hintArg2, CLEARUIHINT, when( dvarInt(cheat_points)>=int(costVal) && dvarInt(mis_01)>=20 && dvarString( mapname ) != mapArg ); )
+
+#define CLEARUIHINT	exec "set ui_hint_text @NULL_EMPTY"
+
+{
+	menuDef
+	{
+		name			menu_special_features
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		blurWorld		4.8
+		onOpen
+		{
+			setdvar cg_drawhud "0";
+		}
+		onClose
+		{
+			setdvar cg_drawhud "1";
+		}
+		onESC
+		{
+			open main_options;
+			close self;
+		}
+		
+		// background overlay
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.75
+			visible			1
+			decoration
+		}
+		#define SLOMO_EXEC	execOnDvarIntValue sf_use_slowmo 1 "unbind button_rstick"; \
+							execOnDvarIntValue sf_use_slowmo 0 "updategamerprofile";
+
+		//#define ARMADA_EXEC	exec "map armada";
+		#define BACK_OPEN open main_options;
+
+		#include "ui_mp/navcontrols.inc"
+		
+		CHOICE_MENU_TITLE( "@MENU_CHEATS" )
+		
+		// no cheats until you finish the game at least once
+		itemDef	{
+			type			ITEM_TYPE_TEXT
+			rect			14 64 360 40 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			exp				text( "@MENU_CHEATS_HOWTO" )
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		16
+			forecolor		COLOR_TITLE
+			visible			when( dvarInt(mis_01) < 20 );	autowrapped 	decoration
+		}
+
+		CHOICE_SF_TOGGLE_BUTTON( 1, "@MENU_CHEATS_NAME1", "@MENU_CHEATS_UNLOCK1", 	"@MENU_CHEATS_DESC1", 	"2", 	"sf_use_bw", 				LOCAL_ACTION_CHAPLIN_DISABLE, "ac130" );
+		CHOICE_SF_TOGGLE_BUTTON( 2, "@MENU_CHEATS_NAME2", "@MENU_CHEATS_UNLOCK2", 	"@MENU_CHEATS_DESC2", 	"4", 	"sf_use_invert", 			LOCAL_ACTION_CHAPLIN_DISABLE, "ac130" );
+		CHOICE_SF_TOGGLE_BUTTON( 3, "@MENU_CHEATS_NAME3", "@MENU_CHEATS_UNLOCK3", 	"@MENU_CHEATS_DESC3", 	"6", 	"sf_use_contrast", 			LOCAL_ACTION_CHAPLIN_DISABLE, "ac130" );
+		CHOICE_SF_TOGGLE_BUTTON( 4, "@MENU_CHEATS_NAME4", "@MENU_CHEATS_UNLOCK4", 	"@MENU_CHEATS_DESC4", 	"8", 	"sf_use_chaplin", 			LOCAL_ACTION_CHAPLIN, "ac130" );
+		CHOICE_SF_TOGGLE_BUTTON( 5, "@MENU_CHEATS_NAME5", "@MENU_CHEATS_UNLOCK5", 	"@MENU_CHEATS_DESC5", 	"10", 	"sf_use_clustergrenade",	;, "" );
+		CHOICE_SF_TOGGLE_BUTTON( 6, "@MENU_CHEATS_NAME6", "@MENU_CHEATS_UNLOCK6", 	"@MENU_CHEATS_DESC6", 	"15", 	"sf_use_tire_explosion",	;, "" );
+		CHOICE_SF_TOGGLE_BUTTON( 7, "@MENU_CHEATS_NAME7", "@MENU_CHEATS_UNLOCK7", 	"@MENU_CHEATS_DESC7", 	"20", 	"sf_use_slowmo", 			LOCAL_ACTION_CHAPLIN_DISABLE, "" );
+		CHOICE_SF_TOGGLE_BUTTON( 8, "@MENU_CHEATS_NAME8", "@MENU_CHEATS_UNLOCK8", 	"@MENU_CHEATS_DESC8", 	"30", 	"sf_use_ignoreammo", 		;, "" );
+
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			2 246 10 10 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			background		"ui_arrow_right"
+			forecolor		1 1 1 0.5
+			visible			when( dvarInt(mis_01) >= 20 );	decoration
+		}
+		itemDef	{
+			type			ITEM_TYPE_TEXT
+			rect			14 244 360 40 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			exp				text( dvarString( ui_hint_text ) )
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		16
+			forecolor		1 1 1 0.5
+			visible			when( dvarInt(mis_01) >= 20 ); 	decoration
+		}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			2 266 10 10 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			background		"ui_arrow_right"
+			forecolor		1 1 1 0.5
+			visible			1	decoration
+		}
+		itemDef	{
+			type			ITEM_TYPE_TEXT
+			rect			14 264 360 40 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			exp				text( locString( "@MENU_CHEAT_POINTS_LEVEL", dvarInt( ui_level_player_cheatpoints ), dvarInt( ui_level_cheatpoints ) ) )
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		16
+			forecolor		1 1 1 0.5
+			visible			1		decoration
+		}
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			2 286 10 10 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			background		"ui_arrow_right"
+			forecolor		1 1 1 0.5
+			visible			1	decoration
+		}
+		itemDef	{
+			type			ITEM_TYPE_TEXT
+			rect			14 284 360 40 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			exp				text( locString( "@MENU_CHEAT_POINTS", dvarInt( cheat_points ) ) )
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		16
+			forecolor		1 1 1 0.5
+			visible			1		decoration
+		}
+	}
+}

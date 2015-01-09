@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 44 145 10 ) ( -45 145 10 ) ( -45 113 10 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -45 113 44 ) ( -45 145 44 ) ( 44 145 44 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -45 113 45 ) ( 44 113 45 ) ( 44 113 10 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 44 113 45 ) ( 44 145 45 ) ( 44 145 10 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 44 145 45 ) ( -45 145 45 ) ( -45 145 10 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 145 40 ) ( -44 113 40 ) ( -44 113 5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 129 0"
+"classname" "misc_model"
+"model" "xmodel/ma_militarytent_wood_table"
+}

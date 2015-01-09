@@ -1,0 +1,15 @@
+#include "ui/menudef.h"
+
+{
+    menuDef
+    {
+        name            "uiscript_startserver"
+        fullScreen      1
+        rect            0 0 640 480
+        onOpen
+        {
+            uiScript StartServer;
+            close "uiscript_startserver";
+        }
+    }
+}

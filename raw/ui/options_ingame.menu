@@ -1,0 +1,9 @@
+#define OPTIONS_INGAME
+
+#ifdef CONSOLE
+#include "ui/ingame_options.menu"
+#endif // #ifdef CONSOLE
+
+#ifdef PC
+#include "ui/options_pc.menu"
+#endif // #ifdef PC

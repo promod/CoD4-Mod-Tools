@@ -1,0 +1,43 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"diffusefraction" ".13"
+"sundiffusecolor" "0.761 0.749 1"
+"ambient" ".05"
+"northyaw" "80"
+"sundirection" "-12.79 -8.3504 0"
+"suncolor" "1.000000 0.952941 0.701961"
+"sunlight" "2.3"
+"classname" "worldspawn"
+"_color" "0.761 0.749 1"
+}
+// entity 1
+{
+"spawnflags" "4"
+"target" "auto1"
+"origin" "0.0 0.0 0.0"
+"targetname" "explodable_barrel"
+"model" "com_barrel_russian_fuel_rust_h"
+"classname" "script_model"
+}
+// entity 2
+{
+"spawnflags" "1"
+"targetname" "auto1"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 16 16 46 ) ( 16 -16 46 ) ( -16 -16 46 ) clip_nosight 64 64 32696 7728 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -16 0 ) ( 16 -16 0 ) ( 16 16 0 ) clip_nosight 64 64 32696 7728 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 0 0 ) ( 14 0 40 ) ( 14 16 40 ) clip_nosight 64 64 -7728 16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 11 0 ) ( 9 11 40 ) ( -2 22 40 ) clip_nosight 64 64 -7728 16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 14 0 ) ( 0 14 40 ) ( -16 14 40 ) clip_nosight 63.96096 64 32676.268 16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 11 0 ) ( -9 11 40 ) ( -20 0 40 ) clip_nosight 64 64 -7728 16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 0 0 ) ( -14 0 40 ) ( -14 -16 40 ) clip_nosight 64 64 -7728 16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -10 0 ) ( -10 -10 40 ) ( 1 -21 40 ) clip_nosight 64 64 -7728 16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -14 0 ) ( 0 -14 40 ) ( 16 -14 40 ) clip_nosight 64.023445 64 32707.904 16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -11 0 ) ( 9 -11 40 ) ( 20 0 40 ) clip_nosight 64 64 -7728 16 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,28 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"contrastGain" "0.15"
+"diffusefraction" "0.45"
+"_color" "0.90 0.90 1"
+"sunlight" "1"
+"sundirection" "-35 200 0"
+"sundiffusecolor" "1 1 1"
+"suncolor" "1 1 1"
+"ambient" ".10"
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 52 12 2 ) ( -20 12 2 ) ( -20 -12 2 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -12 4 ) ( -12 12 4 ) ( 60 12 4 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -8 156 ) ( 52 -8 156 ) ( 52 -8 -4 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -12 156 ) ( 40 12 156 ) ( 40 12 -4 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 8 156 ) ( -20 8 156 ) ( -20 8 -4 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 12 148 ) ( -44 -12 148 ) ( -44 -12 -12 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27 8 4 ) ( 41 5 4 ) ( 27 8 36 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -4 4 ) ( -7 -11 4 ) ( 42 -4 36 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 5 4 ) ( -40 9 4 ) ( -40 9 36 ) ch_woodwall01 128 128 8 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

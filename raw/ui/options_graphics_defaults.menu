@@ -1,0 +1,47 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define OPTIONS_STYLE			1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#undef	CHOICE_SIZE_X
+#define CHOICE_SIZE_X		220
+
+{
+	menuDef 
+	{
+		name options_graphics_defaults
+		fullScreen 0				
+		rect 0 0 640 480				// Size and position of the menu
+		focusColor COLOR_FOCUSED			// Menu focus color for text and items
+		soundloop ""
+		onOpen
+		{
+			setLocalVarBool ui_hideBack 1;
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+		}
+		onESC 
+		{ 
+			close options_graphics_defaults;		
+		}
+
+		#include "ui_mp/leftside_options.inc"
+		
+		CHOICE_SECTION_TITLE( 21, "@MENU_RESET_SYSTEM_DEFAULTS" )
+		
+		PREPROC_TEXT_DRAW_ALIGNED( CHOICE_ORIGIN( 23 ) 300 80 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN, 0 0, text "@MENU_RESTORE_DEFAULTS", TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_CENTER, CHOICE_TEXTCOLOR autowrapped )
+
+		#define LOCAL_MP_ACTION \
+			play "mouse_click"; \
+			uiScript "setRecommended"; \
+			exec "wait; wait; r_applyPicmip;"; \
+			close self;
+			
+		CHOICE_BUTTON( 26, "@MENU_YES", LOCAL_MP_ACTION )
+		CHOICE_BUTTON( 27, "@MENU_NO", close self; open options_graphics; )
+		
+	}
+}

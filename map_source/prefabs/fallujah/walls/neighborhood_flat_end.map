@@ -1,0 +1,25 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"sunlight" "1.6"
+"sundirection" "-12 310.007 0"
+"sundiffusecolor" "0.78 0.80 1"
+"suncolor" "1 1 0.95"
+"diffusefraction" ".25"
+"_color" "0.90 0.90 1"
+"ambient" ".1"
+"contrastGain" ".15"
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( -2 124 0 ) ( -2 134 0 ) ( -6 134 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 132 118 ) ( -4 132 118 ) ( -4 122 118 ) me_asphalt_01 128 -128 2 4 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 122 8 ) ( -6 122 76 ) ( -2 122 76 ) me_asphalt_01 128 -128 2 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 132 12 ) ( -10 132 80 ) ( -10 122 80 ) me_asphalt_01 128 128 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 134 8 ) ( -2 134 76 ) ( -6 134 76 ) me_asphalt_01 128 -128 2 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 124 40 ) ( 10 124 108 ) ( 10 134 108 ) me_asphalt_01 128 -128 2 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

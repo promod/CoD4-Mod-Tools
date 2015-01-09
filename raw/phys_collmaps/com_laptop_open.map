@@ -1,0 +1,25 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 10.5 9.5 0 ) ( -10 9.5 0 ) ( -10 -10.5 0 ) aa_default 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11.5 -9.5 32 ) ( 9 -9.5 32 ) ( 9 -9.5 16 ) aa_default 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8.5 9.5 32 ) ( -12 9.5 32 ) ( -12 9.5 16 ) aa_default 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10.5 8.5 15 ) ( -5.5 8.5 0 ) ( -5.5 40.5 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 8.5 1 ) ( -10.5 8.5 15 ) ( -10.5 40.5 15 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8.5 9.5 -1 ) ( 8.5 9.5 2 ) ( 8.5 41.5 2 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"angles" "0 0 0"
+"classname" "dyn_model"
+"physPreset" "default"
+"model" "com_laptop_open"
+"origin" "0.0 0.0 0.0"
+"type" "clutter"
+}

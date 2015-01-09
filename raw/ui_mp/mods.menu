@@ -1,0 +1,134 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_GROUP			"mods"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			340
+
+#undef CHOICE_X_START
+#undef CHOICE_Y_START
+#define CHOICE_X_START			-170
+#define CHOICE_Y_START			348
+
+{
+	menuDef {
+		name 			mods_menu
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			1
+		onOpen
+		{
+			setLocalVarBool ui_hideBack 1;
+			uiScript loadMods;
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+		}
+		onESC
+		{
+			close self; open main_text;
+		}
+
+		PREPROC_SHADER_DRAW( -120 0 880 480, 0 0, "white", 0 0 0 0.75, 0, 1, 0 0 0 0 )
+		#include "ui_mp/navcontrols.inc"
+
+		CHOICE_MENU_TITLE( "@MENU_MODS" )
+
+		itemDef 
+		{
+			name				modlist
+			rect				-170 64 340 280 HORIZONTAL_ALIGN_CENTER CHOICE_VERTICAL_ALIGN
+			type				ITEM_TYPE_LISTBOX
+			style				WINDOW_STYLE_FILLED
+			textstyle 			ITEM_TEXTSTYLE_SHADOWED
+			elementwidth		120
+			elementheight		22
+			textscale 			CHOICE_TEXTSIZE
+			elementtype			LISTBOX_TEXT
+			feeder				FEEDER_MODS
+			textalignx			6
+			textaligny			0
+			forecolor 			1 1 1 0.9
+			backcolor 			0 0 0 0
+			border				1
+			bordercolor			1 1 1 0.15
+			outlinecolor 		BUTTON_BG_COLOR
+			visible 			MENU_TRUE
+			action				{ show accept; }
+			doubleClick			{ play "mouse_click"; uiScript RunMod; }
+			//mouseEnter		{ show floater_message }
+			//mouseExit			{ hide floater_message } 
+		}
+
+		CHOICE_BUTTON( 1, "@MENU_LAUNCH", uiScript RunMod; )
+		CHOICE_BUTTON_VIS( 2, "@MENU_LAUNCH_WITHOUT_MODS", uiScript ClearMods;, when( dvarString( fs_game ) != "" ); )
+
+		/*
+		itemDef 
+		{
+			name				accept
+			text				"@MENU_LAUNCH"
+			type				1
+			style				WINDOW_STYLE_FILLED
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			rect				40 360 100 20 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			48
+			textaligny			14
+			textscale 			CHOICE_TEXTSIZE
+			forecolor			CHOICE_TEXTCOLOR
+			backcolor			0 0 0 0
+			visible				MENU_TRUE
+			//mouseEnter			{ setitemcolor accept backcolor UI_BUTTON_BACK_COLOR_HOVER;play "mouse_over"; }
+			//mouseExit			{ setitemcolor accept backcolor UI_BUTTON_BACK_COLOR }
+		
+			action				{ play "mouse_click"; uiScript RunMod }		
+		}
+
+		itemDef 
+		{
+			name				launchWithoutMods
+			text				"Launch Without Mods"
+			type				1
+			style				WINDOW_STYLE_FILLED
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			rect				160 360 100 20 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			48
+			textaligny			14
+			textscale 			CHOICE_TEXTSIZE
+			forecolor			CHOICE_TEXTCOLOR
+			backcolor			0 0 0 0
+			visible				MENU_TRUE
+			//mouseEnter			{ setitemcolor launchWithoutMods backcolor UI_BUTTON_BACK_COLOR_HOVER;play "mouse_over"; }
+			//mouseExit			{ setitemcolor launchWithoutMods backcolor UI_BUTTON_BACK_COLOR }
+		
+			action				{ play "mouse_click"; uiScript ClearMods }		
+		}
+		*/
+		/*
+		itemDef 
+		{
+			name floater_message
+			rect 0 322 640 30 
+			text "@MENU_SELECT_MOD_NAME_TO_LAUNCH"      
+			forecolor 1 .75 0 1
+			textfont UI_FONT_NORMAL
+			textscale .25
+			textalignx 221
+			textalign 1
+			textaligny 20
+			visible 0
+		}
+		*/
+	}
+}

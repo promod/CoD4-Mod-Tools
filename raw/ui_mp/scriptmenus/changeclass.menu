@@ -1,0 +1,216 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			//150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+//#define CHOICE_SEP_1			2
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#define MENU_LOCKED_COLOR		0.25 0.25 0.25 1
+
+#define ORIGIN_BUTTON_BACK			52 438
+#define ORIGIN_MENU_TREE			54 64
+#define ORIGIN_MENU_TITLE_MARINES	178 64
+#define ORIGIN_MENU_TITLE_OPFOR		170 64
+#define TREE_COLOR					1 1 1 0.5
+#define LABEL_TEXT_COLOR		0.7 0.75 0.75 1
+
+#define HIGH_BOUND		"1000"
+
+// ------
+
+#define STAT_XP execNow "statGetInDvar 2301 ui_stat_rankxp"
+
+{
+	menuDef
+	{
+		name			"changeclass"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		7.0
+		onOpen
+		{
+			// update player's XP
+			STAT_XP
+			
+			// pc's initial selection loadout display workaround
+			#ifdef PC
+				execnow "set ui_class_offset 200; set ui_multi_s "HIGH_BOUND"; set ui_multi_dt 0";
+			#endif
+		}
+		onEsc 
+		{
+			scriptMenuResponse "back";
+		}
+		
+		#ifndef PC
+		execkeyint BUTTON_START
+		{
+			close self;
+		}
+		#endif
+		
+		// background overlay
+		itemDef	{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 .75 //0 0.05 0.15 0.5
+			visible			1
+			decoration
+		}
+		// gradient_top
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+		// gradient_bottom
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 405 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+
+		// ------------------ TREE TITLE ------------------
+		
+		CHOICE_MENU_TITLE( "@MPUI_CHOOSE_CLASS_CAP" )
+
+		// ------------------ buttons ---------------------
+		#define BACK_OPEN	;
+		#include "ui_mp/navcontrols.inc"
+		
+		//=========================================================================
+		//================ MENU SELECTION FOR ONLINE/OFFLINE GAME =================
+		//=========================================================================
+		#include "ui_mp/teamicon.inc"
+		
+		/*
+		#ifdef PC
+			#define ONLINE_MODE ( dvarBool(onlinegame) )
+			#define OFFLINE_MODE ( !dvarBool(onlinegame) )
+		#else  // #ifdef PC
+			#define ONLINE_MODE ( !dvarBool(splitscreen) && !dvarBool(systemlink) )
+			#define OFFLINE_MODE ( dvarBool(splitscreen) || dvarBool(systemlink) )
+		#endif // #else // #ifdef PC
+		*/
+		
+		/* =================================== default classes ================================= */
+
+		// PC widescreen fix
+		#ifdef PC
+			#undef  CHOICE_X_START
+			#define CHOICE_X_START	-320
+			
+			#undef	CHOICE_HORIZONTAL_ALIGN
+			#define CHOICE_HORIZONTAL_ALIGN HORIZONTAL_ALIGN_CENTER
+		#endif
+		
+		CHOICE_SECTION_TITLE( 1, "@MPUI_DEFAULT_CLASSES" )		
+		
+		CHOICE_BUTTON_FOCUS( 2, "@CLASS_CLASS1", scriptMenuResponse "assault_mp,0"; close self, execnow "set ui_class_offset 200; set ui_multi_s "HIGH_BOUND"; set ui_multi_dt 0", ; )
+		CHOICE_BUTTON_FOCUS( 3, "@CLASS_CLASS2", scriptMenuResponse "specops_mp,0"; close self, execnow "set ui_class_offset 210; set ui_multi_s "HIGH_BOUND"; set ui_multi_dt 0", ; )
+		CHOICE_BUTTON_FOCUS( 4, "@CLASS_CLASS3", scriptMenuResponse "heavygunner_mp,0"; close self, execnow "set ui_class_offset 220; set ui_multi_s "HIGH_BOUND"; set ui_multi_dt 0", ; )		
+	
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 5, "@CLASS_CLASS4", scriptMenuResponse "demolitions_mp,0"; close self;, execnow "set ui_class_offset 230; set ui_multi_s "HIGH_BOUND"; set ui_multi_dt 0", ;, when( stat( 257 ) >= 1 ), stat( 257 ) >= 1 )
+		CHOICE_DBUTTON_VIS( 5, "@CLASS_CLASS4", when( stat( 257 ) < 1 ) )
+		CHOICE_NEWICON_VIS( 5, "specialty_new", when( stat(257) > 1 ) )
+		
+		//CHOICE_BUTTON_FOCUS( 5, "@CLASS_CLASS4", scriptMenuResponse "demolitions_mp,0"; close self, execnow "set ui_class_offset 230; set ui_multi_s "HIGH_BOUND"; set ui_multi_dt 0", ; )
+		
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 6, "@CLASS_CLASS5", scriptMenuResponse "sniper_mp,0"; close self;, execnow "set ui_class_offset 240; set ui_multi_s "HIGH_BOUND"; set ui_multi_dt 0";, ;, when( stat( 258 ) >= 1 ), stat( 258 ) >= 1 )
+		CHOICE_DBUTTON_VIS( 6, "@CLASS_CLASS5", when( ( stat( 258 ) < 1 ) ) )
+		CHOICE_NEWICON_VIS( 6, "specialty_new", when( stat(258) > 1 ) )
+		
+		//CHOICE_BUTTON_FOCUS( 6, "@CLASS_CLASS5", scriptMenuResponse "sniper_mp,0"; close self, execnow "set ui_class_offset 240; set ui_multi_s "HIGH_BOUND"; set ui_multi_dt 0", ; )	
+		
+		#define DATA_TABLE_PRIMARY				int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+1), 5 ))
+		#define DATA_TABLE_PRIMARY_ATTACHMENT	int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+2), 5 ))
+		#define DATA_TABLE_SECONDARY			int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+3), 5 ))
+		#define DATA_TABLE_SECONDARY_ATTACHMENT	int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+4), 5 ))
+		#define DATA_TABLE_SPECIALTY_EQUIPMENT	int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+5), 5 ))
+		#define DATA_TABLE_SPECIALTY_WEAPON		int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+6), 5 ))
+		#define DATA_TABLE_SPECIALTY_ABILITY	int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+7), 5 ))
+		#define DATA_TABLE_SPECIAL_GRENADE		int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+8), 5 ))
+		#define DATA_TABLE_CAMO					int(tablelookup( "mp/classTable.csv", 1, (dvarInt("ui_class_offset")+9), 5 ))
+
+		/* ==================================== custom classes ============================================= */
+				
+		CHOICE_SECTION_TITLE_VIS( 8, "@MPUI_CUSTOM_CLASSES", when( stat(260) > 0 ); )	
+
+		CHOICE_BUTTON_FOCUS_VIS( 9, dvarString( customclass1 ), scriptMenuResponse "custom1,0"; close self, setdvar ui_custom_class_highlighted "0"; exec "set ui_multi_s 0; set ui_multi_dt "HIGH_BOUND;, ;, when( stat(260) > 0 ); )
+		CHOICE_BUTTON_FOCUS_VIS( 10, dvarString( customclass2 ), scriptMenuResponse "custom2,0"; close self, setdvar ui_custom_class_highlighted "10"; exec "set ui_multi_s 0; set ui_multi_dt "HIGH_BOUND;, ;, when( stat(210) > 0 ); )
+		//CHOICE_DBUTTON_VIS( 10, dvarString( customclass2 ), when( stat( 210 ) == 0 && stat(260) > 0 ); )
+		CHOICE_BUTTON_FOCUS_VIS( 11, dvarString( customclass3 ), scriptMenuResponse "custom3,0"; close self, setdvar ui_custom_class_highlighted "20"; exec "set ui_multi_s 0; set ui_multi_dt "HIGH_BOUND;, ;, when( stat(220) > 0 ); )
+		//CHOICE_DBUTTON_VIS( 11, dvarString( customclass3 ), when( stat( 220 ) == 0 && stat(260) > 0 ); )
+		CHOICE_BUTTON_FOCUS_VIS( 12, dvarString( customclass4 ), scriptMenuResponse "custom4,0"; close self;, setdvar ui_custom_class_highlighted "30"; exec "set ui_multi_s 0; set ui_multi_dt "HIGH_BOUND;, ;, when( stat(230) > 0 ); )
+		//CHOICE_DBUTTON_VIS( 12, dvarString( customclass4 ), when( stat( 230 ) == 0 && stat(260) > 0 ); )
+		CHOICE_BUTTON_FOCUS_VIS( 13, dvarString( customclass5 ), scriptMenuResponse "custom5,0"; close self;, setdvar ui_custom_class_highlighted "40"; exec "set ui_multi_s 0; set ui_multi_dt "HIGH_BOUND;, ;, when( stat(240) > 0 ); )
+		//CHOICE_DBUTTON_VIS( 13, dvarString( customclass5 ), when( stat( 240 ) == 0 && stat(260) > 0 ); )
+		
+		//CHOICE_BUTTON_FOCUS_VIS_ADV( 12, dvarString( customclass4 ), scriptMenuResponse "custom4,0"; close self;, hide loadout_info; show "custom4_loadout"; setdvar ui_custom_class_highlighted "30"; exec "set ui_multi_s 0; set ui_multi_dt "HIGH_BOUND;, ;, when( stat( 257 ) >= 1 ), stat( 257 ) >= 1 )
+		//CHOICE_DBUTTON_VIS( 12, dvarString( customclass4 ), when( ( stat( 257 ) < 1 ) ) )
+		//CHOICE_NEWICON_VIS( 12, "specialty_new", when( stat(257) > 1 ) )
+		
+		//CHOICE_BUTTON_FOCUS_VIS_ADV( 13, dvarString( customclass5 ), scriptMenuResponse "custom5,0"; close self;, hide loadout_info; show "custom5_loadout"; setdvar ui_custom_class_highlighted "40"; exec "set ui_multi_s 0; set ui_multi_dt "HIGH_BOUND;, ;, when( ( stat( 258 ) >= 1 ) ), ( stat( 258 ) >= 1 ) )
+		//CHOICE_DBUTTON_VIS( 13, dvarString( customclass5 ), when( ( stat( 258 ) < 1 ) ) )
+		//CHOICE_NEWICON_VIS( 13, "specialty_new", when( stat(258) > 1 ) )			
+
+		#define STATS_PRIMARY					stat( dvarInt( ui_custom_class_highlighted ) + 201 )
+		#define STATS_RIMARY_ATTACHMENT			stat( dvarInt( ui_custom_class_highlighted ) + 202 )
+		#define STATS_SECONDARY					stat( dvarInt( ui_custom_class_highlighted ) + 203 )
+		#define STATS_SECONDARY_ATTACHMENT		stat( dvarInt( ui_custom_class_highlighted ) + 204 )
+		#define STATS_SPECIALTY_EQUIPMENT		stat( dvarInt( ui_custom_class_highlighted ) + 205 )
+		#define STATS_SPECIALTY_WEAPON			stat( dvarInt( ui_custom_class_highlighted ) + 206 )
+		#define STATS_SPECIALTY_ABILITY			stat( dvarInt( ui_custom_class_highlighted ) + 207 )
+		#define STATS_SPECIAL_GRENADE			stat( dvarInt( ui_custom_class_highlighted ) + 208 )
+		#define STATS_CAMO						stat( dvarInt( ui_custom_class_highlighted ) + 209 )
+
+		#include "ui/safearea.menu"
+		
+		/* ================================================================================= */
+		/* ================================ LOADOUT DISPLAY ================================ */
+		/* ================================================================================= */
+
+		#define STAT_CAC_PRIMARY				int(min( STATS_PRIMARY+dvarInt(ui_multi_s), DATA_TABLE_PRIMARY+dvarInt(ui_multi_dt) ))
+		#define STAT_CAC_PRIMARY_ATTACHMENT		int(min( STATS_RIMARY_ATTACHMENT+dvarInt(ui_multi_s), DATA_TABLE_PRIMARY_ATTACHMENT+dvarInt(ui_multi_dt) ))
+		#define STAT_CAC_SECONDARY				int(min( STATS_SECONDARY+dvarInt(ui_multi_s), DATA_TABLE_SECONDARY+dvarInt(ui_multi_dt) ))
+		#define STAT_CAC_SECONDARY_ATTACHMENT	int(min( STATS_SECONDARY_ATTACHMENT+dvarInt(ui_multi_s), DATA_TABLE_SECONDARY_ATTACHMENT+dvarInt(ui_multi_dt) ))
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	int(min( STATS_SPECIALTY_EQUIPMENT+dvarInt(ui_multi_s), DATA_TABLE_SPECIALTY_EQUIPMENT+dvarInt(ui_multi_dt) ))
+		#define STAT_CAC_SPECIALTY_WEAPON		int(min( STATS_SPECIALTY_WEAPON+dvarInt(ui_multi_s), DATA_TABLE_SPECIALTY_WEAPON+dvarInt(ui_multi_dt) ))
+		#define STAT_CAC_SPECIALTY_ABILITY		int(min( STATS_SPECIALTY_ABILITY+dvarInt(ui_multi_s), DATA_TABLE_SPECIALTY_ABILITY+dvarInt(ui_multi_dt) ))
+		#define STAT_CAC_SPECIAL_GRENADE		int(min( STATS_SPECIAL_GRENADE+dvarInt(ui_multi_s), DATA_TABLE_SPECIAL_GRENADE+dvarInt(ui_multi_dt) ))
+		#define STAT_CAC_CAMO					int(min( STATS_CAMO+dvarInt(ui_multi_s), DATA_TABLE_CAMO+dvarInt(ui_multi_dt) ))
+		
+		// enable positioning tweaks
+		#define REPOSITIONING	1
+		
+		#define WEAPON_X					300
+		#define WEAPON_Y					72
+		#define WEAPON_SIZEX				311
+		#define WEAPON_SIZEY				180
+		#define WEAPON_ORIGIN				WEAPON_X WEAPON_Y
+		
+		#define INV_X						300
+		#define INV_Y						260
+		#define INV_SIZEX					311
+		#define INV_SIZEY					146
+		#define INV_ORIGIN					INV_X INV_Y
+		
+		#define HIDE_WEAPON_ATTRIBUTE		1
+		#include "ui_mp/cac_loadout.inc"
+		
+	}
+}

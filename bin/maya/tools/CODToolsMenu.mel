@@ -1,0 +1,115 @@
+// --------------------------------------------------------------------------
+// CODToolsMenu.mel - MEL Script
+// Part of Art and Animation tools for COD4
+// --------------------------------------------------------------------------
+//
+// DESCRIPTION:
+//  Tools menu for all general tools in IW pipeline.
+//
+//
+// REQUIRES:
+//  CODExportModelWindow;
+//  CODExportAnimationWindow;
+//  NoteTrack;
+//  CODViewModelControlWindow;
+//
+//
+//
+// AUTHORS:
+//  Original base layout by Richard Cheek
+//  Rewritten and added functionality by Eric Pierce
+//  
+//  Copyright ©2006 Infinity Ward,
+//  a division of Activision, Inc.
+//     
+// --------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC: CODStartup
+//  COD Startup - Load plugins for now.
+//-------------------------------------------------------------------------------------------------------------------------------------//
+global proc CODStartup()
+{
+  int $pluginLoaded;
+  int $catch_result;
+  
+  // check if the plugin is loaded.  If not, load it.  If that fails, error out
+  $pluginLoaded = `pluginInfo -q -loaded XAnimExport`;
+  if ( $pluginLoaded == 0 )
+  {
+		$catch_result = catch(`loadPlugin XAnimExport`);
+		if($catch_result)
+		{
+		  warning "XAnimExport did not load.";
+		}
+  }
+    
+  $pluginLoaded = `pluginInfo -q -loaded XModelExport`;
+  if ( $pluginLoaded == 0 )
+  { 
+    $catch_result = catch(`loadPlugin XModelExport`);
+    if($catch_result)
+    {
+        warning "XModelExport did not load.";
+    }
+  }
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC: CODToolsMenu
+//  Create COD Tools Menu
+//-------------------------------------------------------------------------------------------------------------------------------------//
+global proc CODToolsMenu()
+{
+  // Set up the variables
+    global string $gMainWindow;
+    global string $gMenuModeButton;
+    string $userName;
+    string $tokName[];
+    string $mayaMode = `setMenuMode`;
+    
+    if(`menu -exists CODToolsMenu`)
+      deleteUI -menu CODToolsMenu;
+
+    setParent $gMainWindow;
+
+    menu -label "Call of Duty 4"
+      -parent $gMainWindow
+      -allowOptionBoxes false
+      -tearOff true
+      CODToolsMenu;
+
+    menuItem -label "Model Exporter" -command "source CODExportModelWindow;CODExportModelWindow";
+    
+      setParent -menu ..;
+    
+    menuItem -divider true;
+    
+    menuItem -label "Animation Exporter" -command "CODExportAnimationWindow";
+    
+    menuItem -divider true;
+    
+    menuItem -label "Notetrack Window" -command "source NoteTrack; NoteTrack";
+    
+    menuItem -divider true;
+    
+
+  // ViewModel Tools menu
+    
+    menuItem -subMenu true -tearOff  true -label "ViewModel Tools";
+      menuItem -label "Create new gunsleeve Maya file"  -command "source CODViewModelControlWindow; MakeSingleVMExportRig";
+      menuItem -label "Create new ViewModel Rig file"   -command "source CODViewModelControlWindow; LoadVMRig";
+      menuItem -label "Switch Gun in current Rig file"  -command "source CODViewModelControlWindow; VM_ChangeGun";
+      
+      setParent -menu ..;
+    menuItem -divider true;
+    
+    string $wiki_page = "http://www.infinityward.com/wiki";
+    string $load_page = "system(\"load " + $wiki_page + "\")";
+    
+    menuItem -label "Wiki Help" -command $load_page;
+    
+    hotBox -updateMenus;
+}
+

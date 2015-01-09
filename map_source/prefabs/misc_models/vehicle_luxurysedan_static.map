@@ -1,0 +1,103 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"sunlight" "1.7"
+"sundirection" "-40 225 0"
+"sundiffusecolor" "0.717647 0.776471 1.000000"
+"suncolor" "0.996078 0.921569 0.505882"
+"northyaw" "90"
+"diffusefraction" ".3"
+"ambient" "0.4"
+"_color" "0.717647 0.776471 1.000000"
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( -63 -36 0 ) ( -63 36 0 ) ( -99 36 0 ) clip_nosight_metal 64 64 2 -39 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -63 36 40 ) ( -63 -36 40 ) ( -99 -36 36 ) clip_nosight_metal 64 64 2 -39 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -63 36 14 ) ( -63 36 40 ) ( -99 36 36 ) clip_nosight_metal 64 -64 39 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -99 36 36 ) ( -99 -36 36 ) ( -99 -36 14 ) clip_nosight_metal 64 64 2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -63 -36 40 ) ( -63 -36 14 ) ( -99 -36 14 ) clip_nosight_metal 64 -64 39 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 97 36 36 ) ( 97 -36 36 ) ( 59 -36 40 ) clip_nosight_metal 64 64 2 23 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 97 -36 36 ) ( 97 36 36 ) ( 97 36 14 ) clip_nosight_metal 64 64 2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 91 -34 40 ) ( -97 -34 40 ) ( -97 38 40 ) clip_nosight_metal 64 64 2 -7 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -63 -36 40 ) ( 43 -36 40 ) ( 43 36 40 ) clip_nosight_metal 64 64 2 -7 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 21 -26 60 ) ( -41 -26 60 ) ( -41 26 60 ) clip_nosight_metal 64 64 2 -7 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 21 -36 60 ) ( 21 36 60 ) ( 43 36 40 ) clip_nosight_metal 64 64 2 -7 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -41 36 60 ) ( -41 -36 60 ) ( -63 -36 40 ) clip_nosight_metal 64 64 2 -7 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -41 -26 60 ) ( 21 -26 60 ) ( 43 -36 40 ) clip_nosight_metal 64 -64 7 0 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -63 36 40 ) ( 43 36 40 ) ( 21 26 60 ) clip_nosight_metal 64 -64 7 0 -180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -28 44 0 ) ( -28 -50 0 ) ( 10 -50 0 ) mantle_on 64 64 0 72 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -46 60 ) ( -28 -46 60 ) ( -28 48 60 ) mantle_on 64 64 0 72 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -44 126 ) ( 42 50 126 ) ( 42 50 50 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 42 124 ) ( -28 42 124 ) ( -28 42 48 ) mantle_on 64 -64 -72 0 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 48 124 ) ( -62 -46 124 ) ( -62 -46 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 -42 124 ) ( 10 -42 124 ) ( 10 -42 48 ) mantle_on 64 -64 -72 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( -108 44 0 ) ( -108 -50 0 ) ( -70 -50 0 ) mantle_on 64 64 0 -8 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -70 -46 40 ) ( -108 -46 40 ) ( -108 48 40 ) mantle_on 64 64 0 -8 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -44 124 ) ( -62 50 124 ) ( -62 50 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -70 42 124 ) ( -108 42 124 ) ( -108 42 48 ) mantle_on 64 -64 8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -106 44 124 ) ( -106 -50 124 ) ( -106 -50 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -108 -42 124 ) ( -70 -42 124 ) ( -70 -42 48 ) mantle_on 64 -64 8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 60 44 0 ) ( 60 -50 0 ) ( 98 -50 0 ) mantle_on 64 64 0 160 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 98 -46 44 ) ( 60 -46 44 ) ( 60 48 44 ) mantle_on 64 64 0 160 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 102 -48 124 ) ( 102 46 124 ) ( 102 46 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 98 42 124 ) ( 60 42 124 ) ( 60 42 48 ) mantle_on 64 -64 -160 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 48 124 ) ( 42 -46 124 ) ( 42 -46 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 -42 124 ) ( 98 -42 124 ) ( 98 -42 48 ) mantle_on 64 -64 -160 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -28 44 0 ) ( -28 -50 0 ) ( 10 -50 0 ) mantle_on 64 64 0 72 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -46 60 ) ( -28 -46 60 ) ( -28 48 60 ) mantle_on 64 64 0 72 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -44 126 ) ( 42 50 126 ) ( 42 50 50 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 42 124 ) ( -28 42 124 ) ( -28 42 48 ) mantle_on 64 -64 -72 0 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 48 124 ) ( -62 -46 124 ) ( -62 -46 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 -42 124 ) ( 10 -42 124 ) ( 10 -42 48 ) mantle_on 64 -64 -72 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( 60 44 0 ) ( 60 -50 0 ) ( 98 -50 0 ) mantle_on 64 64 0 160 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 98 -46 44 ) ( 60 -46 44 ) ( 60 48 44 ) mantle_on 64 64 0 160 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 102 -48 124 ) ( 102 46 124 ) ( 102 46 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 98 42 124 ) ( 60 42 124 ) ( 60 42 48 ) mantle_on 64 -64 -160 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 48 124 ) ( 42 -46 124 ) ( 42 -46 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 -42 124 ) ( 98 -42 124 ) ( 98 -42 48 ) mantle_on 64 -64 -160 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( -108 44 0 ) ( -108 -50 0 ) ( -70 -50 0 ) mantle_on 64 64 0 -8 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -70 -46 40 ) ( -108 -46 40 ) ( -108 48 40 ) mantle_on 64 64 0 -8 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -44 124 ) ( -62 50 124 ) ( -62 50 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -70 42 124 ) ( -108 42 124 ) ( -108 42 48 ) mantle_on 64 -64 8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -106 44 124 ) ( -106 -50 124 ) ( -106 -50 48 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -108 -42 124 ) ( -70 -42 124 ) ( -70 -42 48 ) mantle_on 64 -64 8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "vehicle_luxurysedan_static"
+"origin" "0.0 0.0 0.0"
+}

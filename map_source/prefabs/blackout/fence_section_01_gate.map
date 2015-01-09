@@ -1,0 +1,107 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 10 152 0 ) ( 2 152 0 ) ( 2 56 0 ) ch_woodwall01 128 128 -64 -6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 154 58 ) ( 2 250 58 ) ( 10 250 58 ) ch_woodwall01 128 128 -64 -6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 54 44 ) ( 4 54 44 ) ( 4 56 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 54 44 ) ( 4 60 44 ) ( 4 62 0 ) ch_woodwall01 128 128 -58 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 60 44 ) ( 2 60 44 ) ( 2 62 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 60 44 ) ( 2 54 44 ) ( 2 56 0 ) ch_woodwall01 128 128 -58 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 10 134 0 ) ( 2 134 0 ) ( 2 38 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 138 58 ) ( 2 234 58 ) ( 10 234 58 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 38 72 ) ( 10 38 72 ) ( 10 38 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 10 76 ) ( 4 106 76 ) ( 4 106 4 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 44 72 ) ( 18 44 72 ) ( 18 44 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 266 96 ) ( 2 170 96 ) ( 2 170 24 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 10 112 0 ) ( 2 112 0 ) ( 2 16 0 ) ch_woodwall01 128 128 -64 10 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 116 56 ) ( 2 212 56 ) ( 10 212 56 ) ch_woodwall01 128 128 -64 10 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 18 44 ) ( 4 18 44 ) ( 4 16 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 16 46 ) ( 4 22 46 ) ( 4 20 2 ) ch_woodwall01 128 128 -74 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 24 44 ) ( 2 24 44 ) ( 2 22 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 24 44 ) ( 2 18 44 ) ( 2 16 0 ) ch_woodwall01 128 128 -74 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 10 102 0 ) ( 2 102 0 ) ( 2 6 0 ) ch_woodwall01 128 128 32 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 104 58 ) ( 2 200 58 ) ( 10 200 58 ) ch_woodwall01 128 128 32 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 4 44 ) ( 4 4 44 ) ( 4 6 0 ) ch_woodwall01 128 128 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 4 44 ) ( 4 10 44 ) ( 4 12 0 ) ch_woodwall01 128 128 24 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 10 58 ) ( 2 10 58 ) ( 2 12 14 ) ch_woodwall01 128 128 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 10 44 ) ( 2 4 44 ) ( 2 6 0 ) ch_woodwall01 128 128 24 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 0 64 10 ) ( -2 64 10 ) ( -2 0 10 ) ch_woodwall01 128 128 -64 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 14 ) ( 0 64 14 ) ( 2 64 14 ) ch_woodwall01 128 128 -64 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 14 ) ( 2 0 14 ) ( 2 0 -30 ) ch_woodwall01 128 128 -58 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 0 14 ) ( 2 64 14 ) ( 2 64 -30 ) ch_woodwall01 128 128 -58 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 64 14 ) ( 0 64 14 ) ( 0 64 -30 ) ch_woodwall01 128 128 -58 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 64 14 ) ( 0 0 14 ) ( 0 0 -30 ) ch_woodwall01 128 128 -58 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 0 64 46 ) ( -2 64 46 ) ( -2 0 46 ) ch_woodwall01 128 128 -64 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 50 ) ( 0 64 50 ) ( 2 64 50 ) ch_woodwall01 128 128 -64 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 50 ) ( 2 0 50 ) ( 2 0 6 ) ch_woodwall01 128 128 -52 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 0 50 ) ( 2 64 50 ) ( 2 64 6 ) ch_woodwall01 128 128 -52 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 64 50 ) ( 0 64 50 ) ( 0 64 6 ) ch_woodwall01 128 128 -52 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 64 50 ) ( 0 0 50 ) ( 0 0 6 ) ch_woodwall01 128 128 -52 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( -2 -6 0 ) ( 6 -6 0 ) ( 6 0 0 ) ch_woodwall01 128 128 -32 71 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 2 60 ) ( 6 2 60 ) ( 6 -4 60 ) ch_woodwall01 128 128 -32 71 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -6 0 ) ( -2 -6 46 ) ( 6 -6 46 ) ch_woodwall01 128 128 -32 352 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 0 0 ) ( 4 -6 0 ) ( 4 -6 46 ) ch_woodwall01 128 128 -103 352 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 0 0 ) ( 6 0 46 ) ( -2 0 46 ) ch_woodwall01 128 128 -32 352 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 0 46 ) ( -2 -6 46 ) ( -2 -6 0 ) ch_woodwall01 128 128 -103 352 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( 10 126 0 ) ( 2 126 0 ) ( 2 30 0 ) ch_woodwall01 128 128 -64 20 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 128 58 ) ( 2 224 58 ) ( 10 224 58 ) ch_woodwall01 128 128 -64 20 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 28 44 ) ( 4 28 44 ) ( 4 30 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 28 44 ) ( 4 34 44 ) ( 4 36 0 ) ch_woodwall01 128 128 -84 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 34 44 ) ( 2 34 44 ) ( 2 36 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 34 44 ) ( 2 28 44 ) ( 2 30 0 ) ch_woodwall01 128 128 -84 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( -2 64 0 ) ( 6 64 0 ) ( 6 70 0 ) ch_woodwall01 128 128 -32 1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 72 60 ) ( 6 72 60 ) ( 6 66 60 ) ch_woodwall01 128 128 -32 1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 64 0 ) ( -2 64 46 ) ( 6 64 46 ) ch_woodwall01 128 128 -32 352 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 70 0 ) ( 4 64 0 ) ( 4 64 46 ) ch_woodwall01 128 128 -33 352 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 70 0 ) ( 6 70 46 ) ( -2 70 46 ) ch_woodwall01 128 128 -32 352 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 70 46 ) ( -2 64 46 ) ( -2 64 0 ) ch_woodwall01 128 128 -33 352 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( 10 142 0 ) ( 2 142 0 ) ( 2 46 0 ) ch_woodwall01 128 128 -64 -20 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 52 56 ) ( 4 52 56 ) ( 4 46 56 ) ch_woodwall01 128 128 -64 -20 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 46 56 ) ( 4 46 56 ) ( 4 46 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 46 46 ) ( 4 52 46 ) ( 4 50 2 ) ch_woodwall01 128 128 -44 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 52 56 ) ( 2 52 56 ) ( 2 52 0 ) ch_woodwall01 128 128 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 54 44 ) ( 2 48 44 ) ( 2 46 0 ) ch_woodwall01 128 128 -44 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

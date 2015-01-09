@@ -1,0 +1,1246 @@
+// --------------------------------------------------------------------------
+// CODExportModelWindow.mel - MEL Script
+// Infinity Ward's model exporter for Maya
+// --------------------------------------------------------------------------
+//
+// DESCRIPTION:
+//  Sends export data to XModelExport.mll to be exported
+//   to XMODEL_EXPORT format
+//
+//
+// AUTHORS:
+//  Richard Cheek     		
+//  Hyun Cho							
+//  Eric Pierce
+//
+//  Copyright ©2006 Infinity Ward,
+//  a division of Activision, Inc.
+//
+// --------------------------------------------------------------------------
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	SelectListExportModel
+//
+//		This procedure opens a selection window similar to the List COD Character button in the GUI.
+//		It is used to select a deformation skeleton set for the export nodes in the exporter
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc SelectListExportModel(int $AnimNum)
+{
+	source ListCODChars;
+
+	string $AllChars[] = `ListCODChars`;
+
+
+	// Tokenize the list with : to get the prefix
+
+	string $EachChar;
+	string $CharList[];
+	int $CharCount = 0;
+
+	print "\nStart COD list\n";
+
+	for ($EachChar in $AllChars)
+	{
+
+		string $Tokenize[];
+		clear $Tokenize;
+
+		tokenize $EachChar ":" $Tokenize;
+
+		// Make sure the size of $Tokenize is > 1 meaning there was a : in the original name.
+
+		if (`size $Tokenize` > 1 )
+		{
+			$CharList[$CharCount] = $Tokenize[0];
+			$CharCount++;
+		}
+
+		else 
+		{
+			warning ($Tokenize[0] + " is not referenced.");
+		}
+
+	}
+
+	// Open a selection confirmDialog to select the prefix using a created Eval command
+
+		string $DialogEval = ("confirmDialog -title \"Prefix\" -message \"Select a Character\" ");
+
+		
+		for ($EachChar in  $CharList)
+		{
+			$DialogEval = $DialogEval + (" -button \"" + $EachChar + ":\" ");
+
+		}
+
+		$DialogEval = $DialogEval + (" -b \"Cancel\" -cb \"Cancel\"");
+
+	print "\n\n";
+
+
+	string $Prefix = `eval $DialogEval`;
+
+	if ($Prefix != "Cancel" && $Prefix != "dismiss")
+	{
+	
+//		textFieldGrp -e -text $Prefix TextFieldPrefix;
+		print $Prefix;
+
+		// Need to add in the root tag node to this first because it is not in the deformation skeleton
+		select -r ($Prefix + "DefMesh:TAG_ORIGIN");
+
+		select -add ($Prefix + "DefMesh:DefSkeleton");
+
+
+		SetExportNodesME $AnimNum;
+
+		select -cl;
+
+	}
+
+
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ExportModel
+//
+//		This procedure calls the exporter and exports a Model from the Model window.
+//		The Model it exports is passed into this function in (int $AnimNumber)
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc int ExportModel(int $AnimNumber)
+{
+	string $progressWindowTitle;
+	int $doNotExportChildren = 0;
+	int $forceExportSelectedJoints = 0;
+	int $catchError = 0;
+	string $FileNameArray[];
+	int $FileNameArraySize;
+	int $FileNameArrayIndex;
+	string $command;
+	string $upperCaseFileName;
+	//global int $skipPerforceEdit;
+	string $dirPath;
+
+	string $Parts = `getAttr ("IWGlobalNode.ExportModelNodes" + $AnimNumber)`;
+	string $FileName = `getAttr ("IWGlobalNode.ModelFileName" + $AnimNumber)`;
+	
+	
+	$FileNameArraySize = `tokenize $FileName "\\" $FileNameArray`;
+	$FileName = "";
+	
+	if ( $FileNameArraySize > 1 )
+	{
+		for ( $FileNameArrayIndex = 0; $FileNameArrayIndex < $FileNameArraySize; $FileNameArrayIndex++ )
+		{
+			$FileName += $FileNameArray[$FileNameArrayIndex];
+			if ( $FileNameArrayIndex < $FileNameArraySize-1 )
+				$FileName += "/";
+		}
+	}
+	else
+	{
+		$FileName = `getAttr ("IWGlobalNode.ModelFileName" + $AnimNumber)`;
+	}
+	
+	// change forward slashes to backslashes so we could pass it into "dirname"
+	$FileName = `substituteAllString $FileName "/" "\\"`;
+
+	// get the directory name, but it's going to give it to us in forward slashes
+	$dirPath = `dirname $FileName`;
+
+	// change forward slashes to backslashes because "mkdir" accepts only backslashes
+	$dirPath = `substituteAllString $dirPath "/" "\\"`;
+	system ( "mkdir " + "\"" + $dirPath + "\"" );
+		
+	// change backslashes to forward slash for writing the file
+	$FileName = `substituteAllString $FileName "\\" "/"`;
+
+	// periodCount and periods are used to tokenize the periods in the file name so that 
+	// if an extension exists then it can be stripped out automatically and updated to a clean
+	// extension-less name in the exporter. 
+	
+	string $periods[];
+	int $periodCount = `tokenize $FileName "." $periods`;
+	
+	if ($periodCount < 3)
+	{ 
+		$FileName = $periods[0];
+	}
+	
+	else 
+	{
+		$FileName = $periods[0] + ".";	
+		
+		for($i=1; $i<$periodCount-1; $i++)
+		{
+			if ($i == $periodCount-2)
+			{
+				$FileName += $periods[$i];
+			}
+			
+			else
+			{
+				$FileName += $periods[$i] + ".";
+			}
+		}
+	}
+	
+	setAttr -type "string" ("IWGlobalNode.ModelFileName" + $AnimNumber) $FileName;
+		
+	$upperCaseFileName = `toupper $FileName`;
+	if ( `match ".XMODEL_EXPORT" $upperCaseFileName` == "" )
+		$FileName += ".XMODEL_EXPORT";
+	
+	//if ( $skipPerforceEdit == 0 )
+	//	PerforceEdit $FileName;
+	
+	if ( `attributeExists ("DoNotExportChildren" + $AnimNumber) "IWGlobalNode"`)
+		$doNotExportChildren = `getAttr ("IWGlobalNode.DoNotExportChildren" + $AnimNumber)`;
+
+	if ( `attributeExists ("ForceExportSelectedJoints" + $AnimNumber) "IWGlobalNode"`)
+		$forceExportSelectedJoints = `getAttr ("IWGlobalNode.ForceExportSelectedJoints" + $AnimNumber)`;
+	
+	print ("\n\nExport Model number " + $AnimNumber + "\n");
+	print ("Export joints : " + $Parts + "\n");
+	print ("Filename : " + $FileName + "\n");
+
+	$progressWindowTitle = ("Exporting Entry " + $AnimNumber );
+	
+	progressWindow -title $progressWindowTitle -progress 5 -status "Exporting: 5%" -isInterruptable false;
+	
+	$command = "ExportXModel \"" + $Parts + "\" \"" + $FileName + "\"";
+	if ( $doNotExportChildren )
+		$command += " -doNotExportChildren";
+	if ( $forceExportSelectedJoints )
+		$command += " -forceExportSelectedJoints";
+	
+	//print $command; 
+		
+	// Export the Model
+	$catchError = catch ( $errorMsg = eval( $command ) );
+	
+	if ( $catchError )
+	{
+		progressWindow -endProgress;
+		error ( "Internal failure: " + $FileName );
+		return 0;
+	}
+	else
+	{
+		progressWindow -edit -progress 100 -status "Exporting: 100%";
+		pause -sec 1;
+		progressWindow -endProgress;
+	}
+
+	return 1;	
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	StartTheExportME
+//
+//		This procedure calls the ExportModel function and exports all the selected Models
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc StartTheExportME( int $Selected )
+{
+	// Set up vars
+
+	int $loop;
+	int $CheckBox;
+	int $ModelCount;
+	int $pluginLoaded;
+	string $currentSceneName;
+	//int $perforceResult;
+	string $confirmResult;
+	//global string $perforceOptionGlobal;
+	//global int $skipPerforceEdit;
+	string $saveMessage;
+	string $saveConfirmResult;
+	int $postConvert;
+
+
+	// Find out if any Models are selected.
+	// Get the Model list number
+	$ModelCount = `getAttr IWGlobalNode.ModelCount`;
+	if ($ModelCount < 1)
+		return;
+
+	$currentSceneName = `file -q -sn`;
+	//$skipPerforceEdit = 0;
+	
+	//$perforceResult = `PerforceEdit $currentSceneName`;
+	//if ( $perforceResult == 0 )
+	//{
+		//$confirmResult = `confirmDialog -title "Continue?" -message "Would you like to continue with the export process?" -button "Yes" -button "No" -defaultButton "No" -cancelButton "No" -dismissString "No"`;
+		//if ( $confirmResult == "No" )
+			//return;
+	//}
+	//else
+	//{
+		if ( `file -q -anyModified` > 0 )
+		{
+			$saveMessage = "Save changes to " + $currentSceneName + " ?";
+			$saveConfirmResult = `confirmDialog -title "Save Changes" -message $saveMessage -button "Yes" -button "No" -button "Cancel Export" -defaultButton "Yes" -cancelButton "Yes" -dismissString "No"`;
+			if ( $saveConfirmResult == "Yes" )
+			{
+				file -save;
+			}
+			if ( $saveConfirmResult == "Cancel Export" )
+			{
+				return;
+			}
+		//}
+	}
+
+	// check if the plugin is loaded.  If not, load it.  If that fails, error out
+	$pluginLoaded = `pluginInfo -q -loaded XModelExport`;
+	if ( $pluginLoaded == 0 )
+		loadPlugin XModelExport;
+		
+	$pluginLoaded = `pluginInfo -q -loaded XModelExport`;
+	if ( $pluginLoaded == 0 )
+		error ("XModelExport plugin is not loaded");
+
+	//$perforceOptionGlobal = "";
+	$postConvert = 1;
+	for ($loop = 1; $loop <= $ModelCount ;$loop++ )
+	{
+		// get checkbox of Model #loop if the selected flag is set
+		if ($Selected == 1)
+		{
+			$CheckBox = `checkBox -q -v ("Entry" + $loop)`;
+			if ($CheckBox == 1)
+			{
+				// FIX FOR MAYA 7 REFERENCING PROBLEM. SHOULD BE, BUT NOT NECESSARILY REMOVED IN MAYA 8+
+				SelectExportNodesME $loop;
+				SetExportNodesME $loop;
+
+				// Ths is a selected Model, so export it
+				if ( `ExportModel $loop` == 0 )
+					$postConvert = 0;
+			}
+		}
+		else
+		{
+			// FIX FOR MAYA 7 REFERENCING PROBLEM.  SHOULD BE, BUT NOT NECESSARILY REMOVED IN MAYA 8+
+			SelectExportNodesME $loop;
+			SetExportNodesME $loop;
+
+			// Just export it because we don't care if it's selected or not
+			if ( `ExportModel $loop` == 0 )
+				$postConvert = 0;
+		}
+	
+	}
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ListExportNodes
+//
+//		This procedure prints the list of export nodes to the script editor.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ListExportNodes (int $FileNumber)
+{
+	
+	string $Each;
+
+	string $ExportNodes = `getAttr  ("IWGlobalNode.ExportModelNodes " + $FileNumber)`;
+	//string $ExportNodesList[];
+	//tokenize $ExportNodes " " $ExportNodesList;
+	
+	string $FileName = `textFieldButtonGrp -q -text ("FileNameTextField" + $FileNumber)`;
+
+	
+	print ("\n\nList of Export nodes for export #" + $FileNumber);
+	print "\nFilename : ";
+	print $FileName;
+	print "\n";
+	print $ExportNodes;
+
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	SetExportNodesME
+//
+//		This procedure loads the export list string (ExportNodes#) with the selected objects.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc SetExportNodesME (int $FileNumber)
+{
+	string $Sel[] = `ls -sl`;
+
+	string $Each;
+
+	string $ExportNodes;
+
+	for ($Each in $Sel)
+	{
+
+		$ExportNodes = $ExportNodes + $Each + " ";
+
+	}
+
+	// Check the export nodes list to update the status line
+			
+	if (`size $ExportNodes`)
+	{
+		//text -e -bgc 0.9 0.9 0.9 -e -label "Ready" ("ExportNodeCheck" + $FileNumber);
+		setAttr -type "string" ("IWGlobalNode.ExportModelNodes" + $FileNumber) $ExportNodes;
+		
+		print ( "Set [ " + $ExportNodes + " ] nodes for export file #" + $FileNumber + "\n");
+
+		if (`window -exists CODModelExportWindow`)
+		{
+			button -edit -enable true ("SelectExportButton"+$FileNumber);
+		}
+	}
+	else 
+	{
+		//text -e -bgc 1 0 0.7 -label "NO EXPORT NODES" ("ExportNodeCheck" + $FileNumber);
+		setAttr -type "string" ("IWGlobalNode.ExportModelNodes" + $FileNumber) "";
+		
+		print ( "Set no export nodes for export file #" + $FileNumber);
+		return;
+	}
+
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	SelectExportNodesME
+//
+//		This procedure selects all the nodes stored in the export list string (ExportNodes#) 
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc SelectExportNodesME( int $FileNumber)
+{
+
+	string $exportNodeArray[];
+	int $exportNodeSize;
+	int $exportNodeIndex;
+	string $SelEval;
+	
+	string $ExportNodes = `getAttr  ("IWGlobalNode.ExportModelNodes " + $FileNumber)`;
+	string $newExportNodes;
+	string $deletedNodes;
+	
+	$exportNodeSize = `tokenize $ExportNodes " " $exportNodeArray`;
+	
+	$newExportNodes = "";
+	$deletedNodes = "";
+	
+	// for each export objects, check its existance.  If it no longer exists, append its name in a string
+	if ( $exportNodeSize > 1 )
+	{			
+		for ( $exportNodeIndex = 0; $exportNodeIndex < $exportNodeSize; $exportNodeIndex++ )
+		{
+			if( `objExists $exportNodeArray[$exportNodeIndex]` )
+				$newExportNodes += $exportNodeArray[$exportNodeIndex] + " ";
+			else
+				$deletedNodes += $exportNodeArray[$exportNodeIndex] + " ";
+		}
+		
+	}
+	else
+	{
+		$newExportNodes = $ExportNodes;
+	}
+
+	// select only the objects that exist.
+	$SelEval = ("select -r " + $newExportNodes);
+	//print ( $SelEval + "...\n" );
+	eval $SelEval;
+	
+	// if objects are deleted, pop a messagebox asking if the export list should be updated.
+	if ( $deletedNodes != "" )
+	{
+		string $confirmMessage;
+		$confirmMessage = "[ " + $deletedNodes + " ] no longer exist.\nWould you like to remove these object references from the export list?";
+		
+		if ( "Yes" == `confirmDialog -title "Confirm" -message $confirmMessage -button "Yes" -button "No" -defaultButton "Yes" -cancelButton "No" -dismissString "No"` )
+			SetExportNodesME  $FileNumber;
+
+	}
+
+	print ( "Selected [ " + $newExportNodes + " ] nodes for file #" + $FileNumber + "\n"); 
+}
+
+
+global proc DoNotExportChildrenME( int $FileNumber, int $active )
+{
+	if ( !`attributeExists ("DoNotExportChildren" + $FileNumber) "IWGlobalNode"`)
+	{
+		addAttr -ln ("DoNotExportChildren" + $FileNumber) -at byte IWGlobalNode;
+	}
+	
+	setAttr ("IWGlobalNode.DoNotExportChildren" + $FileNumber) $active;
+}
+
+
+global proc ForceExportSelectedJointsME( int $FileNumber, int $active )
+{
+	if ( !`attributeExists ("ForceExportSelectedJoints" + $FileNumber) "IWGlobalNode"`)
+	{
+		addAttr -ln ("ForceExportSelectedJoints" + $FileNumber) -at byte IWGlobalNode;
+	}
+	
+	setAttr ("IWGlobalNode.ForceExportSelectedJoints" + $FileNumber) $active;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CODExporterFileBrowesME
+//
+//		This procedure opens a file broweser window so that a file name can be selected
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc CODExporterFileBrowesME(int $FileNumber)
+{
+
+//	"fileBrowserDialog -m 1 -fc \"CODSavePose\" -ft \".hand\" -an \"Save\"");
+
+	//print "Testing call to CODExporterFileBrowesME";
+
+	//fileBrowserDialog -mode 1 -fc ("UpdateNameFromBroweserME " + $FileNumber) -an "Save");
+
+	fileBrowserDialog -m 1 -fc ("UpdateNameFromBroweserME " + $FileNumber)  -an "Set";
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	UpdateNameFromBroweserME
+//
+//		This procedure is called by the fileBrowserDialog.
+//		It loads the file name into the filename test box.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc UpdateNameFromBroweserME( int $FileNameNumber, string $filename, string $fileType )
+{
+
+	print ("\nTest proc call to UpdateNameFromBroweserME");
+
+	print ("\nFile number = " + $FileNameNumber);
+	print ("\nFileName = " + $filename);
+
+	// Set the text box file name
+
+		textFieldButtonGrp -e -text $filename   ("FileNameTextField" + $FileNameNumber);
+
+	// Call the ChangeFileNameME function because changing the name above does not force the call like typing in a new name.
+
+		ChangeFileNameME $FileNameNumber;
+
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	DeleteSelectedModels
+//
+//		This procedure deletes any selected Model entrys and redraws the window.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc DeleteSelectedModels()
+{
+	// Unlock the node to add an attribute
+		
+		lockNode -lock off IWGlobalNode;
+
+	// Set up vars
+
+		int $loop;
+		int $DelLoop;
+
+		int $CheckBox;
+
+	// Find out if any Models are selected.
+
+		// Get the Model list number
+
+			$ModelCount = `getAttr IWGlobalNode.ModelCount`;
+
+
+		// if Model count is 0, return
+
+		if ($ModelCount < 1)
+		{
+			return;
+		}
+
+
+	for ($loop = 1; $loop <= $ModelCount ;$loop++ )
+	{
+
+		// get checkbox of Model #loop
+
+		$CheckBox = `checkBox -q -v ("Entry" + $loop)`;
+		
+		if ($CheckBox)
+		{
+			// delete the Model entry #loop
+			// need to move any entrys after this one down one and delete the last entry
+
+				
+			DeleteModelEntry $loop;
+
+			$ModelCount -- ;
+
+			setAttr IWGlobalNode.ModelCount $ModelCount;
+
+		// Force the loop to recheck the same checkbox in case the next one, which has just moved,
+		// was also checked for delete
+
+			$loop--;
+
+		}
+
+	}
+
+
+	// Redraw the window
+
+		CODExportModelWindow;
+
+	
+	// Relock the node to protect it
+		
+		lockNode IWGlobalNode;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	DeleteModelEntry
+//
+//		This procedure deletes a model entry
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc DeleteModelEntry(int $ModelNum)
+{
+	int $ModelCount = `getAttr IWGlobalNode.ModelCount`;
+
+	int $DelLoop;
+
+	for ($DelLoop = $ModelNum; $DelLoop < $ModelCount ; $DelLoop ++ )
+			{
+				// Testing, this is what I need to do
+				print "\n";
+				print ("Moving line " + ($DelLoop + 1) + " to line " + $DelLoop );
+
+				setAttr -type "string" ("IWGlobalNode.ModelFileName" + $DelLoop) (`getAttr ("IWGlobalNode.ModelFileName" + ($DelLoop + 1))`);
+				checkBox -e -v (`checkBox -q -v ("Entry" + ($DelLoop + 1))`) ("Entry" + $DelLoop);
+
+				setAttr -type "string" ("IWGlobalNode.ExportModelNodes" + $DelLoop) (`getAttr  ("IWGlobalNode.ExportModelNodes" + ($DelLoop + 1))`);
+
+			}
+
+			// Delete the last Model entry's attributes
+
+			RemoveModelAttributes $ModelCount;
+
+
+			$ModelCount -- ;
+
+			setAttr IWGlobalNode.ModelCount $ModelCount;
+
+		return;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	DisplayModelList
+//
+//		This procedure creates the Model list in the main window by gathering all the information it needs from the renderGlobals
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc DisplayModelList()
+{
+
+	// Set up some vars
+
+	int $loop;
+
+
+	// First get the number of Model export settings that are stored in the renderGlobals.
+	// If there are none, add 1 and set it to blank
+
+	int $ModelCount;
+
+	if ( `attributeExists ModelCount IWGlobalNode`)
+	{
+
+		$ModelCount = `getAttr IWGlobalNode.ModelCount`;
+
+	}
+	
+	else
+	{
+		// If there isn't a ModelCount attribute, make one and set it to 1
+
+		addAttr -ln ModelCount -at byte IWGlobalNode;
+		setAttr IWGlobalNode.ModelCount 0;
+
+		$ModelCount = 0;
+		return;
+
+	}
+
+
+	// Create all the Model export buttons etc.
+
+	for ($loop = 1; $loop <= $ModelCount ; $loop++)
+	{
+		if ( `attributeExists ( "ModelFileName" + $loop ) IWGlobalNode` == 0 )
+			AddModelAttributes $loop;
+			
+		DisplayModelLine $loop;
+
+	}
+
+
+
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	DisplayModelLine
+//
+//		This procedure adds the Model line to the window. It is called from the DisplayModelList proc
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
+
+global proc buildStuff()
+{
+	frameLayout -label "Model Export Entry List" -borderStyle "etchedIn"  -collapsable true -collapse false -p ExportMainLayout ModelListFrameLayoutGrouped;
+	setParent ..;
+}
+
+
+
+
+
+
+
+global proc DisplayModelLine(int $loop)
+{
+
+		// First get the data from the IWGlobalNode so the fields can be loaded
+
+			string $FileName = `getAttr ("IWGlobalNode.ModelFileName" + $loop)`;
+
+			string $ExportNodeCheck = `getAttr ("IWGlobalNode.ExportModelNodes" + $loop)`;
+			
+			int $doNotExportChildren = 0;
+			int $forceExportSelectedJoints = 0;
+			
+			if ( `attributeExists ("DoNotExportChildren" + $loop) "IWGlobalNode"`)
+				$doNotExportChildren = `getAttr ("IWGlobalNode.DoNotExportChildren" + $loop)`;
+
+			if ( `attributeExists ("ForceExportSelectedJoints" + $loop) "IWGlobalNode"`)
+				$forceExportSelectedJoints = `getAttr ("IWGlobalNode.ForceExportSelectedJoints" + $loop)`;
+			
+			if ( `attributeExists ("ModelGroupColor" + $loop) "IWGlobalNode"` == 0)
+			{
+				addAttr -ln ("ModelGroupColor" + $loop) -dt "string" IWGlobalNode;
+				setAttr -type "string" ("IWGlobalNode.ModelGroupColor" + $loop) ("Red");
+			}
+				
+			string $groupColor = `getAttr ("IWGlobalNode.ModelGroupColor" + $loop)`;
+
+		// Build the fields
+
+			rowLayout -nc 4 -columnWidth4 60 475 65 80;
+			
+				checkBox ("Entry" + $loop);
+				textFieldButtonGrp -bc ("CODExporterFileBrowesME " + $loop) -cc ("ChangeFileNameME " + $loop) -text $FileName -columnWidth2 450 50 -buttonLabel "..." ("FileNameTextField" + $loop);				
+
+				if (`size $ExportNodeCheck`)
+				{
+					button -w 65 -label "Set Exports" -c ("SetExportNodesME " + $loop) ("SetExportButton"+$loop);
+					button -w 80 -enable true -label "Select Exports" -c ("SelectExportNodesME " + $loop) ("SelectExportButton"+$loop);
+			
+				}
+				else
+				{
+					button -w 65 -label "Set Exports" -c ("SetExportNodesME " + $loop) ("SetExportButton"+$loop);
+					button -w 80 -enable false -label "Select Exports" -c ("SelectExportNodesME " + $loop) ("SelectExportButton"+$loop);
+			
+				}
+				
+			setParent ..;
+			
+			separator -style "none";
+			
+			rowLayout -nc 6 -columnWidth6 60 70 75 155 150 180;
+						
+			text -width 60 -label "Group" -align "center" ("GroupColor" + $loop);
+			
+			optionMenu -w 70 -changeCommand ( "SetGroupColorME " + $loop ) ( "SetGroupOptionME"+$loop );
+			menuItem -label "Red";
+			menuItem -label "Green";
+			menuItem -label "Blue";
+			menuItem -label "Yellow";
+			menuItem -label "Purple";
+			menuItem -label "Orange";
+			
+			optionMenu -e -value $groupColor ( "SetGroupOptionME"+$loop );
+			SetGroupColorME $loop;
+			
+			button -w 70 -label "Move Up" -c ("MoveModelEntry Up " + $loop ) ("MoveEntryUpME"+$loop);
+			button -w 70 -label "Move Down" -c ("MoveModelEntry Down " + $loop ) ("MoveEntryDownME"+$loop);
+			
+			checkBoxGrp -ncb 1 -w 140 -cw 1 140 -label1 "Do Not Export Children" -on1 ("DoNotExportChildrenME " + $loop + " 1" ) -of1 ("DoNotExportChildrenME " + $loop + " 0") ("DoNoExportChildren"+$loop);
+			if ( $doNotExportChildren > 0 )
+			{
+				checkBoxGrp -e -value1 1 ("DoNoExportChildren"+$loop);
+			}
+			else
+			{
+				checkBoxGrp -e -value1 0 ("DoNoExportChildren"+$loop);
+			}
+			
+			
+			checkBoxGrp -ncb 1 -w 170 -cw 1 170 -label1 "Force Export Selected Joints" -on1 ("ForceExportSelectedJointsME " + $loop + " 1" ) -of1 ("ForceExportSelectedJointsME " + $loop + " 0") -v1 1 ("ForceExportSelectedJoints"+$loop);
+			if ( $forceExportSelectedJoints > 0 )
+			{
+				checkBoxGrp -e -value1 1 ("ForceExportSelectedJoints"+$loop);
+			}
+			else
+			{
+				checkBoxGrp -e -value1 0 ("ForceExportSelectedJoints"+$loop);
+			}
+
+			setParent ..;
+			
+			separator -w 700 -style "single";
+			separator -w 700 -style "none";
+			separator -w 700 -style "none";
+			separator -w 700 -style "none";
+			separator -w 700 -style "single";
+}
+
+
+global proc MoveModelEntry( string $direction, int $index )
+{
+	int $modelCount;
+	int $swapIndex;
+
+	$modelCount = `getAttr IWGlobalNode.ModelCount`;
+	
+	if ( $direction == "Up" )
+	{
+		if ( $index == 1 )
+			return;
+		
+		$swapIndex = $index - 1;
+	}
+
+	if ( $direction == "Down" )
+	{
+		if ( $index == $modelCount )
+			return;
+		
+		$swapIndex = $index + 1;
+	}
+
+	string $fileName1 = `getAttr ("IWGlobalNode.ModelFileName" + $index)`;
+	string $exportNode1 = `getAttr ("IWGlobalNode.ExportModelNodes" + $index)`;
+	int $doNotExportChildren1 = `getAttr ("IWGlobalNode.DoNotExportChildren" + $index)`;
+	int $forceExportSelectedJoints1 = `getAttr ("IWGlobalNode.ForceExportSelectedJoints" + $index)`;
+	string $groupColor1 = `getAttr ("IWGlobalNode.ModelGroupColor" + $index)`;
+
+	string $fileName2 = `getAttr ("IWGlobalNode.ModelFileName" + $swapIndex)`;
+	string $exportNode2 = `getAttr ("IWGlobalNode.ExportModelNodes" + $swapIndex)`;
+	int $doNotExportChildren2 = `getAttr ("IWGlobalNode.DoNotExportChildren" + $swapIndex)`;
+	int $forceExportSelectedJoints2 = `getAttr ("IWGlobalNode.ForceExportSelectedJoints" + $swapIndex)`;
+	string $groupColor2 = `getAttr ("IWGlobalNode.ModelGroupColor" + $swapIndex)`;
+	
+	
+	setAttr -type "string" ("IWGlobalNode.ModelFileName" + $swapIndex) $fileName1;
+	setAttr -type "string" ("IWGlobalNode.ExportModelNodes" + $swapIndex) $exportNode1;
+	setAttr -type "string" ("IWGlobalNode.ModelGroupColor" + $swapIndex) $groupColor1;
+	setAttr ("IWGlobalNode.DoNotExportChildren" + $swapIndex) $doNotExportChildren1;
+	setAttr ("IWGlobalNode.ForceExportSelectedJoints" + $swapIndex) $forceExportSelectedJoints1;
+		
+	setAttr -type "string" ("IWGlobalNode.ModelFileName" + $index) $fileName2;
+	setAttr -type "string" ("IWGlobalNode.ExportModelNodes" + $index) $exportNode2;
+	setAttr -type "string" ("IWGlobalNode.ModelGroupColor" + $index) $groupColor2;
+	setAttr ("IWGlobalNode.DoNotExportChildren" + $index) $doNotExportChildren2;
+	setAttr ("IWGlobalNode.ForceExportSelectedJoints" + $index) $forceExportSelectedJoints2;
+	
+	
+	textFieldButtonGrp -e -text $fileName2 ("FileNameTextField" + $index);
+	checkBoxGrp -e -value1 $doNotExportChildren2 ("DoNoExportChildren" + $index);
+	checkBoxGrp -e -value1 $forceExportSelectedJoints2 ("ForceExportSelectedJoints" + $index);	
+	optionMenu -e -value $groupColor2 ( "SetGroupOptionME" + $index );
+	SetGroupColorME $index;
+	if (`size $exportNode2`)
+		button -e -enable true ("SelectExportButton" + $index);
+	else
+		button -e -enable false ("SelectExportButton" + $index);
+		
+	textFieldButtonGrp -e -text $fileName1 ("FileNameTextField" + $swapIndex);
+	checkBoxGrp -e -value1 $doNotExportChildren1 ("DoNoExportChildren" + $swapIndex);
+	checkBoxGrp -e -value1 $forceExportSelectedJoints1 ("ForceExportSelectedJoints" + $swapIndex);	
+	optionMenu -e -value $groupColor1 ( "SetGroupOptionME" + $swapIndex );
+	SetGroupColorME $swapIndex;
+	if (`size $exportNode1`)
+		button -e -enable true ("SelectExportButton" + $swapIndex);
+	else
+		button -e -enable false ("SelectExportButton" + $swapIndex);
+
+
+}
+
+
+global proc SetGroupColorME( int $index )
+{
+	string $groupColor;
+	$groupColor = `optionMenu -q -value ("SetGroupOptionME"+$index)`;
+	
+	switch ( $groupColor )
+	{
+	case "Yellow":
+		text -e -bgc 0.9 0.9 0.1 ("GroupColor" + $index);
+		break;
+
+	case "Red":
+		text -e -bgc 0.9 0.1 0.1 ("GroupColor" + $index);
+		break;
+
+	case "Blue":
+		text -e -bgc 0.1 0.1 0.9 ("GroupColor" + $index);
+		break;
+		
+	case "Green":
+		text -e -bgc 0.1 0.9 0.1 ("GroupColor" + $index);
+		break;
+
+	case "Orange":
+		text -e -bgc 1.0 0.5 0.0 ("GroupColor" + $index);
+		break;
+		
+	case "Purple":
+		text -e -bgc 0.5 0.0 0.5 ("GroupColor" + $index);
+		break;
+	
+	default:
+		text -e -bgc 0.5 0.5 0.5 ("GroupColor" + $index);
+		break;
+
+	}
+	
+	setAttr -type "string" ("IWGlobalNode.ModelGroupColor" + $index) $groupColor;
+	
+	text -e -en 0 ("GroupColor" + $index);
+	text -e -en 1 ("GroupColor" + $index);
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ChangeFileNameME
+//
+//	This proc updates the intFieldGrp varible when the value changes
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ChangeFileNameME (int $AnimNumber)
+{
+
+	print "\nEntered ChangeFileNameME\n";
+
+	int $modelCount;
+	int $modelIndex;
+	string $changedFileName;
+	string $compareFileName;	
+	
+	setAttr -type "string" ("IWGlobalNode.ModelFileName" + $AnimNumber) (`textFieldButtonGrp -q -text ("FileNameTextField" + $AnimNumber)`);
+
+ 	$changedFileName = `getAttr ("IWGlobalNode.ModelFileName" + $AnimNumber)`;
+ 	
+	$modelCount = `getAttr IWGlobalNode.ModelCount`;
+	
+	for ( $modelIndex = 1; $modelIndex <= $modelCount; $modelIndex++ )
+	{
+		if ( $modelIndex != $AnimNumber )
+		{
+			$compareFileName = `getAttr ("IWGlobalNode.ModelFileName" + $modelIndex)`;
+			if ( $compareFileName == $changedFileName )
+			{
+				confirmDialog -title "Warning" -message "There are entries with duplicate export file names\nDuplicate file names are not allowed.";
+				break;
+			}
+		}	
+	}
+
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	RemoveModelAttributes
+//
+//		This procedure removes all the extra attributes from the IWGlobalNode for a Model file entry
+//		It is the reverse of 	AddModelAttributes
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc RemoveModelAttributes(int $AnimNumber)
+{
+
+	// Attributes so far :
+	//
+	// FileName#
+
+
+	deleteAttr ("IWGlobalNode.ModelFileName" + $AnimNumber);
+
+	deleteAttr ("IWGlobalNode.ExportModelNodes" + $AnimNumber);
+
+	deleteAttr ("IWGlobalNode.ModelGroupColor" + $AnimNumber);
+	
+	
+	if ( `attributeExists ("DoNotExportChildren" + $AnimNumber) "IWGlobalNode"`)
+		deleteAttr ("IWGlobalNode.DoNotExportChildren" + $AnimNumber);
+
+	if ( `attributeExists ("ForceExportSelectedJoints" + $AnimNumber) "IWGlobalNode"`)
+		deleteAttr ("IWGlobalNode.ForceExportSelectedJoints" + $AnimNumber);
+
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	AddModelAttributes
+//
+//		This procedure adds all the extra attributes to the IWGlobalNode for a new Model file
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc AddModelAttributes(int $AnimNumber)
+{
+
+
+	addAttr -ln ("ModelFileName" + $AnimNumber) -dt "string" IWGlobalNode;
+	setAttr -type "string" ("IWGlobalNode.ModelFileName" + $AnimNumber) ("Click on [...] button to locate the file");
+
+	addAttr -ln ("ExportModelNodes" + $AnimNumber) -dt "string" IWGlobalNode;
+	addAttr -ln ("DoNotExportChildren" + $AnimNumber) -at byte IWGlobalNode;
+	setAttr ("IWGlobalNode.DoNotExportChildren" + $AnimNumber) 0;
+	addAttr -ln ("ForceExportSelectedJoints" + $AnimNumber) -at byte IWGlobalNode;
+	setAttr ("IWGlobalNode.ForceExportSelectedJoints" + $AnimNumber) 0;
+
+	addAttr -ln ("ModelGroupColor" + $AnimNumber) -dt "string" IWGlobalNode;
+	setAttr -type "string" ("IWGlobalNode.ModelGroupColor" + $AnimNumber) ("Red");
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	AddModel
+//
+//		This procedure adds a Model to the list in the IWGlobalNode and re-draws the main window to make it visible
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc AddModel()
+{
+	// Unlock the node to add an attribute
+		
+		lockNode -lock off IWGlobalNode;
+
+	// Add 1 to the Model count attribute
+
+		int $ModelCount = `getAttr IWGlobalNode.ModelCount`;
+
+		$ModelCount ++;
+
+		setAttr  IWGlobalNode.ModelCount $ModelCount;
+
+	// Add all the extra attributes to the IWGlobalNode for the new Model
+
+		AddModelAttributes $ModelCount;
+		
+	// add the new Model to the window so it's visible in the list
+
+		setParent ModelListColumnLayout;
+		DisplayModelLine $ModelCount;
+
+	// Relock the node to protect it
+		
+		lockNode IWGlobalNode;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CreateCODModelExportWindow
+//
+//		This procedure creates the window.
+//	
+//	IN:	string $win - the name of the window that's getting created.
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CreateCODModelExportWindow ( string $win )
+{
+
+	// define the window;
+	window 
+		-title "COD Model Export Window"
+		$win;
+
+	//create a columnLayout for the top level layout
+
+
+
+		scrollLayout ;
+
+		columnLayout -columnAttach "both" 5 -rowSpacing 10 -columnWidth 700  ExportMainLayout;
+
+		// Create a frame layout for the export list
+
+			frameLayout -label "Model Export Entry List" -borderStyle "etchedIn"  -collapsable true -collapse false -p ExportMainLayout ModelListFrameLayout;
+
+			//Create a column layout 
+
+			columnLayout TopExportColLayout;
+
+				columnLayout -p TopExportColLayout ModelListColumnLayout;
+
+				// Create the list of Models and there data
+
+				DisplayModelList;
+
+			rowLayout -p TopExportColLayout -nc 5 -columnWidth5 110 145 145 145 145 ExporterButtonsLayout;
+			//optionMenu -cc "SavePostExportConvertModel" modelPostExportConvertMenu;
+			//menuItem -label "Export Only";
+			//menuItem -label "PC Convert";
+			//menuItem -label "Xenon Convert";
+			text -l "            ";
+
+			button -w 130 -align "center" -label "Add New Entry" -p ExporterButtonsLayout AddModelButton;
+			button -w 130 -align "center" -label "Delete Selected Entries" -p ExporterButtonsLayout  DeleteSelectedButton;
+			button -w 130 -align "center" -label "Export Selected Entries" -p ExporterButtonsLayout ExportSelectedButton;
+			button -w 130 -align "center" -label "Export All Entries" -p ExporterButtonsLayout ExportAllButton;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CreateCODModelExportWindowCB
+//
+//		This procedure sets up the callbacks for the buttons.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CreateCODModelExportWindowCB ()
+{
+	
+	button -e -c AddModel AddModelButton;
+
+	button -e -c DeleteSelectedModels DeleteSelectedButton;
+
+	button -e -c ("StartTheExportME 1") ExportSelectedButton;
+
+	button -e -c ("StartTheExportME 0 ") ExportAllButton;
+
+}
+
+
+global proc createIWGlobalNodeModelProtect()
+{
+	$iwGlobalNodeArray = `ls IWGlobalNode`;
+	if ( `size $iwGlobalNodeArray`)
+	{	
+		
+	// Lock the IWGlobalNode and then clear to have node deselected
+		
+		lockNode IWGlobalNode;
+		select -cl;
+	}
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CODExportModelWindow
+//
+//		This script builds the export window
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CODExportModelWindow()
+{
+	int $pluginLoaded;
+	string $iwGlobalNodeArray[];
+	
+	// check if the plugin is loaded.  If not, load it.  If that fails, error out
+	//$pluginLoaded = `pluginInfo -q -loaded PerforceMaya`;
+	//if ( $pluginLoaded == 0 )
+	//	loadPlugin PerforceMaya;
+		
+	//$pluginLoaded = `pluginInfo -q -loaded PerforceMaya`;
+	//if ( $pluginLoaded == 0 )
+	//	error ("PerforceMaya plugin is not loaded");
+
+	$iwGlobalNodeArray = `ls IWGlobalNode`;
+	if ( `size $iwGlobalNodeArray` == 0 )
+		createNode "renderLayer" -n "IWGlobalNode";
+
+	
+	// Check lockNode first 
+
+	int $checkLockNode[];
+	$checkLockNode = `lockNode -q IWGlobalNode`;
+
+	if($checkLockNode[0])
+	{
+		// If it's locked, unlock to build the window
+
+		lockNode -lock off IWGlobalNode;		
+	}
+	
+
+	//UpdateXModelExportPath();
+	
+	// Create a window 
+		string $win = "CODModelExportWindow";
+
+	// check and see if the window exists.  if it does, then delete it.
+		if (`window -exists $win`)
+			deleteUI $win;
+
+	// create the window
+		CreateCODModelExportWindow $win;
+
+	// make the callbacks
+		CreateCODModelExportWindowCB;
+
+	// Protect the IWGlobalNode from being deleted
+		createIWGlobalNodeModelProtect();
+
+	// show the window
+		showWindow $win;
+}
+
+

@@ -1,0 +1,26 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 12 16 0 ) ( -12 16 0 ) ( -12 -16 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -16 34 ) ( -12 16 34 ) ( 12 16 34 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -14 32 ) ( 12 -14 32 ) ( 12 -14 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -16 32 ) ( 14 16 32 ) ( 14 16 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 14 32 ) ( -12 14 32 ) ( -12 14 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 16 32 ) ( -14 -16 32 ) ( -14 -16 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 6 33.5 ) ( -5 14 33.5 ) ( -14 6 65.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 14 33.5 ) ( 14 5 33.5 ) ( 5 14 65.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -5 33.5 ) ( 6 -14 33.5 ) ( 14 -5 65.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 -14 33.5 ) ( -14 -5 33.5 ) ( -3 -14 65.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "me_basket_rattan03"
+"classname" "misc_model"
+}

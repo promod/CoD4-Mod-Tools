@@ -1,0 +1,14 @@
+{
+	stateMap "default2d";
+
+	vertexShader 1.1 "transform_only.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "floatz_clear.hlsl"
+	{
+	}
+
+	vertex.position = code.position;
+
+}

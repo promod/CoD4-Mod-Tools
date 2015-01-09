@@ -1,0 +1,16 @@
+{
+	stateMap "default2d";
+
+	vertexShader 2.0 "post_light.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "post_light.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+
+}

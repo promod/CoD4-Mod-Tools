@@ -1,0 +1,82 @@
+// cc prefix defines how the CSV Creator will parse the Files when adding them to the CSV
+cc,aim_assist,rawfile,aim_assist/*.graph
+cc,animtrees,rawfile,animtrees/*.atr
+cc,fonts,font,fonts/*
+cc,fx,fx,*/*
+cc,english\localizedstrings,localize,*
+cc,materials,material,*/*
+cc,weapons,weapon,*/*
+cc,xanim,xanim,*/*
+cc,xmodel,xmodel,*/*
+cc,*.cfg,rawfile,*/*.cfg
+cc,*.gsc,rawfile,*/*.gsc
+
+// cc_filter adds a filter to the right-click menu of the files list within CSV Creator
+cc_filter,raw\aitype
+cc_filter,raw\fx
+cc_filter,raw\maps
+cc_filter,raw\materials
+cc_filter,raw\mptype
+cc_filter,raw\physic
+cc_filter,raw\sound
+cc_filter,raw\ui
+cc_filter,raw\vehicles
+cc_filter,raw\weapons
+cc_filter,raw\xanim
+cc_filter,raw\xmodel
+
+// ignore_ext/ignore_dir makes it so it ignores these extensions/directories when csv creator looks through the cod4 directory
+ignore_ext,.lnk
+ignore_ext,.log
+ignore_ext,.bat
+ignore_ext,.iwd
+ignore_ext,.ff
+ignore_dir,__temp
+ignore_dir,character
+ignore_dir,material_properties
+ignore_dir,phys_collmaps
+ignore_dir,screenshots
+ignore_dir,shadercache2
+ignore_dir,shadercache
+ignore_dir,shaders
+ignore_dir,statemaps
+ignore_dir,techniques
+ignore_dir,techsets
+ignore_dir,xmodelalias
+ignore_dir,xmodelparts
+ignore_dir,xmodelpieces
+ignore_dir,xmodelsurfs
+
+// mp_map_template defines the template to use when a New MP Map CSV is created. "*" is replaced by the map name.
+mp_map_template,ignore,code_post_gfx_mp
+mp_map_template,ignore,common_mp
+mp_map_template,col_map_mp,maps/mp/*.d3dbsp
+mp_map_template,gfx_map,maps/mp/*.d3dbsp
+mp_map_template,sound,common,*,!all_mp
+mp_map_template,sound,generic,*,!all_mp
+mp_map_template,sound,voiceovers,*,!all_mp
+mp_map_template,sound,multiplayer,*,!all_mp
+mp_map_template,impactfx,*
+mp_map_template,rawfile,maps/mp/*.gsc
+
+// sp_map_template defines the template to use when a New SP Map CSV is created. "*" is replaced by the map name.
+sp_map_template,ignore,code_post_gfx
+sp_map_template,ignore,common
+sp_map_template,col_map_mp,maps/*.d3dbsp
+sp_map_template,gfx_map,maps/*.d3dbsp
+sp_map_template,sound,common,*,!all_sp
+sp_map_template,sound,generic,*,!all_sp
+sp_map_template,sound,voiceovers,*,!all_sp
+sp_map_template,impactfx,*
+sp_map_template,rawfile,maps/sp/*.gsc
+
+// run_option adds to the 
+run_option,thereisacow,Enables Cheats,0,1
+run_option,developer,Used to give more debug,0,1,2
+run_option,developer_script,Used to give more script debug,0,1
+run_option,logfile,Spits out a console.log file,0,1,2
+run_option,com_introplayed,Skips the intro movies,0,1
+run_option,sv_pure,Determines if the game will use the shipped iwd files only,0,1
+run_option,r_fullscreen,Enables fullscreen,0,1
+run_option,sv_punkbuster,Toggles the use of PunkBuster,0,1,2
+run_option,scr_testclients,How many test bots do you want?,0,1,2,3,4,5,6,7,8,9,10

@@ -1,0 +1,107 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( -12 48 0 ) ( -4 48 0 ) ( -12 80 0 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 154 ) ( -8 -40 154 ) ( -8 -40 186 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 154 ) ( 8 0 154 ) ( -8 0 186 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -8 154 ) ( -40 0 154 ) ( -40 0 186 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 8 154 ) ( 64 0 154 ) ( 64 0 186 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -2656 36 ) ( -8 -2656 36 ) ( -8 -2624 36 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -12 48 36 ) ( -4 48 36 ) ( -12 80 36 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 190 ) ( -8 -40 190 ) ( -8 -40 222 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 190 ) ( 8 0 190 ) ( -8 0 222 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -8 190 ) ( -40 0 190 ) ( -40 0 222 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 8 196 ) ( -38 0 196 ) ( -38 0 228 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -2656 82 ) ( -8 -2656 82 ) ( -8 -2624 82 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -12 48 82 ) ( -4 48 82 ) ( -12 80 82 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -40 236 ) ( -6 -40 236 ) ( -6 -40 268 ) me_cargocontainer_interiorfloor 128 128 192 -52 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 230 ) ( 8 0 230 ) ( -8 0 262 ) me_cargocontainer_interiorfloor 128 128 192 -52 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -8 230 ) ( -40 0 230 ) ( -40 0 262 ) me_cargocontainer_interiorfloor 128 128 192 -52 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 8 230 ) ( 64 0 230 ) ( 64 0 262 ) me_cargocontainer_interiorfloor 128 128 192 -52 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -2656 108 ) ( -4 -2656 108 ) ( -4 -2624 108 ) me_cargocontainer_interiorfloor 128 128 192 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 90 48 36 ) ( 98 48 36 ) ( 90 80 36 ) me_cargocontainer_interiorfloor 128 128 294 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 102 -40 190 ) ( 94 -40 190 ) ( 94 -40 222 ) me_cargocontainer_interiorfloor 128 128 294 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 94 0 190 ) ( 110 0 190 ) ( 94 0 222 ) me_cargocontainer_interiorfloor 128 128 294 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -8 196 ) ( 62 0 196 ) ( 62 0 228 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 8 190 ) ( 64 0 190 ) ( 64 0 222 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 102 -2656 82 ) ( 94 -2656 82 ) ( 94 -2624 82 ) me_cargocontainer_interiorfloor 128 128 294 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( -10 48 36 ) ( -2 48 36 ) ( -10 80 36 ) me_cargocontainer_interiorfloor 128 128 194 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 110 -2 190 ) ( 102 -2 190 ) ( 102 -2 222 ) me_cargocontainer_interiorfloor 128 128 194 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 190 ) ( 16 0 190 ) ( 0 0 222 ) me_cargocontainer_interiorfloor 128 128 194 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -8 196 ) ( -38 0 196 ) ( -38 0 228 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 8 196 ) ( 62 0 196 ) ( 62 0 228 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -2656 82 ) ( -6 -2656 82 ) ( -6 -2624 82 ) me_cargocontainer_interiorfloor 128 128 194 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 26 48 62 ) ( 34 48 62 ) ( 26 80 62 ) me_cargocontainer_interiorfloor 128 128 230 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 -40 218 ) ( 30 -40 218 ) ( 30 -40 250 ) me_cargocontainer_interiorfloor 128 128 230 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 -2 190 ) ( 46 -2 190 ) ( 30 -2 222 ) me_cargocontainer_interiorfloor 128 128 230 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -8 224 ) ( -2 0 224 ) ( -2 0 256 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 8 190 ) ( 0 0 190 ) ( 0 0 222 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 -2656 82 ) ( 30 -2656 82 ) ( 30 -2624 82 ) me_cargocontainer_interiorfloor 128 128 230 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( 60 48 36 ) ( 68 48 36 ) ( 60 80 36 ) me_cargocontainer_interiorfloor 128 128 264 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 -40 190 ) ( 64 -40 190 ) ( 64 -40 222 ) me_cargocontainer_interiorfloor 128 128 264 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -2 190 ) ( 80 -2 190 ) ( 64 -2 222 ) me_cargocontainer_interiorfloor 128 128 264 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -8 196 ) ( 32 0 196 ) ( 32 0 228 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 8 190 ) ( 34 0 190 ) ( 34 0 222 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 -2656 82 ) ( 64 -2656 82 ) ( 64 -2624 82 ) me_cargocontainer_interiorfloor 128 128 264 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( 62 48 54 ) ( 70 48 54 ) ( 62 80 54 ) me_cargocontainer_interiorfloor 128 128 266 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 74 -40 190 ) ( 66 -40 190 ) ( 66 -40 222 ) me_cargocontainer_interiorfloor 128 128 266 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 66 -2 190 ) ( 82 -2 190 ) ( 66 -2 222 ) me_cargocontainer_interiorfloor 128 128 266 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 -8 190 ) ( 34 0 190 ) ( 34 0 222 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 8 170 ) ( 62 0 170 ) ( 62 0 202 ) me_cargocontainer_interiorfloor 128 128 192 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 100 -2656 56 ) ( 92 -2656 56 ) ( 92 -2624 56 ) me_cargocontainer_interiorfloor 128 128 266 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( -10 48 60 ) ( -2 48 60 ) ( -10 80 60 ) me_cargocontainer_interiorfloor 128 128 194 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -40 204 ) ( -6 -40 204 ) ( -6 -40 236 ) me_cargocontainer_interiorfloor 128 128 194 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -2 176 ) ( 10 -2 176 ) ( -6 -2 208 ) me_cargocontainer_interiorfloor 128 128 194 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -8 204 ) ( -38 0 204 ) ( -38 0 236 ) me_cargocontainer_interiorfloor 128 128 192 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 176 ) ( 32 0 176 ) ( 32 0 208 ) me_cargocontainer_interiorfloor 128 128 192 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -2656 62 ) ( -6 -2656 62 ) ( -6 -2624 62 ) me_cargocontainer_interiorfloor 128 128 194 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( -12 48 0 ) ( -4 48 0 ) ( -12 80 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 154 ) ( -8 -40 154 ) ( -8 -40 186 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 154 ) ( 8 0 154 ) ( -8 0 186 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -8 154 ) ( -40 0 154 ) ( -40 0 186 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 8 154 ) ( 64 0 154 ) ( 64 0 186 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -2656 108 ) ( -8 -2656 108 ) ( -8 -2624 108 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

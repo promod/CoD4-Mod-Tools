@@ -1,0 +1,16 @@
+{
+	menuDef
+	{
+		name			"changeclass_opfor"
+		onOpen
+		{
+			
+			setLocalVarString ui_team "opfor"
+
+			uiScript openMenuOnDvar "onlinegame" 0 "changeclass_offline";			
+			uiScript openMenuOnDvar "onlinegame" 1 "changeclass";			
+
+			close self;
+		}
+	}
+}

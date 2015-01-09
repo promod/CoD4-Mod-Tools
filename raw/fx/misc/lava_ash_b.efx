@@ -1,0 +1,204 @@
+iwfx 2
+
+{
+	name "ASH";
+	editorFlags useRandSize0 useRandSize1 useRandRotDelta modColorByAlpha useRandVel0 useBackCompatVel absVel1;
+	flags spawnOffsetNone runRelToSpawn;
+	spawnRange 0 700;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 50 0;
+	spawnOneShot 10 0;
+	spawnDelayMsec 2000 3000;
+	lifeSpanMsec 4000 0;
+	spawnOrgX 0 0;
+	spawnOrgY 0 0;
+	spawnOrgZ 0 0;
+	spawnOffsetRadius 50 50;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 0;
+	gravity 0.5 -1.25;
+	elasticity 0 0;
+	atlasBehavior startFixed;
+	atlasIndex 1;
+	atlasFps 0;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 50
+	{
+		{
+			0 -0.351675
+			0.142442 0.0885168
+			0.398256 -0.26555
+			0.52907 0.26555
+			0.755814 -0.107655
+			1 0.0980861
+		}
+		{
+			0 0.5
+			0.19186 -0.289474
+			0.392442 0.212919
+			0.578488 -0.208134
+			0.781977 0.289474
+			1 -0.198565
+		}
+	};
+	velGraph0Y 100
+	{
+		{
+			0 0.389952
+			0.508721 -0.41866
+			1 0.313397
+		}
+		{
+			0 0
+			0.505814 0.413876
+			1 0
+		}
+	};
+	velGraph0Z 75
+	{
+		{
+			0 0.5
+			0.15407 0.5
+			0.186047 0.169856
+			0.409884 0.174641
+			0.575581 0.437799
+			0.825581 0.437799
+			1 0.136364
+		}
+		{
+			0 0.5
+			0.162791 0.5
+			0.206395 -0.150718
+			0.415698 -0.155502
+			0.430233 0.00239235
+			1 0.00239235
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 2000
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 -0.5
+			1 -0.5
+		}
+	};
+	sizeGraph0 1.25
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.506494
+			1 0.519481
+		}
+	};
+	sizeGraph1 20
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.519481
+			1 0.487013
+		}
+	};
+	scaleGraph 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 1 0.501961 0.25098
+			1 1 0.501961 0.25098
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 1
+			0.901163 1
+			1 0
+		}
+		{
+			0 0
+			0.656977 0.277512
+			1 0
+		}
+	};
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 30;
+	emission "";
+	emitDist 0 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_lava_ash"
+	};
+}

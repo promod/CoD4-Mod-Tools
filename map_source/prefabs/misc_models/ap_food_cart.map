@@ -1,0 +1,30 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"diffusefraction" "0.5"
+"_color" ".8 .9 1"
+"sunlight" "1.7"
+"sundirection" "-50 136 0"
+"sundiffusecolor" ".9 1 .75"
+"suncolor" "1 1 0.95"
+"ambient" ".1"
+"bouncefraction" ".7"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 15 0 ) ( -7 15 0 ) ( -7 -15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -15 42.5 ) ( -7 15 42.5 ) ( 8 15 42.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -15 42 ) ( 8 -15 42 ) ( 8 -15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6.5 -15 42 ) ( 6.5 15 42 ) ( 6.5 15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 15 42 ) ( -7 15 42 ) ( -7 15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6.5 15 42 ) ( -6.5 -15 42 ) ( -6.5 -15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "ap_food_cart"
+"classname" "misc_model"
+}

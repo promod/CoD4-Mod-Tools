@@ -1,0 +1,37 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents weaponClip;
+ ( 34 0 0 ) ( 34 8 0 ) ( 30 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 0 0 ) ( 30 0 0 ) ( 30 0 108 ) me_woodboard_01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 8 112 ) ( 30 8 108 ) ( 30 8 0 ) me_woodboard_01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 8 0 ) ( 30 0 0 ) ( 30 0 112 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 0 98 ) ( 30 8 98 ) ( 34 8 102 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 8 108 ) ( 28 8 103 ) ( 28 40 108 ) me_woodboard_01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents weaponClip;
+ ( 30 0 98 ) ( 26 0 94 ) ( -34 0 94 ) me_woodboard_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 8 98 ) ( -34 8 94 ) ( 26 8 94 ) me_woodboard_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 0 98 ) ( 30 8 98 ) ( 26 8 94 ) caulk 64 64 -4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 0 94 ) ( -26 8 94 ) ( -30 8 98 ) caulk 64 64 -4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 8 98 ) ( 30 8 98 ) ( 30 0 98 ) caulk 64 64 -4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 8 96 ) ( 16 8 96 ) ( 7 40 96 ) me_woodboard_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents weaponClip;
+ ( -30 0 0 ) ( -26 0 0 ) ( -26 8 0 ) caulk 64 64 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30 0 98 ) ( -30 8 98 ) ( -26 8 94 ) caulk 64 64 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30 0 -14 ) ( -30 0 98 ) ( -26 0 94 ) me_woodboard_01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 8 -14 ) ( -26 8 94 ) ( -30 8 98 ) me_woodboard_01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30 8 98 ) ( -30 0 98 ) ( -30 0 -14 ) caulk 64 64 0 14 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 8 104 ) ( -28 8 110 ) ( -28 40 110 ) me_woodboard_01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,26 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 13 47 -2 ) ( -38 47 -2 ) ( -38 -8 -2 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -47 -8 74 ) ( -47 47 74 ) ( 4 47 74 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 55 38 ) ( 32 68 38 ) ( -21 55 70 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 57 -34 38 ) ( 18 -63 38 ) ( 57 -34 70 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 -67 38 ) ( -65 -57 38 ) ( -22 -67 70 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -98 11 38 ) ( -89 34 38 ) ( -98 11 70 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 64 38 ) ( 77 56 38 ) ( 56 64 70 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 95 27 38 ) ( 99 2 38 ) ( 95 27 70 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 35.5 58 ) ( -37 35.5 73 ) ( -37 67.5 73 ) clip_nosight_dirt 64 64 5 -11 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"modelscale" "2"
+"origin" "0.0 0.0 0.0"
+"model" "prop_misc_rock_boulder_01"
+"classname" "misc_model"
+}

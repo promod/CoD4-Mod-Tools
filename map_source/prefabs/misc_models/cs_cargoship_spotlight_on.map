@@ -1,0 +1,20 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "cs_cargoship_spotlight_on"
+"classname" "misc_model"
+}
+// entity 2
+{
+"targetname" "cs_cargoship_spotlight_on_FX_origin"
+"origin" "8.0 0.0 0.0"
+"angles" "0 0 0"
+"classname" "script_struct"
+}

@@ -1,0 +1,40 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 24 -9 0 ) ( 6 -9 0 ) ( 6 -11 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -11 33 ) ( 6 -9 33 ) ( 24 -9 33 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -11 43 ) ( 24 -11 43 ) ( 24 -11 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 25 -11 43 ) ( 25 -9 43 ) ( 25 -9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -9 43 ) ( 6 -9 43 ) ( 6 -9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -9 43 ) ( 5 -11 43 ) ( 5 -11 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 18 -10 33 ) ( 0 -10 33 ) ( 0 -12 33 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 -12 43 ) ( -1 -10 43 ) ( 17 -10 43 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -19 77 ) ( 18 -19 77 ) ( 18 -19 34 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -9 77 ) ( 2 -7 77 ) ( 2 -7 34 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 18 19 77 ) ( 0 19 77 ) ( 0 19 34 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -11 77 ) ( 0 -13 77 ) ( 0 -13 34 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 24 -9 33 ) ( 6 -9 33 ) ( 6 -11 33 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -11 36 ) ( 5 -9 36 ) ( 23 -9 36 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -19 77 ) ( 24 -19 77 ) ( 24 -19 34 ) clip 64 64 0 -34 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 -11 77 ) ( 30 -9 77 ) ( 30 -9 34 ) clip 64 64 0 -34 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 19 77 ) ( 6 19 77 ) ( 6 19 34 ) clip 64 64 0 -34 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -9 77 ) ( 2 -11 77 ) ( 2 -11 34 ) clip 64 64 0 -34 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 0 0"
+"model" "com_restaurant_sinktable_left"
+"classname" "misc_model"
+}

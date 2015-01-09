@@ -1,0 +1,64 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 0 28 80 ) ( 4 28 80 ) ( 0 44 80 ) me_woodplanks01 131.93939 -128 -2.6678929 -69.32843 104.03624 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 28 84 ) ( 0 28 84 ) ( -4 44 84 ) me_woodplanks01 131.93939 128 -2.6678927 94.67157 104.03624 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 28 80 ) ( 4 28 84 ) ( 0 44 84 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 28 84 ) ( 0 28 80 ) ( -4 44 80 ) me_woodplanks01 128 -128 -0.9411726 -171.88058 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 18 ) ( 0 44 118 ) ( -4 44 118 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 28 32 ) ( 18 28 0 ) ( 10 28 0 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 0 28 28 ) ( 4 28 28 ) ( 0 44 28 ) me_woodplanks01 131.93939 128 -1.6977519 50.552143 104.03624 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 28 32 ) ( 0 28 32 ) ( -4 44 32 ) me_woodplanks01 131.93939 -128 -1.6977497 -25.209003 104.03624 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 28 28 ) ( 4 28 32 ) ( 0 44 32 ) me_woodplanks01 128 -128 0.94117355 -67.880577 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 28 32 ) ( 0 28 28 ) ( -4 44 28 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 -34 ) ( 0 44 66 ) ( -4 44 66 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 28 -20 ) ( 18 28 -52 ) ( 10 28 -52 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -8 52 -36 ) ( -8 44 -36 ) ( 0 44 -36 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 104 ) ( -8 44 104 ) ( -8 52 104 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 52 0 ) ( 0 52 100 ) ( -8 52 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 0 ) ( 0 44 100 ) ( 0 52 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 44 0 ) ( -8 44 100 ) ( 0 44 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 52 0 ) ( -8 52 100 ) ( -8 44 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents weaponClip;
+ ( 4 24 84 ) ( 0 24 84 ) ( 0 28 84 ) me_woodplanks01 143.10837 128 -8.0498466 100.09969 116.56504 0 lightmap_gray 16384 16384 4 16 0 0
+ ( 6 24 84 ) ( 4 28 84 ) ( 4 28 80 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 -16 0 0 0
+ ( 0 28 80 ) ( 0 28 84 ) ( 2 24 84 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 -16 0 0 0
+ ( 4 28 18 ) ( 4 28 118 ) ( 0 28 118 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 4 0 0 0
+ ( 4 28 80 ) ( 0 28 80 ) ( 0 24 84 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 4 0 0 0
+}
+// brush 4
+{
+  contents weaponClip;
+ ( 2 24 28 ) ( 6 24 28 ) ( 4 28 28 ) me_woodplanks01 131.93939 128 -1.6977519 50.552143 104.03623 0 lightmap_gray 16384 16384 4 16 0 0
+ ( 6 24 28 ) ( 4 28 30 ) ( 4 28 28 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 -16 0 0 0
+ ( 0 28 28 ) ( 0 28 30 ) ( 2 24 28 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 -16 0 0 0
+ ( 0 28 28 ) ( 4 28 28 ) ( 4 28 30 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 4 0 0 0
+ ( 6 24 28 ) ( 2 24 28 ) ( 0 28 30 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 4 0 0 0
+}
+// brush 5
+{
+  contents weaponClip;
+ ( 4 26 32 ) ( 0 26 32 ) ( 0 28 32 ) me_woodplanks01 181.01933 -128 -19.798992 -12.20101 135 0 lightmap_gray 16384 16384 4 16 0 0
+ ( 6 26 32 ) ( 4 28 32 ) ( 4 28 30 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 -16384 -16 -60 0 0
+ ( 0 28 30 ) ( 0 28 32 ) ( 2 26 32 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 -16384 -16 -60 0 0
+ ( 0 28 30 ) ( 4 28 30 ) ( 4 28 32 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 -16384 4 -60 0 0
+ ( 0 26 32 ) ( 4 26 32 ) ( 4 28 30 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 4 0 0 0
+}
+}

@@ -1,0 +1,57 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+ {
+  mesh
+  {
+  contents detail;
+   me_dec_bulletinboardpapers
+   lightmap_gray
+   2 2 16 8
+   (
+	v 0.5 -1.5 -40.5 t 320.51212 0 5.25 2
+	v 0.5 -1.5 23.5 t 320.51212 -1024 5.25 -2
+   )
+   (
+	v 44.5 -1.5 -40.5 t 1024.5111 0 8 2
+	v 44.5 -1.5 23.5 t 1024.5111 -1024 8 -2
+   )
+  }
+ }
+// brush 1
+ {
+  mesh
+  {
+  contents detail;
+   me_dec_bulletinboardpapers
+   lightmap_gray
+   2 2 16 8
+   (
+	v -43.5 -1.5 -10 t 320.51212 0 -2.71875 0.78125
+	v -43.5 -1.5 22 t 320.51212 -512 -2.71875 -1.21875
+   )
+   (
+	v 0.5 -1.5 -10 t 1024.5111 0 0.03125 0.78125
+	v 0.5 -1.5 22 t 1024.5111 -512 0.03125 -1.21875
+   )
+  }
+ }
+}
+// entity 1
+{
+"model" "ch_corkboard_metaltrim_4x8"
+"origin" "0.0 0.0 0.0"
+"angles" "-0 2.50448e-006 0"
+"classname" "misc_model"
+}
+// entity 2
+{
+"classname" "misc_model"
+"angles" "-0 2.50448e-006 0"
+"origin" "0.0 -1.0 0.0"
+"model" "ch_bulletinpaperdecals_1"
+}

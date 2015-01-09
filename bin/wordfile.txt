@@ -1,0 +1,3365 @@
+/L1"C/C++" C_LANG Line Comment = // Block Comment On = /* Block Comment Off = */ Escape Char = \ String Chars = "' File Extensions = C CPP CC CXX H HPP AWK
+/Delimiters = ~!@%^&*()-+=|\/{}[]:;"'<> ,	.?
+/Function String = "%^([a-zA-Z_0-9^[^]*]+^)[ ^t]+([^p*&, ^t^[^]a-zA-Z_0-9.!]++)[~;]"
+/Function String 1 = "%[a-zA-Z_0-9*]*::^([a-zA-Z_0-9^~]+^)[ ^t^p]++([^p*&, ^t^[^]/*=:&a-zA-Z_0-9./(!]++)[~;]"
+/Function String 2 = "%[a-zA-Z_0-9^][a-zA-Z_0-9^[^]]+[ ^t*]+^([a-zA-Z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./(!]++)[~;]"
+/Function String 3 = "%[a-zA-Z_0-9*&$^[^]*]+[ ^t]+[a-zA-Z_0-9*&$^[^]]+[ ^t*]+^([a-zA-Z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./(!]++)[~;]"
+/Function String 4 = "%[a-z_0-9^[^]*]++ [a-z_0-9*^[^]]+[ ^t]++[a-z_0-9*^[^]]+[ ^t]++^([*a-z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-z_0-9./(!]++)[~;]"
+/Function String 5 = "%^([a-zA-Z_0-9^[^]*]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./()!]++)[~;]"
+/Indent Strings = "{" ":"
+/Unindent Strings = "}"
+/C1"Keywords"
+auto
+break bool
+case char const continue
+default do double defined
+else enum extern
+float for
+goto
+if int
+long
+register return
+short signed sizeof static struct switch
+typedef
+union unsigned
+void volatile
+while
+__asm __based __cdecl __declspec __except __far __fastcall __finally __fortran __huge __inline __int16 __int32 __int64 __int8 __interrupt __leave __loadds __near __pascal __saveregs __segment __segname __self __stdcall __try __uuidof
+#define #error #include #elif #if #line #else #ifdef #pragma #endif #ifndef #undef
+/C2"C++ Keywords"
+catch class const_cast
+delete dynamic_cast
+explicit export
+false friend
+inline
+mutable
+new namespace
+operator
+private protected public
+reinterpret_cast
+static_cast
+template this throw true try typeid typename
+using
+virtual
+wchar_t
+__multiple_inheritance __single_inheritance __virtual_inheritance
+/C3"Microsoft C extensions"
+dllexport dllimport
+naked
+thread
+uuid
+/C4"Operators"
++
+-
+=
+// /
+%
+&
+>
+<
+^
+!
+|
+
+/L2"Visual Basic" Line Comment = ' File Extensions = BAS FRM CLS VBS CTL
+/Function String = "%*^{Sub^}^{Function^}*("
+/Indent Strings = "Then"
+/Unindent Strings = "End" "Next" "End If" "End Select"
+/C1"Functions"
+Abs Array Asc AscB AscW Atn Avg
+CBool CByte CCur CDate CDbl Cdec Choose Chr ChrB ChrW CInt CLng Command Cos Count CreateObject CSng CStr CurDir CVar CVDate CVErr
+Date DateAdd DateDiff DatePart DateSerial DateValue Day DDB Dir DoEvents
+Environ EOF Error Exp
+FileAttr FileDateTime FileLen Fix Format FreeFile FV
+GetAllStrings GetAttr GetAutoServerSettings GetObject GetSetting
+Hex Hour
+IIf IMEStatus Input InputB InputBox InStr InstB Int IPmt IsArray IsDate IsEmpty IsError IsMissing IsNull IsNumeric IsObject
+LBound LCase Left LeftB Len LenB LoadPicture Loc LOF Log LTrim
+Max Mid MidB Min Minute MIRR Month MsgBox
+Now NPer NPV
+Oct
+Partition Pmt PPmt PV
+QBColor
+Rate RGB Right RightB Rnd RTrim
+Second Seek Sgn Shell Sin SLN Space Spc Sqr StDev StDevP Str StrComp StrConv String Switch Sum SYD
+Tab Tan Time Timer TimeSerial TimeValue Trim TypeName
+UBound UCase
+Val Var VarP VarType
+Weekday
+Year
+/C2"Methods"
+Accept Activate Add AddCustom AddFile AddFromFile AddFromTemplate AddItem AddNew AddToAddInToolbar AddToolboxProgID Append AppendChunk Arrange Assert AsyncRead
+BatchUpdate BeginTrans Bind
+Cancel CancelAsyncRead CancelBatch CancelUpdate CanPropertyChange CaptureImage CellText CellValue Circle Clear ClearFields ClearSel ClearSelCols Clone Close Cls ColContaining ColumnSize CommitTrans CompactDatabase Compose Connect Copy CopyQueryDef CreateDatabase CreateDragImage CreateEmbed CreateField CreateGroup CreateIndex CreateLink CreatePreparedStatement CreatePropery CreateQuery CreateQueryDef CreateRelation CreateTableDef CreateUser CreateWorkspace Customize
+Delete DeleteColumnLabels DeleteColumns DeleteRowLabels DeleteRows DoVerb Drag Draw
+Edit EditCopy EditPaste EndDoc EnsureVisible EstablishConnection Execute ExtractIcon
+Fetch FetchVerbs Files FillCache Find FindFirst FindItem FindLast FindNext FindPrevious Forward
+GetBookmark GetChunk GetClipString GetData GetFirstVisible GetFormat GetHeader GetLineFromChar GetNumTicks GetRows GetSelectedPart GetText GetVisibleCount GoBack GoForward
+Hide HitTest HoldFields
+Idle InitializeLabels InsertColumnLabels InsertColumns InsertObjDlg InsertRowLabels InsertRows Item
+KillDoc
+Layout Line LinkExecute LinkPoke LinkRequest LinkSend Listen LoadFile LoadResData LoadResPicture LoadResString LogEvent
+MakeCompileFile MakeReplica MoreResults Move MoveData MoveFirst MoveLast MoveNext MovePrevious
+NavigateTo NewPage NewPassword NextRecordset
+OLEDrag OnAddinsUpdate OnConnection OnDisconnection OnStartupComplete Open OpenConnection OpenDatabase OpenQueryDef OpenRecordset OpenResultset OpenURL Overlay
+PaintPicture Paste PastSpecialDlg PeekData Play Point PopulatePartial PopupMenu Print PrintForm PropertyChanged PSet
+Quit
+Raise RandomDataFill RandomFillColumns RandomFillRows rdoCreateEnvironment rdoRegisterDataSource ReadFromFile ReadProperty Rebind ReFill Refresh RefreshLink RegisterDatabase Reload Remove RemoveAddInFromToolbar RemoveItem Render RepairDatabase Reply ReplyAll Requery ResetCustom ResetCustomLabel ResolveName RestoreToolbar Resync Rollback RollbackTrans RowBookmark RowContaining RowTop
+Save SaveAs SaveFile SaveToFile SaveToolbar SaveToOle1File Scale ScaleX ScaleY Scroll Select SelectAll SelectPart SelPrint Send SendData Set SetAutoServerSettings SetData SetFocus SetOption SetSize SetText SetViewport Show ShowColor ShowFont ShowHelp ShowOpen ShowPrinter ShowSave ShowWhatsThis SignOff SignOn Size Span SplitContaining StartLabelEdit StartLogging Stop Synchronize
+TextHeight TextWidth ToDefaults TwipsToChartPart TypeByChartType
+Update UpdateControls UpdateRecord UpdateRow Upto
+WhatsThisMode WriteProperty
+ZOrder
+/C3"Events"
+AccessKeyPress AfterAddFile AfterChangeFileName AfterCloseFile AfterColEdit AfterColUpdate AfterDelete AfterInsert AfterLabelEdit AfterRemoveFile AfterUpdate AfterWriteFile AmbienChanged ApplyChanges Associate AsyncReadComplete AxisActivated AxisLabelActivated AxisLabelSelected AxisLabelUpdated AxisSelected AxisTitleActivated AxisTitleSelected AxisTitleUpdated AxisUpdated
+BeforeClick BeforeColEdit BeforeColUpdate BeforeConnect BeforeDelete BeforeInsert BeforeLabelEdit BeforeLoadFile BeforeUpdate ButtonClick ButtonCompleted ButtonGotFocus ButtonLostFocus
+Change ChartActivated ChartSelected ChartUpdated Click ColEdit Collapse ColResize ColumnClick Compare ConfigChageCancelled ConfigChanged ConnectionRequest
+DataArrival DataChanged DataUpdated DblClick Deactivate DeviceArrival DeviceOtherEvent DeviceQueryRemove DeviceQueryRemoveFailed DeviceRemoveComplete DeviceRemovePending DevModeChange Disconnect DisplayChanged Dissociate DoGetNewFileName Done DonePainting DownClick DragDrop DragOver DropDown
+EditProperty EnterCell EnterFocus Event ExitFocus Expand
+FootnoteActivated FootnoteSelected FootnoteUpdated
+GotFocus
+HeadClick
+InfoMessage Initialize IniProperties ItemActivated ItemAdded ItemCheck ItemClick ItemReloaded ItemRemoved ItemRenamed ItemSeletected
+KeyDown KeyPress KeyUp
+LeaveCell LegendActivated LegendSelected LegendUpdated LinkClose LinkError LinkNotify LinkOpen Load LostFocus
+MouseDown MouseMove MouseUp
+NodeClick
+ObjectMove OLECompleteDrag OLEDragDrop OLEDragOver OLEGiveFeedback OLESetData OLEStartDrag OnAddNew OnComm
+Paint PanelClick PanelDblClick PathChange PatternChange PlotActivated PlotSelected PlotUpdated PointActivated PointLabelActivated PointLabelSelected PointLabelUpdated PointSelected PointUpdated PowerQuerySuspend PowerResume PowerStatusChanged PowerSuspend
+QueryChangeConfig QueryComplete QueryCompleted QueryTimeout QueryUnload
+ReadProperties Reposition RequestChangeFileName RequestWriteFile Resize ResultsChanged RowColChange RowCurrencyChange RowResize RowStatusChanged
+SelChange SelectionChanged SendComplete SendProgress SeriesActivated SeriesSelected SeriesUpdated SettingChanged SplitChange StateChanged StatusUpdate SysColorsChanged
+Terminate TimeChanged TitleActivated TitleSelected TitleActivated
+UnboundAddData UnboundDeleteRow UnboundGetRelativeBookmark UnboundReadData UnboundWriteData Unload UpClick Updated
+Validate ValidationError
+WillAssociate WillChangeData WillDissociate WillExecute WillUpdateRows WithEvents WriteProperties
+/C4"Statements"
+AppActivate
+Base Beep
+Call Case ChDir ChDrive Const
+Declare DefBool DefByte DefCur DefDate DefDbl DefDec DefInt DefLng DefObj DefSng DefStr Deftype DefVar DeleteSetting Dim Do
+Else ElseIf End Enum Erase Event Exit Explicit
+FileCopy For ForEach Friend Function
+Get GoSub GoTo
+If Implements
+Kill
+Let LineInput Lock LSet
+MkDir
+Name Next
+OnError On Option
+Private Property Public Put
+RaiseEvent Randomize ReDim Rem Reset Resume Return RmDir RSet
+SavePicture SaveSetting SendKeys SetAttr Static Sub
+Then Type
+Unlock
+Wend While Width With Write
+
+/L3"HTML" Nocase Noquote HTML_LANG Block Comment On = <!-- Block Comment Off = --> Block Comment On Alt = <% Block Comment Off Alt = %> String Chars = "' File Extensions = HTM HTML ASP SHTML HTT HTX JSP
+/Delimiters = ~!@$%^&*()+=|\{}[]:;"'<> ,	.?
+/Function String = "name=*">"
+/C1"Tags"
+<A </A> <ABBR> <ABBR </ABBR> <ABOVE> <ACRONYM> <ACRONYM </ACRONYM> <ADDRESS> <ADDRESS </ADDRESS> <APPLET </APPLET> <ARRAY> <AREA </AREA
+<B> <B </B> <BASE <BASEFONT <BDO> <BDO </BDO> <BGSOUND <BIG> <BIG </BIG> <BLINK> </BLINK> <BLOCKQUOTE> <BLOCKQUOTE </BLOCKQUOTE> <BODY <BODY> </BODY> <BOX> <BR <BR> <BIG <BLINK <BUTTON> </BUTTON>
+<CAPTION> <CAPTION </CAPTION> <CENTER> <CENTER </CENTER> <CITE> <CITE </CITE> <CODE> <CODE </CODE> <COL> <COL <COLGROUP <COLGROUP> </COLGROUP> <COMMENT> </COMMENT>
+<DD> <DD </DD> <DEL> <DEL </DEL> <DFN> <DFN </DFN> <DIR> <DIR </DIR> <DIV> <DIV </DIV> <DL> <DL </DL> <DT> <DT  </DT>
+<EM> <EM </EM> <EMBED
+<FIELDSET> <FIELDSET </FIELDSET> <FIG> <FONT </FONT> <FORM> <FORM </FORM> <FRAME <FRAMESET </FRAMESET>
+<H1> <H1 </H1> <H2> <H2 </H2> <H3> <H3 </H3> <H4> <H4 </H4> <H5> <H5 </H5> <H6> <H6 </H6> <HEAD> <HEAD </HEAD> <HR> <HR <HTML> <HTML </HTML>
+<I> <I </I> <IFRAME> </IFRAME> <ILAYER> </ILAYER> <IMG <INPUT> <INPUT <INS> <INS </INS> <ISINDEX> <ISINDEX
+<KBD> <KBD </KBD>
+<LABEL> <LABEL </LABEL> <LAYER> <LAYER </LAYER> <LEGEND> <LEGEND </LEGEND> <LI> <LI </LI> <LINK <LISTING> </LISTING>
+<MAP </MAP> <MARQUEE </MARQUEE> <MENU> <MENU </MENU> <META <MULTICOL> </MULTICOL>
+<NEXTID <NOBR> </NOBR> <NOFRAMES> </NOFRAMES> <NOLAYER> </NOLAYER> <NOTE> </NOTE> <NOSCRIPT> </NOSCRIPT>
+<OBJECT> <OBJECT </OBJECT> <OL> <OL </OL> <OPTION> <OPTION </OPTION> <OPTGROUP> <OPTGROUP </OPTGROUP>
+<P <P> </P> <PARAM <PRE> <PRE </PRE>
+<Q> <Q </Q> <QUOTE>
+<RANGE> <ROOT>
+<S> <S </S> <SAMP> <SAMP </SAMP> <SCRIPT <SCRIPT> </SCRIPT> <SELECT <SELECT> </SELECT> <SMALL> <SMALL </SMALL> <SOUND <SPACER> <SPAN> <SPAN </SPAN> <SQRT> <STRIKE> <STRIKE </STRIKE> <STRONG> <STRONG </STRONG> <STYLE> <STYLE </STYLE> <SUB> <SUB </SUB> <SUP> <SUP </SUP>
+<TABLE> <TABLE </TABLE> <TBODY> <TBODY </TBODY> <TD <TD> </TD> <TEXT> <TEXTAREA <TEXTAREA> </TEXTAREA> <TFOOT> <TFOOT </TFOOT> <TH <TH> </TH> <THEAD> <THEAD </THEAD> <TITLE> </TITLE> <TR <TR> </TR> <TT> </TT> <TT
+<U> <U </U> <UL> <UL </UL>
+<VAR> </VAR> <VAR
+<WBR>
+<XMP> </XMP>
+/C2"Attributes"
+ABBR= ACCEPT-CHARSET= ACCEPT= ACCESSKEY= ACTION= ALIGN= ALINK= ALT= ARCHIVE= AXIS=
+BACKGROUND= BEHAVIOR BELOW BGCOLOR= BORDER=
+CELLPADDING= CELLSPACING= CHAR= CHAROFF= CHARSET= CHECKED CITE= CLASS= CLASSID= CLEAR= CODE= CODEBASE= CODETYPE= COLOR= COLS= COLSPAN= COMPACT CONTENT= COORDS=
+DATA= DATETIME= DECLARE DEFER DIR= DISABLED
+ENCTYPE=
+FACE= FOR= FRAME= FRAMEBORDER= FRAMESPACING=
+HEADERS= HEIGHT= HIDDEN= HREF= HREFLANG= HSPACE= HTTP-EQUIV=
+ID= ISMAP=
+LABEL= LANG= LANGUAGE= LINK= LOOP= LONGDESC=
+MAILTO= MARGINHEIGHT= MARGINWIDTH= MAXLENGTH= MEDIA= METHOD= MULTIPLE
+NAME= NOHREF NORESIZE NOSHADE
+OBJECT= ONBLUR= ONCHANGE= ONFOCUS= ONKEYDOWN= ONKEYPRESS= ONKEYUP= ONLOAD= ONRESET= ONSELECT= ONSUBMIT= ONUNLOAD= ONCLICK= ONDBLCLICK= ONMOUSEDOWN= ONMOUSEMOVE= ONMOUSEOUT= ONMOUSEOVER= ONMOUSEUP=
+PROFILE= PROMPT=
+READONLY REL= REV= ROWS= ROWSPAN= RULES=
+SCHEME= SCOPE= SCROLLING= SELECTED SHAPE= SIZE= SPAN= SRC= STANDBY= START= STYLE= SUMMARY=
+TABINDEX= TARGET= TEXT= TITLE= TOPMARGIN= TYPE=
+URL= USEMAP=
+VALIGN= VALUE= VALUETYPE= VERSION= VLINK= VSPACE=
+WIDTH=
+=
+
+/L4"Java" Line Comment = // Block Comment On = /* Block Comment Off = */ Escape Char = \ File Extensions = JAV JAVA
+/Delimiters = ~!@%^&*()-+=|\/{}[]:;"'<> ,	.?
+/Function String = "%[ ^t]++[ps][a-z]+ [a-z0-9]+ ^(*(*)^)*{$"
+/Function String 1 = "%[ ^t]++[ps][a-z]+ [a-z0-9]+ ^(*(*)^)[ ^t]++$"
+/Indent Strings = "{"
+/Unindent Strings = "}"
+/C1
+abstract
+break byte boolean
+catch case class char continue
+default double do
+else extends
+false final float for finally
+if import implements int interface instanceof
+long length
+native new null
+package private protected public
+return
+switch synchronized short static super
+try true this throw throws threadsafe transient
+void
+while
+/C2
+AbstractMethodError AccessException Acl AclEntry AclNotFoundException ActionEvent ActionListener Adjustable AdjustmentEvent AdjustmentListener Adler32 AlreadyBoundException Applet AppletContext AppletStub AreaAveragingScaleFilter ArithmeticException Array ArrayIndexOutOfBoundsException ArrayStoreException AudioClip AWTError AWTEvent AWTEventMulticaster AWTException
+BeanDescriptor BeanInfo Beans BigDecimal BigInteger BindException BitSet Boolean BorderLayout BreakIterator BufferedInputStream BufferedOutputStream BufferedReader BufferedWriter Button ButtonPeer Byte ByteArrayInputStream ByteArrayOutputStream
+Calendar CallableStatement Canvas CanvasPeer Certificate Character CharacterIterator CharArrayReader CharArrayWriter CharConversionException Checkbox CheckboxGroup CheckboxMenuItem CheckboxMenuItemPeer CheckboxPeer CheckedInputStream CheckedOutputStream Checksum Choice ChoiceFormat ChoicePeer Class ClassCastException ClassCircularityError ClassFormatError ClassLoader ClassNotFoundException Clipboard ClipboardOwner Cloneable CloneNotSupportedException CollationElementIterator CollationKey Collator Color ColorModel Compiler Component ComponentAdapter ComponentEvent ComponentListener ComponentPeer ConnectException ConnectIOException Connection Constructor Container ContainerAdapter ContainerEvent ContainerListener ContainerPeer ContentHandler ContentHandlerFactory CRC32 CropImageFilter Cursor Customizer CardLayout
+DatabaseMetaData DataFlavor DataFormatException DatagramPacket DatagramSocket DatagramSocketImpl DataInput DataInputStream DataOutput DataOutputStream DataTruncation Date DateFormat DateFormatSymbols DecimalFormat DecimalFormatSymbols Deflater DeflaterOutputStream DGC Dialog DialogPeer Dictionary DigestException DigestInputStream DigestOutputStream Dimension DirectColorModel Double Driver DriverManager DriverPropertyInfo DSAKey DSAKeyPairGenerator DSAParams DSAPrivateKey DSAPublicKey
+EmptyStackException Enumeration EOFException Error Event EventListener EventObject EventQueue EventSetDescriptor Exception ExceptionInInitializerError ExportException
+FeatureDescriptor Field FieldPosition File FileDescriptor FileDialog FileDialogPeer FileInputStream FilenameFilter FileNameMap FileNotFoundException FileOutputStream FileReader FileWriter FilteredImageSource FilterInputStream FilterOutputStream FilterReader FilterWriter Float FlowLayout FocusAdapter FocusEvent FocusListener Font FontMetrics FontPeer Format Frame FramePeer
+Graphics GregorianCalendar GridBagConstraints GridBagLayout GridLayout Group GZIPInputStream GZIPOutputStream
+Hashtable HttpURLConnection
+Identity IdentityScope IllegalAccessError IllegalAccessException IllegalArgumentException IllegalComponentStateException IllegalMonitorStateException IllegalStateException IllegalThreadStateException Image ImageConsumer ImageFilter ImageObserver ImageProducer IncompatibleClassChangeError IndexColorModel IndexedPropertyDescriptor IndexOutOfBoundsException InetAddress Inflater InflaterInputStream InputEvent InputStream InputStreamReader Insets InstantiationError InstantiationException Integer InternalError InterruptedException InterruptedIOException IntrospectionException Introspector InvalidClassException InvalidKeyException InvalidObjectException InvalidParameterException InvocationTargetException IOException ItemEvent ItemListener ItemSelectable
+Key KeyAdapter KeyEvent KeyException KeyListener KeyManagementException KeyPair KeyPairGenerator
+Label LabelPeer LastOwnerException LayoutManager LayoutManager2 Lease LightweightPeer LineNumberInputStream LineNumberReader LinkageError List ListPeer ListResourceBundle LoaderHandler Locale LocateRegistry LogStream Long
+MalformedURLException MarshalException Math MediaTracker Member MemoryImageSource Menu MenuBar MenuBarPeer MenuComponent MenuComponentPeer MenuContainer MenuItem MenuItemPeer MenuPeer MenuShortcut MessageDigest MessageFormat Method MethodDescriptor MissingResourceException Modifier MouseAdapter MouseEvent MouseListener MouseMotionAdapter MouseMotionListener MulticastSocket
+Naming NegativeArraySizeException NoClassDefFoundError NoRouteToHostException NoSuchAlgorithmException NoSuchElementException NoSuchFieldError NoSuchFieldException NoSuchMethodError NoSuchMethodException NoSuchObjectException NoSuchProviderException NotActiveException NotBoundException NotOwnerException NotSerializableException NullPointerException Number NumberFormat NumberFormatException
+Object ObjectInput ObjectInputStream ObjectInputValidation ObjectOutput ObjectOutputStream ObjectStreamClass ObjectStreamException ObjID Observable Observer Operation OptionalDataException OutOfMemoryError OutputStream OutputStreamWriter Owner
+PaintEvent Panel PanelPeer ParameterDescriptor ParseException ParsePosition Permission PipedInputStream PipedOutputStream PipedReader PipedWriter PixelGrabber Point Polygon PopupMenu PopupMenuPeer PreparedStatement Principal PrintGraphics PrintJob PrintStream PrintWriter PrivateKey Process Properties PropertyChangeEvent PropertyChangeListener PropertyChangeSupport PropertyDescriptor PropertyEditor PropertyEditorManager PropertyEditorSupport PropertyResourceBundle PropertyVetoException ProtocolException Provider ProviderException PublicKey PushbackInputStream PushbackReader
+Random RandomAccessFile Reader Rectangle Registry RegistryHandler Remote RemoteCall RemoteException RemoteObject RemoteRef RemoteServer RemoteStub ReplicateScaleFilter ResourceBundle ResultSet ResultSetMetaData RGBImageFilter RMIClassLoader RMIFailureHandler RMISecurityException RMISecurityManager RMISocketFactory RuleBasedCollator Runnable Runtime RuntimeException
+Scrollbar ScrollbarPeer ScrollPane ScrollPanePeer SecureRandom Security SecurityException SecurityManager SequenceInputStream Serializable ServerCloneException ServerError ServerException ServerNotActiveException ServerRef ServerRuntimeException ServerSocket Shape Short Signature SignatureException Signer SimpleBeanInfo SimpleDateFormat SimpleTimeZone Skeleton SkeletonMismatchException SkeletonNotFoundException Socket SocketException SocketImpl SocketImplFactory SocketSecurityException SQLException SQLWarning Stack StackOverflowError Statement StreamCorruptedException StreamTokenizer String StringBuffer StringBufferInputStream StringCharacterIterator StringIndexOutOfBoundsException StringReader StringSelection StringTokenizer StringWriter StubNotFoundException SyncFailedException System SystemColor
+TextArea TextAreaPeer TextComponent TextComponentPeer TextEvent TextField TextFieldPeer TextListener Thread ThreadDeath ThreadGroup Throwable Time Timestamp TimeZone Toolkit TooManyListenersException Transferable Types
+UID UnexpectedException UnicastRemoteObject UnknownError UnknownHostException UnknownServiceException UnmarshalException Unreferenced UnsatisfiedLinkError UnsupportedEncodingException UnsupportedFlavorException URL URLConnection URLEncoder URLStreamHandler URLStreamHandlerFactory UTFDataFormatException
+Vector VerifyError VetoableChangeListener VetoableChangeSupport VirtualMachineError Visibility VMID Void
+Window WindowAdapter WindowEvent WindowListener WindowPeer WriteAbortedException Writer
+ZipEntry ZipException ZipFile ZipInputStream ZipOutputStream
+
+/L5"Perl" Line Comment = # Line Comment Preceding Chars = [~[^]^^$/\(] Escape Char = \ File Extensions = CGI PL PM PLX
+/Delimiters = ~!@$%^&*()+=|\/{}[]:;"'<> 	,.?/
+/Indent Strings = "{"
+/Unindent Strings = "}"
+/Function String = "%[ ^t]++sub[ ^t]+^([a-z0-9_]+^)[ {^p]"
+/C1
+-A -B -C -M -O -R -S -T -W -X -b -c -d -e -f -g -k -l -o -p -r -s -t -u -w -x -z
+__DATA__ __END__ __FILE__ __LINE__
+continue
+do
+else elsif
+for foreach
+goto
+if
+last local
+my
+next no
+our
+package
+redo return require
+sub
+until unless use
+while
+/C2
+accept alarm atan2
+bind binmode bless
+caller chdir chmod chomp chop chown chr chroot close closedir connect cos crypt
+dbmclose dbmopen defined delete die dump
+each endgrent endhostent endnetent endprotoent endpwent endservent eof eval exec exit exp exists
+fcntl fileno flock fork formline format
+getc getgrent getgrgid getgrname gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr getnetbyname getnetent getpeername getpgrp getppid getpriority getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid getservbyname getservbyport getservent getsockname getsockopt glob gmtime grep
+hex
+index int ioctl
+join
+keys kill
+lc lcfirst length link listen localtime log lstat
+map mkdir msgctl msgget msgrcv msgsnd
+new
+oct open opendir ord
+pack pipe pop pos print printf push
+quotemeta
+rand read readdir readline readlink recv ref rename reset reverse rewinddir rindex rmdir
+scalar seek seekdir select semctl semgett semop send setgrent sethostent setnetent setpgrp setpriority setprotoent setpwent setservent setsockopt shift shmctl shmget shmread shmwrite shutdown sin sleep socket socketpair sort splice split sprintf sqrt srand stat study substr symlink syscall sysopen sysread system syswrite
+tell telldir tie tied time times truncate
+uc ucfirst umask undef unlink unpack unshift utime
+values vec
+wait waitpid wantarray warn write
+/C3
+AUTOLOAD
+and
+BEGIN
+CORE
+DESTROY
+eq
+END
+ge gt
+le lt
+ne not
+m
+or
+q qq qw qx
+SUPER
+s
+tr
+UNIVERSAL
+x xor
+y
+
+/L6"XML" Noquote HTML_LANG Block Comment On = <!-- Block Comment Off = --> File Extensions = XML XUL
+/Delimiters = ~@$%^&*()+=|\{};"'<> ,
+/Function String = "name=*">"
+/C1"Elements"
+** <
+<a </a> <abbr> <abbr </abbr> <above> <abstract> </abstract> <acronym> </acronym> <activity> </activity> <actor> <actor </actor> <add> <add </add> <addName </addName> <address> <address </address> <addressList> </addressList> <addrLine> <addSpan <admin </admin> <affiliation> </affiliation> <alt <altGrp </altGrp> <analytic> </analytic> <anchor <any> </any> <app> <app </app> <applet </applet> <apply <arc <argument> </argument> <array> <area </area <arg <att> <att </att> <attDef> <attDef </attDef> <attlDecl> <attlDecl </attlDecl> <attList> <attList </attList> <attName> </attName> <author> </author> <authority> </authority> <availability> <availability </availability>
+<b> <b </b> <back> <back </back> <base <basefont <baseWsd <bdo> </bdo> <bgsound <bibl> <bibl </bibl> <biblFull> </biblFull> <biblScope> <biblStruct> <biblStruct </biblStruct> <bicond> </bicond> <big> <big </big> <birth> <birth </birth> <birthDate> <birthPlace> <blink> <blink </blink> <bloc </bloc> <blockquote> <blockquote </blockquote> <body> <body </body> <box> </box> <br <br> <br/> <broadcast> </broadcast> <button> </button> <byline> </byline>
+<c> <c </c> <caesura> <calEvent> </calEvent> <camera> </camera> <caption> <caption </caption> <case> <castGroup> <castGroup </castGroup> <castItem> <castItem </castItem> <castList> </castList> <catDesc> </catDesc> <category </category> <catRef <cb> <cb <cell> <cell </cell> <center> <center </center> <certainty <cf> </cf> <channel </channel> <change> <change </change> <character> <character </character> <characters> </characters> <children> <children <children/> <cit> </cit> <cite> <cite </cite> <city> </city> <cl> <cl </cl> <class> <class </class> <classCode <classDecl> </classDecl> <classDoc> <classDoc </classDoc> <classes> <classes </classes> <closer> </closer> <code> <code </code> <codedCharSet> <codedCharSet <col> </col> <colgroup> </colgroup> <colloc> <colloc </colloc> <comment> </comment> <commentary </commentary> <cond> </cond> <constitution </constitution> <contents/> <corr> <corr </corr> <correction> </correction> <country> <country </country> <creation> </creation> <creationDate> </creationDate>
+<damage> <damage </damage> <dataDesc> </dataDesc> <dataType> <date> <date </date> <dateline> </dateline> <dateRange </dateRange> <dateStruct> <dateStruct </dateStruct> <day> <day </day> <dd> <dd </dd> <def> </def> <default> <define-macro </define-macro> <define-script> </define-script> <define-style <del> <del </del> <delSpan <derivation </derivation> <desc> <desc </desc> <descrip> <descrip </descrip> <dfn> <dfn </dfn> <dft> <dir> <dir </dir> <direction <display-group> <display-group </display-group> <distance> <distance </distance> <distinct </distinct> <distributor> </distributor> <div> <div </div> <div0> <div0 </div0> <div1> <div1 </div1> <div2> <div2 </div2> <div3> <div3 </div3> <div4> <div4 </div4> <div5> <div5 </div5> <div6> <div6 </div6> <div7> <div7 </div7> <divGen <dl> <dl </dl> <doc> </doc> <docAuthor> </docAuthor> <docDate> <docEdition> </docEdition> <docImprint> </docImprint> <docTitle> </docTitle> <domain </domain> <dt> <dt </dt>
+<earliesttime <edition> <edition </edition> <editionStmt> </editionStmt> <editor> <editor </editor> <editorialDecl> <editorialDecl </editorialDecl> <education> </education> <eg> </eg> <egwd> </egwd> <eLeaf <elemDecl> <elemDecl </elemDecl> <em> <em </em> <embed <emph> <emph </emph> <encodingDesc> </encodingDesc> <ent </ent> <entDoc> <entDoc </entDoc> <entitySet> <entitySet <entName> <entName </entName> <entry> <entry </entry> <entryFree> </entryFree> <epigraph> <epigraph </epigraph> <epilogue> </epilogue> <equipment> </equipment> <equiv <eTree </eTree> <etym> </etym> <eval> </eval> <event <exceptions> <exceptions </exceptions> <exemplum> <exemplum </exemplum> <expan </expan> <extent> </extent> <external-graphic <extFigure
+<f </f> <factuality </factuality> <fAlt> <fAlt </fAlt> <fDecl> <fDecl </fDecl> <fDescr> </fDescr> <fieldset> </fieldset> <fig> <figDesc> </figDesc> <figure </figure> <fileDesc> </fileDesc> <files> <files </files> <firstLang> </firstLang> <fLib </fLib> <font </font> <forest> <forest </forest> <forestGrp> </forestGrp> <form <formula </formula> <fs> <fs </fs> <fsConstraints> <fsConstraints </fsConstraints> <fsdDecl <fsDecl </fsDecl> <fsDescr> <fsLib </fsLib> <foreign> <foreign </foreign> <foreName> <foreName </foreName> <form> <form </form> <formula> <frame <frameset </frameset> <front> </front> <fs </fs> <funder> </funder> <fvLib </fvLib> <fw </fw>
+<gap> <gap <gen> </gen> <genName> </genName> <geog> </geog> <geogName> <geogName </geogName> </gfn> <gi> <gi </gi> <gloss> <gloss </gloss> <gram </gram> <gramGrp> <gramGrp </gramGrp> <graph </graph> <group> </group>
+<h> </h> <h1> <h1 <h2> <h2 <h3> <h3 <h4> <h4 <h5> <h5 <h6> <h6 </h1> </h2> </h3> </h4> </h5> </h6> <hand> <hand <handList> </handList> <handShift> <handShift <head> <head </head> <headItem> <headItem </headItem> <headLabel> <headLabel </headLabel> <hi> <hi </hi> <hom> <hom </hom> <home> </home> <horizontal-rule/> <hour> <hour </hour> <hps </hps> <hr> <hr <hr/> <hsn> </hsn> <html> </html> <hwd> </hwd> <hyph> </hyph> <hyphenation </hyphenation>
+<i> <i </i> <id <idno> <idno </idno> <if> <iff> <iframe> </iframe> <ihs> </ihs> <ilayer> </ilayer> <img <imprimatur> <imprint> </imprint> <index <iNode <input> <input <ins> <interaction <interp <interpGrp> <interpGrp </interpGrp> <interpretation> <intervaltime <invoke </invoke> <isindex> <item> <item </item> <itype> <itype </itype>
+<join <joinGrp </joinGrp>
+<kbd> <kbd </kbd> <keywords> <keywords </keywords> <kinesic
+<l> <l </l> <label> <label </label> <lacunaEnd> <lacunaStart> <lang> </lang> <langKnown> </langKnown> <language> <language </language> <langUsage> </langUsage> <latesttime <layer> <lb> <lb <lbl> <lbl </lbl> <leaf <legend> </legend> <lem> <lem <lg> <lg </lg> <lg1> <lg1 </lg1> <lg2> <lg2 </lg2> <lg3> <lg3 </lg3> <lg4> <lg4 </lg4> <lg5> <lg5 </lg5> <li> <li </li> <line> <line-field </line-field> <link> <link </link> <linkGrp </linkGrp> <list> <list </list> <listBibl> </listBibl> <listing> </listing> <list-item </list-item> <locale> <locator <log <logtarget </logtarget>
+<m> <m </m> <map </map> <marquee </marquee> <measure </measure> <meeting> </meeting> <mentioned> <mentioned </mentioned> <menu> <menu </menu> <meta <metDecl> <metDecl </metDecl> <milestone <minus> <minus <minute> <minute </minute> <monogr> </monogr> <month> <month </month> <mood> <move <msr <multicol> </multicol> <mylink </mylink>
+<name> <name </name> <nameLink> </nameLink> <nbr <nextid <nobr> </nobr> <node <noframes> </noframes> <nolayer> </nolayer> <none> <normalization> <normalization </normalization> <noscript> </noscript> <note> <note </note> <notesStmt> </notesStmt> <null> <num> <num </num> <number> </number>
+<object> </object> <occasion> <occasion </occasion> <occupation> <occupation </occupation> <offset> </offset> <ofig> <ol> <ol </ol> <omit> <omit </omit> <opener> </opener> <option> <option </option> <optgroup> </optgroup> <oRef> <oRef <org> </org> <orgDivn </orgDivn> <orgName </orgName> <orgTitle </orgTitle> <orgType </orgType> <orig> <orig </orig> <ornament </ornament> <orth> <orth </orth> <otherForm> <oVar> <oVar </oVar>
+<p> <p </p> <page> <paragraph> <paragraph </paragraph> <para <param <parents> <part> <part </part> <particDesc> </particDesc> <participant> <participant </participant> <participantGrp> <particLinks> <particLinks </particLinks> <pause> <pb> <pb <per> <performance> </performance> <persName> <persName </persName> <person </person> <personGrp> </personGrp> <ph> </ph> <phr> <phr </phr> <place> </place> <placeName> <placeName </placeName> <plus> <plus <pos> </pos> <PostBox> </postBox> <postCode> </postCode> <pr> </pr> <pre> <pre </pre> <pReg> <preparedness <principal> </principal> <profileDesc> </profileDesc> <pron> <pron </pron> <projectDesc> </projectDesc> <prologue> </prologue> <ptr <publicationStmt> </publicationStmt> <publisher> </publisher> <pubPlace> </pubPlace> <purgetime <purpose <purposes> </purposes> <pVar
+<q> <q </q> <quotation </quotation> <quote> </quote>
+<range> <rate <rdg> <rdg </rdg> <rdgGrp </rdgGrp> <re> <re </re> <recording </recording> <recordingStmt> </recordingStmt> <ref> <ref </ref> <refsDecl> <refsDecl </refsDecl> <reg> <reg </reg> <region> <region </region> <relation <relationship </relationship> <relPlace> </relPlace> <remarks> <rendition </rendition> <residence> </residence> <resp> </resp> <respons <respStmt> </respStmt> <restore </restore> <revisionDesc> </revisionDesc> <role> <role </role> <roleDesc> </roleDesc> <roleName> <roleName </roleName> <root> <root <root/> <row> <row </row> <rs> <rs </rs> <rule> <rule </rule>
+<s> <s </s> <salute> </salute> <samp> <samp </samp> <samplingDecl> </samplingDecl> <schedule </schedule> <script> <script </script> <scriptStmt </scriptStmt> <scroll </scroll> <second> <second </second> <seg> <seg </seg> <seg1> <seg1 </seg1> <segmentation> </segmentation> <select> <select </select> <select-elements> </select-elements> <sense> <sense </sense> <sequence> </sequence> <series> </series> <seriesStmt> </seriesStmt> <seriesTitle> </seriesTitle> <set> </set> <setting> <setting </setting> <settingDesc> </settingDesc> <settle> <settle </settle> <settlement </settlement> <shift> <shift <sic> <sic </sic> <signed> <signed </signed> <small> <small </small> <soCalled> <soCalled </soCalled> <socecStatus> <socecStatus <sound> <sound </sound> <sourceDesc> </sourceDesc> <sp> <sp </sp> <space <spacer> <span> <span </span> <spanGrp </spanGrp> <speaker> </speaker> <sponsor> </sponsor> <sqrt> <stage> <stage </stage> <state> <state </state> <stdVals> </stdVals> <step <str> <str </str> <street> </street> <stress> <strike> <strike </strike> <string> </string> <strong> <strong </strong> <style> <style </style> <style-rule> </style-rule> <sub> <sub </sub> <subc> </subc> <sup> <sup </sup> <superEntry> </superEntry> <supplied> <supplied </supplied> <surName> <surName </surName> <syll> </syll> <sym <symbol
+<table> <table </table> <tag> </tag> <tagDoc> </tagDoc> <tagsDecl> </tagsDecl> <tagUsage </tagUsage> <target-element </target-element> <target-element/> <taxonomy </taxonomy> <tbody> <tbody </tbody> <td <td> </td> <tech> <tech </tech> <tei.2> </tei.2> <teiCorpus.2> </teiCorpus.2> <teiFsd2> </teiFsd2> <teiHeader> <teiHeader </teiHeader> <term> <term </term> <termEntry> <termEntry </termEntry> <text> <text </text> <textClass> </textClass> <textDesc> <textDesc </textDesc> <then> <tig </tig> <time> <time </time> <timeLine> <timeLine </timeLine> <timeRange </timeRange> <timeStruct> <timeStruct </timeStruct> <title> <title </title> <titlePage> <titlePage </titlePage> <titlePart> <titlePart </titlePart> <titleStmt> <titleStmt </titleStmt> <title-style <tns </tns> <tr> </tr> <trailer> </trailer> <trans> <trans </trans> <tree </tree> <triangle </triangle> <tsd> </tsd>
+<textarea <textarea> </textarea> <tfoot> <tfoot </tfoot> <th <th> </th> <thead> <thead </thead> <tr <tt> </tt> <tt
+<u> <u </u> <ul> <ul </ul> <uncertain> <unclear> <unclear </unclear> <usg> <usg </usg>
+<val> </val> <valDesc> </valDesc> <valList> <valList </valList> <valRange> </valRange> <vAlt> <vAlt </vAlt> <var> <var </var> <variantEncoding> <variantEncoding </variantEncoding> <vDefault> </vDefault> <view> </view> <vocal <vol> <vRange> </vRange>
+<w> <w </w> <warning-para </warning-para> <wbr> <week> <week </week> <what> <when <who> </who> <wit> <witDetail </witDetail> <witEnd> <witList> </witList> <witness </witness> <witStart> <work> </work> <writing </writing> <writingSystemDeclaration> <writingSystemDeclaration </writingSystemDeclaration>
+<xml> </xml> <xmp> </xmp> <xptr <xr> <xr </xr> <xref <xsl> </xsl>
+<year> <year </year>
+// />
+>
+<
+?>
+<? <?xml
+]]>
+<![CDATA[
+/C2"Attributes"
+abbr= absolute= action= active= adj= adjFrom= adjTo= afiicode= age= agent= align= alink= all= allusion= alt= am= ana= ancestor= anchored= arity= assertedValue= attribute= authority=
+background= background-color= baseForm= baseType= behavior below bgcolor= border=
+calendar= cap= cause= cellpadding= cellspacing= cert= certainty= character= chars= children= class= classid= clear= code= codebase= codedCharSet= color= cols= colspan= complete= composite= content= content-role= coords= copyOf= corr= corresp= crdate= creator=
+data= date= dateCreated= dateUpdated= day= decls= definition= default= degree= delim= depend= depPtr= desc= descendant= descriptive= dim= dir= direct= direction discrete= doc= doctype= domains= dt:type= dt:values= dur=
+ed= encoding= end= end-indent= enjamb= entity= entityLoc= entitySet= entityStd= eol= exact= excl= exclude= expan= extendTarg= extent= evaluate= expand= event=
+face= feats= feature= field-width= first= first-line-start-indent= follow= following= font-family= font-family-name= font-posture= font-size= font-style= font-weight= for= form= frameborder= framespacing= from= fsd= full= function= fVal=
+gi= given= gradual= group= grpPtr=
+h= hand= has-value= height= hidden= hour= href= hspace= http-equiv=
+id= ident= image= included= inDegree= index= ink= inline= inst= interval= ismap= iso639= iterated=
+key=
+label= label2= lang= language= left-margin= lemma= length= level= level1= level2= level3= level4= lexpunc= lines= line-spacing= link= loc= location= locus= loop=
+macro= mailto= margin-bottom= margin-left= marginheight= margin-top= marginwidth= marker= marks= maxOccurs= mergedin= met= method= minOccurs= mlang= mode= multiple mutual= mutExcl=
+NSDef=
+n= name= names= new= next= nohref none= noresize norm= noshade notation=
+occurs= old= onblur onchange= onclick onfocus onload only= onmouseout onmouseover onsubmit= opt= ord= order= org= orig= origin= outDegree=
+padding= parent= part= passive= pattern= per= perf= place= pm= position= prefix= prev= previous= prompt=
+quadding=
+real= reason= refunit= reg= rel= rend= render= required= resp= result= rev= rhyme= right-margin= role= rows= rowspan=
+sameAs= sample= scheme= scope= scribe= script= scrolling= select= selected sex= shape= show= sic= sigil= since= size= social= some= sort= source= space= space-after= space-before= span= split= src= SrcDef= standalone= start start= start-indent= status= string= style= subtype= synch=
+TEI= TEIForm=
+target= targetEnd= targets= targFunc= targOrder= targType= terminal= text= text-align= theme= time= timezone= title= to= token= topmargin= trans= type=
+ucs-4= uniform= unit= url= usage= use=
+valign= value= valueTo= varSeq= version= vlink= vspace=
+weights= where= who= width= wit= wscale= wsd=
+xl-role= xl-title= xml:link= xmlns xmlns:dt xmlns:cmi
+zone=
+24hour=
+=
+-
+/C3"Commands"
+edit else enjamb
+for function
+global globincl
+if interpret
+return
+then
+var
+while
+/C4"MSXMS schema nodes"
+<AttributeType </AttributeType> </AttributeType>
+<ElementType </ElementType> </ElementType>
+<Schema </Schema>  </Schema>
+/C5"MSXMS schema attributes"
+<attribute <attribute> </attribute> </attribute>
+/C6"MSXMS schema element list"
+<element <element> </element> /element>
+
+/L7"C#" Line Comment = // Block Comment On = /* Block Comment Off = */ Escape Char = \ String Chars = "' File Extensions = CS
+/Delimiters = ~!@%^&*()-+=|\/{}[]:;"'<> ,	.?
+/Function String = "%[a-zA-Z_]*)[~;]"
+/Indent Strings = "{"
+/Unindent Strings = "}"
+/C1"Keywords"
+as auto
+base break
+case catch const continue
+default do
+else event explicit extern
+false finally fixed for foreach
+goto
+if implicit in internal
+lock
+namespace null
+operator out override
+params private protected public
+readonly ref return
+sealed stackalloc static switch
+this throw true try
+unsafe using
+virtual void
+while
+/C2"C# Data Types"
+bool byte
+char class
+decimal delegate double
+enum
+float
+int interface
+long
+object
+sbyte short string struct
+uint ulong ushort
+/C3"C# Preprocessor Directives"
+#elif #endif #endregion #else #error
+#define
+#if
+#line
+#region
+#undef
+#warning
+/C4"Operators"
++
+-
+*
+?
+=
+// /
+%
+&
+>
+<
+^
+!
+|
+:
+checked
+is
+new
+sizeof
+typeof
+unchecked
+/L8"PHP" Nocase HTML_LANG Line Comment = // Line Comment Alt = # Block Comment On = /* Block Comment Off = */ Block Comment On Alt = <!-- Block Comment Off Alt = --> Escape Char = \ String Chars = "' File Extensions = PHP PHTML INC PHP3 PHP4
+/Delimiters = ~!@%^&*()+-=|\{}[]:;"'<> ,	.?
+/Function String = "%[^t ]++function[^t ]+^([a-zA-Z0-9_&]+*^){"
+/Function String 1 = "%[^t ]++function[^t ]+^([a-zA-Z0-9_&]+*^)^p*{"
+/Indent Strings = "{"
+/Unindent Strings = "}"
+/C1"Tags"
+<?
+<A </A> <ABBR> <ABBR </ABBR> <ABOVE> <ACRONYM> <ACRONYM </ACRONYM> <ADDRESS> <ADDRESS </ADDRESS> <APPLET </APPLET> <ARRAY> <AREA </AREA
+<B> <B </B> <BASE <BASEFONT <BDO> <BDO </BDO> <BGSOUND <BIG> <BIG </BIG> <BLINK> </BLINK> <BLOCKQUOTE> <BLOCKQUOTE </BLOCKQUOTE> <BODY <BODY> </BODY> <BOX> <BR <BR> <BR/> <BIG <BLINK <BUTTON> </BUTTON>
+<CAPTION> <CAPTION </CAPTION> <CENTER> <CENTER </CENTER> <CITE> <CITE </CITE> <CODE> <CODE </CODE> <COL> <COLGROUP> </COLGROUP> <COMMENT> </COMMENT>
+<DD> <DD </DD> <DEL> <DEL </DEL> <DFN> <DFN </DFN> <DIR> <DIR </DIR> <DIV> <DIV </DIV> <DL> <DL </DL> <DT> <DT  </DT>
+<EM> <EM </EM> <EMBED
+<FIELDSET> <FIELDSET </FIELDSET> <FIG> <FONT </FONT> <FORM> <FORM </FORM> <FRAME <FRAMESET </FRAMESET>
+<H1> <H1 </H1> <H2> <H2 </H2> <H3> <H3 </H3> <H4> <H4 </H4> <H5> <H5 </H5> <H6> <H6 </H6> <HEAD> <HEAD </HEAD> <HR> <HR <HR/> <HTML> <HTML </HTML>
+<I> <I </I> <IFRAME> </IFRAME> <ILAYER> </ILAYER> <IMG <INPUT> <INPUT <INS> <INS </INS> <ISINDEX> <ISINDEX
+<KBD> <KBD </KBD>
+<LABEL> <LABEL </LABEL> <LAYER> <LAYER </LAYER> <LEGEND> <LEGEND </LEGEND> <LI> <LI </LI> <LINK <LISTING> </LISTING>
+<MAP </MAP> <MARQUEE </MARQUEE> <MENU> <MENU </MENU> <META <MULTICOL> </MULTICOL>
+<NEXTID <NOBR> </NOBR> <NOFRAMES> </NOFRAMES> <NOLAYER> </NOLAYER> <NOTE> </NOTE> <NOSCRIPT> </NOSCRIPT>
+<OBJECT> <OBJECT <OL> <OL </OL> <OPTION> <OPTION </OPTION> <OPTGROUP> <OPTGROUP </OPTGROUP>
+<P <P> </P> <PARAM <PRE> <PRE </PRE>
+<Q> <Q </Q> <QUOTE>
+<RANGE> <ROOT>
+<S> <S </S> <SAMP> <SAMP </SAMP> <SCRIPT <SCRIPT> </SCRIPT> <SELECT </SELECT> <SMALL> <SMALL </SMALL> <SOUND <SPACER> <SPAN> <SPAN </SPAN> <SQRT> <STRIKE> <STRIKE </STRIKE> <STRONG> <STRONG </STRONG> <STYLE> <STYLE </STYLE> <SUB> <SUB </SUB> <SUP> <SUP </SUP>
+<TABLE> <TABLE </TABLE> <TBODY> <TBODY </TBODY> <TD <TD> </TD> <TEXT> <TEXTAREA <TEXTAREA> </TEXTAREA> <TFOOT> <TFOOT </TFOOT> <TH <TH> </TH> <THEAD> <THEAD </THEAD> <TITLE> </TITLE> <TR <TR> </TR> <TT> </TT> <TT
+<U> <U </U> <UL> <UL </UL>
+<VAR> </VAR> <VAR
+<WBR>
+<XMP> </XMP>
+?>
+// />
+/C2"Attributes"
+ABBR= ACCEPT-CHARSET= ACCEPT= ACCESSKEY= ACTION= ALIGN= ALINK= ALT= ARCHIVE= AXIS=
+BACKGROUND= BEHAVIOR BELOW BGCOLOR= BORDER=
+CELLPADDING= CELLSPACING= CHAR= CHAROFF= CHARSET= CHECKED CITE= CLASS= CLASSID= CLEAR= CODE= CODEBASE= CODETYPE= COLOR= COLS= COLSPAN= CONTENT= COORDS=
+DATA= DATETIME= DEFER DIR= DISABLED
+ENCTYPE=
+FACE= FOR= FRAME= FRAMEBORDER= FRAMESPACING=
+HEADERS= HEIGHT= HIDDEN= HREF= HREFLANG= HSPACE= HTTP-EQUIV=
+ID= ISMAP=
+LABEL= LANG= LANGUAGE= LINK= LOOP= LONGDESC=
+MAILTO= MARGINHEIGHT= MARGINWIDTH= MAXLENGTH= MEDIA= METHOD= MULTIPLE
+NAME= NOHREF NORESIZE NOSHADE
+OBJECT= ONBLUR= ONCHANGE= ONFOCUS= ONKEYDOWN= ONKEYPRESS= ONKEYUP= ONLOAD= ONRESET= ONSELECT= ONSUBMIT= ONUNLOAD= ONCLICK= ONDBLCLICK= ONMOUSEDOWN= ONMOUSEMOVE= ONMOUSEOUT= ONMOUSEOVER= ONMOUSEUP=
+PROFILE= PROMPT=
+READONLY REL= REV= ROWS= ROWSPAN= RULES=
+SCHEME= SCOPE= SCROLLING= SELECTED SHAPE= SIZE= SPAN= SRC= STANDBY= START= STYLE= SUMMARY=
+TABINDEX= TARGET= TEXT= TITLE= TOPMARGIN= TYPE=
+URL= USEMAP=
+VALIGN= VALUE= VALUETYPE= VERSION= VLINK= VSPACE=
+WIDTH=
+/C3"Keywords"
+$argc $argv
+$_COOKIE $_ENV $_FILES $_GET $_POST $_SERVER $_SESSION $_REQUEST
+$GLOBALS
+$HTTP_COOKIE_VARS $HTTP_ENV_VARS $HTTP_GET_VARS $HTTP_POST_FILES $HTTP_POST_VARS $HTTP_SERVER_VARS $HTTP_SESSION_VARS
+$PHP_SELF
+$this
+__sleep __wakeup
+as
+break
+case cfunction continue class
+declare default die do
+echo else elseif empty enddeclare endfor endforeach endif endswitch endwhile eval exit extends
+false for foreach function
+global
+if include include_once
+list
+NULL
+old_function
+parent print
+return require require_once
+static stdClass switch
+true
+var virtual
+while
+/C4"Operators"
+! !=
+%
+& &&
+(
+)
+* *=
++ ++ +=
+,
+- -- -= ->
+. .=
+// / /=
+:
+;
+<
+<=
+=
+<>
+>
+?
+@
+{
+}
+AND
+new not
+OR
+XOR
+[
+]
+^
+| ||
+~
+`
+/C5"Variables"
+** $
+/C6"Constants"
+__FILE__ __LINE__
+ABDAY_1 ABDAY_2 ABDAY_3 ABDAY_4 ABDAY_5 ABDAY_6 ABDAY_7 ABMON_1 ABMON_10 ABMON_11 ABMON_12 ABMON_2 ABMON_3 ABMON_4 ABMON_5 ABMON_6 ABMON_7 ABMON_8 ABMON_9
+ALT_DIGITS AM_STR
+ASSERT_ACTIVE ASSERT_BAIL ASSERT_CALLBACK ASSERT_QUIET_EVAL ASSERT_WARNING
+CASE_LOWER CASE_UPPER CHAR_MAX CODESET
+CONNECTION_ABORTED CONNECTION_NORMAL CONNECTION_TIMEOUT COUNT_NORMAL COUNT_RECURSIVE
+CREDITS_ALL CREDITS_DOCS CREDITS_FULLPAGE CREDITS_GENERAL CREDITS_GROUP CREDITS_MODULES CREDITS_QA CREDITS_SAPI
+CRNCYSTR CRYPT_BLOWFISH CRYPT_EXT_DES CRYPT_MD5 CRYPT_SALT_LENGTH CRYPT_STD_DES
+CURRENCY_SYMBOL
+DAY_1 DAY_2 DAY_3 DAY_4 DAY_5 DAY_6 DAY_7
+DECIMAL_POINT DEFAULT_INCLUDE_PATH
+DIRECTORY_SEPARATOR D_FMT D_T_FMT
+E_ALL E_COMPILE_ERROR E_COMPILE_WARNING E_CORE_ERROR E_CORE_WARNING
+E_ERROR E_NOTICE E_PARSE E_USER_ERROR E_USER_NOTICE E_USER_WARNING E_WARNING
+ENT_COMPAT ENT_NOQUOTES ENT_QUOTES
+ERA ERA_D_FMT ERA_D_T_FMT ERA_T_FMT ERA_YEAR
+EXTR_IF_EXISTS EXTR_OVERWRITE EXTR_PREFIX_ALL EXTR_PREFIX_IF_EXISTS EXTR_PREFIX_INVALID EXTR_PREFIX_SAME EXTR_SKIP
+FRAC_DIGITS
+GROUPING
+HTML_ENTITIES HTML_SPECIALCHARS
+INFO_ALL INFO_CONFIGURATION INFO_CREDITS INFO_ENVIRONMENT INFO_GENERAL INFO_LICENSE INFO_MODULES INFO_VARIABLES
+INI_ALL INI_PERDIR INI_SYSTEM INI_USER
+INT_CURR_SYMBOL INT_FRAC_DIGITS
+LC_ALL LC_COLLATE LC_CTYPE LC_MESSAGES LC_MONETARY LC_NUMERIC LC_TIME
+LOCK_EX LOCK_NB LOCK_SH LOCK_UN
+LOG_ALERT LOG_AUTH LOG_AUTHPRIV LOG_CONS LOG_CRIT LOG_CRON LOG_DAEMON LOG_DEBUG LOG_EMERG LOG_ERR LOG_INFO LOG_KERN
+LOG_LOCAL0 LOG_LOCAL1 LOG_LOCAL2 LOG_LOCAL3 LOG_LOCAL4 LOG_LOCAL5 LOG_LOCAL6 LOG_LOCAL7 LOG_LPR LOG_MAIL LOG_NDELAY
+LOG_NEWS LOG_NOTICE LOG_NOWAIT LOG_ODELAY LOG_PERROR LOG_PID LOG_SYSLOG LOG_USER LOG_UUCP LOG_WARNING
+MON_1 MON_10 MON_11 MON_12 MON_2 MON_3 MON_4 MON_5 MON_6 MON_7 MON_8 MON_9 MON_DECIMAL_POINT MON_GROUPING MON_THOUSANDS_SEP
+M_1_PI M_2_PI M_2_SQRTPI M_E M_LN10 M_LN2 M_LOG10E M_LOG2E M_PI M_PI_2 M_PI_4 M_SQRT1_2 M_SQRT2
+NEGATIVE_SIGN
+NOEXPR NOSTR
+N_CS_PRECEDES N_SEP_BY_SPACE N_SIGN_POSN
+PATHINFO_BASENAME PATHINFO_DIRNAME PATHINFO_EXTENSION
+PEAR_EXTENSION_DIR PEAR_INSTALL_DIR
+PHP_BINDIR PHP_CONFIG_FILE_PATH PHP_DATADIR PHP_EXTENSION_DIR PHP_LIBDIR PHP_LOCALSTATEDIR
+PHP_OS PHP_OUTPUT_HANDLER_CONT PHP_OUTPUT_HANDLER_END PHP_OUTPUT_HANDLER_START
+PHP_SYSCONFDIR PHP_VERSION
+PM_STR
+POSITIVE_SIGN
+P_CS_PRECEDES P_SEP_BY_SPACE P_SIGN_POSN
+RADIXCHAR
+SEEK_CUR SEEK_END SEEK_SET
+SID
+SORT_ASC SORT_DESC SORT_NUMERIC SORT_REGULAR SORT_STRING
+STR_PAD_BOTH STR_PAD_LEFT STR_PAD_RIGHT
+THOUSANDS_SEP THOUSEP
+T_FMT T_FMT_AMPM
+YESEXPR YESSTR
+/C7"Functions"
+abs accept_connect acos add_iovec addcslashes addslashes apache_lookup_uri apache_note apache_sub_req array_count_values array_diff array_flip array_intersect array_key_exists array_keys array
+array_merge array_merge_recursive array_multisort array_pad array_pop array_push array_rand array_reverse array_shift array_slice array_splice array_sum array_unique
+array_unshift array_values array_walk arsort asin asort aspell_check aspell_check_raw aspell_new aspell_suggest assert assert_options atan atan2
+base64_decode base64_encode base_convert basename bcadd bccomp bcdiv bcmod bcmul bcpow bcscale bcsqrt bcsub bin2hex bind bindec bindtextdomain bool boolean build_iovec bzclose
+bzcompress bzdecompress bzerrno bzerror bzerrstr bzflush bzopen bzread bzwrite
+call_user_func call_user_func_array call_user_method ccvs_add ccvs_auth ccvs_command ccvs_count ccvs_delete ccvs_done ccvs_init ccvs_lookup ccvs_new ccvs_report
+ccvs_return ccvs_reverse ccvs_sale ccvs_status ccvs_textvalue ccvs_void ceil chdir checkdate checkdnsrr chgrp chmod chop chown chr chunk_split class_exists clearstatcache
+close closedir closelog com_get com_invoke com_load com_propget com_propput com_propset com_set compact confirm_ctype_compiled confirm_extname_compiled
+confirm_zziplib_compiled connect connection_aborted connection_status connection_timeout constant convert_cyr_string copy cos count count_chars cpdf_add_annotation
+cpdf_add_outline cpdf_arc cpdf_begin_text cpdf_circle cpdf_clip cpdf_close cpdf_closepath cpdf_closepath_fill_stroke cpdf_closepath_stroke cpdf_continue_text cpdf_curveto
+cpdf_end_text cpdf_fill cpdf_fill_stroke cpdf_finalize cpdf_finalize_page cpdf_global_set_document_limits cpdf_import_jpeg cpdf_lineto cpdf_moveto cpdf_newpath cpdf_open
+cpdf_output_buffer cpdf_page_init cpdf_place_inline_image cpdf_rect cpdf_restore cpdf_rlineto cpdf_rmoveto cpdf_rotate cpdf_rotate_text cpdf_save cpdf_save_to_file
+cpdf_scale cpdf_set_action_url cpdf_set_char_spacing cpdf_set_creator cpdf_set_current_page cpdf_set_font cpdf_set_horiz_scaling cpdf_set_keywords cpdf_set_leading
+cpdf_set_page_animation cpdf_set_subject cpdf_set_text_matrix cpdf_set_text_pos cpdf_set_text_rendering cpdf_set_text_rise cpdf_set_title cpdf_set_viewer_preferences
+cpdf_set_word_spacing cpdf_setdash cpdf_setflat cpdf_setgray cpdf_setgray_fill cpdf_setgray_stroke cpdf_setlinecap cpdf_setlinejoin cpdf_setlinewidth cpdf_setmiterlimit
+cpdf_setrgbcolor cpdf_setrgbcolor_fill cpdf_setrgbcolor_stroke cpdf_show cpdf_show_xy cpdf_stringwidth cpdf_stroke cpdf_text cpdf_translate crash crc32 create_function
+crypt curl_close curl_errno curl_error curl_exec curl_getinfo curl_init curl_setopt curl_version current cv_add cv_auth cv_command cv_count cv_delete cv_done cv_init
+cv_lookup cv_new cv_report cv_return cv_reverse cv_sale cv_status cv_textvalue cv_void cybercash_base64_decode cybercash_base64_encode cybercash_decr cybercash_encr
+date dav_set_mkcol_handlers dba_close dba_delete dba_exists dba_fetch dba_firstkey dba_insert dba_nextkey dba_open dba_optimize dba_popen dba_replace dba_sync
+dbase_add_record dbase_close dbase_create dbase_delete_record dbase_get_record dbase_get_record_with_names dbase_numfields dbase_numrecords dbase_open dbase_pack
+dbase_replace_record dblist dbmclose dbmdelete dbmexists dbmfetch dbmfirstkey dbminsert dbmnextkey dbmopen dbmreplace dcgettext decbin dechex decoct define
+define_syslog_variables defined deg2rad delete_iovec dgettext dir dirname diskfreespace display_disabled_function dl domxml_add_root domxml_attributes domxml_children
+domxml_dumpmem domxml_getattr domxml_new_child domxml_new_xmldoc domxml_node domxml_root domxml_set_content domxml_setattr double doubleval
+each easter_date easter_days end ereg ereg_replace eregi eregi_replace error_log error_reporting escapeshellarg escapeshellcmd exec exp explode extension_loaded extract ezmlm_hash
+fclose fd_alloc fd_clear fd_dealloc fd_isset fd_set fd_zero fdf_add_template fdf_close fdf_create fdf_get_file fdf_get_status fdf_get_value fdf_next_field_name fdf_open
+fdf_save fdf_set_ap fdf_set_file fdf_set_flags fdf_set_javascript_action fdf_set_opt fdf_set_status fdf_set_submit_form_action fdf_set_value feof fetch_iovec fflush fgetc
+fgetcsv fgets fgetss file file_exists fileatime filectime filegroup fileinode filemtime fileowner fileperms filepro filepro_fieldcount filepro_fieldname filepro_fieldtype
+filepro_fieldwidth filepro_retrieve filepro_rowcount filesize filetype float flock floor flush fopen fpassthru fputs fread free_iovec frenchtojd fribidi_log2vis fscanf fseek
+fsockopen fstat ftell ftp_cdup ftp_chdir ftp_connect ftp_delete ftp_exec ftp_fget ftp_fput ftp_get ftp_login ftp_mdtm ftp_mkdir ftp_nlist ftp_pasv ftp_put ftp_pwd
+ftp_quit ftp_rawlist ftp_rename ftp_rmdir ftp_site ftp_size ftp_systype ftruncate func_get_arg func_get_args func_num_args function_exists fwrite
+get_all_headers get_browser get_cfg_var get_class get_class_methods get_class_vars get_current_user get_declared_classes get_defined_functions get_defined_vars
+get_extension_funcs get_html_translation_table get_included_files get_loaded_extensions get_magic_quotes_gpc get_magic_quotes_runtime get_meta_tags get_object_vars
+get_parent_class get_resource_type getallheaders getcwd getdate getenv gethostbyaddr gethostbyname gethostbynamel getimagesize getlastmod getmxrr getmyinode getmypid
+getmyuid getpeername getprotobyname getprotobynumber getrandmax getrusage getservbyname getservbyport getsockname getsockopt gettext gettimeofday gettype gmdate gmmktime
+gmp_abs gmp_add gmp_and gmp_clrbit gmp_cmp gmp_com gmp_div_q gmp_div_qr gmp_div_r gmp_divexact gmp_fact gmp_gcd gmp_gcdext gmp_hamdist gmp_init gmp_intval gmp_invert
+gmp_jacobi gmp_legendre gmp_mod gmp_mul gmp_neg gmp_or gmp_perfect_square gmp_popcount gmp_pow gmp_powm gmp_prob_prime gmp_random gmp_scan0 gmp_scan1 gmp_setbit gmp_sign
+gmp_sqrt gmp_sqrtrem gmp_strval gmp_sub gmp_xor gmstrftime gregoriantojd gzclose gzcompress gzdeflate gzencode gzeof gzfile gzgetc gzgets gzgetss gzinflate gzopen
+gzpassthru gzputs gzread gzrewind gzseek gztell gzuncompress gzwrite
+header headers_sent hebrev hebrevc hexdec highlight_file highlight_string htmlentities htmlspecialchars hw_array2objrec hw_changeobject hw_children hw_childrenobj
+hw_close hw_connect hw_connection_info hw_cp hw_deleteobject hw_docbyanchor hw_docbyanchorobj hw_document_attributes hw_document_bodytag hw_document_content
+hw_document_setcontent hw_document_size hw_dummy hw_edittext hw_error hw_errormsg hw_free_document hw_getanchors hw_getanchorsobj hw_getandlock hw_getcgi hw_getchildcoll
+hw_getchildcollobj hw_getchilddoccoll hw_getchilddoccollobj hw_getobject hw_getobjectbyftquery hw_getobjectbyftquerycoll hw_getobjectbyftquerycollobj
+hw_getobjectbyftqueryobj hw_getobjectbyquery hw_getobjectbyquerycoll hw_getobjectbyquerycollobj hw_getobjectbyqueryobj hw_getparents hw_getparentsobj hw_getrellink
+hw_getremote hw_getremotechildren hw_getsrcbydestobj hw_gettext hw_getusername hw_identify hw_incollections hw_info hw_inscoll hw_insdoc hw_insertanchors
+hw_insertdocument hw_insertobject hw_mapid hw_modifyobject hw_mv hw_new_document hw_objrec2array hw_output_document hw_pconnect hw_pipecgi hw_pipedocument hw_root
+hw_setlinkroot hw_stat hw_unlock hw_who
+ibase_blob_add ibase_blob_cancel ibase_blob_close ibase_blob_create ibase_blob_echo ibase_blob_get ibase_blob_import ibase_blob_info ibase_blob_open ibase_close
+ibase_commit ibase_connect ibase_errmsg ibase_execute ibase_fetch_object ibase_fetch_row ibase_field_info ibase_free_query ibase_free_result ibase_num_fields
+ibase_pconnect ibase_prepare ibase_query ibase_rollback ibase_timefmt ibase_trans icap_create_calendar icap_delete_calendar icap_delete_event icap_fetch_event
+icap_list_alarms icap_list_events icap_open icap_popen icap_rename_calendar icap_reopen icap_snooze icap_store_event ifx_affected_rows ifx_blobinfile_mode
+ifx_byteasvarchar ifx_close ifx_connect ifx_copy_blob ifx_create_blob ifx_create_char ifx_do ifx_error ifx_errormsg ifx_fetch_row ifx_fieldproperties ifx_fieldtypes
+ifx_free_blob ifx_free_char ifx_free_result ifx_get_blob ifx_get_char ifx_getsqlca ifx_htmltbl_result ifx_nullformat ifx_num_fields ifx_num_rows ifx_pconnect ifx_prepare
+ifx_query ifx_textasvarchar ifx_update_blob ifx_update_char ifxus_close_slob ifxus_create_slob ifxus_free_slob ifxus_open_slob ifxus_read_slob ifxus_seek_slob
+ifxus_tell_slob ifxus_write_slob ignore_user_abort iis_addserver iis_getdirsecurity iis_getscriptmap iis_getserverbycomment iis_getserverbypath iis_getserverright
+iis_getservicestate iis_removeserver iis_setappsettings iis_setdirsecurity iis_setscriptmap iis_setserverright iis_startserver iis_startservice iis_stopserver
+iis_stopservice imagearc imagechar imagecharup imagecolorallocate imagecolorat imagecolorclosest imagecolorclosesthwb imagecolordeallocate imagecolorexact
+imagecolorresolve imagecolorset imagecolorsforindex imagecolorstotal imagecolortransparent imagecopy imagecopymerge imagecopyresized imagecreate imagecreatefromgif
+imagecreatefromjpeg imagecreatefrompng imagecreatefromstring imagecreatefromwbmp imagecreatefromxbm imagecreatefromxpm imagedashedline imagedestroy imagefill
+imagefilledpolygon imagefilledrectangle imagefilltoborder imagefontheight imagefontwidth imagegammacorrect imagegif imageinterlace imagejpeg imageline imageloadfont
+imagepalettecopy imagepng imagepolygon imagepsbbox imagepscopyfont imagepsencodefont imagepsextendfont imagepsfreefont imagepsloadfont imagepsslantfont imagepstext
+imagerectangle imagesetpixel imagestring imagestringup imagesx imagesy imagettfbbox imagettftext imagetypes imagewbmp imap_8bit imap_alerts imap_append imap_base64
+imap_binary imap_body imap_bodystruct imap_check imap_clearflag_full imap_close imap_create imap_createmailbox imap_delete imap_deletemailbox imap_errors imap_expunge
+imap_fetch_overview imap_fetchbody imap_fetchheader imap_fetchstructure imap_fetchtext imap_getmailboxes imap_getsubscribed imap_header imap_headerinfo imap_headers
+imap_last_error imap_list imap_listmailbox imap_listsubscribed imap_lsub imap_mail imap_mail_compose imap_mail_copy imap_mail_move imap_mailboxmsginfo
+imap_mime_header_decode imap_msgno imap_num_msg imap_num_recent imap_open imap_ping imap_popen imap_qprint imap_rename imap_renamemailbox imap_reopen
+imap_rfc822_parse_adrlist imap_rfc822_parse_headers imap_rfc822_write_address imap_scan imap_scanmailbox imap_search imap_setflag_full imap_sort imap_status
+imap_subscribe imap_uid imap_undelete imap_unsubscribe imap_utf7_decode imap_utf7_encode imap_utf8 implode in_array ingres_autocommit ingres_close ingres_commit
+ingres_connect ingres_fetch_array ingres_fetch_object ingres_fetch_row ingres_field_length ingres_field_name ingres_field_nullable ingres_field_precision
+ingres_field_scale ingres_field_type ingres_num_fields ingres_num_rows ingres_pconnect ingres_query ingres_rollback ini_alter ini_get ini_restore ini_set int integer intval ip2long
+iptcembed iptcparse ircg_disconnect ircg_join ircg_msg ircg_part ircg_pconnect ircg_set_current is_array is_bool is_dir is_double is_executable is_file is_float is_int
+is_integer is_link is_long is_null is_numeric is_object is_readable is_real is_resource is_string is_subclass_of is_uploaded_file is_writable is_writeable isalnum isalpha
+iscntrl isdigit isgraph islower isprint ispunct isset isspace isupper isxdigit
+java_last_exception_clear java_last_exception_get jddayofweek jdmonthname jdtofrench jdtogregorian jdtojewish jdtojulian jdtounix jewishtojd join juliantojd
+key krsort ksort
+lcg_value ldap_8859_to_t61 ldap_add ldap_bind ldap_close ldap_compare ldap_connect ldap_count_entries ldap_delete ldap_dn2ufn ldap_err2str ldap_errno ldap_error
+ldap_explode_dn ldap_first_attribute ldap_first_entry ldap_free_result ldap_get_attributes ldap_get_dn ldap_get_entries ldap_get_option ldap_get_values
+ldap_get_values_len ldap_list ldap_mod_add ldap_mod_del ldap_mod_replace ldap_modify ldap_next_attribute ldap_next_entry ldap_read ldap_search ldap_set_option
+ldap_t61_to_8859 ldap_unbind leak levenshtein link linkinfo listen localtime log log10 long2ip lstat ltrim
+magic_quotes_runtime mail max mcal_append_event mcal_close mcal_create_calendar mcal_date_compare mcal_date_valid mcal_day_of_week mcal_day_of_year mcal_days_in_month
+mcal_delete_calendar mcal_delete_event mcal_event_add_attribute mcal_event_init mcal_event_set_alarm mcal_event_set_category mcal_event_set_class
+mcal_event_set_description mcal_event_set_end mcal_event_set_recur_daily mcal_event_set_recur_monthly_mday mcal_event_set_recur_monthly_wday mcal_event_set_recur_none
+mcal_event_set_recur_weekly mcal_event_set_recur_yearly mcal_event_set_start mcal_event_set_title mcal_fetch_current_stream_event mcal_fetch_event mcal_is_leap_year
+mcal_list_alarms mcal_list_events mcal_next_recurrence mcal_open mcal_popen mcal_rename_calendar mcal_reopen mcal_snooze mcal_store_event mcal_time_valid
+mcal_week_of_year mcrypt_cbc mcrypt_cfb mcrypt_create_iv mcrypt_decrypt mcrypt_ecb mcrypt_enc_get_algorithms_name mcrypt_enc_get_block_size mcrypt_enc_get_iv_size
+mcrypt_enc_get_key_size mcrypt_enc_get_modes_name mcrypt_enc_get_supported_key_sizes mcrypt_enc_is_block_algorithm mcrypt_enc_is_block_algorithm_mode
+mcrypt_enc_is_block_mode mcrypt_enc_self_test mcrypt_encrypt mcrypt_generic mcrypt_generic_end mcrypt_generic_init mcrypt_get_block_size mcrypt_get_cipher_name
+mcrypt_get_iv_size mcrypt_get_key_size mcrypt_list_algorithms mcrypt_list_modes mcrypt_module_close mcrypt_module_get_algo_block_size mcrypt_module_get_algo_key_size
+mcrypt_module_get_supported_key_sizes mcrypt_module_is_block_algorithm mcrypt_module_is_block_algorithm_mode mcrypt_module_is_block_mode mcrypt_module_open
+mcrypt_module_self_test mcrypt_ofb md5 mdecrypt_generic metaphone method_exists mhash mhash_count mhash_get_block_size mhash_get_hash_name mhash_keygen_s2k microtime min
+mkdir mktime move_uploaded_file msql msql_affected_rows msql_close msql_connect msql_create_db msql_createdb msql_data_seek msql_db_query msql_dbname msql_drop_db
+msql_dropdb msql_error msql_fetch_array msql_fetch_field msql_fetch_object msql_fetch_row msql_field_flags msql_field_len msql_field_name msql_field_seek msql_field_table
+msql_field_type msql_fieldflags msql_fieldlen msql_fieldname msql_fieldtable msql_fieldtype msql_free_result msql_freeresult msql_list_dbs msql_list_fields
+msql_list_tables msql_listdbs msql_listfields msql_listtables msql_num_fields msql_num_rows msql_numfields msql_numrows msql_pconnect msql_query msql_regcase msql_result
+msql_select_db msql_selectdb msql_tablename mssql_affected_rows mssql_close mssql_connect mssql_data_seek mssql_fetch_array mssql_fetch_batch mssql_fetch_field
+mssql_fetch_object mssql_fetch_row mssql_field_length mssql_field_name mssql_field_seek mssql_field_type mssql_free_result mssql_get_last_message
+mssql_min_client_severity mssql_min_error_severity mssql_min_message_severity mssql_min_server_severity mssql_num_fields mssql_num_rows mssql_pconnect mssql_query
+mssql_result mssql_rows_affected mssql_select_db mt_getrandmax mt_rand mt_srand mysql mysql_affected_rows mysql_close mysql_connect mysql_create_db mysql_createdb
+mysql_data_seek mysql_db_name mysql_db_query mysql_dbname mysql_drop_db mysql_dropdb mysql_errno mysql_error mysql_escape_string mysql_fetch_array mysql_fetch_assoc
+mysql_fetch_field mysql_fetch_lengths mysql_fetch_object mysql_fetch_row mysql_field_flags mysql_field_len mysql_field_name mysql_field_seek mysql_field_table
+mysql_field_type mysql_fieldflags mysql_fieldlen mysql_fieldname mysql_fieldtable mysql_fieldtype mysql_free_result mysql_freeresult mysql_insert_id mysql_list_dbs
+mysql_list_fields mysql_list_tables mysql_listdbs mysql_listfields mysql_listtables mysql_num_fields mysql_num_rows mysql_numfields mysql_numrows mysql_pconnect
+mysql_query mysql_result mysql_select_db mysql_selectdb mysql_tablename
+natcasesort natsort new_xmldoc next nl2br number_format
+ob_end_clean ob_end_flush ob_get_contents ob_get_length ob_gzhandler ob_implicit_flush ob_start ocibindbyname ocicancel ocicolumnisnull ocicolumnname ocicolumnprecision
+ocicolumnscale ocicolumnsize ocicolumntype ocicolumntyperaw ocicommit ocidefinebyname ocierror ociexecute ocifetch ocifetchinto ocifetchstatement ocifreecursor
+ocifreedesc ocifreestatement ociinternaldebug ociloadlob ocilogoff ocilogon ocinewcursor ocinewdescriptor ocinlogon ocinumcols ociparse ociplogon ociresult ocirollback
+ocirowcount ocisavelob ocisavelobfile ociserverversion ocisetprefetch ocistatementtype ociwritelobtofile octdec odbc_autocommit odbc_binmode odbc_close odbc_close_all
+odbc_columnprivileges odbc_columns odbc_commit odbc_connect odbc_cursor odbc_do odbc_exec odbc_execute odbc_fetch_array odbc_fetch_into odbc_fetch_object odbc_fetch_row
+odbc_field_len odbc_field_name odbc_field_num odbc_field_precision odbc_field_scale odbc_field_type odbc_foreignkeys odbc_free_result odbc_gettypeinfo odbc_longreadlen
+odbc_num_fields odbc_num_rows odbc_pconnect odbc_prepare odbc_primarykeys odbc_procedurecolumns odbc_procedures odbc_result odbc_result_all odbc_rollback odbc_setoption
+odbc_specialcolumns odbc_statistics odbc_tableprivileges odbc_tables object open_listen_sock opendir openlog openssl_free_key openssl_free_x509 openssl_get_privatekey
+openssl_get_publickey openssl_open openssl_read_publickey openssl_read_x509 openssl_seal openssl_sign openssl_verify ora_bind ora_close ora_columnname ora_columnsize
+ora_columntype ora_commit ora_commitoff ora_commiton ora_do ora_error ora_errorcode ora_exec ora_fetch ora_fetch_into ora_getcolumn ora_logoff ora_logon ora_numcols
+ora_numrows ora_open ora_parse ora_plogon ora_rollback orbit_caught_exception orbit_exception_id orbit_exception_value orbit_get_repository_id orbit_load_idl ord
+ovrimos_close ovrimos_close_all ovrimos_commit ovrimos_connect ovrimos_cursor ovrimos_exec ovrimos_execute ovrimos_fetch_into ovrimos_fetch_row ovrimos_field_len
+ovrimos_field_name ovrimos_field_num ovrimos_field_type ovrimos_free_result ovrimos_longreadlen ovrimos_num_fields ovrimos_num_rows ovrimos_prepare ovrimos_result
+ovrimos_result_all ovrimos_rollback
+pack parse_ini_file parse_str parse_url passthru pathinfo pclose pdf_add_annotation pdf_add_bookmark pdf_add_outline pdf_add_pdflink pdf_add_weblink pdf_arc
+pdf_begin_page pdf_circle pdf_clip pdf_close pdf_close_image pdf_closepath pdf_closepath_fill_stroke pdf_closepath_stroke pdf_continue_text pdf_curveto pdf_end_page
+pdf_endpath pdf_fill pdf_fill_stroke pdf_get_font pdf_get_fontname pdf_get_fontsize pdf_get_image_height pdf_get_image_width pdf_get_parameter pdf_get_value pdf_lineto
+pdf_moveto pdf_open pdf_open_gif pdf_open_image_file pdf_open_jpeg pdf_open_memory_image pdf_open_png pdf_open_tiff pdf_place_image pdf_rect pdf_restore pdf_rotate
+pdf_save pdf_scale pdf_set_border_color pdf_set_border_dash pdf_set_border_style pdf_set_char_spacing pdf_set_duration pdf_set_font pdf_set_horiz_scaling pdf_set_info
+pdf_set_info_author pdf_set_info_creator pdf_set_info_keywords pdf_set_info_subject pdf_set_info_title pdf_set_leading pdf_set_parameter pdf_set_text_pos
+pdf_set_text_rendering pdf_set_text_rise pdf_set_transition pdf_set_value pdf_set_word_spacing pdf_setdash pdf_setflat pdf_setgray pdf_setgray_fill pdf_setgray_stroke
+pdf_setlinecap pdf_setlinejoin pdf_setlinewidth pdf_setmiterlimit pdf_setrgbcolor pdf_setrgbcolor_fill pdf_setrgbcolor_stroke pdf_show pdf_show_boxed pdf_show_xy pdf_skew
+pdf_stringwidth pdf_stroke pdf_translate pfpro_cleanup pfpro_init pfpro_process pfpro_process_raw pfpro_version pfsockopen pg_client_encoding pg_clientencoding pg_close
+pg_cmdtuples pg_connect pg_dbname pg_end_copy pg_errormessage pg_exec pg_fetch_array pg_fetch_object pg_fetch_row pg_fieldisnull pg_fieldname pg_fieldnum pg_fieldprtlen
+pg_fieldsize pg_fieldtype pg_freeresult pg_getlastoid pg_host pg_loclose pg_locreate pg_loexport pg_loimport pg_loopen pg_loread pg_loreadall pg_lounlink pg_lowrite
+pg_numfields pg_numrows pg_options pg_pconnect pg_port pg_put_line pg_result pg_set_client_encoding pg_setclientencoding pg_trace pg_tty pg_untrace php_logo_guid
+php_sapi_name php_uname phpcredits phpinfo phpversion pi popen pos posix_ctermid posix_getcwd posix_getegid posix_geteuid posix_getgid posix_getgrgid posix_getgrnam
+posix_getgroups posix_getlogin posix_getpgid posix_getpgrp posix_getpid posix_getppid posix_getpwnam posix_getpwuid posix_getrlimit posix_getsid posix_getuid posix_isatty
+posix_kill posix_mkfifo posix_setegid posix_seteuid posix_setgid posix_setpgid posix_setsid posix_setuid posix_times posix_ttyname posix_uname pow preg_grep preg_match
+preg_match_all preg_quote preg_replace preg_split prev print_r printer_close printer_create_brush printer_create_dc printer_create_font printer_create_pen
+printer_delete_brush printer_delete_dc printer_delete_font printer_delete_pen printer_draw_elipse printer_draw_rectangle printer_draw_roundrect printer_draw_text
+printer_end_doc printer_end_page printer_get_option printer_list printer_logical_fontheight printer_name printer_open printer_select_brush printer_select_font
+printer_select_pen printer_set_option printer_start_doc printer_start_page printer_write printf pspell_add_to_personal pspell_add_to_session pspell_check
+pspell_clear_session pspell_config_create pspell_config_ignore pspell_config_mode pspell_config_personal pspell_config_repl pspell_config_runtogether
+pspell_config_save_repl pspell_new pspell_new_config pspell_new_personal pspell_save_wordlist pspell_store_replacement pspell_suggest putenv
+qdom_tree quoted_printable_decode quotemeta
+rad2deg rand range rawurldecode rawurlencode read read_exif_data readdir readfile readgzfile readline readline_add_history readline_clear_history
+readline_completion_function readline_info readline_list_history readline_read_history readline_write_history readlink readv real realpath recode recode_file recode_string
+recv recvfrom recvmsg register_shutdown_function register_tick_function rename reset restore_error_handler rewind rewinddir rmdir round rsort rtrim
+satellite_caught_exception satellite_exception_id satellite_exception_value satellite_get_repository_id satellite_load_idl select sem_acquire sem_get sem_release send
+sendmsg sendto serialize session_cache_limiter session_decode session_destroy session_encode session_get_cookie_params session_id session_is_registered
+session_module_name session_name session_register session_save_path session_set_cookie_params session_set_save_handler session_start session_unregister session_unset
+session_write_close set_error_handler set_file_buffer set_iovec set_magic_quotes_runtime set_nonblock set_socket_blocking set_time_limit setcookie setlocale setsockopt
+settype shell_exec shm_attach shm_detach shm_get_var shm_put_var shm_remove shm_remove_var shmop_close shmop_delete shmop_open shmop_read shmop_size shmop_write
+show_source shuffle shutdown signal similar_text sin sizeof sleep snmp_get_quick_print snmp_set_quick_print snmpget snmprealwalk snmpset snmpwalk snmpwalkoid socket
+socket_get_status socket_set_blocking socket_set_timeout socketpair sort soundex split spliti sprintf sql_regcase sqrt srand sscanf stat str_pad str_repeat str_replace
+strcasecmp strchr strcmp strcspn strerror strftime string strip_tags stripcslashes stripslashes stristr strlen strnatcasecmp strnatcmp strncasecmp strncmp strpos strrchr strrev
+strrpos strspn strstr strtok strtolower strtotime strtoupper strtr strval substr substr_count substr_replace swf_actiongeturl swf_actiongotoframe swf_actiongotolabel
+swf_actionnextframe swf_actionplay swf_actionprevframe swf_actionsettarget swf_actionstop swf_actiontogglequality swf_actionwaitforframe swf_addbuttonrecord swf_addcolor
+swf_closefile swf_definebitmap swf_definefont swf_defineline swf_definepoly swf_definerect swf_definetext swf_endbutton swf_enddoaction swf_endshape swf_endsymbol
+swf_fontsize swf_fontslant swf_fonttracking swf_getbitmapinfo swf_getfontinfo swf_getframe swf_labelframe swf_lookat swf_modifyobject swf_mulcolor swf_nextid
+swf_oncondition swf_openfile swf_ortho swf_ortho2 swf_perspective swf_placeobject swf_polarview swf_popmatrix swf_posround swf_pushmatrix swf_removeobject swf_rotate
+swf_scale swf_setfont swf_setframe swf_shapearc swf_shapecurveto swf_shapecurveto3 swf_shapefillbitmapclip swf_shapefillbitmaptile swf_shapefilloff swf_shapefillsolid
+swf_shapelinesolid swf_shapelineto swf_shapemoveto swf_showframe swf_startbutton swf_startdoaction swf_startshape swf_startsymbol swf_textwidth swf_translate swf_viewport
+sybase_affected_rows sybase_close sybase_connect sybase_data_seek sybase_fetch_array sybase_fetch_field sybase_fetch_object sybase_fetch_row sybase_field_seek
+sybase_free_result sybase_get_last_message sybase_min_client_severity sybase_min_error_severity sybase_min_message_severity sybase_min_server_severity sybase_num_fields
+sybase_num_rows sybase_pconnect sybase_query sybase_result sybase_select_db symlink syslog system
+tan tempnam textdomain time tmpfile touch trigger_error trim
+uasort ucfirst ucwords uksort umask uniqid unixtojd unlink unpack unregister_tick_function unserialize unset urldecode urlencode usleep usort utf8_decode utf8_encode
+var_dump velocis_autocommit velocis_close velocis_commit velocis_connect velocis_exec velocis_fetch velocis_fieldname velocis_fieldnum velocis_freeresult
+velocis_off_autocommit velocis_result velocis_rollback virtual
+wddx_add_vars wddx_deserialize wddx_packet_end wddx_packet_start wddx_serialize_value wddx_serialize_vars wordwrap write writev
+xml_error_string xml_get_current_byte_index xml_get_current_column_number xml_get_current_line_number xml_get_error_code xml_parse xml_parse_into_struct xml_parser_create
+xml_parser_free xml_parser_get_option xml_parser_set_option xml_set_character_data_handler xml_set_default_handler xml_set_element_handler
+xml_set_external_entity_ref_handler xml_set_notation_decl_handler xml_set_object xml_set_processing_instruction_handler xml_set_unparsed_entity_decl_handler xmldoc
+xmldocfile xmltree xpath_eval xpath_eval_expression xpath_new_context xptr_eval xptr_new_context xslt_closelog xslt_create xslt_errno xslt_error xslt_fetch_result
+xslt_free xslt_openlog xslt_output_begintransform xslt_output_endtransform xslt_process xslt_run xslt_set_error_handler xslt_set_sax_handler xslt_transform
+yaz_addinfo yaz_close yaz_connect yaz_element yaz_errno yaz_error yaz_hits yaz_range yaz_record yaz_search yaz_syntax yaz_wait yp_first yp_get_default_domain yp_master yp_match yp_next yp_order
+zend_logo_guid zend_test_func zend_version
+
+/L9"JavaScript" Line Comment = // Block Comment On = /* Block Comment Off = */ File Extensions = JS
+/Delimiters = ~!@%^&*()-+=|\/{}[]:;"'<> ,	.?
+/Function String = "%[ ^t]++function^(*(*)^)"
+/Function String 1 = "%[ ^t]++^(*^)=[ ^t]++function*(*)"
+/Indent Strings = "{" "else"
+/Unindent Strings = "}" "else"
+/C1"Keywords"
+abstract
+break byte
+case catch char class const continue
+default delete do double
+else extends
+false final finally float for function
+goto
+if implements import in instanceof int interface
+long
+native null
+package private protected public
+reset return
+short static super switch synchronized
+this throw transient true try
+var void
+while with
+/C2"Objects"
+Anchor Applet Area Arguments Array
+Boolean Button
+Checkbox Collection Crypto
+Date Dictionary Document Drive Drives
+Element Enumerator Event
+File FileObject FileSystemObject FileUpload Folder Folders Form Frame Function
+Global
+Hidden History HTMLElement
+Image Infinity Input
+JavaArray JavaClass JavaObject JavaPackage JSObject
+Layer Link
+Math MimeType
+Navigator Number
+Object Option
+Packages Password Plugin PrivilegeManager
+Random RegExp
+Screen Select String Submit
+Text Textarea
+URL
+VBArray
+Window WScript
+/C3"Methods and Properties"
+above abs acos action activeElement alert alinkColor all altKey anchor anchors appCodeName applets apply appName appVersion arguments arity asin assign atan atan2 atob
+availHeight availLeft availTop availWidth
+ActiveXObject
+back background below bgColor big blink blur bold border borderWidths bottom btoa button
+call callee caller cancelBubble captureEvents ceil charAt charCodeAt charset checked children classes className clear clearInterval clearTimeout click clientInformation
+clientX clientY close closed colorDepth compile complete concat confirm constructir contains contextual cookie cos crypto ctrlKey current
+data defaultCharset defaultChecked defaultSelected defaultStatus defaultValue description disableExternalCapture disablePrivilege document domain
+E Echo
+element elements embeds enabledPlugin enableExternalCapture enablePrivilege encoding escape eval event exec exp expando
+FromPoint
+fgColor fileName find fixed floor focus fontColor fontSize form forms forward frames fromCharCode fromElement
+getAttribute get getClass getDate getDay getFullYear getHours getMember getMilliseconds getMinutes getMonth getSeconds getSelection getSlot getTime getTimezoneOffset
+getUTCDate getUTCDay getUTCFullYear getUTCHours getUTCMilliseconds getUTCMinutes getUTCMonth getUTCSeconds getWindow getYear global go
+HandleEvent Height
+hash hidden history home host hostName href hspace
+id ids ignoreCase images index indexOf inner innerHTML innerText innerWidth insertAdjacentHTML insertAdjacentText isFinite isNAN italics
+java javaEnabled join
+keyCode
+Links LN10 LN2 LOG10E LOG2E
+lang language lastIndex lastIndexOf lastMatch lastModified lastParen layers layerX layerY left leftContext length link linkColor load location locationBar log lowsrc
+MAX_VALUE MIN_VALUE
+margins match max menubar method mimeTypes min modifiers moveAbove moveBelow moveBy moveTo moveToAbsolute multiline
+NaN NEGATIVE_INFINITY
+name navigate navigator netscape next number
+offscreenBuffering offset offsetHeight offsetLeft offsetParent offsetTop offsetWidth offsetX offsetY onabort onblur onchange onclick ondblclick ondragdrop onerror onfocus
+onHelp onkeydown onkeypress onkeyup onload onmousedown onmousemove onmouseout onmouseover onmouseup onmove onreset onresize onsubmit onunload open opener options outerHeight
+outerHTML outerText outerWidth
+POSITIVE_INFINITY PI
+paddings pageX pageXOffset pageY pageYOffset parent parentElement parentLayer parentWindow parse parseFloat parseInt pathname personalbar pixelDepth platform plugins pop
+port pow preference previous print prompt protocol prototype push
+random readyState reason referrer refresh releaseEvents reload removeAttribute removeMember replace resizeBy resizeTo returnValue reverse right rightcontext round
+SQRT1_2 SQRT2
+screenX screenY scroll scrollbars scrollBy scrollIntoView scrollTo search select selected selectedIndex self setAttribute setDay setFullYear setHotkeys setHours setInterval
+setMember setMilliseconds setMinutes setMonth setResizable setSeconds setSlot setTime setTimeout setUTCDate setUTCFullYear setUTCHours setUTCMillseconds setUTCMinutes
+setUTCMonth setUTCSeconds setYear setZOptions shift shiftKey siblingAbove siblingBelow signText sin slice smallsort source sourceIndex splice split sqrt src
+srcElement srcFilter status statusbar stop strike style sub submit substr substring suffixes sun sup systemLanguage
+TYPE
+tagName tags taint taintEnabled tan target test text title toElement toGMTString toLocaleString toLowerCase toolbar top toString toUpperCase toUTCString type typeof
+UTC
+unescape unshift untaint unwatch userAgent userLanguage
+value valueOf visibility vlinkColor vspace
+watch which width window write writeln
+x
+y
+zIndex
+
+/C4"Operators"
+!
+$
+%
+&
+*
++
+-
+// /
+:
+<
+=
+>
+?
+[
+]
+^
+|
+~
+is
+new
+sizeof
+typeof
+unchecked
+
+/C5"Separs"
+(
+)
+,
+;
+{
+}
+
+/L10"MEL Script"   Line Comment = // Block Comment On = /* Block Comment Off = */  String Chars = "  Escape Char = \ File Extensions = MEL
+/Delimiters = !%^&*()-+=|\/{}[]:;"'<>	, .?`
+/Function String 1 = "proc [a-zA-Z]* ^([a-zA-Z]*(*)^)"
+/Function String 2 = "proc ^([a-zA-Z]*(*)^)"
+/Indent Strings = "{","window","columnLayout","layout","rowLayout","tabLayout","formLayout","menuBarLayout","scrollLayout","frameLayout","paneLayout","shelfLayout","gridLayout","rowColumnLayout","shelfTabLayout","columnLayout","layout","rowLayout","tabLayout","formLayout","menuBarLayout","scrollLayout","frameLayout","paneLayout","shelfLayout","gridLayout","rowColumnLayout","shelfTabLayout"
+/Unindent Strings = "}","setParent","showWindow"
+/Open Fold Strings = "{"
+/Close Fold Strings = "}"
+/C1"Data Types"
+int
+float
+string
+vector
+matrix
+/C2"Boolean Constants"
+yes
+no
+on off
+true
+false
+/C3"Flow Control"
+if in
+else
+for
+while
+break
+continue case
+default do
+return
+switch
+/C4"Other keywords"
+global
+proc
+source
+catch
+alias
+/C5"Operators"
++
+-
+*
+/
+%
+^
+|
+&
+!
+<
+>
+?
+:
+
+=
+/C6"Variables"
+** $
+/C7"Flags"
+** -a -b -c -d -e -f -g -h -i -j -k -l -m -n -o -p -q -r -s -t -u -v -w -x -y -z
+** -A -B -C -D -E -F -G -H -I -J -K -L -M -N -O -P -Q -R -S -T -U -V -W -X -Y -Z
+/C8"MEL Commands"
+`
+AISEnvFacade
+
+about abs abstractBaseCreate abstractBaseNurbsConversion addAttr 
+addAttributeEditorNodeHelp addDoubleLinear addDynamic addMatrix addNewShelfTab 
+addPP addPrefixToName advanceToNextDrivenKey affectedNet affects aimConstraint 
+air airField alias aliasAttr align alignCtx alignCurve alignSurface allViewFit 
+ambientLight angle angleBetween animBlend animBlendInOut animClip animCone 
+animCurve animCurveEditor animCurveTA animCurveTL animCurveTT animCurveTU 
+animCurveUA animCurveUL animCurveUT animCurveUU animDisplay animView anisotropic 
+annotate annotationShape appendStringArray applicationName applyAttrPreset 
+applyTake arclen arcLenDimContext arcLengthDimension areaLight arrayMapper 
+art3dPaintCtx artAttrCtx artAttrPaintTest artAttrPaintVertexCtx 
+artAttrSkinPaintCtx artBuildPaintMenu artFluidAttrCtx artPuttyCtx artSelectCtx 
+artSetPaintCtx artUserPaintCtx assignCommand assignInputDevice attachCurve 
+attachDeviceAttr attachSurface attrColorSliderGrp attrCompatibility 
+attrControlGrp attrEnumOptionMenu attrEnumOptionMenuGrp attrFieldGrp 
+attrFieldSliderGrp attrHierarchyTest attributeExists attributeInfo attributeMenu 
+attributeQuery attrNavigationControlGrp attrPresetEditWin audio autoKeyframe 
+autoPlace avgCurves avgNurbsSurfacePoints
+avgSurfacePoints
+
+bakeClip bakeFluidShading bakePartialHistory bakeResults bakeSet bakeSimulation 
+baseGeometryVarGroup baseLattice basename basenameEx baseShadingSwitch 
+batchRender bessel bevel bevelPlus bindPose bindSkin binMembership birailSrf 
+blend blend2 blendColors blendColorSets blendDevice blendShape blendShapeEditor 
+blendShapePanel blendTwoAttr blendWeighted blindDataTemplate blindDataType blinn 
+boneLattice boolean boundary boundaryBase boxDollyCtx boxZoomCtx brownian brush 
+bufferCurve buildBookmarkMenu buildKeyframeMenu bulge bump2d bump3d button
+buttonManip
+
+CBG
+
+camera cameraView canCreateManip canvas capitalizeString catch catchQuiet ceil 
+changeSubdivComponentDisplayLevel changeSubdivRegion channelBox character 
+characterize characterMap characterOffset characterOutlineEditor chdir checkBox 
+checkBoxGrp checkDefaultRenderGlobals checker choice chooser circle 
+circularFillet clamp clear clearCache clip clipEditor clipEditorCurrentTimeCtx 
+clipLibrary clipSchedule clipScheduler clipSchedulerOutliner clipTrimBefore 
+closeCurve closestPointOnSurface closeSurface cloth cloud cluster clusterHandle 
+cmdFileOutput cmdShell coarsenSubdivSelectionList collision color colorAtPoint 
+colorEditor colorIndex colorIndexSliderGrp colorSliderButtonGrp colorSliderGrp 
+columnLayout commandEcho commandLine commandPort compactHairSystem 
+componentEditor computePolysetVolume condition cone confirmDialog connectAttr 
+connectControl connectDynamic connectionInfo connectJoint constrain constraint 
+constrainValue constructionHistory contextInfo contrast control controlPoint 
+convertFromOldLayers convertIffToPsd convertLightmap convertSolidTx 
+convertTessellation convertUnit copyArray copyColorSet copyFlexor copyKey 
+copySkinWeights copyUVSet cos cpButton cpCache cpClothSet cpCollision 
+cpConstraint cpConvClothToMesh cpGetSolverAttr cpPanel cpProperty 
+cpRigidCollisionFilter cpSeam cpSetEdit cpSetSolverAttr cpSolver cpSolverTypes 
+cpTool cpUpdateClothUVs crater createColorSet createDisplayLayer createDrawCtx 
+createEditor createLayeredPsdFile createMotionField createNewShelf createNode 
+createRenderLayer createSubdivRegion createUVSet cross crossProduct ctxAbort 
+ctxCompletion ctxEditMode ctxTraverse currentCtx currentTime currentTimeCtx 
+currentUnit curve curveAddPtCtx curveCVCtx curveEditorCtx curveEPCtx 
+curveFromMesh curveFromMeshCoM curveFromMeshEdge curveFromSubdiv 
+curveFromSubdivEdge curveFromSubdivFace curveFromSurface curveFromSurfaceBnd 
+curveFromSurfaceCoS curveFromSurfaceIso curveInfo curveIntersect curveMoveEPCtx 
+curveNormalizer curveNormalizerAngle curveNormalizerLinear curveOnSurface 
+curveRange curveShape curveSketchCtx curveVarGroup cutKey cycleCheck
+cylinder
+
+dagNode dagPose defaultLightList defaultLightListCheckBox defaultNavigation 
+defaultRenderUtilityList defaultShaderList defaultTextureList defineDataServer 
+defineVirtualDevice deformableShape deformBend deformer deformFlare deformFunc 
+deformSine deformSquash deformTwist deformWave deg_to_rad delete deleteAttr 
+deleteColorSet deleteComponent deleteShadingGroupsAndMaterials deleteShelfTab 
+deleteUI deleteUnusedBrushes deleteUVSet delrandstr dependNode detachCurve 
+detachDeviceAttr detachSurface deviceEditor devicePanel dgdirty dgeval dgInfo 
+dgtimer dimensionShape dimWhen directedDisc directionalLight directKeyCtx dirmap 
+dirname disable disconnectAttr disconnectJoint diskCache displacementShader 
+displacementToPoly displayAffected displayColor displayCull displayLayer 
+displayLayerManager displayLevelOfDetail displayPref displayRGBColor 
+displaySmoothness displayStats displaySurface distanceBetween distanceDimContext 
+distanceDimension distanceDimShape doBlur docServer dof dolly dollyCtx 
+dopeSheetEditor dot dotProduct doubleProfileBirailSurface doubleShadingSwitch 
+dpBirailSrf drag dragAttrContext dragField draggerContext dropoffLocator 
+duplicate duplicateCurve duplicateSurface dynamicLoad dynBase dynCache 
+dynControl dynExport dynExpression dynGlobals dynPaintEditor dynParticleCtx 
+dynPref dynRelEditor
+dynRelEdPanel
+
+editAttrLimits editDisplayLayerGlobals editDisplayLayerMembers editor 
+editorTemplate editRenderLayerAdjustment editRenderLayerGlobals 
+editRenderLayerMembers effector emit emitter enableDevice encodeString endString 
+endsWith entity env envBall envChrome envCube envFacade envFog environmentFog 
+envSky envSphere equivalent equivalentTol erf error eval evalDeferred evalEcho 
+event exactWorldBoundingBox exclusiveLightCheckBox exec executeForEachObject 
+exists exp explodeNurbsShell exportComposerCurves expression 
+expressionEditorListen extendCurve extendSurface
+extrude
+
+FurAttractors FurCurveAttractors FurDescription FurFeedback
+FurGlobals
+
+facade fcheck fclose feof ffBlendSrf ffBlendSrfObsolete ffd ffFilletSrf fflush 
+fgetline fgetword field file fileBrowserDialog fileDialog fileExtension fileInfo 
+filetest filletCurve filter filterClosestSample filterCurve filterEuler 
+filterExpand filterResample filterSimplify filterStudioImport 
+findAllIntersections finder findKeyframe findMenuItem findRelatedSkinCluster 
+firstParentOf fitBspline flexor flexorShape floatEq floatField floatFieldGrp 
+floatScrollBar floatSlider floatSlider2 floatSliderButtonGrp floatSliderGrp 
+floor flow fluidCacheInfo fluidEmitter fluidShape fluidTexture2D fluidTexture3D 
+fluidVoxelInfo flushUndo fmod follicle fontDialog fopen formLayout 
+fourByFourMatrix fprint fractal frameCache frameLayout fread freeFormFillet 
+frewind fromNativePath furPointOnMeshInfo furPointOnSubd
+fwrite
+
+gamma gammaCorrect gauss geoConnectable geoConnector geometryConstraint 
+geometryFilter geometryShape geometryVarGroup getApplicationVersionAsFloat 
+getAttr getClassification getDefaultBrush getenv getFileList getFluidAttr 
+getInputDeviceRange getMayaPanelTypes getModifiers getPanel getParticleAttr 
+getpid globalCacheControl globalStitch glRender glRenderEditor gmatch goal 
+gotoBindPose grabColor gradientControl gradientControlNoAttr granite 
+graphDollyCtx graphSelectContext graphTrackCtx gravity gravityField grid 
+gridLayout group groupId groupObjectsByName groupParts
+guide
+
+HfAddAttractorToAS HfAssignAS HfBuildEqualMap HfBuildFurFiles HfBuildFurImages 
+HfCancelAFR HfConnectASToHF HfCreateAttractor HfDeleteAS HfEditAS 
+HfPerformCreateAS HfRemoveAttractorFromAS HfSelectAttached HfSelectAttractors
+HfUnAssignAS
+
+hairConstraint hairSystem hairTubeShader hardenPoint hardenPointCurve hardware 
+hardwareRenderGlobals hardwareRenderPanel headsUpDisplay heightField help 
+helpLine hermite hide hikEffector hikFloorContactMarker hikGroundPlane hikHandle 
+hikSolver hilite hitTest holdMatrix hotBox hotkey hotkeyCheck hsv_to_rgb 
+hsvToRgb hudButton hudSlider hudSliderButton hwReflectionMap hwRender 
+hwRenderGlobals hwRenderLoad hwShader hyperGraph hyperGraphInfo hyperLayout 
+hyperPanel hyperShade hyperView
+hypot
+
+iconTextButton iconTextCheckBox iconTextRadioButton iconTextRadioCollection 
+iconTextStaticLabel ikEffector ikfkDisplayMethod ikHandle ikHandleCtx 
+ikHandleDisplayScale ikMCsolver ikPASolver ikRPsolver ikSCsolver ikSolver 
+ikSplineHandleCtx ikSplineSolver ikSystem ikSystemInfo illustratorCurves image 
+imagePlane imfPlugins implicitBox implicitCone implicitSphere 
+importComposerCurves inheritTransform insertJoint insertJointCtx insertKeyCtx 
+insertKnotCurve insertKnotSurface instance instancer internalVar intersect 
+intersectSurface interToUI intField intFieldGrp intScrollBar intSlider 
+intSliderGrp iprEngine isAnimCurve isConnected isDirty isolateSelect isParentOf 
+isTrue isValidObjectName isValidString isValidUiName itemFilter itemFilterAttr 
+itemFilterRender
+itemFilterType
+
+jiggle joint jointCluster jointCtx jointDisplayScale jointFfd
+jointLattice
+
+keyframe keyframeOutliner keyframeRegionCurrentTimeCtx 
+keyframeRegionDirectKeyCtx keyframeRegionDollyCtx keyframeRegionInsertKeyCtx 
+keyframeRegionMoveKeyCtx keyframeRegionScaleKeyCtx keyframeRegionSelectKeyCtx 
+keyframeRegionSetKeyCtx keyframeRegionTrackCtx keyframeStats
+keyTangent
+
+lambert lassoContext lattice latticeDeformKeyCtx launch launchImageEditor 
+layerButton layeredShader layeredShaderPort layeredTexture layeredTexturePort 
+layout layoutDialog leastSquaresModifier leather light lightFog lightInfo 
+lightlink lightLinker lightList lightListEditor lightListPanel lineIntersection 
+lineModifier linstep listAnimatable listAttr listCameras listConnections 
+listDeviceAttachments listerEditor listHistory listInputDeviceAxes 
+listInputDeviceButtons listInputDevices listMenuAnnotation listNodeTypes 
+listRelatives listSets listTransforms listUnselected loadFluid loadNewShelf 
+loadPlugin loadPrefObjects locator lockNode lodGroup lodThresholds loft log 
+lookAt lookThru ls lsThroughFilter lsType lsUI
+luminance
+
+Mayatomr
+
+mag makeCircularArc makeGroup makeIdentity makeIllustratorCurves makeLive 
+makeNurbCircle makeNurbCone makeNurbCube makeNurbCylinder makeNurbPlane 
+makeNurbSphere makeNurbTorus makeNurbsSquare makePaintable makeRoll 
+makeSingleSurface makeTextCurves makeThreePointCircularArc makeTubeOn 
+makeTwoPointCircularArc makebot manipMoveContext manipMoveLimitsCtx manipOptions 
+manipRotateContext manipRotateLimitsCtx manipScaleContext manipScaleLimitsCtx 
+marble marker match materialFacade materialInfo max memory mentalrayIblShape 
+mentalrayTexture menu menuBarLayout menuEditor menuItem menuItemToShelf mesh 
+meshVarGroup messageLine min minimizeApp mirrorJoint modelCurrentTimeCtx 
+modelEditor modelPanel motionPath mountain mouse movIn movOut move moveIKtoFK 
+moveKeyCtx moveVertexAlongDirection movie mpBirailSrf multDoubleLinear 
+multMatrix multiProfileBirailSurface multilisterLight multiplyDivide
+mute
+
+nameCommand nameField namespace namespaceInfo network newPanelItems newton 
+newtonField nodeIconButton nodeOutliner nodePreset nodeType noise 
+nonAmbientLightShapeNode nonExtendedLightShapeNode nonLinear normalConstraint 
+normalize nurbsBoolean nurbsCopyUVSet nurbsCube nurbsCurve nurbsDimShape 
+nurbsEditUV nurbsPlane nurbsSelect nurbsSquare nurbsSurface nurbsTessellate 
+nurbsToPoly nurbsToPolygonsPref nurbsToSubdiv nurbsToSubdivProc nurbsUVSet
+nurbsViewDirectionVector
+
+objExists objectAttrFilter objectBinFilter objectCenter objectFilter objectLayer 
+objectMultiFilter objectNameFilter objectRenderFilter objectScriptFilter 
+objectSet objectType objectTypeFilter objectTypeUI obsoleteProc ocean 
+oceanNurbsPreviewPlane oceanShader offsetCos offsetCurve offsetCurveOnSurface 
+offsetSurface oldBlindDataBase openGLExtension openMayaPref opticalFX optionMenu 
+optionMenuGrp optionVar orbit orbitCtx orientConstraint orientationMarker 
+outlinerEditor outlinerPanel
+overrideModifier
+
+paintEffectsDisplay pairBlend palettePort paneLayout panel panelConfiguration 
+panelHistory paramDimContext paramDimension paramLocator parent parentConstraint 
+parentTessellate particle particleAgeMapper particleCloud particleColorMapper 
+particleExists particleIncandMapper particleInstancer particleRenderInfo 
+particleSamplerInfo particleTranspMapper partition passMatrix pasteKey 
+pathAnimation pause pclose percent performanceOptions pfxGeometry pfxHair 
+pfxToon pfxstrokes phong phongE pickWalk picture pixelMove place2dTexture 
+place3dTexture planarSrf planarTrimSurface plane play playbackOptions playblast 
+pluginInfo plusMinusAverage pointConstraint pointCurveConstraint pointEmitter 
+pointLight pointMatrixMult pointMatrixMult pointOnCurve pointOnCurveInfo 
+pointOnSurface pointOnSurfaceInfo pointPosition poleVectorConstraint polyAppend 
+polyAppendFacetCtx polyAppendVertex polyAutoProj polyAutoProjection 
+polyAverageNormal polyAverageVertex polyBase polyBevel polyBlendColor 
+polyBlindData polyBoolOp polyCacheMonitor polyChipOff polyClipboard 
+polyCloseBorder polyCollapseEdge polyCollapseF polyCollapseFacet 
+polyColorBlindData polyColorPerVertex polyColorSet polyCone polyCopyUV 
+polyCrease polyCreaseCtx polyCreaseEdge polyCreateFace polyCreateFacet 
+polyCreateFacetCtx polyCreator polyCube polyCut polyCutCtx polyCylProj 
+polyCylinder polyCylindricalProjection polyDelEdge polyDelFacet polyDelVertex 
+polyDuplicateAndConnect polyDuplicateEdge polyEditUV polyEvaluate 
+polyExtrudeEdge polyExtrudeFace polyExtrudeFacet polyExtrudeVertex polyFlipEdge 
+polyFlipUV polyForceUV polyGeoSampler polyHelix polyInfo polyInstallAction 
+polyLayoutUV polyListComponentConversion polyMapCut polyMapDel polyMapSew 
+polyMapSewMove polyMergeEdge polyMergeEdgeCtx polyMergeFace polyMergeFacet 
+polyMergeFacetCtx polyMergeUV polyMergeVert polyMergeVertex polyMirror 
+polyMirrorFace polyModifier polyModifierUV polyModifierWorld polyMoveEdge 
+polyMoveFace polyMoveFacet polyMoveFacetUV polyMoveUV polyMoveVertex polyNormal 
+polyNormalPerVertex polyNormalizeUV polyOptUvs polyOptions polyPipe 
+polyPlanarProj polyPlanarProjection polyPlane polyPlatonicSolid polyPoke 
+polyPrimitive polyPrimitiveMisc polyPrism polyProj polyProjection polyPyramid 
+polyQuad polyQueryBlindData polyReduce polySelect polySelectConstraint 
+polySelectConstraintMonitor polySelectCtx polySelectEditCtx polySeparate 
+polySetToFaceNormal polySewEdge polySmooth polySmoothFace polySmoothProxy 
+polySoftEdge polySphProj polySphere polySphericalProjection polySplit 
+polySplitCtx polySplitEdge polySplitRing polySplitVert polySplitVertex 
+polyStraightenUVBorder polySubdEdge polySubdFace polySubdivideEdge 
+polySubdivideFacet polySuperCtx polyToSubdiv polyTorus polyTransfer 
+polyTriangulate polyTweak polyTweakUV polyUVSet polyUnite polyWedgeFace popen 
+popupMenu pose positionMarker postProcessList pow preloadRefEd primitive print 
+progressBar progressWindow projFileViewer projectCurve projectTangent projection 
+projectionContext projectionManip promptDialog propModCtx propMove proxyManager 
+psdChannelOutliner psdEditTextureFile psdExport psdFileTex psdTextureFile putenv
+pwd
+
+quadShadingSwitch querySubdiv
+quit
+
+rad_to_deg radial radialField radioButton radioButtonGrp radioCollection 
+radioMenuItemCollection ramp rampColorPort rampShader rand randomizeFollicles 
+randstate rangeControl rbfSrf readTake rebuildCurve rebuildSurface record 
+recordAttr recordDevice redo reference referenceEdit referenceQuery 
+refineSubdivSelectionList reflect refresh refreshAE rehash reloadImage 
+remapColor remapHsv remapValue removeJoint removeMultiInstance rename renameAttr 
+renameSelectionList renameUI render renderBox renderCone renderGlobals 
+renderGlobalsList renderGlobalsNode renderInfo renderLayer renderLayerButton 
+renderLayerManager renderLayerPostProcess renderLight renderManip 
+renderPartition renderQuality renderQualityNode renderRect renderSettings 
+renderSphere renderThumbnailUpdate renderWindowEditor renderWindowSelectContext 
+renderer reorder reorderDeformers requires reroot resampleFluid resetAE 
+resetPfxToPolyCamera resetTool resolution resolutionNode resultCurve 
+resultCurveTimeToAngular resultCurveTimeToLinear resultCurveTimeToTime 
+resultCurveTimeToUnitless retarget reverse reverseCurve reverseSurface revolve 
+revolvedPrimitive rgbToHsv rgb_to_hsv rigidBody rigidConstraint rigidSolver rock 
+roll rollCtx rootOf rot rotate rotationInterpolation roundConstantRadius 
+rowColumnLayout rowLayout runTimeCommand
+runup
+
+sampleImage sampler samplerInfo saveAllShelves saveAttrPreset saveFluid 
+saveImage saveInitialState saveMenu savePrefObjects savePrefs saveShelf 
+saveToolSettings scale scaleBrushBrightness scaleConstraint scaleKey scaleKeyCtx 
+sceneEditor sceneUIReplacement scmh script scriptCtx scriptEditorInfo scriptJob 
+scriptNode scriptTable scriptedPanel scriptedPanelType scrollField scrollLayout 
+sculpt searchPathArray seed selLoadSettings select selectContext selectKey 
+selectKeyCtx selectKeyframeRegionCtx selectMode selectPref selectPriority 
+selectType selectedNodes selectionConnection selectionListOperator separator 
+setAttr setAttrMapping setConstraintRestPosition setDefaultShadingGroup 
+setDrivenKeyframe setDynamic setEditCtx setEditor setEscapeCtx setFluidAttr 
+setFocus setInfinity setInputDeviceMapping setKeyCtx setKeyPath setKeyframe 
+setKeyframeBlendshapeTargetWts setMenuMode setNodeTypeFlag setParent 
+setParticleAttr setPfxToPolyCamera setProject setRange setStampDensity 
+setStartupMessage setState setToolTo setUITemplate setXformManip sets shaderGlow 
+shadingConnection shadingEngine shadingGeometryRelCtx shadingLightRelCtx 
+shadingMap shadingNetworkCompare shadingNode shape shelfButton shelfLayout 
+shelfTabLayout shellField shellTessellate showHelp showHidden showManipCtx 
+showSelectionInTitle showShadingGroupAttrEditor showWindow sign 
+simpleVolumeShader simplify sin singleProfileBirailSurface singleShadingSwitch 
+size sketchPlane skinCluster skinPercent smear smoothCurve smoothTangentSrf 
+smoothTangentSurface smoothstep snap2to2 snapKey snapMode snapTogetherCtx 
+snapshot snapshotShape snow soft softMod softModCtx softModHandle solidFractal 
+sort sound soundControl source spBirailSrf spaceLocator sphere sphrand spotLight 
+spotLightPreviewPort spreadSheetEditor spring sqrt squareSrf squareSurface 
+srtContext stackTrace startString startsWith stencil stitchAndExplodeShell 
+stitchAsNurbsShell stitchSrf stitchSurface stitchSurfacePoints strcmp 
+stringArrayCatenate stringArrayCount stringArrayIntersector stringArrayRemove 
+stringArrayRemoveDuplicates stringArrayRemoveExact stringArrayToString 
+stringToStringArray strip stripPrefixFromName stroke strokeGlobals stucco 
+studioClearCoat styleCurve subCurve subSurface subdAddTopology subdAutoProj 
+subdAutoProjection subdBase subdBlindData subdCleanTopology subdCollapse 
+subdDuplicateAndConnect subdEditUV subdHierBlind subdLayoutUV 
+subdListComponentConversion subdMapCut subdMapSewMove subdMatchTopology 
+subdMirror subdModifier subdModifierUV subdModifierWorld subdPlanarProj 
+subdToBlind subdToPoly subdTransferUVsToCache subdTweak subdTweakUV subdiv 
+subdivCollapse subdivComponentId subdivCrease subdivDisplaySmoothness 
+subdivReverseFaces subdivSurfaceVarGroup subdivToNurbs subdivToPoly substitute 
+substituteAllString substituteGeometry substring superCtx surface surfaceInfo 
+surfaceLuminance surfaceSampler surfaceShader surfaceShaderList surfaceShape 
+surfaceVarGroup swatchDisplayPort switchTable symbolButton symbolCheckBox 
+sysFile
+system
+
+tabLayout tan tangentConstraint texLatticeDeformContext texManipContext 
+texMoveContext texRotateContext texScaleContext texSelectContext 
+texSmudgeUVContext text textCurves textField textFieldButtonGrp textFieldGrp 
+textScrollList textToShelf texture2d texture3d textureBakeSet 
+textureDisplacePlane textureEnv textureHairColor texturePlacementContext 
+textureToGeom textureWindow texWinToolCtx threePointArcCtx time timeControl 
+timeFunction timePort timerX timeToUnitConversion toggle toggleAxis 
+toggleWindowVisibility tokenize tokenizeList tolerance tolower toNativePath 
+toolButton toolCollection toolDropped toolHasOptions toolPropertyWindow 
+toonLineAttributes torus toupper trace track trackCtx transform 
+transformGeometry transformLimits translator trim trimWithBoundaries 
+tripleShadingSwitch trunc truncateFluidCache truncateHairCache tumble tumbleCtx 
+turbulence turbulenceField tweak
+twoPointArcCtx
+
+uiTemplate unassignInputDevice undo undoInfo ungroup uniform uniformField unit 
+unitConversion unitToTimeConversion unknown unknownDag unknownTransform 
+unloadPlugin untangleUV untrim upAxis updateAE useBackground userCtx uvChooser 
+uvLink
+uvSnapshot
+
+validateShelfName vectorize vectorProduct vectorRenderGlobals verifyCmd 
+vertexBakeSet view2dToolCtx viewCamera viewClipPlane viewFit viewHeadOn 
+viewLookAt viewPlace viewSet visor volumeAxis volumeAxisField volumeFog 
+volumeLight volumeNoise volumeShader vortex
+vortexField
+
+waitCursor warning water webBrowser webBrowserPrefs weightGeometryFilter whatIs 
+window windowPref wire wireContext wood workspace wrap wrinkle wrinkleContext 
+writeTake
+wtAddMatrix
+
+xbmLangPathList xform
+xpmPicker
+
+/L11"CODSCRIPT" C_LANG Line Comment = // Nocase Block Comment On = /* Block Comment Off = */ Escape Char = \ String Chars = "' File Extensions = GSC
+/Delimiters = ~!@%^&*()-+=|\/{}[]:;"'<> ,	.?
+/Function String = "%^([a-zA-Z_0-9^[^]*]+^)[ ^t]+([^p*&, ^t^[^]a-zA-Z_0-9.!]++)[~;]"
+/Function String 1 = "%[a-zA-Z_0-9*]*::^([a-zA-Z_0-9^~]+^)[ ^t^p]++([^p*&, ^t^[^]/*=:&a-zA-Z_0-9./(!]++)[~;]"
+/Function String 2 = "%[a-zA-Z_0-9^][a-zA-Z_0-9^[^]]+[ ^t*]+^([a-zA-Z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./(!]++)[~;]"
+/Function String 3 = "%[a-zA-Z_0-9*&$^[^]*]+[ ^t]+[a-zA-Z_0-9*&$^[^]]+[ ^t*]+^([a-zA-Z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./(!]++)[~;]"
+/Function String 4 = "%[a-z_0-9^[^]*]++ [a-z_0-9*^[^]]+[ ^t]++[a-z_0-9*^[^]]+[ ^t]++^([*a-z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-z_0-9./(!]++)[~;]"
+/Function String 5 = "%^([a-zA-Z_0-9^[^]*]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./()!]++)[~;]"
+/Indent Strings = "{"
+/Unindent Strings = "}"
+/Open Brace Strings = "{" "(" "["
+/Open Fold Strings = "{"
+/Close Fold Strings = "}"
+/C1"Keywords"
+break breakpoint bool
+case continue
+default
+else
+for
+if
+return
+switch
+thread 
+waittillframeend while
+#animtree #using_animtree #define #error #include #elif #if #line #else #ifdef #pragma #endif #ifndef #undef
+/C2"Common Entity Properties"
+.accumulate .accuracy .accuracystationarymod .allowdeath .anglelerprate .angles .angles .angles .angles .anim_pose .animscript .archivetime .attackeraccuracy
+.bottomarc .bravery .bulletsinclip
+.chainfallback .chainnode .classname .convergencetime .count .coveridleselecttime .cursorhint
+.damagedir
+.damagelocation
+.damagetaken
+.damageyaw
+.deaths
+.defaultsightlatency
+.desiredangle
+.disablearrivals
+.disableexits
+.dmg
+.dontavoidplayer
+.dontshootwhilemoving
+.drawoncompass
+.dropweapon
+endon
+.enemy
+.favoriteenemy
+.finished_spawning
+.fixednode
+.followmax
+.followmin
+.fovcosine
+.goalradius
+.grenade
+.grenadeammo
+.grenadeawareness
+.grenadeweapon
+.groundtype
+.group
+.groupname
+.hatmodel .headicon .headiconteam .health .hintstring
+.ignoreme .interval
+.lastscriptstate .leftarc .light .lookahead .lookforward .lookright .lookup
+.maxhealth
+.maxsightdistsqrd
+.members
+.model
+.modelscale
+.name
+.node
+notify
+.offnoise
+.origin
+.pacifist .pacifistwait .pers .personality_type .personalspace .proneok
+.rambochance .rightarc
+.scalespeed .scariness .score .scriptstate .secondaryweapon .sessionstate .sessionteam .spectatorclient .speed .statechangereason .statusicon .suppressionwait
+.takedamage .team .teamname .threatbias .threshold .toparc .type
+.useable
+.visibilitythreshold .voice
+waittill .walkdist .weapon .weaponinfo
+/C3"Reserved Keywords"
+false 
+true
+/C4"Operators"
++
+++
+-
+--
+=
+==
+*=
+/=
+// /
+%
+&
+>
+<
+^
+!
+|
+(
+)
+{
+}
+[
+]
+,
+.
+:
+;
+/C5"Utility Commands"
+activate_exploder
+activate_trigger
+activate_trigger_with_noteworthy
+activate_trigger_with_targetname
+add_channel_to_filter
+add_dialogue_line
+add_endon
+add_fractional_data_point
+add_global_spawn_function
+add_hint_string
+add_spawn_function
+add_start
+add_to_array
+add_to_array
+add_wait
+alphabetize
+anim_custom_animmode
+anim_first_frame
+anim_first_frame_solo
+anim_generic
+anim_generic_custom_animmode
+anim_generic_first_frame
+anim_generic_loop
+anim_generic_reach
+anim_generic_reach_and_arrive
+anim_loop
+anim_loop_solo
+anim_single
+anim_single_solo
+anim_reach
+anim_reach_solo
+array_add
+array_combine
+array_combine_keys
+array_delete
+array_exclude
+array_insert
+array_levelthread
+array_merge
+array_merge_links
+array_notify
+array_randomize
+array_remove
+array_remove_index
+array_removedead
+array_removedead_keepkeys
+array_removeundefined
+array_reverse
+array_thread
+assign_animtree
+assign_model
+autosave_by_name
+autosave_by_name_thread
+autosave_now
+autosave_or_timeout
+battlechatter_off
+battlechatter_on
+battlechatter_on_thread
+brush_delete
+brush_show
+brush_throw
+build_aianims
+build_compassicon
+build_crashanim
+build_deathfx
+build_deathfx_override
+build_deathmodel
+build_deathquake
+build_deckdust
+build_drive
+build_exhaust
+build_frontarmor
+build_localinit
+build_mainturret
+build_radiusdamage
+build_rumble
+build_shoot_shock
+build_team
+build_template
+build_treadfx
+build_unload_groups
+buildbcalias
+cannon_effect
+chain_off
+chain_on
+change_player_health_packets
+check_force_color
+clear_colors
+clear_dvar
+clear_enemy_passthrough
+clear_force_color
+clear_promotion_order
+clear_run_anim
+clear_team_colors
+clearthreatbias
+closerfunc
+comparesizes
+comparesizesfx
+cqb_aim
+cqb_walk
+createexploder
+createfontstring
+createloopeffect
+createoneshoteffect
+custom_battlechatter
+death_waiter
+debug_message
+debug_message_clear
+debugorigin
+debugvar
+default_start
+define_filter
+define_reverb
+delaythread
+delete_on_death
+delete_on_death_wait_sound
+deleteent
+destructible_disable_explosion
+destructible_force_explosion
+detect_friendly_fire
+disable_ai_color
+disable_careful
+disable_cqbwalk
+display_hint
+do_in_order
+do_wait
+do_wait_any
+doom
+draw_arrow
+draw_arrow_time
+draw_line_for_time
+draw_line_from_ent_for_time
+draw_line_from_ent_to_ent_for_time
+draw_line_from_ent_to_ent_until_notify
+draw_line_to_ent_for_time
+draw_line_until_notify
+dronespawn
+effect_soundalias
+enable_ai_color
+enable_careful
+enable_cqbwalk
+ent_flag
+ent_flag_assert
+ent_flag_clear
+ent_flag_clear_delayed
+ent_flag_init
+ent_flag_init_ai_standards
+ent_flag_set
+ent_flag_set_delayed
+ent_flag_wait
+ent_flag_wait_ai_standards
+ent_flag_wait_either
+ent_flag_wait_or_timeout
+ent_flag_waitopen
+error
+exploder
+exploder_after_load
+exploder_before_load
+exploder_damage
+exploder_playsound
+fartherfunc
+fileprint_end
+fileprint_map_entity_end
+fileprint_map_entity_start
+fileprint_map_keypairprint
+fileprint_map_start
+fileprint_radiant_vec
+fire_effect
+fire_radius
+flag
+flag_assert
+flag_clear
+flag_clear_delayed
+flag_init
+flag_set
+flag_set_delayed
+flag_trigger_init
+flag_triggers_init
+flag_wait
+flag_waitopen
+flag_wait_any
+flag_wait_any_proc
+flag_wait_either
+flag_wait_or_timeout
+flashmonitor
+flashnearbyallies
+flashrumbleloop
+flat_angle
+flat_angle
+flat_origin
+flat_origin
+flood_and_secure_scripted
+flood_begin
+flood_spawn
+force_custom_battlechatter
+function_stack
+function_stack
+gather_delay
+gather_delay_proc
+geo_off
+geo_on
+get_ai_group_ai
+get_ai_group_count
+get_ai_group_sentient_count
+get_ai_number
+get_all_force_color_friendlies
+get_array_of_closest
+get_closest_ai
+get_closest_ai_exclude
+get_closest_colored_friendly
+get_closest_colored_friendly_with_classname
+get_closest_exclude
+get_closest_index
+get_closest_living
+get_closest_point
+get_force_color
+get_force_color_guys
+get_friendly_chain_node
+get_guy_with_script_noteworthy_from_spawner
+get_guy_with_targetname_from_spawner
+get_guys_with_targetname_from_spawner
+get_heroes
+get_highest_dot
+get_ignoreme
+get_last_ent_in_chain
+get_links
+get_living_ai
+get_living_ai_array
+get_obj_event
+get_obj_origin
+get_outisde_range
+get_pacifist
+get_player_feet_from_view
+get_script_palette
+get_stop_watch
+get_trigger_flag
+get_use_key
+get_within_range
+getanim
+getanim_generic
+getchar
+getclosest
+getclosestfx
+getfarthest
+getfx
+getfxarraybyid
+getgenericanim
+getlinks_array
+getstruct
+getstructarray
+getvehiclespawner
+getvehiclespawnerarray
+groundpos
+gun_remove
+guy_array_enter_vehicle
+guy_enter_vehicle
+guy_runtovehicle_load
+handsignal
+has_color
+hint_create
+hint_delete
+hint_position_internal
+ignore_me_timer
+ignore_triggers
+ignoreallenemies
+ignoreeachother
+instantly_promote_nearest_friendly
+instantly_promote_nearest_friendly_with_classname
+instantly_set_color_from_array
+instantly_set_color_from_array_with_classname
+is_hero
+is_in_array
+is_in_array
+isspawner
+issue_color_orders
+key_hint_print
+lerp_player_view_to_position
+lerp_player_view_to_tag
+lerp_player_view_to_tag_and_hit_geo
+level_end_save
+linetime
+load_friendlies
+lookat
+loop_fx_sound
+loop_sound_delete
+magic_bullet_death_detection
+magic_bullet_shield
+make_hero
+makerealai
+mission
+missionfailedwrapper
+notify_delay
+obj_set_chain_and_enemies
+objective_complete
+objective_is_active
+objective_is_inactive
+pauseeffect
+physicsjolt_proximity
+play_loop_sound_on_entity
+play_loop_sound_on_tag
+play_sound_in_space
+play_sound_on_entity
+play_sound_on_tag
+player_fudge_moveto
+player_god_off
+player_god_on
+player_god_on_thread
+player_moves
+player_seek
+playerunlimitedammothread
+plot_points
+precache
+promote_nearest_friendly
+promote_nearest_friendly_with_classname
+radio_dialogue
+radio_dialogue_queue
+random
+remove_all_animnamed_guys_from_array
+remove_color_from_array
+remove_dead_from_array
+remove_global_spawn_function
+remove_global_spawn_function
+remove_heroes_from_array
+remove_nocolor_from_array
+remove_noteworthy_from_array
+remove_without_classname
+remove_without_model
+replace_on_death
+restarteffect
+run_thread_on_noteworthy
+run_thread_on_targetname
+save_friendlies
+scr_println
+script_delay
+script_wait
+scrub
+sef_baseaccuracy
+self_delete
+send_notify
+set_ai_number
+set_ambient
+set_ambient_alias
+set_battlechatter
+set_blur
+set_blur
+set_console_status
+set_default_pathenemy_settings
+set_empty_promotion_order
+set_environment
+set_filter_freq
+set_filter_gain
+set_filter_q
+set_filter_type
+set_fixednode_false
+set_fixednode_true
+set_flag_on_targetname_trigger
+set_flag_on_trigger
+set_force_color
+set_force_color_spawner
+set_force_cover
+set_forcegoal
+set_friendly_chain_wrapper
+set_generic_run_anim
+set_goal_entity
+set_goal_node
+set_goal_pos
+set_goalradius
+set_grenadeammo
+set_ignoreall
+set_ignoreme
+set_ignoresuppression
+set_objective_active
+set_objective_inactive
+set_pacifist
+set_promotion_order
+set_reverb_drylevel
+set_reverb_fadetime
+set_reverb_priority
+set_reverb_roomtype
+set_reverb_wetlevel
+set_run_anim
+set_team_pacifist
+setdifficultybias
+sg_csv_addtype
+sg_csv_soundadd
+sg_getanim
+sg_getanimtree
+sg_getfx
+sg_precacheanim
+sg_precachefx
+sg_precacheitem
+sg_precachemenu
+sg_precachemodel
+sg_precacherumble
+sg_precacheshader
+sg_precacheshellshock
+sg_precachestring
+sg_precacheturret
+sg_precachevehicle
+sg_standard_includes
+sg_wait_dump
+shock_ondeath
+shortencolor
+sound_effect
+spawn_ai
+spawn_anim_model
+spawn_failed
+spawn_reinforcement
+spawn_setcharacter
+spawn_vehicle_from_targetname
+spawn_vehicle_from_targetname_and_drive
+stealth_ai
+stealth_ai_alert_functions_default
+stealth_ai_alert_functions_set
+stealth_ai_awareness_functions_default
+stealth_ai_awareness_functions_set
+stealth_ai_behavior
+stealth_ai_clear_custom_react
+stealth_ai_clear_custom_react_and_idle
+stealth_ai_corpse_functions_default
+stealth_ai_corpse_functions_set
+stealth_ai_idle_anim
+stealth_ai_logic
+stealth_ai_reach_and_arrive_idle_and_react
+stealth_ai_reach_idle_and_react
+stealth_ai_state_functions_default
+stealth_ai_state_functions_set
+stealth_detect_ranges_default
+stealth_detect_ranges_set
+stealth_enemy_endon_alert
+stealth_enemy_waittill_alert
+stealth_friendly_movespeed_scale_default
+stealth_friendly_movespeed_scale_set
+stealth_friendly_stance_handler_distances_default
+stealth_friendly_stance_handler_distances_set
+stop_loop_sound_on_entity
+stop_magic_bullet_shield
+string
+struct_arrayspawn
+structarray_add
+structarray_remove
+structarray_shuffle
+structarray_swaptolast
+throwgrenadeatplayerasap
+timeout
+timer
+trigger_off
+trigger_on
+trigger_wait
+try_forever_spawn
+turret_ignore_me_timer
+unmake_hero
+unset_forcegoal
+vector_multiply
+vehicle_detachfrompath
+vehicle_dynamicpath
+vehicle_flag_arrived
+vehicle_land
+vehicle_liftoff
+vehicle_resumepath
+view_tag
+wait_for_either_trigger
+wait_for_flag_or_timeout
+wait_for_script_noteworthy_trigger
+wait_for_targetname_trigger
+wait_for_trigger_or_timeout
+waitspread
+waittill_aigroupcleared
+waittill_aigroupcount
+waittill_any
+waittill_dead
+waittill_dead_or_dying
+waittill_dead_or_dying_thread
+waittill_dead_thread
+waittill_dead_timeout
+waittill_either
+waittill_either_function
+waittill_msg
+waittill_notify_or_timeout
+waittill_objective_event
+waittill_objective_event_notrigger
+waittill_vehiclespawn_spawner_id
+within_fov
+
+
+/C6"KEYS text"
+ambience_inner
+ambience_outer
+ambient
+angles
+count
+delay
+destructible_type
+dontdrawoncompass
+dontdropweapon
+export
+fixednodesaferadius
+groupname
+height
+name
+origin
+radius
+script_accel
+script_accel_fraction
+script_accumulate
+script_aigroup
+script_airspeed
+script_allowdeath
+script_angles
+script_anglevehicle
+script_animation
+script_area
+script_assaultnode
+script_attackmetype
+script_attackPattern
+script_attackspeed
+script_autosave
+script_autosavename
+script_avoidplayer
+script_avoidvehicles
+script_badplace
+script_balcony
+script_battlechatter
+script_bctrigger
+script_bg_offset
+script_bombmode_dual
+script_bombmode_original
+script_bombmode_single
+script_breach_id
+script_bulletshield
+script_burst
+script_burst_max
+script_burst_min
+script_chance
+script_cheap
+script_cleartargetyaw
+script_cobratarget
+script_color_allies
+script_color_axis
+script_crashtype
+script_crashtypeoverride
+script_damage
+script_death
+script_death_max
+script_death_min
+script_deathchain
+script_deathflag
+script_deathroll
+script_decel
+script_decel_fraction
+script_delay
+script_delay_goto_goalmax
+script_delay_goto_goalmin
+script_delay_max
+script_delay_min
+script_delayed_playerseek
+script_delete
+script_deleteai
+script_destructable_area
+script_disconnectpaths
+script_displaceable
+script_dont_link_turret
+script_dontshootwhilemoving
+script_dot
+script_drone
+script_dronelag
+script_drones_max
+script_drones_min
+script_droneStartMove
+script_earthquake
+script_emptyspawner
+script_ender
+script_engage
+script_engageDelay
+script_explode
+script_exploder
+script_fallback
+script_fallback_group
+script_falldirection
+script_fightdist
+script_firefx
+script_firefxdelay
+script_firefxsound
+script_firefxtimeout
+script_fireondrones
+script_fixednode
+script_flag
+script_flag_false
+script_flag_set
+script_flag_true
+script_flag_wait
+script_flakaicount
+script_flashbangs
+script_followmax
+script_followmin
+script_followmode
+script_forcecolor
+script_forcegoal
+script_forcegrenade
+script_forcespawn
+script_forceyaw
+script_friendname
+script_fxcommand
+script_fxid
+script_fxstart
+script_fxstop
+script_gameobjectname
+script_gametype_ctf
+script_gametype_dm
+script_gametype_hq
+script_gametype_sd
+script_gametype_tdm
+script_gatetrigger
+script_ghettotag
+script_goalvolume
+script_goalyaw
+script_grenades
+script_grenadespeed
+script_growl
+script_health
+script_hidden
+script_hint
+script_hoverwait
+script_ignore_suppression
+script_ignoreme
+script_immunetoflash
+script_increment
+script_index
+script_keepdriver
+script_killspawner
+script_killspawner_group
+script_label
+script_landmark
+script_layer
+script_light_toggle
+script_linkName
+script_linkTo
+script_location
+script_longdeath
+script_looping
+script_mapsize_08
+script_mapsize_16
+script_mapsize_32
+script_mapsize_64
+script_maxdist
+script_maxspawn
+script_mg42auto
+script_mg_angle
+script_mgturret
+script_minspec_hooks_level
+script_minspec_level
+script_mortargroup
+script_moveoverride
+script_nodestate
+script_noenemyinfo
+script_nofriendlywave
+script_nohealth
+script_nomg
+script_noteworthy
+script_nowall
+script_objective
+script_objective_active
+script_objective_inactive
+script_offradius
+script_offtime
+script_pacifist
+script_parameters
+script_patroller
+script_personality
+script_physics
+script_physicsjolt
+script_pilottalk
+script_plane
+script_playerconeradius
+script_playerseek
+script_prefab_exploder
+script_presound
+script_radius
+script_random_killspawner
+script_randomspawn
+script_repeat
+script_requires_player
+script_reuse
+script_reuse_max
+script_reuse_min
+script_seekgoal
+script_shotcount
+script_sightrange
+script_skilloverride
+script_smokegroup
+script_sound
+script_spawn_here
+script_squad
+script_squadname
+script_stack
+script_stance
+script_start
+script_startinghealth
+script_startingposition
+script_stealth_dontseek
+script_stopnode
+script_stoptoshoot
+script_suppression
+script_tankgroup
+script_targetoffset_z
+script_targettype
+script_team
+script_threatbiasgroup
+script_threshold
+script_timeout
+script_timer
+script_trace
+script_trigger_group
+script_triggered_playerseek
+script_triggername
+script_turningdir
+script_turret
+script_turret_ambush
+script_turret_share
+script_turretmg
+script_unload
+script_unloaddelay
+script_unloadmgguy
+script_usemg42
+script_vehicle_lights_off
+script_vehicle_lights_on
+script_vehicle_selfremove
+script_vehicleaianim
+script_vehicledetour
+script_vehicledetourgroup
+script_vehicledetourtype
+script_vehiclegroup
+script_vehicleGroupDelete
+script_vehiclenodegroup
+script_vehicleride
+script_VehicleSpawngroup
+script_VehicleStartMove
+script_vehicletriggergroup
+script_vehiclewalk
+script_wait
+script_wait_add
+script_wait_max
+script_wait_min
+script_wheeldirection
+script_wingman
+script_wtf
+script_yawspeed
+spawner_id
+spawnflags
+speed
+squadnum
+target
+targetname
+vehicletype
+weaponinfo
+
+/C7"Script Commands"
+ACos
+AddAIEventListener
+AddTestClient
+AddVehicleToCompass
+AimAtPos
+AllClientsPrint
+AllowAds
+AllowCrouch
+AllowedStances
+AllowJump
+AllowLean
+AllowProne
+AllowSpectateTeam
+AllowSprint
+AllowStand
+AmbientPlay
+AmbientStop
+Amplify
+AmplifyStop
+AnglesToForward
+AnglesToRight
+AnglesToUp
+AnimCustom
+AnimHasNotetrack
+AnimMode
+AnimRelative
+AnimScripted
+Announcement
+AnyAmmoForWeaponModes
+ASin
+Assert
+AssertEx
+AssertMsg
+ATan
+Attach
+AttachPath
+AttackButtonPressed
+AttackButtonPressed
+BadPlace_Arc
+BadPlace_Brush
+BadPlace_Cylinder
+BadPlace_Delete
+Ban
+BeginLocationSelection
+BeginPrediction
+BulletSpread
+BulletTrace
+BulletTracePassed
+BulletTracer
+ButtonPressed
+ButtonPressed
+CanAttackEnemyNode
+CanSee
+CanShoot
+CanUseTurret
+ChangeLevel
+CheckCoverExitPosWithPath
+CheckGrenadeLaunch
+CheckGrenadeLaunchPos
+CheckGrenadeThrow
+CheckGrenadeThrowPos
+CheckProne
+Cinematic
+CinematicInGame
+ClearAllTextAfterHudelem
+ClearAnim
+ClearEnemy
+ClearEntityTarget
+ClearFixedNodeSafeVolume
+ClearGoalVolume
+ClearGoalYaw
+ClearLocalizedStrings
+ClearLookAtEnt
+ClearPerks
+ClearPotentialThreat
+ClearTargetEntity
+ClearTargetYaw
+ClearTurretTarget
+ClientAnnouncement
+ClientClaimTrigger
+ClientPrint
+ClientReleaseTrigger
+ClonePlayer
+CloseFile
+CloseInGameMenu
+CloseMenu
+Closer
+CombineAngles
+CommitSave
+ConnectPaths
+Cos
+CreatePrintChannel
+CreateThreatBiasGroup
+DamageConeTrace
+DeactivateChannelVolumes
+DeactivateEq
+DeactivateReverb
+Delete
+Destroy
+Detach
+DetachAll
+Detonate
+DevAddPitch
+DevAddRoll
+DevAddYaw
+DisableAimAssist
+DisableGrenadeTouchDamage
+DisableInvulnerability
+DisableTurretDismount
+DisableWeapons
+DisconnectPaths
+Distance
+Distance2D
+DistanceSquared
+DoDamage
+DontInterpolate
+DoSpawn
+DrawCompassFriendlies
+DropItem
+DropWeapon
+DumpAnims
+DumpHistory
+Earthquake
+EnableAimAssist
+EnableGrenadeTouchDamage
+EnableHealthShield
+EnableInvulnerability
+EnableLinkTo
+EnableTurretDismount
+EnableWeapons
+EndLocationSelection
+EndPrediction
+EnterProne
+EntityRadiusDamage
+EQOff
+EQOn
+ExitLevel
+ExitProne
+FadeOverTime
+FGetArg
+FindBestCoverNode
+FindCoverNode
+FindReacquireDirectPath
+FindReacquireNode
+FindReacquireProximatePath
+FinishPlayerDamage
+FireGrenadeLauncher
+FireWeapon
+FlagEnemyUnattackable
+ForceViewmodelAnimation
+FPrintFields
+FPrintLn
+FragButtonPressed
+FReadLn
+FreeVehicle
+FreezeControls
+GetAIArray
+GetAISpeciesArray
+GetAllNodes
+GetAllVehicleNodes
+GetAmmoCount
+GetAngleDelta
+GetAnglesToLikelyEnemyPath
+GetAnimAssetType
+GetAnimLength
+GetAnimTime
+GetArrayKeys
+GetAssignedTeam
+GetAttachIgnoreCollision
+GetAttachModelName
+GetAttachPos
+GetAttachSize
+GetAttachTagName
+GetBrushModelCenter
+GetCentroid
+GetClanID
+GetClanName
+GetClosestEnemySqDist
+GetCommandFromKey
+GetCoverNode
+GetCurrentOffhand
+GetCurrentWeapon
+GetCurrentWeaponClipAmmo
+GetCycleOriginOffset
+GetDebugDvar
+GetDebugDvarFloat
+GetDebugDvarInt
+GetDebugEye
+GetDiffuculty
+GetDvar
+GetDvarFloat
+GetDvarInt
+GetEnemySqDist
+GetEnt
+GetEntArray
+GetEntByNum
+GetEntityNumber
+GetEntNum
+GetEye
+GetFixedNodeSafeVolume
+GetFlashBangedStrength
+GetFractionMaxAmmo
+GetFractionStartAmmo
+GetFXVisibility
+GetGoalSpeedMPH
+GetGoalVolume
+GetGroundEntType
+GetHitEntType
+GetHitYaw
+GetKeyBinding
+GetLightColor
+GetLightExponent
+GetLightFovInner
+GetLightFovOuter
+GetLightIntensity
+GetLightRadius
+GetMapSunDirection
+GetMapSunLight
+GetMotionAngle
+GetMoveDelta
+GetNegotiationEndNode
+GetNegotiationStartNode
+GetNode
+GetNodeArray
+GetNormalHealth
+GetNormalizedMovement
+GetNorthYaw
+GetNotetrackTimes
+GetNumParts
+GetNumVehicles
+GetOffhandSecondaryClass
+GetOrigin
+GetPartName
+GetPlayerAngles
+GetPlayerViewHeight
+GetReacquireNode
+GetReflectionLocs
+GetShootAtPos
+GetSpawnerArray
+GetSpawnerTeamArray
+GetSpeed
+GetSpeedMPH
+GetStance
+GetStartAngles
+GetStartOrigin
+GetStartTime
+GetStat
+GetSubStr
+GetTagAngles
+GetTagOrigin
+GetTeamPlayersAlive
+GetTeamRadar
+GetTeamScore
+GetThreatBias
+GetThreatBiasGroup
+GetTime
+GetTimeScale
+GetTurret
+GetTurretOwner
+GetTurretTarget
+GetVehicleNode
+GetVehicleNodeArray
+GetVehicleOwner
+GetVelocity
+GetViewModel
+GetWeaponAmmoClip
+GetWeaponAmmoStock
+GetWeaponClipModel
+GetWeaponModel
+GetWeaponsList
+GetWeaponsListPrimaries
+GetWheelSurface
+GiveAchievement
+GiveMaxAmmo
+GiveStartAmmo
+GiveWeapon
+HasEQ
+HasPerk
+HasWeapon
+Hide
+HidePart
+HideViewModel
+Int
+IPrintLn
+IPrintLnBold
+IsAI
+IsAlive
+IsArray
+IsDefined
+IsDeflected
+IsFiring
+IsFiringTurret
+IsGodMode
+IsInGoal
+IsKnownEnemyInRadius
+IsKnownEnemyInVolume
+IsLookingAt
+IsMeleeing
+IsMoveSuppressed
+IsNodeOccupied
+IsOnGround
+IsPathDirect
+IsPlayer
+IsPlayerNumber
+IsRagdoll
+IsRagdoll
+IsSaveRecentlyLoaded
+IsSaveSuccessful
+IsSentient
+IsSplitScreen
+IsStanceAllowed
+IsString
+IsSubStr
+IsSuppressed
+IsSuppressionWaiting
+IsTalking
+IsThrowingGrenade
+IsTouching
+IsTurretActive
+IsTurretReady
+IsValidGametype
+IsWaitingOnSound
+IsWeaponClipOnly
+ItemWeaponSetAmmo
+JoltBody
+Kick
+LaserOff
+LaserOff
+LaserOn
+LaserOn
+Launch
+Length
+LengthSquared
+LerpPosition
+Line
+LinkTo
+LoadFX
+LocalToWorldCoords
+LockLightVis
+LogPrint
+MagicBullet
+MagicGrenade
+MagicGrenadeManual
+MakeDvarServerInfo
+MakeFakeAI
+MakeTurretUnusable
+MakeTurretUsable
+MakeVehicleUnusable
+MakeVehicleUsable
+Map
+Map_Restart
+MapExists
+MayMoveFromPointToPoint
+MayMoveToPoint
+Melee
+MeleeButtonPressed
+MeleeButtonPressed
+Missile_CreateAttractorEnt
+Missile_CreateAttractorOrigin
+Missile_CreateRepulsorEnt
+Missile_CreateRepulsorOrigin
+Missile_DeleteAttractor
+Missile_SetTarget
+MissionFailed
+MissionSuccess
+MoveGravity
+MoveOverTime
+MoveTo
+MoveX
+MoveY
+MoveZ
+MusicPlay
+MusicStop
+NearNode
+NewClientHudElem
+NewHudElem
+NewTeamHudElem
+NotifyOnCommand
+NotSolid
+Obituary
+Objective_Add
+Objective_AdditionalCurrent
+Objective_AdditionalPosition
+Objective_Current
+Objective_Delete
+Objective_Icon
+Objective_OnEntity
+Objective_Position
+Objective_Ring
+Objective_State
+Objective_String
+Objective_String_NoMessage
+Objective_Team
+OpenFile
+OpenMenu
+OpenMenuNoMouse
+OrientMode
+PhysicsExplosionCylinder
+PhysicsExplosionSphere
+PhysicsJitter
+PhysicsJolt
+PhysicsLaunch
+PhysicsTrace
+PickUpGrenade
+PingPlayer
+PlaceSpawnPoint
+PlayerAds
+PlayerLinkTo
+PlayerLinkToAbsolute
+PlayerLinkToDelta
+PlayerPhysicsTrace
+PlayerSetGroundReferenceEnt
+PlayFX
+PlayFXOnTag
+PlayLocalSound
+PlayLoopedFX
+PlayLoopSound
+PlayRumbleLoopOnEntity
+PlayRumbleLoopOnPosition
+PlayRumbleOnEntity
+PlayRumbleOnPosition
+PlaySound
+PlaySoundAsMaster
+PlaySoundToPlayer
+PlaySoundToTeam
+PointOnSegmentNearestToPoint
+PositionWouldTelefrag
+PreCacheHeadIcon
+PreCacheItem
+PreCacheLocationSelector
+PrecacheMenu
+PreCacheModel
+PreCacheRumble
+PreCacheShader
+PreCacheShellShock
+PreCacheStatusIcon
+PreCacheString
+PreCacheTurret
+PrecacheVehicle
+PredictAnims
+PredictOriginAndAngles
+Print
+Print3d
+PrintLn
+PushPlayer
+RadiusDamage
+RandomFloat
+RandomFloatRange
+RandomInt
+RandomIntRange
+ReacquireMove
+ReacquireStep
+ReleaseClaimedTrigger
+RemoveAIEventListener
+RemoveVehicleFromCompass
+Reset
+ResetSpreadOverride
+ResetSunDirection
+ResetSunLight
+ResetTimeout
+RestoreDefaultDropPitch
+ResumeSpeed
+ReturnPlayerControl
+RotatePitch
+RotateRoll
+RotateTo
+RotateVelocity
+RotateYaw
+SaveGame
+SaveGameNoCommit
+SayAll
+SayTeam
+ScaleOverTime
+Scr_ClearAllCorpses
+SecondaryOffhandButtonPressed
+SendLeaderBoards
+SendRanks
+SetAcceleration
+SetActionSlot
+SetAimAnims
+SetAirResistance
+SetAISpread
+SetAnim
+SetAnimKnob
+SetAnimKnobAll
+SetAnimKnobAllLimited
+SetAnimKnobAllLimitedRestart
+SetAnimKnobAllRestart
+SetAnimKnobLimited
+SetAnimKnobLimitedRestart
+SetAnimKnobRestart
+SetAnimLimited
+SetAnimLimitedRestart
+SetAnimRestart
+SetAnimTime
+SetArchive
+SetAutoPickup
+SetBlur
+SetBottomArc
+SetCanDamage
+SetChannelVolumes
+SetClientDvar
+SetClientDvars
+SetClientNameMode
+SetClock
+SetClockUp
+SetContents
+SetConvergenceTime
+SetCullDist
+SetCursorHint
+SetDebugAngles
+SetDebugOrigin
+SetDeceleration
+SetDefaultDropPitch
+SetDepthOfField
+SetDvar
+SetEngagementMaxDist
+SetEngagementMinDist
+SetEntityTarget
+SetEq
+SetEqLerp
+SetExpFog
+SetFixedNodeSafeVolume
+SetFlaggedAnim
+SetFlaggedAnimKnob
+SetFlaggedAnimKnobAll
+SetFlaggedAnimKnobAllRestart
+SetFlaggedAnimKnobLimited
+SetFlaggedAnimKnobLimitedRestart
+SetFlaggedAnimKnobRestart
+SetFlaggedAnimLimited
+SetFlaggedAnimLimitedRestart
+SetFlaggedAnimRestart
+SetFlashBanged
+SetFlashbangImmunity
+SetFriendlyChain
+SetGameEndTime
+SetGameTypeString
+SetGoalEntity
+SetGoalNode
+SetGoalPos
+SetGoalVolume
+SetGoalYaw
+SetHintString
+SetHoverParams
+SetIgnoreMeGroup
+SetJitterParams
+SetLeftArc
+SetLightColor
+SetLightExponent
+SetLightFovRange
+SetLightIntensity
+SetLightRadius
+SetLookAt
+SetLookAtAnimNodes
+SetLookAtEnt
+SetLookAtText
+SetLookAtYawLimits
+SetMapCenter
+SetMapNameString
+SetMaxPitchRoll
+SetMiniMap
+SetMissionDvar
+SetMode
+SetModel
+SetMoveSpeedScale
+SetNearGoalNotifyDist
+SetNodePriority
+SetNormalHealth
+SetOffhandSecondaryClass
+SetOrigin
+SetPerk
+SetPhysicsGravityDir
+SetPlayerAngles
+SetPlayerIgnoreRadiusDamage
+SetPlayerNameString
+SetPlayerSpread
+SetPlayerTeamRank
+SetPotentialThreat
+SetPrintChannel
+SetProneAnimNodes
+SetPulseFX
+SetReverb
+SetRightArc
+SetRunToPos
+SetSavedDvar
+SetShader
+SetShadowHint
+SetSoundBlend
+SetSpawnerTeam
+SetSpawnWeapon
+SetSpeed
+SetSpeedImmediate
+SetSpreadOverride
+SetStableMissile
+SetStance
+SetStat
+SetSunDirection
+SetSunLight
+SetSuppressionTime
+SetSwitchNode
+SetTalkToSpecies
+SetTargetEntity
+SetTargetYaw
+SetTeamForTrigger
+SetTeamRadar
+SetTeamScore
+SetTenthsTimer
+SetTenthsTimerUp
+SetText
+SetThreatBias
+SetThreatBiasAgainstAll
+SetThreatBiasGroup
+SetTimer
+SetTimerUp
+SetTimeScale
+SetTopArc
+SetTurningAbility
+SetTurretAnim
+SetTurretIgnoreGoals
+SetTurretNode
+SetTurretTargetEnt
+SetTurretTargetVec
+SetTurretTeam
+SetValue
+SetVehGoalPos
+SetVehicleLookAtText
+SetVehicleTeam
+SetVehWeapon
+SetVelocity
+SetViewModel
+SetVoteNoCount
+SetVoteString
+SetVoteTime
+SetVoteYesCount
+SetWaitNode
+SetWaitSpeed
+SetWayPoint
+SetWeaponAmmoClip
+SetWeaponAmmoStock
+SetWinningPlayer
+SetWinningTeam
+SetYawSpeed
+ShellShock
+Shoot
+ShootBlank
+ShootTurret
+Show
+ShowAllParts
+ShowPart
+ShowScoreBoard
+ShowToPlayer
+ShowViewModel
+SightConeTrace
+SightTracePassed
+Sin
+Solid
+SoundExists
+SoundFade
+Spawn
+SpawnFx
+SpawnStruct
+SpawnTurret
+SpawnVehicle
+StalingradSpawn
+StartCoverArrival
+StartEngineSound
+StartFiring
+StartIgnoringSpotLight
+StartPath
+StartRagdoll
+StartRagdoll
+StartScriptedAnim
+StartTraverseArrival
+StopAllRumbles
+StopAnimScripted
+StopEngineSound
+StopFiring
+StopIgnoringSpotLight
+StopLocalSound
+StopLookAt
+StopLoopSound
+StopRumble
+StopShellShock
+StopSounds
+StopUseAnimTree
+StopUseTurret
+StrTok
+Suicide
+SwitchToOffhand
+SwitchToWeapon
+TableLookup
+TableLookup
+TakeAllWeapons
+TakeWeapon
+Tan
+Target_ClearReticleLockOn
+Target_GetArray
+Target_IsInCircle
+Target_IsInRect
+Target_IsTarget
+Target_Remove
+Target_Set
+Target_SetAttackMode
+Target_SetJavelinOnly
+Target_SetOffscreenShader
+Target_SetShader
+Target_StartReticleLockOn
+Teleport
+ThreatBiasGroupExists
+ThrowGrenade
+ToLower
+TrackScriptState
+TraverseMode
+TriggerFX
+TrimPathtoAttack
+Unlink
+UnlockLightVis
+UnSetPerk
+UnSetTurretNode
+UpdateClientNames
+UpdatePlayerSightAccuracy
+UpdateProne
+UpdateScores
+UseAnimTree
+UseButtonPressed
+UseButtonPressed
+UseBy
+UseCoverNode
+UseReacquireNode
+UseTriggerRequireLookAt
+UseTurret
+VectorDot
+VectorFromLineToPoint
+VectorLerp
+VectorNormalize
+VectorToAngles
+VehForceMaterialSpeed
+Vibrate
+ViewKick
+VisionSetNaked
+VisionSetNight
+WeaponAltWeaponName
+WeaponClass
+WeaponClipSize
+WeaponFightDist
+WeaponFireTime
+WeaponInventoryType
+WeaponIsBoltAction
+WeaponIsSemiAuto
+WeaponLockFinalize
+WeaponLockFree
+WeaponLockNoClearance
+WeaponLockStart
+WeaponLockTargetTooClose
+WeaponMaxAmmo
+WeaponMaxDist
+WeaponStartAmmo
+WeaponType
+WithinApproxPathDist
+WorldEntNumber
+
+"Animation"
+** %
+									 		 	 	
+									 		 	 	 	
+									 		 	 	 	
+/L12"CODMENU" C_LANG Line Comment = // Nocase Block Comment On = /* Block Comment Off = */ Escape Char = \ String Chars = "' File Extensions = MENU
+/Delimiters = ~!@%^&*()-+=|\/{}[]:;"'<> ,	.?
+/Function String = "%^([a-zA-Z_0-9^[^]*]+^)[ ^t]+([^p*&, ^t^[^]a-zA-Z_0-9.!]++)[~;]"
+/Function String 1 = "%[a-zA-Z_0-9*]*::^([a-zA-Z_0-9^~]+^)[ ^t^p]++([^p*&, ^t^[^]/*=:&a-zA-Z_0-9./(!]++)[~;]"
+/Function String 2 = "%[a-zA-Z_0-9^][a-zA-Z_0-9^[^]]+[ ^t*]+^([a-zA-Z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./(!]++)[~;]"
+/Function String 3 = "%[a-zA-Z_0-9*&$^[^]*]+[ ^t]+[a-zA-Z_0-9*&$^[^]]+[ ^t*]+^([a-zA-Z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./(!]++)[~;]"
+/Function String 4 = "%[a-z_0-9^[^]*]++ [a-z_0-9*^[^]]+[ ^t]++[a-z_0-9*^[^]]+[ ^t]++^([*a-z_0-9]+^)[ ^t]++([^p*&, ^t^[^]a-z_0-9./(!]++)[~;]"
+/Function String 5 = "%^([a-zA-Z_0-9^[^]*]+^)[ ^t]++([^p*&, ^t^[^]a-zA-Z_0-9./()!]++)[~;]"
+
+/C1"Keywords"
+accept
+align
+backcolor
+background
+blurworld
+border
+bordercolor
+bordersize
+columns
+disablecolor
+disableDvar
+dvar
+dvarEnumList
+dvarFloat
+dvarFloatList
+dvarStrList
+dvarTest
+elementheight
+elementtype
+elementwidth
+enableDvar
+fadeAmount
+fadeClamp
+faceCycle
+fadeInAmount
+feeder
+focuscolor
+focusSound
+forecolor
+fullscreen
+group
+hideDvar
+maxChars
+maxCharsGotoNext
+maxPaintChars
+name
+noscrollbars
+notselectable
+origin
+outlinecolor
+ownerdraw
+ownerdrawFlag
+rect
+showDvar
+soundloop
+special
+style
+text
+textalign
+textalignx
+textaligny
+textfile
+textfont
+textsavegame
+textscale
+textstyle
+type
+visible
+
+/C2"Flags"
+autowrapped
+decoration
+hidenDuringFlashbang
+hidenDuringScope
+horizontalscroll
+legacySplitScreenScale
+outOfBoundsClick
+popup
+
+/C3"Reserved Keywords"
+itemDef
+menuDef
+#define
+#include
+
+/C4"Operators"
++
+++
+-
+--
+=
+==
+*=
+/=
+// /
+%
+&
+>
+<
+^
+!
+|
+(
+)
+{
+}
+[
+]
+,
+.
+:
+;
+
+/C5"Commands and Tests"
+close
+closeforgametype
+exec
+execnow
+execNowOnDvarFloatValue
+execNowOnDvarIntValue
+execNowOnDvarStringValue
+execOnDvarFloatValue
+execOnDvarIntValue
+execOnDvarStringValue
+fadein
+fadeout
+getautoupdate
+hide
+ingameclose
+ingameopen
+nextlevel
+nosavehide
+open
+openforgametype
+play
+profilehide
+profileshow
+saveAvailableHide
+saveDelay
+savegamehide
+savegameshow
+scriptMenuRespondOnDvarFloatValue
+scriptMenuRespondOnDvarIntValue
+scriptMenuRespondOnDvarStringValue
+scriptmenuresponse
+setbackground
+setcolor
+setdvar
+setfocus
+setfocusbydvar
+setitemcolor
+setSaveExecOnSuccess
+show
+showGamerCard
+showhidenewgameresume
+uiScript
+writeSave
+
+/C6"Defines"
+CG_CURSORHINT
+CG_CURSORHINT_STATUS
+CG_DEADQUOTE
+CG_HOLD_BREATH_HINT
+CG_INVALID_CMD_HINT
+CG_MANTLE_HINT
+CG_MISSION_OBJECTIVE_BACKDROP
+CG_MISSION_OBJECTIVE_HEADER
+CG_MISSION_OBJECTIVE_LIST
+CG_OFFHAND_WEAPON_AMMO_FRAG
+CG_OFFHAND_WEAPON_AMMO_SMOKEFLASH
+CG_OFFHAND_WEAPON_ICON_FRAG
+CG_OFFHAND_WEAPON_ICON_SMOKEFLASH
+CG_OFFHAND_WEAPON_NAME_FRAG
+CG_OFFHAND_WEAPON_NAME_SMOKEFLASH
+CG_OFFHAND_WEAPON_SELECT_FRAG
+CG_OFFHAND_WEAPON_SELECT_SMOKEFLASH
+CG_OWNERDRAW_BASE
+CG_PAUSED_MENU_LINE
+CG_PLAYER_AMMO_BACKDROP
+CG_PLAYER_AMMO_VALUE
+CG_PLAYER_BAR_HEALTH
+CG_PLAYER_BAR_HEALTH_BACK
+CG_PLAYER_COMPASS_ACTORS
+CG_PLAYER_COMPASS_BACK
+CG_PLAYER_COMPASS_EASTCOORD
+CG_PLAYER_COMPASS_ECOORD_SCROLL
+CG_PLAYER_COMPASS_FRIENDS
+CG_PLAYER_COMPASS_MAP
+CG_PLAYER_COMPASS_NCOORD_SCROLL
+CG_PLAYER_COMPASS_NORTHCOORD
+CG_PLAYER_COMPASS_PLAYER
+CG_PLAYER_COMPASS_POINTERS
+CG_PLAYER_COMPASS_TANKS
+CG_PLAYER_COMPASS_TICKERTAPE
+CG_PLAYER_HOLDABLE
+CG_PLAYER_INVENTORY
+CG_PLAYER_LOW_HEALTH_OVERLAY
+CG_PLAYER_POWERUP
+CG_PLAYER_STANCE
+CG_PLAYER_WEAPON_MODE_ICON
+CG_PLAYER_WEAPON_NAME
+CG_PLAYER_WEAPON_NAME_BACK
+CG_SAVING
+CG_SHOW_2DONLY
+CG_SHOW_ANYNONTEAMGAME
+CG_SHOW_ANYTEAMGAME
+CG_SHOW_BLUE_TEAM_HAS_REDFLAG
+CG_SHOW_CTF 
+CG_SHOW_DURINGINCOMINGVOICE 
+CG_SHOW_HEALTHCRITICAL
+CG_SHOW_HEALTHOK
+CG_SHOW_HIGHLIGHTED
+CG_SHOW_IF_PLAYER_HAS_FLAG
+CG_SHOW_LANPLAYONLY 
+CG_SHOW_MINED
+CG_SHOW_NOT_V_CLEAR
+CG_SHOW_NOTEAMINFO
+CG_SHOW_OBELISK 
+CG_SHOW_OTHERTEAMHASFLAG
+CG_SHOW_RED_TEAM_HAS_BLUEFLAG
+CG_SHOW_SINGLEPLAYER
+CG_SHOW_TEAMINFO
+CG_SHOW_TEXTASINT
+CG_SHOW_TOURNAMENT
+CG_SHOW_YOURTEAMHASENEMYFLAG
+CG_SPECTATORS
+CG_TANK_BARREL_DIR
+CG_TANK_BODY_DIR
+FEEDER_ALLMAPS
+FEEDER_BLUETEAM_LIST
+FEEDER_CINEMATICS
+FEEDER_CLAN_MEMBERS
+FEEDER_DEMOS
+FEEDER_FINDPLAYER
+FEEDER_HEADS
+FEEDER_LOBBY_MEMBERS
+FEEDER_LOBBY_MEMBERS_READY
+FEEDER_LOBBY_MEMBERS_TALK
+FEEDER_MAPS 
+FEEDER_MODS 
+FEEDER_MUTELIST
+FEEDER_PARTY_MEMBERS
+FEEDER_PARTY_MEMBERS_READY
+FEEDER_PARTY_MEMBERS_TALK
+FEEDER_PICKSPAWN
+FEEDER_PLAYER_LIST
+FEEDER_PLAYER_PROFILES
+FEEDER_PLAYERSTALKING
+FEEDER_PLAYLISTS
+FEEDER_Q3HEADS
+FEEDER_REDTEAM_LIST 
+FEEDER_SAVEGAMES
+FEEDER_SCOREBOARD
+FEEDER_SERVERS
+FEEDER_SERVERSTATUS 
+FEEDER_SPLITSCREENPLAYERS
+FEEDER_TEAM_LIST
+HORIZONTAL_ALIGN_CENTER
+HORIZONTAL_ALIGN_CENTER_SAFEAREA
+HORIZONTAL_ALIGN_DEFAULT
+HORIZONTAL_ALIGN_FULLSCREEN
+HORIZONTAL_ALIGN_LEFT
+HORIZONTAL_ALIGN_MAX
+HORIZONTAL_ALIGN_NOSCALE
+HORIZONTAL_ALIGN_RIGHT
+HORIZONTAL_ALIGN_SUBLEFT
+HORIZONTAL_ALIGN_TO640
+HUD_HORIZONTAL
+HUD_VERTICAL
+ITEM_ALIGN_CENTER
+ITEM_ALIGN_CENTER2
+ITEM_ALIGN_LEFT 
+ITEM_ALIGN_RIGHT
+ITEM_TEXTSTYLE_BLINK
+ITEM_TEXTSTYLE_NORMAL
+ITEM_TEXTSTYLE_OUTLINED 
+ITEM_TEXTSTYLE_OUTLINESHADOWED
+ITEM_TEXTSTYLE_PULSE
+ITEM_TEXTSTYLE_SHADOWED 
+ITEM_TEXTSTYLE_SHADOWEDMORE 
+ITEM_TYPE_BIND
+ITEM_TYPE_BUTTON
+ITEM_TYPE_CHECKBOX
+ITEM_TYPE_COMBO 
+ITEM_TYPE_DECIMALFIELD
+ITEM_TYPE_DVARENUM 
+ITEM_TYPE_EDITFIELD 
+ITEM_TYPE_LISTBOX
+ITEM_TYPE_MENUMODEL 
+ITEM_TYPE_MODEL 
+ITEM_TYPE_MULTI 
+ITEM_TYPE_NUMERICFIELD
+ITEM_TYPE_OWNERDRAW 
+ITEM_TYPE_RADIOBUTTON
+ITEM_TYPE_SLIDER
+ITEM_TYPE_TEXT
+ITEM_TYPE_UPREDITFIELD
+ITEM_TYPE_VALIDFILEFIELD
+ITEM_TYPE_YESNO 
+LISTBOX_IMAGE
+LISTBOX_TEXT
+MENU_FALSE
+MENU_TRUE
+RANGETYPE_ABSOLUTE
+RANGETYPE_RELATIVE
+UI_AMITALKING
+UI_EFFECTS
+UI_FONT_BIG
+UI_FONT_BOLD
+UI_FONT_CONSOLE
+UI_FONT_DEFAULT
+UI_FONT_NORMAL
+UI_FONT_SMALL
+UI_GAMETYPE 
+UI_GLINFO
+UI_HANDICAP 
+UI_JOINGAMETYPE 
+UI_KEYBINDSTATUS
+UI_LOADPROFILING
+UI_LOGGEDINUSER
+UI_MAPCINEMATIC 
+UI_MAPPREVIEW
+UI_MENUMODEL
+UI_NETFILTER
+UI_NETGAMETYPE
+UI_NETMAPCINEMATIC
+UI_NETMAPPREVIEW
+UI_NETSOURCE
+UI_OWNERDRAW_BASE
+UI_PARTYSTATUS
+UI_PLAYERMODEL
+UI_PLAYLISTDESCRIPTION
+UI_PLAYLISTNAME
+UI_PREVIEWCINEMATIC 
+UI_RECORDLEVEL
+UI_RESERVEDSLOTS
+UI_SAVEGAME_SHOT
+UI_SAVEGAMEINFO
+UI_SAVEGAMENAME
+UI_SERVERMOTD
+UI_SERVERREFRESHDATE
+UI_SHOW_ANYNONTEAMGAME
+UI_SHOW_ANYTEAMGAME 
+UI_SHOW_DEMOAVAILABLE
+UI_SHOW_FAVORITESERVERS 
+UI_SHOW_FFA
+UI_SHOW_LEADER
+UI_SHOW_NETANYNONTEAMGAME
+UI_SHOW_NETANYTEAMGAME
+UI_SHOW_NEWBESTTIME 
+UI_SHOW_NEWHIGHSCORE
+UI_SHOW_NOTFAVORITESERVERS
+UI_SHOW_NOTFFA
+UI_SHOW_NOTLEADER
+UI_SKILL
+UI_STARTMAPCINEMATIC
+UI_TALKER1
+UI_TALKER2
+UI_TALKER3
+UI_TALKER4
+UI_VOTE_KICK
+VERTICAL_ALIGN_BOTTOM
+VERTICAL_ALIGN_CENTER
+VERTICAL_ALIGN_CENTER_SAFEAREA
+VERTICAL_ALIGN_DEFAULT
+VERTICAL_ALIGN_FULLSCREEN
+VERTICAL_ALIGN_MAX
+VERTICAL_ALIGN_NOSCALE
+VERTICAL_ALIGN_SUBTOP
+VERTICAL_ALIGN_TO480
+VERTICAL_ALIGN_TOP
+WINDOW_BORDER_FULL
+WINDOW_BORDER_HORZ
+WINDOW_BORDER_KCGRADIENT
+WINDOW_BORDER_NONE
+WINDOW_BORDER_VERT
+WINDOW_STYLE_DVAR_SHADER
+WINDOW_STYLE_EMPTY
+WINDOW_STYLE_FILLED 
+WINDOW_STYLE_GRADIENT
+WINDOW_STYLE_LOADBAR 
+WINDOW_STYLE_SHADER 
+WINDOW_STYLE_TEAMCOLOR
+
+/C7"Functions"
+action
+doubleclick
+execKey
+execKeyInt
+focusDvar
+leaveFocus
+mouseEnter
+mouseEnterText
+mouseExit
+mouseExitText
+onClose
+onEsc
+onFocus
+onOpen

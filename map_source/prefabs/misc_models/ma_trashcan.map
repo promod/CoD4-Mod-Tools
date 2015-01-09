@@ -1,0 +1,26 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 14 15 0 ) ( -14 15 0 ) ( -14 -12 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -12 34 ) ( -14 15 34 ) ( 14 15 34 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -12 34 ) ( 14 -12 34 ) ( 14 -12 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -12 34 ) ( 14 15 34 ) ( 14 15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 15 34 ) ( -14 15 34 ) ( -14 15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 15 34 ) ( -14 -12 34 ) ( -14 -12 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 15 0 ) ( 14 8 0 ) ( 8 15 32 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -5 0 ) ( 8 -12 0 ) ( 14 -5 32 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -12 0 ) ( -14 -5 0 ) ( -8 -12 32 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 8 0 ) ( -8 15 0 ) ( -14 8 32 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 4 0"
+"model" "xmodel/ma_trashcan"
+"classname" "misc_model"
+}

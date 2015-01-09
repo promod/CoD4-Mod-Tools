@@ -1,0 +1,42 @@
+# Channel definition file
+# MAX number of channels: 64
+# name - the channel name (limited to 64 characters).  Required.
+# priority - a numeric priority value where larger numbers take precedence over lower numbers.  Default value = 0
+# is3d - whether this sound is spatialized ( 2d or 3d ).  Default value = 2d
+# restricted - values (restricted, unrestricted), says whether channel is subject to the one sound per channel per entity rule.  Default value = 'restricted'
+# pausable - valuse: (pause, nopause) whether this channel is pausable (e.g. when the in game menu appears).  Default value = "pause"
+# max voices - the max number is 64 (though in practice this is smaller becaused of reservered channels for ambience etc...).  Default value = 64
+# name, priority, is3d, restricted, pausable, maxvoices, 
+physics,0,3d,unrestricted,pause,6
+auto,1,3d,unrestricted
+auto2,1,3d,unrestricted
+autodog,1,3d,unrestricted
+bulletimpact,1,3d,unrestricted,,10
+bulletwhizby,1,3d,unrestricted,,8
+element,1,3d,unrestricted
+auto2d,1,2d,unrestricted
+vehicle,2,3d,unrestricted
+vehiclelimited,2,3d,unrestricted,,10
+menu,2,2d,unrestricted,nopause
+body,3,3d
+body2d,3,2d
+reload,3,3d
+reload2d,3,2d
+item,4,3d
+effects1,5,3d
+effects2,5,3d
+weapon,5,3d
+weapon2d,5,2d
+nonshock,5,3d
+voice,6,3d
+local,7,2d
+local2,7,2d
+ambient,7,2d
+hurt,8,2d
+player1,8,2d
+player2,8,2d
+music,8,2d
+musicnopause,8,2d,,nopause
+mission,9,3d
+announcer,9,2d
+shellshock,10,2d

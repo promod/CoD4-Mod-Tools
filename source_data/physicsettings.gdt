@@ -1,0 +1,717 @@
+
+{
+	"ap_food_cart" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "20"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.01"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.25"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"ap_luggage03" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_tire"
+		"mass" "1"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.2"
+		"bulletForceScale" "0.2"
+		"explosiveForceScale" "0.03"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"ap_luggage04" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_tire"
+		"mass" "1"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.2"
+		"bulletForceScale" "0.2"
+		"explosiveForceScale" "0.03"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"barrel_metal" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_metal"
+		"mass" "200"
+		"friction" "1"
+		"isFrictionInfinity" "0"
+		"bounce" "0.3"
+		"bulletForceScale" "0.25"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "1"
+	}
+	"bottle_plastic" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_bottle"
+		"mass" "0.1"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.4"
+		"bulletForceScale" "0.45"
+		"explosiveForceScale" "0.004"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"brick" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_brick"
+		"mass" "5"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.3"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.12"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"bucket_metal" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_metal"
+		"mass" "6"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.18"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"car_door" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_car_door"
+		"mass" "25"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.18"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"car_hood" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_car_hood"
+		"mass" "15"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.18"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"cardboardbox_empty" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_cardboard"
+		"mass" "1"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.2"
+		"bulletForceScale" "0.1"
+		"explosiveForceScale" "0.03"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"cardboardbox_full" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_cardboard"
+		"mass" "30"
+		"friction" "0.6"
+		"isFrictionInfinity" "0"
+		"bounce" "0.2"
+		"bulletForceScale" "0.75"
+		"explosiveForceScale" "0.55"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"cargocontainer_20ft" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "phy_cargocontainer"
+		"mass" "1000"
+		"friction" "0.4"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"cinderblock" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_brick"
+		"mass" "20"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.01"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.25"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"com_cellphone_off" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "0.1"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.4"
+		"bulletForceScale" "0.45"
+		"explosiveForceScale" "0.004"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"com_cellphone_on" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "0.1"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.4"
+		"bulletForceScale" "0.45"
+		"explosiveForceScale" "0.004"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"com_laptop_close" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "1"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.2"
+		"bulletForceScale" "0.1"
+		"explosiveForceScale" "0.03"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"corrugated_metal" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "16"
+		"friction" "0.4"
+		"isFrictionInfinity" "0"
+		"bounce" "0.4"
+		"bulletForceScale" "0.5"
+		"explosiveForceScale" "0.35"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"corrugated_metal_lg" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "48"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.5"
+		"bulletForceScale" "0.9"
+		"explosiveForceScale" "0.65"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"crate_plastic" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_bottle"
+		"mass" "1"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.2"
+		"bulletForceScale" "0.2"
+		"explosiveForceScale" "0.03"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"debris_bumper02" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_brick"
+		"mass" "20"
+		"friction" "1"
+		"isFrictionInfinity" "0"
+		"bounce" "0.03"
+		"bulletForceScale" "0.25"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"debris_engine" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_metal"
+		"mass" "100"
+		"friction" "0.25"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"debris_engine02" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_metal"
+		"mass" "30"
+		"friction" "0.25"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"default" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "10"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.5"
+		"bulletForceScale" "0.5"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"empty_trashcan" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "20"
+		"friction" "1"
+		"isFrictionInfinity" "0"
+		"bounce" "0.3"
+		"bulletForceScale" "0.25"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "1"
+	}
+	"fire_extinguisher" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_metal"
+		"mass" "18"
+		"friction" "0.25"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.4"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"fruit_large" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_fruit"
+		"mass" "15"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.02"
+		"bulletForceScale" "0.5"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"fruit_large_chunk" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_fruit"
+		"mass" "1"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.01"
+		"bulletForceScale" "0.13"
+		"explosiveForceScale" "0.03"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"fruit_small" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_fruit"
+		"mass" "0.5"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.02"
+		"bulletForceScale" "0.4"
+		"explosiveForceScale" "0.018"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"fruit_small_chunk" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_fruit"
+		"mass" "0.1"
+		"friction" "0.5"
+		"isFrictionInfinity" "1"
+		"bounce" "0"
+		"bulletForceScale" "0.1"
+		"explosiveForceScale" "0.004"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"glass_chunk" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_glass"
+		"mass" "1"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "1"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "50"
+		"tempDefaultToCylinder" "0"
+	}
+	"helicopter_piece" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "300"
+		"friction" "0.25"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"helmet" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_metal"
+		"mass" "6"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.18"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"hub_cap" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_metal"
+		"mass" "6"
+		"friction" "0.1"
+		"isFrictionInfinity" "0"
+		"bounce" "0.4"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.18"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"jeepride_boulder" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_rubble"
+		"mass" "5000"
+		"friction" "0.25"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"laptop" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "8"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "0.5"
+		"explosiveForceScale" "0.15"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"picture_frame" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_wood"
+		"mass" "5"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "0.25"
+		"explosiveForceScale" "0.1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"pipe_pieces" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "phy_pipe"
+		"mass" "18"
+		"friction" "0.25"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"plastic_case_big" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_bottle"
+		"mass" "200"
+		"friction" "1"
+		"isFrictionInfinity" "0"
+		"bounce" "0.3"
+		"bulletForceScale" "0.25"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "1"
+	}
+	"projectile_sidewinder_missile" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "150"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.5"
+		"bulletForceScale" "0.25"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "1"
+	}
+	"propane_tank" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_metal"
+		"mass" "18"
+		"friction" "0.25"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"rubble_chunk_heavy" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_rubble"
+		"mass" "1000"
+		"friction" "0.75"
+		"isFrictionInfinity" "0"
+		"bounce" "0.05"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.3"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"sandbag" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "20"
+		"friction" "0.3"
+		"isFrictionInfinity" "0"
+		"bounce" "0.01"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.25"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"tank_turret" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "1000"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.02"
+		"bulletForceScale" "0.01"
+		"explosiveForceScale" "0.03"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"teddy_bear" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" ""
+		"mass" "0.5"
+		"friction" "0.6"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "0.1"
+		"explosiveForceScale" "0.018"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"tire" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_tire"
+		"mass" "18"
+		"friction" "0.8"
+		"isFrictionInfinity" "0"
+		"bounce" "0.8"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.25"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"tire_heavy" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_tire"
+		"mass" "250"
+		"friction" "0.8"
+		"isFrictionInfinity" "0"
+		"bounce" "0.8"
+		"bulletForceScale" "0.1"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"tv_24inch" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_tv"
+		"mass" "60"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.1"
+		"bulletForceScale" "0.6"
+		"explosiveForceScale" "0.85"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"weapon_clip" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_weapon_clip"
+		"mass" "3"
+		"friction" "0.7"
+		"isFrictionInfinity" "0"
+		"bounce" "0.01"
+		"bulletForceScale" "1"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"weapon_clip_empty" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_weapon_clip"
+		"mass" "0.5"
+		"friction" "0.7"
+		"isFrictionInfinity" "0"
+		"bounce" "0.4"
+		"bulletForceScale" "1"
+		"explosiveForceScale" "1"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"wood_crate" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_wood"
+		"mass" "50"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.2"
+		"bulletForceScale" "0.2"
+		"explosiveForceScale" "0.03"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+	"woodencross" ( "physpreset.gdf" )
+	{
+		"configstringFileType" "PHYSIC"
+		"sndAliasPrefix" "physics_wood"
+		"mass" "3"
+		"friction" "0.5"
+		"isFrictionInfinity" "0"
+		"bounce" "0.2"
+		"bulletForceScale" "0.3"
+		"explosiveForceScale" "0.07"
+		"piecesSpreadFraction" "0"
+		"piecesUpwardVelocity" "0"
+		"tempDefaultToCylinder" "0"
+	}
+}

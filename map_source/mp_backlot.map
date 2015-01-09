@@ -1,0 +1,635 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"sunRadiosity" "1.7"
+"radiosityScale" "1.8"
+"contrastGain" "0.425"
+"diffusefraction" "0.5"
+"_color" ".8 .9 1"
+"sunlight" "1.30"
+"sundirection" "-43.5 25.11 0"
+"sundiffusecolor" ".9 0.88 .75"
+"suncolor" "1 0.92 0.88"
+"ambient" ".15"
+"bouncefraction" ".7"
+"classname" "worldspawn"
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "mp_backlot_geo.map"
+"classname" "misc_prefab"
+}
+// entity 2
+{
+"origin" "232.0 600.0 168.0"
+"def" "light_point_linear"
+"radius" "300"
+"_color" "0.792157 0.850980 0.874510"
+"intensity" "1"
+"classname" "light"
+}
+// entity 3
+{
+"origin" "296.0 -328.0 344.0"
+"def" "light_point_linear"
+"radius" "300"
+"_color" "0.913726 0.788235 0.462745"
+"intensity" "1"
+"classname" "light"
+}
+// entity 4
+{
+"origin" "450.0 -426.0 174.0"
+"def" "light_point_quadratic"
+"radius" "300"
+"_color" "0.913726 0.788235 0.462745"
+"intensity" ".8"
+"classname" "light"
+}
+// entity 5
+{
+"origin" "-1203.9 -183.4 368.0"
+"def" "light_point_quadratic"
+"radius" "350"
+"_color" "0.874510 1.000000 0.874510"
+"intensity" ".9"
+"classname" "light"
+}
+// entity 6
+{
+"origin" "-1203.9 -421.4 368.0"
+"def" "light_point_quadratic"
+"radius" "350"
+"_color" "0.874510 1.000000 0.874510"
+"intensity" ".9"
+"classname" "light"
+}
+// entity 7
+{
+"classname" "light"
+"_color" ".8 .8 1"
+"radius" "300"
+"def" "light_point_linear"
+"origin" "1540.0 1108.0 148.0"
+}
+// entity 8
+{
+"classname" "light"
+"_color" ".8 .8 1"
+"radius" "300"
+"def" "light_point_linear"
+"origin" "1540.0 996.0 148.0"
+}
+// entity 9
+{
+"origin" "-792.0 1344.0 168.0"
+"def" "light_point_linear"
+"radius" "512"
+"_color" "1 1 1"
+"intensity" ".6"
+"classname" "light"
+}
+// entity 10
+{
+"origin" "-776.0 1456.0 168.0"
+"def" "light_point_linear"
+"radius" "512"
+"_color" "1 1 1"
+"intensity" ".6"
+"classname" "light"
+}
+// entity 11
+{
+"fov_outer" "180"
+"fov_inner" "170"
+"classname" "info_null"
+"_color" "1.000000 0.976471 0.949020"
+"origin" "601.5 -477.5 278.0"
+"targetname" "auto457"
+"angles" "0 2.50448e-006 0"
+}
+// entity 12
+{
+"fov_outer" "180"
+"fov_inner" "170"
+"classname" "info_null"
+"_color" "1.000000 0.976471 0.949020"
+"origin" "619.5 -347.5 278.0"
+"targetname" "auto458"
+"angles" "0 2.50448e-006 0"
+}
+// entity 13
+{
+"fov_outer" "180"
+"fov_inner" "170"
+"classname" "info_null"
+"_color" "1.000000 0.976471 0.949020"
+"origin" "-116.0 644.5 137.3"
+"targetname" "auto459"
+"angles" "0 90 0"
+}
+// entity 14
+{
+"spawnflags" "0"
+"origin" "-1054.0 182.0 122.0"
+"fov_outer" "90"
+"fov_inner" "60"
+"exponent" "1"
+"target" "auto460"
+"def" "light_point_linear"
+"radius" "500"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 15
+{
+"origin" "-1044.0 218.0 137.0"
+"targetname" "auto460"
+"classname" "info_null"
+}
+// entity 16
+{
+"spawnflags" "2"
+"angles" "0 180 -180"
+"origin" "-1247.0 134.0 63.0"
+"fov_outer" "100"
+"fov_inner" "80"
+"exponent" "1"
+"target" "auto461"
+"def" "light_point_linear"
+"radius" "500"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 17
+{
+"angles" "0 180 -180"
+"origin" "-1273.0 152.0 76.0"
+"targetname" "auto461"
+"classname" "info_null"
+}
+// entity 18
+{
+"spawnflags" "0"
+"angles" "0 270 180"
+"origin" "-1238.0 84.0 270.0"
+"exponent" "1"
+"def" "light_point_linear"
+"radius" "300"
+"_color" "0.819608 0.607843 0.321569"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 19
+{
+"spawnflags" "0"
+"angles" "0 180 -180"
+"origin" "-1242.0 82.0 -16.0"
+"fov_outer" "100"
+"fov_inner" "60"
+"exponent" "1"
+"target" "auto463"
+"def" "light_point_linear"
+"radius" "500"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 20
+{
+"angles" "0 180 -180"
+"origin" "-1250.0 128.0 -4.0"
+"targetname" "auto463"
+"classname" "info_null"
+}
+// entity 21
+{
+"spawnflags" "0"
+"angles" "0 2.50448e-006 -180"
+"origin" "-1252.0 -70.0 -30.0"
+"fov_outer" "100"
+"fov_inner" "60"
+"exponent" "1"
+"target" "auto464"
+"def" "light_point_linear"
+"radius" "600"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 22
+{
+"angles" "0 2.50448e-006 -180"
+"origin" "-1264.0 -98.0 -18.0"
+"targetname" "auto464"
+"classname" "info_null"
+}
+// entity 23
+{
+"spawnflags" "2"
+"angles" "0 180 -180"
+"origin" "-736.0 184.0 -34.0"
+"fov_outer" "100"
+"fov_inner" "80"
+"exponent" "1"
+"target" "auto465"
+"def" "light_point_linear"
+"radius" "800"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 24
+{
+"angles" "0 180 -180"
+"origin" "-796.0 92.0 -24.0"
+"targetname" "auto465"
+"classname" "info_null"
+}
+// entity 25
+{
+"spawnflags" "2"
+"angles" "0 90 180"
+"origin" "-1260.0 -416.0 -76.0"
+"fov_outer" "100"
+"fov_inner" "60"
+"exponent" "1"
+"target" "auto466"
+"def" "light_point_linear"
+"radius" "500"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 26
+{
+"angles" "0 90 180"
+"origin" "-1240.0 -478.0 -58.0"
+"targetname" "auto466"
+"classname" "info_null"
+}
+// entity 27
+{
+"origin" "290.0 -382.0 168.0"
+"def" "light_point_quadratic"
+"radius" "300"
+"_color" "0.913726 0.788235 0.462745"
+"intensity" ".8"
+"classname" "light"
+}
+// entity 28
+{
+"origin" "584.0 -320.0 296.0"
+"def" "light_point_linear"
+"radius" "300"
+"_color" "0.913726 0.788235 0.462745"
+"intensity" "1"
+"classname" "light"
+}
+// entity 29
+{
+"origin" "-1196.0 108.0 280.0"
+"def" "light_point_quadratic"
+"radius" "400"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 30
+{
+"origin" "-1054.0 152.0 200.0"
+"def" "light_point_quadratic"
+"radius" "400"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 31
+{
+"origin" "-1222.0 144.0 122.0"
+"def" "light_point_quadratic"
+"radius" "400"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 32
+{
+"origin" "-1178.0 162.0 -4.0"
+"def" "light_point_quadratic"
+"radius" "400"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 33
+{
+"origin" "-804.0 160.0 18.0"
+"def" "light_point_quadratic"
+"radius" "400"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 34
+{
+"origin" "-1224.0 -74.0 4.0"
+"def" "light_point_quadratic"
+"radius" "400"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 35
+{
+"origin" "-1242.0 -394.0 -24.0"
+"def" "light_point_quadratic"
+"radius" "400"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 36
+{
+"spawnflags" "0"
+"angles" "0 45 180"
+"origin" "-834.0 -502.0 256.0"
+"fov_outer" "160"
+"fov_inner" "120"
+"exponent" "1"
+"target" "auto467"
+"def" "light_point_linear"
+"radius" "1000"
+"_color" "0.792157 0.850980 0.874510"
+"intensity" "1.2"
+"classname" "light"
+}
+// entity 37
+{
+"angles" "0 90 180"
+"origin" "-834.0 -502.0 218.0"
+"targetname" "auto467"
+"classname" "info_null"
+}
+// entity 38
+{
+"angles" "0 90 0"
+"spawnflags" "2"
+"origin" "-1090.0 -121.0 119.0"
+"fov_outer" "90"
+"fov_inner" "60"
+"exponent" "1"
+"target" "auto468"
+"def" "light_point_linear"
+"radius" "500"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 39
+{
+"angles" "0 90 0"
+"origin" "-1111.0 -108.0 133.0"
+"targetname" "auto468"
+"classname" "info_null"
+}
+// entity 40
+{
+"angles" "0 90 0"
+"spawnflags" "0"
+"origin" "-1261.0 -262.0 120.0"
+"fov_outer" "90"
+"fov_inner" "60"
+"exponent" "1"
+"target" "auto469"
+"def" "light_point_linear"
+"radius" "500"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 41
+{
+"angles" "0 90 0"
+"origin" "-1284.0 -276.0 136.0"
+"targetname" "auto469"
+"classname" "info_null"
+}
+// entity 42
+{
+"angles" "0 191.7 0"
+"spawnflags" "0"
+"origin" "-1230.0 -408.9 127.0"
+"fov_outer" "90"
+"fov_inner" "60"
+"exponent" "1"
+"target" "auto470"
+"def" "light_point_linear"
+"radius" "500"
+"_color" "0.956863 0.917647 0.823529"
+"intensity" "1"
+"classname" "light"
+}
+// entity 43
+{
+"angles" "0 191.7 0"
+"origin" "-1215.6 -429.4 139.0"
+"targetname" "auto470"
+"classname" "info_null"
+}
+// entity 44
+{
+"spawnflags" "0"
+"origin" "-1222.0 -78.0 164.0"
+"def" "light_point_quadratic"
+"radius" "550"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".8"
+"classname" "light"
+}
+// entity 45
+{
+"spawnflags" "0"
+"origin" "-1220.0 -274.0 164.0"
+"def" "light_point_quadratic"
+"radius" "450"
+"_color" "0.980392 0.901961 0.752941"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 46
+{
+"spawnflags" "0"
+"origin" "-1140.0 -495.0 165.0"
+"def" "light_point_quadratic"
+"radius" "550"
+"_color" "0.976471 0.901961 0.749020"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 47
+{
+"spawnflags" "0"
+"angles" "0 270 180"
+"origin" "-822.0 116.0 334.0"
+"exponent" "1"
+"def" "light_point_linear"
+"radius" "300"
+"_color" "0.819608 0.607843 0.321569"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 48
+{
+"spawnflags" "0"
+"angles" "0 270 180"
+"origin" "-822.0 -140.0 190.0"
+"exponent" "1"
+"def" "light_point_linear"
+"radius" "300"
+"_color" "0.819608 0.607843 0.321569"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 49
+{
+"spawnflags" "0"
+"angles" "0 270 180"
+"origin" "-806.0 100.0 190.0"
+"exponent" "1"
+"def" "light_point_linear"
+"radius" "300"
+"_color" "0.819608 0.607843 0.321569"
+"intensity" ".7"
+"classname" "light"
+}
+// entity 50
+{
+"origin" "-1056.0 161.0 117.0"
+"classname" "misc_prefab"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"angles" "0 90 0"
+}
+// entity 51
+{
+"angles" "0 90 0"
+"origin" "-1227.0 148.0 34.0"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"classname" "misc_prefab"
+}
+// entity 52
+{
+"origin" "-1228.0 148.0 39.0"
+"classname" "misc_prefab"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"angles" "0 180 0"
+}
+// entity 53
+{
+"angles" "0 7.49996 0"
+"origin" "-1238.1 57.4 -47.0"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"classname" "misc_prefab"
+}
+// entity 54
+{
+"origin" "-1238.2 58.4 -42.0"
+"classname" "misc_prefab"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"angles" "0 97.5 0"
+}
+// entity 55
+{
+"angles" "0 147.4 0"
+"origin" "-723.9 197.6 -46.0"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"classname" "misc_prefab"
+}
+// entity 56
+{
+"angles" "0 237.4 0"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"classname" "misc_prefab"
+"origin" "-724.5 196.8 -41.0"
+}
+// entity 57
+{
+"angles" "0 164.5 0"
+"origin" "-1249.4 -51.8 -48.0"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"classname" "misc_prefab"
+}
+// entity 58
+{
+"origin" "-1249.7 -52.7 -43.0"
+"classname" "misc_prefab"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"angles" "0 254.5 0"
+}
+// entity 59
+{
+"angles" "0 190.7 0"
+"origin" "-1266.6 -399.3 -83.0"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"classname" "misc_prefab"
+}
+// entity 60
+{
+"origin" "-1266.4 -400.2 -78.0"
+"classname" "misc_prefab"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"angles" "0 280.7 0"
+}
+// entity 61
+{
+"angles" "0 49.1 0"
+"origin" "-1069.2 -137.3 107.0"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"classname" "misc_prefab"
+}
+// entity 62
+{
+"angles" "0 139.1 0"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"classname" "misc_prefab"
+"origin" "-1069.0 -136.7 115.0"
+}
+// entity 63
+{
+"angles" "0 116.2 0"
+"origin" "-1241.5 -249.8 107.0"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"classname" "misc_prefab"
+}
+// entity 64
+{
+"origin" "-1242.3 -250.3 112.0"
+"classname" "misc_prefab"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"angles" "0 206.2 0"
+}
+// entity 65
+{
+"angles" "0 215.5 0"
+"origin" "-1242.0 -397.4 106.0"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"classname" "misc_prefab"
+}
+// entity 66
+{
+"origin" "-1241.5 -398.1 111.0"
+"classname" "misc_prefab"
+"model" "prefabs/lamps/floodlight_hotspot.map"
+"angles" "0 305.5 0"
+}
+// entity 67
+{
+"classname" "misc_prefab"
+"model" "prefabs/fallujah/misc/city_droplight_on.map"
+"origin" "-1056.0 160.0 108.0"
+}

@@ -1,0 +1,45 @@
+#include "ui/menudef.h"
+
+{
+	// Pause menu
+	menuDef
+	{
+		name			"savegameinfo"
+		fullScreen		0
+		visible			1
+		focusColor		COLOR_FOCUSED
+		rect			0 0 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+		onOpen
+		{
+			saveDelay;
+			writeSave;
+		}
+		onClose
+		{
+			uiScript saveComplete;
+		}
+		
+		itemDef
+		{
+			name			"backdrop"
+			rect			-1 -1 1 1
+			visible			1
+			forecolor		0 0 0 0.75
+			ownerdraw		CG_MISSION_OBJECTIVE_BACKDROP
+			decoration			
+		}
+		
+		// "now saving" text
+		itemDef
+		{
+			name			"savingMsg"
+			text			"@CGAME_NOW_SAVING"
+			rect			40 46 128 20 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			forecolor		COLOR_TITLE //1.0 1.0 1.0 0.75 
+			textscale		TEXTSIZE_TITLE
+			textfont		UI_FONT_DEFAULT
+			visible			when ( dvarbool( sv_saveDeviceAvailable ) );
+			decoration
+		}
+	}	
+}

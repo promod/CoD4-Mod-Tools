@@ -1,0 +1,470 @@
+#name "mptype"
+#dll "all" "mptype"
+#target_dir "mptype/"
+#file_ext "*.gsc"
+#version 9
+
+string comments
+
+keyenum("character.gdf") character1
+keyenum("character.gdf") character2
+keyenum("character.gdf") character3
+keyenum("character.gdf") character4
+keyenum("character.gdf") character5
+keyenum("character.gdf") character6
+keyenum("character.gdf") character7
+keyenum("character.gdf") character8
+keyenum("character.gdf") character9
+keyenum("character.gdf") character10
+keyenum("character.gdf") character11
+keyenum("character.gdf") character12
+keyenum("character.gdf") character13
+keyenum("character.gdf") character14
+keyenum("character.gdf") character15
+keyenum("character.gdf") character16
+keyenum("character.gdf") character17
+keyenum("character.gdf") character18
+keyenum("character.gdf") character19
+keyenum("character.gdf") character20
+keyenum("character.gdf") character21
+keyenum("character.gdf") character22
+keyenum("character.gdf") character23
+keyenum("character.gdf") character24
+keyenum("character.gdf") character25
+keyenum("character.gdf") character26
+keyenum("character.gdf") character27
+keyenum("character.gdf") character28
+keyenum("character.gdf") character29
+keyenum("character.gdf") character30
+keyenum("character.gdf") character31
+keyenum("character.gdf") character32
+keyenum("character.gdf") character33
+keyenum("character.gdf") character34
+keyenum("character.gdf") character35
+keyenum("character.gdf") character36
+keyenum("character.gdf") character37
+keyenum("character.gdf") character38
+keyenum("character.gdf") character39
+keyenum("character.gdf") character40
+keyenum("character.gdf") character41
+keyenum("character.gdf") character42
+keyenum("character.gdf") character43
+keyenum("character.gdf") character44
+keyenum("character.gdf") character45
+keyenum("character.gdf") character46
+keyenum("character.gdf") character47
+keyenum("character.gdf") character48
+keyenum("character.gdf") character49
+keyenum("character.gdf") character50
+
+vcontainer
+{
+	multiedit(comments)
+	[
+		exec
+		{
+			width(712)
+			height(64)
+		}
+	]
+
+	simplelistbox(character1)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character2)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character3)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character4)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character5)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character6)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character7)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character8)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character9)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character10)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character11)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character12)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character13)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character14)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character15)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character16)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character17)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character18)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character19)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character20)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character21)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character22)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character23)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character24)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character25)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character26)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character27)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character28)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character29)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character30)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character31)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character32)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character33)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character34)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character35)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character36)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character37)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character38)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character39)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character40)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character41)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character42)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character43)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character44)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character45)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character46)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character47)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character48)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character49)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character50)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+}

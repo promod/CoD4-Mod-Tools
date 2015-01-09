@@ -1,0 +1,32 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 36 72 -152 ) ( -32 72 -152 ) ( -32 -76 -152 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -76 -104 ) ( -20 72 -104 ) ( 48 72 -104 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -76 -68 ) ( 32 -76 -68 ) ( 32 -76 -184 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -76 -68 ) ( 32 72 -68 ) ( 32 72 -184 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 72 -68 ) ( -36 72 -68 ) ( -36 72 -184 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 72 -68 ) ( -36 -76 -68 ) ( -36 -76 -184 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 128 40 -184 ) ( -128 40 -184 ) ( -128 -36 -184 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -124 -36 -52 ) ( -124 40 -52 ) ( 132 40 -52 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -76 -40 -76 ) ( 180 -40 -76 ) ( 180 -40 -160 ) clip_nosight_metal 64 64 0 152 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 200 -36 -88 ) ( 200 40 -88 ) ( 200 40 -172 ) clip_nosight_metal 64 64 0 152 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 132 36 -56 ) ( -124 36 -56 ) ( -124 36 -140 ) clip_nosight_metal 64 64 0 152 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -372 64 -80 ) ( -372 -12 -80 ) ( -372 -12 -164 ) clip_nosight_metal 64 64 0 152 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"model" "vehicle_cobra_helicopter_low"
+"classname" "misc_model"
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+}

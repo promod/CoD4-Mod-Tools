@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 64 2 -2 ) ( 0 2 -2 ) ( 0 -2 -2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -2 2 ) ( 0 2 2 ) ( 64 2 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -2 2 ) ( 64 -2 2 ) ( 64 -2 -2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 66 -2 2 ) ( 66 2 2 ) ( 66 2 -2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 2 2 ) ( 0 2 2 ) ( 0 2 -2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 2 2 ) ( 0 -2 2 ) ( 0 -2 -2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "bathroom_shower_rod"
+"classname" "misc_model"
+}

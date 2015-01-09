@@ -1,0 +1,238 @@
+iwfx 2
+
+{
+	name "butterflies";
+	editorFlags useBackCompatVel;
+	flags spawnFrustumCull spawnOffsetNone runRelToSpawn;
+	spawnRange 0 1500;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 500;
+	spawnLooping 200 0;
+	spawnOneShot 1 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 5000 0;
+	spawnOrgX 0 0;
+	spawnOrgY 0 0;
+	spawnOrgZ 0 0;
+	spawnOffsetRadius 0 0;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 45 0;
+	gravity 0 0;
+	elasticity 0 0;
+	atlasBehavior startFixed;
+	atlasIndex 0;
+	atlasFps 90;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 3000
+	{
+		{
+			0 0.0119617
+			0.0319767 0.0406699
+			0.0755814 -0.0502392
+			0.0901163 0.00239235
+			0.218023 -0.00717703
+			0.252907 0.0454546
+			0.281977 -0.0550239
+			0.319767 -0.00239235
+			0.418605 -0.00717703
+			0.44186 0.0311005
+			0.47093 -0.00239235
+			0.534884 -0.00239235
+			0.561047 0.0358852
+			0.584302 -0.00239235
+			0.642442 -0.00239235
+			0.671512 0.0358852
+			0.697674 -0.00717703
+			0.738372 0.0358852
+			0.781977 -0.0215311
+			0.813953 0.0263158
+			0.84593 -0.0263158
+			0.880814 0.0215311
+			0.93314 -0.00239235
+			1 0.0167464
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Y 3000
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Z 3000
+	{
+		{
+			0 0.00717705
+			0.0174419 0.0454546
+			0.0436046 0.00239235
+			0.18314 0.00239235
+			0.209302 -0.0358852
+			0.241279 0.00239235
+			0.569767 -0.00239235
+			0.668605 -0.0311005
+			0.747093 -0.0215311
+			0.828488 -0.0358852
+			0.906977 -0.0119617
+			1 -0.0550239
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 3000
+	{
+		{
+			0 0
+			0.0523256 -0.240741
+			0.0843023 0
+			0.174419 0
+			0.215116 0.5
+			0.258721 0.00462961
+			0.395349 0.00462961
+			0.447674 -0.24537
+			0.465116 0.00462961
+			0.531977 -0.00925925
+			0.561047 0.263889
+			0.598837 0.00462961
+			0.659884 -0.00925925
+			0.69186 -0.273148
+			0.706395 -0.00462964
+			0.75 -0.00925925
+			0.776163 0.259259
+			0.805233 0
+			0.851744 -0.00925925
+			0.895349 -0.25463
+			0.921512 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	sizeGraph0 7
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	sizeGraph1 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 1 1 1
+			1 1 1 1
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.0465116 0.497608
+			0.912791 0.507177
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	lightingFrac 0.35;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 0;
+	emission "";
+	emitDist 0 0;
+	emitDistVariance 0 0;
+	trailSplitDist 100;
+	trailScrollTime 0;
+	trailRepeatDist 10;
+	billboardSprite
+	{
+		"gfx_moth"
+	};
+}

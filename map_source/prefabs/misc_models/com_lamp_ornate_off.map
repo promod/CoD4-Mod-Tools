@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 11 -3 15 ) ( -11.5 -3 15 ) ( -11.5 -10 15 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11.5 -10 26 ) ( -11.5 -3 26 ) ( 11 -3 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -10 15 ) ( -10 10 15 ) ( -6 6 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 10 15 ) ( 9.5 -10 15 ) ( 5.5 -5.5 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 10 15 ) ( 9.5 10 15 ) ( 5.5 6 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 -10 15 ) ( -10 -10 15 ) ( -6 -5.5 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 3 2.5 0 ) ( -3 2.5 0 ) ( -3 -2.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 2.5 15 ) ( 3 2.5 15 ) ( 3 -2.5 15 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 -2.5 15 ) ( 3 -2.5 15 ) ( 3 -2.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 2.5 15 ) ( 3 2.5 0 ) ( 3 -2.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 2.5 15 ) ( -3 2.5 15 ) ( -3 2.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 2.5 0 ) ( -3 2.5 15 ) ( -3 -2.5 15 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_lamp_ornate_off"
+"classname" "misc_model"
+}

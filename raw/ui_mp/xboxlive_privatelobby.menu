@@ -1,0 +1,285 @@
+#include "ui/menudef.h"
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_GROUP			"xboxlive_privatematch"
+
+#define CHOICE_SEP_1			2
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+#include "ui_mp/stats_info.inc"
+
+#define PLAYERLIST_WIDTH 		270
+#define ORIGIN_PLAYERLIST 		(- (PLAYERLIST_WIDTH - RIGHTITEM_OFFSET)) 38
+#define ORIGIN_STATUS			(- (PLAYERLIST_WIDTH - RIGHTITEM_OFFSET)) 0
+#define ORIGIN_RECOMMENDEDPLAYERS 	(- (PLAYERLIST_WIDTH - RIGHTITEM_OFFSET)) 38
+
+#define ORIGIN_DESCRIPTION		(CHOICE_X_START + 15) 180
+#define COLOR_DESC_TEXT			1 1 1 0.7
+
+#define MENU_FONT_SIZE			TEXTSIZE_DEFAULT
+#define HIGHLIGHT_SIZE			142 22
+#define MENU_FONT_COLOR			1 1 1 0.5
+#define MENU_FONT_COLOR2		1 1 1 0.5
+#define MENU_LOCKED_COLOR		0.25 0.25 0.25 1
+
+//-------------------------------------
+
+#define ORIGIN_BUTTON_BACK		52 438
+#define ORIGIN_BUTTON_CONTINUE	490 438
+#define ORIGIN_BUTTON_INVITE	390 86
+
+// ------------------ preprocessing function definitions ------------------
+#define PAD_LEFT \
+		execKeyInt DPAD_LEFT { \
+			focusFirst; \
+			show selection_left; \
+			hide selection_right; \
+		} \
+		execKeyInt APAD_LEFT { \
+			focusFirst; \
+			show selection_left; \
+			hide selection_right; \
+		}
+
+#define PAD_RIGHT \
+	execKeyInt DPAD_RIGHT { \
+		setFocus lobbyList; \
+		exec "set ui_hint_text @MPUI_PLAYER_OPTIONS" \
+	} \
+	execKeyInt APAD_RIGHT { \
+		setFocus lobbyList; \
+		exec "set ui_hint_text @MPUI_PLAYER_OPTIONS" \
+	}
+
+
+#include "ui_mp/common_macro.inc"
+
+{
+	menuDef
+	{
+		name			menu_xboxlive_privatelobby
+		fullscreen		1
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			0
+		soundloop 		"music_mainmenu_mp"
+		onOpen
+		{
+			execnow "xblive_rankedmatch 0";
+			execnow "party_timerVisible 0";
+			execnow "xblive_privatematch 1";
+			exec "exec dvar_defaults.cfg";
+				
+			show dpad_left;
+			show selection_left;
+			hide dpad_right;
+			hide selection_right;
+
+			focusFirst;
+		}
+		onClose
+		{
+			hide selection_right;
+		}
+		onEsc
+		{
+			open leavelobbywarning;
+		}
+		PAD_RIGHT
+
+		// ------------------  statics ------------------------
+		#define BACKGROUND_MOVESCALE	0.15
+		#define BACKGROUND_MOVERATE_X	5000
+		#define BACKGROUND_MOVERATE_Y	4000
+		#define	BACKGROUND_WIDTH	(854 * (1+BACKGROUND_MOVESCALE) )
+		#define BACKGROUND_HEIGHT	(480 * (1+BACKGROUND_MOVESCALE) )
+		#define FLASH_OFS 	((sin(milliseconds()/90))*2)
+
+		#include "ui/blurredbg.inc"
+		#include "ui_mp/sidepanels.inc"
+
+		CHOICE_MENU_TITLE( "@MPUI_PRIVATE_MATCH_LOBBY" )
+		
+		// --------------------- lobby players count -----------------------
+		itemDef	{
+			type			ITEM_TYPE_TEXT
+			rect			0 0 PLAYERLIST_WIDTH 0 RIGHTITEM_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_PLAYERLIST
+			forecolor		CHOICE_TEXTCOLOR
+			dvar			"party_lobbyPlayerCount"
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		-6
+			textalign		ITEM_ALIGN_RIGHT
+			visible			when ( InLobby() )
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			0 0 256 15 RIGHTITEM_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_RECOMMENDEDPLAYERS
+			forecolor		CHOICE_TEXTCOLOR
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		-6
+			exp text ( locstring( "@MPUI_RECOMMENDEDPLAYERS", int( min( dvarint( party_maxplayers ), maxrecommendedplayers() ) ) ) );
+			visible 		when ( privatepartyhost() )
+			decoration
+		}
+		
+		// ----------------------------map images------------------------------------
+		#include "ui_mp/game_info.inc"
+		GAME_INFO( "loadscreen_" + dvarString (ui_mapname), dvarString ( party_mapname ), dvarString( party_gametype ), 1 )
+
+		//=========================================================
+		//===================== MENU SELECTION ====================
+		//=========================================================
+		#define SETUP_EXTRA_FIRST \
+			execKeyInt DPAD_UP	{ \
+				setfocus last_in_list;	} \
+			execKeyInt APAD_UP	{ \
+				setfocus last_in_list;	}
+
+		#define SETUP_EXTRA_LAST \
+			name			last_in_list \
+			execkeyint DPAD_DOWN{ \
+				focusFirst; \
+			} \
+			execkeyint APAD_DOWN{ \
+				focusFirst; \
+			}
+
+		#define CLEARUIHINT	exec "set ui_hint_text @NULL_EMPTY"
+
+		#define SETUP_ACTION_STARTMATCH \
+				exec "selectStringTableEntryInDvar mp/didyouknow.csv 0 didyouknow"; \
+				exec "xpartygo";
+
+		#define SETUP_ACTION_GAMESETUP \
+				open "popup_gamesetup_private";
+
+		#define SETUP_ACTION_CREATEACLASS \				
+				execnow "set ui_cac_ingame 0"; \
+				execnow "statset 260 1"; \
+				open private_cac_popup;
+
+		#define SETUP_ACTION_BARRACKS \				
+				open menu_xboxlive_barracks;
+
+		#ifdef PS3
+			#define SETUP_ACTION_INVITE \
+				open menu_ps3_friends;
+		#else
+			#define SETUP_ACTION_INVITE \				
+				exec "xshowfriendslist";
+		#endif
+	
+		#define SETUP_ACTION_CYCLEMAP \
+				execNow "xplaylistchoosegame; xupdatepartystate";
+	
+		CHOICE_BUTTON_FOCUS_VIS_EX( 1, "@MPUI_START_MATCH", SETUP_ACTION_STARTMATCH, exec "set ui_hint_text @MPUI_DESC_START_MATCH", CLEARUIHINT, when( privatepartyhost() || dvarbool( onlinegameandhost ) ), SETUP_EXTRA_FIRST )
+		CHOICE_BUTTON_FOCUS_VIS_NOHI_EX( 1, "", ;, exec "set ui_hint_text @MPUI_DESC_START_MATCH_LOCKED", CLEARUIHINT, when( !privatepartyhost() && dvarbool( onlinegameandhost ) == 0 ), SETUP_EXTRA_FIRST )
+		CHOICE_DBUTTON_VIS( 1, "@MPUI_START_MATCH", when( !privatepartyhost() && dvarbool( onlinegameandhost ) == 0 ) )
+
+		CHOICE_BUTTON_FOCUS_VIS( 2, "@MPUI_GAME_SETUP", SETUP_ACTION_GAMESETUP, exec "set ui_hint_text @MPUI_DESC_GAME_SETUP", CLEARUIHINT, when( privatepartyhost() || dvarbool( onlinegameandhost ) ) )
+		CHOICE_BUTTON_FOCUS_VIS_NOHI( 2, "", ;, exec "set ui_hint_text @MPUI_DESC_GAME_SETUP_LOCKED", CLEARUIHINT, when( !privatepartyhost() && dvarbool( onlinegameandhost ) == 0 ) )
+		CHOICE_DBUTTON_VIS( 2, "@MPUI_GAME_SETUP", when( !privatepartyhost() && dvarbool( onlinegameandhost ) == 0 ) )
+
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )
+		
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 3, "@MPUI_CREATE_A_CLASS", SETUP_ACTION_CREATEACLASS, exec "set ui_hint_text @MPUI_DESC_CREATE_A_CLASS", CLEARUIHINT, when( stat( 260 ) >= 1 ), stat( 260 ) >= 1 )
+		CHOICE_BUTTON_FOCUS_VIS_NOHI( 3, "", ;, exec "set ui_hint_text @MPUI_DESC_CREATE_A_CLASS_LOCKED", CLEARUIHINT, when( stat( 260 ) < 1 ) )
+		CHOICE_DBUTTON_VIS( 3, "@MPUI_CREATE_A_CLASS", when( stat( 260 ) < 1 ) )
+		CHOICE_NEWICON_VIS( 3, "specialty_new", when( ANY_NEW_CAC ) )
+
+		CHOICE_BUTTON_FOCUS_VIS( 4, "@MPUI_BARRACKS", SETUP_ACTION_BARRACKS, exec "set ui_hint_text @MPUI_DESC_BARRACKS", CLEARUIHINT, when(1) )
+		CHOICE_NEWICON_VIS( 4, "specialty_new", when( ANY_NEW_BARRACKS ); )
+		
+		CHOICE_BUTTON_FOCUS_VIS_EX( 5, "@MPUI_INVITE_FRIENDS", SETUP_ACTION_INVITE, exec "set ui_hint_text @MPUI_DESC_INVITE_FRIENDS", CLEARUIHINT, when( !dvarbool( ui_partyFull ) ), SETUP_EXTRA_LAST )
+
+		// ---------------------- menu selection description -------------------------
+		itemDef	{
+			name			desc_arrow
+			style			WINDOW_STYLE_SHADER
+			rect			0 3 10 10 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_DESCRIPTION
+			background		"ui_arrow_right"
+			forecolor		1 1 1 0.25
+			visible			1
+			decoration
+		}
+		itemDef	{
+			name			description_choice
+			type			ITEM_TYPE_TEXT
+			rect			12 0 210 36 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_DESCRIPTION
+			exp				text( dvarString( ui_hint_text ) )
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		16
+			forecolor		COLOR_DESC_TEXT
+			visible			1
+			autowrapped
+			decoration
+		}
+
+		// ---------------------- player list -------------------------
+		#define	PLAYERLIST_SCOREVIS 1
+		#define PLAYERLIST_SELECTED_ACTIONS \
+			doubleClick	{ \
+				open player_popup; \
+			} \
+			PAD_LEFT
+		
+		#include "ui_mp/playerlist.inc"
+		
+		#include "ui_mp/navcontrols.inc"
+
+		#include "ui/safearea.menu"
+		#include "ui/popup_background.inc"
+	}
+	
+	#include "ui_mp/popupstyle.inc"	
+	#include "ui/choices_setup_popmenu.menu"
+	
+	
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X			216
+
+	#define FINDGAME_POPUP_X		(0)
+	#define FINDGAME_POPUP_Y		(22)
+
+	#define CAC_POPUP_X		(0)
+	#define CAC_POPUP_Y		(80)
+
+	// set new status position ---
+	#undef NEW_X_OFFSET			
+	#define NEW_X_OFFSET	(0-CHOICE_SIZE_X)
+	#undef NEW_Y_OFFSET			
+	#define NEW_Y_OFFSET	(0-2)
+	
+	#include "ui_mp/cacpopup.inc"
+	CAC_POPUP( "private_cac_popup", CAC_POPUP_X, CAC_POPUP_Y )
+	
+	// restore new status position ---
+	#undef NEW_X_OFFSET			
+	#define NEW_X_OFFSET	0
+	#undef NEW_Y_OFFSET			
+	#define NEW_Y_OFFSET	0
+
+	#include "ui_mp/gamesetup_popup.inc"	
+	
+	#ifdef PS3
+		GAMESETUP_POPUP( "popup_gamesetup_private", "", GAMESETUP_CFG )
+	#else
+		GAMESETUP_POPUP_PRIVATE( "popup_gamesetup_private", "", GAMESETUP_CFG )	
+	#endif
+}  

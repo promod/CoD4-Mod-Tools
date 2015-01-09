@@ -1,0 +1,117 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 24 0 76 ) ( 20 0 72 ) ( -40 0 72 ) me_woodboard_01 128 64 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 8 76 ) ( -40 8 72 ) ( 20 8 72 ) me_woodboard_01 128 64 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 0 76 ) ( 26 8 76 ) ( 22 8 72 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 0 72 ) ( -20 8 72 ) ( -24 8 76 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 8 76 ) ( 24 8 76 ) ( 24 0 76 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 23 8 74 ) ( 32 8 74 ) ( 23 40 74 ) me_woodboard_01 128 64 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 24 3 76 ) ( 20 3 72 ) ( -40 3 72 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 5 76 ) ( -40 5 72 ) ( 20 5 72 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 0 76 ) ( 26 8 76 ) ( 22 8 72 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -1 72 ) ( -20 7 72 ) ( -24 7 76 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 0 70 ) ( 20 0 70 ) ( 20 8 70 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 74 ) ( 23 8 74 ) ( 23 40 74 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -24 -1 76 ) ( -24 7 76 ) ( -20 7 72 ) caulk 64 64 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 3 -12 ) ( -24 3 100 ) ( -20 3 96 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 5 -12 ) ( -20 5 96 ) ( -24 5 100 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 8 -12 ) ( -18 0 -12 ) ( -18 0 96 ) me_window_05 -46 72 3 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 8 86 ) ( -22 8 80 ) ( -22 40 86 ) caulk 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 5 0 ) ( -20 5 4 ) ( -20 37 4 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( -24 0 76 ) ( -24 8 76 ) ( -20 8 72 ) caulk 64 64 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 -12 ) ( -24 0 100 ) ( -20 0 96 ) me_woodboard_01 128 64 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 8 -12 ) ( -20 8 96 ) ( -24 8 100 ) me_woodboard_01 128 64 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 8 100 ) ( -24 0 100 ) ( -24 0 -12 ) caulk 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 8 80 ) ( -22 8 86 ) ( -22 40 86 ) me_woodboard_01 128 64 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 5 0 ) ( -20 5 4 ) ( -20 37 4 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 26 0 0 ) ( 22 0 0 ) ( 22 0 108 ) me_woodboard_01 128 64 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 8 112 ) ( 22 8 108 ) ( 22 8 0 ) me_woodboard_01 128 64 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 8 0 ) ( 26 0 0 ) ( 26 0 112 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 0 72 ) ( 22 8 72 ) ( 26 8 76 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 108 ) ( 24 8 103 ) ( 24 40 108 ) me_woodboard_01 128 64 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 5 4 ) ( 26 5 0 ) ( 26 37 0 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 26 3 0 ) ( 22 3 0 ) ( 22 3 108 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 5 112 ) ( 22 5 108 ) ( 22 5 0 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 8 108 ) ( 20 0 108 ) ( 20 0 0 ) me_window_05 -46 72 3 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 0 76 ) ( 26 8 76 ) ( 30 8 80 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 103 ) ( 24 8 108 ) ( 24 40 108 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 5 4 ) ( 26 5 0 ) ( 26 37 0 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( -26 3 0 ) ( -22 3 4 ) ( 38 3 4 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 5 2 ) ( 48 5 6 ) ( -12 5 6 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 0 ) ( -24 8 0 ) ( -20 8 4 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 -1 4 ) ( 22 7 4 ) ( 26 7 0 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 0 6 ) ( -12 0 6 ) ( -12 8 6 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 8 2 ) ( -17 8 2 ) ( -17 40 2 ) caulk 64 -64 -8 0 -180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( -26 0 0 ) ( -22 0 4 ) ( 38 0 4 ) me_woodboard_01 128 64 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 8 0 ) ( 38 8 4 ) ( -22 8 4 ) me_woodboard_01 128 64 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 0 ) ( -24 8 0 ) ( -20 8 4 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 0 4 ) ( 22 8 4 ) ( 26 8 0 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 8 0 ) ( -26 8 0 ) ( -26 0 0 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17 8 2 ) ( -26 8 2 ) ( -17 40 2 ) me_woodboard_01 128 64 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( 4 4 4 ) ( 2 4 4 ) ( 2 2 4 ) me_trim_metal_01 32 256 -198 55 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 2 72 ) ( 0 4 72 ) ( 2 4 72 ) me_trim_metal_01 32 256 -198 55 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 3 72 ) ( 2 3 72 ) ( 2 3 70 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 2 71.5 ) ( 2 4 71.5 ) ( 2 4 69.5 ) me_window_05 -46 72 3 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 4 72 ) ( 0 4 72 ) ( 0 4 70 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 4 72 ) ( 0 2 72 ) ( 0 2 70 ) me_window_05 -46 72 3 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( -18 4 37 ) ( -22 4 37 ) ( -22 2 37 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 2 38.5 ) ( -22 4 38.5 ) ( -18 4 38.5 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 3 42 ) ( -18 3 42 ) ( -18 3 38 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 2 42 ) ( 0 4 42 ) ( 0 4 38 ) me_trim_metal_01 32 256 -190 55 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 4 42 ) ( -22 4 42 ) ( -22 4 38 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 4 42 ) ( -18 2 42 ) ( -18 2 38 ) me_trim_metal_01 32 256 -190 55 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 10
+{
+  contents detail;
+ ( 6 4 37 ) ( 2 4 37 ) ( 2 2 37 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 2 38.5 ) ( 2 4 38.5 ) ( 6 4 38.5 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 3 42 ) ( 6 3 42 ) ( 6 3 38 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 2 42 ) ( 20 4 42 ) ( 20 4 38 ) me_trim_metal_01 32 256 -190 55 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 4 42 ) ( 2 4 42 ) ( 2 4 38 ) me_window_05 -46 72 -22 70 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 4 42 ) ( 2 2 42 ) ( 2 2 38 ) me_trim_metal_01 32 256 -190 55 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

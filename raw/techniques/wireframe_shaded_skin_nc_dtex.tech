@@ -1,0 +1,16 @@
+{
+	stateMap "wireframe";
+
+	vertexShader 2.0 "vertcol_simple_nc_dtex.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "vertcol_shaded_nc.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

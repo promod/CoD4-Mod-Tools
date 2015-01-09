@@ -1,0 +1,69 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+ {
+  curve
+  {
+  contents detail;
+  toolFlags splitGeo;
+   me_plaster_03
+   lightmap_gray
+   3 3 16 7
+   (
+	v 24 8 48 t 0 0 1 1
+	v 24 8 72 t 0 256 1 5
+	v 9.5367432e-007 8 80 t 0 512 1 9
+   )
+   (
+	v 24 4 48 t 32 0 3 1
+	v 24 4 72 t 32 256 3 5
+	v 9.5367432e-007 4 80 t 32 512 3 9
+   )
+   (
+	v 24 0 48 t 64 0 3 1
+	v 24 0 72 t 64 256 3 5
+	v 9.5367432e-007 0 80 t 64 512 3 9
+   )
+  }
+ }
+// brush 1
+ {
+  curve
+  {
+  contents detail;
+  toolFlags splitGeo;
+   me_plaster_03
+   lightmap_gray
+   3 3 16 7
+   (
+	v -24 0 48 t 0 0 1 1
+	v -24 0 72 t 0 256 1 5
+	v 0 0 80 t 0 512 1 9
+   )
+   (
+	v -24 4 48 t 32 0 3 1
+	v -24 4 72 t 32 256 3 5
+	v 0 4 80 t 32 512 3 9
+   )
+   (
+	v -24 8 48 t 64 0 3 1
+	v -24 8 72 t 64 256 3 5
+	v 0 8 80 t 64 512 3 9
+   )
+  }
+ }
+// brush 2
+{
+  contents detail;
+ ( 112 16 0 ) ( 88 16 0 ) ( 88 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 80 ) ( -32 16 80 ) ( -8 16 80 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 96 ) ( -8 8 96 ) ( -8 8 64 ) me_window_01 47.999992 -80 23.999992 -2.0981465e-006 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 36 ) ( 24 16 36 ) ( 24 16 4 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 16 96 ) ( -32 16 96 ) ( -32 16 64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 16 96 ) ( -24 8 96 ) ( -24 8 64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

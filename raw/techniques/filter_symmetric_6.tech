@@ -1,0 +1,16 @@
+{
+	stateMap "default2d";
+
+	vertexShader 2.0 "filter_symmetric_6.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "filter_symmetric_6.hlsl"
+	{
+		colorMapSampler = sampler.feedback;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

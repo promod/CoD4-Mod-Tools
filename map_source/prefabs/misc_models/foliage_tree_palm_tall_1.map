@@ -1,0 +1,24 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 16 -8 ) ( -16 16 -8 ) ( -16 -16 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 -32 -16 0 0
+ ( 40 -8 696 ) ( 48 -8 696 ) ( 16 -16 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 -32 0 0 0
+ ( 40 8 472 ) ( 40 24 472 ) ( 16 8 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 16 0 0 0
+ ( 48 0 696 ) ( 40 0 696 ) ( -16 16 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 -32 0 0 0
+ ( 40 32 696 ) ( 40 16 696 ) ( -16 -16 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 16 0 0 0
+ ( 40 0 696 ) ( 48 0 696 ) ( 48 -8 696 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"targetname" "animated_model"
+"classname" "script_model"
+"model" "foliage_tree_palm_tall_1"
+"angles" "357.135 149.5 1.65764"
+"origin" "0.0 0.0 0.0"
+}

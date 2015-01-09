@@ -1,0 +1,40 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 48 0 ) ( -8 48 0 ) ( -8 -40 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -40 32 ) ( -8 48 32 ) ( 8 48 32 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -43 32 ) ( 8 -43 32 ) ( 8 -43 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 -40 32 ) ( 7 48 32 ) ( 7 48 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 41 32 ) ( -8 41 32 ) ( -8 41 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 48 32 ) ( -7 -40 32 ) ( -7 -40 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 12 112 0 ) ( -20 112 0 ) ( -20 -44 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 -4 -1184 0 0
+ ( -20 -44 36 ) ( -20 112 36 ) ( 12 112 36 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 -4 -1184 0 0
+ ( -20 -44 36 ) ( 12 -44 36 ) ( 12 -44 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 -4 0 0 0
+ ( -4 -44 36 ) ( -4 112 36 ) ( -4 112 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 1184 0 0 0
+ ( 12 40 36 ) ( -20 40 36 ) ( -20 40 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 -4 0 0 0
+ ( -16 112 36 ) ( -16 -44 36 ) ( -16 -44 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 1184 0 0 0
+}
+// brush 2
+{
+ ( 36 112 0 ) ( 4 112 0 ) ( 4 -44 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 20 -1184 0 0
+ ( 4 -44 36 ) ( 4 112 36 ) ( 36 112 36 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 20 -1184 0 0
+ ( 4 -44 36 ) ( 36 -44 36 ) ( 36 -44 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 20 0 0 0
+ ( 16 -44 36 ) ( 16 112 36 ) ( 16 112 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 1184 0 0 0
+ ( 36 40 36 ) ( 4 40 36 ) ( 4 40 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 20 0 0 0
+ ( 4 112 36 ) ( 4 -44 36 ) ( 4 -44 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 1184 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "mil_sandbag_desert_short"
+"classname" "misc_model"
+}

@@ -1,0 +1,12 @@
+{
+	menuDef
+	{
+		name			"class_marines_splitscreen"
+		onOpen
+		{
+			setLocalVarString ui_team "marines"
+			open class_splitscreen
+			close self
+		}
+	}
+}

@@ -1,0 +1,26 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -2 98.5 -13.5 ) ( -2 -98 -13.5 ) ( 8 -98 -10.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 -98 12 ) ( -5 98.5 12 ) ( 4.5 98.5 13 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 -98 38.5 ) ( 136 -98 38.5 ) ( 136 -98 14.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( 13 98.5 0.5 ) ( 13 -98 0.5 ) ( 10.5 -98 7.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( 136 98.5 27 ) ( -136 98.5 27 ) ( -136 98.5 3 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( -12.5 98.5 0.5 ) ( -12.5 -98 0.5 ) ( -10.5 -98 -7.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( -5 98.5 12 ) ( -5 -98 12 ) ( -12.5 -98 0.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 98.5 7.5 ) ( 10.5 -98 7.5 ) ( 4.5 -98 13 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 98.5 -10.5 ) ( 8 -98 -10.5 ) ( 13 -98 0.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10.5 98.5 -7.5 ) ( -10.5 -98 -7.5 ) ( -2 -98 -13.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_woodlog_24_192_d"
+"classname" "misc_model"
+}

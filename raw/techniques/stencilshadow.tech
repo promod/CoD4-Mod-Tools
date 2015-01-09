@@ -1,0 +1,14 @@
+{
+	stateMap "passthrough";
+
+	vertexShader 1.1 "transform_only_tools.hlsl"
+	{
+	}
+
+	pixelShader 1.1 "null.hlsl"
+	{
+	}
+
+	vertex.position = code.position;
+
+}

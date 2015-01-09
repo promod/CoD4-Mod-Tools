@@ -1,0 +1,256 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           "All game messages made by script should go in this file."
+
+REFERENCE           MISSIONFAIL_KILLTEAM_RUSSIAN
+LANG_ENGLISH        "You are a traitor to the motherland!"
+
+REFERENCE           MISSIONFAIL_KILLTEAM_BRITISH
+LANG_ENGLISH        "Friendly fire will not be tolerated!"
+
+REFERENCE           MISSIONFAIL_KILLTEAM_AMERICAN
+LANG_ENGLISH        "Friendly fire will not be tolerated!"
+
+REFERENCE           SHOT_TEAMMATE
+LANG_ENGLISH        "You shot a team mate!"
+
+REFERENCE           HINT_OBJECTIVEONCOMPASS
+LANG_ENGLISH        "The star on your compass marks your next objective"
+
+REFERENCE           OBJ_DESTROYFLAKPANZERS
+LANG_ENGLISH        "Destroy the 'Flakpanzer' Anti-Aircraft Tanks.^3 &&1 remaining^7"
+
+REFERENCE           OBJ_FOLEYDEBRIEF
+LANG_ENGLISH        "Debrief with Captain Foley at the crossroads."
+
+REFERENCE           HINT_CANT_OPEN_DOORS
+LANG_ENGLISH        "This door cannot be opened. You never need to try to open closed doors."
+
+REFERENCE           EXPLOSIVESPLANTED
+LANG_ENGLISH        "EXPLOSIVES PLANTED. STAND BACK!"
+
+REFERENCE           HINT_PICKUPAMMOKEY
+LANG_ENGLISH        "To pickup ammo from another weapon, walk close to it or look at it and press USE^3 &&1^7."
+
+REFERENCE           HINT_LEANINGSLOWMOVE
+LANG_ENGLISH        "You move slower while leaning."
+
+REFERENCE           HINTSTR_GRENADESFULL
+LANG_ENGLISH        "You can't carry anymore grenades."
+
+REFERENCE           PICKUPSTIELHANDGRANATES
+LANG_ENGLISH        "Picked up some Stielhandgranates."
+
+REFERENCE           GLOWING_MARKER
+LANG_ENGLISH        "Look for the glowing marker on the German anti-aircraft vehicle."
+
+REFERENCE           CLEARBUILDING
+LANG_ENGLISH        "Clear the building with the Machine Guns in it."
+
+REFERENCE           TAKELEFTFLANK
+LANG_ENGLISH        "Take the left flank."
+
+REFERENCE           FIRE_TO_SKIP
+LANG_ENGLISH        "Click FIRE to Skip."
+
+REFERENCE           USE_THE_PANZERFAUST_ANTITANK
+LANG_ENGLISH        "Use the Panzerfaust anti-tank weapons behind the bunker to destroy the tanks."
+
+REFERENCE           ARTILLERY_TOOFAR
+LANG_ENGLISH        "You are too far from your radio man to use artillery."
+
+REFERENCE           ELIMINATE_THE_FLAK_88_DONE
+LANG_ENGLISH        "Eliminate the Flak 88 crews."
+
+REFERENCE           ELIMINATE_THE_FLAK_88
+LANG_ENGLISH        "Eliminate the Flak 88 crews.^3 &&1 remaining^7"
+
+REFERENCE           GRENADE_DEATH
+LANG_ENGLISH        "You were killed by a grenade.\nWatch out for the grenade danger indicator."
+
+REFERENCE           GRENADE_SUICIDE_LINE1
+LANG_ENGLISH        "You died holding a grenade for too long."
+
+REFERENCE           GRENADE_SUICIDE_LINE2
+LANG_ENGLISH        "Holding ^3[{+frag}]^7 allows you to cook off live grenades."
+
+REFERENCE           EXPLODING_VEHICLE_DEATH
+LANG_ENGLISH        "You were killed by an exploding vehicle.\nVehicles on fire are likely to explode."
+
+REFERENCE           EXPLODING_BARREL_DEATH
+LANG_ENGLISH        "You were killed by an exploding barrel.\nRed barrels will explode when shot."
+
+REFERENCE           X2
+LANG_ENGLISH        "x2"
+
+REFERENCE           X3
+LANG_ENGLISH        "x3"
+
+REFERENCE           PLUS
+LANG_ENGLISH        "+"
+
+REFERENCE           MINUS
+LANG_ENGLISH        "-"
+
+REFERENCE           PLUS_AMOUNT
+LANG_ENGLISH        "+%s"
+
+REFERENCE           MINUS_AMOUNT
+LANG_ENGLISH        "-%s"
+
+REFERENCE           PLUS_DOLLAR
+LANG_ENGLISH        "+$"
+
+REFERENCE           MINUS_DOLLAR
+LANG_ENGLISH        "-$"
+
+REFERENCE           DOLLAR
+LANG_ENGLISH        "$"
+
+REFERENCE           INTELLIGENCE_PICKUP
+LANG_ENGLISH        "Press and hold^3 &&1 ^7to secure the enemy intelligence."
+
+REFERENCE           INTELLIGENCE_FOUND
+LANG_ENGLISH        "You have found enemy intel."
+
+REFERENCE           INTELLIGENCE_OF_THIRTY
+LANG_ENGLISH        "&&1/30 pieces of enemy intel found."
+
+REFERENCE           INTELLIGENCE_OF_FOURTYFIVE
+LANG_ENGLISH        "&&1/45 pieces of enemy intel found."
+
+REFERENCE           INTELLIGENCE_OF_SIXTY
+LANG_ENGLISH        "&&1/60 pieces of enemy intel found."
+
+REFERENCE           INTELLIGENCE_PTS
+LANG_ENGLISH        "You have found &&1 enemy intel pts."
+
+REFERENCE           INTELLIGENCE_REMAINING
+LANG_ENGLISH        "&&1 pieces of enemy intel remain."
+
+REFERENCE           INTELLIGENCE_ONEREMAINING
+LANG_ENGLISH        "&&1 piece of enemy intel remains."
+
+REFERENCE           DEBUG_LEVEL_END
+LANG_ENGLISH        "End of current level."
+
+REFERENCE           C4_USE
+LANG_ENGLISH        "Press^3 [{+actionslot 2}] ^7to use C4."
+
+REFERENCE           NIGHTVISION_USE
+LANG_ENGLISH        "Press^3 [{+actionslot 1}] ^7to use Night Vision Goggles."
+
+REFERENCE           NIGHTVISION_STOP_USE
+LANG_ENGLISH        "Press^3 [{+actionslot 1}] ^7to disable Night Vision Goggles."
+
+REFERENCE           LEARN_GRENADE_LAUNCHER
+LANG_ENGLISH        "Press^3 [{+actionslot 3}] ^7to use\nthe M203 Grenade Launcher."
+
+REFERENCE           LEARN_CHOPPER_AIR_SUPPORT1
+LANG_ENGLISH        "Close Air Support standing by!"
+
+REFERENCE           LEARN_CHOPPER_AIR_SUPPORT1_PC
+LANG_ENGLISH        "Close Air Support standing by! Press ^3[{+actionslot 4}]."
+
+REFERENCE           ARMOR_DAMAGE
+LANG_ENGLISH        "Armor can only be damaged\nby C4 and rockets."
+
+REFERENCE           MANTLE
+LANG_ENGLISH        "Press ^3[{+gostand}]^7 to "
+
+REFERENCE           LEARN_M14_SWITCH
+LANG_ENGLISH        "Press ^3[{weapnext}]^7 to switch to your M21 Sniper Rifle"
+
+REFERENCE           LEARN_CLAYMORES
+LANG_ENGLISH        "Press ^3[{+actionslot 4}]^7 to use claymores."
+
+REFERENCE           HOLD_TO_USE
+LANG_ENGLISH        "Press and hold^3 &&1 ^7to use"
+
+REFERENCE           RADIATION_DEATH
+LANG_ENGLISH        "Avoid the radiation zones.\nListen for the clicks of the Geiger counter."
+
+REFERENCE           LEARN_CLAYMORE_PLACEMENT
+LANG_ENGLISH        "Pull^3 [{+attack}] ^7to plant claymores."
+
+REFERENCE           COLON
+LANG_ENGLISH        ":"
+
+REFERENCE           TOTAL_SCORE
+LANG_ENGLISH        "TOTAL SCORE:"
+
+REFERENCE           MISSION_SCORE
+LANG_ENGLISH        "MISSION SCORE:"
+
+REFERENCE           TIME_REMAINING
+LANG_ENGLISH        "TIME REMAINING:"
+
+REFERENCE           EXTRA_LIFE
+LANG_ENGLISH        "EXTRA LIFE X "
+
+REFERENCE           CHECKPOINT
+LANG_ENGLISH        "CHECKPOINT!"
+
+REFERENCE           ZERO_DEATHS
+LANG_ENGLISH        "ZERO DEATHS BONUS x2"
+
+REFERENCE           DIFFICULTY_BONUS_ONEANDAHALF
+LANG_ENGLISH        "DIFFICULTY BONUS x1.5"
+
+REFERENCE           DIFFICULTY_BONUS_THREE
+LANG_ENGLISH        "DIFFICULTY BONUS x3"
+
+REFERENCE           DIFFICULTY_BONUS_FOUR
+LANG_ENGLISH        "DIFFICULTY BONUS x4"
+
+REFERENCE           TIME_UP
+LANG_ENGLISH        "TIME UP"
+
+REFERENCE           GAME_OVER
+LANG_ENGLISH        "GAME OVER"
+
+REFERENCE           MISSION_COMPLETE
+LANG_ENGLISH        "MISSION COMPLETE"
+
+REFERENCE           NEW_HIGH_SCORE
+LANG_ENGLISH        "NEW HIGH SCORE!"
+
+REFERENCE           HINT_THROW_C4
+LANG_ENGLISH        "Press ^3[{+throw}]^7 to throw C4."
+
+REFERENCE           HINT_THROW_C4_TOGGLE
+LANG_ENGLISH        "Press ^3[{+toggleads_throw}]^7 to throw C4."
+
+REFERENCE           HINT_THROW_C4_SPEED_TRIGGER
+LANG_ENGLISH        "Pull ^3[{+speed_throw}]^7 to throw C4."
+
+REFERENCE           HINT_THROW_C4_SPEED
+LANG_ENGLISH        "Press ^3[{+speed_throw}]^7 to throw C4."
+
+REFERENCE           X
+LANG_ENGLISH        "x"
+
+REFERENCE           STREAK_BONUS_LOST
+LANG_ENGLISH        "STREAK BONUS LOST"
+
+REFERENCE           STREAK_COMPLETE
+LANG_ENGLISH        "-STREAK COMPLETE-"
+
+REFERENCE           1UP
+LANG_ENGLISH        "1UP"
+
+
+ENDMARKER
+
+

@@ -1,0 +1,49 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 16 0 ) ( -24 16 0 ) ( -24 -16 0 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 -16 22 ) ( -22 16 22 ) ( 10 16 22 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -16 32 ) ( 8 -16 32 ) ( 8 -16 0 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -16 32 ) ( 8 16 32 ) ( 8 16 0 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 16 32 ) ( -24 16 32 ) ( -24 16 0 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 16 32 ) ( -20 -16 32 ) ( -20 -16 0 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 8 16 22 ) ( -24 16 22 ) ( -24 -16 22 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -16 38 ) ( -24 16 38 ) ( 8 16 38 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -16 54 ) ( 8 -16 54 ) ( 8 -16 22 ) clip_snow 64 64 0 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -16 54 ) ( 8 16 54 ) ( 8 16 22 ) clip_snow 64 64 0 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -10 56 ) ( -24 -10 56 ) ( -24 -10 24 ) clip_snow 64 64 0 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 16 54 ) ( -20 -16 54 ) ( -20 -16 22 ) clip_snow 64 64 0 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 8 42 22 ) ( -24 42 22 ) ( -24 10 22 ) clip_snow 64 64 0 -26 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 10 38 ) ( -24 42 38 ) ( 8 42 38 ) clip_snow 64 64 0 -26 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 10 54 ) ( 8 10 54 ) ( 8 10 22 ) clip_snow 64 64 0 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 10 54 ) ( 8 42 54 ) ( 8 42 22 ) clip_snow 64 64 26 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 16 56 ) ( -24 16 56 ) ( -24 16 24 ) clip_snow 64 64 0 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 42 54 ) ( -20 10 54 ) ( -20 10 22 ) clip_snow 64 64 26 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( -8 24 22 ) ( -40 24 22 ) ( -40 -8 22 ) clip_snow 64 64 -16 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -8 38 ) ( -40 24 38 ) ( -8 24 38 ) clip_snow 64 64 -16 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -10 54 ) ( -8 -10 54 ) ( -8 -10 22 ) clip_snow 64 64 -16 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 54 ) ( -8 24 54 ) ( -8 24 22 ) clip_snow 64 64 8 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 10 56 ) ( -38 10 56 ) ( -38 10 24 ) clip_snow 64 64 -16 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 24 54 ) ( -20 -8 54 ) ( -20 -8 22 ) clip_snow 64 64 8 -22 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 0 0"
+"model" "com_office_chair"
+"classname" "misc_model"
+}

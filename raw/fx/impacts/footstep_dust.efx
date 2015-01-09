@@ -1,0 +1,190 @@
+iwfx 2
+
+{
+	name "splash";
+	editorFlags useRandAlpha useRandSize0 useRandRotDelta useRandVel0 useBackCompatVel absVel0;
+	flags spawnRelative spawnFrustumCull spawnOffsetNone runRelToWorld;
+	spawnRange 0 1000;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 10;
+	spawnLooping 50 3;
+	spawnOneShot 1 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 800 0;
+	spawnOrgX 0 0;
+	spawnOrgY -2.5 5;
+	spawnOrgZ -2.5 5;
+	spawnOffsetRadius 1 0;
+	spawnOffsetHeight 1 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 100 80;
+	gravity 0.625 0.625;
+	elasticity 1 0;
+	atlasBehavior startFixed;
+	atlasIndex 0;
+	atlasFps 24;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 80
+	{
+		{
+			0 0.08824
+			1 0.08333
+		}
+		{
+			0 -0.06863
+			1 -0.07843
+		}
+	};
+	velGraph0Y 50
+	{
+		{
+			0 0.07407
+			1 0.07407
+		}
+		{
+			0 -0.07407
+			1 -0.07407
+		}
+	};
+	velGraph0Z 0
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0.1716
+			1 0.1667
+		}
+	};
+	velGraph1X 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 20
+	{
+		{
+			0 -0.5
+			0.2989 -0.3
+			0.7126 -0.1682
+			1 -0.1221
+		}
+		{
+			0 0.5
+			0.25 0.2955
+			0.6983 0.15
+			1 0.06206
+		}
+	};
+	sizeGraph0 60
+	{
+		{
+			0 0.1709
+			1 0.75
+		}
+		{
+			0 0.1519
+			1 0.5
+		}
+	};
+	sizeGraph1 160
+	{
+		{
+			0 0.25
+			1 0.75
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 1.333
+	{
+		{
+			0 0.75
+			1 0.75
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.9059 0.8745 0.7804
+			1 0.9059 0.8745 0.7804
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.0145349 0.703349
+			1 0
+		}
+		{
+			0 0
+			0.0203488 0.54067
+			1 0
+		}
+	};
+	lightingFrac 0.5;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 5;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_smk_white_atlas_z3"
+	};
+}

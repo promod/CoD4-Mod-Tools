@@ -1,0 +1,223 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			160
+
+#define CHOICE_GROUP			"main"
+#define CHOICE_SEP_1			3
+
+#define STYLE_PC	1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+#include "ui_mp/stats_info.inc"
+
+// ============= init dvars ==============
+
+#define INDEX_TIME_PLAYED_OTHER 2313
+#define STATTODVAR_TIME_PLAYED_OTHER execNow "statGetInDvar 2313 ui_stat_time_played_other"
+#define INDEX_TIME_PLAYED_OPFOR 2312
+#define STATTODVAR_TIME_PLAYED_OPFOR execNow "statGetInDvar 2312 ui_stat_time_played_opfor"
+#define INDEX_TIME_PLAYED_ALLIES 2311
+#define STATTODVAR_TIME_PLAYED_ALLIES execNow "statGetInDvar 2311 ui_stat_time_played_allies"
+#define INDEX_SUICIDES 2310
+#define STATTODVAR_SUICIDES execNow "statGetInDvar 2310 ui_stat_suicides"
+#define INDEX_TEAMKILLS 2309
+#define STATTODVAR_TEAMKILLS execNow "statGetInDvar 2309 ui_stat_teamkills"
+#define INDEX_HEADSHOTS 2308
+#define STATTODVAR_HEADSHOTS execNow "statGetInDvar 2308 ui_stat_headshots"
+#define INDEX_ASSISTS 2307
+#define STATTODVAR_ASSISTS execNow "statGetInDvar 2307 ui_stat_assists"
+#define INDEX_DEATH_STREAK 2306
+#define STATTODVAR_DEATH_STREAK execNow "statGetInDvar 2306 ui_stat_death_streak"
+#define INDEX_DEATHS 2305
+#define STATTODVAR_DEATHS execNow "statGetInDvar 2305 ui_stat_deaths"
+#define INDEX_KILL_STREAK 2304
+#define STATTODVAR_KILL_STREAK execNow "statGetInDvar 2304 ui_stat_kill_streak"
+#define INDEX_KILLS 2303
+#define STATTODVAR_KILLS execNow "statGetInDvar 2303 ui_stat_kills"
+#define INDEX_SCORE 2302
+#define STATTODVAR_SCORE execNow "statGetInDvar 2302 ui_stat_score"
+#define INDEX_RANKXP 2301
+#define STATTODVAR_RANKXP execNow "statGetInDvar 2301 ui_stat_rankxp"
+
+#define STAT_UPDATE \
+	STATTODVAR_TIME_PLAYED_OTHER; \
+	STATTODVAR_TIME_PLAYED_OPFOR; \
+	STATTODVAR_TIME_PLAYED_ALLIES; \
+	STATTODVAR_TEAMKILLS; \
+	STATTODVAR_HEADSHOTS; \
+	STATTODVAR_ASSISTS; \
+	STATTODVAR_DEATH_STREAK; \
+	STATTODVAR_DEATHS; \
+	STATTODVAR_KILL_STREAK; \
+	STATTODVAR_KILLS; \
+	STATTODVAR_SCORE; \
+	STATTODVAR_RANKXP;
+
+#define ORIGIN_STATUS			390 20
+#define MENU_FONT_COLOR2		1 1 1 0.75
+
+{
+	menuDef
+	{
+		name			"endofgame"
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		7.0
+				
+		onOpen
+		{ 
+			STAT_UPDATE
+		}
+		onClose
+		{
+			setdvar ui_showEndOfGame "0";
+		}
+		onESC 
+		{
+			close self;
+		}
+		
+		// background overlay
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.75 //0 0.05 0.15 0.5
+			visible			1
+			decoration
+		}
+
+		// gradient_top
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+
+		// gradient_bottom
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 405 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+		
+		// ------------------ TREE TITLE ------------------
+		
+		CHOICE_MENU_TITLE( "@EXE_ENDOFGAME" )	
+		
+		// ------------------------ lobby status ----------------------------
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			rect			ORIGIN_STATUS 0 0
+			origin			0 0
+			forecolor		MENU_FONT_COLOR2
+			text			"@MENU_UNTIL_MATCH_BEGIN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			visible 		when ( dvarBool( ui_showEndOfGame ) );
+			decoration
+		}
+		itemDef
+		{
+			name			intermission_timer_countdown
+			type			ITEM_TYPE_TEXT
+			visible			1
+			rect			ORIGIN_STATUS 0 0
+			origin			-40 0
+			forecolor		MENU_FONT_COLOR2
+			exp				text( secondsAsCountdown( timeLeft() ) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			visible 		when ( dvarBool( ui_showEndOfGame ) );
+			decoration
+		}	
+		
+		// ------------------ buttons ---------------------
+		#define BACK_OPEN	;
+		#include "ui_mp/navcontrols.inc"
+		
+						
+		#define SETUP_ACTION_CREATEACLASS \				
+				execnow "statset 260 1"; \
+				play "mouse_click"; \
+				open pc_cac_popup_ingame;
+				
+		#define CLEARUIHINT	exec "set ui_hint_text @MP_NULL"
+				
+		CHOICE_BUTTON_VIS( 1, "@MENU_SCOREBOARD", close self;, when( !localvarBool( ui_hideBack ) ) )
+	
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 2, "@MPUI_CREATE_A_CLASS", SETUP_ACTION_CREATEACLASS, exec "set ui_hint_text @MPUI_DESC_CREATE_A_CLASS", CLEARUIHINT, when( !localvarBool( ui_hideBack ) && stat( 260 ) >= 1 ), !localvarBool( ui_hideBack ) && stat( 260 ) >= 1 )
+		CHOICE_BUTTON_FOCUS_VIS_NOHI( 2, "", ;, exec "set ui_hint_text @MPUI_DESC_CREATE_A_CLASS_LOCKED", CLEARUIHINT, when(!localvarBool( ui_hideBack ) && stat( 260 ) < 1 ) )
+		CHOICE_DBUTTON_VIS( 2, "@MPUI_CREATE_A_CLASS", when( !localvarBool( ui_hideBack ) && stat( 260 ) < 1 ) )
+		CHOICE_NEWICON_VIS( 2, "specialty_new", when( !localvarBool( ui_hideBack ) && ANY_NEW_CAC ) )
+		
+		CHOICE_BUTTON_VIS( 3, "@MPUI_CHALLENGES", open menu_challenges;, when( !localvarBool( ui_hideBack ) ) )
+	
+		CHOICE_SEPARATOR_VIS( CHOICE_SEP_1, when( !localvarBool( ui_hideBack ) ) )
+		
+		CHOICE_BUTTON_VIS( 4, "@MPUI_LEAVE_GAME", open popup_endgame, 1 )	
+		
+		// ====================== player stats =========================
+		#include "ui_mp/player_info.inc"
+	}
+	
+	#include "ui_mp/popupstyle.inc"	
+	#include "ui/choices_setup_popmenu.menu"
+	
+	// ====================== create a class (custom class selection) =========================
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X			212
+
+	#define CAC_POPUP_X		(0)
+	#define CAC_POPUP_Y		(172)
+
+	#undef NEW_X_OFFSET			
+	#define NEW_X_OFFSET	(0-CHOICE_SIZE_X)
+	#undef NEW_Y_OFFSET			
+	#define NEW_Y_OFFSET	(0-2)
+	
+	#include "ui_mp/cacpopup.inc"
+	CAC_POPUP( "pc_cac_popup_ingame", CAC_POPUP_X, CAC_POPUP_Y )
+	
+/*	menuDef
+	{
+		name			"press_esc_hint"	
+		rect			0 0 640 480
+
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 3 640 18 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_TOP
+			origin			0 4
+			background		"line_horizontal_scorebar"
+			forecolor		0 0 0 0.5
+			visible			1
+			decoration
+		}
+		
+		itemDef 
+		{
+			rect		0 22 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+			origin		0 4
+			exp text	"Press ESC for Create a Class and Challenges";
+			textfont	UI_FONT_NORMAL
+			textscale	TEXTSIZE_SMALL
+			textalign	ITEM_ALIGN_CENTER
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible 	1
+			decoration 
+		}		
+	}
+*/
+}

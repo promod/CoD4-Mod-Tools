@@ -1,0 +1,74 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 2 154 2 ) ( -6 154 2 ) ( -6 2 2 ) clip_nosight_metal 64 64 -456 908 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( -6 -6 98 ) ( -6 146 98 ) ( 2 146 98 ) clip_nosight_metal 64 64 -456 908 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( 2 6 28 ) ( 2 6 36 ) ( 2 158 36 ) clip_nosight_metal 64 64 -908 0 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( 0 158 28 ) ( 0 158 36 ) ( 0 6 36 ) clip_nosight_metal 64 64 -908 0 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( 20 -48 32 ) ( 20 -48 0 ) ( 6 -48 0 ) clip_nosight_metal 64 64 -456 0 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( 0 48 32 ) ( 0 48 0 ) ( 6 48 0 ) clip_nosight_metal 64 64 -456 0 0 0 lightmap_gray 4096 4096 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 0 80 80 ) ( -4 80 80 ) ( -4 -40 80 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -40 84 ) ( -4 80 84 ) ( 0 80 84 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 18 ) ( 0 -40 118 ) ( 0 80 118 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 80 18 ) ( -4 80 118 ) ( -4 -40 118 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 18 ) ( 0 44 118 ) ( -4 44 118 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -44 32 ) ( 2 -44 0 ) ( -6 -44 0 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 0 80 28 ) ( -4 80 28 ) ( -4 -40 28 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -40 32 ) ( -4 80 32 ) ( 0 80 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 -34 ) ( 0 -40 66 ) ( 0 80 66 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 80 -34 ) ( -4 80 66 ) ( -4 -40 66 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 -34 ) ( 0 44 66 ) ( -4 44 66 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -44 -20 ) ( 2 -44 -52 ) ( -6 -44 -52 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( -8 -44 -36 ) ( -8 -52 -36 ) ( 0 -52 -36 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -52 104 ) ( -8 -52 104 ) ( -8 -44 104 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -44 0 ) ( 0 -44 100 ) ( -8 -44 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -52 0 ) ( 0 -52 100 ) ( 0 -44 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -52 0 ) ( -8 -52 100 ) ( 0 -52 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -44 0 ) ( -8 -44 100 ) ( -8 -52 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( -8 52 -36 ) ( -8 44 -36 ) ( 0 44 -36 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 104 ) ( -8 44 104 ) ( -8 52 104 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 52 0 ) ( 0 52 100 ) ( -8 52 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 0 ) ( 0 44 100 ) ( 0 52 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 44 0 ) ( -8 44 100 ) ( 0 44 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 52 0 ) ( -8 52 100 ) ( -8 44 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -8 52 -36 ) ( -8 44 -36 ) ( 0 44 -36 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 104 ) ( -8 44 104 ) ( -8 52 104 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 52 0 ) ( 0 52 100 ) ( -8 52 100 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 0 ) ( 0 44 100 ) ( 0 52 100 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -52 0 ) ( 0 -52 100 ) ( 8 -52 100 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 52 0 ) ( -8 52 100 ) ( -8 44 100 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "1.0 0.0 50.0"
+"angles" "0 270 0"
+"model" "me_corrugated_metal8x8"
+"classname" "misc_model"
+}

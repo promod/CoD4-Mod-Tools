@@ -1,0 +1,188 @@
+iwfx 2
+
+{
+	name "smoke_loop";
+	editorFlags looping useRandColor useRandRotDelta useRandVel0 useBackCompatVel;
+	flags spawnRelative spawnOffsetNone runRelToEffect;
+	spawnRange 0 1200;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 200 0;
+	spawnOneShot 1 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 6000 0;
+	spawnOrgX 0 150;
+	spawnOrgY 50 -100;
+	spawnOrgZ 50 -100;
+	spawnOffsetRadius 1 0;
+	spawnOffsetHeight 1 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 0;
+	gravity 0 0;
+	elasticity 1 0;
+	atlasBehavior startRandom loopOnlyNTimes;
+	atlasIndex 0;
+	atlasFps 0;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 5
+	{
+		{
+			0 -0.5
+			1 -0.5
+		}
+		{
+			0 0.5
+			1 0.5
+		}
+	};
+	velGraph0Y 0
+	{
+		{
+			0 0.18
+			1 0.18
+		}
+		{
+			0 -0.18
+			1 -0.18
+		}
+	};
+	velGraph0Z 0
+	{
+		{
+			0 -0.18
+			1 -0.18
+		}
+		{
+			0 0.18
+			1 0.18
+		}
+	};
+	velGraph1X 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 20
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 -0.5
+			1 -0.5
+		}
+	};
+	sizeGraph0 100
+	{
+		{
+			0 0.727273
+			1 1
+		}
+		{
+			0 0.201299
+			0.0352941 0.38961
+			0.0941176 0.512987
+			0.152941 0.584416
+			1 0.844156
+		}
+	};
+	sizeGraph1 325.4
+	{
+		{
+			0 0.75
+			1 0.0123
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 162.7
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.333333 0.168627 0.168627
+			1 0.321244 0.139896 0.15544
+		}
+		{
+			0 0.321569 0.321569 0.321569
+			1 0.321569 0.321569 0.321569
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.502907 0.746412
+			1 0
+		}
+		{
+			0 0.6634
+			1 0
+		}
+	};
+	lightingFrac 0;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 1;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_dark_smoke_atlas_bg"
+	};
+}

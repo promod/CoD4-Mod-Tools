@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 17 -7 0 ) ( -12 19 0 ) ( -17 9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 19 40 ) ( 17 -7 40 ) ( 10 -16 40 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -16 40 ) ( 10 -16 0 ) ( -17 9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -16 0 ) ( 10 -16 40 ) ( 17 -8 40 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 -7 40 ) ( -12 19 40 ) ( -12 19 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 18 40 ) ( -17 9 40 ) ( -17 9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "11 11 0"
+"model" "com_constructionrailingcornerbendin"
+"classname" "misc_model"
+}

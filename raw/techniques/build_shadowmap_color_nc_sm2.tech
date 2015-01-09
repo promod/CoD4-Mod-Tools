@@ -1,0 +1,14 @@
+{
+	stateMap "build_shadowmap_color";
+
+	vertexShader 2.0 "shadowmap_build.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "shadowmap_build_sm2.hlsl"
+	{
+	}
+
+	vertex.position = code.position;
+
+}

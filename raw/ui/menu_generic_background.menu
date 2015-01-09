@@ -1,0 +1,115 @@
+#define TITLE_ORIGIN		48 64
+#define CHOICE_ORIGIN		80 100
+
+#define CHOICE_01_OFFSET	0 0
+#define CHOICE_02_OFFSET	0 24
+#define CHOICE_03_OFFSET	0 48
+#define CHOICE_04_OFFSET	0 72
+#define CHOICE_05_OFFSET	0 96
+#define CHOICE_06_OFFSET	0 120
+#define CHOICE_07_OFFSET	0 144
+#define CHOICE_08_OFFSET	0 168
+#define CHOICE_09_OFFSET	0 192
+#define CHOICE_10_OFFSET	0 216
+#define CHOICE_11_OFFSET	0 240
+#define CHOICE_12_OFFSET	0 264
+#define CHOICE_RECT		200 15
+
+#define CHOICE_SEL_01_OFFSET	350 0
+#define CHOICE_SEL_02_OFFSET	350 24
+#define CHOICE_SEL_03_OFFSET	350 48
+#define CHOICE_SEL_04_OFFSET	350 72
+#define CHOICE_SEL_05_OFFSET	350 96
+#define CHOICE_SEL_06_OFFSET	350 120
+#define CHOICE_SEL_07_OFFSET	350 144
+#define CHOICE_SEL_08_OFFSET	350 168
+#define CHOICE_SEL_09_OFFSET	350 192
+#define CHOICE_SEL_10_OFFSET	350 216
+#define CHOICE_SEL_11_OFFSET	350 240
+#define CHOICE_SEL_12_OFFSET	350 264
+
+/*
+	itemDef 
+	{
+		name main_back_top
+		style WINDOW_STYLE_SHADER
+		rect 0 0 640 320 4 4
+		background MENU_BACKGROUND_TOP
+		visible 0
+		decoration
+		dvartest "ui_generic_background_hide"
+		hidedvar { "1" }
+	}
+	itemDef 
+	{
+		name main_back_bottom
+		style WINDOW_STYLE_SHADER
+		rect 0 320 640 160 4 4
+		background MENU_BACKGROUND_BOTTOM
+		visible 0
+		decoration
+		dvartest "ui_generic_background_hide"
+		hidedvar { "1" }
+	}
+
+	// gradient
+	itemDef
+	{
+		style			WINDOW_STYLE_SHADER
+		rect			0 0 640 480 4 4
+		background		"gradient"
+		visible			1
+		dvartest "ui_hide_bg_gradient"
+		hidedvar { "1" }
+		decoration
+	}
+
+	itemDef 
+	{
+		name main_top_bar
+		style WINDOW_STYLE_SHADER
+		rect 0 0 640 64 4 4
+		background "black"
+		visible 1
+		decoration
+	}
+	itemDef 
+	{
+		name main_bottom_bar
+		style WINDOW_STYLE_SHADER
+		rect 0 416 640 64 4 4
+		background MENU_BACKGROUND_BOTTOM
+		visible 1
+		decoration
+	}
+
+	// lines
+	itemDef 
+	{
+		style			WINDOW_STYLE_FILLED
+		rect			0 64 640 1 4 4
+		backcolor		1 1 1 0.5
+		visible			1
+		decoration
+	}
+	itemDef 
+	{
+		style			WINDOW_STYLE_FILLED
+		rect			-128 416 896 1
+		backcolor		1 1 1 0.5
+		visible			1
+		decoration
+	}
+
+	itemDef
+	{
+		type			ITEM_TYPE_TEXT
+		origin			TITLE_ORIGIN
+		forecolor		1 1 1 1
+		text			MENU_LABEL_TEXT
+		textfont		UI_FONT_NORMAL
+		textscale		GLOBAL_HEADER_SIZE
+		visible			1
+		decoration
+	}
+*/

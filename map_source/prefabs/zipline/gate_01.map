@@ -1,0 +1,97 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 56 -48 216 ) ( 48 -48 216 ) ( 48 -152 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -152 312 ) ( 56 -48 312 ) ( 64 -48 312 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -56 576 ) ( 64 -56 576 ) ( 64 -56 200 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -152 568 ) ( 64 -48 568 ) ( 64 -48 192 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -54 568 ) ( 56 -54 568 ) ( 56 -54 192 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 -48 584 ) ( 48 -152 584 ) ( 48 -152 208 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 28672 28672 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 56 48 216 ) ( 48 48 216 ) ( 48 -56 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -56 312 ) ( 56 48 312 ) ( 64 48 312 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 46 576 ) ( 64 46 576 ) ( 64 46 200 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -56 568 ) ( 64 48 568 ) ( 64 48 192 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 48 568 ) ( 56 48 568 ) ( 56 48 192 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 48 584 ) ( 48 -56 584 ) ( 48 -56 208 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 28672 28672 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 58 30 220 ) ( 54 30 220 ) ( 54 26 220 ) me_metal_rust_02 64 64 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 26 308 ) ( 54 30 308 ) ( 58 30 308 ) me_metal_rust_02 64 64 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 27 312 ) ( 58 27 312 ) ( 58 27 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 26 312 ) ( 56 30 312 ) ( 56 30 216 ) me_metal_rust_02 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 58 29 312 ) ( 54 29 312 ) ( 54 29 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 30 312 ) ( 54 26 312 ) ( 54 26 216 ) me_metal_rust_02 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 58 14 220 ) ( 54 14 220 ) ( 54 10 220 ) me_metal_rust_02 64 64 0 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 10 308 ) ( 54 14 308 ) ( 58 14 308 ) me_metal_rust_02 64 64 0 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 11 312 ) ( 58 11 312 ) ( 58 11 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 9 312 ) ( 56 13 312 ) ( 56 13 216 ) me_metal_rust_02 64 64 -24 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 58 13 312 ) ( 54 13 312 ) ( 54 13 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 14 312 ) ( 54 10 312 ) ( 54 10 216 ) me_metal_rust_02 64 64 -24 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 58 -2 220 ) ( 54 -2 220 ) ( 54 -6 220 ) me_metal_rust_02 64 64 0 40 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -6 308 ) ( 54 -2 308 ) ( 58 -2 308 ) me_metal_rust_02 64 64 0 40 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -7 312 ) ( 58 -7 312 ) ( 58 -7 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -6 312 ) ( 56 -2 312 ) ( 56 -2 216 ) me_metal_rust_02 64 64 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 58 -1 312 ) ( 54 -1 312 ) ( 54 -1 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -2 312 ) ( 54 -6 312 ) ( 54 -6 216 ) me_metal_rust_02 64 64 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 58 -18 220 ) ( 54 -18 220 ) ( 54 -22 220 ) me_metal_rust_02 64 64 0 56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -22 308 ) ( 54 -18 308 ) ( 58 -18 308 ) me_metal_rust_02 64 64 0 56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -21 312 ) ( 58 -21 312 ) ( 58 -21 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -22 312 ) ( 56 -18 312 ) ( 56 -18 216 ) me_metal_rust_02 64 64 -56 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 58 -19 312 ) ( 54 -19 312 ) ( 54 -19 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -18 312 ) ( 54 -22 312 ) ( 54 -22 216 ) me_metal_rust_02 64 64 -56 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( 58 -34 220 ) ( 54 -34 220 ) ( 54 -38 220 ) me_metal_rust_02 64 64 0 72 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -38 308 ) ( 54 -34 308 ) ( 58 -34 308 ) me_metal_rust_02 64 64 0 72 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -37 312 ) ( 58 -37 312 ) ( 58 -37 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -38 312 ) ( 56 -34 312 ) ( 56 -34 216 ) me_metal_rust_02 64 64 -72 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 58 -35 312 ) ( 54 -35 312 ) ( 54 -35 216 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -34 312 ) ( 54 -38 312 ) ( 54 -38 216 ) me_metal_rust_02 64 64 -72 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( 52 44 302 ) ( 48 44 302 ) ( 48 -52 302 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 -52 304 ) ( 52 44 304 ) ( 56 44 304 ) me_metal_rust_02 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 -54 306 ) ( 56 -54 306 ) ( 56 -54 218 ) me_metal_rust_02 64 64 0 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 -52 306 ) ( 60 44 306 ) ( 60 44 218 ) me_metal_rust_02 64 64 0 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 46 306 ) ( 52 46 306 ) ( 52 46 218 ) me_metal_rust_02 64 64 0 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 44 306 ) ( 52 -52 306 ) ( 52 -52 218 ) me_metal_rust_02 64 64 0 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( 54 44 224 ) ( 50 44 224 ) ( 50 -52 224 ) me_metal_rust_02 64 64 2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -52 226 ) ( 54 44 226 ) ( 58 44 226 ) me_metal_rust_02 64 64 2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -54 228 ) ( 58 -54 228 ) ( 58 -54 140 ) me_metal_rust_02 64 64 2 80 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -52 228 ) ( 62 44 228 ) ( 62 44 140 ) me_metal_rust_02 64 64 0 80 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 58 46 228 ) ( 54 46 228 ) ( 54 46 140 ) me_metal_rust_02 64 64 2 80 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 44 228 ) ( 54 -52 228 ) ( 54 -52 140 ) me_metal_rust_02 64 64 0 80 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

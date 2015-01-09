@@ -1,0 +1,24 @@
+{
+		stateMap "zfeather_add";
+
+	vertexShader 2.0 "zfeather_dfa_eo_dtex.hlsl"
+	{
+		featherParms = material.featherParms;
+		falloffParms = material.falloffParms;
+		falloffBeginColor = material.falloffBeginColor;
+		falloffEndColor = material.falloffEndColor;
+		eyeOffsetParms = material.eyeOffsetParms;
+	}
+
+	pixelShader 2.0 "zfeather_add.hlsl"
+	{
+		fogColor = float4( 0, 0, 0, 0 );
+		colorMapSampler = material.colorMap;
+		featherParms = material.featherParms;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

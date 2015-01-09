@@ -1,0 +1,17 @@
+{
+	stateMap "build_shadowmap_depth";
+
+	vertexShader 2.0 "vertcol_simple_atest_scroll.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "vertcol_simple_atest.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

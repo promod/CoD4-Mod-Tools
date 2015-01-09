@@ -1,0 +1,26 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 14 15 0 ) ( -14 15 0 ) ( -14 -14 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -14 2 ) ( -14 15 2 ) ( 14 15 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -14 5 ) ( 14 -14 5 ) ( 14 -14 -3 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -14 5 ) ( 14 15 5 ) ( 14 15 -3 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 14 5 ) ( -14 14 5 ) ( -14 14 -3 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 15 5 ) ( -14 -14 5 ) ( -14 -14 -3 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 14 0 ) ( 14 6 0 ) ( 7 14 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -6 0 ) ( 6 -14 0 ) ( 14 -6 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -14 0 ) ( -14 -5 0 ) ( -14 -5 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 6 0 ) ( -6 14 0 ) ( -6 14 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 0 0"
+"model" "xmodel/ma_trashcan_metallid"
+"classname" "misc_model"
+}

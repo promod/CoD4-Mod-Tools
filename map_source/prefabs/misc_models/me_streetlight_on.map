@@ -1,0 +1,20 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "me_streetlight_on"
+"classname" "misc_model"
+}
+// entity 2
+{
+"origin" "-56.0 0.0 524.0"
+"targetname" "me_streetlight_01_FX_origin"
+"angles" "75 180 -180"
+"classname" "script_struct"
+}

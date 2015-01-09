@@ -1,0 +1,387 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -16 72 -8 t -128 64 -1 0.5
+	v -16 72 -16 t -128 128 -1 2.25
+   )
+   (
+	v 0 72 -8 t 0 64 0 0.5
+	v 0 72 -16 t 0 128 0 2.25
+   )
+  }
+ }
+// brush 1
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -16 72 -8 t -128 64 -1 0.5
+	v -16 72 -16 t -128 128 -1 2.25
+   )
+   (
+	v 0 72 -8 t 0 64 0 0.5
+	v 0 72 -16 t 0 128 0 2.25
+   )
+  }
+ }
+// brush 2
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -16 72 -8 t -128 64 -1 0.5
+	v 0 72 -8 t 0 64 0 0.5
+   )
+   (
+	v -16 72 0 t -128 0 -1 0
+	v 0 72 0 t 0 0 0 0
+   )
+  }
+ }
+// brush 3
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -16 72 -8 t -128 64 -1 0.5
+	v 0 72 -8 t 0 64 0 0.5
+   )
+   (
+	v -16 72 0 t -128 0 -1 0
+	v 0 72 0 t 0 0 0 0
+   )
+  }
+ }
+// brush 4
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   3 2 0 8
+   (
+	v -16 72 -8 t 576 64 15 0.5
+	v -16 72 0 t 576 0 15 0
+   )
+   (
+	v -16 0 -8 c 255 255 255 0 t 0 64 12.5 0.5
+	v -16 0 -2 c 255 255 255 0 t 0 16 12.5 0
+   )
+   (
+	v -16 -72 -8 t -576 64 10 0.5
+	v -16 -72 0 t -576 0 10 0
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   3 2 0 8
+   (
+	v -16 72 -8 t 576 64 15 0.5
+	v -16 72 0 t 576 0 15 0
+   )
+   (
+	v -16 0 -8 t 0 64 12.5 0.5
+	v -16 0 -2 t 0 16 12.5 0
+   )
+   (
+	v -16 -72 -8 t -576 64 10 0.5
+	v -16 -72 0 t -576 0 10 0
+   )
+  }
+ }
+// brush 6
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 3 0 8
+   (
+	v -32 -72 -10 t -256 576 -2 -10
+	v -32 0 -10 c 255 255 255 0 t -256 0 -2 -12.5
+	v -32 72 -8 t -256 -576 -2 -15
+   )
+   (
+	v -16 -72 -8 t -128 576 -1 -10
+	v -16 0 -8 c 255 255 255 0 t -128 0 -1 -12.5
+	v -16 72 -8 t -128 -576 -1 -15
+   )
+  }
+ }
+// brush 7
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 3 0 8
+   (
+	v -32 -72 -10 t -256 576 -2 -10
+	v -32 0 -10 t -256 0 -2 -12.5
+	v -32 72 -8 t -256 -576 -2 -15
+   )
+   (
+	v -16 -72 -8 t -128 576 -1 -10
+	v -16 0 -8 t -128 0 -1 -12.5
+	v -16 72 -8 t -128 -576 -1 -15
+   )
+  }
+ }
+// brush 8
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 3 0 8
+   (
+	v -32 72 -8 t 576 64 15 0.5
+	v -32 0 -10 c 255 255 255 0 t 0 80 12.5 0.5
+	v -32 -72 -10 t -576 80 10 0.5
+   )
+   (
+	v -32 72 -16 t 576 128 15 1
+	v -32 0 -16 c 255 255 255 0 t 0 128 12.5 1
+	v -32 -72 -16 t -576 128 10 1
+   )
+  }
+ }
+// brush 9
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -32 72 -8 t -256 64 -2 0.5
+	v -32 72 -16 t -256 128 -2 1
+   )
+   (
+	v -16 72 -8 t -128 64 -1 0.5
+	v -16 72 -16 t -128 128 -1 1
+   )
+  }
+ }
+// brush 10
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 3 0 8
+   (
+	v -32 72 -8 t 576 64 15 0.5
+	v -32 0 -10 t 0 80 12.5 0.5
+	v -32 -72 -10 t -576 80 10 0.5
+   )
+   (
+	v -32 72 -16 t 576 128 15 1
+	v -32 0 -16 t 0 128 12.5 1
+	v -32 -72 -16 t -576 128 10 1
+   )
+  }
+ }
+// brush 11
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -32 72 -8 t -256 64 -2 0.5
+	v -32 72 -16 t -256 128 -2 1
+   )
+   (
+	v -16 72 -8 t -128 64 -1 0.5
+	v -16 72 -16 t -128 128 -1 1
+   )
+  }
+ }
+// brush 12
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 3 0 8
+   (
+	v -16 -72 0 t -128 576 -1 -10
+	v -16 0 -2 c 255 255 255 0 t -128 0 -1 -12.5
+	v -16 72 0 t -128 -576 -1 -15
+   )
+   (
+	v 0 -72 0 t 0 576 0 -10
+	v 0 0 0 c 255 255 255 0 t 0 0 0 -12.5
+	v 0 72 0 t 0 -576 0 -15
+   )
+  }
+ }
+// brush 13
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 3 0 8
+   (
+	v -16 -72 0 t -128 576 -1 -10
+	v -16 0 -2 t -128 0 -1 -12.5
+	v -16 72 0 t -128 -576 -1 -15
+   )
+   (
+	v 0 -72 0 t 0 576 0 -10
+	v 0 0 0 t 0 0 0 -12.5
+	v 0 72 0 t 0 -576 0 -15
+   )
+  }
+ }
+// brush 14
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -32 -72 -16 t -256 128 -2 1
+	v -32 -72 -10 t -256 80 -2 0.5
+   )
+   (
+	v -16 -72 -16 t -128 128 -1 1
+	v -16 -72 -8 t -128 64 -1 0.5
+   )
+  }
+ }
+// brush 15
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -32 -72 -16 t -256 128 -2 1
+	v -32 -72 -10 t -256 80 -2 0.5
+   )
+   (
+	v -16 -72 -16 t -128 128 -1 1
+	v -16 -72 -8 t -128 64 -1 0.5
+   )
+  }
+ }
+// brush 16
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 0 -72 -8 t 0 64 0 0.5
+	v -16 -72 -8 t -128 64 -1 0.5
+   )
+   (
+	v 0 -72 0 t 0 0 0 0
+	v -16 -72 0 t -128 0 -1 0
+   )
+  }
+ }
+// brush 17
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 0 -72 -8 t 0 64 0 0.5
+	v -16 -72 -8 t -128 64 -1 0.5
+   )
+   (
+	v 0 -72 0 t 0 0 0 0
+	v -16 -72 0 t -128 0 -1 0
+   )
+  }
+ }
+// brush 18
+ {
+  mesh
+  {
+   ch_concrete_05
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -16 -72 -16 t -128 128 -1 2.25
+	v -16 -72 -8 t -128 64 -1 0.5
+   )
+   (
+	v 0 -72 -16 t 0 128 0 2.25
+	v 0 -72 -8 t 0 64 0 0.5
+   )
+  }
+ }
+// brush 19
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -16 -72 -16 t -128 128 -1 2.25
+	v -16 -72 -8 t -128 64 -1 0.5
+   )
+   (
+	v 0 -72 -16 t 0 128 0 2.25
+	v 0 -72 -8 t 0 64 0 0.5
+   )
+  }
+ }
+}

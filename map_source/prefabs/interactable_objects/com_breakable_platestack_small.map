@@ -1,0 +1,17 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"physPreset" "picture_frame"
+"origin" "0.0 0.0 2.0"
+"destroyEfx" "props\\plate_shatter_stack.efx"
+"health" "1"
+"type" "destruct"
+"model" "com_breakable_platestack_small"
+"classname" "dyn_model"
+}

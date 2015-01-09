@@ -1,0 +1,86 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 7 35 0 ) ( -20 35 0 ) ( -20 15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 15 21 ) ( -21 35 21 ) ( 6 35 21 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 15 36 ) ( 7 15 36 ) ( 7 15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 15 36 ) ( 7 35 36 ) ( 7 35 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 35 36 ) ( -20 35 36 ) ( -20 35 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 35 36 ) ( -20 15 36 ) ( -20 15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 20 21 ) ( 38 35 6 ) ( 70 20 21 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 22 19 0 ) ( -22 19 0 ) ( -35 4 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -27 0 ) ( -21 -27 16 ) ( 22 -27 16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 -34 16 ) ( 38 30 16 ) ( 38 30 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 19 16 ) ( -22 19 0 ) ( 22 19 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -35 4 0 ) ( -35 4 16 ) ( -35 -13 16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 19 0 ) ( -22 19 36 ) ( -35 4 36 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -35 -13 0 ) ( -35 -13 16 ) ( -21 -27 16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 -12 16 ) ( 22 -27 16 ) ( 22 -27 48 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 19 36 ) ( 22 19 0 ) ( 38 5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 35 13 ) ( 6 35 36 ) ( 6 67 36 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 35 19 16 ) ( -35 19 16 ) ( -35 51 16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -22 19 36 ) ( 22 19 36 ) ( 38 5 36 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -27 0 ) ( -21 -27 16 ) ( 22 -27 16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 19 16 ) ( -22 19 0 ) ( 22 19 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -35 -13 0 ) ( -35 -13 16 ) ( -21 -27 16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 -12 16 ) ( 22 -27 16 ) ( 22 -27 48 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 19 36 ) ( 22 19 0 ) ( 38 5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 35 13 ) ( 6 35 36 ) ( 6 67 36 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -35 19 16 ) ( 35 19 16 ) ( -35 51 16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 19 36 ) ( -22 19 16 ) ( -22 51 16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 38 38 0 ) ( -41 38 0 ) ( -41 -27 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -47 -27 128 ) ( -47 38 128 ) ( 32 38 128 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -27 36 ) ( 39 -27 36 ) ( 39 -27 16 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 -27 36 ) ( 38 38 36 ) ( 38 38 16 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 35 36 ) ( -39 35 36 ) ( -39 35 16 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -35 38 36 ) ( -35 -27 36 ) ( -35 -27 16 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"angles" "270 0 0"
+"origin" "-1.0 0.0 23.0"
+"targetname" "com_tires_burning01_FX_origin"
+"classname" "script_struct"
+}
+// entity 2
+{
+"origin" "-6.0 25.0 10.0"
+"angles" "0 0 -136"
+"model" "com_junktire2"
+"classname" "misc_model"
+}
+// entity 3
+{
+"origin" "-12.0 -4.0 8.0"
+"model" "bc_military_tire04_big"
+"classname" "misc_model"
+}
+// entity 4
+{
+"origin" "-12.0 -4.0 22.0"
+"angles" "308.4 0 -90"
+"model" "com_junktire"
+"classname" "misc_model"
+}
+// entity 5
+{
+"angles" "36 5.54103e-007 0.000207805"
+"origin" "16.5 -4.0 18.0"
+"model" "bc_military_tire04_big"
+"classname" "misc_model"
+}

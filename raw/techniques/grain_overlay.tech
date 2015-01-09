@@ -1,0 +1,17 @@
+{
+	stateMap "default2d";
+
+	vertexShader 2.0 "grain_overlay.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "grain_overlay.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

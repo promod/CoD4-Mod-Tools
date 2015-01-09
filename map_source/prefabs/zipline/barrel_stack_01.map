@@ -1,0 +1,62 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"contrastGain" "0.15"
+"diffusefraction" "0.45"
+"_color" "0.90 0.90 1"
+"sunlight" "1"
+"sundirection" "-35 200 0"
+"sundiffusecolor" "1 1 1"
+"suncolor" "1 1 1"
+"ambient" ".10"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 30 -1 0 ) ( -34 -1 0 ) ( -34 -30 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -33 -30 53 ) ( -33 -1 53 ) ( 31 -1 53 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -34 -32 55 ) ( 30 -32 55 ) ( 30 -32 -7 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 -30 55 ) ( 30 -1 55 ) ( 30 -1 -7 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 32 54 ) ( -34 32 54 ) ( -34 32 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30 -1 55 ) ( -30 -30 55 ) ( -30 -30 -7 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"modelscale" "0.712067"
+"classname" "misc_prefab"
+"model" "prefabs/misc_models/com_pallet.map"
+"origin" "0.0 0.0 0.0"
+}
+// entity 2
+{
+"angles" "0 270 0"
+"modelscale" "1.079669"
+"origin" "14.6 14.9 8.7"
+"model" "prefabs/misc_models/com_barrel_blue_rust.map"
+"classname" "misc_prefab"
+}
+// entity 3
+{
+"angles" "0 180 0"
+"modelscale" "1.079669"
+"origin" "-15.1 14.4 8.7"
+"model" "prefabs/misc_models/com_barrel_blue_rust.map"
+"classname" "misc_prefab"
+}
+// entity 4
+{
+"modelscale" "1.079669"
+"origin" "14.1 -14.4 8.7"
+"model" "prefabs/misc_models/com_barrel_blue_rust.map"
+"classname" "misc_prefab"
+}
+// entity 5
+{
+"angles" "0 90 0"
+"modelscale" "1.079669"
+"origin" "-15.6 -15.9 8.7"
+"model" "prefabs/misc_models/com_barrel_blue_rust.map"
+"classname" "misc_prefab"
+}

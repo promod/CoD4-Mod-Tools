@@ -1,0 +1,237 @@
+#name "aitype"
+#dll "all" "aitype"
+#target_dir "aitype/"
+#file_ext "*.gsc"
+#version 16
+
+string radiantModel
+string animTree
+
+enum {"axis", "allies", "neutral"} team // made this first so that it gets set first in script (may not be necessary)
+enum {"human", "dog" } type
+float 0.2 0.01 1.0 accuracy  // 0.01 -> 1.0f  percent accuracy of AI within effective range of weapon
+int 100 1 10000 health
+keyenum("projectileweapon.gdf", "grenadeweapon.gdf", "bulletweapon.gdf") weapon
+keyenum("projectileweapon.gdf", "grenadeweapon.gdf", "bulletweapon.gdf") secondaryweapon
+keyenum("bulletweapon.gdf") sidearm
+keyenum("grenadeweapon.gdf") grenadeWeapon
+int 0 0 5 grenadeAmmo
+string comments
+float 256 0 4096 engageMinDist
+float 0 0 4096 engageMinFalloffDist
+float 768 0 4096 engageMaxDist
+float 1024 0 4096 engageMaxFalloffDist
+
+keyenum("character.gdf") character1
+keyenum("character.gdf") character2
+keyenum("character.gdf") character3
+keyenum("character.gdf") character4
+keyenum("character.gdf") character5
+keyenum("character.gdf") character6
+keyenum("character.gdf") character7
+keyenum("character.gdf") character8
+
+vcontainer
+{
+	fileedit(radiantModel)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+		}		
+	]
+	
+	fileedit(animTree)
+	[
+		exec
+		{
+			reldir("raw/animtrees/")
+		}		
+	]
+
+	hcontainer
+	{
+		floatedit(accuracy, 0.01, 0.1)
+		spinedit(health, 1, 10)
+	}
+
+    hcontainer 
+	{
+		scrollbox(weapon)
+		[
+			exec
+			{
+				width(384)
+			}
+		]
+				
+		scrollbox(secondaryweapon)
+		[
+			exec
+			{
+				width(384)
+			}
+		]
+
+		scrollbox(sidearm)
+		[
+			exec
+			{
+				width(384)
+			}
+		]
+	}
+	
+   hcontainer 
+	{
+		scrollbox(sidearm)
+		[
+			exec
+			{
+				width(384)
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		scrollbox(grenadeWeapon)
+		[
+			exec
+			{
+				width(384)
+			}
+		]
+		spinedit(grenadeAmmo, 1, 1)
+	}
+
+	hcontainer
+	{
+		scrollbox(team)
+	}
+	
+	hcontainer
+	{
+		scrollbox(type)
+	}
+		
+	vcontainer
+	{
+		hcontainer
+		{
+			floatedit(engageMinDist, 0.01, 0.1)
+			[
+				exec
+				{
+					label("Min Dist")
+				}
+			]
+			
+			floatedit(engageMinFalloffDist, 0.01, 0.1)
+			[
+				exec
+				{
+					label("Min Falloff Dist")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(engageMaxDist, 0.01, 0.1)
+			[
+				exec
+				{
+					label("Max Dist")
+				}
+			]
+					
+			floatedit(engageMaxFalloffDist, 0.01, 0.1)
+			[
+				exec
+				{
+					label("Max Falloff Dist")
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Engagement Distances")
+		}
+	]
+	
+	multiedit(comments)
+	[
+		exec
+		{
+			width(712)
+			height(64)
+		}
+	]
+
+	simplelistbox(character1)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character2)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character3)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character4)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character5)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character6)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character7)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+
+	simplelistbox(character8)
+	[
+		exec
+		{
+			width(560)
+		}
+	]
+}

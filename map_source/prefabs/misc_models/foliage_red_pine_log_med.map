@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 96 16 -3 ) ( -96 16 -3 ) ( -96 -24 -3 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 8 0 0
+ ( -96 -24 18 ) ( -96 16 18 ) ( 96 16 18 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 8 0 0
+ ( -96 -11 33 ) ( 96 -11 33 ) ( 96 -11 -7 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -16 0 0
+ ( 96 -24 32 ) ( 96 16 32 ) ( 96 16 -8 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 -16 0 0
+ ( 96 10 30 ) ( -96 10 30 ) ( -96 10 -10 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -16 0 0
+ ( -96 16 32 ) ( -96 -24 32 ) ( -96 -24 -8 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 -16 0 0
+}
+// brush 1
+{
+ ( 96 8 1 ) ( -96 8 1 ) ( -96 -8 1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -96 -8 14 ) ( -96 8 14 ) ( 96 8 14 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -96 -7 32 ) ( 96 -7 32 ) ( 96 -7 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -16 0 0
+ ( 96 -8 32 ) ( 96 8 32 ) ( 96 8 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -16 0 0
+ ( 96 6 32 ) ( -96 6 32 ) ( -96 6 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -16 0 0
+ ( -96 8 32 ) ( -96 -8 32 ) ( -96 -8 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -16 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "foliage_red_pine_log_med"
+"classname" "misc_model"
+}

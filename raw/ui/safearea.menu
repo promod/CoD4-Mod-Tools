@@ -1,0 +1,64 @@
+#ifdef CONSOLE
+// left edge
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-100 -100 100 600 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			backcolor		COLOR_SAFEAREA
+			visible			1
+			decoration
+			dvarTest		"ui_safearea"
+			showDVar		{ "1" }
+		}
+
+// right edge
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 -100 100 600 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+			backcolor		COLOR_SAFEAREA
+			visible			1
+			decoration
+			dvarTest		"ui_safearea"
+			showDVar		{ "1" }
+		}
+
+// top edge
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 -100 900 100 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+			backcolor		COLOR_SAFEAREA
+			visible			1
+			decoration
+			dvarTest		"ui_safearea"
+			showDVar		{ "1" }
+		}
+
+// bottom edge
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 900 100 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			backcolor		COLOR_SAFEAREA
+			visible			1
+			decoration
+			dvarTest		"ui_safearea"
+			showDVar		{ "1" }
+		}
+		#ifdef PUBLIC_BETA
+		itemDef	
+		{
+			type			ITEM_TYPE_TEXT
+			rect			0 0 0 0 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+			forecolor		1 1 1 1
+			text			"Pre-Beta v1"
+			textfont		UI_FONT_DEFAULT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			textscale		0.4583
+			textalign		ITEM_ALIGN_TOP_RIGHT
+			visible			1
+			decoration
+		}
+		#endif
+#endif // #ifdef CONSOLE

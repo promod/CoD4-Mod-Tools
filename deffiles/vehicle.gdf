@@ -1,0 +1,382 @@
+#name "vehicle"
+#dll "all" "configstringconvert"
+#target_dir "vehicles/"
+#file_ext "*"
+#version 4
+
+// This tells the configstring converter what the file type identifier should be
+string "VEHICLEFILE" configstringFileType
+
+enum { "4 wheel", "tank", "plane", "boat", "artillery", "helicopter" } type
+
+int 0 0 1 steerWheels
+int 0 0 1 texureScroll
+int 0 0 1 quadBarrel
+int 0 0 1 bulletDamage
+int 1 0 1 armorPiercingDamage
+int 0 0 1 grenadeDamage
+int 0 0 1 projectileDamage
+int 0 0 1 projectileSplashDamage
+int 1 0 1 heavyExplosiveDamage
+
+float 0 0 100 texureScrollScale
+float 0 0 1000 maxSpeed
+float 0 0 1000 accel
+float 0 0 360 rotRate
+float 0 0 360 rotAccel
+
+float 0 0 90 maxBodyPitch
+float 0 0 90 maxBodyRoll
+
+float 0 0 1000 collisionDamage
+float 0 0 1000 collisionSpeed
+
+float 0 0 20 suspensionTravel
+
+string turretWeapon
+float 0 0 180 turretHorizSpanLeft
+float 0 0 180 turretHorizSpanRight
+float 0 0 180 turretVertSpanUp
+float 0 0 180 turretVertSpanDown
+float 0 0 360 turretRotRate
+
+string lowIdleSnd
+string highIdleSnd
+string lowEngineSnd
+string highEngineSnd
+string turretSpinSnd
+string turretStopSnd
+
+float 10 0 100 engineSndSpeed
+
+vcontainer
+{
+	scrollbox(type)
+	[
+		exec
+		{
+			width(200)
+			labelwidth(50)
+		}
+	]
+
+	checkbox(steerWheels)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+		
+	checkbox(texureScroll)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	checkbox(quadBarrel)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	checkbox(bulletDamage)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	checkbox(armorPiercingDamage)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	checkbox(grenadeDamage)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	checkbox(projectileDamage)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	checkbox(projectileSplashDamage)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	checkbox( heavyExplosiveDamage )
+	[
+		exec
+		{
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	floatedit(texureScrollScale, 0.05, 1)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(150)
+		}
+	]
+	
+	hcontainer
+	{
+		floatedit(maxSpeed, 0.05, 1)
+		[
+			exec
+			{
+				tooltip("This is only used for vehicles using radiant paths")
+				width(280)
+				labelwidth(150)
+			}
+		]
+		
+		floatedit(accel, 0.05, 1)
+		[
+			exec
+			{
+				tooltip("For scripted helicopters this is used for determining orientation. Set it to high value for helicopter to fly leveled under regular accelerations")
+				width(280)
+				labelwidth(150)
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		floatedit(rotRate, 0.05, 1)
+		[
+			exec
+			{
+				tooltip("This is only used for vehicles using radiant paths")
+				width(280)
+				labelwidth(150)
+			}
+		]
+		
+		floatedit(rotAccel, 0.05, 1)
+		[
+			exec
+			{
+				tooltip("This is only used for vehicles using radiant paths")
+				width(280)
+				labelwidth(150)
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		floatedit(maxBodyPitch, 0.05, 1)
+		[
+			exec
+			{
+				tooltip("Max jolt pitch. Should be 0 for helicopters")
+				width(280)
+				labelwidth(150)
+			}
+		]
+		
+		floatedit(maxBodyRoll, 0.05, 1)
+		[
+			exec
+			{
+				tooltip("Max jolt roll. Should be 0 for helicopters")
+				width(280)
+				labelwidth(150)
+			}
+		]
+	}
+	
+	floatedit(suspensionTravel, 0.05, 1)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(150)
+		}
+	]
+		
+	hcontainer
+	{
+		floatedit(collisionDamage, 0.05, 1)
+		[
+			exec
+			{
+				width(280)
+				labelwidth(150)
+			}
+		]
+		
+		floatedit(collisionSpeed, 0.05, 1)
+		[
+			exec
+			{
+				width(280)
+				labelwidth(150)
+			}
+		]
+	}
+
+	vcontainer
+	{
+		edit(turretWeapon)
+		[
+			exec
+			{
+				width(350)
+				labelwidth(150)
+			}
+		]
+
+		floatedit(turretRotRate, 0.05, 1)
+		[
+			exec
+			{
+				width(280)
+				labelwidth(150)
+			}
+		]
+
+		hcontainer
+		{
+			floatedit(turretHorizSpanLeft, 0.05, 1)
+			[
+				exec
+				{
+					width(280)
+					labelwidth(150)
+				}
+			]
+			floatedit(turretHorizSpanRight, 0.05, 1)
+			[
+				exec
+				{
+					width(280)
+					labelwidth(150)
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(turretVertSpanUp, 0.05, 1)
+			[
+				exec
+				{
+					width(280)
+					labelwidth(150)
+				}
+			]
+			floatedit(turretVertSpanDown, 0.05, 1)
+			[
+				exec
+				{
+					width(280)
+					labelwidth(150)
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Turret Weapon")
+		}
+	]
+
+	
+	edit(lowIdleSnd)
+	[
+		exec
+		{
+			width(350)
+			labelwidth(150)
+		}
+	]
+	
+	edit(highIdleSnd)
+	[
+		exec
+		{
+			width(350)
+			labelwidth(150)
+		}
+	]
+
+	edit(lowEngineSnd)
+	[
+		exec
+		{
+			width(350)
+			labelwidth(150)
+		}
+	]
+	
+	edit(highEngineSnd)
+	[
+		exec
+		{
+			width(350)
+			labelwidth(150)
+		}
+	]
+	
+	edit(turretSpinSnd)
+	[
+		exec
+		{
+			width(350)
+			labelwidth(150)
+		}
+	]
+	
+	edit(turretStopSnd)
+	[
+		exec
+		{
+			width(350)
+			labelwidth(150)
+		}
+	]
+	
+	floatedit(engineSndSpeed, 0.05, 1)
+	[
+		exec
+		{
+			width(280)
+			labelwidth(150)
+		}
+	]
+}

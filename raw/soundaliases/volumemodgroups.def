@@ -1,0 +1,65 @@
+VOLUMEMODGROUPS
+
+ac130		0.8500
+airlift		0.5400
+aftermath	0.4500
+ambience	0.7290
+bodyfall	0.6529
+chatteral	0.8100
+chatterax	0.8100
+element		0.9720
+emitter		0.7290
+explosion	0.7857
+foley		0.4860
+footstep	0.7200
+footstepplr	0.4300
+gear		0.4680
+impact		1.1250
+impactmp	1.2150
+interface	0.8100
+mpfoley		0.5760
+mpfootstep	0.9000
+mpgear		0.7560
+music		0.8100
+physics		0.9000
+quiet		0.0900
+reactional	1.0206
+reactionax	0.9455
+vehicle		0.7440
+voiceover	1.0000
+whizby		0.7938	
+wpnai		0.7047
+wpnplyr		0.7695
+
+na			0.8100
+
+max			1.0000
+
+// ac130 = ac130 groundfire 
+// ambience = ambient streams
+// bodyfall = bodyfalls
+// chatteral = battlechatter allied 
+// chatterax = battlechatter axis
+// element = ambient element sfx
+// emitter = point emitter sfx
+// explosion = explosion type sfx
+// foley = foley type sfx such as gear rattle, foliage movement etc. 
+// footsteps = footsteps and landing sfx
+// gear = gear rattle
+// impact = bullet impact sfx
+// interface = user interface sfx
+// music = level music (excluding title and fluff music)
+// physics = physics elements
+// reactional = allied character reaction sfx
+// reactionax = axis character reaction sfx
+// vehicle = vehicle and vehicle related sfx
+// voiceover = mission-based speech
+// wpnai = AI controlled weapons
+// wpnplyr = player controlled weapons
+
+// na = non-catagorized
+// max = always play volume unaltered, don't change from 1.0000!
+
+// if you receive a parse failure saying too many groups parsed were parsed, send a bug to code to have SA_VOLUMEMODGROUPCOUNT increased
+
+

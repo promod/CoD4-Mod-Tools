@@ -1,0 +1,22 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_SIDEITEM_SPACING	-310
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+// this is the main menu controls for single players only
+{
+	#define SINGLE_PLAYER	1
+	#undef CONTROL_IN_GAME
+	#include "ui/controls_common.inc"
+}

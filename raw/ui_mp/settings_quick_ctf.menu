@@ -1,0 +1,63 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define MENU_TITLE_TEXT "CAPTURE THE FLAG OPTIONS"
+#define GAME_OPTIONS_MENU_NAME "settings_quick_ctf"
+#include "ui_mp/common_game_options.inc"
+
+#define TEAMBASED 1
+#define NUMLIVES_DVAR 		"scr_ctf_numlives"
+#define PLAYERRESPAWN_DVAR 	"scr_ctf_playerrespawndelay"
+#define WAVERESPAWN_DVAR	"scr_ctf_waverespawndelay"
+#define GAMETYPE_OPTIONS	"@MENU_CAPTURE_THE_FLAG"
+
+// --- gameplay options
+#define CHOICE1_TEXT		"@MPUI_RULES_TIME_LIMIT"
+#define CHOICE1_DVAR		scr_ctf_timelimit
+#define CHOICE1_DVARTEXT	CHOICE1_DVAR"_text"
+#define CHOICE1_SHOW		1
+#define CHOICE1_STR1		"@MPUI_RULES_UNLIMITED"
+#define CHOICE1_STR2		"@MPUI_RULES_5MINUTES"
+#define CHOICE1_STR3		"@MPUI_RULES_10MINUTES"
+#define CHOICE1_STR4		"@MPUI_RULES_20MINUTES"
+#define CHOICE1_STR5		"@MPUI_RULES_30MINUTES"
+#define CHOICE1_STR6		""
+#define CHOICE1_VAL1		0
+#define CHOICE1_VAL2		5
+#define CHOICE1_VAL3		10
+#define CHOICE1_VAL4		20
+#define CHOICE1_VAL5		30
+#define CHOICE1_VAL6		0
+#define CHOICE1_EXEC		open GAME_OPTIONS_MENU_NAME"_"CHOICE1_TEXT; play "mouse_click";
+#define CHOICE1_STRLIST		{ CHOICE1_STR1 CHOICE1_VAL1 CHOICE1_STR2 CHOICE1_VAL2 CHOICE1_STR3 CHOICE1_VAL3 CHOICE1_STR4 CHOICE1_VAL4 CHOICE1_STR5 CHOICE1_VAL5 CHOICE1_STR6 CHOICE1_VAL6 }
+#define CHOICE1_NUMVALS		5
+#define CHOICE1_POPUP		1
+
+#define CHOICE2_TEXT		"@MPUI_RULES_SCORE_LIMIT"
+#define CHOICE2_DVAR		"scr_ctf_scorelimit"
+#define CHOICE2_DVARTEXT	CHOICE2_DVAR"_text"
+#define CHOICE2_SHOW		1
+#define CHOICE2_STR1		"@MPUI_RULES_UNLIMITED"
+#define CHOICE2_STR2		"@MPUI_RULES_3POINTS"
+#define CHOICE2_STR3		"@MPUI_RULES_5POINTS"
+#define CHOICE2_STR4		"@MPUI_RULES_10POINTS"
+#define CHOICE2_STR5		"@MPUI_RULES_20POINTS"
+#define CHOICE2_STR6		"@MPUI_RULES_30POINTS"
+#define CHOICE2_VAL1		0
+#define CHOICE2_VAL2		3
+#define CHOICE2_VAL3		5
+#define CHOICE2_VAL4		10
+#define CHOICE2_VAL5		20
+#define CHOICE2_VAL6		30
+#define CHOICE2_EXEC		open GAME_OPTIONS_MENU_NAME"_"CHOICE2_TEXT; play "mouse_click";
+#define CHOICE2_STRLIST		{ CHOICE2_STR1 CHOICE2_VAL1 CHOICE2_STR2 CHOICE2_VAL2 CHOICE2_STR3 CHOICE2_VAL3 CHOICE2_STR4 CHOICE2_VAL4 CHOICE2_STR5 CHOICE2_VAL5 CHOICE2_STR6 CHOICE2_VAL6 }
+#define CHOICE2_NUMVALS		6
+#define CHOICE2_POPUP		1
+
+//#include "ui_mp/settings_team.inc"
+//#include "ui_mp/settings_player.inc"
+#include "ui_mp/settings_weapon.inc"
+
+{
+	#include "ui_mp/game_options.inc"
+}

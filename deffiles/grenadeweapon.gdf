@@ -1,0 +1,2472 @@
+#name "grenadeweapon"
+#dll "all" "weapon"
+#target_dir "weapons/sp/" // target location 1 (single-player)
+#target_dir "weapons/mp/" // target location 2 (multi-player)
+#target_dir "xmodel/"
+#target_dir ""
+#target_dir "xanim/"
+#file_ext "*"
+#version 38
+
+// This tells the configstring converter what the file type identifier should be
+enum { "WEAPONFILE" } configstringFileType
+
+// This uses the config string convert's multi-target folder
+// mechanism to make the weapon either a single-player weapon
+// or a multi-player weapon.
+// The first character is used to specify which target folder to go in
+enum { "1: Single-Player", "2: Multi-Player" } targetFolder
+
+enum { "grenade" } weaponType
+enum { "grenade" } weaponClass
+enum { "None", "Smoke Grenade", "Frag Grenade", "Flash Grenade" } offhandClass
+enum { "grenade_explode", "none" } impactType
+enum { "primary", "offhand", "item", "altmode" } inventoryType
+
+string displayName
+string modeName
+enum { "none", "other", "grenade", "hold", "briefcase" } playerAnimType
+string AIOverlayDescription
+
+string gunModel
+string handModel
+int 1 0 1 isHandModelOverridable
+string idleAnim
+string emptyIdleAnim
+string fireAnim
+string holdFireAnim
+string lastShotAnim
+string detonateAnim
+string meleeAnim
+string meleeChargeAnim
+string raiseAnim
+string dropAnim
+string firstRaiseAnim
+string altRaiseAnim
+string altDropAnim
+string quickRaiseAnim
+string quickDropAnim
+string emptyRaiseAnim
+string emptyDropAnim
+string sprintInAnim
+string sprintLoopAnim
+string sprintOutAnim
+string nightVisionWearAnim
+string nightVisionRemoveAnim
+
+float 1600 0 8000 autoAimRange
+float 3200 0 8000 aimAssistRange
+float 3200 0 8000 aimAssistRangeAds
+
+float 1 0 5 moveSpeedScale
+float 1 0 5 sprintDurationScale
+float 0.33 0 1 lowAmmoWarningThreshold
+
+int 0 0 1000 damage
+int 0 0 1000 meleeDamage
+
+float 0.1 0 10.0 fireDelay
+float 0.25 0.05 10.0 meleeDelay
+float 0.0 0.0 10.0 meleeChargeDelay
+
+float 0.1 0.0 10.0 fireTime
+float 0.1 0.0 10.0 holdFireTime
+float 0.2 0.0 10.0 detonateTime
+float 0.1 0.0 10.0 detonateDelay
+float 0.7 0.0 10.0 meleeTime
+float 0.0 0.0 10.0 meleeChargeTime
+float 2.0 0.0 10.0 reloadTime
+float 0.5 0.0 10.0 dropTime
+float 0.5 0.0 10.0 raiseTime
+float 0.5 0.0 10.0 altDropTime
+float 0.5 0.0 10.0 altRaiseTime
+float 0.5 0.0 10.0 quickDropTime
+float 0.5 0.0 10.0 quickRaiseTime
+float 0.5 0.0 10.0 firstRaiseTime
+float 0.5 0.0 10.0 emptyDropTime
+float 0.5 0.0 10.0 emptyRaiseTime
+float 0.5 0.0 10.0 sprintInTime
+float 0.5 0.0 10.0 sprintLoopTime
+float 0.5 0.0 10.0 sprintOutTime
+float 0.5 0.0 10.0 nightVisionWearTime
+float 0.0 0.0 10.0 nightVisionWearTimeFadeOutEnd
+float 0.0 0.0 10.0 nightVisionWearTimePowerUp
+float 0.5 0.0 10.0 nightVisionRemoveTime
+float 0.0 0.0 10.0 nightVisionRemoveTimePowerDown
+float 0.0 0.0 10.0 nightVisionRemoveTimeFadeInStart
+float 4 0 100 fuseTime
+float 4 0 100 aiFuseTime
+
+enum { "Don't stick", "Stick to all", "Stick to ground", "Stick to ground, maintain yaw" } stickiness
+int 0 0 1 hasDetonator
+int 1 0 1 timedDetonation
+int 1 0 1 rotate
+int 0 0 1 holdButtonToThrow
+int	0 0 1 freezeMovementWhenFiring
+
+int 1 0 1 clipOnly
+
+int 80 0 150 hipIdleAmount
+float 0 0 100 hipIdleSpeed
+float 0.5 0 1 idleCrouchFactor
+float 0.15 0 1 idleProneFactor
+
+float 0.5 0.0 1.0 parallelDefaultBounce
+float 0.5 0.0 1.0 parallelBarkBounce
+float 0.5 0.0 1.0 parallelBrickBounce
+float 0.5 0.0 1.0 parallelCarpetBounce
+float 0.5 0.0 1.0 parallelClothBounce
+float 0.5 0.0 1.0 parallelConcreteBounce
+float 0.5 0.0 1.0 parallelDirtBounce
+float 0.5 0.0 1.0 parallelFleshBounce
+float 0.5 0.0 1.0 parallelFoliageBounce
+float 0.5 0.0 1.0 parallelGlassBounce
+float 0.5 0.0 1.0 parallelGrassBounce
+float 0.5 0.0 1.0 parallelGravelBounce
+float 0.5 0.0 1.0 parallelIceBounce
+float 0.5 0.0 1.0 parallelMetalBounce
+float 0.5 0.0 1.0 parallelMudBounce
+float 0.5 0.0 1.0 parallelPaperBounce
+float 0.5 0.0 1.0 parallelPlasterBounce
+float 0.5 0.0 1.0 parallelRockBounce
+float 0.5 0.0 1.0 parallelSandBounce
+float 0.5 0.0 1.0 parallelSnowBounce
+float 0.5 0.0 1.0 parallelWaterBounce
+float 0.5 0.0 1.0 parallelWoodBounce
+float 0.5 0.0 1.0 parallelAsphaltBounce
+float 0.5 0.0 1.0 parallelCeramicBounce
+float 0.5 0.0 1.0 parallelPlasticBounce
+float 0.5 0.0 1.0 parallelRubberBounce
+float 0.5 0.0 1.0 parallelCushionBounce
+float 0.5 0.0 1.0 parallelFruitBounce
+float 0.5 0.0 1.0 parallelPaintedMetalBounce
+
+float 0.5 0.0 1.0 perpendicularDefaultBounce
+float 0.5 0.0 1.0 perpendicularBarkBounce
+float 0.5 0.0 1.0 perpendicularBrickBounce
+float 0.5 0.0 1.0 perpendicularCarpetBounce
+float 0.5 0.0 1.0 perpendicularClothBounce
+float 0.5 0.0 1.0 perpendicularConcreteBounce
+float 0.5 0.0 1.0 perpendicularDirtBounce
+float 0.5 0.0 1.0 perpendicularFleshBounce
+float 0.5 0.0 1.0 perpendicularFoliageBounce
+float 0.5 0.0 1.0 perpendicularGlassBounce
+float 0.5 0.0 1.0 perpendicularGrassBounce
+float 0.5 0.0 1.0 perpendicularGravelBounce
+float 0.5 0.0 1.0 perpendicularIceBounce
+float 0.5 0.0 1.0 perpendicularMetalBounce
+float 0.5 0.0 1.0 perpendicularMudBounce
+float 0.5 0.0 1.0 perpendicularPaperBounce
+float 0.5 0.0 1.0 perpendicularPlasterBounce
+float 0.5 0.0 1.0 perpendicularRockBounce
+float 0.5 0.0 1.0 perpendicularSandBounce
+float 0.5 0.0 1.0 perpendicularSnowBounce
+float 0.5 0.0 1.0 perpendicularWaterBounce
+float 0.5 0.0 1.0 perpendicularWoodBounce
+float 0.5 0.0 1.0 perpendicularAsphaltBounce
+float 0.5 0.0 1.0 perpendicularCeramicBounce
+float 0.5 0.0 1.0 perpendicularPlasticBounce
+float 0.5 0.0 1.0 perpendicularRubberBounce
+float 0.5 0.0 1.0 perpendicularCushionBounce
+float 0.5 0.0 1.0 perpendicularFruitBounce
+float 0.5 0.0 1.0 perpendicularPaintedMetalBounce
+
+float 30 0 180 swayMaxAngle
+float 6 1 50 swayLerpSpeed
+float 0.1 -2 2 swayPitchScale
+float 0.1 -2 2 swayYawScale
+float 0.1 -2 2 swayHorizScale
+float 0.1 -2 2 swayVertScale
+float 5 0 20 swayShellShockScale
+
+string worldModel
+string knifeModel
+string worldKnifeModel
+
+string ammoName
+int 100 0 999 maxAmmo
+int 0 0 999 startAmmo
+string clipName
+int 10 0 999 clipSize
+
+string sharedAmmoCapName
+int 0 0 999 sharedAmmoCap
+
+int 0 0 999 dropAmmoMin
+int 0 0 999 dropAmmoMax
+
+// client-side info
+//string viewFlashEffect
+//string worldFlashEffect
+
+string pickupSound
+string pickupSoundPlayer
+string ammoPickupSound
+string ammoPickupSoundPlayer
+string pullbackSound
+string pullbackSoundPlayer
+string fireSound
+string fireSoundPlayer
+string lastShotSound
+string lastShotSoundPlayer
+string meleeSwipeSound
+string meleeSwipeSoundPlayer
+string reloadSound
+string reloadSoundPlayer
+string altSwitchSound
+string altSwitchSoundPlayer
+string detonateSound
+string detonateSoundPlayer
+string raiseSound
+string raiseSoundPlayer
+string firstRaiseSound
+string firstRaiseSoundPlayer
+string putawaySound
+string putawaySoundPlayer
+string nightVisionWearSound
+string nightVisionWearSoundPlayer
+string nightVisionRemoveSound
+string nightVisionRemoveSoundPlayer
+string bounceSound
+
+string reticleCenter
+string reticleSide
+int 32 1 480 reticleCenterSize
+int 16 1 480 reticleSideSize
+int	4 0 480 reticleMinOfs
+
+// additional weapon info
+string altWeapon
+int 0 0 1 blocksProne
+
+int 0 0 1 cookOffHold
+
+string hudIcon
+string killIcon
+string dpadIcon
+string ammoCounterIcon
+enum { "4:1", "1:1", "2:1" } hudIconRatio
+enum { "4:1", "1:1", "2:1" } killIconRatio
+enum { "4:1", "1:1", "2:1" } dpadIconRatio
+enum { "4:1", "1:1" } ammoCounterIconRatio
+enum { "None", "Magazine", "ShortMagazine", "Shotgun", "Rocket", "Beltfed", "AltWeapon" } ammoCounterClip
+int 1 0 1 flipKillIcon
+
+// settings for view model position movement
+float 0 -100 100 standMoveF
+float 1 -100 100 standMoveR
+float -1.5 -100 100 standMoveU
+float 0 -100 100 standRotP
+float 0 -100 100 standRotY
+float 0 -100 100 standRotR
+float -2 -100 100 duckedOfsF
+float 2 -100 100 duckedOfsR
+float -0.2 -100 100 duckedOfsU
+float 0 -100 100 duckedMoveF
+float 1 -100 100 duckedMoveR
+float -1.5 -100 100 duckedMoveU
+float 0 -100 100 duckedRotP
+float 0 -100 100 duckedRotY
+float 0 -100 100 duckedRotR
+float -6 -100 100 proneOfsF
+float 3.5 -100 100 proneOfsR
+float 0.8 -100 100 proneOfsU
+float 0 -100 100 proneMoveF
+float 1 -100 100 proneMoveR
+float -1.5 -100 100 proneMoveU
+float 0 -100 100 proneRotP
+float 0 -100 100 proneRotY
+float 0 -100 100 proneRotR
+float 4 0 100 posMoveRate
+float 10 0 100 posProneMoveRate
+float 110 0 1000 standMoveMinSpeed
+float 60 0 1000 duckedMoveMinSpeed
+float 0 0 1000 proneMoveMinSpeed
+float 5 0 100 posRotRate
+float 10 0 100 posProneRotRate
+float 110 0 1000 standRotMinSpeed
+float 60 0 1000 duckedRotMinSpeed
+float 0 0 1000 proneRotMinSpeed
+
+// additional grenade weapon info
+int 300 0 10000 explosionRadius
+int 0 0 10000 explosionRadiusMin
+int 10 0 10000 explosionInnerDamage
+int 10 0 10000 explosionOuterDamage
+float 180 0 180 damageConeAngle
+int 600 0 10000 projectileSpeed
+int 0 -10000 10000 projectileSpeedUp
+int 0 -10000 10000 projectileSpeedForward
+
+string projectileModel
+enum { "grenade", "rocket", "flashbang", "smoke", "heavy explosive", "none" } projExplosionType
+string projExplosionEffect
+int 0 0 1 projExplosionEffectForceNormalUp
+string projExplosionSound
+enum { "none", "grenade", "rocket" } projectileTrail
+float 1.0 0 100 projectileTrailTime
+int 32 1 1000 projectileTrailRadius
+int 0 0 1 projImpactExplode
+
+float 0 0 100 adsDofStart
+float 0 0 100 adsDofEnd
+
+string notetrackSoundMap
+
+
+vcontainer
+{
+	scrollbox(targetFolder)
+	[
+		exec
+		{
+			width(300)
+		}
+	]
+
+	hcontainer
+	{
+		edit(displayName)
+		edit(modeName)
+	}
+	
+	scrollbox(playerAnimType)
+	[
+		exec
+		{
+			label("Player Anim Type")
+			tooltip("Select an Player Anim Type - specifies \"playerAnimType\" in playeranim.script")
+			visible(targetFolder == "2: Multi-Player")
+		}
+	]
+	
+    hcontainer
+    {
+		edit(AIOverlayDescription)
+    }
+
+   	scrollbox(offhandClass)
+	[
+		exec
+		{
+			label("Offhand Class")
+			width(270)
+		}
+	]
+		
+	scrollbox(inventoryType)
+	[
+		exec
+		{
+			label("Inventory")
+			tooltip("Select what sort of inventory this weapon is.")
+		}
+	]
+
+	////////////////////////////////////////
+	// Aim Assist
+	////////////////////////////////////////
+	vcontainer
+	{
+		floatedit(autoAimRange, 1, 100)
+		[
+			exec
+			{
+				label("Auto Aim Range")
+				tooltip("(Console only.) The range in world units up to which entering ADS will lock-on to enemies. (1 world unit = 1 inch)")
+			}
+		]
+		
+		hcontainer
+		{
+			floatedit(aimAssistRange, 1, 100)
+			[
+				exec
+				{
+					label("Aim Assist Range")
+					tooltip("(Console only.) The range in world units up to which the crosshair will stick to targets. (1 world unit = 1 inch)")
+				}
+			]
+			
+			floatedit(aimAssistRangeAds, 1, 100)
+			[
+				exec
+				{
+					label("Aim Assist Range ADS")
+					tooltip("(Console only.) The range in world units up to which the crosshair will stick to targets in ADS. (1 world unit = 1 inch)")
+					width(260)
+					labelwidth(160)
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Aim Assist (Console only)")
+		}
+	]
+	
+	
+	hcontainer
+	{
+		spinedit(damage, 1, 10)
+		spinedit(meleeDamage, 1, 10)
+	}
+	checkbox(projImpactExplode)
+	hcontainer
+	{
+		spinedit(explosionInnerDamage, 1, 10)
+		spinedit(explosionOuterDamage, 1, 10)
+	}
+	hcontainer
+	{
+		spinedit(explosionRadius, 10, 50)
+		spinedit(explosionRadiusMin, 10, 50)
+	}
+	floatedit( damageConeAngle, 1, 10 )
+	[
+		exec
+		{
+			tooltip( "The explosion only affects entities within a cone centered around the grenade's forward direction.  This is the angle between the forward direction an the side of the cone (180 is a spherical explosion)." )
+		}
+	]
+	vcontainer
+	{
+		spinedit(projectileSpeed, 10, 100)
+		[
+			exec
+			{
+				label("Player's View Direction")
+				tooltip("The amount of velocity the projectile is given in the direction that the player is looking")
+				width(300)
+				labelwidth(200)
+			}
+		]
+		spinedit(projectileSpeedUp, 10, 100)
+		[
+			exec
+			{
+				label("Upwards")
+				tooltip("The amount of vertical velocity the projectile is given")
+				width(300)
+				labelwidth(200)
+			}
+		]
+		spinedit(projectileSpeedForward, 10, 100)
+		[
+			exec
+			{
+				label("Forwards")
+				tooltip("The amount of horizontal velocity the projectile is given in the direction the player is looking")
+				width(300)
+				labelwidth(200)
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox("Projectile Launch Speed")
+		}
+	]
+	
+	scrollbox(stickiness)
+	[
+		exec
+		{
+			label("Stickiness")
+			width(350)
+		}
+	]
+	checkbox(rotate)
+	[
+		exec
+		{
+			label("Rotate when thrown")
+		}
+	]
+	checkbox(hasDetonator)
+	[
+		exec
+		{
+			label("Has Detonator")
+			tooltip("If checked, detonator animations will play when the player presses the detonate button, and a \"detonate\" notify will occur on the player in script.")
+		}
+	]
+	hcontainer
+	{
+		checkbox(timedDetonation)
+		[
+			exec
+			{
+				label("Timed Detonation")
+				tooltip("If checked, the grenade will detonate after the fuse time has passed.")
+			}
+		]
+		
+		checkbox(cookOffHold)
+		[
+			exec
+			{
+				label("Cookable")
+				tooltip("If checked, holding down the grenade throw button will reduce the grenade's timer before it is released.")
+			}
+		]
+	}
+	hcontainer
+	{
+		floatedit(fuseTime, 0.1, 1)
+		[
+			exec
+			{
+				label("Fuse Time")
+				tooltip("The length of time from when the grenade is thrown to when it explodes.")
+			}
+		]
+		floatedit(aiFuseTime, 0.1, 1)
+		[
+			exec
+			{
+				label("AI Fuse Time")
+				tooltip("The length of time from when the grenade is thrown to when it explodes for AI.")
+			}
+		]
+	}
+	checkbox(holdButtonToThrow)
+	[
+		exec
+		{
+			label("Must hold attack button to throw")
+			tooltip("If checked, the attack button must be held down during the hold fire animation in order to throw the grenade. Also, the player will be forced to crouch and won't be able to move.")
+			labelwidth(250)
+			width(300)
+			righttext()
+		}
+	]
+	checkbox( freezeMovementWhenFiring )
+	[
+		exec
+		{
+			label( "Freeze player's movement when firing" )
+			tooltip( "Freezes the player's position, not the viewangles" )
+			labelwidth(300)
+			righttext()
+		}
+	]
+
+	hcontainer
+	{
+		checkbox(blocksProne)
+		[
+			exec
+			{
+				label("Cannot Go Prone")
+				tooltip("The player cannot go prone when they have this weapon equiped.")
+				righttext()
+			}
+		]
+	}
+
+	fileedit(projectileModel)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+		}
+	]
+	hcontainer
+	{
+		scrollbox(projExplosionType)
+		checkbox(projExplosionEffectForceNormalUp)
+		[
+			exec
+			{
+				label("Force straight-up normal vector.")
+				labelwidth(350)
+				width(400)
+				righttext()
+			}
+		]
+	}
+	fileedit(projExplosionEffect)
+	[
+		exec
+		{
+			reldir("raw/")
+			width(400)
+		}
+	]
+	hcontainer
+	{
+		scrollbox(impactType)
+		[
+			exec
+			{
+				width(300)
+				label("Impact type")
+				tooltip("The impact type, used to play impact effects based on surfacetype defined in fx/IWimpacts.csv")
+			}
+		]
+
+	}
+	edit(projExplosionSound)
+	hcontainer
+	{
+		scrollbox(projectileTrail)
+		floatedit(projectileTrailTime, 0.1, 1)
+		spinedit(projectileTrailRadius, 1, 5)
+	}
+
+    hcontainer
+	{
+		floatedit(lowAmmoWarningThreshold, 0.1, 1)
+		[
+			exec
+			{
+				label("Clip-Ammo Low Warning %")
+				tooltip("The game optionally displays low-ammo warnings when remaining clip ammo goes below this percentage.")
+				labelwidth(180)
+				width(280)
+			}
+		]
+	}	
+	
+	////////////////////////////////////////
+	// State Timers
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			floatedit(fireTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Fire")
+					tooltip("Length of the throwing animation.")
+				}
+			]
+			
+			floatedit(fireDelay, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Fire Delay")
+					tooltip("Delay in seconds between pressing the fire button and the weapon actually firing.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(meleeTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Melee")
+					tooltip("Rate of fire in seconds per melee attack.")
+				}
+			]
+			
+			floatedit(meleeDelay, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Melee Delay")
+					tooltip("Delay in seconds between pressing the fire button and the melee attack actually happening.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(meleeChargeTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Melee Charge")
+					tooltip("Rate of fire in seconds per melee charge attack.")
+				}
+			]
+			
+			floatedit(meleeChargeDelay, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Melee Charge Delay")
+					tooltip("Delay in seconds between pressing the fire button and the melee charge attack actually happening.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(holdFireTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Hold Fire")
+					tooltip("Length of the hold fire (pullback) animation.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(reloadTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Reload")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(detonateTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Detonate")
+					tooltip("Length of the detonate animation.")
+				}
+			]
+			
+			floatedit(detonateDelay, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Detonate Delay")
+					tooltip("Delay in seconds between pressing the detonate button and the detonation actually happening.")
+				}
+			]
+		}
+	
+		hcontainer
+		{
+			floatedit(dropTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Drop")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+			
+			floatedit(raiseTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Raise")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+			floatedit(firstRaiseTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("First Raise")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(altDropTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Alt Drop")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+			
+			floatedit(altRaiseTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Alt Raise")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(quickDropTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Quick Drop")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+			
+			floatedit(quickRaiseTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Quick Raise")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(emptyDropTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Empty Drop")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]			
+
+			floatedit(emptyRaiseTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Empty Raise")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]			
+		}
+
+		hcontainer
+		{
+			floatedit(sprintInTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Sprint In")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+	
+			floatedit(sprintLoopTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Sprint Loop")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+	
+			floatedit(sprintOutTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Sprint Out")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+		}
+
+		hcontainer
+		{
+			floatedit(nightVisionWearTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Nightvision Wear")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+
+			floatedit(nightVisionWearTimeFadeOutEnd, 0.05, 0.2)
+			[
+				exec
+				{
+					label("...end of fade-out")
+					tooltip("At this point in 'Nightvision Wear', player's vision has faded to black as they bring their goggles down.")
+				}
+			]
+
+			floatedit(nightVisionWearTimePowerUp, 0.05, 0.2)
+			[
+				exec
+				{
+					label("...power up")
+					tooltip("At this point in 'Nightvision Wear', the player's goggles start their power up.")
+				}
+			]
+		}
+
+		hcontainer
+		{
+			floatedit(nightVisionRemoveTime, 0.05, 0.2)
+			[
+				exec
+				{
+					label("Nightvision Remove")
+					tooltip("How long this weapon state will last. The viewmodel animations will get scaled to match the times set.")
+				}
+			]
+
+			floatedit(nightVisionRemoveTimePowerDown, 0.05, 0.2)
+			[
+				exec
+				{
+					label("...power down")
+					tooltip("At this point in 'Nightvision Remove', the player's goggles cut to black.")
+				}
+			]
+
+			floatedit(nightVisionRemoveTimeFadeInStart, 0.05, 0.2)
+			[
+				exec
+				{
+					label("...start fade-in")
+					tooltip("At this point in 'Nightvision Remove', the player's vision fades from black to normal as they remove their goggles.")
+				}
+			]
+		}
+
+	}
+	[
+		exec
+		{
+			groupBox("State Timers")
+		}
+	]
+
+	
+	////////////////////////////////////////
+	// Idle Settings
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			spinedit(hipIdleAmount, 1, 10)
+			[
+				exec
+				{
+					label("Hip Amount")
+					tooltip("Strength of viewmodel wavering motion when in hipfire position.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(hipIdleSpeed, 0.1, 1.0)
+			[
+				exec
+				{
+					label("Hip Speed")
+					tooltip("How fast the viewmodel wavers in hipfire position within Hip Amount.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(idleCrouchFactor, 0.01, 0.1)
+			[
+				exec
+				{
+					label("Crouch Factor")
+					tooltip("Hip/ADS Amount multiplier for reducing viewmodel wavering when in this stance.")
+				}
+			]
+			
+			floatedit(idleProneFactor, 0.01, 0.1)
+			[
+				exec
+				{
+					label("Prone Factor")
+					tooltip("Hip/ADS Amount multiplier for reducing viewmodel wavering when in this stance.")
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Idle Settings")
+		}
+	]
+	
+	hcontainer
+	{
+
+		vcontainer
+		{
+			floatedit(parallelDefaultBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("default")
+				}
+			]
+			floatedit(parallelBarkBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("bark")
+				}
+			]
+			floatedit(parallelBrickBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("brick")
+				}
+			]
+			floatedit(parallelCarpetBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("carpet")
+				}
+			]
+			floatedit(parallelClothBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("cloth")
+				}
+			]
+			floatedit(parallelConcreteBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("concrete")
+				}
+			]
+			floatedit(parallelDirtBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("dirt")
+				}
+			]
+			floatedit(parallelFleshBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("flesh")
+				}
+			]
+			floatedit(parallelFoliageBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("foliage")
+				}
+			]
+			floatedit(parallelGlassBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("glass")
+				}
+			]
+			floatedit(parallelGrassBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("grass")
+				}
+			]
+			floatedit(parallelGravelBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("gravel")
+				}
+			]
+			floatedit(parallelIceBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("ice")
+				}
+			]
+			floatedit(parallelMetalBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("metal")
+				}
+			]
+			floatedit(parallelMudBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("mud")
+				}
+			]
+			floatedit(parallelPaperBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("paper")
+				}
+			]
+			floatedit(parallelPlasterBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("plaster")
+				}
+			]
+			floatedit(parallelRockBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("rock")
+				}
+			]
+			floatedit(parallelSandBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("sand")
+				}
+			]
+			floatedit(parallelSnowBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("snow")
+				}
+			]
+			floatedit(parallelWaterBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("water")
+				}
+			]
+			floatedit(parallelWoodBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("wood")
+				}
+			]
+			floatedit(parallelAsphaltBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("asphalt")
+				}
+			]
+			floatedit(parallelCeramicBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("ceramic")
+				}
+			]
+			floatedit(parallelPlasticBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("plastic")
+				}
+			]
+			floatedit(parallelRubberBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("rubber")
+				}
+			]
+			floatedit(parallelCushionBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("cushion")
+				}
+			]
+			floatedit(parallelFruitBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("fruit")
+				}
+			]
+			floatedit(parallelPaintedMetalBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("painted metal")
+				}
+			]
+		}
+		[
+			exec
+			{
+				groupBox("Parallel Bounce Factors")
+			}
+		]
+		
+		vcontainer
+		{
+			floatedit(perpendicularDefaultBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("default")
+				}
+			]
+			floatedit(perpendicularBarkBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("bark")
+				}
+			]
+			floatedit(perpendicularBrickBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("brick")
+				}
+			]
+			floatedit(perpendicularCarpetBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("carpet")
+				}
+			]
+			floatedit(perpendicularClothBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("cloth")
+				}
+			]
+			floatedit(perpendicularConcreteBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("concrete")
+				}
+			]
+			floatedit(perpendicularDirtBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("dirt")
+				}
+			]
+			floatedit(perpendicularFleshBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("flesh")
+				}
+			]
+			floatedit(perpendicularFoliageBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("foliage")
+				}
+			]
+			floatedit(perpendicularGlassBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("glass")
+				}
+			]
+			floatedit(perpendicularGrassBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("grass")
+				}
+			]
+			floatedit(perpendicularGravelBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("gravel")
+				}
+			]
+			floatedit(perpendicularIceBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("ice")
+				}
+			]
+			floatedit(perpendicularMetalBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("metal")
+				}
+			]
+			floatedit(perpendicularMudBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("mud")
+				}
+			]
+			floatedit(perpendicularPaperBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("paper")
+				}
+			]
+			floatedit(perpendicularPlasterBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("plaster")
+				}
+			]
+			floatedit(perpendicularRockBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("rock")
+				}
+			]
+			floatedit(perpendicularSandBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("sand")
+				}
+			]
+			floatedit(perpendicularSnowBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("snow")
+				}
+			]
+			floatedit(perpendicularWaterBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("water")
+				}
+			]
+			floatedit(perpendicularWoodBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("wood")
+				}
+			]
+			floatedit(perpendicularAsphaltBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("asphalt")
+				}
+			]
+			floatedit(perpendicularCeramicBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("ceramic")
+				}
+			]
+			floatedit(perpendicularPlasticBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("plastic")
+				}
+			]
+			floatedit(perpendicularRubberBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("rubber")
+				}
+			]
+			floatedit(perpendicularCushionBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("cushion")
+				}
+			]
+			floatedit(perpendicularFruitBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("fruit")
+				}
+			]
+			floatedit(perpendicularPaintedMetalBounce, 0.01, 0.1)
+			[
+				exec
+				{
+					label("painted metal")
+				}
+			]
+		}
+		[
+			exec
+			{
+				groupBox("Perpendicular Bounce Factors")
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		floatedit(swayMaxAngle, 0.05, 0.1)
+		[
+			exec
+			{
+				width(270)               // optional custom width
+				labelwidth(170)          // optional custom width
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		floatedit(swayLerpSpeed, 0.05, 0.1)
+		[
+			exec
+			{
+				width(270)               // optional custom width
+				labelwidth(170)          // optional custom width
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		floatedit(swayPitchScale, 0.05, 0.1)
+		[
+			exec
+			{
+				width(270)               // optional custom width
+				labelwidth(170)          // optional custom width
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		floatedit(swayYawScale, 0.05, 0.1)
+		[
+			exec
+			{
+				width(270)               // optional custom width
+				labelwidth(170)          // optional custom width
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		floatedit(swayHorizScale, 0.05, 0.1)
+		[
+			exec
+			{
+				width(270)               // optional custom width
+				labelwidth(170)          // optional custom width
+			}
+		]
+	}
+	
+	hcontainer
+	{
+		floatedit(swayVertScale, 0.05, 0.1)
+		[
+			exec
+			{
+				width(270)               // optional custom width
+				labelwidth(170)          // optional custom width
+			}
+		]
+	}
+	
+	floatedit(swayShellShockScale, 0.05, 0.1)
+	[
+		exec
+		{
+			width(270)               // optional custom width
+			labelwidth(170)          // optional custom width
+		}
+	]
+	
+	// seperator
+	hcontainer
+	{
+	}
+
+	fileedit(worldModel)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+		}
+	]
+	
+	fileedit(knifeModel)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+		}
+	]
+
+	fileedit(worldKnifeModel)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+		}
+	]
+		
+	hcontainer
+	{
+		edit(ammoName)
+		spinedit(maxAmmo, 10, 20)
+		spinedit(startAmmo, 1, 10)
+	}
+	hcontainer
+	{
+		edit(clipName)
+		spinedit(clipSize, 1, 10)
+		checkbox(clipOnly)
+	}
+	hcontainer
+	{
+		edit(sharedAmmoCapName)
+		spinedit(sharedAmmoCap, 10, 20)
+	}
+	
+	hcontainer
+	{
+		spinedit(dropAmmoMin, 1, 10)
+		[
+			exec
+			{
+				width(270)               // optional custom width
+				labelwidth(170)          // optional custom width
+			}
+		]
+		spinedit(dropAmmoMax, 1, 10)
+		[
+			exec
+			{
+				width(270)               // optional custom width
+				labelwidth(170)          // optional custom width
+			}
+		]
+	}
+	fileedit(reticleCenter)
+	[
+		exec
+		{
+			reldir("raw/")
+		}
+	]
+//	fileedit(reticleSide)
+//	[
+//		exec
+//		{
+//			reldir("raw/")
+//		}
+//	]
+//	hcontainer
+//	{
+		spinedit(reticleCenterSize, 1, 2)
+//		spinedit(reticleSideSize, 1, 2)
+//		spinedit(reticleMinOfs, 1, 2)		
+//	}
+	
+	// seperator
+	hcontainer
+	{
+	}
+//	fileedit(viewFlashEffect)
+//	[
+//		exec
+//		{
+//			reldir("raw/")
+//		}
+//	]
+//	fileedit(worldFlashEffect)
+//	[
+//		exec
+//		{
+//			reldir("raw/")
+//		}
+//	]
+
+	////////////////////////////////////////
+	// Sounds
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			edit(pickupSound)
+			[
+				exec
+				{
+					label("Pickup")
+					width(400)
+				}
+			]
+
+			edit(pickupSoundPlayer)
+			[
+				exec
+				{
+					label("Pickup (Player)")
+					width(400)
+				}
+			]
+		}
+			
+		hcontainer
+		{
+			edit(ammoPickupSound)
+			[
+				exec
+				{
+					label("Ammo Pickup")
+					width(400)
+				}
+			]
+			
+			edit(ammoPickupSoundPlayer)
+			[
+				exec
+				{
+					label("Ammo Pickup (Player)")
+					width(400)
+				}
+			]
+		}
+
+		hcontainer
+		{
+			edit(pullbackSound)
+			[
+				exec
+				{
+					label("Pullback")
+					width(400)
+				}
+			]
+			edit(pullbackSoundPlayer)
+			[
+				exec
+				{
+					label("Pullback (Player)")
+					tooltip("Pullback sound used by player. If not defined, player will play normal 'Pullback' that is used by the AI.")
+					width(400)
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			edit(fireSound)
+			[
+				exec
+				{
+					label("Fire")
+					width(400)
+				}
+			]
+			
+			edit(fireSoundPlayer)
+			[
+				exec
+				{
+					label("Fire (Player)")
+					tooltip("Fire sound used by player. If not defined, player will play normal 'Fire' that is used by the AI.")
+					width(400)
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			edit(lastShotSound)
+			[
+				exec
+				{
+					label("Last Shot")
+					width(400)
+				}
+			]
+			
+			edit(lastShotSoundPlayer)
+			[
+				exec
+				{
+					label("Last Shot (Player)")
+					tooltip("Last Shot sound used by player. If not defined, player will play normal 'Last Shot' that is used by the AI.")
+					width(400)
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			edit(meleeSwipeSound)
+			[
+				exec
+				{
+					label("Melee Swipe")
+					width(400)
+				}
+			]
+			edit(meleeSwipeSoundPlayer)
+			[
+				exec
+				{
+					label("Melee Swipe (Player)")
+					width(400)
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			edit(reloadSound)
+			[
+				exec
+				{
+					label("Reload")
+					width(400)
+				}
+			]
+			
+			edit(reloadSoundPlayer)
+			[
+				exec
+				{
+					label("Reload (Player)")
+					tooltip("Reload sound used by player. If not defined, player will play normal 'Reload' that is used by the AI.")
+					width(400)
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			edit(detonateSound)
+			[
+				exec
+				{
+					label("Detonate")
+					width(400)
+				}
+			]
+			edit(detonateSoundPlayer)
+			[
+				exec
+				{
+					label("Detonate (Player)")
+					tooltip("Detonate sound used by player. If not defined, player will play normal 'Detonate' that is used by the AI.")
+					width(400)
+				}
+			]
+		}
+
+		hcontainer
+		{
+			edit(altSwitchSound)
+			[
+				exec
+				{
+					label("Alt Switch")
+					width(400)
+				}
+			]
+			edit(altSwitchSoundPlayer)
+			[
+				exec
+				{
+					label("Alt Switch (Player)")
+					width(400)
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			edit(raiseSound)
+			[
+				exec
+				{
+					label("Raise")
+					width(400)
+				}
+			]
+			edit(raiseSoundPlayer)
+			[
+				exec
+				{
+					label("Raise (Player)")
+					width(400)
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			edit(firstRaiseSound)
+			[
+				exec
+				{
+					label("First Raise")
+					width(400)
+				}
+			]
+			edit(firstRaiseSoundPlayer)
+			[
+				exec
+				{
+					label("First Raise (Player)")
+					width(400)
+				}
+			]
+		}
+				
+		hcontainer
+		{
+			edit(putawaySound)
+			[
+				exec
+				{
+					label("Put Away")
+					width(400)
+				}
+			]
+			edit(putawaySoundPlayer)
+			[
+				exec
+				{
+					label("Put Away (Player)")
+					width(400)
+				}
+			]
+		}
+
+		hcontainer
+		{
+			edit(nightVisionWearSound)
+			[
+				exec
+				{
+					label("NightVis Wear")
+					width(400)
+				}
+			]
+			edit(nightVisionWearSoundPlayer)
+			[
+				exec
+				{
+					label("NightVis Wear (Player)")
+					width(400)
+				}
+			]
+		}
+
+		hcontainer
+		{
+			edit(nightVisionRemoveSound)
+			[
+				exec
+				{
+					label("NightVis Remove")
+					width(400)
+				}
+			]
+			edit(nightVisionRemoveSoundPlayer)
+			[
+				exec
+				{
+					label("NightVis Remove (Player)")
+					width(400)
+				}
+			]
+		}
+
+		edit(bounceSound)
+		[
+			exec
+			{
+				label("Bounce Sound Base")
+				tooltip("Base alias for the bounce sound. For instance, if the value is \"grenade_bounce\", sounds like \"grenade_bounce_concrete\" will be looked for. \"grenade_bounce_default\" will be used for any materials that aren't specified.")
+				width(500)
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox("Sounds")
+		}
+	]
+
+	vcontainer
+	{
+		multiedit(notetrackSoundMap)
+		[
+			exec
+			{
+				label("")
+				labelwidth(0)
+				tooltip("Sounds to play when viewmodel hits different notetrack events.  One per line, format is: NOTETRACKNAME,soundalias")
+				width(500)
+				height(120)
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox("Viewmodel Notetrack-to-Sound Mappings")
+		}
+	]
+
+	// seperator
+	hcontainer
+	{
+	}
+	
+	edit(altWeapon)
+
+	// seperator
+	hcontainer
+	{
+	}
+
+	hcontainer
+	{
+		floatedit(standMoveF, 0.1, 1)
+		floatedit(standMoveR, 0.1, 1)
+		floatedit(standMoveU, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(standRotP, 0.1, 1)
+		floatedit(standRotY, 0.1, 1)
+		floatedit(standRotR, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(duckedOfsF, 0.1, 1)
+		floatedit(duckedOfsR, 0.1, 1)
+		floatedit(duckedOfsU, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(duckedMoveF, 0.1, 1)
+		floatedit(duckedMoveR, 0.1, 1)
+		floatedit(duckedMoveU, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(duckedRotP, 0.1, 1)
+		floatedit(duckedRotY, 0.1, 1)
+		floatedit(duckedRotR, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(proneOfsF, 0.1, 1)
+		floatedit(proneOfsR, 0.1, 1)
+		floatedit(proneOfsU, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(proneMoveF, 0.1, 1)
+		floatedit(proneMoveR, 0.1, 1)
+		floatedit(proneMoveU, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(proneRotP, 0.1, 1)
+		floatedit(proneRotY, 0.1, 1)
+		floatedit(proneRotR, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(posMoveRate, 0.1, 1)
+		floatedit(posProneMoveRate, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(standMoveMinSpeed, 1, 10)
+		[
+			exec
+			{
+				width(210)
+				labelwidth(150)
+			}
+		]
+		floatedit(duckedMoveMinSpeed, 1, 10)
+		[
+			exec
+			{
+				width(210)
+				labelwidth(150)
+			}
+		]
+		floatedit(proneMoveMinSpeed, 1, 10)
+		[
+			exec
+			{
+				width(210)
+				labelwidth(150)
+			}
+		]
+	}
+	hcontainer
+	{
+		floatedit(posRotRate, 0.1, 1)
+		floatedit(posProneRotRate, 0.1, 1)
+	}
+	hcontainer
+	{
+		floatedit(standRotMinSpeed, 1, 10)
+		[
+			exec
+			{
+				width(210)
+				labelwidth(150)
+			}
+		]
+		floatedit(duckedRotMinSpeed, 1, 10)
+		[
+			exec
+			{
+				width(210)
+				labelwidth(150)
+			}
+		]
+		floatedit(proneRotMinSpeed, 1, 10)
+		[
+			exec
+			{
+				width(210)
+				labelwidth(150)
+			}
+		]
+	}
+	fileedit(gunModel)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			width(500)
+		}
+	]
+	fileedit(handModel)
+	[
+		exec
+		{
+			label("Default Hand Model")
+		
+			reldir("raw/xmodel/")
+			width(500)
+		}
+	]
+	checkbox(isHandModelOverridable)
+	[
+		exec
+		{
+			label("Update Hand Model From Script")
+			tooltip("If checked then the hand model can be updated from script")
+			width(30)
+		}
+	]
+	////////////////////////////////////////
+	// XAnims
+	////////////////////////////////////////
+	vcontainer
+	{
+		fileedit(idleAnim)
+		[
+			exec
+			{
+				label("Idle")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(emptyIdleAnim)
+		[
+			exec
+			{
+				label("Empty Idle")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(fireAnim)
+		[
+			exec
+			{
+				label("Fire")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(holdFireAnim)
+		[
+			exec
+			{
+				label("Hold Fire")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(lastShotAnim)
+		[
+			exec
+			{
+				label("Last Shot")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(detonateAnim)
+		[
+			exec
+			{
+				label("Detonate")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(meleeAnim)
+		[
+			exec
+			{
+				label("Melee")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(meleeChargeAnim)
+		[
+			exec
+			{
+				label("Melee Charge")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(raiseAnim)
+		[
+			exec
+			{
+				label("Raise")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		
+		fileedit(dropAnim)
+		[
+			exec
+			{
+				label("Drop")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		
+		fileedit(firstRaiseAnim)
+		[
+			exec
+			{
+				label("First Raise")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+				
+		fileedit(altRaiseAnim)
+		[
+			exec
+			{
+				label("Alt Raise/Throwback Pickup")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		
+		fileedit(altDropAnim)
+		[
+			exec
+			{
+				label("Alt Drop")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(quickRaiseAnim)
+		[
+			exec
+			{
+				label("Quick Raise")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		
+		fileedit(quickDropAnim)
+		[
+			exec
+			{
+				label("Quick Drop")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		
+		fileedit(emptyRaiseAnim)
+		[
+			exec
+			{
+				label("Empty Raise")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		
+		fileedit(emptyDropAnim)
+		[
+			exec
+			{
+				label("Empty Drop")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+
+		fileedit(sprintInAnim)
+		[
+			exec
+			{
+				label("Sprint In")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		
+		fileedit(sprintLoopAnim)
+		[
+			exec
+			{
+				label("Sprint Loop")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+		fileedit(sprintOutAnim)
+		[
+			exec
+			{
+				label("Sprint Out")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+
+		fileedit(nightVisionWearAnim)
+		[
+			exec
+			{
+				label("Nightvision Wear")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+
+		fileedit(nightVisionRemoveAnim)
+		[
+			exec
+			{
+				label("Nightvision Remove")
+				reldir("raw/xanim/")
+				width(500)
+			}
+		]
+
+
+	}
+	[
+		exec
+		{
+			groupBox("XAnims")
+		}
+	]
+
+	////////////////////////////////////////
+	// UI
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			fileedit(hudIcon)
+			[
+				exec
+				{
+					label("Hud Icon")
+					reldir("raw/")
+					width(500)
+					labelwidth(180)
+				}
+			]
+			scrollbox(hudIconRatio)
+			[
+				exec
+				{
+					label(" Aspect:")
+					width(110)
+					labelwidth(60)
+				}
+			]
+		}
+		hcontainer
+		{
+			fileedit(killIcon)
+			[
+				exec
+				{
+					label("Kill Icon")
+					reldir("raw/")
+					width(500)
+					labelwidth(180)
+				}
+			]
+			scrollbox(killIconRatio)
+			[
+				exec
+				{
+					label(" Aspect:")
+					width(110)
+					labelwidth(60)
+				}
+			]
+			checkbox(flipKillIcon)
+			[
+				exec
+				{
+					label(" Flip:")
+					tooltip("Used for weapons that need to have their kill icon horizontally flipped before displaying. (For MP obituaries).")
+					lefttext()
+					width(65)
+					labelwidth(40)
+				}
+			]
+		}
+		hcontainer
+		{
+			fileedit(dpadIcon)
+			[
+				exec
+				{
+					label("DPad Icon")
+					reldir("raw/")
+					width(500)
+					labelwidth(180)
+				}
+			]
+			scrollbox(dpadIconRatio)
+			[
+				exec
+				{
+					label(" Aspect:")
+					width(110)
+					labelwidth(60)
+				}
+			]
+		}
+		hcontainer
+		{
+			fileedit(ammoCounterIcon)
+			[
+				exec
+				{
+					label("Ammo Counter Icon")
+					reldir("raw/")
+					width(500)
+					labelwidth(180)
+				}
+			]
+			scrollbox(ammoCounterIconRatio)
+			[
+				exec
+				{
+					label(" Aspect:")
+					width(110)
+					labelwidth(60)
+				}
+			]
+		}
+		scrollbox(ammoCounterClip)
+		[
+			exec
+			{
+				label("Ammo Counter Clip Style")
+				width(300)
+				labelwidth(180)
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox("User Interface")
+		}
+	]
+	
+	////////////////////////////////////////
+	// Depth of Field Settings
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			floatedit(adsDofStart, 0.1, 0.5)
+			[
+				exec
+				{
+					label("ADS Start")
+				}
+			]
+			
+			floatedit(adsDofEnd, 0.1, 0.5)
+			[
+				exec
+				{
+					label("ADS End")
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Depth of Field Settings")
+		}
+	]
+}

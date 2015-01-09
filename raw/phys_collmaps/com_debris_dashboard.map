@@ -1,0 +1,20 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+  {
+    physics_box
+    {
+      1.000000 0.000000 0.000000 -0.000000 1.000000 0.000000 -0.000000 0.000000 1.000000 -1.500000 0.000000 5.000000 7.500000 18.000000 6.000000
+    }
+  }
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_debris_dashboard"
+"classname" "misc_model"
+}

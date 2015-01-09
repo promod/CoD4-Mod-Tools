@@ -1,0 +1,36 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 16 -16 ) ( -16 16 -16 ) ( -16 -16 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -16 270 ) ( -36 16 270 ) ( -4 16 270 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -16 624 ) ( 16 -16 624 ) ( 16 -16 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -16 624 ) ( 16 16 624 ) ( 16 16 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 16 624 ) ( -16 16 624 ) ( -16 16 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 16 624 ) ( -16 -16 624 ) ( -16 -16 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -16 630 ) ( 0 -20 630 ) ( 4 -16 662 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -16 630 ) ( -16 -4 630 ) ( -4 -16 662 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 4 630 ) ( -4 16 630 ) ( -16 4 662 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 16 630 ) ( 16 4 630 ) ( 4 16 662 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -84 94 259 ) ( -83 -70 259 ) ( 84 -70 259 ) clip_foliage 64 32 -289.02844 416.43823 -10 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 29 28 561 ) ( 29 -26 559 ) ( -33 -26 556 ) clip_foliage 64 32 -289.02844 416.43823 -10 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 -70 259 ) ( -60 -70 259 ) ( -60 -26 558 ) clip_foliage 64 32 -289.02844 416.43823 -10 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 85 94 259 ) ( 84 -70 259 ) ( 29 -26 559 ) clip_foliage 64 32 -289.02844 416.43823 -10 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 94 259 ) ( 65 94 259 ) ( 65 28 560 ) clip_foliage 64 32 -289.02844 416.43823 -10 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -83 -70 259 ) ( -84 94 259 ) ( -33 28 558 ) clip_foliage 64 32 -289.02844 416.43823 -10 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"model" "foliage_tree_pine_lg_b"
+"classname" "misc_model"
+"origin" "0.0 0.0 0.0"
+"angles" "0 255 0"
+}

@@ -1,0 +1,37 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 164 60 4 ) ( -152 60 4 ) ( -152 -60 4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -156 16 116 ) ( 160 16 116 ) ( 160 -32 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -156 -64 84 ) ( 160 -64 84 ) ( 160 -64 4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( 160 -60 116 ) ( 160 60 116 ) ( 160 60 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( 160 48 80 ) ( -156 48 80 ) ( -156 48 4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( -156 60 116 ) ( -156 -60 116 ) ( -156 -60 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( 160 -64 84 ) ( -156 -64 84 ) ( -156 -32 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -156 48 80 ) ( 160 48 80 ) ( 160 16 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+}
+// brush 1
+{
+ ( 160 12 116 ) ( -160 12 116 ) ( -160 -28 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -160 -28 132 ) ( -160 12 132 ) ( 160 12 132 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -24 132 ) ( 8 -24 116 ) ( -4 -24 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( 20 -32 132 ) ( 20 8 132 ) ( 20 8 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( 8 8 116 ) ( 8 8 132 ) ( -4 8 132 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( -16 -16 132 ) ( -16 -16 116 ) ( -16 0 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( -4 8 116 ) ( -4 8 132 ) ( -16 0 132 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( 8 8 132 ) ( 8 8 116 ) ( 20 0 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( 8 -24 116 ) ( 8 -24 132 ) ( 20 -16 132 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( -4 -24 132 ) ( -4 -24 116 ) ( -16 -16 116 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 54.0"
+"classname" "misc_model"
+"model" "com_propane_tank02"
+}

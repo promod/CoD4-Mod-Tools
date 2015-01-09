@@ -1,0 +1,28 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 4 4 -12 ) ( -12 4 -12 ) ( -12 -28 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -4 4 ) ( 4 -4 4 ) ( 4 -4 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 4 4 ) ( -12 4 4 ) ( -12 4 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 4 4 ) ( -12 -28 4 ) ( -12 -28 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 4 -4 ) ( -4 4 -12 ) ( -4 36 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 4 -1 ) ( -12 4 4 ) ( -12 36 4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 4 -12 ) ( -1 4 -1 ) ( -1 36 -1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -4 1 ) ( 4 -1 4 ) ( 36 -4 1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 1 4 ) ( 4 4 1 ) ( 36 1 4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 4 4 ) ( 4 1 4 ) ( 1 4 36 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -1 4 ) ( 1 -4 4 ) ( 4 -1 36 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "com_pipe_4_90angle_ceramic"
+"angles" "270 0 0"
+"origin" "0.0 0.0 0.0"
+}

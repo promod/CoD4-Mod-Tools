@@ -1,0 +1,89 @@
+#include "ui/menudef.h"
+
+
+#define PREPROC_OUTCOME( textName, subText, color ) itemDef { \
+	origin		320	120 \
+	text		textName \
+	textfont	UI_FONT_OBJECTIVE \
+	textscale	1 \
+	textalign	ITEM_ALIGN_CENTER \
+	textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE \
+	forecolor	color \
+	backcolor	0 0 0 1 \
+	visible		1 \
+	decoration } \
+	itemDef { \
+	origin		320 130 \
+	exp			text( "@" + dvarString( "ui_text_endreason" ) ); \
+	textfont	UI_FONT_OBJECTIVE \
+	textscale	.4 \
+	textalign	ITEM_ALIGN_CENTER \
+	textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE \
+	forecolor	1 1 1 1 \
+	backcolor	0 0 0 1 \
+	visible		1 \
+	decoration }
+	
+#define PREPROC_LEFTICON( iconName, showTeam ) itemDef { \
+	style			WINDOW_STYLE_SHADER \
+	rect			-30 0 60 60 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER \
+	origin			-100 -90 \
+	exp				material( iconName ); \
+	visible			when( team( name ) == showTeam );\
+	decoration }
+
+#define PREPROC_RIGHTICON( iconName, showTeam ) itemDef { \
+	style			WINDOW_STYLE_SHADER \
+	rect			-30 0 60 60 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER \
+	origin			100 -90 \
+	exp				material( iconName ); \
+	visible			when( team( name ) == showTeam );\
+	decoration }
+
+
+{
+	menuDef
+	{
+		name			"victory_none"
+		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+		fullScreen		0
+		visible			0
+
+		PREPROC_OUTCOME( "DRAW", "MISSION FAILED", 1 1 0 1 )
+
+		PREPROC_LEFTICON( dvarString( "g_TeamIcon_Allies" ), "TEAM_ALLIES" )
+		PREPROC_LEFTICON( dvarString( "g_TeamIcon_Allies" ), "TEAM_SPECTATOR" )
+		PREPROC_LEFTICON( dvarString( "g_TeamIcon_Allies" ), "TEAM_AXIS" )
+
+		PREPROC_RIGHTICON( dvarString( "g_TeamIcon_Axis" ), "TEAM_ALLIES" )
+		PREPROC_RIGHTICON( dvarString( "g_TeamIcon_Axis" ), "TEAM_SPECTATOR" )
+		PREPROC_RIGHTICON( dvarString( "g_TeamIcon_Axis" ), "TEAM_AXIS" )
+
+		itemDef 
+		{
+			rect		0 0 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			origin		-100 30
+			exp text	( marinesfield( score ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	1
+			textalign	ITEM_ALIGN_CENTER
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible 	1
+			decoration 
+		}
+				
+		itemDef 
+		{
+			rect		0 0 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			origin		100 30
+			exp text	( opforfield( score ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	1
+			textalign	ITEM_ALIGN_CENTER
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible 	1
+			decoration 
+		}
+	}
+}
+

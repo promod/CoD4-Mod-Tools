@@ -1,0 +1,37 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 8 -120 0 ) ( -8 -120 0 ) ( -8 -128 0 ) ch_metal_rusty_02 128 128 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -128 2 ) ( -8 -120 2 ) ( 8 -120 2 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -128 4 ) ( 8 -128 4 ) ( 8 -128 0 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -128 4 ) ( 6 -120 4 ) ( 6 -120 0 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 128 4 ) ( -6 128 4 ) ( -6 128 0 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -120 4 ) ( -6 -128 4 ) ( -6 -128 0 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 8 -120 2 ) ( -8 -120 2 ) ( -8 -128 2 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -128 8 ) ( -8 -120 8 ) ( 8 -120 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -128 6 ) ( 8 -128 6 ) ( 8 -128 2 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -128 6 ) ( 1 -120 6 ) ( 1 -120 2 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 128 6 ) ( -6 128 6 ) ( -6 128 2 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 64 6 ) ( -1 56 6 ) ( -1 56 2 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 8 -120 8 ) ( -8 -120 8 ) ( -8 -128 8 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -128 10 ) ( -8 -120 10 ) ( 8 -120 10 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -128 12 ) ( 8 -128 12 ) ( 8 -128 8 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -128 12 ) ( 6 -120 12 ) ( 6 -120 8 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 128 12 ) ( -6 128 12 ) ( -6 128 8 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -120 12 ) ( -6 -128 12 ) ( -6 -128 8 ) ch_metal_rusty_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

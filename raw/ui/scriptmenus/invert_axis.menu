@@ -1,0 +1,196 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_GROUP			"invert_axis"
+
+// required for inside-popup styles
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+// setting longer buttons which in turn sets the width of the popup
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			320
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+	
+// required for popup style
+#include "ui_mp/popupstyle.inc"
+#include "ui/choices_setup_popmenu.menu"
+	
+	
+{
+	menuDef
+	{
+		//IMPROVED_POPUP_SETUP( nameArg, itemCount, xArg, yArg, onEscArg, shadow_visArg )
+		// setup popup properties
+		//IMPROVED_POPUP_SETUP( "invert_axis", POPUP_SIZE, POPUP_X, POPUP_Y, scriptMenuResponse "accept_normal";, 1 )
+		CENTER_POPUP_SETUP( "invert_axis", 4, scriptMenuResponse "accept_normal";, 1 )
+
+		// yes action
+		#define LOCAL_YES \
+				play "mouse_click";\
+				execNowOnDvarIntValue ui_start_inverted 0 "set controls_inversion 1";\
+				execNowOnDvarIntValue ui_start_inverted 0 "set input_invertPitch 1";\
+				execNowOnDvarIntValue ui_start_inverted 1 "set controls_inversion 0";\
+				execNowOnDvarIntValue ui_start_inverted 1 "set input_invertPitch 0";\
+			    exec "updategamerprofile";\
+				scriptMenuResponse "try_invert";\
+				close self;
+				
+				
+			
+		// no action
+		#define LOCAL_NO \
+				play "mouse_click";\
+				execNowOnDvarIntValue ui_start_inverted 0 "set controls_inversion 0";\
+				execNowOnDvarIntValue ui_start_inverted 0 "set input_invertPitch 0";\
+				execNowOnDvarIntValue ui_start_inverted 1 "set controls_inversion 1";\
+				execNowOnDvarIntValue ui_start_inverted 1 "set input_invertPitch 1";\
+			    exec "updategamerprofile";\
+				scriptMenuResponse "accept_normal";\
+				close self;
+		
+		// 	
+		CHOICE_POPMENU_SUBTITLE( dvarString( "ui_invert_string" ) )
+
+		CHOICE_BUTTON( 4, "@MENU_NO", LOCAL_NO )
+		CHOICE_BUTTON( 3, "@MENU_YES", LOCAL_YES )
+		
+	}	
+}
+
+/*
+#include "ui/menudef.h"
+
+#define ORIGIN_BUTTONS				0 0
+#define ORIGIN_MENUWINDOW			115 50
+
+{
+	menuDef 
+	{
+		name invert_axis
+	    	visible 0
+   		fullscreen 0
+	   	//rect 217 200 210 85
+		rect 204 160 235 160
+   		style 1
+   		border 1
+		popup
+		onESC 
+		{ 
+			scriptMenuResponse "accept_normal";
+			close "invert_axis";
+		}
+	
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -150 2 535 150
+	 		background "popmenu_bg"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -90 20 415 24
+	 		background "popmenu_goldline"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name confirm
+			//text "@KILLHOUSE_AXIS_OPTION_MENU1_ALL" 
+			exp text ( dvarString( "ui_invert_string" ) );
+			//dvar		ui_invert_string
+			style 0
+			textscale .38 
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 126 25 110 20
+			textalign 1
+			textalignx -7
+			textaligny 5
+			decoration
+			visible 1
+		}
+
+		itemDef 
+		{
+			name invert_enabled
+			text "@SCRIPT_PLATFORM_AXIS_OPTION_YES"
+			type 1
+			textscale .5
+			style 1
+			textfont UI_FONT_NORMAL
+			textstyle ITEM_TEXTSTYLE_NORMAL
+			rect 20 60 100 20
+			textalign 0
+			textalignx 25
+			textaligny 19
+			forecolor .9 .9 .95 1
+			backcolor .1747 .1903 .2335 0
+			border 1
+			bordercolor 0 0 0 0
+			visible 1
+			focusdvar { "1" }
+			decoration
+			
+				execKeyInt 1
+				{
+					play "mouse_click";
+					execOnDvarIntValue ui_start_inverted 0 "set controls_inversion 1";
+					execOnDvarIntValue ui_start_inverted 0 "set input_invertPitch 1";
+					execOnDvarIntValue ui_start_inverted 1 "set controls_inversion 0";
+					execOnDvarIntValue ui_start_inverted 1 "set input_invertPitch 0";
+				    exec "updategamerprofile";
+
+					scriptMenuResponse "try_invert";				
+					close invert_axis;
+				}	
+		}
+		itemDef 
+		{
+			name invert_disabled
+			text "@SCRIPT_PLATFORM_AXIS_OPTION_NO"
+			type 1
+			textscale .5
+			style 1
+			textfont UI_FONT_NORMAL
+			textstyle ITEM_TEXTSTYLE_NORMAL
+			rect 120 60 100 20
+			textalign 0
+			textalignx 25
+			textaligny 19
+			forecolor .9 .9 .95 1
+			backcolor .1747 .1903 .2335 0
+			border 0
+			bordercolor 0 0 0 0
+			visible 1
+			focusdvar { "0" }
+			decoration	
+			
+				execKeyInt 2
+				{
+					scriptMenuResponse "accept_normal";				
+					execOnDvarIntValue ui_start_inverted 0 "set controls_inversion 0";
+					execOnDvarIntValue ui_start_inverted 0 "set input_invertPitch 0";
+					execOnDvarIntValue ui_start_inverted 1 "set controls_inversion 1";
+					execOnDvarIntValue ui_start_inverted 1 "set input_invertPitch 1";
+				    exec "updategamerprofile";
+					close invert_axis;
+				}	
+		}
+	
+	}
+}
+*/

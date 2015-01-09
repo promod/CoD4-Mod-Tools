@@ -1,0 +1,9 @@
+#if ("$colorMap$" != "" && "@tileColor@" != "tile both") || ("$normalMap$" != "" && "@tileNormal@" != "tile both") || (("$specColorMap$" != "" || "$cosinePowerMap$" != "") && "@tileSpecular@" != "tile both")
+
+	clamp( true );
+
+#else
+
+	clamp( false );
+
+#endif

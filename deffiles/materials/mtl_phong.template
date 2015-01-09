@@ -1,0 +1,176 @@
+#if "@formatNormal@" == "<auto compression>"
+	#if TARGET_PLATFORM == "xenon"
+		#define NORMAL_MAP_FORMAT	"DXN"
+	#else
+		#define NORMAL_MAP_FORMAT	"DXT5"
+	#endif
+#else
+	#define NORMAL_MAP_FORMAT	"@formatNormal@"
+#endif
+
+//
+// default images
+//
+#define COLOR_SUFFIX	"c0"
+
+
+#if ("$normalMap$" == "" || "$normalMap$" == "$identityNormalMap") && "$specColorMap$" == "" && "$cosinePowerMap$" == ""
+	#define NORMAL_MAP_TILE 	"tile both"
+	#define NORMAL_MAP_FILTER	"nomip nearest"
+	#define NORMAL_MAP_IMAGE 	"$identityNormalMap"
+	#define NORMAL_MAP_ANIMRATE	0
+	#define NORMAL_MAP_NOPICMIP	1
+
+	#define USE_SPEC_MAP	0
+	#define NORMAL_SUFFIX	""
+	#define SPEC_SUFFIX		""
+#else
+	#if "$normalMap$" == "" || "$normalMap$" == "$identityNormalMap"
+		#define NORMAL_MAP_TILE 	"tile both"
+		#define NORMAL_MAP_FILTER	"nomip nearest"
+		#define NORMAL_MAP_IMAGE 	"$identityNormalMap"
+		#define NORMAL_MAP_NOPICMIP	1
+		#define NORMAL_SUFFIX		""
+	#else
+		#define NORMAL_MAP_TILE		"@tileNormal@"
+		#define NORMAL_MAP_FILTER	"@filterNormal@"
+		#define NORMAL_MAP_IMAGE	"$normalMap$"
+		#define NORMAL_MAP_NOPICMIP	@nopicmipNormal@
+		#define NORMAL_SUFFIX		"n0"
+	#endif
+
+	#if "$specColorMap$" == "" && "$cosinePowerMap$" == ""
+		#define USE_SPEC_MAP 0
+		#define SPEC_SUFFIX			""
+	#else
+		#define USE_SPEC_MAP 1
+		#define SPEC_SUFFIX			"s0"
+
+		#if "$specColorMap$" != ""
+			#define SPEC_COLOR_IMAGE	"$specColorMap$"
+		#else
+			#define SPEC_COLOR_IMAGE	"$white"
+		#endif
+		#if "$cosinePowerMap$" != ""
+			#define COSINE_POWER_IMAGE	"$cosinePowerMap$"
+		#else
+			#define COSINE_POWER_IMAGE	"$white"
+		#endif
+
+		#if "@formatSpecular@" == "<auto compression>"
+			#define SPECULAR_FORMAT		"DXT5"
+		#else
+			#define SPECULAR_FORMAT		"@formatSpecular@"
+		#endif
+
+		#if SPEC_COLOR_IMAGE != "$white"
+			#define COSINE_POWER_SCALE	((@cosinePowerStrength@ * 0.01) * 30.5 / 32.0)
+		#else
+			#define COSINE_POWER_SCALE	(@cosinePowerStrength@ * 0.01)
+ 		#endif
+	#endif
+#endif
+
+#define	USE_DETAIL_MAP	("$detailMap$" != "")
+#if USE_DETAIL_MAP
+	#define DETAIL_SUFFIX	"d0"
+#else
+	#define DETAIL_SUFFIX	""
+#endif
+
+#include "commonsetup.template"
+
+#if @texScroll@
+	#define TEX_SCROLL_SUFFIX "_scroll"
+#else
+	#define TEX_SCROLL_SUFFIX ""
+#endif
+
+#if "@customString@" == "Skin"
+	#define SKIN_SUFFIX "_skin"
+	#if "@blendFunc@" != "Replace" || "@alphaTest@" != "Always"
+		#error "Only Replace Always materials support the Skin shader."
+	#endif
+#else
+	#define SKIN_SUFFIX ""
+#endif
+
+#if @noReceiveDynamicShadow@
+	#define NAME_PREFIX "l"
+#else
+	#define NAME_PREFIX "l_sm"
+#endif
+
+#if "@blendFunc@" == "Add"
+	#if SPEC_SUFFIX != ""
+		#error "specular maps are not allowed on additive phong materials"
+	#endif
+	#if TEX_SCROLL_SUFFIX != ""
+		#error "tex scroll not allowed on additive phong materials"
+	#endif
+	#if USE_DETAIL_MAP
+		#error "detail map not allowed on additive phong materials"
+	#endif
+	techniqueSet( NAME_PREFIX + "_a0c0" );
+#elif "@blendFunc@" == "Replace"
+	#if "@alphaTest@" == "Always"
+		techniqueSet( NAME_PREFIX + TEX_SCROLL_SUFFIX + SKIN_SUFFIX + "_r0" + COLOR_SUFFIX + DETAIL_SUFFIX + NORMAL_SUFFIX + SPEC_SUFFIX );
+	#else
+		techniqueSet( NAME_PREFIX + TEX_SCROLL_SUFFIX + "_t0" + COLOR_SUFFIX + DETAIL_SUFFIX + NORMAL_SUFFIX + SPEC_SUFFIX );
+	#endif
+#elif "@blendFunc@" == "Blend"
+	techniqueSet( NAME_PREFIX + TEX_SCROLL_SUFFIX + "_b0" + COLOR_SUFFIX + DETAIL_SUFFIX + NORMAL_SUFFIX + SPEC_SUFFIX );
+#else
+	#error "blendFunc '@blendFunc@' with alphaTest '@alphaTest@' not supported for phong materials"
+#endif
+
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in phong materials"
+	#endif
+	"colorMap" = streamable map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+
+	#if USE_DETAIL_MAP
+		"detailMap" = map( "tile both", "@filterDetail@", "$detailMap$", @nopicmipDetail@ ) "@formatDetail@" : "colorMap";
+	#endif
+
+	#if NORMAL_MAP_IMAGE == "$identityNormalMap"
+		"normalMap" = map( "tile both", "nomip nearest", "$identityNormalMap", true ) "<auto compression>" : "normalMap";
+	#else
+		"normalMap" = streamable normalMap( NORMAL_MAP_TILE, NORMAL_MAP_FILTER, NORMAL_MAP_IMAGE, NORMAL_MAP_NOPICMIP ) NORMAL_MAP_FORMAT : "normalMap";
+	#endif
+
+	#if USE_SPEC_MAP
+		"specularMap" = streamable composite
+		(
+			map( "@tileSpecular@", "@filterSpecular@", SPEC_COLOR_IMAGE, @nopicmipSpecular@ ).r * (@specColorStrength@ * 0.01),
+			map( "@tileSpecular@", "@filterSpecular@", SPEC_COLOR_IMAGE, @nopicmipSpecular@ ).g * (@specColorStrength@ * 0.01),
+			map( "@tileSpecular@", "@filterSpecular@", SPEC_COLOR_IMAGE, @nopicmipSpecular@ ).b * (@specColorStrength@ * 0.01),
+			map( "@tileSpecular@", "@filterSpecular@", COSINE_POWER_IMAGE, @nopicmipSpecular@ ) * COSINE_POWER_SCALE
+		) SPECULAR_FORMAT : "specularMap";
+	#endif
+}
+
+
+constantTable
+{
+	#if USE_DETAIL_MAP
+		"detailScale" = float4( @detailScaleX@ * imageWidth( "$colorMap$" ) / imageWidth( "$detailMap$" ), @detailScaleY@ * imageHeight( "$colorMap$" ) / imageHeight( "$detailMap$" ), 0, 0 );
+	#endif
+
+	#if USE_SPEC_MAP
+		#if  @envMapMin@ > @envMapMax@
+			#error "Minimum reflectance greater than maximum reflectance"
+		#endif
+		#define SUN_INTENSITY 2.5
+		"envMapParms" = float4( @envMapMin@ * 4, @envMapMax@ * 4, @envMapExponent@, SUN_INTENSITY * 0.25 );
+	#endif
+
+	"colorTint" = float4( @,colorTint@ );
+}
+
+allocReflectionProbe();
+
+refImage( "$colorMap$" );

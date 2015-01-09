@@ -1,0 +1,134 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_GROUP			"systemlink"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#define ORIGIN_MOTD_TITLE		(CHOICE_X_START + 10) 260
+#define ORIGIN_MOTD_FRAME		(CHOICE_X_START + 10) 260
+#define ORIGIN_MOTD				(CHOICE_X_START + 10) 285
+
+#define ORIGIN_DESCRIPTION		(CHOICE_X_START + 15) 180
+#define COLOR_DESC_TEXT			1 1 1 0.7
+
+#define ORIGIN_BUTTON_BACK		52 438
+#define ORIGIN_BUTTON_INVITE	390 86
+#define ORIGIN_BUTTON_KICK		529 98
+
+#define START_EXEC		uiScript StartServer;
+
+#define SETTINGS_MAP	settings_map
+
+// -------------------------------------------
+
+{
+	menuDef
+	{
+		name			menu_gamesetup_systemlink
+		fullscreen		1
+		rect			0 0 640 480 
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		soundloop 		"music_mainmenu_mp"
+		border			0
+		onOpen
+		{
+			focusFirst;
+			exec "exec dvar_defaults.cfg";
+		}
+		onEsc
+		{
+			//open main;
+			exec "splitscreencontrols";
+			setdvar systemlink 0;
+			close menu_gamesetup_systemlink;
+		}
+
+		// background
+#include "ui/blurredbg.inc"
+
+		CHOICE_MENU_TITLE( "@PLATFORM_SYSTEM_LINK_SETUP" )
+
+		#include "ui_mp/navcontrols.inc"
+		
+		// ----------------------------map images------------------------------------
+		#include "ui_mp/game_info.inc"
+//		tableLookup( "mp/mapsTable.csv", 0, dvarString( ui_mapname ), 3 )
+//		
+//		"loadscreen_" + dvarString (ui_mapname), dvarString( party_mapname ), dvarString( party_gametype )
+		#define MAPIMAGE tableLookup( "mp/mapsTable.csv", 0, dvarString( ui_mapname ), 4 )
+		#define MAPNAME tableLookup( "mp/mapstable.csv", 0, dvarString( ui_mapname ), 3 )
+		#define GAMETYPENAME tableLookup( "mp/gametypesTable.csv", 0, dvarString( ui_gametype ), 1 )
+		GAME_INFO( MAPIMAGE, "@" + MAPNAME, "@" + GAMETYPENAME, 1 )
+
+		//=========================================================
+		//===================== MENU SELECTION ====================
+		//=========================================================
+		#define CLEARUIHINT	execNow "set ui_hint_text @NULL_EMPTY"
+
+		#define SETUP_ACTION_STARTMATCH \
+				exec "selectStringTableEntryInDvar mp/didyouknow.csv 0 didyouknow"; \
+				START_EXEC
+
+		#define SETUP_ACTION_MAP \
+				open SETTINGS_MAP;
+
+		#define SETUP_ACTION_GAMEMODE \
+				open settings_gametype;
+
+		#define SETUP_ACTION_GAMEOPTIONS \
+				uiScript openMenuOnDvar "ui_gametype" dm "settings_quick_dm"; \
+				uiScript openMenuOnDvar "ui_gametype" war "settings_quick_war"; \
+				uiScript openMenuOnDvar "ui_gametype" sd "settings_quick_sd"; \
+				uiScript openMenuOnDvar "ui_gametype" sab "settings_quick_sab"; \
+				uiScript openMenuOnDvar "ui_gametype" dom "settings_quick_dom"; \
+				uiScript openMenuOnDvar "ui_gametype" ctf "settings_quick_ctf"; \
+				uiScript openMenuOnDvar "ui_gametype" koth "settings_quick_koth"; \
+				
+		CHOICE_BUTTON_FOCUS( 1, "@MPUI_START_MATCH", SETUP_ACTION_STARTMATCH, execNow "set ui_hint_text @MPUI_DESC_START_MATCH", CLEARUIHINT )
+		CHOICE_BUTTON_FOCUS( 2, "@MPUI_GAME_SETUP", open "popup_gamesetup_systemlink";, execNow "set ui_hint_text @MPUI_DESC_GAME_SETUP", CLEARUIHINT )
+		// ---------------------- menu selection description -------------------------
+		itemDef	{
+			name			desc_arrow
+			style			WINDOW_STYLE_SHADER
+			rect			0 3 10 10 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_DESCRIPTION
+			background		"ui_arrow_right"
+			forecolor		1 1 1 0.25
+			visible			1
+			decoration
+		}
+		itemDef	{
+			name			description_choice
+			type			ITEM_TYPE_TEXT
+			rect			12 0 240 32 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_DESCRIPTION
+			exp				text( dvarString( ui_hint_text ) )
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		16
+			forecolor		COLOR_DESC_TEXT
+			visible			1
+			autowrapped
+			decoration
+		}
+	}
+
+	#include "ui_mp/popupstyle.inc"	
+	#include "ui/choices_setup_popmenu.menu"
+	#include "ui_mp/gamesetup_popup.inc"
+	
+	GAMESETUP_POPUP( "popup_gamesetup_systemlink", "", GAMESETUP_CFG )
+	
+	
+}

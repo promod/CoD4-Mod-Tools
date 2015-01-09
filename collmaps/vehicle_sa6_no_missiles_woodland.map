@@ -1,0 +1,23 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 132 72 0 ) ( -160 72 0 ) ( -160 -76 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -160 -76 84 ) ( -160 72 84 ) ( 132 72 84 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -160 -76 76 ) ( 132 -76 76 ) ( 132 -76 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 132 -76 76 ) ( 132 72 76 ) ( 132 72 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 132 72 76 ) ( -160 72 76 ) ( -160 72 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -160 72 76 ) ( -160 -76 76 ) ( -160 -76 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"model" "vehicle_sa6_no_missiles_woodland"
+"classname" "misc_model"
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+}

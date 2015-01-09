@@ -1,0 +1,65 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 40 -32 0 ) ( 40 32 0 ) ( -72 32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -32 68 ) ( -60 32 68 ) ( 24 32 68 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -32 0 ) ( -72 -32 0 ) ( -72 -32 36 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 32 62 ) ( 24 32 72 ) ( -48 32 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 32 20 ) ( -72 -32 20 ) ( -72 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -32 68 ) ( 24 32 68 ) ( 40 32 46 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 32 68 ) ( -60 -32 68 ) ( -72 -32 20 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -32 46 ) ( 40 32 46 ) ( 40 32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 40 -32 0 ) ( 76 -32 0 ) ( 76 32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -32 0 ) ( 40 -32 62 ) ( 76 -32 38 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 32 0 ) ( 76 -32 0 ) ( 76 -32 38 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 32 0 ) ( 76 32 38 ) ( 40 32 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -32 46 ) ( 40 32 46 ) ( 76 32 38 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 32 46 ) ( 40 -32 46 ) ( 40 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"destructible_type" "vehicle_small_wagon_blue"
+"targetname" "destructible"
+"origin" "0.0 0.0 0.0"
+"model" "vehicle_small_wagon_blue_destructible"
+"classname" "script_model"
+}
+// entity 2
+{
+"targetname" "delete_on_load"
+"origin" "51.5 22.0 12.0"
+"model" "vehicle_small_wagon_green_wheel_lf"
+"classname" "script_model"
+}
+// entity 3
+{
+"targetname" "delete_on_load"
+"origin" "-44.0 22.0 12.0"
+"model" "vehicle_small_wagon_green_wheel_lf"
+"classname" "script_model"
+}
+// entity 4
+{
+"angles" "0 0 180"
+"targetname" "delete_on_load"
+"origin" "51.5 -22.5 12.0"
+"model" "vehicle_small_wagon_green_wheel_lf"
+"classname" "script_model"
+}
+// entity 5
+{
+"angles" "0 0 180"
+"targetname" "delete_on_load"
+"origin" "-44.0 -22.5 12.0"
+"model" "vehicle_small_wagon_green_wheel_lf"
+"classname" "script_model"
+}

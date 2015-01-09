@@ -1,0 +1,32 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"ambient" ".5"
+"sunlight" "2"
+"sundirection" "-45 95 0"
+"suncolor" "1.000000 1.000000 0.882353"
+"classname" "worldspawn"
+"sundiffusecolor" "0.909804 0.952941 1.000000"
+"_color" "1 1 1"
+}
+// entity 1
+{
+"script_label" "_b"
+"target" "auto1"
+"script_gameobjectname" "dom onslaught"
+"origin" "0.0 0.0 16.0"
+"targetname" "flag_primary"
+"height" "256"
+"radius" "128"
+"classname" "trigger_radius"
+}
+// entity 2
+{
+"script_gameobjectname" "dom onslaught"
+"origin" "0.0 0.0 128.0"
+"targetname" "auto1"
+"model" "prop_flag_neutral"
+"classname" "script_model"
+}

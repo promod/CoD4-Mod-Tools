@@ -1,0 +1,191 @@
+iwfx 2
+
+{
+	name "splash";
+	editorFlags useRandRotDelta modColorByAlpha useRandVel0 useBackCompatVel absVel0;
+	flags spawnRelative spawnFrustumCull spawnOffsetNone runRelToWorld;
+	spawnRange 0 1200;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 10;
+	spawnLooping 200 3;
+	spawnOneShot 3 0;
+	spawnDelayMsec 0 125;
+	lifeSpanMsec 500 0;
+	spawnOrgX 0 0;
+	spawnOrgY -2.5 5;
+	spawnOrgZ -2.5 5;
+	spawnOffsetRadius 1 0;
+	spawnOffsetHeight 1 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot -360 720;
+	gravity 5 1.25;
+	elasticity 1 0;
+	atlasBehavior startFixed;
+	atlasIndex 0;
+	atlasFps 1;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 200
+	{
+		{
+			0 0.08824
+			1 0.07843
+		}
+		{
+			0 -0.07353
+			1 -0.06863
+		}
+	};
+	velGraph0Y 270
+	{
+		{
+			0 0.07407
+			1 0.07407
+		}
+		{
+			0 -0.07407
+			1 -0.07407
+		}
+	};
+	velGraph0Z 20
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0.2549
+			1 0.25
+		}
+	};
+	velGraph1X 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 20
+	{
+		{
+			0 -0.5
+			0.2989 -0.3
+			0.7126 -0.1682
+			1 -0.1221
+		}
+		{
+			0 0.5
+			0.25 0.2955
+			0.6983 0.15
+			1 0.06206
+		}
+	};
+	sizeGraph0 22
+	{
+		{
+			0 0.1709
+			1 0.75
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	sizeGraph1 160
+	{
+		{
+			0 0.25
+			1 0.75
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 1.333
+	{
+		{
+			0 0.75
+			1 0.75
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.317647 0.317647 0.317647
+			1 0.27451 0.27451 0.27451
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0.7921
+			0.3736 0.7079
+			0.7098 0.5099
+			0.8851 0.2624
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	lightingFrac 0.5;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 5;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_water_drip_base"
+	};
+}

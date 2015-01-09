@@ -1,0 +1,52 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -16.697598 -38 -44.236797 ) ( -4.6975985 -38 -44.236797 ) ( -4.6975985 36 -44.236797 ) traverse 64 64 -10 28 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -38 52 ) ( -4 -38 52 ) ( -4 36 52 ) traverse 64 64 -10 28 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -36 8 ) ( -4 -36 8 ) ( -4 -36 48 ) traverse 64 64 -10 48 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 36 8 ) ( 8 -38 8 ) ( 8 -38 48 ) traverse 64 64 -28 48 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 36 8 ) ( 8 36 8 ) ( 8 36 48 ) traverse 64 64 -10 48 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -38 8 ) ( -24 36 8 ) ( -24 36 48 ) traverse 64 64 -28 48 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "69.0 0.0 18.4"
+"targetname" "auto2108"
+"angles" "0 0 0"
+"classname" "node_negotiation_end"
+}
+// entity 2
+{
+"targetname" "auto2108"
+"origin" "8.0 0.0 52.0"
+"classname" "script_origin"
+}
+// entity 3
+{
+"target" "auto2108"
+"origin" "-8.0 0.0 84.0"
+"animscript" "jump_down_96"
+"angles" "0 0 0"
+"classname" "node_negotiation_begin"
+"targetname" "traverse"
+}
+// entity 4
+{
+"targetname" "deprecated_traverse"
+"classname" "trigger_multiple"
+// brush 0
+{
+ ( 104 48 128 ) ( 96 48 128 ) ( 96 32 128 ) traverse 64 64 16 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 216 48 384 ) ( 216 64 384 ) ( 224 64 384 ) traverse 64 64 16 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 -128 176 ) ( 136 -128 176 ) ( 136 -128 168 ) traverse 64 64 16 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 320 40 256 ) ( 320 56 256 ) ( 320 56 248 ) traverse 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 136 128 184 ) ( 128 128 184 ) ( 128 128 176 ) traverse 64 64 16 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 48 168 ) ( 64 32 168 ) ( 64 32 160 ) traverse 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

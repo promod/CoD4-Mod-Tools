@@ -1,0 +1,845 @@
+#name "vehicleweapon"
+#dll "all" "weapon"
+#target_dir "weapons/sp/" // target location 1 (single-player)
+#target_dir "weapons/mp/" // target location 2 (multi-player)
+#target_dir "xmodel/"
+#target_dir ""
+#target_dir "xanim/"
+#file_ext "*"
+#version 17
+
+string "WEAPONFILE" configstringFileType
+
+enum { "non-player" } weaponClass
+enum { "1: Single-Player", "2: Multi-Player" } targetFolder
+enum { "bullet", "projectile" } weaponType
+enum { "none", "small", "medium", "large" } penetrateType
+enum { "none", "bullet_small", "bullet_large", "bullet_ap", "shotgun", "grenade_bounce", "grenade_explode", "rocket_explode", "projectile_dud" } impactType
+enum { "primary" } inventoryType
+
+string worldFlashEffect
+string worldShellEjectEffect
+string fireSound
+keyenum("rumble.gdf") fireRumble
+
+int 30 0 3000 damage
+int 30 0 3000 minDamage
+float 15000 1 15000 maxDamageRange
+float 16000 1 16000 minDamageRange
+int 30 0 1000 playerDamage
+
+float 1600 0 8000 autoAimRange
+float 3200 0 8000 aimAssistRange
+float 3200 0 8000 aimAssistRangeAds
+
+float 10 0 180 aimPadding
+float 0 0 50 adsSpread
+
+float 15000 0 15000 enemyCrosshairRange
+
+float 1.0 0 10 locNone
+float 1.0 0 10 locHelmet
+float 1.0 0 10 locHead
+float 1.0 0 10 locNeck
+float 1.0 0 10 locTorsoUpper
+float 1.0 0 10 locTorsoLower
+float 1.0 0 10 locRightArmUpper
+float 1.0 0 10 locRightArmLower
+float 1.0 0 10 locRightHand
+float 1.0 0 10 locLeftArmUpper
+float 1.0 0 10 locLeftArmLower
+float 1.0 0 10 locLeftHand
+float 1.0 0 10 locRightLegUpper
+float 1.0 0 10 locRightLegLower
+float 1.0 0 10 locRightFoot
+float 1.0 0 10 locLeftLegUpper
+float 1.0 0 10 locLeftLegLower
+float 1.0 0 10 locLeftFoot
+float 1.0 0 10 locGun
+
+float 0.1 0.0 10.0 fireTime
+
+// additional projectile weapon info
+int 300 0 10000 explosionRadius
+int 10 0 10000 explosionInnerDamage
+int 10 0 10000 explosionOuterDamage
+float 180 0 180 damageConeAngle
+int 600 0 10000 projectileSpeed
+int 0 0 10000 projectileSpeedUp
+int 0 0 10000 projectileActivateDist
+float 30 0 10000 projectileLifetime
+float 0 0 10000 timeToAccelerate
+float 0 0 10000 projectileCurvature
+string projectileModel
+enum { "grenade", "rocket", "molotov", "none" } projExplosionType
+string projExplosionEffect
+int 0 0 1 projExplosionEffectForceNormalUp
+string projExplosionSound
+string projDudEffect
+string projDudSound
+int 0 0 1 armorPiercing
+int 1 0 1 projImpactExplode
+
+// additional projectile weapon info
+string projTrailEffect
+int 200 0 1000 projectileDLight
+float 0.75 0 1 projectileRed
+float 0.3 0 1 projectileGreen
+float 0.0 0 1 projectileBlue
+
+float 0.0 0 10 destabilizationRateTime
+float 10 0.0 10000000 destabilizationCurvatureMax
+int 30000 0 32000 destabilizeDistance
+enum { "None", "Sidewinder", "Hellfire", "Javelin" } guidedMissileType
+float 3000 0 1000000 maxSteeringAccel
+
+
+string useHintString
+
+enum { "None", "Pip-On-A-Stick", "Bouncing diamond" } activeReticleType
+string reticleCenter
+int 32 1 480 reticleCenterSize
+
+float 0 0 100 adsDofStart
+float 0 0 100 adsDofEnd
+
+string killIcon
+enum { "4:1", "1:1", "2:1" } killIconRatio
+int 1 0 1 flipKillIcon
+
+
+vcontainer
+{
+	scrollbox(targetFolder)
+	[
+		exec
+		{
+			width(300)
+			labelwidth(160)
+		}
+	]
+	
+	scrollbox(weaponType)
+	[
+		exec
+		{
+			width(300)
+			labelwidth(160)
+		}
+	]
+	
+	
+	////////////////////////////////////////
+	// Aim Assist
+	////////////////////////////////////////
+	vcontainer
+	{
+		floatedit(autoAimRange, 1, 100)
+		[
+			exec
+			{
+				label("Auto Aim Range")
+				tooltip("(Console only.) The range in world units up to which entering ADS will lock-on to enemies. (1 world unit = 1 inch)")
+			}
+		]
+		
+		hcontainer
+		{
+			floatedit(aimAssistRange, 1, 100)
+			[
+				exec
+				{
+					label("Aim Assist Range")
+					tooltip("(Console only.) The range in world units up to which the crosshair will stick to targets. (1 world unit = 1 inch)")
+				}
+			]
+			
+			floatedit(aimAssistRangeAds, 1, 100)
+			[
+				exec
+				{
+					label("Aim Assist Range ADS")
+					tooltip("(Console only.) The range in world units up to which the crosshair will stick to targets in ADS. (1 world unit = 1 inch)")
+					width(260)
+					labelwidth(160)
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Aim Assist (Console only)")
+		}
+	]
+	
+	floatedit(aimPadding, 0.1, 0.2)
+	[
+		exec
+		{
+			label("Aim Padding")
+			tooltip("The direction of fire will turn away from the barrel direction towards the player's view by up to this amount (in degrees).  Set to zero if you want the direction of fire to be exactly the direction of the barrel.")
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	floatedit(adsSpread, 0.1, 1)
+	[
+		exec
+		{
+			label("Spread")
+			tooltip("Size of bullet/projectile spread cone. Bullet/projectile will project randomly within the confines of the cone.")
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	floatedit(enemyCrosshairRange, 1, 100)
+	[
+		exec
+		{
+			label("Enemy Crosshair Range")
+			tooltip("The range in world units at which an enemy will change your crosshair color. (1 world unit = 1 inch)")
+			width(280)
+			labelwidth(180)
+		}
+	]
+	
+	checkbox(armorPiercing)
+	[
+		exec
+		{
+			width(300)
+			labelwidth(160)
+		}
+	]
+	
+	scrollbox(penetrateType)
+	[
+		exec
+		{
+			label("Penetration")
+			tooltip("Type of bullet penetration.")
+		}
+	]
+	
+	scrollbox(impactType)
+	[
+		exec
+		{
+			width(300)
+			label("Impact type")
+			tooltip("The impact type, used to play impact effects based on surfacetype")
+		}
+	]
+
+	fileedit(worldFlashEffect)
+	[
+		exec
+		{
+			label("World Flash Effect")
+			reldir("raw/")
+			labelwidth(160)
+		}
+	]
+
+	fileedit(worldShellEjectEffect)
+	[
+		exec
+		{
+			label("World Shell Eject")
+			reldir("raw/")
+			width(500)
+		}
+	]
+	
+	edit(fireSound)
+	[
+		exec
+		{
+			width(500)
+			labelwidth(160)
+		}
+	]
+	
+	scrollbox(fireRumble)
+	[
+		exec
+		{
+			width(500)
+			labelwidth(160)
+		}
+	]
+
+	////////////////////////////////////////
+	// Damage
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			spinedit(minDamage, 1, 10)
+			[
+				exec
+				{
+					label("Min Dmg")
+					tooltip("Damage per-bullet, applied beyond Min Dmg Range.")
+				}
+			]
+			
+			floatedit(minDamageRange, 120, 8000)
+			[
+				exec
+				{
+					label("Min Dmg Range")
+					tooltip("Range in world units, beyond which the minimum damage is applied. (1 world unit = 1 inch)")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			spinedit(damage, 1, 10)
+			[
+				exec
+				{
+					label("Max Dmg")
+					tooltip("Damage per-bullet, applied up to Max Dmg Range. Damage falls off linearly from Max Dmg Range until reaching Min Dmg at Min Dmg Range.")
+				}
+			]
+			
+			floatedit(maxDamageRange, 120, 8000)
+			[
+				exec
+				{
+					label("Max Dmg Range")
+					tooltip("Range in world units, up to which the maximum damage is applied. (1 world unit = 1 inch)")	
+				}
+			]
+		}
+
+		hcontainer
+		{
+			spinedit(playerDamage, 1, 10)
+			[
+				exec
+				{
+					label("Damage to player")
+					tooltip("Damage done to player when hit by an AI")
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Damage")
+		}
+	]
+		
+	////////////////////////////////////////
+	// Location Damage
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			floatedit(locNone, 0.1, 0.2)
+			[
+				exec
+				{
+					label("None")
+					tooltip("Unrelated to weapon. Used for damage that's not location based, such as grenades or falling.  Included here for completeness.")
+				}
+			]
+
+			floatedit(locHelmet, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Helmet")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+			
+		hcontainer
+		{
+			floatedit(locHead, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Head")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+
+			floatedit(locNeck, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Neck")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(locTorsoUpper, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Upper Torso")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+
+			floatedit(locTorsoLower, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Lower Torso")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+	
+		hcontainer
+		{
+			floatedit(locLeftArmUpper, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Left Upper Arm")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+
+			floatedit(locRightArmUpper, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Right Upper Arm")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(locLeftArmLower, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Left Lower Arm")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+
+			floatedit(locRightArmLower, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Right Lower Arm")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(locLeftHand, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Left Hand")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+
+			floatedit(locRightHand, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Right Hand")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(locLeftLegUpper, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Left Upper Leg")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+
+			floatedit(locRightLegUpper, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Right Upper Leg")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(locLeftLegLower, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Left Lower Leg")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+
+			floatedit(locRightLegLower, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Right Lower Leg")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+		
+		hcontainer
+		{
+			floatedit(locLeftFoot, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Left Foot")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+
+			floatedit(locRightFoot, 0.1, 0.2)
+			[
+				exec
+				{
+					label("Right Foot")
+					tooltip("Damage per-bullet multiplier.")
+				}
+			]
+		}
+		
+		floatedit(locGun, 0.1, 0.2)
+		[
+			exec
+			{
+				label("Gun")
+				tooltip("Damage per-bullet multiplier.")
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox("Location Damage")
+		}
+	]
+	
+	////////////////////////////////////////
+	// Reticle Settings
+	////////////////////////////////////////
+	vcontainer
+	{
+		fileedit(reticleCenter)
+		[
+			exec
+			{
+				label("Center Reticle")
+				tooltip("Center Reticle.")
+				reldir("raw/")
+				width(500)
+			}
+		]
+		
+		spinedit(reticleCenterSize, 1, 2)
+		[
+			exec
+			{
+				label("Center Size")
+				tooltip("Center Size.")
+			}
+		]
+		scrollbox(activeReticleType)
+		[
+			exec
+			{
+				label("Active reticle")
+				width(300)
+				tooltip("Optional code-driven reticle animations")
+			}
+		]		
+	}
+	[
+		exec
+		{
+			groupBox("Reticle Settings")
+		}
+	]
+	
+	floatedit(fireTime, 0.05, 0.2)
+	[
+		exec
+		{
+			width(300)
+			labelwidth(160)
+		}
+	]
+	
+	////////////////////////////////////////
+	// Projectile
+	////////////////////////////////////////
+	vcontainer
+	{
+		checkbox(projImpactExplode)
+		hcontainer
+		{
+			spinedit(explosionInnerDamage, 1, 10)
+			spinedit(explosionOuterDamage, 1, 10)
+			spinedit(explosionRadius, 10, 50)
+		}
+		hcontainer
+		{
+			spinedit(projectileSpeed, 10, 100)
+			spinedit(projectileSpeedUp, 10, 100)
+			spinedit(projectileActivateDist, 10, 100)
+		}
+		
+		floatedit( projectileLifetime, 0.1, 1 )
+		[
+			exec
+			{
+				label("Lifetime")
+				tooltip("The time (in seconds) after which the missile will explode in the air, if it hasn't hit anything yet")
+			}
+		]
+		
+		hcontainer
+		{
+			floatedit(timeToAccelerate, 0.1, 1)
+			[
+				exec
+				{
+					label("Time to accelerate")
+					tooltip("Time for the projectile to accelerate from zero to full speed.")
+				}
+			]
+			floatedit(projectileCurvature, 0.1, 1)
+			[
+				exec
+				{
+					label("Max flight curvature")
+					tooltip("The largest trajectory curvature allowed.  The curvature is chosen randomly in this range.")
+				}
+			]
+		}
+		
+		fileedit(projectileModel)
+		[
+			exec
+			{
+				reldir("raw/xmodel/")
+			}
+		]
+		hcontainer
+		{
+			scrollbox(projExplosionType)
+			checkbox(projExplosionEffectForceNormalUp)
+			[
+				exec
+				{
+					label("Force straight-up normal vector")
+					labelwidth(350)
+					width(400)
+					righttext()
+				}
+			]
+		}
+		fileedit(projExplosionEffect)
+		[
+			exec
+			{
+				reldir("raw/")
+				width(400)
+			}
+		]
+		fileedit(projDudEffect)
+		[
+			exec
+			{
+				reldir("raw/")
+				width(400)
+			}
+		]
+		edit(projExplosionSound)
+		edit(projDudSound)
+		
+		fileedit(projTrailEffect)
+		[
+			exec
+			{
+				reldir("raw/")
+				width(400)
+			}
+		]
+		spinedit(projectileDLight, 10, 100)
+		hcontainer
+		{
+			floatedit(projectileRed, 0.1, 0.1)
+			floatedit(projectileGreen, 0.1, 0.1)
+			floatedit(projectileBlue, 0.1, 0.1)
+		}
+		scrollbox(guidedMissileType)
+		[
+			exec
+			{
+				label("Missile guidance")
+				tooltip("Guided missile type")
+			}
+		]
+		floatedit(maxSteeringAccel, 1, 10 )
+		[
+			exec
+			{
+				visible( guidedMissileType != "None" )
+				label("Max steering accel")
+				tooltip("The maximum acceleration with which the guided missile can steer (inches / sec^2).")
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox("Projectile")
+		}
+	]
+	
+	
+	hcontainer
+	{
+		spinedit(destabilizeDistance, 10, 100)
+		[
+			exec
+			{
+				label("Destabilize Distance")
+				tooltip("The distance the projectile goes before becoming unstable")
+				width(262)
+				labelwidth(187)
+			}
+		]
+		
+		floatedit(destabilizationRateTime, 0.01, 0.1)
+		[	
+			exec
+			{
+				label("Destabilize Rate (time)")
+				tooltip("The time between 'instability' course changes")
+				width(262)
+				labelwidth(187)
+			}
+		]
+	}
+	hcontainer
+	{
+		floatedit(destabilizationCurvatureMax, 0.01, 1)
+		[
+			exec
+			{
+				label("Destabilize Curvature Max")
+				tooltip("The maximum curvature in degrees per second")
+				width(262)
+				labelwidth(187)
+			}
+		]
+	}
+	
+	edit(useHintString)
+
+	////////////////////////////////////////
+	// Depth of Field Settings
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			floatedit(adsDofStart, 0.1, 0.5)
+			[
+				exec
+				{
+					label("ADS Start")
+				}
+			]
+			
+			floatedit(adsDofEnd, 0.1, 0.5)
+			[
+				exec
+				{
+					label("ADS End")
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Depth of Field Settings")
+		}
+	]
+
+	vcontainer
+	{
+		hcontainer
+		{
+			fileedit(killIcon)
+			[
+				exec
+				{
+					label("Kill Icon")
+					reldir("raw/")
+					width(500)
+					labelwidth(180)
+				}
+			]
+			scrollbox(killIconRatio)
+			[
+				exec
+				{
+					label(" Aspect:")
+					width(110)
+					labelwidth(60)
+				}
+			]
+			checkbox(flipKillIcon)
+			[
+				exec
+				{
+					label(" Flip:")
+					tooltip("Used for weapons that need to have their kill icon horizontally flipped before displaying. (For MP obituaries).")
+					lefttext()
+					width(65)
+					labelwidth(40)
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("User Interface")
+		}
+	]
+
+}
+

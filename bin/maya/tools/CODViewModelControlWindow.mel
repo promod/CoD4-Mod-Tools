@@ -1,0 +1,608 @@
+// --------------------------------------------------------------------------
+// CODViewModelControlWindow.mel - MEL Script
+// Infinity Ward's Viewmodel procs for Maya
+// --------------------------------------------------------------------------
+//
+// DESCRIPTION:
+//  Used for working with Viewmodel model and animation 
+//    files
+//
+//
+// AUTHORS:
+//  Richard Cheek     		
+//  Eric Pierce
+//
+//  Copyright ©2006 Infinity Ward,
+//  a division of Activision, Inc.
+//
+// --------------------------------------------------------------------------
+
+// This is the single run version of MakeVMExportRig
+// It runs on the open vmGun file.
+
+global string $CurrentViewModel           = "ViewModel_Rig.mb";     
+global string $CurrentDefMeshModel        = "ViewModel_DefMesh.mb";   
+global string $CurrentViewModelSleeves    = "viewmodelSleeves_OpForce"; 
+global string $Root_Directory             = "C:/trees/cod3-pc/cod3-modtools/"; 
+
+global proc MakeSingleVMExportRig() 
+{
+  // Set up vars
+ 
+ 		global string $Root_Directory ;
+    string $Tokenize[];
+    string $Tokenize2[];
+    int $TokSize;
+    string $EachVMGun;
+    string $MayaName;
+    string $ExportName;
+    int $loop;
+    string $Result;
+
+
+  // Get the file name
+
+    string $EachVMGun = `file -q -sn`;
+
+
+  // Check to see if it is a VMGun file
+
+    if(`gmatch $EachVMGun "*.VMGun.mb"` == 0) 
+    {
+      warning "File must be a .VMGun.mb type to create a new gunsleeve file";
+      return;
+    }
+
+
+  // Calculate Maya name
+
+    tokenize $EachVMGun "/" $Tokenize;
+    $TokSize = `size $Tokenize`;
+    
+    $MayaName = "";
+    
+    for ($loop = 0; $loop < $TokSize -1 ; $loop ++ ) 
+    {
+      $MayaName = $MayaName + $Tokenize[$loop];
+      $MayaName = $MayaName + "/";
+    }
+    
+    tokenize $Tokenize[$TokSize - 1] "." $Tokenize2;
+    
+    $MayaName = $MayaName + "viewmodel_" + $Tokenize2[0] + "_gunsleeves.mb";
+
+      
+
+  // Calculate the export name
+
+    $ExportName = $Root_Directory + "public/model_export/viewmodels/modern_weapons/viewmodel_" + $Tokenize2[0] + "_animated.XMODEL_EXPORT";
+    SetUpVMExportRig $EachVMGun $ExportName $MayaName;
+}
+
+/*
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   MakeVMExportRig
+//
+//      The view models need 3 files exported to the game engine, 1. the gun, 2. the arms and 3. both together.
+//      We don't need both together on the animation side because the guns are all referenced in to the main rig.
+//  
+//      This proc creates the 'both' rig by importing the 2 files and parenting them together so the automatic
+//      exporter will work.
+//
+//      This proc will need to be ran on all the guns every time the arms rig changes.
+//
+//      This proc will also set up the export settings. To do this some selection sets will need to be set up in 
+//      in the maya files. For the guns we need a selection set called `GunExport` and the arm meshes need
+//      one called 'ArmExport'.
+//      These selection sets will tell the proc what nodes need to be selected to go into the export settings.
+//  
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc MakeVMExportRig() 
+{
+  // Add confirm dialog
+  
+    string $Confirm = `confirmDialog -title "Confirm" -message "This will delete any unsaved changes. Are you sure?\n\nPlease make sure all the *gunsleave files are checked out." -button "Yes" -button "No" -defaultButton "Yes" -cancelButton "No" -dismissString "No"`;
+  
+    if ($Confirm == "No") 
+    {
+      return;
+    }
+
+
+  // Start by getting a list of all the .VMGuns files in the view model directory.
+
+    string $GunList[] ;
+    
+    source CalcSubDirFileList;
+    
+    string $TopDir = "C:/trees/cod3/cod3_animation_source/viewmodels/modern_weapons";
+    
+    
+    $GunList = `CalcSubDirFileList $TopDir "VMGun.mb"`;
+    
+    string $Tokenize[];
+    string $Tokenize2[];
+    int $TokSize;
+    
+    string $EachVMGun;
+    
+    string $MayaName;
+    string $ExportName;
+
+    int $loop;
+
+    string $Result;
+
+    for ( $EachVMGun in $GunList ) 
+    {
+      // Calculate Maya name
+
+        tokenize $EachVMGun "/" $Tokenize;
+        $TokSize = `size $Tokenize`;
+
+        $MayaName = "";
+
+        for ( $loop = 0; $loop < $TokSize -1 ; $loop ++ ) 
+        {
+          $MayaName = $MayaName + $Tokenize[$loop];
+          $MayaName = $MayaName + "/";
+        }
+        
+        tokenize $Tokenize[$TokSize - 1] "." $Tokenize2;
+
+        $MayaName = $MayaName + "viewmodel_" + $Tokenize2[0] + "_gunsleeves.mb";
+
+        
+      // Calculate the export name
+
+        $ExportName = $Tokenize[0] + "/" + $Tokenize[1] + "/cod3/cod3/model_export/viewmodels/"  + $Tokenize[5] +"/viewmodel_" + $Tokenize2[0] + "_animated.XMODEL_EXPORT";
+
+        SetUpVMExportRig $EachVMGun $ExportName $MayaName;
+    }
+}
+*/
+
+/*
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   Parent_Extra
+//  
+//  This proc connects the chosen extra control to the selected object with a parent constraint.
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc Parent_Extra ( string $Side) 
+{
+  // Get the selected object as this will be the node the extra control is connected to.
+    string $Sel[] = `ls -sl`;
+
+  // Calc the hand
+    string $HandGRP;
+    if ( $Side == "RI" ) 
+    {   
+        $HandGRP = "rig:Hand_Extra_RI_GRP";
+    }
+    else 
+    {   
+        $HandGRP = "rig:Hand_Extra_LE_GRP";
+    }
+    
+  // Make the connection
+    string $ParentC[] = `parentConstraint -weight 1 $Sel[0] $HandGRP `  ;
+    
+  // Store the constraint in the extra control.
+    setAttr -type "string" ($HandGRP + ".Parent") $ParentC[0];
+}
+*/
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   SetUpVMExportRig
+//  
+//  This proc is the main workhorse of MakeVMExportRig
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc SetUpVMExportRig(string $GunFileName, string $ExportName, string $MayaName) 
+{
+    global string $CurrentDefMeshModel;
+    global string $CurrentViewModelSleeves;
+    global string $Root_Directory;
+
+    string $Result;
+    
+  // check it's not a incrementalsave file
+
+    $Result = `match "incrementalSave" $GunFileName`;
+    if ($Result != "") 
+    {
+      print ("\n" + $GunFileName + " is in an incrementalSave folder, ignoring");
+      return;
+    }
+
+  // check it's not in a CVS folder, which means it's probably in a base folder too
+
+    $Result = `match "CVS" $GunFileName`;
+    if ($Result != "") 
+    {
+      print ("\n" + $GunFileName + " is in a CVS folder, ignoring");
+      return;
+    }
+
+
+    source CODExportModelWindow;
+  
+    file -f -new;
+  
+  // Load in the view model rig.
+  
+    file -f  -type "mayaBinary" -o ($Root_Directory + "public/bin/maya/rigs/viewmodel/" + $CurrentDefMeshModel);
+  
+  
+  // Now import in the new gun.
+  
+    file -import -type "mayaBinary" $GunFileName;
+  
+  
+  // Next connect the gun to the rig.
+  
+    select -r J_Gun ;
+    select -add tag_weapon;
+    parent;
+
+
+  //Lastly set up the export settings.
+
+  
+  // First check that there isn't any entrys from old settings, if so delete them
+  
+    if (`attributeExists ModelCount IWGlobalNode`) 
+    {
+      // Unlock the node to add or remove an attribute
+      
+        lockNode -lock off IWGlobalNode;
+    
+        delete IWGlobalNode;
+    
+        createNode "renderLayer" -n "IWGlobalNode";
+    
+        addAttr -ln ModelCount -at byte IWGlobalNode;
+        setAttr IWGlobalNode.ModelCount 0;
+    
+        addAttr -ln "postExportConvert" -dt "string" IWGlobalNode;
+        setAttr -type "string" "IWGlobalNode.postExportConvert" "Export Only";
+    }
+
+    
+  // Add a new model export entry
+
+  // Add 1 to the Model count attribute
+
+    int $ModelCount = `getAttr IWGlobalNode.ModelCount`;
+    
+    $ModelCount ++;
+    
+    setAttr IWGlobalNode.ModelCount $ModelCount;
+
+    
+  // Add all the extra attributes to the IWGlobalNode for the new Model
+
+    AddModelAttributes $ModelCount;
+
+        
+  // Set the Force Export Selected Joints to 1
+
+    setAttr "IWGlobalNode.ForceExportSelectedJoints1" 1;
+    
+    
+  // Set the export name
+
+    setAttr -type "string" IWGlobalNode.ModelFileName1 $ExportName;
+
+    
+  // name the maya file
+
+    file -rename $MayaName;
+    
+    //system("shell p4 edit " + $MayaName);
+
+
+  // Print out results for debugging use
+
+    print ("\n\n\nVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV\nWorking on  : \n" + $GunFileName);
+    print "\nMaya name : ";
+    print $MayaName;
+    print "\nExport name :";
+    print $ExportName;
+    print "\nVMGun file : ";
+    print $GunFileName;
+
+
+  // Check to see if the maya file exists and is readable
+
+    int $FileResult = `filetest -r $MayaName`;
+
+  // If it doesn't exist simply save the file.
+        
+    if ($FileResult == 0) 
+    {
+      print ("\n" + $MayaName + " did not exist, so saving a new file\n");
+      file -save;
+		}
+    else 
+    {
+      // Check if the file is writable
+        
+        $FileResult = `filetest -w $MayaName`;
+        if ($FileResult == 1) 
+        {
+          print ("\n" + $MayaName + " existed, but is writable, so saving the file\n");
+          file -save;
+        }
+        else 
+        {
+          print ("\n" + $MayaName + " existed, but is NOT writable, so trying to set the read only flag before saving\n");
+          // Make it writable
+          system ("attrib -r \"" + $MayaName + "\"");
+          file -save;
+        }
+    }
+    print ("\n\n\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nFinished : \n" + $GunFileName);
+
+
+  // add the export nodes from the model quick selection sets
+    
+    select -r   GunExport;
+    select -tgl DefViewSkeleton;
+    select -tgl tag_view;
+    
+    select -tgl $CurrentViewModelSleeves;
+
+
+  // Set Exports
+
+    SetExportNodesME 1;
+    
+    
+  // Save the file once more to avoid Maya's prompt to save changes
+    
+    file -save;
+    
+    
+  // Automatically export the XMODEL file
+    
+    StartTheExportME 0;
+    
+    
+  // Relock the node to protect it
+    
+    lockNode IWGlobalNode;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   VM_ChangeGun
+//
+//      This changes the gun if one is already loaded.
+//  
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc VM_ChangeGun() 
+{
+  // First off check a rig is referenced.
+
+    int $Result = `objExists rig:DefMesh:tag_view`;
+
+    if ($Result == 0) 
+    {
+      $Result = `objExists ConRig:DefMesh:tag_view`;
+      if ($Result == 0) 
+      {
+        warning "No View Model rig is referenced";
+        return;
+      }
+    }
+
+  // Next check that a gun is also loaded.
+
+    $Result = `objExists VM_Gun:J_Gun`;
+    if ($Result == 0) 
+    {
+      warning "No Gun is referenced";
+      VM_AddNewGun;
+      return;
+    }
+
+
+  // Remove the ParentConstraint so the gun can be un-loaded
+
+    delete VMParentConstraint;
+
+    
+  // Check for and remove any constraints that are on the hand extra controls
+        
+    string $ParentRI = `getAttr  rig:Hand_Extra_RI_GRP.Parent`;
+    string $ParentLE = `getAttr  rig:Hand_Extra_LE_GRP.Parent`;
+    
+    if ($ParentRI != "") 
+    {
+      delete $ParentRI;
+    }
+    
+    if ($ParentLE != "") 
+    {
+      delete $ParentLE;
+    }
+  
+  // Add in a new gun;
+    
+    VM_SwitchGunReference;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   VM_SwitchGunReference
+//
+//      Simple proc to switch the reference file.
+//  
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc VM_SwitchGunReference()
+{
+  // Declare vars
+    string $GunFileName = `GetGunName`;
+
+  // check the file name
+
+    if ($GunFileName == "NoGun") 
+    {
+      return;
+    }
+
+  // Now switch the gun reference.
+  
+    print $GunFileName;
+    
+    file -loadReference "VM_GunRN"  $GunFileName;
+  
+  // Next connect the gun to the rig.
+  
+    VM_ConnectGun();
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   GetGunName
+//
+//      Simple proc to open a file load dialog to select the View model gun
+//  
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc string  GetGunName() 
+{
+    global string $Root_Directory;
+    
+    $GunFileName = `fileDialog -dm ($Root_Directory + "public/bin/maya/animation_src/viewmodel/" + "*.VMGun.mb")`;
+
+  // check the file name
+
+    if ($GunFileName == "") 
+    {
+      $GunFileName = "NoGun";
+    }
+
+    return $GunFileName;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   VM_ConnectGun
+//
+//      This procedure creates a parent constraint between the gun and the rig
+//  
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc VM_ConnectGun() 
+{
+    if (`objExists rig:DefMesh:tag_weapon`) select -r rig:DefMesh:tag_weapon ;
+    else select -r ConRig:DefMesh:tag_weapon;
+    
+    select -tgl VM_Gun:J_Gun ;
+    
+    parentConstraint -weight 1 -name VMParentConstraint;
+
+    select -cl;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   VM_AddNewGun
+//
+//      This procedure opens a file load dialoge to select a gun file.
+//      The gun file is then loaded and attached to the rig.
+//      So the wrong maya file can't be loaded into the rig, all the gun files have been renamed .VMGun
+//  
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc string VM_AddNewGun() 
+{
+    string $GunFileName = `GetGunName`;
+    
+    // check the file name
+    
+    if ($GunFileName == "NoGun") 
+    {
+      return "falied";
+    }
+  
+  // Now reference in the new gun.
+  
+    file -r -type "mayaBinary" -namespace "VM_Gun" $GunFileName;
+  
+  // Next connect the gun to the rig.
+  
+    VM_ConnectGun();
+    
+    return $GunFileName;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   ImportVMRig
+//
+//      This procedure is the same as the LoadVMRig proc below, but without the file -new
+//
+//      Because the guns are stored seperatly, it's not a simple task of just loading a file.
+//      The Rig file has to be loaded, but then the gun file needs to come in and be attached to the rig.
+//  
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ImportVMRig() 
+{
+    global string $CurrentViewModel;
+    global string $Root_Directory;
+   
+  // Reference in the view model rig.
+
+    file -r -type "mayaBinary" -namespace "rig" -options "v=0" ($Root_Directory + "public/bin/maya/animation_src/viewmodel/" + $CurrentViewModel);
+
+  // Next the gun file needs to be loaded.
+    
+    VM_AddNewGun;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//  PROC:   LoadVMRig
+//
+//      This procedure loads the rig.
+//
+//      Because the guns are stored seperatly, it's not a simple task of just loading a file.
+//      The Rig file has to be loaded, but then the gun file needs to come in and be attached to the rig.
+//  
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc LoadVMRig() 
+{
+    global string $CurrentViewModel;
+    global string $Root_Directory;
+    
+    string $Confirm = `confirmDialog -title "Confirm" -message "This will delete any unsaved changes. Are you sure?" -button "Yes" -button "No" -defaultButton "Yes" -cancelButton "No" -dismissString "No"`;
+    
+    if ($Confirm == "No") 
+    {
+      return;
+    }
+    
+    file -f -new;
+    
+    currentUnit -linear "cm";
+  
+  // Reference in the view model rig.
+  
+    file -r -type "mayaBinary" -namespace "rig" -options "v=0" ($Root_Directory + "public/bin/maya/rigs/viewmodel/" + $CurrentViewModel);
+  
+  // Next the gun file needs to be loaded.
+  
+    VM_AddNewGun;
+}
+

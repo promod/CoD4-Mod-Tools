@@ -1,0 +1,203 @@
+iwfx 1
+
+{
+	name "embers_burst_b 3";
+	editorFlags useRandVel0;
+	flags spawnRelative spawnOffsetNone runRelToSpawn;
+	spawnRange 0 0;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 50 0;
+	spawnOneShot 50 0;
+	spawnDelayMsec 0 1500;
+	lifeSpanMsec 2000 1000;
+	spawnOrgX 50 -50;
+	spawnOrgY 25 -50;
+	spawnOrgZ 25 -50;
+	spawnOffsetRadius 0 0;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 360;
+	gravity 10 0;
+	elasticity 0 0;
+	atlasBehavior startFixed;
+	atlasIndex 0;
+	atlasFps 0;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 500
+	{
+		{
+			0 0.318182
+			0.25 -0.255981
+			0.366279 0.155502
+			0.453488 -0.00717703
+			0.572674 -0.00239235
+			0.729651 0.5
+			1 0.5
+		}
+		{
+			0 0.5
+			0.165698 0.5
+			0.328488 0.136364
+			0.436047 0.5
+			1 0.5
+		}
+	};
+	velGraph0Y 300
+	{
+		{
+			0 -0.5
+			1 -0.5
+		}
+		{
+			0 0.5
+			0.31686 -0.5
+			0.630814 0.5
+			1 -0.5
+		}
+	};
+	velGraph0Z 500
+	{
+		{
+			0 0.433014
+			0.188953 -0.41866
+			0.43314 0.318182
+			0.59593 -0.0311005
+			1 0.0645933
+		}
+		{
+			0 0.5
+			0.226744 0.0263158
+			0.427326 0.322967
+			1 0.5
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 1000
+	{
+		{
+			0 -0.5
+			1 -0.5
+		}
+		{
+			0 0.5
+			1 0.5
+		}
+	};
+	sizeGraph0 5
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.025974
+			0.164706 0
+			0.55 0
+			0.611765 0.038961
+			0.682353 0
+			1 0
+		}
+	};
+	sizeGraph1 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 1 1 1
+			1 1 1 1
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 1
+			0.511628 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 0;
+	emission "";
+	emitDist 0 0;
+	emitDistVariance 0 0;
+	trailSplitDist 100;
+	trailScrollTime 0;
+	trailRepeatDist 10;
+	billboardSprite
+	{
+		"gfx_exp_igc"
+	};
+}

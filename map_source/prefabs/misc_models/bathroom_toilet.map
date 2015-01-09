@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -22 12 0 ) ( -22 -12 0 ) ( 14 -12 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 -12 20 ) ( -26 12 20 ) ( 14 12 20 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 -11 20 ) ( 14 -11 20 ) ( 14 -11 6 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 12 0 ) ( 14 -12 0 ) ( 14 -12 20 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 13 20 ) ( -26 13 20 ) ( -26 13 6 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 -12 0 ) ( -26 12 0 ) ( -26 12 20 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -22 12 20 ) ( -22 -12 20 ) ( 14 -12 20 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 -12 38 ) ( -26 12 38 ) ( 14 12 38 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 -11 38 ) ( 14 -11 38 ) ( 14 -11 24 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 12 18 ) ( -16 -12 18 ) ( -16 -12 38 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 13 38 ) ( -26 13 38 ) ( -26 13 24 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 -12 18 ) ( -26 12 18 ) ( -26 12 38 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "bathroom_toilet"
+"classname" "misc_model"
+}

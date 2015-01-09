@@ -1,0 +1,9 @@
+#include "commonsetup.template"
+
+#if "@noStreamColor@" == "1"
+#define STREAM_PREFIX
+#else
+#define STREAM_PREFIX streamable
+#endif
+
+#include "unlitcommon.template"

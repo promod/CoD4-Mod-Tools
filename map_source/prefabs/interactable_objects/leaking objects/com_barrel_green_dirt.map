@@ -1,0 +1,28 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 88 36 0 ) ( -92 36 0 ) ( -92 -34 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 38 44 ) ( -54 38 44 ) ( -54 70 44 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -2 42 ) ( -14 4 42 ) ( -14 -2 74 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 10 42 ) ( 14 4 42 ) ( 14 10 74 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -14 42 ) ( -6 -14 42 ) ( 8 -14 74 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 14 42 ) ( 6 14 42 ) ( -8 14 74 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 8 42 ) ( -8 12 42 ) ( -12 8 74 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 12 42 ) ( 12 8 42 ) ( 8 12 74 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -8 42 ) ( 8 -12 42 ) ( 12 -8 74 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -12 42 ) ( -12 -8 42 ) ( -8 -12 74 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"script_noteworthy" "barrel_oil"
+"targetname" "leaking"
+"model" "com_barrel_green_dirt"
+"origin" "0.0 0.0 0.0"
+"classname" "script_model"
+}

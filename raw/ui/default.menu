@@ -1,0 +1,24 @@
+#include "ui/menudef.h"
+
+{
+	menuDef 
+	{
+		name default_menu
+
+		itemDef 
+		{
+			name default
+			text "@MENU_MENU_COULDNT_BE_FOUND"
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_EMPTY
+			rect 0 0 0 0
+			textalign 0
+			textscale TEXTSIZE_DEFAULT		
+			textalignx 0
+			textaligny 14
+			forecolor .9 .9 .9 .9
+			visible 1
+			textfont UI_FONT_NORMAL
+		}
+	}
+}

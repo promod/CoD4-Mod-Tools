@@ -1,0 +1,28 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 44 20 0 ) ( -32 20 0 ) ( -32 -20 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -20 36 ) ( -38 20 36 ) ( 38 20 36 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -20 64 ) ( 40 -20 64 ) ( 40 -20 28 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 -20 64 ) ( 38 20 64 ) ( 38 20 28 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 20 64 ) ( -36 20 64 ) ( -36 20 28 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 20 64 ) ( -38 -20 64 ) ( -38 -20 28 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "ch_russian_table_no_top"
+"classname" "misc_model"
+}
+// entity 2
+{
+"origin" "0.0 0.0 0.0"
+"model" "ch_russian_table_cloth2"
+"classname" "misc_model"
+}

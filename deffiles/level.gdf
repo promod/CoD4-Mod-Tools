@@ -1,0 +1,45 @@
+#name "level"
+#dll "pc" "level"
+#dll "ps3" "level"
+#dll "xenon" "level"
+#source_dir ""
+#target_dir "maps/"
+#file_ext ""
+#version 18
+
+string bspName
+string "victory" victoryBackdrop
+string "$default" defeatBackdrop
+string "$default" levelBriefing
+
+vcontainer
+{
+	edit( bspName )
+	edit( victoryBackdrop )
+	[
+		exec
+		{
+			width( 360 )
+			labelwidth( 200 )
+			label( "Victory Backdrop Material" )
+		}
+	]
+	edit( defeatBackdrop )
+	[
+		exec
+		{
+			width( 360 )
+			labelwidth( 200 )
+			label( "Defeat Backdrop Material" )
+		}
+	]
+	edit( levelBriefing )
+	[
+		exec
+		{
+			width( 360 )
+			labelwidth( 200 )
+			label( "MP Level Load Material" )
+		}
+	]
+}

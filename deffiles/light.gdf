@@ -1,0 +1,32 @@
+#name "light"
+#dll "pc" "light"
+#dll "ps3" "light"
+#dll "xenon" "light_xenon"
+#source_dir "light_assets"
+#target_dir "lights/"
+#target_dir "images/"
+#file_ext "*"
+#version 9
+
+string attenuationMap
+
+vcontainer
+{
+	vcontainer
+	{
+		fileedit( attenuationMap )
+		[
+			exec
+			{
+				width( 450 )
+				labelwidth( 0 )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Attenuation map" )
+		}
+	]
+}

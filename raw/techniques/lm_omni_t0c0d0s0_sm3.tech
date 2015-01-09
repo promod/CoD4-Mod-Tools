@@ -1,0 +1,23 @@
+{
+	stateMap "default";
+
+	vertexShader 3.0 "lm_omni_s_tc0_sm3.hlsl"
+	{
+	}
+
+	pixelShader 3.0 "lm_omni_t0c0d0s0_sm3.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		detailMapSampler = material.detailMap;
+		detailScale = material.detailScale;
+		specularMapSampler = material.specularMap;
+		envMapParms = material.envMapParms;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

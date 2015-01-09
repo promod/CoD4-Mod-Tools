@@ -1,0 +1,98 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents weaponClip;
+ ( -6 -3 -6 ) ( -6 -3 6 ) ( -9 5 6 ) me_concrete_dest1 133.12801 64 27.493757 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -13 5 2 ) ( -9 5 6 ) ( -6 -3 6 ) me_concrete_dest1 76.382973 -26.38908 -68.593124 -15.37634 104.93271 -0.037999999 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -10 -3 -2 ) ( -6 -3 -6 ) ( -9 5 -6 ) me_concrete_dest1 76.382973 26.389122 -68.592987 -7.1261516 104.93329 0.037999999 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -6 -3 6 ) ( -13 5 6 ) ( -6 -3 38 ) me_concrete_dest1 57.797661 38.399994 -52.996426 6 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -8 0 6 ) ( -8 6 6 ) ( -8 6 38 ) me_concrete_dest1 76.800003 38.399994 -70.185478 6 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 1
+{
+  contents weaponClip;
+ ( -15 -3 6 ) ( -15 -3 -6 ) ( 0 -3 -6 ) caulk 64 64 -40 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 -8 -6 ) ( 3 -8 6 ) ( 0 -3 6 ) caulk 64 64 -6 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -8 0 ) ( 0 -3 6 ) ( 32 -8 0 ) me_concrete_dest1 76.799988 -29.5 -59.605591 -3.7748981 180 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 0 -3 -6 ) ( 0 -8 0 ) ( 32 -3 -6 ) me_concrete_dest1 76.799988 -29.5 -59.605591 -5.4437275 180 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -1 -8 6 ) ( -6 -3 6 ) ( -6 -3 38 ) me_concrete_dest1 54.305847 38.399994 -49.975937 6 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 6 -5 -2 ) ( 6 -5 3 ) ( 38 -5 3 ) me_concrete_dest1 76.799988 -38.399994 -59.605621 -6 180 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 2
+{
+  contents weaponClip;
+ ( 6 -1 0 ) ( 6 -1 6 ) ( 0 -3 6 ) caulk 64 64 -721.5 650 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -3 6 ) ( 3 -8 0 ) ( 0 -3 0 ) caulk 64 64 33 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -1 6 ) ( 15 -4 0 ) ( 3 -8 0 ) me_concrete_dest1 76.463203 -26.54501 -58.666866 -11.776907 -166.67784 -0.033939082 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 6 -1 0 ) ( 0 -3 0 ) ( 3 -8 0 ) caulk 64 64 -34 -30 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -5 -3 ) ( 12 -5 3 ) ( 44 -5 -3 ) me_concrete_dest1 76.799973 -38.399994 -59.605568 -6 180 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 6 -1 0 ) ( 6 -5 0 ) ( 6 -1 32 ) caulk 64 64 30 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents weaponClip;
+ ( 0 -3 -6 ) ( 6 -1 -6 ) ( 6 -1 0 ) caulk 64 64 -721.5 650 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 -8 0 ) ( 0 -3 -6 ) ( 0 -3 0 ) caulk 64 64 33 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -1 -6 ) ( 0 -3 -6 ) ( 3 -8 0 ) me_concrete_dest1 76.463402 26.545029 -58.666817 -3.4814243 -166.67784 0.033938404 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 15 -4 0 ) ( 3 -8 0 ) ( 0 -3 0 ) caulk 64 64 -34 -30 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -5 -3 ) ( 12 -5 3 ) ( 44 -5 -3 ) me_concrete_dest1 76.799973 -38.399994 -59.605568 -6 180 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 6 -1 0 ) ( 6 -5 0 ) ( 6 -1 32 ) caulk 64 64 30 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents weaponClip;
+ ( 6 -1 -6 ) ( 6 -1 6 ) ( 6 -7 6 ) caulk 64 64 24 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -1 6 ) ( 10 -3 6 ) ( 6 -1 38 ) caulk 64 64 -34 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 1 6 ) ( 6 -5 6 ) ( 6 -5 38 ) me_concrete_dest1 63.90152 -38.399994 -39.602551 -6 -180 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 8 -5 2 ) ( 8 -1 6 ) ( 40 -1 6 ) me_concrete_dest1 76.622498 -27.215759 -58.762814 -11.068177 -176.09491 0.024021992 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 8 -1 -6 ) ( 8 -5 -2 ) ( 40 -1 -6 ) me_concrete_dest1 76.622498 27.21579 -58.762817 -2.5615375 -176.09491 -0.024022019 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 5
+{
+  contents weaponClip;
+ ( 6 5 -6 ) ( 6 5 6 ) ( 6 -1 6 ) caulk 64 64 30 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -1 -6 ) ( 6 -1 6 ) ( 8 -2 5 ) caulk 64 64 -34 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 6 5 ) ( 8 -2 5 ) ( 6 -1 6 ) me_concrete_dest1 76.799988 -34.346004 -48 -17.83872 -90 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 6 5 -6 ) ( 6 -1 -6 ) ( 8 -2 -5 ) me_concrete_dest1 116.53897 -35.757069 -1938.4589 1457.918 -75.029388 0.18823138 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 8 -2 -5 ) ( 8 -2 5 ) ( 8 6 5 ) me_concrete_dest1 76.799988 -38.400009 -48 -6 180 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 4 5 6 ) ( 7 2 6 ) ( 4 5 38 ) me_concrete_dest1 54.305859 -38.399998 -32.162979 -6 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents weaponClip;
+ ( 0 -3 6 ) ( 0 4 6 ) ( 5 4 6 ) ch_concretewall02 128 128 -759 -977.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 5 4 -6 ) ( 0 4 -6 ) ( 0 -3 -6 ) ch_concretewall02 128 128 -758.5 -991.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244
+ ( 6 -1 6 ) ( 6 -1 -6 ) ( 0 -3 -6 ) caulk 64 64 865 650 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 5 -6 ) ( 6 5 6 ) ( 0 -3 6 ) caulk 64 64 37 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 5 6 ) ( 6 5 -6 ) ( 6 -1 -6 ) caulk 64 64 35 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 5 6 ) ( 7 2 6 ) ( 4 5 38 ) me_concrete_dest1 54.305859 -38.399998 -32.162979 -6 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents weaponClip;
+ ( -3 5 6 ) ( -3 5 -6 ) ( -9 5 -6 ) caulk 64 64 -37 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 5 6 ) ( 6 9 2 ) ( 38 5 6 ) me_concrete_dest1 76.800018 -27.152901 -34 -13.778175 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 6 9 -2 ) ( 6 5 -6 ) ( 38 9 -2 ) me_concrete_dest1 76.800018 27.152899 -34 -5.2928691 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 2 6 6 ) ( 7 6 6 ) ( 7 6 38 ) me_concrete_dest1 76.800049 38.400009 -34 6 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 4 5 6 ) ( 7 2 6 ) ( 4 5 38 ) me_concrete_dest1 54.305859 -38.399998 -32.162979 -6 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 4 657.5 ) ( -5 7 657.5 ) ( -8 4 689.5 ) me_concrete_dest1 54.305859 38.399971 -13.799006 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents weaponClip;
+ ( 0 -3 6 ) ( -6 -3 6 ) ( -9 5 6 ) ch_concretewall02 128 128 -759 -977.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 6 5 -6 ) ( -9 5 -6 ) ( -6 -3 -6 ) ch_concretewall02 128 128 -758.5 -991.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244
+ ( -9 5 6 ) ( -9 5 -6 ) ( 6 5 -6 ) caulk 64 64 -34 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -3 6 ) ( 0 -3 -6 ) ( -6 -3 -6 ) caulk 64 64 -34 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -3 -6 ) ( -9 5 -6 ) ( -9 5 6 ) me_concrete_dest1 124.65171 64 43.048634 6 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 0 -3 6 ) ( 6 5 6 ) ( 6 5 -6 ) caulk 64 64 30 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 6 ) ( -8 6 6 ) ( -8 6 38 ) me_concrete_dest1 76.800003 38.399994 -70.185478 6 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 4 5 6 ) ( 7 2 6 ) ( 4 5 38 ) me_concrete_dest1 54.305859 -38.399998 -32.162979 -6 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 4 657.5 ) ( -5 7 657.5 ) ( -8 4 689.5 ) me_concrete_dest1 54.305859 38.399971 -13.799006 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,35 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -78 28 0 ) ( -78 -28 0 ) ( 36 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -28 40 ) ( 32 -28 40 ) ( 32 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -28 44 ) ( 36 28 44 ) ( 36 28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 28 40 ) ( 0 28 40 ) ( 0 28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -28 62 ) ( -40 28 62 ) ( 20 28 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -28 62 ) ( 20 28 62 ) ( 36 28 44 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -36 0 0
+ ( -76 -28 24 ) ( -76 28 24 ) ( -40 28 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -36 0 0
+ ( -76 28 24 ) ( -76 -28 24 ) ( -76 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 32 -28 0 ) ( 82 -28 0 ) ( 82 28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -28 44 ) ( 36 28 44 ) ( 72 28 38 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -28 0 ) ( 32 -28 40 ) ( 82 -28 36 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 28 0 ) ( 72 -28 0 ) ( 72 -28 36 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 82 28 0 ) ( 82 28 36 ) ( 32 28 40 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 28 42 ) ( 36 -28 42 ) ( 36 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"destructible_type" "vehicle_small_hatch_green"
+"targetname" "destructible"
+"origin" "0.0 0.0 0.0"
+"model" "vehicle_small_hatch_green_destructible_mp"
+"classname" "script_model"
+}

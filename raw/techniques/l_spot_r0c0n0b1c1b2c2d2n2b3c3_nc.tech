@@ -1,0 +1,39 @@
+{
+	stateMap "additive_stencil";
+
+	vertexShader 2.0 "l_point_tc0n0_tc1_tc2n2_tc3_nc.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "l_spot_r0c0n0b1c1b2c2d2n2b3c3_nc.hlsl"
+	{
+		fogColor = float4( 0, 0, 0, 0 );
+		colorMapSampler = material.colorMap;
+		colorTint = material.colorTint;
+		normalMapSampler = material.normalMap;
+
+		colorMapSampler1 = material.colorMap1;
+		colorTint1 = material.colorTint1;
+
+		colorMapSampler2 = material.colorMap2;
+		colorTint2 = material.colorTint2;
+		detailMapSampler2 = material.detailMap2;
+		detailScale2 = material.detailScale2;
+		normalMapSampler2 = material.normalMap2;
+
+		colorMapSampler3 = material.colorMap3;
+		colorTint3 = material.colorTint3;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.texcoord[2] = code.tangent;
+
+	vertex.texcoord[3] = code.texcoord[1];
+	vertex.texcoord[4] = code.texcoord[2];
+	vertex.texcoord[5] = code.normalTransform[0];
+
+}

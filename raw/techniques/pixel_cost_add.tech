@@ -1,0 +1,14 @@
+{
+	stateMap "pixel_cost_add";
+
+	vertexShader 1.1 "transform_only.hlsl"
+	{
+	}
+
+	pixelShader 1.1 "pixel_cost_add.hlsl"
+	{
+	}
+
+	vertex.position = code.position;
+
+}

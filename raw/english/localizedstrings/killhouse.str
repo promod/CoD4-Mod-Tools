@@ -1,0 +1,472 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd_PC.cfg"
+FILENOTES           ""
+
+REFERENCE           HINT_CHECK_OBJECTIVES_PAUSED
+LANG_ENGLISH        "Press ^3[{pause}]^7 to check your objectives."
+
+REFERENCE           HINT_CHECK_OBJECTIVES_SCORES_PS3
+LANG_ENGLISH        "Press the START button to check your objectives."
+
+REFERENCE           HINT_CHECK_OBJECTIVES_SCORES
+LANG_ENGLISH        "Press ^3[{+scores}]^7 to check your objectives."
+
+REFERENCE           HINT_OBJECTIVE_MARKER
+LANG_ENGLISH        "The Objective Indicator is on the \nbottom of your screen in the middle."
+
+REFERENCE           HINT_OBJECTIVE_REMINDER
+LANG_ENGLISH        "When the yellow circle is in the middle of\nthe compass, you are facing your objective."
+
+REFERENCE           HINT_OBJECTIVE_REMINDER2
+LANG_ENGLISH        "Turn until the yellow circle in your compass tape\nlines up with the white ticks and head in that direction\nto locate your current objective."
+
+REFERENCE           HINT_ATTACK_PC
+LANG_ENGLISH        "Press ^3[{+attack}]^7 to fire your weapon."
+
+REFERENCE           HINT_ATTACK
+LANG_ENGLISH        "Pull ^3[{+attack}]^7 to fire your weapon."
+
+REFERENCE           HINT_HIP_ATTACK_PC
+LANG_ENGLISH        "Press ^3[{+attack}]^7 to fire from the hip."
+
+REFERENCE           HINT_HIP_ATTACK
+LANG_ENGLISH        "Pull ^3[{+attack}]^7 to fire from the hip."
+
+REFERENCE           HINT_ADS_360
+LANG_ENGLISH        "Pull and hold ^3[{+speed}]^7 to aim down the sights of your weapon."
+
+REFERENCE           HINT_ADS
+LANG_ENGLISH        "Press and hold ^3[{+speed}]^7 to aim down the sights of your weapon."
+
+REFERENCE           HINT_ADS_TOGGLE
+LANG_ENGLISH        "Press ^3[{toggleads}]^7 to aim down the sight."
+
+REFERENCE           HINT_ADS_THROW_360
+LANG_ENGLISH        "Pull and hold ^3[{+speed_throw}]^7 to aim down the sights of your weapon."
+
+REFERENCE           HINT_ADS_THROW
+LANG_ENGLISH        "Press and hold ^3[{+speed_throw}]^7 to aim down the sights of your weapon."
+
+REFERENCE           HINT_ADS_TOGGLE_THROW
+LANG_ENGLISH        "Press ^3[{+toggleads_throw}]^7 to aim down the sights of your weapon."
+
+REFERENCE           HINT_STOP_ADS
+LANG_ENGLISH        "Hit the targets while firing from the hip.\nRelease ^3[{+speed}]^7 to stop aiming down your sight."
+
+REFERENCE           HINT_STOP_ADS_TOGGLE
+LANG_ENGLISH        "Hit the targets while firing from the hip.\nPress ^3[{toggleads}]^7 to stop aiming down your sight."
+
+REFERENCE           HINT_STOP_ADS_THROW
+LANG_ENGLISH        "Hit the targets while firing from the hip.\nRelease ^3[{+speed_throw}]^7 to stop aiming down your sight."
+
+REFERENCE           HINT_STOP_ADS_TOGGLE_THROW
+LANG_ENGLISH        "Hit the targets while firing from the hip.\nPress ^3[{+toggleads_throw}]^7 to stop aiming down your sight."
+
+REFERENCE           HINT_BREATH_MELEE
+LANG_ENGLISH        "Press and hold ^3[{+melee_breath}]^7 to steady your breathing."
+
+REFERENCE           HINT_BREATH_SPRINT
+LANG_ENGLISH        "Press and hold ^3[{+breath_sprint}]^7 to steady your breathing."
+
+REFERENCE           HINT_BREATH_BINOCULARS
+LANG_ENGLISH        "Press and hold ^3[{+breath_binoculars}]^7 to steady your breathing."
+
+REFERENCE           HINT_MELEE_BREATH
+LANG_ENGLISH        "Press ^3[{+melee_breath}]^7 near the melon to melee it with your knife."
+
+REFERENCE           HINT_MELEE
+LANG_ENGLISH        "Press ^3[{+melee}]^7 near the melon to melee it with your knife."
+
+REFERENCE           HINT_MELEE_BREATH_CLICK
+LANG_ENGLISH        "Click ^3[{+melee_breath}]^7 near the melon to melee it with your knife."
+
+REFERENCE           HINT_MELEE_CLICK
+LANG_ENGLISH        "Click ^3[{+melee}]^7 near the melon to melee it with your knife."
+
+REFERENCE           HINT_PRONE
+LANG_ENGLISH        "Press ^3[{goprone}]^7 to go prone."
+
+REFERENCE           HINT_PRONE_HOLD
+LANG_ENGLISH        "Press and hold ^3[{+prone}]^7 to go prone."
+
+REFERENCE           HINT_PRONE_TOGGLE
+LANG_ENGLISH        "Press ^3[{toggleprone}]^7 to go prone."
+
+REFERENCE           HINT_PRONE_STANCE
+LANG_ENGLISH        "Press and hold down ^3[{+stance}]^7 to go prone."
+
+REFERENCE           HINT_PRONE_DOUBLE
+LANG_ENGLISH        "Double tap ^3[{lowerstacnce}]^7 to go prone."
+
+REFERENCE           HINT_CROUCH_STANCE
+LANG_ENGLISH        "Press ^3[{+stance}]^7 to crouch."
+
+REFERENCE           HINT_CROUCH
+LANG_ENGLISH        "Press ^3[{gocrouch}]^7 to crouch."
+
+REFERENCE           HINT_CROUCH_TOGGLE
+LANG_ENGLISH        "Press ^3[{togglecrouch}]^7 to crouch."
+
+REFERENCE           HINT_STAND
+LANG_ENGLISH        "Press ^3[{+gostand}]^7 to stand up."
+
+REFERENCE           HINT_STAND_STANCE
+LANG_ENGLISH        "Press ^3[{+stance}]^7 to stand up."
+
+REFERENCE           HINT_JUMP_STAND
+LANG_ENGLISH        "While standing, press ^3[{+gostand}]^7 to jump."
+
+REFERENCE           HINT_JUMP
+LANG_ENGLISH        "While standing, press ^3[{+moveup}]^7 to jump."
+
+REFERENCE           HINT_SPRINT_PC
+LANG_ENGLISH        "Press ^3[{+sprint}]^7 while moving forward to sprint."
+
+REFERENCE           HINT_SPRINT
+LANG_ENGLISH        "Click ^3[{+sprint}]^7 while moving forward to sprint."
+
+REFERENCE           HINT_SPRINT_BREATH_PC
+LANG_ENGLISH        "Press ^3[{+breath_sprint}]^7 while moving forward to sprint."
+
+REFERENCE           HINT_SPRINT_BREATH
+LANG_ENGLISH        "Click ^3[{+breath_sprint}]^7 while moving forward to sprint."
+
+REFERENCE           HINT_HOLDING_SPRINT
+LANG_ENGLISH        "You don't have to hold ^3[{+sprint}]^7 to continue sprinting."
+
+REFERENCE           HINT_HOLDING_SPRINT_BREATH
+LANG_ENGLISH        "You don't have to hold ^3[{+breath_sprint}]^7 to continue sprinting."
+
+REFERENCE           HINT_RELOAD_USE
+LANG_ENGLISH        "Press ^3[{+usereload}]^7 to reload your weapon."
+
+REFERENCE           HINT_RELOAD
+LANG_ENGLISH        "Press ^3[{+reload}]^7 to reload your weapon."
+
+REFERENCE           HINT_MANTLE
+LANG_ENGLISH        "Touch the obstacle and press ^3[{+gostand}]^7 to mantle over it."
+
+REFERENCE           HINT_ADS_SWITCH
+LANG_ENGLISH        "Release and pull ^3[{+speed}]^7 to automatically\nswitch to a nearby target."
+
+REFERENCE           HINT_ADS_SWITCH_THROW
+LANG_ENGLISH        "Release and pull ^3[{+speed_throw}]^7 to automatically\nswitch to a nearby target."
+
+REFERENCE           HINT_ADS_SWITCH_SHOULDER
+LANG_ENGLISH        "Release then press and hold ^3[{+speed}]^7 to\nquickly switch to a nearby target."
+
+REFERENCE           HINT_ADS_SWITCH_THROW_SHOULDER
+LANG_ENGLISH        "Release then press and hold ^3[{+speed_throw}]^7 to\nquickly switch to a nearby target."
+
+REFERENCE           HINT_SIDEARM_SWAP
+LANG_ENGLISH        "Press ^3[{weapnext}]^7 to switch to your sidearm."
+
+REFERENCE           HINT_PRIMARY_SWAP
+LANG_ENGLISH        "Press ^3[{weapnext}]^7 to switch to your primary weapon."
+
+REFERENCE           HINT_SIDEARM
+LANG_ENGLISH        "Press ^3[{weaponslot primaryb}]^7 to switch to your sidearm."
+
+REFERENCE           HINT_SIDEARM_RELOAD
+LANG_ENGLISH        "Press ^3[{+reload}]^7 to load your sidearm."
+
+REFERENCE           HINT_SIDEARM_RELOAD_USE
+LANG_ENGLISH        "Press ^3[{+usereload}]^7 to load your sidearm."
+
+REFERENCE           HINT_LADDER
+LANG_ENGLISH        "Look up the ladder and move forward to climb it."
+
+REFERENCE           HINT_FRAG
+LANG_ENGLISH        "Press ^3[{+frag}]^7 to throw a frag grenade."
+
+REFERENCE           HINT_SWAP
+LANG_ENGLISH        "Approach the rifle with the grenade launcher attachment and press and hold ^3[{+activate}]^7."
+
+REFERENCE           HINT_SWAP_RELOAD
+LANG_ENGLISH        "Approach the rifle with the grenade launcher attachment and press and hold ^3[{+usereload}]^7."
+
+REFERENCE           HINT_FIREMODE
+LANG_ENGLISH        "Press ^3[{+actionslot 3}]^7 to switch to the grenade launcher attachment."
+
+REFERENCE           HINT_LAUNCHER_ATTACK
+LANG_ENGLISH        "Pull and release ^3[{+attack}]^7 to fire a 40mm grenade."
+
+REFERENCE           HINT_EXPLOSIVES
+LANG_ENGLISH        "Approach the explosive charges and press and hold ^3[{+activate}]^7 to pick them up."
+
+REFERENCE           HINT_EXPLOSIVES_RELOAD
+LANG_ENGLISH        "Approach the explosive charges and press and hold ^3[{+usereload}]^7 to pick them up."
+
+REFERENCE           HINT_EXPLOSIVES_PLANT
+LANG_ENGLISH        "Approach the glowing explosive marker and press ^3[{+activate}]^7 to plant the C4."
+
+REFERENCE           HINT_EXPLOSIVES_PLANT_RELOAD
+LANG_ENGLISH        "Approach the glowing explosive marker and press ^3[{+usereload}]^7 to plant the C4."
+
+REFERENCE           MARINE3_USE_SIDEARM
+LANG_ENGLISH        "Carver! Use your sidearm!"
+
+REFERENCE           C4_PICKUP
+LANG_ENGLISH        "Press and hold ^3&&1^7 to pick up the C4 explosive."
+
+REFERENCE           HINT_C4_ICON
+LANG_ENGLISH        "You now have a C4 icon on your screen."
+
+REFERENCE           HINT_EQUIP_C4
+LANG_ENGLISH        "Press ^3[{+actionslot 2}]^7 to equip C4."
+
+REFERENCE           HINT_THROW_C4
+LANG_ENGLISH        "Pull ^3[{+throw}]^7 to throw C4."
+
+REFERENCE           HINT_THROW_C4_TOGGLE
+LANG_ENGLISH        "Pull ^3[{+toggleads_throw}]^7 to throw C4."
+
+REFERENCE           HINT_THROW_C4_SPEED
+LANG_ENGLISH        "Pull ^3[{+speed_throw}]^7 to throw C4."
+
+REFERENCE           HINT_APPROACH_MELEE
+LANG_ENGLISH        "Approach the watermelon."
+
+REFERENCE           HINT_APPROACH_C4_THROW
+LANG_ENGLISH        "Approach the car."
+
+REFERENCE           HINT_HUD_CHANGES
+LANG_ENGLISH        "Notice that your display changes to show\nyou what inventory item you have equipped."
+
+REFERENCE           DETONATE_C4
+LANG_ENGLISH        "Pull ^3[{+attack}]^7 to detonate."
+
+REFERENCE           HINT_CROSSHAIR_CHANGES
+LANG_ENGLISH        "Notice that your crosshair expands as you fire.\nThe bigger the crosshairs, the less accurate you are."
+
+REFERENCE           HINT_ADS_ACCURACY
+LANG_ENGLISH        "Firing from the hip is never as\naccurate as aiming down your sight."
+
+REFERENCE           USE_ROPE
+LANG_ENGLISH        "Press^3 &&1 ^7to slide down the rope."
+
+REFERENCE           SHIP_DIDNT_SPRINT
+LANG_ENGLISH        "You didn't sprint."
+
+REFERENCE           SHIP_TOO_SLOW
+LANG_ENGLISH        "You were too slow."
+
+REFERENCE           YOUR_TIME
+LANG_ENGLISH        "Your time: "
+
+REFERENCE           YOUR_FINAL_TIME
+LANG_ENGLISH        "Your final time: "
+
+REFERENCE           IW_BEST_TIME
+LANG_ENGLISH        "IW best time:     "
+
+REFERENCE           YOUR_DECK_TIME
+LANG_ENGLISH        "Your deck time: "
+
+REFERENCE           IW_DECK_TIME
+LANG_ENGLISH        "IW deck time: "
+
+REFERENCE           SHIP_OUT_OF_FLASH
+LANG_ENGLISH        "You don't have enough flashes to finish."
+
+REFERENCE           SHIP_JUMPED_OFF
+LANG_ENGLISH        "You missed the rope."
+
+REFERENCE           SHIP_JUMPED_TOO_EARLY
+LANG_ENGLISH        "You jumped too early."
+
+REFERENCE           HIT_FRIENDLY
+LANG_ENGLISH        "You hit a friendly target."
+
+REFERENCE           HINT_FLASH
+LANG_ENGLISH        "Press ^3[{+smoke}]^7 to throw a flash bang."
+
+REFERENCE           ACCURACY_BONUS
+LANG_ENGLISH        "Accuracy bonus:+"
+
+REFERENCE           SHIP_LABEL
+LANG_ENGLISH        "Cargoship Bridge"
+
+REFERENCE           DECK_LABEL
+LANG_ENGLISH        "Cargoship Deck"
+
+REFERENCE           ACCURACY_BONUS_ZERO
+LANG_ENGLISH        "Accuracy bonus:+0.0"
+
+REFERENCE           C4_OBJECTIVE
+LANG_ENGLISH        "When planting C4 is your objective, you will see a glowing\nmarker in the world that indicates where to plant it."
+
+REFERENCE           HINT_GRENADE_TOO_LOW
+LANG_ENGLISH        "You must aim above your target with grenades."
+
+REFERENCE           HINT_GL_TOO_LOW
+LANG_ENGLISH        "You must aim above your target with grenade launchers."
+
+REFERENCE           AXIS_OPTION_MENU1
+LANG_ENGLISH        "Reverse your controls"
+
+REFERENCE           AXIS_OPTION_MENU2
+LANG_ENGLISH        "Switch your controls"
+
+REFERENCE           AXIS_OPTION_MENU1B
+LANG_ENGLISH        "for looking up and down?"
+
+REFERENCE           AXIS_OPTION_MENU2B
+LANG_ENGLISH        "back to how they were?"
+
+REFERENCE           AXIS_OPTION_MENU1_ALL
+LANG_ENGLISH        "Reverse your controls for looking up and down?"
+
+REFERENCE           AXIS_OPTION_MENU2_ALL
+LANG_ENGLISH        "Keep your controls like this?"
+
+REFERENCE           LOOK_UP
+LANG_ENGLISH        "Look up."
+
+REFERENCE           LOOK_DOWN
+LANG_ENGLISH        "Look down."
+
+REFERENCE           HINT_LAUNCHER_ICON
+LANG_ENGLISH        "Notice you now have an icon of a grenade launcher on your display."
+
+REFERENCE           FIRED_NEAR_FRIENDLY
+LANG_ENGLISH        "You endangered a team mate."
+
+REFERENCE           INTROSCREEN_LINE_1
+LANG_ENGLISH        "'F.N.G.'"
+
+REFERENCE           INTROSCREEN_LINE_2
+LANG_ENGLISH        "Day 1 - 06:30:[{FAKE_INTRO_SECONDS:09}]"
+
+REFERENCE           INTROSCREEN_LINE_3
+LANG_ENGLISH        "Credenhill, UK"
+
+REFERENCE           INTROSCREEN_LINE_4
+LANG_ENGLISH        "Sgt. 'Soap' MacTavish"
+
+REFERENCE           INTROSCREEN_LINE_5
+LANG_ENGLISH        "22nd SAS Regiment"
+
+REFERENCE           USE_YOUR_OBJECTIVE_INDICATOR
+LANG_ENGLISH        "Use your Objective Indicator to find the firing range."
+
+REFERENCE           PICK_UP_A_RIFLE_FROM
+LANG_ENGLISH        "Pick up a rifle from the table."
+
+REFERENCE           GET_A_PISTOL_FROM_THE
+LANG_ENGLISH        "Get a pistol from the same place you got the rifle."
+
+REFERENCE           MELEE_THE_WATERMELON
+LANG_ENGLISH        "Melee the watermelon with your knife."
+
+REFERENCE           GO_OUTSIDE_AND_REPORT
+LANG_ENGLISH        "Go outside and report to Sgt. Newcastle."
+
+REFERENCE           PICK_UP_THE_RIFLE_WITH
+LANG_ENGLISH        "Pick up the rifle with the grenade launcher attachment."
+
+REFERENCE           PICK_UP_THE_C4_EXPLOSIVE
+LANG_ENGLISH        "Pick up the C4 explosive."
+
+REFERENCE           RUN_THE_OBSTACLE_COURSE
+LANG_ENGLISH        "Run the obstacle course."
+
+REFERENCE           REPORT_TO_CAPTAIN_PRICE
+LANG_ENGLISH        "Use your objective indicator to locate Captain Price."
+
+REFERENCE           CLIMB_THE_LADDER
+LANG_ENGLISH        "Climb the ladder."
+
+REFERENCE           DEBRIEF_WITH_CPT_PRICE
+LANG_ENGLISH        "Debrief with Captain Price."
+
+REFERENCE           ENTER_STATION_NUMBER
+LANG_ENGLISH        "Enter station number 1 and aim down your sights."
+
+REFERENCE           SHOOT_EACH_TARGET_WHILE
+LANG_ENGLISH        "Shoot each target while aiming down your sights."
+
+REFERENCE           SHOOT_EACH_TARGET_WHILE1
+LANG_ENGLISH        "Shoot each target while firing from the hip."
+
+REFERENCE           SHOOT_EACH_TARGET_AS
+LANG_ENGLISH        "Shoot each target as quickly as possible."
+
+REFERENCE           EQUIP_THE_MP5_AND_PICK
+LANG_ENGLISH        "Equip the MP5 and pick up 4 flashbangs."
+
+REFERENCE           CLEAR_THE_CARGOSHIP_BRIDGE
+LANG_ENGLISH        "Clear the cargoship bridge mock-up."
+
+REFERENCE           SWITCH_TO_YOUR_RIFLE
+LANG_ENGLISH        "Switch to your rifle and then back to your pistol."
+
+REFERENCE           PICK_UP_THE_FRAG_GRENADES
+LANG_ENGLISH        "Pick up the frag grenades."
+
+REFERENCE           ENTER_THE_SAFETY_PIT
+LANG_ENGLISH        "Enter the safety pit."
+
+REFERENCE           THROW_A_GRENADE_INTO
+LANG_ENGLISH        "Throw a grenade into windows two, three and four."
+
+REFERENCE           RETURN_TO_THE_SAFETY
+LANG_ENGLISH        "Return to the safety pit and equip the grenade launcher."
+
+REFERENCE           FIRE_AT_THE_WALL_WITH
+LANG_ENGLISH        "Fire at the wall with the number one on it."
+
+REFERENCE           PLANT_THE_C4_EXPLOSIVE
+LANG_ENGLISH        "Plant the C4 explosive at the glowing spot."
+
+REFERENCE           FIRE_YOUR_GRENADE_LAUNCHER
+LANG_ENGLISH        "Fire your grenade launcher into windows five, six and seven."
+
+REFERENCE           CLIMB_THE_LADDER1
+LANG_ENGLISH        "Climb the ladder."
+
+REFERENCE           SHOOT_A_TARGET_THROUGH
+LANG_ENGLISH        "Shoot a target through the wood."
+
+REFERENCE           SLIDE_DOWN_THE_ROPE
+LANG_ENGLISH        "Slide down the rope.\n"
+
+REFERENCE           COMPLETE_THE_DECK_MOCKUP
+LANG_ENGLISH        "Complete the deck mock-up."
+
+REFERENCE           RECOMMENDED_LABEL
+LANG_ENGLISH        "Recommended"
+
+REFERENCE           RECOMMENDED_LABEL2
+LANG_ENGLISH        "difficulty:"
+
+REFERENCE           RECOMMENDED_EASY
+LANG_ENGLISH        "Recruit"
+
+REFERENCE           RECOMMENDED_NORMAL
+LANG_ENGLISH        "Regular"
+
+REFERENCE           RECOMMENDED_HARD
+LANG_ENGLISH        "Hardened"
+
+REFERENCE           RECOMMENDED_VETERAN
+LANG_ENGLISH        "Veteran"
+
+REFERENCE           SHIP_TRY_AGAIN
+LANG_ENGLISH        "Good luck."
+
+
+ENDMARKER
+
+

@@ -1,0 +1,15 @@
+{
+	menuDef
+	{
+		name			"changeclass_marines"
+		onOpen
+		{
+			setLocalVarString ui_team "marines"
+			
+			uiScript openMenuOnDvar "onlinegame" 0 "changeclass_offline";			
+			uiScript openMenuOnDvar "onlinegame" 1 "changeclass";			
+
+			close self;
+		}
+	}
+}

@@ -1,0 +1,59 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define OPTIONS_STYLE			1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef 
+	{
+		name			options_game
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen
+		{
+			close options_look;
+			close options_move;
+			close options_shoot;
+			close options_misc;
+			close options_graphics;
+			close options_sound;
+			close options_view;
+			close options_defaults;
+			close options_driverinfo;
+			close options_credits;
+			close options_multi;
+			close options_graphics_defaults;
+			close options_graphics_texture;
+			close options_control_defaults;
+
+			setLocalVarBool ui_hideBack 1;
+
+			uiScript getLanguage;
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+		}
+		onESC 
+		{ 
+			close self;
+		}
+
+		#include "ui_mp/leftside_options.inc"
+		
+		CHOICE_SECTION_TITLE( 21, "@MENU_GAME_OPTIONS" )
+		
+		CHOICE_DVARYESNO( 22, "@MENU_SHOW_BLOOD", cg_blood, ; )
+		CHOICE_DVARFLOATLIST( 23, "@MENU_ENABLE_CONSOLE", monkeytoy, { "@MENU_YES" 0 "@MENU_NO" 1 }, ; )
+		CHOICE_DVARYESNO_VIS( 24, "@MENU_SUBTITLES", cg_subtitles, ;, when( !dvarBool(ui_multiplayer) ); )
+		CHOICE_DVARYESNO_VIS( 25, "@MENU_ENABLE_CROSSHAIR", cg_drawCrosshair, ;, when( !dvarBool(ui_multiplayer) ); )
+		//CHOICE_BUTTON_VIS( 26, "@MENU_CHEATS_LOWCASE", open menu_special_features; close self;, when( dvarBool( sv_running ) && !dvarBool(ui_multiplayer) && !dvarBool( arcademode ) && !dvarBool( arcademode_full ) ); )
+		CHOICE_DVARFLOATLIST_VIS( 26, "@MENU_LANGUAGE", ui_language, { "@MENU_ENGLISH" 0 "@MENU_FRENCH" 1 "@MENU_GERMAN" 2 "@MENU_ITALIAN" 3 "@MENU_SPANISH" 4 "@MENU_BRITISH" 5 "@MENU_RUSSIAN" 6 "@MENU_POLISH" 7 "@MENU_KOREAN" 8 "@MENU_TAIWANESE" 9 "@MENU_JAPANESE" 10 "@MENU_CHINESE" 11 "@MENU_THAI" 12 }, uiScript verifyLanguage, when( dvarint( developer ) ) )
+
+		CHOICE_APPLY_VIS( "@MENU_APPLY_LANGUAGE_CHANGE", open language_restart_popmenu, when ( dvarint( ui_languageChanged ) ) )		
+		//CHOICE_BACK( "@MENU_BACK", close self )
+	}
+}

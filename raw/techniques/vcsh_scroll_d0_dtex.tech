@@ -1,0 +1,17 @@
+{
+	stateMap "default";
+
+	vertexShader 1.1 "vertcol_simple_fog_scroll_dtex.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "vertcol_shaded_fog.hlsl"
+	{
+		colorMapSampler = material.colorMap;	
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

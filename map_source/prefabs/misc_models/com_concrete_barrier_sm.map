@@ -1,0 +1,40 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -36 -6 -2 ) ( 37 -6 -2 ) ( 37 6 -2 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 5 33 ) ( 37 5 33 ) ( 37 -7 33 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 37 -7 32 ) ( -36 -7 32 ) ( -36 -7 49 ) clip_nosight_rock 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 23 -11 78 ) ( 23 11 78 ) ( 23 11 39 ) clip_nosight_rock 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 7 32 ) ( 37 7 32 ) ( 37 7 49 ) clip_nosight_rock 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 11 76 ) ( -22 -11 76 ) ( -22 -11 37 ) clip_nosight_rock 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -36 -14 -2 ) ( 37 -14 -2 ) ( 37 -2 -2 ) clip_nosight_rock 64 64 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -3 11 ) ( 37 -3 11 ) ( 37 -15 11 ) clip_nosight_rock 64 64 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 37 -15 32 ) ( -36 -15 32 ) ( -36 -15 49 ) clip_nosight_rock 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 23 -19 78 ) ( 23 3 78 ) ( 23 3 39 ) clip_nosight_rock 64 64 -8 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -7 32 ) ( 37 -7 32 ) ( 37 -7 49 ) clip_nosight_rock 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 3 76 ) ( -22 -19 76 ) ( -22 -19 37 ) clip_nosight_rock 64 64 -8 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -36 8 -2 ) ( 37 8 -2 ) ( 37 20 -2 ) clip_nosight_rock 64 64 0 -14 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 19 11 ) ( 37 19 11 ) ( 37 7 11 ) clip_nosight_rock 64 64 0 -14 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 37 7 32 ) ( -36 7 32 ) ( -36 7 49 ) clip_nosight_rock 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 23 3 78 ) ( 23 25 78 ) ( 23 25 39 ) clip_nosight_rock 64 64 14 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 15 32 ) ( 37 15 32 ) ( 37 15 49 ) clip_nosight_rock 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 25 76 ) ( -22 3 76 ) ( -22 3 37 ) clip_nosight_rock 64 64 14 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "aftermath_roadblock_02"
+"classname" "misc_model"
+}

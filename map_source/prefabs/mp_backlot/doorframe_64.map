@@ -1,0 +1,37 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents weaponClip;
+ ( 12 688 0 ) ( -508 688 0 ) ( -508 96 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -508 96 96 ) ( -508 688 96 ) ( 12 688 96 ) ma_wood_particleboard 128 128 1220 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -516 -32 -8 ) ( 4 -32 -8 ) ( 4 -32 -72 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 96 -8 ) ( 4 688 -8 ) ( 4 688 -72 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -30 -8 ) ( -484 -30 -8 ) ( -484 -30 -72 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 456 -8 ) ( -4 -136 -8 ) ( -4 -136 -72 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents weaponClip;
+ ( 14 750 96 ) ( -506 750 96 ) ( -506 158 96 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -508 158 100 ) ( -508 750 100 ) ( 12 750 100 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -514 -32 -6 ) ( 6 -32 -6 ) ( 6 -32 -70 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 158 -6 ) ( 4 750 -6 ) ( 4 750 -70 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 32 -6 ) ( -484 32 -6 ) ( -484 32 -70 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 518 -6 ) ( -4 -74 -6 ) ( -4 -74 -70 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents weaponClip;
+ ( 12 750 0 ) ( -508 750 0 ) ( -508 158 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -508 158 96 ) ( -508 750 96 ) ( 12 750 96 ) ma_wood_particleboard 128 128 1220 -78 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -516 30 -8 ) ( 4 30 -8 ) ( 4 30 -72 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 158 -8 ) ( 4 750 -8 ) ( 4 750 -72 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 32 -8 ) ( -484 32 -8 ) ( -484 32 -72 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 518 -8 ) ( -4 -74 -8 ) ( -4 -74 -72 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,68 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"spawnflags" "4"
+"targetname" "auto1"
+"script_gameobjectname" "hq"
+"origin" "0.0 0.0 0.0"
+"angles" "0 2.50448e-006 0"
+"model" "com_plasticcase_beige_big"
+"classname" "script_model"
+}
+// entity 2
+{
+"spawnflags" "4"
+"target" "auto1"
+"script_gameobjectname" "hq"
+"targetname" "hq_hardpoint"
+"origin" "4.0 -4.0 30.0"
+"angles" "0 270 0"
+"model" "com_laptop_2_open"
+"classname" "script_model"
+}
+// entity 3
+{
+"spawnflags" "4"
+"targetname" "auto1"
+"script_gameobjectname" "hq"
+"classname" "script_model"
+"model" "com_cellphone_on"
+"angles" "1.00179e-005 40 -89.9997"
+"origin" "18.7 -8.7 30.0"
+}
+// entity 4
+{
+"targetname" "auto1"
+"script_gameobjectname" "hq"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 28 15 0 ) ( -27 15 0 ) ( -27 -15 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 -15 32 ) ( -26 15 32 ) ( 29 15 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 -15 34 ) ( 27 -15 34 ) ( 27 -15 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27 -15 34 ) ( 27 15 34 ) ( 27 15 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27 15 34 ) ( -28 15 34 ) ( -28 15 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 15 34 ) ( -28 -15 34 ) ( -28 -15 26 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 5
+{
+"targetname" "auto1"
+"script_gameobjectname" "hq"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 27 6 32 ) ( -28 6 32 ) ( -28 1 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 1 45 ) ( -28 6 45 ) ( 27 6 45 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 1 45 ) ( 27 1 45 ) ( 27 1 31 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 13 1 44 ) ( 13 6 44 ) ( 13 6 30 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27 6 45 ) ( -28 6 45 ) ( -28 6 31 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 6 45 ) ( -5 1 45 ) ( -5 1 31 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

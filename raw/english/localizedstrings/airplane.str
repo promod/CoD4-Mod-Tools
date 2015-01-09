@@ -1,0 +1,46 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           TIME_TILL_EXPLOSION
+LANG_ENGLISH        "Exit plane in: "
+
+REFERENCE           TIME_TO_LOCATE_VIP
+LANG_ENGLISH        "Locate VIP in: "
+
+REFERENCE           TIME_TILL_HOSTAGE_KILL
+LANG_ENGLISH        "Hostage executed in: "
+
+REFERENCE           TIMER_EXPIRED
+LANG_ENGLISH        "Mission failed. The objective was not completed in time."
+
+REFERENCE           HOSTAGE_TIMER_EXPIRED
+LANG_ENGLISH        "Mission failed. You did not rescue the hostage in time."
+
+REFERENCE           HOSTAGE_NO_HEADSHOT
+LANG_ENGLISH        "The hostage was killed. True veterans get headshots...not flesh wounds."
+
+REFERENCE           FAILED_JUMPED_OUT
+LANG_ENGLISH        "Mission failed. You did not complete your objective."
+
+REFERENCE           OBJ_RESCUE_VIP
+LANG_ENGLISH        "Secure the VIP."
+
+REFERENCE           OBJ_FREEFALL
+LANG_ENGLISH        "Exit plane via high altitude freefall."
+
+
+ENDMARKER
+
+

@@ -1,0 +1,47 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 26 12 0 ) ( -14 12 0 ) ( -14 -4 0 ) ma_wood_particleboard 128 128 4 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -4 36 ) ( -12 12 36 ) ( 28 12 36 ) ma_wood_particleboard 128 128 4 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -2 196 ) ( 20 -2 196 ) ( 20 -2 96 ) ma_wood_particleboard 128 128 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -4 196 ) ( 4 12 196 ) ( 4 12 96 ) ma_wood_particleboard 128 128 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 2 196 ) ( -14 2 196 ) ( -14 2 96 ) ma_wood_particleboard 128 128 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 12 196 ) ( -4 -4 196 ) ( -4 -4 96 ) ma_wood_particleboard 128 128 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 6 -2 36 ) ( 6 2 36 ) ( -6 2 36 ) case1024red 256 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 2 48 ) ( 8 -2 48 ) ( -8 -2 48 ) case1024red 256 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -2 232 ) ( 20 -2 232 ) ( 20 -2 132 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -2 48 ) ( 8 2 48 ) ( 6 2 36 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 2 232 ) ( -14 2 232 ) ( -14 2 132 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 2 48 ) ( -8 -2 48 ) ( -6 -2 36 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 8 -2 48 ) ( 8 2 48 ) ( -8 2 48 ) case1024red 256 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 2 59 ) ( 8 -2 59 ) ( -8 -2 59 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -2 60 ) ( 12 -2 60 ) ( 12 -2 54 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -2 59 ) ( 8 2 59 ) ( 8 2 48 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 2 60 ) ( -12 2 60 ) ( -12 2 54 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 2 59 ) ( -8 -2 59 ) ( -8 -2 48 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 12 2 59 ) ( -12 2 59 ) ( -12 -2 59 ) case1024red 256 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 2 72 ) ( 7 -2 72 ) ( -7 -2 72 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -2 71 ) ( 12 -2 71 ) ( 12 -2 65 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -2 70 ) ( 4 2 70 ) ( 4 2 59 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 2 71 ) ( -12 2 71 ) ( -12 2 65 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 70 ) ( -4 -2 70 ) ( -4 -2 59 ) case1024red 256 256 48 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

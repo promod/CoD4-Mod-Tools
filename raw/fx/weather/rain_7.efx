@@ -1,0 +1,193 @@
+iwfx 1
+
+{
+	name "streaks";
+	editorFlags looping useRandAlpha nonUniformScale useRandVel0 absVel0 playOnTouch;
+	flags spawnOffsetNone runRelToWorld useCollision dieOnTouch;
+	spawnRange 0 0;
+	spawnFrustumCullRadius 100;
+	spawnLooping 1 138;
+	spawnOneShot 138 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 1200 0;
+	spawnOrgX -600 1200;
+	spawnOrgY -600 1200;
+	spawnOrgZ 0 0;
+	spawnOffsetRadius 200 0;
+	spawnOffsetHeight 1 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 0;
+	gravity 0 0;
+	elasticity 1 0;
+	atlasBehavior startFixed;
+	atlasIndex 0;
+	atlasFps 1;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0.055
+			1 0.055
+		}
+	};
+	velGraph0Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 -0.055
+			1 -0.055
+		}
+	};
+	velGraph0Z 3000
+	{
+		{
+			0 -0.5
+			1 -0.5
+		}
+		{
+			0 -0.225
+			1 -0.225
+		}
+	};
+	velGraph1X 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 10
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	sizeGraph0 2
+	{
+		{
+			0 0.3608
+			1 0.3671
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	sizeGraph1 100
+	{
+		{
+			0 0.75
+			1 0.75
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 133.3
+	{
+		{
+			0 0.75
+			0.06667 0.75
+			0.1333 0.75
+			0.2 0.75
+			0.2667 0.75
+			0.3333 0.75
+			0.4 0.75
+			0.4667 0.75
+			0.5333 0.75
+			0.6 0.75
+			0.6667 0.75
+			0.7333 0.75
+			0.8 0.75
+			0.8667 0.75
+			0.9333 0.75
+			1 0.75
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.7529 0.7529 0.7529
+			1 0.7529 0.7529 0.7529
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0.505
+			0.7471 0.5099
+			1 0
+		}
+		{
+			0 0.3218
+			0.7615 0.3069
+			1 0
+		}
+	};
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "weather/rain_splash";
+	fxOnDeath "";
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	tail
+	{
+		"gfx_rain_drop"
+	};
+}

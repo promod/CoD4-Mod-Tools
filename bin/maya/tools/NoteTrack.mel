@@ -1,0 +1,470 @@
+
+/* NoteTrack.mel Richard Cheek 2004
+
+	Script to make and control the note track window and note track nodes.
+
+	Note track nodes are simple locators with 2 menu attributes that can be animated.
+
+*/
+
+
+
+
+// Set up global vars
+global string $NoteTracksMainList = "Null:rechamber:reload done:fire:footstep_left_small:footstep_left_large:footstep_right_small:footstep_right_large:anim_alertness = casual:anim_alertness = alert:anim_alertness = aiming:anim_movement = \\\"stop\\\":anim_movement = \\\"walk\\\":anim_movement = \\\"run\\\":anim_pose = \\\"stand\\\":anim_pose = \\\"crouch\\\":anim_pose = \\\"crawl\\\":anim_pose = \\\"prone\\\":anim_pose = \\\"back\\\":anim_gunhand = \\\"left\\\":anim_gunhand = \\\"right\\\":anim_gunhand = \\\"none\\\":attach clip right:detach clip right:anim_melee = \\\"right\\\":anim_melee = \\\"left\\\":swish small:swish large:bodyfall small:bodyfall large:dropgun:gravity on:gravity off:swap taghelmet to tagleft:finish:dialog:attach clip left:detach clip left:drop clip:start_aim:finish:grenade_right:grenade_left:gun keep:gun drop:NVG_attach:NVG_detach:NVG_on_powerup:NVG_off_powerdown:NVG_on_fadeout:NVG_off_fadein:NVG_off_complete:start_ragdoll";
+
+/*
+Notes:
+
+addAttr -ln Testing -at enum -enumName "Hello:World:Just:Testing";
+setAttr -keyable true pSphere1.Testing;
+
+
+addAttr -e -enumName "Hello:World:Just:Testing:NewEntry:" ".Testing";
+
+addAttr -q -enumName ".Testing";
+
+
+
+The controls:
+
+Need a create note track button.
+
+Need a way to select note track nodes.
+
+Need a way to delete note tracks
+
+
+Need a drop down list to select a note track value and key it.
+Need a drop down list to key the second note value, depending on the first value.
+
+
+Global Proc list
+
+DeleteNoteTrack
+ChangeSelectedNoteTrack
+AddToSecondNoteTrackList
+CreateNoteTrackNode
+CreateCODNoteTrackWindow
+CreateNoteTrackDropDowns
+GetNoteTrackList
+NoteTrack
+
+
+*/
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	RenameSecondNoteTrack
+//
+//		This proc renames the Secondary note track name
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc RenameMainNoteTrack(string $NoteTrackNode)
+{
+
+	print "\n\n";
+	print $NoteTrackNode;
+
+
+	
+	// Get the old list of attributes	
+		string $OldList =  `addAttr -q -enumName ($NoteTrackNode + ".MainNote")`;
+	
+	// get the attribute in the main list to change
+		int  $OldValue = `getAttr ($NoteTrackNode + ".MainNote")`;
+
+	// Get the string to change it to
+		string $ChangeTo = `textField -q -text TF_AddNoteTrack`;
+
+		// Check it's not blank
+		if (`size $ChangeTo` < 1)
+		{
+			return;
+		}
+
+	print "\n\n";
+	print $OldList;
+	
+	
+	print "\n\n";
+	print $OldValue;
+
+	print "\n\n";
+	print $ChangeTo;
+
+
+	string $Tokenize[];
+
+	// Tokenize the list into an array
+
+		tokenize $OldList ":" $Tokenize;
+
+	// Change the list 
+
+		$Tokenize[$OldValue]  = $ChangeTo;
+
+	print "\n\n";
+	print $Tokenize;
+
+	// Rebuild the list string
+
+		string $NewList;
+		string $Each;
+
+		for ($Each in $Tokenize )
+		{
+			$NewList = $NewList + ( $Each + ":");
+		}
+
+		print "\n\n";
+		print $NewList;
+
+	// Put the new list back into the attribute in the notetrack
+
+		addAttr -e -enumName $NewList ($NoteTrackNode + ".MainNote");
+
+	// Rebuild the window
+
+		select -r $NoteTrackNode;
+		NoteTrack;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	DeleteNoteTrack
+//
+//		This proc deletes the selected NoteTrack
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc DeleteNoteTrack()
+{
+	// Need to add a "Are you sure?" message box here
+
+
+	string $Result = `confirmDialog -title "Confirm Delete" -message "Delete Note Track?"	-button "Yes" -button "No" -defaultButton "No" 	-cancelButton "No" -dismissString "No"`;
+
+	if ($Result == "Yes")
+	{
+			// get the selected note track from the drop down
+
+			string $Selected = `optionMenu -q -v OM_SelectTrackNote`;
+
+				// We don't need to check for nothing selected, because the delete button used to get to this function only appears when there is somthing to delete
+
+			delete $Selected;
+
+			NoteTrack;
+
+	} // End if ($Result == "Yes")
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ChangeSelectedNoteTrack
+//
+//		This proc is called when the note track list changes. It selects the new track and runs the window again
+//		to update the selected note track
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ChangeSelectedNoteTrack()
+{
+
+	string $Selected = `optionMenu -q -v OM_SelectTrackNote`;
+
+	print "\n\n";
+	print $Selected;
+
+	select -r $Selected;
+	NoteTrack;
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	AddToMainNoteTrackList
+//
+//		This proc adds a extra option to the seconadary note track menu.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc AddToMainNoteTrackList ( string $NoteTrackNode)
+{
+
+		print "\n\nAdd to Note Track : ";
+		print $NoteTrackNode;
+
+		// Get a list of the Main note tracks.
+
+		string $MainNoteTrackList = `addAttr -q -enumName ($NoteTrackNode + ".MainNote")`;
+		print "\n\nStart list is ";
+		print $MainNoteTrackList;
+
+		// Get the iteam to add.
+
+		string $AddMe = `textField -q -text TF_AddNoteTrack`;
+		print "\n\nAdding ";
+		print $AddMe;
+
+		addAttr -e -enumName ( $MainNoteTrackList + ":" + $AddMe) ($NoteTrackNode + ".MainNote");
+
+		// Rebuild the window from scratch.
+		
+		select -r $NoteTrackNode;
+		NoteTrack;
+
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CreateNoteTrackNode
+//
+//		This proc creates a note track node
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CreateNoteTrackNode()
+{
+
+global string $NoteTracksMainList;
+
+
+	string $NoteTrack[] = `spaceLocator -p 0 0 0`;
+	$NoteTrack[0] = `rename $NoteTrack[0] "NoteTrack"`;
+
+
+	// Hide all the translation, rotation, scale and visibility from the channelbox
+		setAttr -keyable false ($NoteTrack[0] + ".tx"); 
+		setAttr -keyable false ($NoteTrack[0] + ".ty"); 
+		setAttr -keyable false ($NoteTrack[0] + ".tz"); 
+
+		setAttr -keyable false ($NoteTrack[0] + ".rx"); 
+		setAttr -keyable false ($NoteTrack[0] + ".ry"); 
+		setAttr -keyable false ($NoteTrack[0] + ".rz"); 
+
+		setAttr -keyable false ($NoteTrack[0] + ".sx"); 
+		setAttr -keyable false ($NoteTrack[0] + ".sy"); 
+		setAttr -keyable false ($NoteTrack[0] + ".sz"); 
+
+		setAttr -keyable false ($NoteTrack[0] + ".v"); 
+
+	// Add the 2 note track attributes
+
+		
+		addAttr -ln MainNote -at enum -enumName $NoteTracksMainList $NoteTrack[0] ;
+		setAttr -keyable true ($NoteTrack[0] + ".MainNote"); 
+
+
+	// Select the new note track and run the window again so it's updated in the selected Note track
+
+		select -r $NoteTrack[0];
+		NoteTrack;
+}
+
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CreateCODNoteTrackWindow
+//
+//		This proc creates the note track window.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc CreateCODNoteTrackWindow( string $win )
+{
+
+global string $NoteTracksMainList;
+
+
+
+	// define the window;
+	window 
+		-title "COD Note Track Window"
+		$win;
+
+	//create a columnLayout for the top level layout
+
+		columnLayout -columnAttach "both" 5 -rowSpacing 10 -columnWidth 325 NoteTrackTopColumnLayout;
+
+			frameLayout -w 150 -label "Note Tracks" -borderStyle "etchedIn"  -collapsable true -collapse false -p NoteTrackTopColumnLayout NoteTrackFrameLayout;
+
+				columnLayout -rs 4 -p NoteTrackFrameLayout NoteTrackMainColumnLayout;
+
+					columnLayout  -p NoteTrackMainColumnLayout;
+			
+			// Create button
+
+						button -w 300 -l "Create Note Track node" -c "CreateNoteTrackNode;NoteTrack";
+
+			// Get a list of the noteTracks in the scene
+
+				string $NoteTrackList[] = `GetNoteTrackList`;
+
+		
+		// List selected to see if a note track was selected. If so, make it the active one in the drop down list.
+
+					string $Sel[] = `ls -sl -type transform "*NoteTrack*" "*:*NoteTrack*"`;
+				
+					string $SelNote;
+
+					if (`size $Sel` > 0)
+					{
+						$SelNote = $Sel[0];
+					}
+					else $SelNote = $NoteTrackList[0];
+
+
+
+			// Create the drop down list for the present note track, if one exists.
+
+				if (`size $NoteTrackList` > 0)
+				{
+					
+					CreateNoteTrackDropDowns $SelNote $NoteTrackList;
+
+	
+					textField -w 120 -tx "Null" TF_AddNoteTrack;
+
+					button -l "Add" -c ("AddToMainNoteTrackList " +  $SelNote);
+					button -l "Rename" -c ("RenameMainNoteTrack " + $SelNote) ;
+
+				}
+
+				
+
+
+
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CreateNoteTrackDropDowns
+//
+//		This proc creates the note track drop down menus and connects them to the notetrack node passed in.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CreateNoteTrackDropDowns ( string $NoteTrackNode, string $NoteTrackNodeList[])
+{
+			// Main Note Track drop down
+
+	global string $NoteTracksMainList;
+
+
+	string $LocalNoteTrackMainList = `addAttr -q -enumName ($NoteTrackNode + ".MainNote")`;
+
+	string $LocalMainNoteTrackListArry[];
+
+	tokenize $LocalNoteTrackMainList ":" $LocalMainNoteTrackListArry;
+
+
+			frameLayout -w 150 -label "Note Track" -borderStyle "etchedIn"  -collapsable true -collapse false -p NoteTrackTopColumnLayout NoteTrackAttributesFrameLayout;
+
+				columnLayout -rs 4 -p NoteTrackAttributesFrameLayout NoteTrackAttributesMainColumnLayout;
+
+
+					rowColumnLayout -numberOfColumns  3 -columnWidth 1 220 -columnWidth 2 40 -columnWidth 3 30 -p NoteTrackAttributesMainColumnLayout;
+
+				// Change note track list menu
+
+						optionMenu -w 280 -label "Selected Note Track :" -cc "ChangeSelectedNoteTrack" OM_SelectTrackNote ;
+						
+						string $Each;
+				
+						for ($Each in $NoteTrackNodeList)
+						{
+							menuItem -label $Each;
+						}
+
+					button -l "Select" -c "ChangeSelectedNoteTrack";
+
+					button -l "Del" -c "DeleteNoteTrack";
+
+					print "\n\nThe note track node is:";
+					print $NoteTrackNode;
+					print "\n\n";
+
+					optionMenu -e -v $NoteTrackNode OM_SelectTrackNote;
+
+					separator -w 300;
+					separator -w 300;
+					separator -w 300;
+					separator -w 300;
+
+
+					rowColumnLayout -nc 2 -cw 1 250 -cw 2 50  -p NoteTrackAttributesMainColumnLayout;
+
+						string $MenuListMain[];						
+						tokenize $NoteTracksMainList ":" $MenuListMain;
+
+						optionMenu  -w 290 -label "Main NoteTrack :" OM_MainTrackNote ;
+
+							string $Each;
+							int $Data = 0; 	// To use the connectControl function, the menu iteams need a data value
+							for ($Each in $LocalMainNoteTrackListArry)
+							{
+								menuItem -label $Each -data $Data ; 	// To use the connectControl function, the menu iteams need a data value
+								$Data = $Data +1;
+							}
+				
+				// Connect the control to the notetrack node attribute
+						connectControl OM_MainTrackNote ($NoteTrackNode + ".MainNote");
+
+
+						button  -l "Key" -c ("setKeyframe "+$NoteTrackNode + ".MainNote") ;
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	GetNoteTrackList
+//
+//		This proc returns a list of all the note track nodes in the scene.
+//		These are found by looking for all nodes that start "NoteTrack"
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc  string[] GetNoteTrackList()
+{
+
+	string $Tracks[] = {"hello","world"};
+	string $Tracks[] = `ls -type transform "*NoteTrack*" "*:*NoteTrack*"`;
+	print $Tracks;
+	print "Where is this??";
+	return $Tracks;
+	
+
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	NoteTrack
+//
+//		This is the main entry point
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc NoteTrack()
+{
+
+
+
+	// Create a window 
+		string $win = "CODNoteTrackWindow";
+
+	// check and see if the window exists.  if it does, then delete it.
+		if (`window -exists $win`)
+			deleteUI $win;
+
+	// create the window
+		CreateCODNoteTrackWindow $win;
+
+	// show the window
+		showWindow $win;
+
+}
+
+

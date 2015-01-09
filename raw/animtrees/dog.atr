@@ -1,0 +1,86 @@
+attack_player
+{
+	german_shepherd_attack_player
+}
+attack_player_late
+{
+	german_shepherd_attack_player_late
+}
+german_shepherd_death_front
+german_shepherd_idle
+german_shepherd_attackidle_knob
+{
+	german_shepherd_attackidle
+	german_shepherd_attackidle_bark
+	german_shepherd_attackidle_growl
+}
+
+german_shepherd_look_2 : additive
+{
+	german_shepherd_look_down
+	german_shepherd_attack_look_down
+}
+german_shepherd_look_4 : additive
+{
+	german_shepherd_look_right
+	german_shepherd_attack_look_right
+}
+german_shepherd_look_6 : additive
+{
+	german_shepherd_look_left
+	german_shepherd_attack_look_left
+}
+german_shepherd_look_8 : additive
+{
+	german_shepherd_look_up
+	german_shepherd_attack_look_up
+}	
+	
+german_shepherd_run_start_knob : nonloopsync
+{
+	german_shepherd_run_start
+	//german_shepherd_run_start_L
+	//german_shepherd_run_start_R
+	//german_shepherd_run_start_180_R
+	//german_shepherd_run_start_180_L
+}
+
+german_shepherd_run_knob : loopsync
+{
+	german_shepherd_run
+	german_shepherd_run_lean_L
+	german_shepherd_run_lean_R
+}
+
+german_shepherd_attack_player_miss
+german_shepherd_run_attack
+german_shepherd_run_jump_40
+german_shepherd_run_jump_window_40
+german_shepherd_run_pain
+german_shepherd_run_stop
+german_shepherd_run_flashbang
+german_shepherd_attack_AI_01_start_a
+german_shepherd_attack_AI_02_idle_a
+german_shepherd_attack_AI_03_pushed_a
+german_shepherd_attack_AI_03_shot_a
+german_shepherd_attack_AI_04_middle_a
+german_shepherd_attack_AI_05_kill_a
+german_shepherd_attack_player_miss_turnR
+german_shepherd_attack_player_miss_turnL
+german_shepherd_traverse_down_40
+german_shepherd_traverse_up_40
+german_shepherd_traverse_up_80
+german_shepherd_walk
+german_shepherd_player_neck_snap
+german_shepherd_player_neck_miss
+german_shepherd_eating
+german_shepherd_eating_in
+german_shepherd_eating_loop
+german_shepherd_eating_out
+german_shepherd_sleeping
+german_shepherd_wakeup_slow
+german_shepherd_wakeup_fast
+
+
+// SNIPER ESCAPE
+sniper_escape_dog_fence

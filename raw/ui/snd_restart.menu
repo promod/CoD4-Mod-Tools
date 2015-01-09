@@ -1,0 +1,182 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			150
+
+#define CHOICE_GROUP			"apply_settings_sound"
+
+#define STYLE_PC	1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+	
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			250
+
+{
+	menuDef 
+	{
+		IMPROVED_POPUP_SETUP( snd_restart_popmenu, 3, 230, 170, ;, 1 )
+
+		CHOICE_POPMENU_TITLE( "@MENU_APPLY_SETTINGS" )
+
+		CHOICE_BUTTON( 2, "@MENU_YES", exec "setfromdvar snd_khz ui_snd_khz"; exec "setfromdvar snd_outputConfiguration	ui_OutputConfig"; exec "setfromdvar snd_enableEq ui_snd_enableEq"; close snd_restart_popmenu; exec "snd_restart"; )
+		CHOICE_BUTTON( 3, "@MENU_NO", close self )
+	}
+}
+
+/*
+
+{
+//SND_RESTART POPUP MENU //
+
+	
+	menuDef 
+	{
+		name snd_restart_popmenu
+		visible 0
+		fullscreen 0
+		//rect 217 200 210 85
+		rect 204 140 235 135
+		focusColor COLOR_FOCUSED
+		style 1
+		border 1
+		popup
+		onESC { close snd_restart_popmenu;  }
+		onOpen { setfocus yes; }
+
+		itemDef 
+		{
+			name window
+			group grpControlbutton
+			rect 0 2 235 135
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .5
+			visible 0
+			decoration
+		}
+
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -332 -162 896 484
+	 		background "white"
+			forecolor 0 0 0 0.3
+			backcolor 0 0 0 0.3
+			visible 1
+			decoration
+		}
+	
+		itemDef 
+		{
+			name window2
+			group grpControlbutton
+			rect 2 3 231 20	
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .2
+			forecolor 1 1 1 1
+			backcolor 1 1 .3 .3
+			visible 0
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -150 2 535 150
+	 		background "popmenu_bg"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -50 20 335 24
+	 		background "popmenu_goldline"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MENU_APPLY_SETTINGS" 
+			style 0
+			textscale TEXTSIZE_TITLE 
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 126 25 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -62
+			textaligny 5
+			decoration
+			forecolor		COLOR_TITLE
+			visible 1
+		}
+
+		itemDef 
+		{
+			name		yes
+			text		"@MENU_YES"
+			type		1
+			textscale	.45
+			style		WINDOW_STYLE_FILLED
+			textfont	UI_FONT_NORMAL
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		90 45 60 30
+			textalign	ITEM_ALIGN_CENTER
+			textaligny	21
+			forecolor	.9 .9 .95 1
+			visible		1
+
+			action 
+			{ 
+				play "mouse_click";
+				
+				exec "setfromdvar snd_khz		ui_snd_khz";
+				exec "setfromdvar snd_outputConfiguration	ui_OutputConfig";				
+				
+				hide applysystem;
+				close snd_restart_popmenu ; 
+				exec "snd_restart" 
+			}
+			mouseEnter { play "mouse_over";  } 
+		}
+
+		itemDef 
+		{
+			name		no
+			text		"@MENU_NO"
+			type		1
+			textscale	.45
+			style		WINDOW_STYLE_FILLED
+			textfont	UI_FONT_NORMAL
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		91 85 60 30
+			textalign	ITEM_ALIGN_CENTER
+			textaligny	21
+			forecolor	.9 .9 .95 1
+			visible		1
+
+			action { 
+				play "mouse_click";
+				close snd_restart_popmenu;  
+				show applysystem;
+			}
+			mouseEnter { play "mouse_over";  } 
+		}	
+	}
+}
+*/

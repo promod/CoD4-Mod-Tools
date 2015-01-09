@@ -1,0 +1,122 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_GROUP			"select_difficulty"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+// no PC background clickable popup close function	
+#define NO_BG_CLOSE	1
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+
+#ifdef CONSOLE
+	#define UPDATE_GAMER_PROFILE	exec "updategamerprofile"; scriptMenuResponse "continue";
+#else
+	#define UPDATE_GAMER_PROFILE	scriptMenuResponse "continue";
+#endif
+	
+{
+	#include "ui_mp/popupstyle.inc"	
+	#include "ui/choices_setup_popmenu.menu"
+	
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X			320
+	
+	#define LOCAL_DIFF_CONFIRM( menuName, execArg )\
+	menuDef{\
+		CENTER_POPUP_SETUP_ONOPEN( menuName, 5, open select_difficulty;, setfocus "no";, 1 )\
+		CHOICE_POPMENU_SUBTITLE( "@MENU_DIFFICULTY_WARNING" )\
+		CHOICE_BUTTON( 4, "@MENU_YES", execnow execArg; UPDATE_GAMER_PROFILE; close self; close select_difficulty; )\
+		CHOICE_BUTTON_EX( 5, "@MENU_NO", close self; open select_difficulty;, name "no" )\
+	}
+	
+	LOCAL_DIFF_CONFIRM( "diff_con_easy", "difficultyeasy" )
+	LOCAL_DIFF_CONFIRM( "diff_con_regular", "difficultymedium" )
+	LOCAL_DIFF_CONFIRM( "diff_con_hardened", "difficultyhard" )
+	LOCAL_DIFF_CONFIRM( "diff_con_veteran", "difficultyfu" )
+		
+	// custom setting for difficulty selection ===========================================
+
+	#undef CHOICE_SIZE_Y
+	#define CHOICE_SIZE_Y				22
+	
+	#undef A_BUTTON_SIZE
+	#define A_BUTTON_SIZE				0.33
+
+	#undef CHOICE_POPUP_BORDER_X
+	#define CHOICE_POPUP_BORDER_X 		130
+	
+	#undef CHOICE_POPUP_TITLE_HEIGHT
+	#define CHOICE_POPUP_TITLE_HEIGHT	16
+	
+	#undef CHOICE_X_START
+	#define CHOICE_X_START				0
+
+	#undef CHOICE_TEXTSIZE
+	#define CHOICE_TEXTSIZE				TEXTSIZE_DEFAULT
+	
+	#undef CHOICE_POPUP_TITLE_TEXTSIZE
+	#define CHOICE_POPUP_TITLE_TEXTSIZE		TEXTSIZE_TITLE
+	
+	#undef CHOICE_POPUP_SUBTITLE_TEXTSIZE
+	#define CHOICE_POPUP_SUBTITLE_TEXTSIZE 	TEXTSIZE_DEFAULT
+	
+	#ifdef PC
+		#undef CHOICE_SIZE_X
+		#define CHOICE_SIZE_X			160
+	#else
+		#undef CHOICE_SIZE_X
+		#define CHOICE_SIZE_X			140
+	#endif
+
+	#define LOCAL_DIFF_DESC_X	 exp rect X( CHOICE_SIZE_X+16 ); autowrapped exp rect Y( 46 ) exp rect W(216)
+	
+	#define LOCAL_DIFFICULTY_DESC\
+		CHOICE_POPMENU_SUBTITLE_VIS( locString( "@MENU_REGULAR_DESC_3" ) + " " + locString( "@MENU_REGULAR_DESC_4" ), when( localVarInt( ui_highlight ) == 2 ); LOCAL_DIFF_DESC_X )\
+		CHOICE_POPMENU_SUBTITLE_VIS( locString( "@MENU_SKILLED_DESC" ) + " " + locString( "@MENU_SKILLED_DESC_2" ), when( localVarInt( ui_highlight ) == 3 ); LOCAL_DIFF_DESC_X )\
+		CHOICE_POPMENU_SUBTITLE_VIS( "@MENU_HARDENED_DESC", when( localVarInt( ui_highlight ) == 4 ); LOCAL_DIFF_DESC_X )\
+		CHOICE_POPMENU_SUBTITLE_VIS( "@MENU_VETERAN_DESC", when( localVarInt( ui_highlight ) == 5 ); LOCAL_DIFF_DESC_X )\
+		CHOICE_POPMENU_SUBTITLE_VIS( "@MENU_TRY_AGAIN_DESC", when( localVarInt( ui_highlight ) == 7 ); LOCAL_DIFF_DESC_X )
+
+	#define LOCAL_ESC_ACTION\
+		execondvarintvalue recommended_gameskill 0 "difficultyeasy";\
+		execondvarintvalue recommended_gameskill 1 "difficultymedium";\
+		execondvarintvalue recommended_gameskill 2 "difficultyhard";\
+		execondvarintvalue recommended_gameskill 3 "difficultyfu";\
+		scriptMenuResponse "closed";
+
+	menuDef
+	{
+		CENTER_POPUP_SETUP_ONOPEN( select_difficulty, 7, LOCAL_ESC_ACTION, setfocus "newgame_regular"; setfocusbydvar "recommended_gameskill", 1 )
+		onclose{ exec "wait; wait"; scriptMenuResponse "closed"; }
+		execkeyint BUTTON_START{;}
+
+		CHOICE_POPMENU_TITLE( "@MENU_SELECT_DIFFICULTY" )
+		
+		CHOICE_BUTTON_BG( 2, when( dvarInt(recommended_gameskill)!=0 ); forecolor 1 0 0 0.25 )
+		CHOICE_BUTTON_BG( 3, when( dvarInt(recommended_gameskill)!=1 ); forecolor 1 0 0 0.25 )
+		CHOICE_BUTTON_BG( 4, when( dvarInt(recommended_gameskill)!=2 ); forecolor 1 0 0 0.25 )
+		CHOICE_BUTTON_BG( 5, when( dvarInt(recommended_gameskill)!=3 ); forecolor 1 0 0 0.25 )
+		
+		CHOICE_BUTTON_FOCUS_VIS_EX( 2, "@MENU_RECRUIT", execnow "difficultyeasy"; UPDATE_GAMER_PROFILE; close self;, ;, ;, when( dvarInt(recommended_gameskill)==0 );, dvartest "recommended_gameskill"; focusdvar { "0" } )
+		CHOICE_BUTTON_FOCUS_VIS( 2, "@MENU_RECRUIT", open "diff_con_easy";, ;, ;, when( dvarInt(recommended_gameskill)!=0 ); )
+		
+		CHOICE_BUTTON_FOCUS_VIS_EX( 3, "@MENU_REGULAR", execnow "difficultymedium"; UPDATE_GAMER_PROFILE; close self;, ;, ;, when( dvarInt(recommended_gameskill)==1 );, dvartest "recommended_gameskill"; focusdvar { "1" } )
+		CHOICE_BUTTON_FOCUS_VIS( 3, "@MENU_REGULAR", open "diff_con_regular";, ;, ;, when( dvarInt(recommended_gameskill)!=1 ); )
+
+		CHOICE_BUTTON_FOCUS_VIS_EX( 4, "@MENU_HARDENED", execnow "difficultyhard"; UPDATE_GAMER_PROFILE; close self;, ;, ;, when( dvarInt(recommended_gameskill)==2 );, dvartest "recommended_gameskill"; focusdvar { "2" } )
+		CHOICE_BUTTON_FOCUS_VIS( 4, "@MENU_HARDENED", open "diff_con_hardened";, ;, ;, when( dvarInt(recommended_gameskill)!=2 ); )
+
+		CHOICE_BUTTON_FOCUS_VIS_EX( 5, "@MENU_VETERAN", execnow "difficultyfu"; UPDATE_GAMER_PROFILE; close self;, ;, ;, when( dvarInt(recommended_gameskill)==3 );, dvartest "recommended_gameskill"; focusdvar { "3" } )
+		CHOICE_BUTTON_FOCUS_VIS( 5, "@MENU_VETERAN", open "diff_con_veteran";, ;, ;, when( dvarInt(recommended_gameskill)!=3 ); )
+
+		CHOICE_BUTTON_FOCUS( 7, "@MENU_TRY_AGAIN", scriptMenuResponse "tryagain"; close self;, ;, ; )
+	
+		LOCAL_DIFFICULTY_DESC
+	}
+}

@@ -1,0 +1,30 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"targetname" "auto1"
+"classname" "trigger_use"
+// brush 0
+{
+ ( 32 16 -32 ) ( -32 16 -32 ) ( -32 -16 -32 ) trigger 64 -64 32 -32 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -16 32 ) ( -32 16 32 ) ( 32 16 32 ) trigger 64 -64 32 -32 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -32 32 ) ( 32 -32 32 ) ( 32 -32 -32 ) trigger 64 -64 32 32 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -16 32 ) ( 32 16 32 ) ( 32 16 -32 ) trigger 64 -64 32 32 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 32 32 ) ( -32 32 32 ) ( -32 32 -32 ) trigger 64 -64 32 32 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 32 ) ( -32 -16 32 ) ( -32 -16 -32 ) trigger 64 -64 32 32 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 2
+{
+"targetname" "oldschool_pickup"
+"script_noteworthy" "specialty_bulletdamage"
+"classname" "script_model"
+"model" "perc_stoppingpower"
+"origin" "0.0 0.0 0.0"
+"target" "auto1"
+}

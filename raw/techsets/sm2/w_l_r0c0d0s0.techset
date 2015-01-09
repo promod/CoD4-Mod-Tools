@@ -1,0 +1,63 @@
+"fakelight normal":
+	fakelight_normal_d0_nc;
+
+"fakelight view":
+	fakelight_view_d0_nc;
+
+"case texture":
+	case_texture_nc;
+
+"shaded wireframe":
+	wireframe_shaded_nc;
+
+"solid wireframe":
+	wireframe_solid_nc;
+
+"debug bumpmap":
+	debug_bumpmap_nc;
+
+"depth prepass":
+	zprepass;
+
+"build shadowmap depth":
+	build_shadowmap_depth;
+
+"build shadowmap color":
+	build_shadowmap_color_nc_sm2;
+
+"build floatz":
+	build_floatz_nc;
+
+"unlit":
+	vcsh_d0_nc;
+
+"lit":
+	lm_r0c0d0_nc_sm2;
+
+"lit sun":
+"lit sun shadow":
+	lm_sun_r0c0d0_nc_sm2;
+
+"lit spot":
+"lit spot shadow":
+	lm_spot_r0c0d0_nc_sm2;
+
+"lit omni":
+"lit omni shadow":
+	lm_omni_r0c0d0_nc_sm2;
+
+"light omni":
+	l_omni_r0c0d0_nc;
+
+"light spot":
+"light spot shadow":
+	l_spot_r0c0d0_nc;
+
+"sunlight preview":
+	sunpre_r0c0d0_nc;
+
+"shadowcookie caster":
+	shadowcookie_caster_nc;
+
+"shadowcookie receiver":
+	shadowcookie_receiver_nc;

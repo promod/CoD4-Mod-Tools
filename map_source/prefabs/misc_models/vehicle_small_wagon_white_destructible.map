@@ -1,0 +1,91 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 34 32 0 ) ( 34 -32 0 ) ( 70 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -32 0 ) ( 40 -32 62 ) ( 76 -32 38 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 -32 28 ) ( 70 32 28 ) ( 70 32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 32 0 ) ( 76 32 38 ) ( 40 32 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -32 34 ) ( 64 32 34 ) ( 70 32 28 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 -32 0 ) ( 34 32 0 ) ( 34 32 38 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 32 34 ) ( 64 -32 34 ) ( 34 -32 38 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 34 -32 0 ) ( 34 32 0 ) ( -72 32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -32 64 ) ( -62 32 64 ) ( 18 32 64 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -32 0 ) ( -72 -32 0 ) ( -72 -32 36 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 32 62 ) ( 24 32 72 ) ( -48 32 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 32 20 ) ( -72 -32 20 ) ( -72 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 32 64 ) ( -62 -32 64 ) ( -72 -32 20 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 -32 38 ) ( 34 32 38 ) ( 34 32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 32 38 ) ( 34 -32 38 ) ( 18 -32 64 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"target" "auto1"
+"destructible_type" "vehicle_small_wagon_white"
+"targetname" "destructible"
+"origin" "0.0 0.0 0.0"
+"model" "vehicle_small_wagon_white_destructible"
+"classname" "script_model"
+}
+// entity 2
+{
+"targetname" "delete_on_load"
+"origin" "51.5 22.0 12.0"
+"model" "vehicle_small_wagon_white_wheel_lf"
+"classname" "script_model"
+}
+// entity 3
+{
+"targetname" "delete_on_load"
+"origin" "-43.0 22.0 12.0"
+"model" "vehicle_small_wagon_white_wheel_lf"
+"classname" "script_model"
+}
+// entity 4
+{
+"angles" "0 0 180"
+"targetname" "delete_on_load"
+"origin" "51.5 -22.5 12.0"
+"model" "vehicle_small_wagon_white_wheel_lf"
+"classname" "script_model"
+}
+// entity 5
+{
+"angles" "0 0 180"
+"targetname" "delete_on_load"
+"origin" "-43.0 -22.5 12.0"
+"model" "vehicle_small_wagon_white_wheel_lf"
+"classname" "script_model"
+}
+// entity 6
+{
+"targetname" "auto1"
+"spawnflags" "1"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 80 8 -12 ) ( -80 8 -12 ) ( -80 -8 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -8 12 ) ( -80 8 12 ) ( 80 8 12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -76 -12 46 ) ( 84 -12 46 ) ( 84 -12 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -20 46 ) ( 12 -4 46 ) ( 12 -4 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 12 46 ) ( -84 12 46 ) ( -84 12 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 12 46 ) ( -12 -4 46 ) ( -12 -4 -12 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 80 8 0 ) ( -80 8 0 ) ( -80 -8 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -9 66 ) ( -80 7 66 ) ( 80 7 66 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -32 58 ) ( 80 -32 58 ) ( 80 -32 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -8 58 ) ( 68 8 58 ) ( 68 8 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 32 58 ) ( -80 32 58 ) ( -80 32 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -70 8 58 ) ( -70 -8 58 ) ( -70 -8 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,32 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 18 80 0 ) ( 56 80 0 ) ( 128 128 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 106 144 2 ) ( 128 128 2 ) ( 56 80 34 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 18 80 0 ) ( 18 80 42 ) ( 56 80 34 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 128 0 ) ( 56 80 0 ) ( 56 80 34 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 128 0 ) ( 128 128 2 ) ( 106 144 2 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 106 144 2 ) ( 18 80 42 ) ( 18 80 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -40 -64 0 ) ( 88 -64 0 ) ( 88 96 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 80 102 ) ( 88 96 22 ) ( 88 -64 4 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -64 0 ) ( -22 -64 86 ) ( 88 -64 4 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 88 96 0 ) ( 88 -64 0 ) ( 88 -64 4 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 88 96 0 ) ( 88 96 22 ) ( -22 80 102 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 80 102 ) ( -22 -64 86 ) ( -40 -64 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "ch_haycart_destroyed"
+"angles" "0 360 0"
+"origin" "0.0 0.0 0.0"
+}

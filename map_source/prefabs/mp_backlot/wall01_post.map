@@ -1,0 +1,113 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 8 8 0 ) ( -8 8 0 ) ( -8 -8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 96 ) ( -8 8 96 ) ( 8 8 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 88 ) ( 8 -8 88 ) ( 8 -8 80 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -8 88 ) ( 8 8 88 ) ( 8 8 80 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 88 ) ( -8 8 88 ) ( -8 8 80 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 88 ) ( -8 -8 88 ) ( -8 -8 80 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents weaponClip;
+ ( 6 8 96 ) ( -10 8 96 ) ( -10 -8 96 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 98 ) ( -8 8 98 ) ( 8 8 98 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -9 92 ) ( 8 -9 92 ) ( 8 -9 84 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -8 92 ) ( 9 8 92 ) ( 9 8 84 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 9 92 ) ( -8 9 92 ) ( -8 9 84 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 8 92 ) ( -9 -8 92 ) ( -9 -8 84 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 6 8 98 ) ( -10 8 98 ) ( -10 -8 98 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 100 ) ( -8 8 100 ) ( 8 8 100 ) ch_plaster04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 94 ) ( 8 -8 94 ) ( 8 -8 86 ) ch_plaster04 128 128 0 -2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -8 94 ) ( 8 8 94 ) ( 8 8 86 ) ch_plaster04 128 128 0 -2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 94 ) ( -8 8 94 ) ( -8 8 86 ) ch_plaster04 128 128 0 -2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 94 ) ( -8 -8 94 ) ( -8 -8 86 ) ch_plaster04 128 128 0 -2 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+ {
+  mesh
+  {
+  toolFlags splitGeo;
+   me_decal_adobe_bottom_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 8 -8 0 t 0 0 -0.5 0
+	v 8 -8 56 t 0 -896 -0.5 -3.5
+   )
+   (
+	v 8 8 0 t 64 0 0.5 0
+	v 8 8 56 t 64 -896 0.5 -3.5
+   )
+  }
+ }
+// brush 4
+ {
+  mesh
+  {
+  toolFlags splitGeo;
+   me_decal_adobe_bottom_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -8 8 0 t 0 0 0.5 0
+	v -8 8 56 t 0 -896 0.5 -3.5
+   )
+   (
+	v -8 -8 0 t 64 0 -0.5 0
+	v -8 -8 56 t 64 -896 -0.5 -3.5
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+  toolFlags splitGeo;
+   me_decal_adobe_bottom_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -8 -8 0 t 0 0 -0.5 0 f 1
+	v -8 -8 56 t 0 -896 -0.5 -3.5 f 1
+   )
+   (
+	v 8 -8 0 t 64 0 0.5 0 f 1
+	v 8 -8 56 t 64 -896 0.5 -3.5 f 1
+   )
+  }
+ }
+// brush 6
+ {
+  mesh
+  {
+  toolFlags splitGeo;
+   me_decal_adobe_bottom_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 8 8 0 t 0 0 0.5 0 f 1
+	v 8 8 56 t 0 -896 0.5 -3.5 f 1
+   )
+   (
+	v -8 8 0 t 64 0 -0.5 0 f 1
+	v -8 8 56 t 64 -896 -0.5 -3.5 f 1
+   )
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+	stateMap "default";
+
+	vertexShader 1.1 "vertcol_simple_nc.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "case_texture.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		caseTextureSampler = sampler.caseTexture;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

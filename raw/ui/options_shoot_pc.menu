@@ -1,0 +1,80 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define OPTIONS_STYLE			1
+
+#define 	CHOICE_SEP_1		30
+#define 	CHOICE_SEP_2		32
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef 
+	{
+		name			options_shoot
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen
+		{
+			close options_look;
+			close options_move;
+			close options_misc;
+			close options_graphics;
+			close options_sound;
+			close options_game;
+			close options_view;
+			close options_defaults;
+			close options_driverinfo;
+			close options_credits;
+			close options_multi;
+			close options_graphics_defaults;
+			close options_graphics_texture;
+			close options_control_defaults;
+
+			setLocalVarBool ui_hideBack 1;
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+		}
+		onESC 
+		{ 
+			close self;		
+		}
+		
+		#include "ui_mp/leftside_controls.inc"
+		
+		CHOICE_SECTION_TITLE( 21, "@MENU_COMBAT" )
+
+		CHOICE_BIND( 22, "@MENU_ATTACK", "+attack", ; )
+		CHOICE_BIND( 23, "@MENU_TOGGLE_AIM_DOWN_THE_SIGHT", "+toggleads_throw", ; )
+		CHOICE_BIND( 24, "@MENU_AIM_DOWN_THE_SIGHT", "+speed_throw", ; )
+		CHOICE_BIND( 25, "@MENU_MELEE_ATTACK", "+melee", ; )	
+		CHOICE_BIND( 26, "@MENU_SWITCH_WEAPON", "weapnext", ; )
+		CHOICE_BIND( 27, "@MENU_RELOAD_WEAPON", "+reload", ; )
+		CHOICE_BIND( 28, "@MENU_SPRINT", "+sprint", ; )
+		CHOICE_BIND( 29, "@MENU_SPRINT_STEADY_SNIPER_RIFLE", "+breath_sprint", ; )
+		CHOICE_BIND( 30, "@MENU_STEADY_SNIPER_RIFLE", "+holdbreath", ; )
+				
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )
+		
+		CHOICE_BIND( 31, "@MENU_THROW_FRAG_GRENADE", "+frag", ; )
+		CHOICE_BIND( 32, "@MENU_THROW_SPECIAL_GRENADE", "+smoke", ; )
+		
+		CHOICE_SEPARATOR( CHOICE_SEP_2 )
+
+		CHOICE_BIND_VIS( 33, "@MENU_ACTION_INVENTORY", "+actionslot 3", ;, when( dvarbool( ui_multiplayer ) ) ) 	//mp
+		CHOICE_BIND_VIS( 33, "@WEAPON_GRENADE_LAUNCHER", "+actionslot 3", ;, when( !dvarbool( ui_multiplayer ) ) ) 			//sp
+
+		CHOICE_BIND_VIS( 34, "@MENU_AIR_SUPPORT", "+actionslot 4", ;, when( dvarbool( ui_multiplayer ) ) ) 				//mp
+		CHOICE_BIND_VIS( 34, "@WEAPON_C4", "+actionslot 2", ;, when( !dvarbool( ui_multiplayer ) ) ) 						//sp
+
+		CHOICE_BIND_VIS( 35, "@MENU_EQUIPMENT", "+actionslot 4", ;, when( !dvarbool( ui_multiplayer ) ) )					//sp
+
+		//CHOICE_BACK( "@MENU_BACK", close self )
+
+		CHOICE_KEYBINDHELP
+	}
+}

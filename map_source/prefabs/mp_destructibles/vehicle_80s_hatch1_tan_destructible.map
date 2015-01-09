@@ -1,0 +1,44 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 80 32 0 ) ( 40 32 0 ) ( 40 -32 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -32 40 ) ( 40 32 40 ) ( 80 32 40 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -34 40 ) ( 80 -34 40 ) ( 80 -34 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 82 -32 40 ) ( 82 32 40 ) ( 82 32 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 34 40 ) ( 40 34 40 ) ( 40 34 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 32 40 ) ( 32 -32 40 ) ( 32 -32 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 80 28 0 ) ( 72 28 0 ) ( 72 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -28 36 ) ( 32 28 36 ) ( 76 28 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 -28 40 ) ( 80 -28 40 ) ( 80 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 -28 32 ) ( 76 28 32 ) ( 76 28 -8 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 28 40 ) ( 72 28 40 ) ( 72 28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 28 36 ) ( 32 -28 36 ) ( 32 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 32 28 0 ) ( 0 28 0 ) ( 0 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -28 40 ) ( 32 -28 40 ) ( 32 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -28 40 ) ( 32 28 40 ) ( 32 28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 28 40 ) ( 0 28 40 ) ( 0 28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 28 40 ) ( -68 -28 40 ) ( -68 -28 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -28 52 ) ( -36 28 52 ) ( 12 28 52 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -28 52 ) ( 12 28 52 ) ( 32 28 36 ) clip_nosight_metal 64 64 0 -36 0 0 lightmap_gray 16384 16384 0 -36 0 0
+ ( -36 28 52 ) ( -36 -28 52 ) ( -68 -28 36 ) clip_nosight_metal 64 64 0 -36 0 0 lightmap_gray 16384 16384 0 -36 0 0
+}
+}
+// entity 1
+{
+"classname" "script_model"
+"model" "vehicle_80s_hatch1_tan_destructible_mp"
+"origin" "0.0 0.0 0.0"
+"targetname" "destructible"
+"destructible_type" "vehicle_80s_hatch1_tan"
+}

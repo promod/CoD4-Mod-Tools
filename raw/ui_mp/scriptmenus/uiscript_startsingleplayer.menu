@@ -1,0 +1,15 @@
+#include "ui/menudef.h"
+
+{
+    menuDef
+    {
+        name            "uiScript_startSingleplayer"
+        fullScreen      1
+        rect            0 0 640 480
+        onOpen
+        {
+            uiScript startSingleplayer;
+            close "uiScript_startSingleplayer";
+        }
+    }
+}

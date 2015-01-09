@@ -1,0 +1,122 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_GROUP			"readingsavedevice"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"
+#include "ui/choices_setup_popmenu.menu"
+
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			320
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+
+#undef CHOICE_POPUP_TITLE_HEIGHT
+#define CHOICE_POPUP_TITLE_HEIGHT	24
+
+{
+	menuDef
+	{
+		/*
+		name			"readingsavedevice"
+		style			WINDOW_STYLE_FILLED
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		visible			1
+		*/
+		
+		CENTER_POPUP_SETUP( readingsavedevice, 2, ;, 1 )
+
+		#define LOCAL_DL_ANIMATION (sin(milliseconds()*0.005)+1)*0.5
+		
+		#define DL_TITLE( textArg, visArg ) \
+		itemDef \
+		{ \
+			type			ITEM_TYPE_BUTTON \
+			rect			58 24 0 0 0 0 \
+			exp				text(textArg); \
+			textfont		UI_FONT_NORMAL \
+			textscale		CHOICE_POPUP_TITLE_TEXTSIZE \
+			textAlign		ITEM_ALIGN_TOP_LEFT \
+			textstyle		CHOICE_TEXTSTYLE \
+			forecolor		CHOICE_TEXTCOLOR \
+			visible			visArg \
+			decoration \
+		}
+		DL_TITLE( "@PLATFORM_READING_SAVE_DEVICE", when( LOCAL_DL_ANIMATION <= 0.25 ); )
+		DL_TITLE( locString( "@PLATFORM_READING_SAVE_DEVICE" ) + ".", when( LOCAL_DL_ANIMATION > 0.25 && LOCAL_DL_ANIMATION <= 0.5 ); )
+		DL_TITLE( locString( "@PLATFORM_READING_SAVE_DEVICE" ) + "..", when( LOCAL_DL_ANIMATION > 0.5 && LOCAL_DL_ANIMATION <= 0.75 ); )
+		DL_TITLE( locString( "@PLATFORM_READING_SAVE_DEVICE" ) + "...", when( LOCAL_DL_ANIMATION > 0.75 ); )
+	}
+}
+
+	/*
+
+{
+	menuDef
+	{
+		name			"readingsavedevice"
+	    visible			0
+		popup
+		fullscreen		0
+		rect			0 0 640 480 
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+
+		// background
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			FULLSCREEN_WIDE
+			backcolor		0.2 0.2 0.2 1
+			visible			1
+			decoration
+		}
+
+        
+		
+		itemDef
+		{
+			name			background_version_display
+			text			"@MENU_R_CIRCLE"
+			rect			562 116 10 10
+			type			ITEM_TYPE_BUTTON
+			forecolor		1 1 1 0.6
+			textscale		0.17
+			textalign		ITEM_ALIGN_LEFT
+			dvartest		"ui_logo_show"
+			showdvar		{ "1" }
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			name			background_version_display
+			type			ITEM_TYPE_BUTTON
+			rect			-10 -10 0 0 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_BOTTOM
+			visible			1
+			dvar			"shortversion"
+			textscale		0.23
+			textalign		ITEM_ALIGN_RIGHT
+			dvartest		"ui_version_show"
+			showdvar		{ "1" }
+			decoration
+		}
+		
+		#include "ui/safearea.menu"
+	}
+}
+*/

@@ -1,0 +1,63 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 0 16 0 ) ( -2 16 0 ) ( -2 6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 6 4 ) ( -2 16 4 ) ( 0 16 4 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -72 4 ) ( 0 -72 4 ) ( 0 -72 -2 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 12 4 ) ( 0 22 4 ) ( 0 22 -2 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 22 4 ) ( -2 22 4 ) ( -2 22 -2 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 16 2 ) ( -2 6 2 ) ( -2 6 -4 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 0 24 0 ) ( -2 24 0 ) ( -2 22 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 22 4 ) ( -2 24 4 ) ( 0 24 4 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 22 4 ) ( 0 22 4 ) ( 0 22 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 22 4 ) ( 6 24 4 ) ( 6 24 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 68 2 ) ( -2 68 2 ) ( -2 68 -2 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 24 4 ) ( -6 22 4 ) ( -6 22 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"type" "patchCapped"
+"classname" "func_group"
+// brush 0
+ {
+  curve
+  {
+  contents detail;
+   me_woodboard_02
+   lightmap_gray
+   3 3 16 8
+   (
+	v 1.5 -76.000015 1 t 12 608 0.09375 -0.0625
+	v 1.5 -76.000015 -0.5 t 12 608 0.09375 0.03125
+	v 0 -76.000015 -0.5 t 0 608 0 0.03125
+   )
+   (
+	v 1.5 -76.000015 2.5 t 12 608 0.09375 -0.15625
+	v 0 -76.000015 1 t 0 608 0 -0.0625
+	v -1.5 -76.000015 -0.5 t -12 608 -0.09375 0.03125
+   )
+   (
+	v 0 -76.000015 2.5 t 0 608 0 -0.15625
+	v -1.5 -76.000015 2.5 t -12 608 -0.09375 -0.15625
+	v -1.5 -76.000015 1 t -12 608 -0.09375 -0.0625
+   )
+  }
+ }
+}
+// entity 2
+{
+"origin" "-0.5 68.0 1.5"
+"modelscale" "2"
+"angles" "270 90 -2.50448e-006"
+"model" "com_rowboat_oar"
+"classname" "misc_model"
+}

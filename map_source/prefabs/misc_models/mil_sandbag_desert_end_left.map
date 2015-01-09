@@ -1,0 +1,24 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 27 0 ) ( -8 27 0 ) ( -8 -21 0 ) clip_nosight_dirt 64 64 0 -3 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -21 32 ) ( -8 27 32 ) ( 8 27 32 ) clip_nosight_dirt 64 64 0 -3 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -13 32 ) ( 8 -13 32 ) ( 8 -13 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 -21 32 ) ( 7 27 32 ) ( 7 27 0 ) clip_nosight_dirt 64 64 3 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 27 16 ) ( -6 27 16 ) ( -6 27 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 27 32 ) ( -7 -21 32 ) ( -7 -21 0 ) clip_nosight_dirt 64 64 3 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 27 16 ) ( 8 27 16 ) ( 8 3 32 ) clip_nosight_dirt 64 64 0 -3 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"angles" "0 180 0"
+"origin" "0.0 0.0 0.0"
+"model" "mil_sandbag_desert_end_left"
+"classname" "misc_model"
+}

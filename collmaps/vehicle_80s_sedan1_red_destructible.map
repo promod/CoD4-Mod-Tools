@@ -1,0 +1,61 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 36 30 8 ) ( 0 30 8 ) ( 0 -34 8 ) mantle_on 64 64 88 -614 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -34 60 ) ( 0 30 60 ) ( 36 30 60 ) mantle_on 64 64 88 -614 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -38 44 ) ( 36 -38 44 ) ( 36 -38 8 ) mantle_on 64 64 88 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -34 44 ) ( 36 30 44 ) ( 36 30 8 ) mantle_on 64 64 614 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 38 44 ) ( 0 38 44 ) ( 0 38 8 ) mantle_on 64 64 88 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -54 34 44 ) ( -54 -30 44 ) ( -54 -30 8 ) mantle_on 64 64 614 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 92 30 8 ) ( 56 30 8 ) ( 56 -34 8 ) mantle_on 64 64 144 -614 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -34 46 ) ( 56 30 46 ) ( 92 30 46 ) mantle_on 64 64 144 -614 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -38 44 ) ( 92 -38 44 ) ( 92 -38 8 ) mantle_on 64 64 144 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 92 -34 44 ) ( 92 30 44 ) ( 92 30 8 ) mantle_on 64 64 614 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 92 38 44 ) ( 56 38 44 ) ( 56 38 8 ) mantle_on 64 64 144 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 30 44 ) ( 36 -34 44 ) ( 36 -34 8 ) mantle_on 64 64 614 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -54 30 8 ) ( -90 30 8 ) ( -90 -34 8 ) mantle_on 64 64 -2 -614 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -90 -34 46 ) ( -90 30 46 ) ( -54 30 46 ) mantle_on 64 64 -2 -614 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -90 -38 44 ) ( -54 -38 44 ) ( -54 -38 8 ) mantle_on 64 64 -2 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -54 -34 44 ) ( -54 30 44 ) ( -54 30 8 ) mantle_on 64 64 614 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -54 38 44 ) ( -90 38 44 ) ( -90 38 8 ) mantle_on 64 64 -2 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 30 44 ) ( -92 -34 44 ) ( -92 -34 8 ) mantle_on 64 64 614 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 88 36 10 ) ( -92 36 10 ) ( -92 -34 10 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -32 58 ) ( 88 -32 58 ) ( 88 -32 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 -32 34 ) ( 80 32 34 ) ( 80 32 10 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 88 32 56 ) ( -92 32 56 ) ( -92 32 -2 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 32 38 ) ( -80 -32 38 ) ( -80 -32 10 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 32 42 ) ( 34 -32 42 ) ( -54 -32 42 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -32 38 ) ( -80 32 38 ) ( -54 32 42 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 32 34 ) ( 80 -32 34 ) ( 34 -32 42 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( -34 -26 58 ) ( -34 26 58 ) ( 8 26 58 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -20 60 ) ( 0 -20 60 ) ( 28 -28 42 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 34 42 ) ( 34 -34 42 ) ( 8 -26 60 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 20 60 ) ( -46 20 60 ) ( -64 28 42 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -34 26 60 ) ( -34 -26 60 ) ( -54 -34 42 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 -34 42 ) ( 34 34 42 ) ( -54 34 42 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"model" "vehicle_80s_sedan1_red_destructible"
+"classname" "misc_model"
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+}

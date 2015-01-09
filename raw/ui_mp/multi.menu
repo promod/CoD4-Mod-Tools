@@ -1,0 +1,526 @@
+#include "ui/menudef.h"
+
+#define ORIGIN_WINDOW1		136 -15
+#define ORIGIN_WINDOW2		136 15
+#define HELP_ORIGIN			0 5
+
+{
+// Server Creation \\
+
+	menuDef 
+	{
+		name "multi_menu"
+		fullscreen 1
+		rect 186 0 454 480	
+		focusColor COLOR_FOCUSED
+		style 1
+		border 0
+		soundloop ""
+		style WINDOW_STYLE_FILLED
+		forecolor 0 0 0 0
+		backcolor 0 0 0 0
+		
+		onOpen 
+		{
+//			setitemcolor fadebox backcolor 0 0 0 1 ; 
+//			fadeout fadebox ;
+			hide back_alt ;
+			show back ;
+			hide grpmessage
+		}
+		
+		onEsc 
+		{
+			close multi_menu ;
+			open main
+		}
+/*
+		itemDef 
+		{
+			name menu_select					// menu_select
+			style WINDOW_STYLE_SHADER
+			rect 0 0 640 480
+			background "menu_select"
+			visible 1
+			decoration
+		}
+*/
+		// Temp full screen backdrop image
+		#include "ui_mp/menu_background.menu"
+		itemDef 
+		{
+		     	name backimage2fade
+		  	style WINDOW_STYLE_FILLED
+	 		background "ui/assets/fadebox.tga"
+			forecolor 0 0 0 0.7
+			backcolor 0 0 0 0
+			rect 0 0 640 480
+			visible 1 
+			decoration
+		}
+
+
+/*
+		itemDef 
+		{
+			name			Join_Server
+			text			"@MENU_JOIN_SERVER" 	
+			textfont		UI_FONT_NORMAL
+			bordercolor		1 1 1 1
+			style			0	
+			textstyle		6
+			rect			105 90 80 14 
+			textalign		ITEM_ALIGN_LEFT
+			textscale		.25		
+			textalignx		2
+			textaligny		12
+			forecolor		.9 .9 .9 .9
+			visible			1
+			
+			action	
+			{
+				play "mouse_click";
+				close	joinserver ;	
+				close	createserver ;  
+				close	multi_setup ;
+				open	joinserver
+			}
+			
+			mouseenter		{ play "mouse_over"; show message_joinserver }
+			mouseexit		{ hide message_joinserver }
+		}
+		itemDef 
+		{
+			name			create_server
+			text			"@MENU_CREATE_SERVER"
+			textfont	UI_FONT_NORMAL
+			type			1
+			style			0	
+			textstyle		6
+//			rect			426 90 100 14 
+			rect			243 90 100 14
+			textalign		ITEM_ALIGN_LEFT
+			textscale		.25		
+			textalignx		2
+			textaligny		12
+			forecolor		.9 .9 .9 .9
+			visible			1 
+			action			{ play "mouse_click" ;
+			close			createserver ;
+			close			joinserver ;
+			close			multi_setup ;
+			open			createserver }	
+			mouseenter		{ play "mouse_over"; show message_create }
+			mouseexit		{ hide message_create }
+		}
+*/
+/*
+		itemDef 
+		{
+			name			Multi_Setup	
+			text			"MULTIPLAYER SETUP"
+			textfont	UI_FONT_NORMAL
+			type			1
+			style			0	
+			textstyle		6
+			rect			243 90 120 14 
+			textalign		ITEM_ALIGN_LEFT
+			textscale		.25		
+			textalignx		2
+			textaligny		12
+			forecolor		.9 .9 .9 .9
+			visible			0
+			
+			action	
+			{
+				play	"" ;
+				close	joinserver ;	
+				close	createserver ;  
+				open	multi_setup
+			}
+			
+			mouseenter		{ show message_multisetup }
+			mouseexit		{ hide message_multisetup }
+		}
+*/
+// BACK BAR	//
+/*
+		itemDef 
+		{
+			name gotobar
+			style 2
+			rect 0 445 640 20 
+			textscale 0.4
+			textalign ITEM_ALIGN_LEFT		// center
+			textalignx 60        	// x alignment point for text
+			// use it to offset left/right text from the edge 
+			// or to center the text on a different point
+			textaligny 21        
+			style 2
+			border 4
+			bordercolor 0.5 0.5 0.5 0.0
+			bordersize 2
+			backcolor 0.5 0.5 .5 0.0
+			visible 1 
+			mouseEnter { setcolor backcolor .5 0.5 0.5 .5 }
+			mouseExit { setcolor backcolor .5 .5 .5 .0 }
+			decoration 
+		}
+*/
+/*
+		itemDef 
+		{
+			name back
+			text "@MENU_BACK"
+			type 1
+			style 0	
+			textstyle 6
+			rect 30 460 40 14 
+			textalign ITEM_ALIGN_LEFT
+			textfont UI_FONT_NORMAL
+			textscale .255		
+			textalignx 6
+			textaligny 12
+			forecolor .9 .9 .9 .9
+			visible 1
+			
+			action 
+			{
+				close createserver ;
+				close joinserver ;
+				close multi_setup ;
+				close multi_menu ;
+				open main
+			}
+
+			mouseEnter 
+			{ 
+				hide back ;
+				show back_alt ;
+//				show message_back
+			}
+		}
+
+		itemDef 
+		{
+			name back_alt
+			text "@MENU_BACK"
+			type 1
+			style 0	
+			textstyle 6
+			rect 30 460 40 14 
+			textalign ITEM_ALIGN_LEFT
+			textfont UI_FONT_NORMAL
+			textscale .255	
+			textalignx 6
+			textaligny 12
+			forecolor .6 .6 .6 .6
+			visible 1 
+			type ITEM_TYPE_BUTTON
+			
+			action 
+			{
+				hide grpControls ;
+				close createserver ;
+				close joinserver ;
+				close multi_menu ;
+				open main
+			}
+			
+			mouseExit 
+			{
+				hide back_alt ;
+				show back ;
+				hide message_back
+			}	  
+		}
+		*/
+/*
+//	MESSAGES	//
+
+		itemDef 
+		{
+			name message_back
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textstyle 1
+			textalign ITEM_ALIGN_CENTER
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "EXIT TO MAIN MENU"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_accept
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Refresh Video"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_create
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Select to Create a Game Server"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_joinserver
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Select to Join a Game Server"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_multisetup
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Select to Change Multiplayer Options"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_nowork
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Selection Isn't Implemented"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_look
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Select to Edit View Controls"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_move
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Select to Edit Movement Controls"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_shoot
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Select to Edit Firing and Weapon Selection"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_misc
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Select to Edit Chat and Mouse Functions"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_system
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Edit System Settings"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_gameoptions
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Edit Game Options"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_cdkey
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Enter Encryption Key"
+			//	text "disabled for show build"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_default
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Reset to Default Settings"
+			//	text "disabled for show build"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+
+		itemDef 
+		{
+			name message_scores
+			group grpmessage
+			style 0 
+			rect 320 437 128 30
+			textalign ITEM_ALIGN_CENTER
+			textstyle 1
+			textalignx -64
+			textaligny 25
+			textfont UI_FONT_NORMAL
+			textscale .255
+//			text "Clear High Scores to Zero"
+			//	text "disabled for show build"
+			forecolor 1 1 1 1
+			decoration 
+			visible 0
+		}
+*/
+		itemDef 
+		{
+			name fadebox
+			style WINDOW_STYLE_FILLED
+			background "ui/assets/fadebox.tga"
+			forecolor 0 0 0 1
+			backcolor 0 0 0 1
+			rect 0 0 640 480
+			visible 0 
+			decoration
+		}
+	}
+}

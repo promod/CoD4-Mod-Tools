@@ -1,0 +1,35 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"script_gameobjectname" "ctf"
+"target" "ctf_flag_allies"
+"targetname" "ctf_trig_allies"
+"origin" "0.0 0.0 16.0"
+"height" "128"
+"radius" "64"
+"classname" "trigger_radius"
+}
+// entity 2
+{
+"spawnflags" "4"
+"script_gameobjectname" "ctf"
+"origin" "0.0 0.0 0.0"
+"targetname" "ctf_flag_allies"
+"model" "prop_flag_neutral"
+"classname" "script_model"
+}
+// entity 3
+{
+"script_gameobjectname" "ctf"
+"targetname" "ctf_zone_allies"
+"origin" "0.0 0.0 16.0"
+"height" "128"
+"radius" "64"
+"classname" "trigger_radius"
+}

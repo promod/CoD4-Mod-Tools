@@ -1,0 +1,35 @@
+#name "material factory"
+#dll "pc" "textfactory"
+#dll "ps3" "textfactory"
+#dll "xenon" "textfactory"
+#source_dir "materialfactory/"
+#target_dir ""
+#file_ext "csv"
+#version 8
+
+string csvFilename
+string outputDir
+string prependText
+
+vcontainer
+{
+	fileedit( csvFilename )
+
+	edit( outputDir )
+	[
+		exec
+		{
+			tooltip( "Optional; use this directory instead of the automatic directory for output" )
+		}
+	]
+
+	multiedit( prependText )
+	[
+		exec
+		{
+			width( 600 )
+			height( 200 )
+			tooltip( "arbitrary text that gets prepended to the template text used by the CSV" )
+		}
+	]
+}

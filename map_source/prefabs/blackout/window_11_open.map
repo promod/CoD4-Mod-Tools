@@ -1,0 +1,83 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 32 8 44 ) ( -32 8 44 ) ( -32 0 44 ) ch_woodwall01 128 128 0 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 48 ) ( -32 8 48 ) ( 32 8 48 ) ch_woodwall01 128 128 0 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -2 52 ) ( 32 -2 52 ) ( 32 -2 44 ) ch_woodwall01 128 128 -16 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 0 52 ) ( 28 8 52 ) ( 28 8 44 ) ch_woodwall01 128 128 -16 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 10 52 ) ( -32 10 52 ) ( -32 10 44 ) ch_woodwall01 128 128 -16 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 8 52 ) ( -28 0 52 ) ( -28 0 44 ) ch_woodwall01 128 128 -16 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -20 8 -6 ) ( -84 8 -6 ) ( -84 0 -6 ) ch_woodwall01 128 128 384 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 0 44 ) ( -28 8 44 ) ( 36 8 44 ) ch_woodwall01 128 128 384 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 -2 64 ) ( 36 -2 64 ) ( 36 -2 56 ) ch_woodwall01 128 128 384 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 0 72 ) ( -20 8 72 ) ( -20 8 64 ) ch_woodwall01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 10 72 ) ( -28 10 72 ) ( -28 10 64 ) ch_woodwall01 128 128 384 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 8 64 ) ( -24 0 64 ) ( -24 0 56 ) ch_woodwall01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -16 8 0 ) ( -80 8 0 ) ( -80 0 0 ) ch_woodwall01 128 128 0 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 0 4 ) ( -28 8 4 ) ( 36 8 4 ) ch_woodwall01 128 128 0 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -2 64 ) ( 40 -2 64 ) ( 40 -2 56 ) ch_woodwall01 128 128 0 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 0 8 ) ( 20 8 8 ) ( 20 8 0 ) ch_woodwall01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 10 64 ) ( -24 10 64 ) ( -24 10 56 ) ch_woodwall01 128 128 0 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 8 64 ) ( -20 0 64 ) ( -20 0 56 ) ch_woodwall01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( -18 8 -6 ) ( -82 8 -6 ) ( -82 0 -6 ) ch_woodwall01 128 128 384 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 0 44 ) ( -28 8 44 ) ( 36 8 44 ) ch_woodwall01 128 128 384 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -2 68 ) ( 40 -2 68 ) ( 40 -2 60 ) ch_woodwall01 128 128 384 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 12 ) ( 24 8 12 ) ( 24 8 4 ) ch_woodwall01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 10 76 ) ( -24 10 76 ) ( -24 10 68 ) ch_woodwall01 128 128 384 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 8 68 ) ( 20 0 68 ) ( 20 0 60 ) ch_woodwall01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+ {
+  mesh
+  {
+   me_decal_darkstain_03
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -20 8 -12 t 832 -5064 -1.25 0.75
+	v 20 8 -12 t 192 -5064 1.25 0.75
+   )
+   (
+	v -20 8 0 t 832 -4296 -1.25 0
+	v 20 8 0 t 192 -4296 1.25 0
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+   me_decal_darkstain_03
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 20 0 -12 t 192 -5064 1.25 0.75
+	v -20 0 -12 t 832 -5064 -1.25 0.75
+   )
+   (
+	v 20 0 0 t 192 -4296 1.25 0
+	v -20 0 0 t 832 -4296 -1.25 0
+   )
+  }
+ }
+}

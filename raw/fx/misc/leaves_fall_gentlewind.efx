@@ -1,0 +1,187 @@
+iwfx 2
+
+{
+	name "leaves_ambient";
+	editorFlags looping useRandSize1 useRandVel0 useBackCompatVel absVel1;
+	flags spawnOffsetNone runRelToSpawn useCollision dieOnTouch;
+	spawnRange 0 600;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 500 0;
+	spawnOneShot 15 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 4000 6000;
+	spawnOrgX 50 -100;
+	spawnOrgY 100 -200;
+	spawnOrgZ -25 35;
+	spawnOffsetRadius 50 50;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 360;
+	gravity 4 3;
+	elasticity 0 0;
+	atlasBehavior startRandom;
+	atlasIndex 0;
+	atlasFps 8;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 700
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Z -250
+	{
+		{
+			0 0.327751
+			1 0.318182
+		}
+		{
+			0 0.12201
+			1 0.11244
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 100
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 -0.5
+			1 -0.5
+		}
+	};
+	sizeGraph0 6
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.246753
+			1 0.246753
+		}
+	};
+	sizeGraph1 7
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.25974
+			1 0.266234
+		}
+	};
+	scaleGraph 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.596078 0.611765 0.388235
+			1 0.309804 0.317647 0.2
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.0784884 0.751196
+			0.77907 0.751196
+			1 0
+		}
+		{
+			0 0
+			0.656977 0.277512
+			1 0
+		}
+	};
+	lightingFrac 0;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 30;
+	emission "";
+	emitDist 0 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_leaves"
+	};
+}

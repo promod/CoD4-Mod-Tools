@@ -1,0 +1,64 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 3 65 28 ) ( -1 65 28 ) ( -4 52 28 ) me_woodplanks01 131.93939 128 -4.1231055 11.507578 75.963753 0 lightmap_gray 16384 -16384 0 -96 0 0
+ ( 0 52 32 ) ( -4 52 32 ) ( -1 65 32 ) me_woodplanks01 131.93939 -128 -4.123106 -48.492424 75.963753 0 lightmap_gray 16384 -16384 0 -96 0 0
+ ( 3 65 28 ) ( 0 52 28 ) ( 0 52 32 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 -16384 -96 0 180 0
+ ( -1 65 32 ) ( -4 52 32 ) ( -4 52 28 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 -16384 -96 0 180 0
+ ( -4 52 28 ) ( -4 52 32 ) ( 0 52 32 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 65 28 ) ( 3 65 32 ) ( -1 65 32 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -8 52 -36 ) ( -8 44 -36 ) ( 0 44 -36 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 104 ) ( -8 44 104 ) ( -8 52 104 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 52 0 ) ( 0 52 100 ) ( -8 52 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 0 ) ( 0 44 100 ) ( 0 52 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 44 0 ) ( -8 44 100 ) ( 0 44 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 52 0 ) ( -8 52 100 ) ( -8 44 100 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents weaponClip;
+ ( -1 65 32 ) ( -1 69 32 ) ( 3 69 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 -16384 3 -109 0 0
+ ( 3 65 28 ) ( 3 65 32 ) ( 5 69 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 -16384 -109 -52 180 0
+ ( 1 69 32 ) ( -1 65 32 ) ( -1 65 28 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 -16384 -109 -52 180 0
+ ( -1 65 66 ) ( 3 65 66 ) ( 3 65 -34 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 3 52 0 0
+ ( -1 69 32 ) ( -1 65 28 ) ( 3 65 28 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 -16384 3 -93 0 0
+}
+// brush 3
+{
+  contents weaponClip;
+ ( 3 62 80 ) ( -1 62 80 ) ( -3 58 80 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 -16384 1 -102 0 0
+ ( 3 62 80 ) ( 1 58 80 ) ( 1 58 82 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 -16384 -102 52 -180 0
+ ( -3 58 82 ) ( -3 58 80 ) ( -1 62 80 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 -16384 -102 52 -180 0
+ ( -3 58 80 ) ( -3 58 82 ) ( 1 58 82 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 1 -52 0 0
+ ( 3 62 80 ) ( 1 58 82 ) ( -3 58 82 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 -16384 1 -86 0 0
+}
+// brush 4
+{
+  contents weaponClip;
+ ( 1 58 84 ) ( -3 58 84 ) ( -1 60 84 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 -16384 1 -102 0 0
+ ( 3 60 84 ) ( 1 58 82 ) ( 1 58 84 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 -102 112 180 0
+ ( -3 58 84 ) ( -3 58 82 ) ( -1 60 84 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 -102 112 180 0
+ ( -3 58 84 ) ( 1 58 84 ) ( 1 58 82 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 -16384 1 -112 0 0
+ ( -3 58 82 ) ( 1 58 82 ) ( 3 60 84 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 -16384 1 -86 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 2 58 80 ) ( -2 58 80 ) ( -4 52 80 ) me_woodplanks01 131.93939 128 -4.123106 63.507576 75.963753 0 lightmap_gray 16384 -16384 0 -96 0 0
+ ( -2 58 84 ) ( 2 58 84 ) ( 0 52 84 ) me_woodplanks01 131.93939 -128 -4.123106 -100.49242 75.963753 0 lightmap_gray 16384 -16384 0 -96 0 0
+ ( 1 58 84 ) ( 1 58 80 ) ( 0 52 80 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 -16384 -96 0 180 0
+ ( -3 58 80 ) ( -3 58 84 ) ( -4 52 84 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 -16384 -96 0 180 0
+ ( -4 52 80 ) ( -4 52 84 ) ( 0 52 84 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 58 80 ) ( 1 58 84 ) ( -3 58 84 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

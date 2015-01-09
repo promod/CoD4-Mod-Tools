@@ -1,0 +1,1400 @@
+"#""If the first column for a row is blank"," then the row is ignored""",
+# The first non-comment line of a sound alias file specifies the key name for all values appearing in this column.,,
+"# This means it is safe to swap entire columns around, though you should never swap partial columns.",,
+"# You can invent new keys, but the game will ignore them if it doesn't know about them.",,
+"# You can leave out keys, but the ""name"" and ""file"" keys must always be present.",,
+
+,name,name of the alias that is used to play this sound (required)
+,sequence,"used to uniquely identify alias entries when more than one sound goes to an alias, used only to catch unwanted duplicates (default = 0)"
+,file,the name of the file that contains the sound data (required)
+,vol_min,"0 is silent, 1 is full volume (default = 1)"
+,vol_max,"0 is silent, 1 is full volume (default = same as vol_min)"
+,vol_mod,"blank causes no effect on vol_min and vol_max, otherwise the string must match a string in the volumemodgroups.def file and the value in that file corresponding to that string will be used to adjust vol_min and vol_max, clamped to the valid range"
+,pitch_min,"1 is normal playback, 2 is twice as fast, 0.5 is half as fast (default = 1)"
+,pitch_max,"1 is normal playback, 2 is twice as fast, 0.5 is half as fast (default = same as pitch_min)"
+,dist_min,"within this distance in inches, the sound is always full volume (default = 120)"
+,dist_max,"outside this distance in inches, the sound is not started.  If left blank or set to 0, the sound will play from any distance.  This does not affect sound volume falloff."
+,channel,"auto, menu, weapon, voice, item, body, local, music, announcer (default = auto)"
+,type,primed (a streamed sound which gets primed on some platforms) / streamed / loaded (default = loaded)
+,probability,weight to use for the weighted probability of playing this sound instead of another sound (default = 1)
+,loop,"whether this sound is ""looping"" or ""nonlooping"" (default = ""nonlooping"")"
+,masterslave,"if ""master"", this is a master sound.  If a number, then this sound's volume will be multiplied by that number (a percentage between 0 and 1) any master sound is playing.  If blank, then neither master nor slave."
+,loadspec,"space-separated list of which maps should use this alias; eg, ""burnville dawnville"".  If blank, the alias is used on all maps."
+,compression,"a string corresponding to an entry in ""XMAUpdate.tbl"" which is used to determine compression by XMAUpdate.exe"
+,secondaryaliasname,"defined the name of an additional sound alias to play in addition to the current alias being played. Note that it is an error for the secondaryalias to also define a secondaryaliasname (eg, if B is a secondaryalias of A, B is not allowed to have its own secondaryalias)."
+,volumefalloffcurve,if blank uses the linear curve which can not be changed. A string 'XXXX' corresponds to the curve defined by the file 'soundaliases/XXXX.vfcurve'
+,startdelay,defaults to no delay. The value is the number of milliseconds to delay starting the sound by
+,speakermap,if blank uses the default speakermappings which cannot be changed. A string 'XXXX' corresponds to the speakermap defined by the file 'soundaliases/XXXX.spkrmap'. 
+,reverb,"blank means the alias is affected normally by wet and dry levels, ""fulldrylevel"" forces the alias to use a full drylevel (ignoring the global drylevel), ""nowetlevel"" forces the alias to use no wetlevel (ignoring the global wetlevel)"
+,lfe percentage,this determines what percentage of the highest calculated spatialized speaker volume should be passed to the LFE. blank means no LFE for the sound
+,center percentage,this determines what percentage of the volume should be redirected to the center channel (equal percentage taken from all speakers).
+,platform,"used by XMAUpdate to determine whether the alias should be processed for a particular platform.  If blank, process for all platforms.  Platforms are PC, XB, PS, WI.  Multiple values should be separated by spaces.  !PC will exclude alias from PC but include in all other platforms.  PC will only include alias for PC.  !PC XB is invalid."
+,envelop_min,any sounds within this distance of the listener will use the full envelop percentage
+,envelop_max,sounds between enevlop_min and envelop_max use a fraction of the envelop percentage,,,,,,,,,,,,,,,,,,,,,,,,,,
+,envelop percentage,amount of omnidirectionality to apply,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+name,sequence,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,probability,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage
+
+# User Interface,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+ui_mp_timer_countdown,,user_interface/ui_mp_countdown_v1.wav,0.6,0.6,max,1,1,,,auto2d,,,,,all_mp,,,,,,,nowetlevel fulldrylevel,,,,,,
+ui_mp_suitcasebomb_timer,,user_interface/ui_suitcase_bomb_counter.wav,0.6,0.6,max,1,1,,,auto2d,,,,,all_mp,,,,,,,nowetlevel fulldrylevel,,,,,,
+MP_hit_alert,,misc/mp_hit_indication_3c.wav,1,1,max,1,1,,,auto2d,,,,,all_mp,,,,,35,,nowetlevel fulldrylevel,,,,,,
+plr_new_rank,,misc/stv_flag_captured.wav,1,1,na,1,1,,,auto2d,streamed,,,,all_mp,,,,,,,nowetlevel fulldrylevel,,,,,,
+
+mp_challenge_complete,,mp/mp_challengecomplete_metal.wav,1,,music,,,,,auto2d,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+mp_level_up,,mp/mp_levelup_final.wav,1,,music,,,,,auto2d,streamed,,,master,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+mp_killstreak_heli,,mp/mp_killstrk_heliaway.wav,1,,max,,,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+mp_killstreak_jet,,mp/mp_killstrk_jetstart.wav,1,,max,,,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+mp_killstreak_radar,,mp/mp_killstrk_radar.wav,1,,max,,,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,,,,
+mp_capture_flag,,mp/mp_flag_cap_hit01.wav,1,,music,,,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_lose_flag,,mp/mp_flag_lost_hit01.wav,1,,music,,,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_suitcase_pickup,,mp/mp_suitcase_pickup02.wav,1,,music,,,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_last_stand,,mp/mp_last_stand.wav,1,,music,,,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_ingame_summary,,mp/mp_ingame_summary.wav,1,,music,,,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+oldschool_pickup,,mp/mp_oldschool_pickup_01.wav,0.7,0.7,music,,,7,2400,auto,streamed,,,,all_mp,,,,,,,
+oldschool_return,,mp/mp_oldschool_spawn_01.wav,0.5,0.5,music,,,7,2400,auto,streamed,,,,all_mp,,,,,,,
+mp_obj_taken,,mp/mp_obj_stolen2.wav,1,1,music,1,1,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_enemy_obj_taken,,mp/mp_enemy_obj_stolen2.wav,1,1,music,1,1,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_obj_captured,,mp/mp_obj_captured2.wav,1,1,music,1,1,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_enemy_obj_captured,,mp/mp_enemy_obj_captured2.wav,1,1,music,1,1,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_obj_returned,,mp/mp_obj_returned2.wav,1,1,music,1,1,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+mp_enemy_obj_returned,,mp/mp_obj_returned2.wav,1,1,music,1,1,,,auto2d,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel
+
+
+#Music,,,,,,,,,,,,,,,,,,,,,,
+mp_defeat,,music/HGW_mp_suspense_03.mp3,0.6,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_spawn_opfor,,music/HGW_mp_spawn_opfor.mp3,0.5,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_spawn_sas,,music/HGW_mp_spawn_sas.mp3,0.5,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_spawn_soviet,,music/HGW_mp_spawn_russia.mp3,0.5,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_spawn_usa,,music/HGW_mp_spawn_usa.mp3,0.5,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_suspense_01,,music/HGW_mp_suspense_01.mp3,0.29,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_suspense_02,,music/HGW_mp_suspense_02.mp3,0.29,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_suspense_03,,music/HGW_mp_suspense_03.mp3,0.29,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_suspense_04,,music/HGW_mp_suspense_04.mp3,0.29,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_suspense_05,,music/HGW_mp_suspense_05.mp3,0.29,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_suspense_06,,music/HGW_mp_suspense_02.mp3,0.29,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_time_running_out_losing,,music/HGW_mp_time_lose.mp3,0.5,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_time_running_out_winning,,music/HGW_mp_time_win.mp3,0.5,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_victory_opfor,,music/HGW_mp_victory_opfor.mp3,0.6,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_victory_sas,,music/HGW_mp_victory_sas.mp3,0.6,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_victory_soviet,,music/LC_mp_victory_soviet.mp3,0.6,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+mp_victory_usa,,music/HGW_mp_victory_usa.mp3,0.6,,music,,,,,music,streamed,,,,all_mp,,,,,,music,nowetlevel fulldrylevel,,,!PC
+
+#Ambience,,,,,,,,,,,,,,,,,,,,,,,,,
+ambient_middleeast_ext,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_middleeast_ext_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_middleeast_ext_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.24,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+
+ambient_backlot_ext,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_backlot_ext_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_backlot_ext_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_bloc_ext,,ambient/amb_mountain_noanml_day0v1_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_bloc_ext_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_bloc_ext_sur,,ambient/amb_mountain_noanml_day0v1_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_cargoshipmp_ext,,ambient/amb_farm_rain_day0v3_lr.mp3,0.21,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_cargoshipmp_ext_sur,,,amb_front,nowetlevel fulldrylevel,0.5,,!PC
+ambient_cargoshipmp_ext_sur,,ambient/amb_farm_rain_day0v3_lsrs.mp3,0.21,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.5,,!PC
+ambient_citystreets_day,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_citystreets_day_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_citystreets_day_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_citystreets_night,,ambient/amb_chech_night1v3_lr.mp3,0.15,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_citystreets_night_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_citystreets_night_sur,,ambient/amb_chech_night1v3_lsrs.mp3,0.15,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_convoy,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_convoy_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_convoy_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_crash,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_crash_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_crash_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_crossfire,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_crossfire_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_crossfire_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_dusk,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_dusk_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_dusk_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_farm,,ambient/amb_farm_rain_day0v3_lr.mp3,0.21,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_farm_sur,,,amb_front,nowetlevel fulldrylevel,0.5,,!PC
+ambient_farm_sur,,ambient/amb_farm_rain_day0v3_lsrs.mp3,0.21,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.5,,!PC
+ambient_hill,,ambient/amb_mountain_distwar_day3v2_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_hill_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_hill_sur,,ambient/amb_mountain_distwar_day3v2_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_overgrown_day,,ambient/amb_mountain_noanml_day0v1_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_overgrown_day_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_overgrown_day_sur,,ambient/amb_mountain_noanml_day0v1_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_overgrown_night,,ambient/amb_chech_night1v3_lr.mp3,0.15,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_overgrown_night_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_overgrown_night_sur,,ambient/amb_chech_night1v3_lsrs.mp3,0.15,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_pipeline,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_pipeline_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_pipeline_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_strike_day,,ambient/amb_middle_east1v7_lr.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_strike_day_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_strike_day_sur,,ambient/amb_middle_east1v7_lsrs.mp3,0.17,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+ambient_strike_night,,ambient/amb_chech_night1v3_lr.mp3,0.15,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,ambient_strike_night_sur,,,amb_front,nowetlevel fulldrylevel,0.3,,!PC
+ambient_strike_night_sur,,ambient/amb_chech_night1v3_lsrs.mp3,0.15,,ambience,,,,,ambient,streamed,,looping,,all_mp,,,,,,amb_rear,nowetlevel fulldrylevel,0.3,,!PC
+
+#Emitters,,,,,,,,,,,,,,,,,,,,,,,,,
+elm_thunder_strike,1,amb_elements/elm_thunder_strike1.wav,0.85,0.99,element,0.8,1.1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,250,,,0.4,,
+elm_thunder_strike,2,amb_elements/elm_thunder_strike2.wav,0.85,0.99,element,0.8,1.1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,250,,,0.4,,
+elm_thunder_strike,3,amb_elements/elm_thunder_strike3.wav,0.85,0.99,element,0.8,1.1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,250,,,0.4,,
+elm_thunder_strike,4,amb_elements/elm_thunder_strike4.wav,0.85,0.99,element,0.8,1.1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,250,,,0.4,,
+elm_thunder_strike,5,amb_elements/elm_thunder_strike1.wav,0.85,0.99,element,0.8,1.1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,500,,,0.4,,
+elm_thunder_strike,6,amb_elements/elm_thunder_strike2.wav,0.85,0.99,element,0.8,1.1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,500,,,0.4,,
+elm_thunder_strike,7,amb_elements/elm_thunder_strike3.wav,0.85,0.99,element,0.8,1.1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,500,,,0.4,,
+elm_thunder_strike,8,amb_elements/elm_thunder_strike4.wav,0.85,0.99,element,0.8,1.1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,750,,,0.4,,
+elm_thunder_distant,1,amb_elements/elm_thunder_dist1.wav,0.8,1,element,0.8,1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,750,,,0.2
+elm_thunder_distant,2,amb_elements/elm_thunder_dist2.wav,0.8,1,element,0.8,1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,750,,,0.2
+elm_thunder_distant,3,amb_elements/elm_thunder_dist3.wav,0.8,1,element,0.8,1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,750,,,0.2
+elm_thunder_distant,4,amb_elements/elm_thunder_dist4.wav,0.8,1,element,0.8,1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,750,,,0.2
+elm_thunder_distant,5,amb_elements/elm_thunder_dist1.wav,0.8,1,element,0.8,1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,1000,,,0.2
+elm_thunder_distant,6,amb_elements/elm_thunder_dist2.wav,0.8,1,element,0.8,1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,1000,,,0.2
+elm_thunder_distant,7,amb_elements/elm_thunder_dist3.wav,0.8,1,element,0.8,1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,1000,,,0.2
+elm_thunder_distant,8,amb_elements/elm_thunder_dist4.wav,0.8,1,element,0.8,1,100000,,element,,,,0.5,mp_farm mp_cargoship,,,,,1000,,,0.2
+
+emt_rain_wood_null,,amb_emitters/amb_rain_roofhvy.wav,0,,emitter,,,7,500,auto,,,looping,,mp_farm,,,,,,,,
+emt_rain_wood,,amb_emitters/amb_rain_roofhvy.wav,0.6,,emitter,,,7,500,auto,,,looping,,mp_farm,,,,,,,,
+emt_rain_metal_null,,amb_emitters/amb_rain_car.wav,0,,emitter,,,7,500,auto,,,looping,,mp_farm,,,,,,,,
+emt_rain_metal,,amb_emitters/amb_rain_car.wav,0.9,,emitter,,,7,500,auto,,,looping,,mp_farm,,,,,,,,
+emt_rain_building_null,,amb_emitters/amb_rain_roofhvy.wav,0,,emitter,,,30,700,auto,,,looping,,mp_farm,,,,,,,,
+emt_rain_building,,amb_emitters/amb_rain_roofhvy.wav,0.75,,emitter,,,30,700,auto,,,looping,,mp_farm,,,,,,,,
+emt_rain_foliage_null,,amb_emitters/amb_rain_foliagehvy.wav,0,,emitter,,,30,500,auto,,,looping,,mp_farm,,,,,,,,
+emt_rain_foliage,,amb_emitters/amb_rain_foliagehvy.wav,0.75,,emitter,,,30,500,auto,,,looping,,mp_farm
+emt_rain_roof_null,,amb_emitters/amb_rain_roofhvy.wav,0,,emitter,,,30,700,auto,,,looping,,mp_farm
+emt_rain_roof,,amb_emitters/amb_rain_roofhvy.wav,0.75,,emitter,,,30,700,auto,,,looping,,mp_farm
+
+emt_rain_wood_null,,amb_emitters/amb_rain_roofhvy.wav,0,,emitter,,,7,500,auto,,,looping,,mp_cargoship
+emt_rain_wood,,amb_emitters/amb_rain_roofhvy.wav,0.6,,emitter,,,7,500,auto,,,looping,,mp_cargoship
+emt_rain_metal_null,,amb_emitters/amb_rain_car.wav,0,,emitter,,,7,500,auto,,,looping,,mp_cargoship
+emt_rain_metal,,amb_emitters/amb_rain_car.wav,0.9,,emitter,,,7,500,auto,,,looping,,mp_cargoship
+emt_rain_building_null,,amb_emitters/amb_rain_roofhvy.wav,0,,emitter,,,30,700,auto,,,looping,,mp_cargoship
+emt_rain_building,,amb_emitters/amb_rain_roofhvy.wav,0.75,,emitter,,,30,700,auto,,,looping,,mp_cargoship
+emt_rain_foliage_null,,amb_emitters/amb_rain_foliagehvy.wav,0,,emitter,,,30,500,auto,,,looping,,mp_cargoship
+emt_rain_foliage,,amb_emitters/amb_rain_foliagehvy.wav,0.75,,emitter,,,30,500,auto,,,looping,,mp_cargoship
+emt_rain_roof_null,,amb_emitters/amb_rain_roofhvy.wav,0,,emitter,,,30,700,auto,,,looping,,mp_cargoship
+emt_rain_roof,,amb_emitters/amb_rain_roofhvy.wav,0.75,,emitter,,,30,700,auto,,,looping,,mp_cargoship
+
+emt_tree_leaf_rustle,1,amb_emitters/emt_tree_leaf_rustle01.wav,0.4,0.5,emitter,,,7,750,auto,,,rlooping,,all_mp
+emt_tree_leaf_rustle,2,amb_emitters/emt_tree_leaf_rustle02.wav,0.4,0.5,emitter,,,7,750,auto,,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_tree_palm_rustle,1,amb_emitters/emt_tree_palm_rustle01.wav,0.45,0.55,emitter,,,7,750,auto,,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_tree_palm_rustle,2,amb_emitters/emt_tree_palm_rustle02.wav,0.45,0.55,emitter,,,7,750,auto,,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_wind_corner,1,amb_emitters/emt_corner_wind_1.wav,0.6,,emitter,,,7,400,auto,,,looping,,mp_bloc,,,,,,,,,,,,,
+emt_wind_corner,2,amb_emitters/emt_corner_wind_2.wav,0.6,,emitter,,,7,400,auto,,,looping,,mp_bloc,,,,,,,,,,,,,
+emt_fly_loop,,amb_emitters/emt_fly_loop3.wav,0.3,,emitter,,,7,350,auto,streamed,,looping,,all_mp,,,,,,,,,,,,,
+emt_powerline_hum,,amb_emitters/emt_powerline_hum3_loop.wav,0.11,0.11,element,0.98,1.02,7,550,auto,streamed,,rlooping,,all_mp,,,,,,,,,,,,,
+
+emt_ship_chain_sway,,amb_emitters/emt_chain_ratte_ship1.wav,0.6,0.6,emitter,1,1,200,600,auto,,,rlooping,,mp_cargoship,,,,,,,,,,,,,
+emt_ship_chain_sway,,amb_emitters/emt_chain_ratte_ship1.wav,0.6,0.6,emitter,1,1,200,1100,auto,,,rlooping,,mp_shipment,,,,,,,,,,,,,
+emt_ship_steam_vent,,amb_emitters/emt_steam_vent_loop1.wav,0.5,0.5,emitter,1,1,7,1000,auto,,,rlooping,,mp_countdown,,,,,,,,,,,,,
+emt_fan_industrial_med,,amb_emitters/emt_industrial_fan_med1.wav,0.55,0.55,element,1,1,7,350,auto,,,rlooping,,dummy,,,,,,,,,,,,,
+emt_fan_large_close,,amb_emitters/emt_fan_large_whoosh.wav,0.95,0.95,element,1,1,100,600,auto,,,rlooping,,mp_countdown,,,,,,,,0.2,,,100,300,0.65
+emt_ac_air_vent,1,amb_emitters/emt_ac_vent_blow1.wav,0.6,0.6,element,0.7,0.7,7,600,auto,,,rlooping,,mp_countdown,,,,,,,,,,,,,
+emt_ac_air_vent,2,amb_emitters/emt_ac_vent_blow2.wav,0.6,0.6,element,0.7,0.7,7,600,auto,,,rlooping,,mp_countdown,,,,,,,,,,,,,
+emt_ac_air_vent,1,amb_emitters/emt_ac_vent_blow1.wav,0.4,0.45,element,0.95,1.05,7,300,auto,,,rlooping,,dummy,,,,,,,,,,,,,
+emt_ac_air_vent,2,amb_emitters/emt_ac_vent_blow2.wav,0.4,0.45,element,0.95,1.05,7,300,auto,,,rlooping,,dummy,,,,,,,,,,,,,
+emt_mach_distant_mechanical1,,amb_emitters/emt_machine_distant1.wav,0.95,0.95,max,1,1,350,1000,auto,,,rlooping,,mp_countdown,,,,,,,,0.3,,,300,600,0.65
+emt_pipe_gas,,amb_emitters/emt_pipe_gas_creak.wav,0.4,0.45,element,0.95,1.05,7,300,auto,,,rlooping,,mp_cargoship,,,,,,,,,,,,,
+emt_pipe_gas,,amb_emitters/emt_pipe_gas_creak.wav,0.08,0.1,element,0.95,1.05,7,300,auto,,,rlooping,,mp_crossfire,,,,,,,,,,,,,
+emt_pipe_water,,amb_emitters/emt_pipe_water_creak.wav,0.4,0.45,element,0.95,1.05,7,300,auto,,,rlooping,,mp_cargoship,,,,,,,,,,,,,
+emt_ac_duct_rattle,1,amb_emitters/emt_acduct_rattle1.wav,0.45,0.55,element,0.9,1.1,7,350,auto,streamed,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_ac_duct_rattle,2,amb_emitters/emt_acduct_rattle2.wav,0.45,0.55,element,1,1,7,350,auto,streamed,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_ac_duct_rattle,3,amb_emitters/emt_acduct_rattle3.wav,0.45,0.55,element,1,1,7,350,auto,streamed,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_refrigerator_hum,,amb_emitters/emt_refrigerator_compressor1.wav,0.4,0.45,element,0.95,1.05,7,350,auto,,,rlooping,,mp_countdown mp_crash mp_crossfire,,,,,,,,,,,,,
+emt_distant_war,,amb_emitters/emt_distant_war3.wav,0.25,0.25,emitter,1,1,1000,6000,element,streamed,,rlooping,,all_mp,,,,,,,,,,,100,4000,0.85
+emt_down_heli_radio,,amb_emitters/amb_seaknight_radio1.wav,0.95,,emitter,,,7,1000,voice,streamed,,looping,,all_mp,,,,weapon2,,,,,,,,,
+emt_metal_rattle_dull,,amb_emitters/emt_mtl_rattle_dull.wav,0.35,,emitter,0.9,0.9,7,650,voice,streamed,,rlooping,,all_mp,,,,weapon2,,,,,,,,,
+emt_metal_rattle_pole,,amb_emitters/emt_mtl_rattle_pole.wav,0.3,,emitter,,,7,800,voice,streamed,,rlooping,,all_mp,,,,weapon2,,,,,,,,,
+emt_metal_rattle_ring,,amb_emitters/emt_mtl_rattle_ring.wav,0.4,,emitter,,,7,650,voice,streamed,,rlooping,,all_mp,,,,weapon2,,,,,,,,,
+emt_metal_rattle_squeak,,amb_emitters/emt_mtl_rattle_squeak.wav,0.4,,emitter,,,50,1200,voice,streamed,,rlooping,,all_mp,,,,weapon2,,,,,,,,,
+emt_distant_traffic,,amb_emitters/emt_distant_traffic1.wav,0.5,,emitter,,,500,1500,voice,streamed,,rlooping,,all_mp,,,,,,,,,,,500,1500,0.6
+emt_coffeemachine_hum,,amb_emitters/emt_refrigerator_compressor1.wav,0.15,0.15,element,0.85,0.85,7,350,auto,,,rlooping,,dummy,,,,,,,,,,,,,
+emt_vendingmachine_hum,,amb_emitters/emt_elec_buzz1.wav,0.05,0.05,element,0.85,0.85,7,350,auto,,,rlooping,,mp_citystreets,,,,,,,,,,,,,
+emt_ac_metal_rattle,1,amb_emitters/emt_acduct_rattle1.wav,0.2,0.3,element,0.5,0.5,7,650,auto,streamed,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_ac_metal_rattle,2,amb_emitters/emt_acduct_rattle2.wav,0.2,0.3,element,0.5,0.5,7,650,auto,streamed,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_ac_metal_rattle,3,amb_emitters/emt_acduct_rattle3.wav,0.2,0.3,element,0.5,0.5,7,650,auto,streamed,,rlooping,,all_mp,,,,,,,,,,,,,
+emt_elec_transformer_box,,amb_emitters/emt_elec_buzz1.wav,0.12,0.15,element,0.95,1,7,350,auto,,,rlooping,,mp_citystreets mp_crash mp_crossfire,,,,,,,,,,,,,
+emt_light_flourescent_hum,,amb_emitters/emt_flour_light_buzz.wav,0.4,0.5,element,0.95,1.05,7,350,auto,,,rlooping,,mp_citystreets mp_crash mp_crossfire mp_vacant,,,,,,,,,,,,,
+emt_bog_aagun_firing,,amb_emitters/emt_aagun_fire_loop.wav,0.15,0.15,emitter,1,1,150,1800,element,,,rlooping,,mp_bog,,,,,,,,,,,750,1500,0.8
+
+# Fires - NEW (quiet levels),,,,,,,,,,,,,,,,,,,,,,,,,,,,
+fire_wood_small,1,fire/fire_woodtrash_small1v2res.wav,0.2,0.3,explosion,0.95,1.05,7,300,auto,,,rlooping,0.85,all_mp,,,,,,,,,,,,,
+fire_wood_small,2,fire/fire_woodtrash_small2v2res.wav,0.2,0.3,explosion,0.95,1.05,7,300,auto,,,rlooping,0.85,all_mp,,,,,,,,,,,,,
+fire_wood_medium,,fire/fire_woodtrash_medium1v2.wav,0.4,0.45,explosion,0.95,1.05,7,1000,auto,streamed,,rlooping,0.85,all_mp,,,,,,,,,,,50,400,0.6
+fire_wood_large,,fire/fire_woodtrash_large1v2.wav,0.5,0.5,explosion,0.95,1.05,7,1200,auto,streamed,,rlooping,0.85,all_mp,,,,,,,,,,,,,
+fire_metal_small,,fire/fire_metal_small1v2.wav,0.2,0.3,explosion,0.95,1.05,7,300,auto,streamed,,rlooping,0.85,all_mp,,,,,,,,,,,,,
+fire_metal_medium,,fire/fire_metal_med1v2.wav,0.4,0.45,explosion,0.95,1.05,7,550,auto,streamed,,rlooping,0.85,all_mp,,,,,,,,,,,,,
+fire_metal_large,,fire/fire_metal_lrg1v2.wav,0.5,0.5,explosion,0.95,1.05,7,1100,auto,streamed,,rlooping,0.85,all_mp
+
+
+#SS sounds,,,,,,,,,,,,,,,
+mp_bomb_start_defusing,,misc/MP_plant.wav,1,,na,0.9,1.05,150,2000,,,,,,all_mp
+#geiger_counter_tick,,misc/geiger_counter_click.wav,,,na,2,5,500000,,local,,,,,all_mp
+
+# Suitcase Bomb,,,,,,,,,,,,,,,
+weap_suitcase_button_press_plr,1,foley/wpfoly_case_bomb_beep_tone1.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+weap_suitcase_button_press_plr,2,foley/wpfoly_case_bomb_beep_tone2.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+weap_suitcase_button_press_plr,3,foley/wpfoly_case_bomb_beep_tone3.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+weap_suitcase_button_press_plr,4,foley/wpfoly_case_bomb_beep_tone4.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+weap_suitcase_button_press_plr,5,foley/wpfoly_case_bomb_beep_tone5.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+weap_suitcase_button_press_plr,6,foley/wpfoly_case_bomb_beep_tone6.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+weap_suitcase_button_press_plr,7,foley/wpfoly_case_bomb_beep_tone7.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+weap_suitcase_button_press_plr,8,foley/wpfoly_case_bomb_beep_tone8.wav,0.85,0.85,wpnplyr,1,1,4000,5000,auto2d,,,,,all_mp
+weap_suitcase_raise_plr,,foley/wpfoly_case_bomb_raise_v1.wav,0.9,0.9,wpnplyr,1,1,4000,5000,local,,,,,all_mp,,,,,,,,,,,,,
+weap_suitcase_drop_plr,,foley/wpfoly_case_bomb_drop_v1.wav,0.95,0.95,wpnplyr,1,1,4000,5000,local,,,,,all_mp,,,,,,,,,,,,,
+weap_suitcase_interrupt_plr,,foley/wpfoly_case_bomb_interrupt_v1.wav,0.9,0.9,wpnplyr,1,1,4000,5000,local,,,,,all_mp,,,,,,,,,,,,,
+weap_suitcase_defuse_plr,,foley/wpfoly_case_bomb_defuse_v1.wav,0.9,0.9,wpnplyr,1,1,4000,5000,local,,,,,all_mp,,,,,,,,,,,,,
+exp_suitcase_bomb_main,1,explosions/exp_suitcase_bomb_close1.wav,0.99,0.99,max,0.95,1.05,450,8000,effects1,,,,,all_mp,,,exp_suitcase_bomb_sweet1,,,,,0.6,,,200,2200,0.65
+exp_suitcase_bomb_main,2,explosions/exp_suitcase_bomb_sweet1.wav,0.99,0.99,max,0.95,1.05,450,8000,effects1,,,,,all_mp,,,exp_suitcase_bomb_sweet2,,,,,0.6,,,200,2200,0.65
+exp_suitcase_bomb_sweet1,,explosions/exp_suitcase_bomb_sweet1.wav,0.99,0.99,max,0.95,1.05,450,8000,effects2,,,,,all_mp,,,exp_suitcase_bomb_stereo,,350,,,0.9,,,200,2200,0.65
+exp_suitcase_bomb_sweet2,,explosions/exp_suitcase_bomb_close1.wav,0.99,0.99,max,0.95,1.05,450,8000,effects2,,,,,all_mp,,,exp_suitcase_bomb_stereo,,400,,,0.9,,,200,2200,0.65
+exp_suitcase_bomb_stereo,,explosions/exp_suitcase_bomb_stereo_sweet1.wav,0.95,0.95,max,0.95,1.05,40000,50000,local2,streamed,,,,all_mp,,,exp_suitcase_bomb_secondary,,100,ambience,,0.3,,,,,
+exp_suitcase_bomb_secondary,1,weapons/grenade/mrk_grenade_2.wav,0.95,1,max,1.1,1.2,450,3500,auto,,,,,all_mp,,,,,300,,nowetlevel fulldrylevel,0.9,,,100,1000,0.65
+exp_suitcase_bomb_secondary,2,weapons/grenade/mrk_grenade_3.wav,0.95,1,max,1.1,1.2,450,3500,auto,,,,,all_mp,,,,,400,,nowetlevel fulldrylevel,0.9,,,100,1000,0.65
+exp_suitcase_bomb_secondary,3,weapons/grenade/mrk_grenade_4.wav,0.95,1,max,1.1,1.2,450,3500,auto,,,,,all_mp,,,,,550,,nowetlevel fulldrylevel,0.9,,,100,1000,0.65
+exp_suitcase_bomb_secondary,4,weapons/grenade/mrk_grenade_5.wav,0.95,1,max,1.1,1.2,450,3500,auto,,,,,all_mp,,,,,700,,nowetlevel fulldrylevel,0.9,,,100,1000,0.65
+
+#MP Plant/Defuse Sounds,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MP_bomb_plant,,misc/MP_plant.wav,1,,na,0.9,1.05,150,2000,,,,,,all_mp,,,,,,,,,,,,,
+MP_bomb_defuse,,misc/MP_defuse.wav,1,,na,0.9,1.05,150,2000,,,,,,all_mp,,,,,,,,,,,,,
+re_pickup_paper,,misc/PU_paper02.wav,0.67,,na,0.9,1.05,150,2000,,,,,,all_mp,,,,,,,,,,,,,
+
+#MP Vehicles,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+mp_cobra_helicopter,,vehicles/veh_cobra_move_loop_v3.wav,1,,vehicle,1.15,,450,8000,vehicle,streamed,,rlooping,0.85,all_mp,,,,helicopter1,,,,0.5,,,750,4000,0.65
+mp_hind_helicopter,,vehicles/veh_hind_move_v3.wav,1,,vehicle,1,,450,8000,vehicle,streamed,,rlooping,0.85,all_mp,,,,helicopter1,,,,0.5,,,750,4000,0.65
+weap_m197_cannon_fire,,cobra/weap_m197_cannon_fire.wav,0.7,0.75,wpnplyr,1.3,1.4,360,8000,auto2,,,,,all_mp,,,,,,,,0.4,,,,,
+#weap_m197_cannon_fire,,cobra/weap_m197_cannon_fire.wav,0.99,0.99,wpnplyr,0.95,1.05,360,6000,auto2,,,,,all_mp,,,,,,,,0.4,,,,,
+weap_hind_missle_fire,,cobra/weap_lau61c_fire.wav,0.9,0.95,wpnplyr,1,1.1,360,12000,weapon,,,,,all_mp,,,,,,,,,,,,,
+weap_hind_missile_fire,,cobra/weap_lau61c_fire.wav,0.9,0.95,wpnplyr,1,1.1,360,12000,weapon,,,,,all_mp,,,,,,,,,,,,,
+weap_cobra_missle_fire,,weapons/javelin/weap_javelin_ignition_v1.wav,0.99,0.99,wpnplyr,0.95,1.05,360,12000,weapon,,,,,all_mp,,,,,,,,0.4,,,,,
+weap_cobra_missile_fire,,weapons/javelin/weap_javelin_ignition_v1.wav,0.99,0.99,wpnplyr,0.95,1.05,360,12000,weapon,,,,,all_mp,,,,,,,,0.4,,,,,
+
+cobra_helicopter_hit,,explosions/expl_heli_hit1.wav,0.9,1,explosion,0.95,1.05,500,8000,weapon,,,,0.85,all_mp,,,cobra_helicopter_hit_2,,,,,0.3,,,,,
+cobra_helicopter_hit_2,1,vehicles/veh_helicopter_hit1.wav,0.8,0.9,explosion,0.9,1,350,8000,effects2,,,,0.85,all_mp,,,,,200,,,0.3,,,,,
+cobra_helicopter_hit_2,2,vehicles/veh_helicopter_hit2.wav,0.8,0.9,explosion,0.9,1,350,8000,effects2,,,,0.85,all_mp,,,,,200,,,0.3,,,,,
+cobra_helicopter_secondary_exp,1,explosions/exp_metal_armor_dist05.wav,0.8,0.9,explosion,0.9,1.1,500,8000,auto2,streamed,,,0.85,all_mp,,,cobra_helicopter_secondary_exp_close,,,,,0.6,,,,,
+cobra_helicopter_secondary_exp,2,explosions/exp_metal_armor_dist06.wav,0.8,0.9,explosion,0.9,1.1,500,8000,auto2,streamed,,,0.85,all_mp,,,cobra_helicopter_secondary_exp_close,,,,,0.6,,,,,
+cobra_helicopter_secondary_exp,3,explosions/exp_metal_armor_dist08.wav,0.8,0.9,explosion,0.9,1.1,500,8000,auto2,streamed,,,0.85,all_mp,,,cobra_helicopter_secondary_exp_close,,,,,0.6,,,,,
+cobra_helicopter_secondary_exp_close,1,explosions/exp_metal_armor_veh02.wav,0.85,0.95,explosion,0.9,1,200,5500,weapon,,,,0.85,all_mp,,,cobra_helicopter_secondary_exp_boom,,100,,,0.8,,,,,
+cobra_helicopter_secondary_exp_close,2,explosions/exp_metal_armor_veh03.wav,0.85,0.95,explosion,0.9,1,200,5500,weapon,,,,0.85,all_mp,,,cobra_helicopter_secondary_exp_boom,,100,,,0.8,,,,,
+cobra_helicopter_secondary_exp_close,3,explosions/exp_metal_armor_veh08.wav,0.85,0.95,explosion,0.9,1,200,5500,weapon,,,,0.85,all_mp,,,cobra_helicopter_secondary_exp_boom,,100,,,0.8,,,,,
+cobra_helicopter_secondary_exp_boom,1,weapons/grenade/weap_expl_flash_bang1.wav,0.9,0.95,explosion,1.3,1.4,50,3000,auto,,,,0.85,all_mp,,,,,,,,0.8,,,,,
+cobra_helicopter_secondary_exp_boom,2,weapons/grenade/weap_expl_flash_bang2.wav,0.9,0.95,explosion,1.3,1.4,50,3000,auto,,,,0.85,all_mp,,,,,,,,0.8,,,,,
+cobra_helicopter_secondary_exp_boom,3,weapons/grenade/weap_expl_flash_bang3.wav,0.9,0.95,explosion,1.3,1.4,50,3000,auto,,,,0.85,all_mp,,,,,,,,0.8,,,,,
+cobra_helicopter_damaged,,null.wav,0.1,0.1,explosion,1,1,500,8000,auto2,,,,0.85,all_mp,,,,,,,,,,,,,
+cobra_helicopter_dying_loop,,explosions/helicopter_spindown_mp1.wav,0.6,0.8,max,0.95,1,450,4500,voice,,,looping,0.85,all_mp,,,cobra_helicopter_dying_layer,,,,,0.6,,,,,
+cobra_helicopter_dying_layer,,vehicles/veh_helicopter_damaged3.wav,1,1,vehicle,1,1,500,8000,vehicle,streamed,,looping,0.85,all_mp,,,,,,,,0.5,,,750,4000,0.65
+cobra_helicopter_crash,,explosions/expl_heli_crash_big1.wav,1,1,explosion,1,1,1000,8000,effects1,,,,0.85,all_mp,,,cobra_helicopter_crash_dist,,,,,0.9,,,,,
+cobra_helicopter_crash_dist,1,explosions/exp_metal_armor_dist05.wav,0.95,1,explosion,0.9,1.05,850,8000,voice,streamed,,,0.85,all_mp,,,cobra_helicopter_crash_close,,100,,,0.6,,,,,
+cobra_helicopter_crash_dist,2,explosions/exp_metal_armor_dist06.wav,0.95,1,explosion,0.9,1.05,850,8000,voice,streamed,,,0.85,all_mp,,,cobra_helicopter_crash_close,,100,,,0.6,,,,,
+cobra_helicopter_crash_dist,3,explosions/exp_metal_armor_dist08.wav,0.95,1,explosion,0.9,1.05,850,8000,voice,streamed,,,0.85,all_mp,,,cobra_helicopter_crash_close,,100,,,0.6,,,,,
+cobra_helicopter_crash_close,1,explosions/exp_metal_armor_veh02.wav,0.85,0.95,explosion,1,1.1,650,4000,weapon,,,,0.85,all_mp,,,cobra_helicopter_crash_detail,,,,,0.8
+cobra_helicopter_crash_close,2,explosions/exp_metal_armor_veh03.wav,0.85,0.95,explosion,1,1.1,650,4000,weapon,,,,0.85,all_mp,,,cobra_helicopter_crash_detail,,,,,0.8
+cobra_helicopter_crash_close,3,explosions/exp_metal_armor_veh08.wav,0.85,0.95,explosion,1,1.1,650,4000,weapon,,,,0.85,all_mp,,,cobra_helicopter_crash_detail,,,,,0.8
+cobra_helicopter_crash_detail,1,explosions/exp_metal_armor_detail01.wav,0.9,0.95,explosion,0.9,1.1,50,2500,auto2,,,,0.85,all_mp,,,,,1000,,,
+cobra_helicopter_crash_detail,2,explosions/exp_metal_armor_detail02.wav,0.9,0.95,explosion,0.9,1.1,50,2500,auto2,,,,0.85,all_mp,,,,,1000,,,
+
+hind_helicopter_hit,,explosions/expl_heli_hit1.wav,0.9,1,explosion,0.95,1.05,500,8000,weapon,,,,0.85,all_mp,,,hind_helicopter_hit_2,,,,,0.3
+hind_helicopter_hit_2,1,vehicles/veh_helicopter_hit1.wav,0.8,0.9,explosion,0.9,1,350,8000,effects2,,,,0.85,all_mp,,,,,200,,,0.3
+hind_helicopter_hit_2,2,vehicles/veh_helicopter_hit2.wav,0.8,0.9,explosion,0.9,1,350,8000,effects2,,,,0.85,all_mp,,,,,200,,,0.3
+hind_helicopter_secondary_exp,1,explosions/exp_metal_armor_dist05.wav,0.8,0.9,explosion,0.9,1.1,500,8000,auto2,streamed,,,0.85,all_mp,,,hind_helicopter_secondary_exp_close,,,,,0.6
+hind_helicopter_secondary_exp,2,explosions/exp_metal_armor_dist06.wav,0.8,0.9,explosion,0.9,1.1,500,8000,auto2,streamed,,,0.85,all_mp,,,hind_helicopter_secondary_exp_close,,,,,0.6
+hind_helicopter_secondary_exp,3,explosions/exp_metal_armor_dist08.wav,0.8,0.9,explosion,0.9,1.1,500,8000,auto2,streamed,,,0.85,all_mp,,,hind_helicopter_secondary_exp_close,,,,,0.6
+hind_helicopter_secondary_exp_close,1,explosions/exp_metal_armor_veh02.wav,0.85,0.95,explosion,0.9,1,200,5500,weapon,,,,0.85,all_mp,,,hind_helicopter_secondary_exp_boom,,100,,,0.8
+hind_helicopter_secondary_exp_close,2,explosions/exp_metal_armor_veh03.wav,0.85,0.95,explosion,0.9,1,200,5500,weapon,,,,0.85,all_mp,,,hind_helicopter_secondary_exp_boom,,100,,,0.8
+hind_helicopter_secondary_exp_close,3,explosions/exp_metal_armor_veh08.wav,0.85,0.95,explosion,0.9,1,200,5500,weapon,,,,0.85,all_mp,,,hind_helicopter_secondary_exp_boom,,100,,,0.8
+hind_helicopter_secondary_exp_boom,1,weapons/grenade/weap_expl_flash_bang1.wav,0.9,0.95,explosion,1.3,1.4,50,3000,auto,,,,0.85,all_mp,,,,,,,,0.8
+hind_helicopter_secondary_exp_boom,2,weapons/grenade/weap_expl_flash_bang2.wav,0.9,0.95,explosion,1.3,1.4,50,3000,auto,,,,0.85,all_mp,,,,,,,,0.8,,,,,
+hind_helicopter_secondary_exp_boom,3,weapons/grenade/weap_expl_flash_bang3.wav,0.9,0.95,explosion,1.3,1.4,50,3000,auto,,,,0.85,all_mp,,,,,,,,0.8,,,,,
+hind_helicopter_damaged,,null.wav,0.1,0.1,explosion,1,1,500,8000,auto2,,,,0.85,all_mp,,,,,,,,,,,,,
+hind_helicopter_dying_loop,,explosions/helicopter_spindown_mp1.wav,0.6,0.8,max,0.95,1,450,4500,voice,,,looping,0.85,all_mp,,,hind_helicopter_dying_layer,,,,,0.6,,,,,
+hind_helicopter_dying_layer,,vehicles/veh_helicopter_damaged1.wav,1,1,vehicle,1,1,500,8000,vehicle,streamed,,looping,0.85,all_mp,,,,,,,,0.5,,,750,4000,0.65
+hind_helicopter_crash,,explosions/expl_heli_crash_big1.wav,1,1,explosion,1,1,1000,8000,effects1,,,,0.85,all_mp,,,hind_helicopter_crash_dist,,,,,0.9,,,,,
+hind_helicopter_crash_dist,1,explosions/exp_metal_armor_dist05.wav,0.95,1,explosion,0.9,1.05,850,8000,voice,streamed,,,0.85,all_mp,,,hind_helicopter_crash_close,,100,,,0.6,,,,,
+hind_helicopter_crash_dist,2,explosions/exp_metal_armor_dist06.wav,0.95,1,explosion,0.9,1.05,850,8000,voice,streamed,,,0.85,all_mp,,,hind_helicopter_crash_close,,100,,,0.6,,,,,
+hind_helicopter_crash_dist,3,explosions/exp_metal_armor_dist08.wav,0.95,1,explosion,0.9,1.05,850,8000,voice,streamed,,,0.85,all_mp,,,hind_helicopter_crash_close,,100,,,0.6,,,,,
+hind_helicopter_crash_close,1,explosions/exp_metal_armor_veh02.wav,0.85,0.95,explosion,1,1.1,650,4000,weapon,,,,0.85,all_mp,,,hind_helicopter_crash_detail,,,,,0.8,,,,,
+hind_helicopter_crash_close,2,explosions/exp_metal_armor_veh03.wav,0.85,0.95,explosion,1,1.1,650,4000,weapon,,,,0.85,all_mp,,,hind_helicopter_crash_detail,,,,,0.8,,,,,
+hind_helicopter_crash_close,3,explosions/exp_metal_armor_veh08.wav,0.85,0.95,explosion,1,1.1,650,4000,weapon,,,,0.85,all_mp,,,hind_helicopter_crash_detail,,,,,0.8,,,,,
+hind_helicopter_crash_detail,1,explosions/exp_metal_armor_detail01.wav,0.9,0.95,explosion,0.9,1.1,50,2500,auto2,,,,0.85,all_mp,,,,,1000,,,,,,,,
+hind_helicopter_crash_detail,2,explosions/exp_metal_armor_detail02.wav,0.9,0.95,explosion,0.9,1.1,50,2500,auto2,,,,0.85,all_mp,,,,,1000,,,,,,,,
+
+
+#mp_nuke_location_uncovered,,misc/stv_flag_stolen.wav,1,1,,1,1,,,auto2d,streamed,,,,all_mp
+#mp_nuke_location_compromised,,misc/stv_enemy_flag_stolen.wav,1,1,,1,1,,,auto2d,streamed,,,,all_mp
+
+mp_war_objective_taken,,misc/stv_flag_stolen.wav,1,1,,1,1,,,auto2d,streamed,,,,all_mp
+mp_war_objective_lost,,misc/stv_enemy_flag_stolen.wav,1,1,,1,1,,,auto2d,streamed,,,,all_mp
+
+#mp_nuke_explo_close,1,explosions/mortar_dirt01.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_close,2,explosions/mortar_dirt02.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_close,3,explosions/mortar_dirt03.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_close,4,explosions/mortar_dirt04.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_close,5,explosions/mortar_dirt05.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_close,6,explosions/mortar_dirt06.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_distant,1,explosions/explo_distant01.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_distant,2,explosions/explo_distant02.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_distant,3,explosions/explo_distant03.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_explo_distant,4,explosions/explo_distant07.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_aftershock,1,explosions/artillery_incoming01.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_aftershock,2,explosions/artillery_incoming02.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_aftershock,3,explosions/artillery_incoming03.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_aftershock,4,explosions/artillery_incoming04.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+#mp_nuke_aftershock,5,explosions/artillery_incoming05.wav,1,,,,,500000,,,streamed,,,0.5,all_mp
+
+"# it would be nice to have a ""distant artillery barrage"" sound with more shots; right now I'm playing it twice in a row to get enough",,,,,,,,,,,,,,,
+distant_artillery_barrage,1,explosions/cannon_sequence_hvy1_filt.wav,1,1,explosion,1,1.2,1,500000,auto,streamed,,,0.7,all_mp
+distant_artillery_barrage,2,explosions/cannon_sequence_hvy2_filt.wav,1,1,explosion,1,1.2,1,500000,auto,streamed,,,0.7,all_mp
+distant_artillery_barrage,3,explosions/cannon_sequence_hvy3_filt.wav,1,1,explosion,1,1.2,1,500000,auto,streamed,,,0.7,all_mp
+fast_artillery_round,1,explosions/artillery_incoming01.wav,0.7,0.8,explosion,0.8,1.2,50,15000,auto,streamed,,,0.5,all_mp
+fast_artillery_round,2,explosions/artillery_incoming02.wav,0.7,0.8,explosion,0.8,1.2,50,15000,auto,streamed,,,0.5,all_mp
+fast_artillery_round,3,explosions/artillery_incoming03.wav,0.7,0.8,explosion,0.8,1.2,50,15000,auto,streamed,,,0.5,all_mp
+fast_artillery_round,4,explosions/artillery_incoming04.wav,0.7,0.8,explosion,0.8,1.2,50,15000,auto,streamed,,,0.5,all_mp
+fast_artillery_round,5,explosions/artillery_incoming05.wav,0.7,0.8,explosion,0.8,1.2,50,15000,auto,streamed,,,0.5,all_mp
+artillery_impact,1,explosions/mortar_dirt01.wav,0.75,0.85,explosion,0.7,0.9,50,15000,auto,streamed,,,0.5,all_mp
+artillery_impact,2,explosions/mortar_dirt02.wav,0.75,0.85,explosion,0.7,0.9,50,15000,auto,streamed,,,0.5,all_mp,,,,,,,,,
+artillery_impact,3,explosions/mortar_dirt03.wav,0.75,0.85,explosion,0.7,0.9,50,15000,auto,streamed,,,0.5,all_mp,,,,,,,,,
+artillery_impact,4,explosions/mortar_dirt04.wav,0.75,0.85,explosion,0.7,0.9,50,15000,auto,streamed,,,0.5,all_mp,,,,,,,,,
+artillery_impact,5,explosions/mortar_dirt05.wav,0.75,0.85,explosion,0.7,0.9,50,15000,auto,streamed,,,0.5,all_mp,,,,,,,,,
+artillery_impact,6,explosions/mortar_dirt06.wav,0.75,0.85,explosion,0.7,0.9,50,15000,auto,streamed,,,0.5,all_mp,,,,,,,,,
+
+
+#Rem'd lines below moved to code.csv to load quicker,,,,,,,,,,,,,,,,,,,,,,,,
+
+# Marine Squad Leader,,,,,,,,,,,,,,,,,,,,,,,,
+#US_1mc_boost,1,voiceovers/US/mp/US_1mc_boost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_airstrike,1,voiceovers/US/mp/US_1mc_airstrike_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_attack,1,voiceovers/US/mp/US_1mc_attack_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_bomb_defused,1,voiceovers/US/mp/US_1mc_bomb_defused_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_bomb_lost,1,voiceovers/US/mp/US_1mc_bomb_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_bomb_lost,2,voiceovers/US/mp/US_1mc_lost_bomb_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_bomb_planted,1,voiceovers/US/mp/US_1mc_bomb_planted_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_bomb_taken,1,voiceovers/US/mp/US_1mc_bomb_taken_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_boost,1,voiceovers/US/mp/US_1mc_boost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capture_a,1,voiceovers/US/mp/US_1mc_secured_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capture_a,2,voiceovers/US/mp/US_1mc_secured_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capture_b,1,voiceovers/US/mp/US_1mc_secured_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capture_b,2,voiceovers/US/mp/US_1mc_secured_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capture_c,1,voiceovers/US/mp/US_1mc_secured_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capture_c,2,voiceovers/US/mp/US_1mc_secured_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capture_obj,1,voiceovers/US/mp/US_1mc_capture_objective_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capture_objs,1,voiceovers/US/mp/US_1mc_capture_objectives_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_captureflag,1,voiceovers/US/mp/US_1mc_type_captureflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capturehold,1,voiceovers/US/mp/US_1mc_title_capture_hold_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capturing_a,1,voiceovers/US/mp/US_1mc_securing_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capturing_a,2,voiceovers/US/mp/US_1mc_securing_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capturing_b,1,voiceovers/US/mp/US_1mc_securing_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capturing_b,2,voiceovers/US/mp/US_1mc_securing_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capturing_c,1,voiceovers/US/mp/US_1mc_securing_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_capturing_c,2,voiceovers/US/mp/US_1mc_securing_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_challenge_complete,1,voiceovers/US/mp/US_1mc_challenge_complete_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_control_lost,1,voiceovers/US/mp/US_1mc_control_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_control_lost,2,voiceovers/US/mp/US_1mc_control_lost_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_control_lost,3,voiceovers/US/mp/US_1mc_control_lost_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_control_lost,4,voiceovers/US/mp/US_1mc_control_lost_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_control_won,1,voiceovers/US/mp/US_1mc_control_won_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_control_won,2,voiceovers/US/mp/US_1mc_control_won_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_control_won,3,voiceovers/US/mp/US_1mc_control_won_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_control_won,4,voiceovers/US/mp/US_1mc_control_won_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_defend,1,voiceovers/US/mp/US_1mc_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_defense,1,voiceovers/US/mp/US_1mc_defense_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_domination,1,voiceovers/US/mp/US_1mc_title_domination_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_draw,1,voiceovers/US/mp/US_1mc_draw_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_encourage_lost,1,voiceovers/US/mp/US_1mc_encourage_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_encourage_win,1,voiceovers/US/mp/US_1mc_encourage_win_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_has_a,1,voiceovers/US/mp/US_1mc_lost_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_has_a,2,voiceovers/US/mp/US_1mc_lost_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_has_b,1,voiceovers/US/mp/US_1mc_lost_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_has_b,2,voiceovers/US/mp/US_1mc_lost_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_has_c,1,voiceovers/US/mp/US_1mc_lost_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_has_c,2,voiceovers/US/mp/US_1mc_lost_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_take_a,1,voiceovers/US/mp/US_1mc_losing_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_take_a,2,voiceovers/US/mp/US_1mc_losing_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_take_b,1,voiceovers/US/mp/US_1mc_losing_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_take_b,2,voiceovers/US/mp/US_1mc_losing_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_take_c,1,voiceovers/US/mp/US_1mc_losing_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemy_take_c,2,voiceovers/US/mp/US_1mc_losing_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemyair,1,voiceovers/US/mp/US_1mc_enemyair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemyflag,1,voiceovers/US/mp/US_1mc_enemyflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemyflag_capt,1,voiceovers/US/mp/US_1mc_enemyflag_capt_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemyflag_drop,1,voiceovers/US/mp/US_1mc_enemyflag_drop_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemyflag_return,1,voiceovers/US/mp/US_1mc_enemyflag_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemyheli,1,voiceovers/US/mp/US_1mc_enemyheli_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_enemyuavair,1,voiceovers/US/mp/US_1mc_enemyuavair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_fight_back,1,voiceovers/US/mp/US_1mc_lost_all_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_freeforall,1,voiceovers/US/mp/US_1mc_title_freeforall_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_friendlyair,1,voiceovers/US/mp/US_1mc_friendlyair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_friendlyheli,1,voiceovers/US/mp/US_1mc_friendlyheli_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_goodtogo,1,voiceovers/US/mp/US_1mc_goodtogo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_gridiron,1,voiceovers/US/mp/US_1mc_title_gridiron_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_halftime,,voiceovers/US/mp/US_1mc_halftime_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hardcore,1,voiceovers/US/mp/US_1mc_title_hardcore_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hardcore_freeforall,1,voiceovers/US/mp/US_1mc_title_hardcore_freeforall_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hardcore_tm_death,1,voiceovers/US/mp/US_1mc_title_tm_hardcore_deathmtch_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_headquarters,1,voiceovers/US/mp/US_1mc_type_headquarters_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_helisupport,1,voiceovers/US/mp/US_1mc_helisupport_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_highspeed,1,voiceovers/US/mp/US_1mc_title_highspeed_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hq_captured,1,voiceovers/US/mp/US_1mc_hq_enemy_captured_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hq_destroyed,1,voiceovers/US/mp/US_1mc_hq_enemy_destroyed_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hq_located,1,voiceovers/US/mp/US_1mc_hq_located_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hq_offline,1,voiceovers/US/mp/US_1mc_hq_offline_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hq_online,1,voiceovers/US/mp/US_1mc_hq_online_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_hq_secured,1,voiceovers/US/mp/US_1mc_hq_secured_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_keepfighting,1,voiceovers/US/mp/US_1mc_keep_fighting_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_keepfighting,2,voiceovers/US/mp/US_1mc_keep_fighting_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_keepfighting,3,voiceovers/US/mp/US_1mc_keep_fighting_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_keepfighting,4,voiceovers/US/mp/US_1mc_keep_fighting_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_keepfighting,5,voiceovers/US/mp/US_1mc_keep_fighting_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_king,1,voiceovers/US/mp/US_1mc_type_king_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lastalive,1,voiceovers/US/mp/US_1mc_inform_last_alive_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lastalive,2,voiceovers/US/mp/US_1mc_inform_last_alive_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lastalive,3,voiceovers/US/mp/US_1mc_inform_last_alive_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lastalive,4,voiceovers/US/mp/US_1mc_inform_last_alive_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lastalive,5,voiceovers/US/mp/US_1mc_inform_last_alive_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lead_lost,1,voiceovers/US/mp/US_1mc_lead_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lead_taken,1,voiceovers/US/mp/US_1mc_lead_taken_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing,1,voiceovers/US/mp/US_1mc_losing_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing,2,voiceovers/US/mp/US_1mc_losing_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing,3,voiceovers/US/mp/US_1mc_losing_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing_a,1,voiceovers/US/mp/US_1mc_losing_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing_a,2,voiceovers/US/mp/US_1mc_losing_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing_b,1,voiceovers/US/mp/US_1mc_losing_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing_b,2,voiceovers/US/mp/US_1mc_losing_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing_c,1,voiceovers/US/mp/US_1mc_losing_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_losing_c,2,voiceovers/US/mp/US_1mc_losing_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lost_a,1,voiceovers/US/mp/US_1mc_lost_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lost_a,2,voiceovers/US/mp/US_1mc_lost_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lost_b,1,voiceovers/US/mp/US_1mc_lost_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lost_b,2,voiceovers/US/mp/US_1mc_lost_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lost_c,1,voiceovers/US/mp/US_1mc_lost_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lost_c,2,voiceovers/US/mp/US_1mc_lost_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lostobj,1,voiceovers/US/mp/US_1mc_lostobj_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_lostobj,2,voiceovers/US/mp/US_1mc_lostobj_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_mission_fail,1,voiceovers/US/mp/US_1mc_mission_fail_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_mission_fail,2,voiceovers/US/mp/US_1mc_mission_fail_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_mission_success,1,voiceovers/US/mp/US_1mc_mission_success_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_mission_success,2,voiceovers/US/mp/US_1mc_mission_success_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_new_positions,,voiceovers/US/mp/US_1mc_new_position_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_obj_defend,1,voiceovers/US/mp/US_1mc_obj_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_obj_destroy,1,voiceovers/US/mp/US_1mc_obj_destroy_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_objs_defend,1,voiceovers/US/mp/US_1mc_objs_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_objs_destroy,1,voiceovers/US/mp/US_1mc_objs_destroy_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_offense,1,voiceovers/US/mp/US_1mc_offense_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_oldschool,1,voiceovers/US/mp/US_1mc_title_oldschool_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_ourflag,1,voiceovers/US/mp/US_1mc_ourflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_ourflag_capt,1,voiceovers/US/mp/US_1mc_ourflag_capt_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_ourflag_drop,1,voiceovers/US/mp/US_1mc_ourflag_drop_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_ourflag_return,1,voiceovers/US/mp/US_1mc_ourflag_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_ouruavonline,1,voiceovers/US/mp/US_1mc_ouruavonline_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_overtime,,voiceovers/US/mp/US_1mc_overtime_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_positions_lock,1,voiceovers/US/mp/US_1mc_secured_all_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_promoted,1,voiceovers/US/mp/US_1mc_promoted_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_readytomove,1,voiceovers/US/mp/US_1mc_readytomove_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_regroup,,voiceovers/US/mp/US_1mc_regroup_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_sabotage,1,voiceovers/US/mp/US_1mc_title_sabotage_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_searchdestroy,1,voiceovers/US/mp/US_1mc_title_search_destroy_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_secure_a,1,voiceovers/US/mp/US_1mc_secured_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_secure_a,2,voiceovers/US/mp/US_1mc_secured_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_secure_b,1,voiceovers/US/mp/US_1mc_secured_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_secure_b,2,voiceovers/US/mp/US_1mc_secured_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_secure_c,1,voiceovers/US/mp/US_1mc_secured_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_secure_c,2,voiceovers/US/mp/US_1mc_secured_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_securedobj,1,voiceovers/US/mp/US_1mc_securedobj_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_securedobj,2,voiceovers/US/mp/US_1mc_securedobj_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_securing_a,1,voiceovers/US/mp/US_1mc_securing_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_securing_a,2,voiceovers/US/mp/US_1mc_securing_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_securing_b,1,voiceovers/US/mp/US_1mc_securing_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_securing_b,2,voiceovers/US/mp/US_1mc_securing_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_securing_c,1,voiceovers/US/mp/US_1mc_securing_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_securing_c,2,voiceovers/US/mp/US_1mc_securing_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_security_complete,1,voiceovers/US/mp/US_1mc_secured_all_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_switching,1,voiceovers/US/mp/US_1mc_switching_sides_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_tactical,1,voiceovers/US/mp/US_1mc_title_tactical_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_take_positions,1,voiceovers/US/mp/US_1mc_lost_all_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_team_deathmtch,1,voiceovers/US/mp/US_1mc_title_team_deathmtch_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_team_hardcore,1,voiceovers/US/mp/US_1mc_title_team_hardcore_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_tied,1,voiceovers/US/mp/US_1mc_tied_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_tied,2,voiceovers/US/mp/US_1mc_tied_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_timesup,1,voiceovers/US/mp/US_1mc_timesup_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_uavrecon,1,voiceovers/US/mp/US_1mc_uavrecon_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_1mc_winning,1,voiceovers/US/mp/US_1mc_winning_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+# Fighter Pilot 1,,,,,,,,,,,,,,,,,,,,,,,,
+US_fp1_inform_attack_air,1,voiceovers/US/mp/US_fp1_inform_attack_air_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp1_inform_attack_bombs,1,voiceovers/US/mp/US_fp1_inform_attack_bombs_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+# Fighter Pilot 2,,,,,,,,,,,,,,,,,,,,,,,,
+US_fp2_airstrike,1,voiceovers/US/mp/US_fp2_inform_attack_air_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp2_airstrike,2,voiceovers/US/mp/US_fp2_inform_attack_air_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp2_airstrike,3,voiceovers/US/mp/US_fp2_inform_attack_air_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp2_airstrike,4,voiceovers/US/mp/US_fp2_inform_attack_air_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp2_airstrike,5,voiceovers/US/mp/US_fp2_inform_attack_air_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp2_airstrike,6,voiceovers/US/mp/US_fp2_inform_attack_air_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp2_damage,1,voiceovers/US/mp/US_fp2_inform_damage_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp2_damage,2,voiceovers/US/mp/US_fp2_inform_damage_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_fp2_damage,3,voiceovers/US/mp/US_fp2_inform_damage_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+# Helicopter Pilot,,,,,,,,,,,,,,,,,,,,,,,,
+US_rhp_inform_attack_scan,1,voiceovers/US/mp/US_rhp_inform_attack_scan_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_rhp_inform_hit_crash,1,voiceovers/US/mp/US_rhp_inform_hit_crash_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+US_rhp_inform_return,1,voiceovers/US/mp/US_rhp_inform_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+
+# Arab MP Squad Leader,,,,,,,,,,,,,,,,,,,,,,,,
+#AB_1mc_boost,1,voiceovers/AB/mpvoice/AB_1mc_boost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_airstrike,1,voiceovers/AB/mpvoice/AB_1mc_airstrike_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_attack,1,voiceovers/AB/mpvoice/AB_1mc_attack_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_bomb_defused,1,voiceovers/AB/mpvoice/AB_1mc_bomb_defused_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_bomb_lost,1,voiceovers/AB/mpvoice/AB_1mc_bomb_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_bomb_lost,2,voiceovers/AB/mpvoice/AB_1mc_lost_bomb_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_bomb_planted,1,voiceovers/AB/mpvoice/AB_1mc_bomb_planted_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_bomb_taken,1,voiceovers/AB/mpvoice/AB_1mc_bomb_taken_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capture_a,1,voiceovers/AB/mpvoice/AB_1mc_secured_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capture_a,2,voiceovers/AB/mpvoice/AB_1mc_secured_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capture_b,1,voiceovers/AB/mpvoice/AB_1mc_secured_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capture_b,2,voiceovers/AB/mpvoice/AB_1mc_secured_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capture_c,1,voiceovers/AB/mpvoice/AB_1mc_secured_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capture_c,2,voiceovers/AB/mpvoice/AB_1mc_secured_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capture_obj,1,voiceovers/AB/mpvoice/AB_1mc_capture_objective_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capture_objs,1,voiceovers/AB/mpvoice/AB_1mc_capture_objectives_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_captureflag,,voiceovers/AB/mpvoice/AB_1mc_type_captureflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capturehold,1,voiceovers/AB/mpvoice/AB_1mc_title_capture_hold_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capturing_a,1,voiceovers/AB/mpvoice/AB_1mc_securing_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capturing_a,2,voiceovers/AB/mpvoice/AB_1mc_securing_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capturing_b,1,voiceovers/AB/mpvoice/AB_1mc_securing_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capturing_b,2,voiceovers/AB/mpvoice/AB_1mc_securing_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capturing_c,1,voiceovers/AB/mpvoice/AB_1mc_securing_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_capturing_c,2,voiceovers/AB/mpvoice/AB_1mc_securing_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_challengecomplete,1,voiceovers/AB/mpvoice/AB_1mc_challenge_complete_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_control_lost,1,voiceovers/AB/mpvoice/AB_1mc_control_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_control_lost,2,voiceovers/AB/mpvoice/AB_1mc_control_lost_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_control_lost,3,voiceovers/AB/mpvoice/AB_1mc_control_lost_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_control_lost,4,voiceovers/AB/mpvoice/AB_1mc_control_lost_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_control_won,1,voiceovers/AB/mpvoice/AB_1mc_control_won_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_control_won,2,voiceovers/AB/mpvoice/AB_1mc_control_won_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_control_won,3,voiceovers/AB/mpvoice/AB_1mc_control_won_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_control_won,4,voiceovers/AB/mpvoice/AB_1mc_control_won_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_defend,1,voiceovers/AB/mpvoice/AB_1mc_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_defense,1,voiceovers/AB/mpvoice/AB_1mc_defense_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_domination,1,voiceovers/AB/mpvoice/AB_1mc_title_domination_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_draw,1,voiceovers/AB/mpvoice/AB_1mc_draw_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_encourage_lost,1,voiceovers/AB/mpvoice/AB_1mc_encourage_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_encourage_win,1,voiceovers/AB/mpvoice/AB_1mc_encourage_win_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_has_a,1,voiceovers/AB/mpvoice/AB_1mc_lost_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_has_a,2,voiceovers/AB/mpvoice/AB_1mc_lost_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_has_b,1,voiceovers/AB/mpvoice/AB_1mc_lost_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_has_b,2,voiceovers/AB/mpvoice/AB_1mc_lost_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_has_c,1,voiceovers/AB/mpvoice/AB_1mc_lost_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_has_c,2,voiceovers/AB/mpvoice/AB_1mc_lost_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_take_a,1,voiceovers/AB/mpvoice/AB_1mc_losing_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_take_a,2,voiceovers/AB/mpvoice/AB_1mc_losing_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_take_b,1,voiceovers/AB/mpvoice/AB_1mc_losing_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_take_b,2,voiceovers/AB/mpvoice/AB_1mc_losing_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_take_c,1,voiceovers/AB/mpvoice/AB_1mc_losing_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemy_take_c,2,voiceovers/AB/mpvoice/AB_1mc_losing_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemyair,1,voiceovers/AB/mpvoice/AB_1mc_enemyair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemyflag,1,voiceovers/AB/mpvoice/AB_1mc_enemyflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemyflag_capt,1,voiceovers/AB/mpvoice/AB_1mc_enemyflag_capt_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemyflag_drop,1,voiceovers/AB/mpvoice/AB_1mc_enemyflag_drop_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemyflag_return,1,voiceovers/AB/mpvoice/AB_1mc_enemyflag_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemyheli,1,voiceovers/AB/mpvoice/AB_1mc_enemyheli_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_enemyuavair,1,voiceovers/AB/mpvoice/AB_1mc_enemyuavair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_fight_back,1,voiceovers/AB/mpvoice/AB_1mc_lost_all_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_freeforall,1,voiceovers/AB/mpvoice/AB_1mc_title_freeforall_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_friendlyair,1,voiceovers/AB/mpvoice/AB_1mc_friendlyair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_friendlyheli,1,voiceovers/AB/mpvoice/AB_1mc_friendlyheli_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_goodtogo,1,voiceovers/AB/mpvoice/AB_1mc_goodtogo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_gridiron,1,voiceovers/AB/mpvoice/AB_1mc_title_gridiron_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_halftime,,voiceovers/AB/mpvoice/AB_1mc_halftime_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hardcore,1,voiceovers/AB/mpvoice/AB_1mc_title_hardcore_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hardcore_freeforall,1,voiceovers/AB/mpvoice/AB_1mc_title_hardcore_freeforall_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hardcore_tm_death,1,voiceovers/AB/mpvoice/AB_1mc_title_tm_hardcore_deathmtch_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_headquarters,,voiceovers/AB/mpvoice/AB_1mc_type_headquarters_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_helisupport,1,voiceovers/AB/mpvoice/AB_1mc_helisupport_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_highspeed,1,voiceovers/AB/mpvoice/AB_1mc_title_highspeed_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hq_captured,1,voiceovers/AB/mpvoice/AB_1mc_hq_enemy_captured_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hq_destroyed,1,voiceovers/AB/mpvoice/AB_1mc_hq_enemy_destroyed_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hq_located,1,voiceovers/AB/mpvoice/AB_1mc_hq_located_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hq_offline,1,voiceovers/AB/mpvoice/AB_1mc_hq_offline_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hq_online,1,voiceovers/AB/mpvoice/AB_1mc_hq_online_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_hq_secured,1,voiceovers/AB/mpvoice/AB_1mc_hq_secured_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_keepfighting,1,voiceovers/AB/mpvoice/AB_1mc_keep_fighting_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_keepfighting,2,voiceovers/AB/mpvoice/AB_1mc_keep_fighting_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_keepfighting,3,voiceovers/AB/mpvoice/AB_1mc_keep_fighting_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_keepfighting,4,voiceovers/AB/mpvoice/AB_1mc_keep_fighting_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_keepfighting,5,voiceovers/AB/mpvoice/AB_1mc_keep_fighting_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_king,,voiceovers/AB/mpvoice/AB_1mc_type_king_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lastalive,1,voiceovers/AB/mpvoice/AB_1mc_inform_last_alive_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lastalive,2,voiceovers/AB/mpvoice/AB_1mc_inform_last_alive_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lastalive,3,voiceovers/AB/mpvoice/AB_1mc_inform_last_alive_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lastalive,4,voiceovers/AB/mpvoice/AB_1mc_inform_last_alive_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lastalive,5,voiceovers/AB/mpvoice/AB_1mc_inform_last_alive_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lead_lost,1,voiceovers/AB/mpvoice/AB_1mc_lead_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lead_taken,1,voiceovers/AB/mpvoice/AB_1mc_lead_taken_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing,1,voiceovers/AB/mpvoice/AB_1mc_losing_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing,2,voiceovers/AB/mpvoice/AB_1mc_losing_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing,3,voiceovers/AB/mpvoice/AB_1mc_losing_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing_a,1,voiceovers/AB/mpvoice/AB_1mc_losing_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing_a,2,voiceovers/AB/mpvoice/AB_1mc_losing_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing_b,1,voiceovers/AB/mpvoice/AB_1mc_losing_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing_b,2,voiceovers/AB/mpvoice/AB_1mc_losing_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing_c,1,voiceovers/AB/mpvoice/AB_1mc_losing_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_losing_c,2,voiceovers/AB/mpvoice/AB_1mc_losing_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lost_a,1,voiceovers/AB/mpvoice/AB_1mc_lost_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lost_a,2,voiceovers/AB/mpvoice/AB_1mc_lost_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lost_b,1,voiceovers/AB/mpvoice/AB_1mc_lost_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lost_b,2,voiceovers/AB/mpvoice/AB_1mc_lost_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lost_c,1,voiceovers/AB/mpvoice/AB_1mc_lost_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lost_c,2,voiceovers/AB/mpvoice/AB_1mc_lost_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lostobj,1,voiceovers/AB/mpvoice/AB_1mc_lostobj_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_lostobj,2,voiceovers/AB/mpvoice/AB_1mc_lostobj_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_mission_fail,1,voiceovers/AB/mpvoice/AB_1mc_mission_fail_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_mission_fail,2,voiceovers/AB/mpvoice/AB_1mc_mission_fail_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_mission_success,1,voiceovers/AB/mpvoice/AB_1mc_mission_success_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_mission_success,2,voiceovers/AB/mpvoice/AB_1mc_mission_success_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_new_positions,,voiceovers/AB/mpvoice/AB_1mc_new_position_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_obj_defend,1,voiceovers/AB/mpvoice/AB_1mc_obj_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_obj_destroy,1,voiceovers/AB/mpvoice/AB_1mc_obj_destroy_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_objs_defend,1,voiceovers/AB/mpvoice/AB_1mc_objs_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_objs_destroy,1,voiceovers/AB/mpvoice/AB_1mc_objs_destroy_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_offense,1,voiceovers/AB/mpvoice/AB_1mc_offense_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_oldschool,1,voiceovers/AB/mpvoice/AB_1mc_title_oldschool_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_ourflag,1,voiceovers/AB/mpvoice/AB_1mc_ourflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_ourflag_capt,1,voiceovers/AB/mpvoice/AB_1mc_ourflag_capt_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_ourflag_drop,1,voiceovers/AB/mpvoice/AB_1mc_ourflag_drop_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_ourflag_return,1,voiceovers/AB/mpvoice/AB_1mc_ourflag_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_ouruavonline,1,voiceovers/AB/mpvoice/AB_1mc_ouruavonline_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_overtime,,voiceovers/AB/mpvoice/AB_1mc_overtime_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_positions_lock,1,voiceovers/AB/mpvoice/AB_1mc_secured_all_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_promoted,1,voiceovers/AB/mpvoice/AB_1mc_promoted_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_readytomove,1,voiceovers/AB/mpvoice/AB_1mc_readytomove_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_regroup,,voiceovers/AB/mpvoice/AB_1mc_regroup_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_sabotage,1,voiceovers/AB/mpvoice/AB_1mc_title_sabotage_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_searchdestroy,1,voiceovers/AB/mpvoice/AB_1mc_title_search_destroy_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_secure_a,1,voiceovers/AB/mpvoice/AB_1mc_secured_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_secure_a,2,voiceovers/AB/mpvoice/AB_1mc_secured_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_secure_b,1,voiceovers/AB/mpvoice/AB_1mc_secured_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_secure_b,2,voiceovers/AB/mpvoice/AB_1mc_secured_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_secure_c,1,voiceovers/AB/mpvoice/AB_1mc_secured_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_secure_c,2,voiceovers/AB/mpvoice/AB_1mc_secured_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_securedobj,1,voiceovers/AB/mpvoice/AB_1mc_securedobj_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_securedobj,2,voiceovers/AB/mpvoice/AB_1mc_securedobj_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_securing_a,1,voiceovers/AB/mpvoice/AB_1mc_securing_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_securing_a,2,voiceovers/AB/mpvoice/AB_1mc_securing_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_securing_b,1,voiceovers/AB/mpvoice/AB_1mc_securing_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_securing_b,2,voiceovers/AB/mpvoice/AB_1mc_securing_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_securing_c,1,voiceovers/AB/mpvoice/AB_1mc_securing_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_securing_c,2,voiceovers/AB/mpvoice/AB_1mc_securing_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_security_complete,1,voiceovers/AB/mpvoice/AB_1mc_secured_all_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_switching,,voiceovers/AB/mpvoice/AB_1mc_switching_sides_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_tactical,1,voiceovers/AB/mpvoice/AB_1mc_title_tactical_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_take_positions,1,voiceovers/AB/mpvoice/AB_1mc_lost_all_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_team_deathmtch,1,voiceovers/AB/mpvoice/AB_1mc_title_team_deathmtch_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_team_hardcore,1,voiceovers/AB/mpvoice/AB_1mc_title_team_hardcore_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_tied,1,voiceovers/AB/mpvoice/AB_1mc_tied_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_tied,2,voiceovers/AB/mpvoice/AB_1mc_tied_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_timesup,1,voiceovers/AB/mpvoice/AB_1mc_timesup_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_uavrecon,1,voiceovers/AB/mpvoice/AB_1mc_uavrecon_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+AB_1mc_winning,1,voiceovers/AB/mpvoice/AB_1mc_winning_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+
+# Opfor Fighter Pilot,,,,,,,,,,,,,,,,,,,,,,,,
+AB_ofp_inform_attack_air,,voiceovers/AB/mp/AB_ofp_inform_attack_air_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_ofp_inform_attack_bombs,,voiceovers/AB/mp/AB_ofp_inform_attack_bombs_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+# Opfor Helicopter Pilot,,,,,,,,,,,,,,,,,,,,,,,,
+AB_ohp_inform_attack_scan,,voiceovers/AB/mp/AB_ohp_inform_attack_scan_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_ohp_inform_hit_crash,,voiceovers/AB/mp/AB_ohp_inform_hit_crash_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_ohp_inform_return,,voiceovers/AB/mp/AB_ohp_inform_return_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+
+# British Squad Leader,,,,,,,,,,,,,,,,,,,,,,,,
+#UK_1mc_boost,1,voiceovers/UK/mpvoice/UK_1mc_boost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_airstrike,1,voiceovers/UK/mpvoice/UK_1mc_airstrike_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_attack,1,voiceovers/UK/mpvoice/UK_1mc_attack_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_bomb_defused,1,voiceovers/UK/mpvoice/UK_1mc_bomb_defused_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_bomb_lost,1,voiceovers/UK/mpvoice/UK_1mc_bomb_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_bomb_lost,2,voiceovers/UK/mpvoice/UK_1mc_lost_bomb_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_bomb_planted,1,voiceovers/UK/mpvoice/UK_1mc_bomb_planted_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_bomb_taken,1,voiceovers/UK/mpvoice/UK_1mc_bomb_taken_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capture_a,1,voiceovers/UK/mpvoice/UK_1mc_secured_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capture_a,2,voiceovers/UK/mpvoice/UK_1mc_secured_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capture_b,1,voiceovers/UK/mpvoice/UK_1mc_secured_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capture_b,2,voiceovers/UK/mpvoice/UK_1mc_secured_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capture_c,1,voiceovers/UK/mpvoice/UK_1mc_secured_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capture_c,2,voiceovers/UK/mpvoice/UK_1mc_secured_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capture_obj,1,voiceovers/UK/mpvoice/UK_1mc_capture_objective_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capture_objs,1,voiceovers/UK/mpvoice/UK_1mc_capture_objectives_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_captureflag,,voiceovers/UK/mpvoice/UK_1mc_type_captureflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capturehold,1,voiceovers/UK/mpvoice/UK_1mc_title_capture_hold_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capturing_a,1,voiceovers/UK/mpvoice/UK_1mc_securing_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capturing_a,2,voiceovers/UK/mpvoice/UK_1mc_securing_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capturing_b,1,voiceovers/UK/mpvoice/UK_1mc_securing_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capturing_b,2,voiceovers/UK/mpvoice/UK_1mc_securing_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capturing_c,1,voiceovers/UK/mpvoice/UK_1mc_securing_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_capturing_c,2,voiceovers/UK/mpvoice/UK_1mc_securing_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_challengecomplete,1,voiceovers/UK/mpvoice/UK_1mc_challenge_complete_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_control_lost,1,voiceovers/UK/mpvoice/UK_1mc_control_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_control_lost,2,voiceovers/UK/mpvoice/UK_1mc_control_lost_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_control_lost,3,voiceovers/UK/mpvoice/UK_1mc_control_lost_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_control_lost,4,voiceovers/UK/mpvoice/UK_1mc_control_lost_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_control_won,1,voiceovers/UK/mpvoice/UK_1mc_control_won_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_control_won,2,voiceovers/UK/mpvoice/UK_1mc_control_won_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_control_won,3,voiceovers/UK/mpvoice/UK_1mc_control_won_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_control_won,4,voiceovers/UK/mpvoice/UK_1mc_control_won_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_defend,1,voiceovers/UK/mpvoice/UK_1mc_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_defense,1,voiceovers/UK/mpvoice/UK_1mc_defense_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_domination,1,voiceovers/UK/mpvoice/UK_1mc_title_domination_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_draw,1,voiceovers/UK/mpvoice/UK_1mc_draw_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_encourage_lost,1,voiceovers/UK/mpvoice/UK_1mc_encourage_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_encourage_win,1,voiceovers/UK/mpvoice/UK_1mc_encourage_win_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_has_a,1,voiceovers/UK/mpvoice/UK_1mc_lost_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_has_a,2,voiceovers/UK/mpvoice/UK_1mc_lost_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_has_b,1,voiceovers/UK/mpvoice/UK_1mc_lost_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_has_b,2,voiceovers/UK/mpvoice/UK_1mc_lost_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_has_c,1,voiceovers/UK/mpvoice/UK_1mc_lost_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_has_c,2,voiceovers/UK/mpvoice/UK_1mc_lost_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_take_a,1,voiceovers/UK/mpvoice/UK_1mc_losing_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_take_a,2,voiceovers/UK/mpvoice/UK_1mc_losing_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_take_b,1,voiceovers/UK/mpvoice/UK_1mc_losing_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_take_b,2,voiceovers/UK/mpvoice/UK_1mc_losing_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_take_c,1,voiceovers/UK/mpvoice/UK_1mc_losing_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemy_take_c,2,voiceovers/UK/mpvoice/UK_1mc_losing_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemyair,1,voiceovers/UK/mpvoice/UK_1mc_enemyair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemyflag,1,voiceovers/UK/mpvoice/UK_1mc_enemyflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemyflag_capt,1,voiceovers/UK/mpvoice/UK_1mc_enemyflag_capt_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemyflag_drop,1,voiceovers/UK/mpvoice/UK_1mc_enemyflag_drop_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemyflag_return,1,voiceovers/UK/mpvoice/UK_1mc_enemyflag_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemyheli,1,voiceovers/UK/mpvoice/UK_1mc_enemyheli_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_enemyuavair,1,voiceovers/UK/mpvoice/UK_1mc_enemyuavair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_fight_back,1,voiceovers/UK/mpvoice/UK_1mc_lost_all_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_freeforall,1,voiceovers/UK/mpvoice/UK_1mc_title_freeforall_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_friendlyair,1,voiceovers/UK/mpvoice/UK_1mc_friendlyair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_friendlyheli,1,voiceovers/UK/mpvoice/UK_1mc_friendlyheli_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_goodtogo,1,voiceovers/UK/mpvoice/UK_1mc_goodtogo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_gridiron,1,voiceovers/UK/mpvoice/UK_1mc_title_gridiron_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_halftime,,voiceovers/UK/mpvoice/UK_1mc_halftime_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hardcore,1,voiceovers/UK/mpvoice/UK_1mc_title_hardcore_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hardcore_freeforall,1,voiceovers/UK/mpvoice/UK_1mc_title_hardcore_freeforall_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hardcore_tm_death,1,voiceovers/UK/mpvoice/UK_1mc_title_tm_hardcore_deathmtch_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_headquarters,,voiceovers/UK/mpvoice/UK_1mc_type_headquarters_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_helisupport,1,voiceovers/UK/mpvoice/UK_1mc_helisupport_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_highspeed,1,voiceovers/UK/mpvoice/UK_1mc_title_highspeed_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hq_captured,1,voiceovers/UK/mpvoice/UK_1mc_hq_enemy_captured_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hq_destroyed,1,voiceovers/UK/mpvoice/UK_1mc_hq_enemy_destroyed_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hq_located,1,voiceovers/UK/mpvoice/UK_1mc_hq_located_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hq_offline,1,voiceovers/UK/mpvoice/UK_1mc_hq_offline_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hq_online,1,voiceovers/UK/mpvoice/UK_1mc_hq_online_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_hq_secured,1,voiceovers/UK/mpvoice/UK_1mc_hq_secured_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_keepfighting,1,voiceovers/UK/mpvoice/UK_1mc_keep_fighting_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_keepfighting,2,voiceovers/UK/mpvoice/UK_1mc_keep_fighting_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_keepfighting,3,voiceovers/UK/mpvoice/UK_1mc_keep_fighting_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_keepfighting,4,voiceovers/UK/mpvoice/UK_1mc_keep_fighting_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_keepfighting,5,voiceovers/UK/mpvoice/UK_1mc_keep_fighting_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_king,,voiceovers/UK/mpvoice/UK_1mc_type_king_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lastalive,1,voiceovers/UK/mpvoice/UK_1mc_inform_last_alive_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lastalive,2,voiceovers/UK/mpvoice/UK_1mc_inform_last_alive_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lastalive,3,voiceovers/UK/mpvoice/UK_1mc_inform_last_alive_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lastalive,4,voiceovers/UK/mpvoice/UK_1mc_inform_last_alive_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lastalive,5,voiceovers/UK/mpvoice/UK_1mc_inform_last_alive_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lead_lost,1,voiceovers/UK/mpvoice/UK_1mc_lead_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lead_taken,1,voiceovers/UK/mpvoice/UK_1mc_lead_taken_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing,1,voiceovers/UK/mpvoice/UK_1mc_losing_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing,2,voiceovers/UK/mpvoice/UK_1mc_losing_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing,3,voiceovers/UK/mpvoice/UK_1mc_losing_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing_a,1,voiceovers/UK/mpvoice/UK_1mc_losing_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing_a,2,voiceovers/UK/mpvoice/UK_1mc_losing_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing_b,1,voiceovers/UK/mpvoice/UK_1mc_losing_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing_b,2,voiceovers/UK/mpvoice/UK_1mc_losing_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing_c,1,voiceovers/UK/mpvoice/UK_1mc_losing_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_losing_c,2,voiceovers/UK/mpvoice/UK_1mc_losing_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lost_a,1,voiceovers/UK/mpvoice/UK_1mc_lost_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lost_a,2,voiceovers/UK/mpvoice/UK_1mc_lost_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lost_b,1,voiceovers/UK/mpvoice/UK_1mc_lost_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lost_b,2,voiceovers/UK/mpvoice/UK_1mc_lost_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lost_c,1,voiceovers/UK/mpvoice/UK_1mc_lost_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lost_c,2,voiceovers/UK/mpvoice/UK_1mc_lost_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lostobj,1,voiceovers/UK/mpvoice/UK_1mc_lostobj_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_lostobj,2,voiceovers/UK/mpvoice/UK_1mc_lostobj_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_mission_fail,1,voiceovers/UK/mpvoice/UK_1mc_mission_fail_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_mission_fail,2,voiceovers/UK/mpvoice/UK_1mc_mission_fail_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_mission_success,1,voiceovers/UK/mpvoice/UK_1mc_mission_success_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_mission_success,2,voiceovers/UK/mpvoice/UK_1mc_mission_success_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_new_positions,,voiceovers/UK/mpvoice/UK_1mc_new_position_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_obj_defend,1,voiceovers/UK/mpvoice/UK_1mc_obj_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_obj_destroy,1,voiceovers/UK/mpvoice/UK_1mc_obj_destroy_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_objs_defend,1,voiceovers/UK/mpvoice/UK_1mc_objs_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_objs_destroy,1,voiceovers/UK/mpvoice/UK_1mc_objs_destroy_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_offense,1,voiceovers/UK/mpvoice/UK_1mc_offense_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_oldschool,1,voiceovers/UK/mpvoice/UK_1mc_title_oldschool_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_ourflag,1,voiceovers/UK/mpvoice/UK_1mc_ourflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_ourflag_capt,1,voiceovers/UK/mpvoice/UK_1mc_ourflag_capt_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_ourflag_drop,1,voiceovers/UK/mpvoice/UK_1mc_ourflag_drop_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_ourflag_return,1,voiceovers/UK/mpvoice/UK_1mc_ourflag_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_ouruavonline,1,voiceovers/UK/mpvoice/UK_1mc_ouruavonline_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_overtime,,voiceovers/UK/mpvoice/UK_1mc_overtime_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_positions_lock,1,voiceovers/UK/mpvoice/UK_1mc_secured_all_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_promoted,1,voiceovers/UK/mpvoice/UK_1mc_promoted_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_readytomove,1,voiceovers/UK/mpvoice/UK_1mc_readytomove_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_regroup,,voiceovers/UK/mpvoice/UK_1mc_regroup_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_sabotage,1,voiceovers/UK/mpvoice/UK_1mc_title_sabotage_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_searchdestroy,1,voiceovers/UK/mpvoice/UK_1mc_title_search_destroy_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_secure_a,1,voiceovers/UK/mpvoice/UK_1mc_secured_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_secure_a,2,voiceovers/UK/mpvoice/UK_1mc_secured_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_secure_b,1,voiceovers/UK/mpvoice/UK_1mc_secured_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_secure_b,2,voiceovers/UK/mpvoice/UK_1mc_secured_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_secure_c,1,voiceovers/UK/mpvoice/UK_1mc_secured_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_secure_c,2,voiceovers/UK/mpvoice/UK_1mc_secured_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_securedobj,1,voiceovers/UK/mpvoice/UK_1mc_securedobj_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_securedobj,2,voiceovers/UK/mpvoice/UK_1mc_securedobj_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_securing_a,1,voiceovers/UK/mpvoice/UK_1mc_securing_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_securing_a,2,voiceovers/UK/mpvoice/UK_1mc_securing_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_securing_b,1,voiceovers/UK/mpvoice/UK_1mc_securing_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_securing_b,2,voiceovers/UK/mpvoice/UK_1mc_securing_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_securing_c,1,voiceovers/UK/mpvoice/UK_1mc_securing_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_securing_c,2,voiceovers/UK/mpvoice/UK_1mc_securing_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_security_complete,1,voiceovers/UK/mpvoice/UK_1mc_secured_all_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_switching,,voiceovers/UK/mpvoice/UK_1mc_switching_sides_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_tactical,1,voiceovers/UK/mpvoice/UK_1mc_title_tactical_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_take_positions,1,voiceovers/UK/mpvoice/UK_1mc_lost_all_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_team_deathmtch,1,voiceovers/UK/mpvoice/UK_1mc_title_team_deathmtch_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_team_hardcore,1,voiceovers/UK/mpvoice/UK_1mc_title_team_hardcore_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_tied,1,voiceovers/UK/mpvoice/UK_1mc_tied_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_tied,2,voiceovers/UK/mpvoice/UK_1mc_tied_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_timesup,1,voiceovers/UK/mpvoice/UK_1mc_timesup_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_uavrecon,1,voiceovers/UK/mpvoice/UK_1mc_uavrecon_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+UK_1mc_winning,1,voiceovers/UK/mpvoice/UK_1mc_winning_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+
+#Russian Squad Leader,,,,,,,,,,,,,,,,,,,,,,,,
+#RU_1mc_boost,1,voiceovers/RU/mpvoice/RU_1mc_boost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_airstrike,1,voiceovers/RU/mpvoice/RU_1mc_airstrike_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_attack,1,voiceovers/RU/mpvoice/RU_1mc_attack_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_bomb_defused,1,voiceovers/RU/mpvoice/RU_1mc_bomb_defused_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_bomb_lost,1,voiceovers/RU/mpvoice/RU_1mc_bomb_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_bomb_lost,2,voiceovers/RU/mpvoice/RU_1mc_lost_bomb_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_bomb_planted,1,voiceovers/RU/mpvoice/RU_1mc_bomb_planted_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_bomb_taken,1,voiceovers/RU/mpvoice/RU_1mc_bomb_taken_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capture_a,1,voiceovers/RU/mpvoice/RU_1mc_secured_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capture_a,2,voiceovers/RU/mpvoice/RU_1mc_secured_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capture_b,1,voiceovers/RU/mpvoice/RU_1mc_secured_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capture_b,2,voiceovers/RU/mpvoice/RU_1mc_secured_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capture_c,1,voiceovers/RU/mpvoice/RU_1mc_secured_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capture_c,2,voiceovers/RU/mpvoice/RU_1mc_secured_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capture_obj,1,voiceovers/RU/mpvoice/RU_1mc_capture_objective_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capture_objs,1,voiceovers/RU/mpvoice/RU_1mc_capture_objectives_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_captureflag,,voiceovers/RU/mpvoice/RU_1mc_type_captureflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capturehold,1,voiceovers/RU/mpvoice/RU_1mc_title_capture_hold_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capturing_a,1,voiceovers/RU/mpvoice/RU_1mc_securing_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capturing_a,2,voiceovers/RU/mpvoice/RU_1mc_securing_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capturing_b,1,voiceovers/RU/mpvoice/RU_1mc_securing_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capturing_b,2,voiceovers/RU/mpvoice/RU_1mc_securing_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capturing_c,1,voiceovers/RU/mpvoice/RU_1mc_securing_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_capturing_c,2,voiceovers/RU/mpvoice/RU_1mc_securing_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_challengecomplete,1,voiceovers/RU/mpvoice/RU_1mc_challenge_complete_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_control_lost,1,voiceovers/RU/mpvoice/RU_1mc_control_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_control_lost,2,voiceovers/RU/mpvoice/RU_1mc_control_lost_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_control_lost,3,voiceovers/RU/mpvoice/RU_1mc_control_lost_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_control_lost,4,voiceovers/RU/mpvoice/RU_1mc_control_lost_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_control_won,1,voiceovers/RU/mpvoice/RU_1mc_control_won_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_control_won,2,voiceovers/RU/mpvoice/RU_1mc_control_won_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_control_won,3,voiceovers/RU/mpvoice/RU_1mc_control_won_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_control_won,4,voiceovers/RU/mpvoice/RU_1mc_control_won_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_defend,1,voiceovers/RU/mpvoice/RU_1mc_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_defense,1,voiceovers/RU/mpvoice/RU_1mc_defense_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_domination,1,voiceovers/RU/mpvoice/RU_1mc_title_domination_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_draw,1,voiceovers/RU/mpvoice/RU_1mc_draw_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_encourage_lost,1,voiceovers/RU/mpvoice/RU_1mc_encourage_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_encourage_win,1,voiceovers/RU/mpvoice/RU_1mc_encourage_win_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_has_a,1,voiceovers/RU/mpvoice/RU_1mc_lost_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_has_a,2,voiceovers/RU/mpvoice/RU_1mc_lost_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_has_b,1,voiceovers/RU/mpvoice/RU_1mc_lost_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_has_b,2,voiceovers/RU/mpvoice/RU_1mc_lost_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_has_c,1,voiceovers/RU/mpvoice/RU_1mc_lost_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_has_c,2,voiceovers/RU/mpvoice/RU_1mc_lost_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_take_a,1,voiceovers/RU/mpvoice/RU_1mc_losing_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_take_a,2,voiceovers/RU/mpvoice/RU_1mc_losing_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_take_b,1,voiceovers/RU/mpvoice/RU_1mc_losing_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_take_b,2,voiceovers/RU/mpvoice/RU_1mc_losing_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_take_c,1,voiceovers/RU/mpvoice/RU_1mc_losing_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemy_take_c,2,voiceovers/RU/mpvoice/RU_1mc_losing_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemyair,1,voiceovers/RU/mpvoice/RU_1mc_enemyair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemyflag,1,voiceovers/RU/mpvoice/RU_1mc_enemyflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemyflag_capt,1,voiceovers/RU/mpvoice/RU_1mc_enemyflag_capt_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemyflag_drop,1,voiceovers/RU/mpvoice/RU_1mc_enemyflag_drop_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemyflag_return,1,voiceovers/RU/mpvoice/RU_1mc_enemyflag_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemyheli,1,voiceovers/RU/mpvoice/RU_1mc_enemyheli_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_enemyuavair,1,voiceovers/RU/mpvoice/RU_1mc_enemyuavair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_fight_back,1,voiceovers/RU/mpvoice/RU_1mc_lost_all_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_freeforall,1,voiceovers/RU/mpvoice/RU_1mc_title_freeforall_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_friendlyair,1,voiceovers/RU/mpvoice/RU_1mc_friendlyair_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_friendlyheli,1,voiceovers/RU/mpvoice/RU_1mc_friendlyheli_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_goodtogo,1,voiceovers/RU/mpvoice/RU_1mc_goodtogo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_gridiron,1,voiceovers/RU/mpvoice/RU_1mc_title_gridiron_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_halftime,,voiceovers/RU/mpvoice/RU_1mc_halftime_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hardcore,1,voiceovers/RU/mpvoice/RU_1mc_title_hardcore_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hardcore_freeforall,1,voiceovers/RU/mpvoice/RU_1mc_title_hardcore_freeforall_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hardcore_tm_death,1,voiceovers/RU/mpvoice/RU_1mc_title_tm_hardcore_deathmtch_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_headquarters,,voiceovers/RU/mpvoice/RU_1mc_type_headquarters_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_helisupport,1,voiceovers/RU/mpvoice/RU_1mc_helisupport_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_highspeed,1,voiceovers/RU/mpvoice/RU_1mc_title_highspeed_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hq_captured,1,voiceovers/RU/mpvoice/RU_1mc_hq_enemy_captured_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hq_destroyed,1,voiceovers/RU/mpvoice/RU_1mc_hq_enemy_destroyed_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hq_located,1,voiceovers/RU/mpvoice/RU_1mc_hq_located_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hq_offline,1,voiceovers/RU/mpvoice/RU_1mc_hq_offline_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hq_online,1,voiceovers/RU/mpvoice/RU_1mc_hq_online_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_hq_secured,1,voiceovers/RU/mpvoice/RU_1mc_hq_secured_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_keepfighting,1,voiceovers/RU/mpvoice/RU_1mc_keep_fighting_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_keepfighting,2,voiceovers/RU/mpvoice/RU_1mc_keep_fighting_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_keepfighting,3,voiceovers/RU/mpvoice/RU_1mc_keep_fighting_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_keepfighting,4,voiceovers/RU/mpvoice/RU_1mc_keep_fighting_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_keepfighting,5,voiceovers/RU/mpvoice/RU_1mc_keep_fighting_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_king,,voiceovers/RU/mpvoice/RU_1mc_type_king_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lastalive,1,voiceovers/RU/mpvoice/RU_1mc_inform_last_alive_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lastalive,2,voiceovers/RU/mpvoice/RU_1mc_inform_last_alive_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lastalive,3,voiceovers/RU/mpvoice/RU_1mc_inform_last_alive_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lastalive,4,voiceovers/RU/mpvoice/RU_1mc_inform_last_alive_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lastalive,5,voiceovers/RU/mpvoice/RU_1mc_inform_last_alive_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lead_lost,1,voiceovers/RU/mpvoice/RU_1mc_lead_lost_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lead_taken,1,voiceovers/RU/mpvoice/RU_1mc_lead_taken_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing,1,voiceovers/RU/mpvoice/RU_1mc_losing_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing,2,voiceovers/RU/mpvoice/RU_1mc_losing_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing,3,voiceovers/RU/mpvoice/RU_1mc_losing_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing_a,1,voiceovers/RU/mpvoice/RU_1mc_losing_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing_a,2,voiceovers/RU/mpvoice/RU_1mc_losing_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing_b,1,voiceovers/RU/mpvoice/RU_1mc_losing_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing_b,2,voiceovers/RU/mpvoice/RU_1mc_losing_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing_c,1,voiceovers/RU/mpvoice/RU_1mc_losing_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_losing_c,2,voiceovers/RU/mpvoice/RU_1mc_losing_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lost_a,1,voiceovers/RU/mpvoice/RU_1mc_lost_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lost_a,2,voiceovers/RU/mpvoice/RU_1mc_lost_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lost_b,1,voiceovers/RU/mpvoice/RU_1mc_lost_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lost_b,2,voiceovers/RU/mpvoice/RU_1mc_lost_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lost_c,1,voiceovers/RU/mpvoice/RU_1mc_lost_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lost_c,2,voiceovers/RU/mpvoice/RU_1mc_lost_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lostobj,1,voiceovers/RU/mpvoice/RU_1mc_lostobj_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_lostobj,2,voiceovers/RU/mpvoice/RU_1mc_lostobj_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_mission_fail,1,voiceovers/RU/mpvoice/RU_1mc_mission_fail_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_mission_fail,2,voiceovers/RU/mpvoice/RU_1mc_mission_fail_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_mission_success,1,voiceovers/RU/mpvoice/RU_1mc_mission_success_05_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_mission_success,2,voiceovers/RU/mpvoice/RU_1mc_mission_success_06_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_new_positions,,voiceovers/RU/mpvoice/RU_1mc_new_position_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_obj_defend,1,voiceovers/RU/mpvoice/RU_1mc_obj_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_obj_destroy,1,voiceovers/RU/mpvoice/RU_1mc_obj_destroy_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_objs_defend,1,voiceovers/RU/mpvoice/RU_1mc_objs_defend_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_objs_destroy,1,voiceovers/RU/mpvoice/RU_1mc_objs_destroy_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_offense,1,voiceovers/RU/mpvoice/RU_1mc_offense_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_oldschool,1,voiceovers/RU/mpvoice/RU_1mc_title_oldschool_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_ourflag,1,voiceovers/RU/mpvoice/RU_1mc_ourflag_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_ourflag_capt,1,voiceovers/RU/mpvoice/RU_1mc_ourflag_capt_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_ourflag_drop,1,voiceovers/RU/mpvoice/RU_1mc_ourflag_drop_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_ourflag_return,1,voiceovers/RU/mpvoice/RU_1mc_ourflag_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_ouruavonline,1,voiceovers/RU/mpvoice/RU_1mc_ouruavonline_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_overtime,,voiceovers/RU/mpvoice/RU_1mc_overtime_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_positions_lock,1,voiceovers/RU/mpvoice/RU_1mc_secured_all_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_promoted,1,voiceovers/RU/mpvoice/RU_1mc_promoted_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_readytomove,1,voiceovers/RU/mpvoice/RU_1mc_readytomove_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_regroup,,voiceovers/RU/mpvoice/RU_1mc_regroup_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_sabotage,1,voiceovers/RU/mpvoice/RU_1mc_title_sabotage_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_searchdestroy,1,voiceovers/RU/mpvoice/RU_1mc_title_search_destroy_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_secure_a,1,voiceovers/RU/mpvoice/RU_1mc_secured_alpha_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_secure_a,2,voiceovers/RU/mpvoice/RU_1mc_secured_alpha_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_secure_b,1,voiceovers/RU/mpvoice/RU_1mc_secured_bravo_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_secure_b,2,voiceovers/RU/mpvoice/RU_1mc_secured_bravo_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_secure_c,1,voiceovers/RU/mpvoice/RU_1mc_secured_charlie_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_secure_c,2,voiceovers/RU/mpvoice/RU_1mc_secured_charlie_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_securedobj,1,voiceovers/RU/mpvoice/RU_1mc_securedobj_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_securedobj,2,voiceovers/RU/mpvoice/RU_1mc_securedobj_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_securing_a,1,voiceovers/RU/mpvoice/RU_1mc_securing_alpha_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_securing_a,2,voiceovers/RU/mpvoice/RU_1mc_securing_alpha_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_securing_b,1,voiceovers/RU/mpvoice/RU_1mc_securing_bravo_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_securing_b,2,voiceovers/RU/mpvoice/RU_1mc_securing_bravo_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_securing_c,1,voiceovers/RU/mpvoice/RU_1mc_securing_charlie_03_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_securing_c,2,voiceovers/RU/mpvoice/RU_1mc_securing_charlie_04_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_security_complete,1,voiceovers/RU/mpvoice/RU_1mc_secured_all_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_switching,,voiceovers/RU/mpvoice/RU_1mc_switching_sides_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_tactical,1,voiceovers/RU/mpvoice/RU_1mc_title_tactical_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_take_positions,1,voiceovers/RU/mpvoice/RU_1mc_lost_all_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_team_deathmtch,1,voiceovers/RU/mpvoice/RU_1mc_title_team_deathmtch_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_team_hardcore,1,voiceovers/RU/mpvoice/RU_1mc_title_team_hardcore_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_tied,1,voiceovers/RU/mpvoice/RU_1mc_tied_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_tied,2,voiceovers/RU/mpvoice/RU_1mc_tied_02_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_timesup,1,voiceovers/RU/mpvoice/RU_1mc_timesup_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_uavrecon,1,voiceovers/RU/mpvoice/RU_1mc_uavrecon_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_1mc_winning,1,voiceovers/RU/mpvoice/RU_1mc_winning_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+# Fighter Pilot 1,,,,,,,,,,,,,,,,,,,,,,,,
+RU_rfp_inform_attack_air,1,voiceovers/RU/mp/RU_rfp_inform_attack_air_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_rfp_inform_attack_bombs,1,voiceovers/RU/mp/RU_rfp_inform_attack_bombs_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+# Helicopter Pilot,,,,,,,,,,,,,,,,,,,,,,,,
+RU_rhp_inform_attack_scan,1,voiceovers/RU/mp/RU_rhp_inform_attack_scan_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_rhp_inform_return,1,voiceovers/RU/mp/RU_rhp_inform_return_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+RU_rhp_inform_hit_crash,1,voiceovers/RU/mp/RU_rhp_inform_hit_crash_01_R.wav,0.7,0.7,,,,360,600,announcer,streamed,,,master,all_mp,,,,,,radio,nowetlevel,,0.1
+
+
+# ***** MP BC,,,,,,,,,,,,,,,,,,,,,,,,
+
+# Marine Soldier,,,,,,,,,,,,,,,,,,,,,,,,
+
+US_1_inform_attack_flashbang,1,voiceovers/US/mp/US_1_inform_attack_flashbang_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_attack_smoke,1,voiceovers/US/mp/US_1_inform_attack_smoke_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_attack_stun,3,voiceovers/US/mp/US_1_inform_attack_grenade_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_attack_thwc4,1,voiceovers/US/mp/US_1_inform_attack_thwc4_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_attack_grenade,1,voiceovers/US/mp/US_1_inform_attack_grenade_01b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_attack_grenade,2,voiceovers/US/mp/US_1_inform_attack_grenade_01c.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_attack_grenade,3,voiceovers/US/mp/US_1_inform_attack_grenade_04.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_attack_grenade,4,voiceovers/US/mp/US_1_inform_attack_grenade_04b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_attack_grenade,5,voiceovers/US/mp/US_1_inform_attack_grenade_04c.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_killfirm_infantry,1,voiceovers/US/mp/US_1_inform_killfirm_infantry_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_killfirm_infantry,2,voiceovers/US/mp/US_1_inform_killfirm_infantry_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_killfirm_infantry,3,voiceovers/US/mp/US_1_inform_killfirm_infantry_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_killfirm_generic,1,voiceovers/US/mp/US_1_inform_killfirm_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_killfirm_generic,2,voiceovers/US/mp/US_1_inform_killfirm_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_plant_claymore,1,voiceovers/US/mp/US_1_inform_plant_claymore_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_reloading_generic,1,voiceovers/US/mp/US_1_inform_reloading_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_reloading_generic,2,voiceovers/US/mp/US_1_inform_reloading_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_reloading_generic,3,voiceovers/US/mp/US_1_inform_reloading_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_inform_suppressed_generic,1,voiceovers/US/mp/US_1_inform_suppressed_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_suppressed_generic,2,voiceovers/US/mp/US_1_inform_suppressed_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_suppressed_generic,3,voiceovers/US/mp/US_1_inform_suppressed_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_inform_suppressed_generic,4,voiceovers/US/mp/US_1_inform_suppressed_generic_04.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_order_action_suppress,1,voiceovers/US/mp/US_1_order_action_suppress_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_reaction_casualty_generic,1,voiceovers/US/mp/US_1_reaction_casualty_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_reaction_casualty_generic,2,voiceovers/US/mp/US_1_reaction_casualty_generic_01b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_reaction_casualty_generic,3,voiceovers/US/mp/US_1_reaction_casualty_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+US_1_reaction_casualty_generic,4,voiceovers/US/mp/US_1_reaction_casualty_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_1_threat_infantry_generic,1,voiceovers/US/mp/US_1_threat_infantry_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_cmd_attackleftflank,1,voiceovers/US/MP/US_1_attack_left_flank_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_cmd_attackrightflank,1,voiceovers/US/MP/US_1_attack_right_flank_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_cmd_suppressfire,1,voiceovers/US/MP/US_1_base_fire_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_cmd_fallback,1,voiceovers/US/MP/US_1_fall_back_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_cmd_holdposition,1,voiceovers/US/MP/US_1_hold_position_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_cmd_movein,1,voiceovers/US/MP/US_1_move_in_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_cmd_followme,1,voiceovers/US/MP/US_1_on_me_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_cmd_regroup,1,voiceovers/US/MP/US_1_regroup_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_rsp_areyoucrazy,1,voiceovers/US/MP/US_1_rsp_cmon_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_rsp_comeon,1,voiceovers/US/MP/US_1_rsp_cmon_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+,,,,,,,,,,,,,,,,,,,,,,,,
+US_mp_rsp_onmyway,1,voiceovers/US/MP/US_1_rsp_moving_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_rsp_nosir,1,voiceovers/US/MP/US_1_rsp_negative_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_rsp_greatshot,1,voiceovers/US/MP/US_1_rsp_nice_shot_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_rsp_yessir,1,voiceovers/US/MP/US_1_rsp_roger_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_rsp_sorry,1,voiceovers/US/MP/US_1_rsp_sorry_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_areasecure,1,voiceovers/US/MP/US_1_area_secure_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_enemyspotted,1,voiceovers/US/MP/US_1_contact_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_enemiesspotted,1,voiceovers/US/MP/US_1_contact_multiple_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+,,,,,,,,,,,,,,,,,,,,,,,,
+US_mp_stm_grenade,1,voiceovers/US/MP/US_1_contact_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_iminposition,1,voiceovers/US/MP/US_1_in_position_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_needreinforcements,1,voiceovers/US/MP/US_1_reinforcements_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_sniper,1,voiceovers/US/MP/US_1_sniper_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_holdyourfire,1,voiceovers/US/MP/US_1_watch_six_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_watchsix,1,voiceovers/US/MP/US_1_watch_six_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_rsp_tooklongenough,1,null.wav,0.7,0.7,,,,360,600,voice,,,,master,all_mp,,,,,,,,,0.1
+
+US_mp_stm_enemydown,1,voiceovers/US/mp/US_1_inform_killfirm_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+
+# SAS Soldier,,,,,,,,,,,,,,,,,,,,,,,,
+
+UK_1_inform_attack_flashbang,1,voiceovers/UK/mp/UK_1_inform_attack_flashbang_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_attack_grenade,1,voiceovers/UK/mp/UK_1_inform_attack_grenade_01b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_attack_grenade,2,voiceovers/UK/mp/UK_1_inform_attack_grenade_01c.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_attack_grenade,3,voiceovers/UK/mp/UK_1_inform_attack_grenade_04.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_attack_grenade,4,voiceovers/UK/mp/UK_1_inform_attack_grenade_04b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_attack_grenade,5,voiceovers/UK/mp/UK_1_inform_attack_grenade_04c.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_attack_smoke,1,voiceovers/UK/mp/UK_1_inform_attack_smoke_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_attack_stun,1,voiceovers/UK/mp/UK_1_inform_attack_grenade_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_attack_thwc4,1,voiceovers/UK/mp/UK_1_inform_attack_thwc4_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_killfirm_generic,1,voiceovers/UK/mp/UK_1_inform_killfirm_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_killfirm_generic,2,voiceovers/UK/mp/UK_1_inform_killfirm_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_killfirm_infantry,1,voiceovers/UK/mp/UK_1_inform_killfirm_infantry_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_killfirm_infantry,2,voiceovers/UK/mp/UK_1_inform_killfirm_infantry_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_killfirm_infantry,3,voiceovers/UK/mp/UK_1_inform_killfirm_infantry_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_plant_claymore,1,voiceovers/UK/mp/UK_1_inform_plant_claymore_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_reloading_generic,1,voiceovers/UK/mp/UK_1_inform_reloading_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_reloading_generic,2,voiceovers/UK/mp/UK_1_inform_reloading_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_reloading_generic,3,voiceovers/UK/mp/UK_1_inform_reloading_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_inform_suppressed_generic,1,voiceovers/UK/mp/UK_1_inform_suppressed_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_suppressed_generic,2,voiceovers/UK/mp/UK_1_inform_suppressed_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_suppressed_generic,3,voiceovers/UK/mp/UK_1_inform_suppressed_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_inform_suppressed_generic,4,voiceovers/UK/mp/UK_1_inform_suppressed_generic_04.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_order_action_suppress,1,voiceovers/UK/mp/UK_1_order_action_suppress_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_reaction_casualty_generic,1,voiceovers/UK/mp/UK_1_reaction_casualty_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_reaction_casualty_generic,2,voiceovers/UK/mp/UK_1_reaction_casualty_generic_01b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_reaction_casualty_generic,3,voiceovers/UK/mp/UK_1_reaction_casualty_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+UK_1_reaction_casualty_generic,4,voiceovers/UK/mp/UK_1_reaction_casualty_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_1_threat_infantry_generic,1,voiceovers/UK/mp/UK_1_threat_infantry_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_cmd_attackleftflank,1,voiceovers/UK/MP/UK_1_attack_left_flank_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_cmd_attackrightflank,1,voiceovers/UK/MP/UK_1_attack_right_flank_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_cmd_suppressfire,1,voiceovers/UK/MP/UK_1_base_fire_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_cmd_fallback,1,voiceovers/UK/MP/UK_1_fall_back_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_cmd_holdposition,1,voiceovers/UK/MP/UK_1_hold_position_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_cmd_movein,1,voiceovers/UK/MP/UK_1_move_in_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_cmd_followme,1,voiceovers/UK/MP/UK_1_on_me_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_cmd_regroup,1,voiceovers/UK/MP/UK_1_regroup_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_rsp_areyoucrazy,1,voiceovers/UK/MP/UK_1_rsp_cmon_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_rsp_comeon,1,voiceovers/UK/MP/UK_1_rsp_cmon_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_rsp_onmyway,1,voiceovers/UK/MP/UK_1_rsp_moving_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_rsp_nosir,1,voiceovers/UK/MP/UK_1_rsp_negative_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_rsp_greatshot,1,voiceovers/UK/MP/UK_1_rsp_nice_shot_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_rsp_yessir,1,voiceovers/UK/MP/UK_1_rsp_roger_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_rsp_sorry,1,voiceovers/UK/MP/UK_1_rsp_sorry_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_areasecure,1,voiceovers/UK/MP/UK_1_area_secure_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_enemyspotted,1,voiceovers/UK/MP/UK_1_contact_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_enemiesspotted,1,voiceovers/UK/MP/UK_1_contact_multiple_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_grenade,1,voiceovers/UK/MP/UK_1_contact_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_iminposition,1,voiceovers/UK/MP/UK_1_in_position_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_needreinforcements,1,voiceovers/UK/MP/UK_1_reinforcements_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_sniper,1,voiceovers/UK/MP/UK_1_sniper_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_holdyourfire,1,voiceovers/UK/MP/UK_1_watch_six_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_watchsix,1,voiceovers/UK/MP/UK_1_watch_six_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_stm_enemydown,1,null.wav,0.7,0.7,,,,360,600,voice,,,,master,all_mp,,,,,,,,,0.1
+
+UK_mp_rsp_tooklongenough,1,voiceovers/UK/mp/UK_1_inform_killfirm_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+
+# Arab Battlechatter,,,,,,,,,,,,,,,,,,,,,,,,
+
+AB_1_inform_attack_flashbang,1,voiceovers/AB/mp/AB_1_inform_attack_flash_01_a.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_attack_grenade,1,voiceovers/AB/mp/AB_1_inform_attack_grenade_01b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_attack_grenade,2,voiceovers/AB/mp/AB_1_inform_attack_grenade_01c.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_attack_grenade,3,voiceovers/AB/mp/AB_1_inform_attack_grenade_04.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_attack_grenade,4,voiceovers/AB/mp/AB_1_inform_attack_grenade_04b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_attack_grenade,5,voiceovers/AB/mp/AB_1_inform_attack_grenade_04c.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_attack_smoke,1,voiceovers/AB/mp/AB_1_inform_attack_smoke_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_attack_stun,1,voiceovers/AB/mp/AB_1_inform_attack_grenade_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_attack_thwc4,1,voiceovers/AB/mp/AB_1_inform_attack_thwc4_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_killfirm_generic,1,voiceovers/AB/mp/AB_1_inform_killfirm_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_killfirm_generic,2,voiceovers/AB/mp/AB_1_inform_killfirm_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_killfirm_infantry,1,voiceovers/AB/mp/AB_1_inform_killfirm_infantry_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_killfirm_infantry,2,voiceovers/AB/mp/AB_1_inform_killfirm_infantry_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_killfirm_infantry,3,voiceovers/AB/mp/AB_1_inform_killfirm_infantry_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_plant_claymore,1,voiceovers/AB/mp/AB_1_inform_plant_claymore_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_reloading_generic,1,voiceovers/AB/mp/AB_1_inform_reloading_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_reloading_generic,2,voiceovers/AB/mp/AB_1_inform_reloading_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_reloading_generic,3,voiceovers/AB/mp/AB_1_inform_reloading_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_inform_suppressed_generic,1,voiceovers/AB/mp/AB_1_inform_suppressed_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_suppressed_generic,2,voiceovers/AB/mp/AB_1_inform_suppressed_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_suppressed_generic,3,voiceovers/AB/mp/AB_1_inform_suppressed_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_inform_suppressed_generic,4,voiceovers/AB/mp/AB_1_inform_suppressed_generic_04.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_order_action_suppress,1,voiceovers/AB/mp/AB_1_order_action_suppress_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_reaction_casualty_generic,1,voiceovers/AB/mp/AB_1_reaction_casualty_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_reaction_casualty_generic,2,voiceovers/AB/mp/AB_1_reaction_casualty_generic_01b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_reaction_casualty_generic,3,voiceovers/AB/mp/AB_1_reaction_casualty_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+AB_1_reaction_casualty_generic,4,voiceovers/AB/mp/AB_1_reaction_casualty_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_1_threat_infantry_generic,1,voiceovers/AB/mp/AB_1_threat_infantry_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_cmd_followme,1,voiceovers/AB/mp/AB_1_on_me_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_cmd_movein,1,voiceovers/AB/mp/AB_1_move_in_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_cmd_fallback,1,voiceovers/AB/mp/AB_1_fall_back_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_cmd_suppressfire,1,voiceovers/AB/mp/AB_1_base_fire_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_cmd_attackleftflank,1,voiceovers/AB/mp/AB_1_attack_left_flank_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_cmd_attackrightflank,1,voiceovers/AB/mp/AB_1_attack_right_flank_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_cmd_holdposition,1,voiceovers/AB/mp/AB_1_hold_position_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_cmd_regroup,1,voiceovers/AB/mp/AB_1_regroup_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_enemyspotted,1,voiceovers/AB/mp/AB_1_contact_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_enemiesspotted,1,voiceovers/AB/mp/AB_1_contact_multiple_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_iminposition,1,voiceovers/AB/mp/AB_1_in_position_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_areasecure,1,voiceovers/AB/mp/AB_1_area_secure_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_grenade,1,voiceovers/AB/mp/AB_1_contact_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_sniper,1,voiceovers/AB/mp/AB_1_sniper_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_needreinforcements,1,voiceovers/AB/mp/AB_1_reinforcements_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_holdyourfire,1,voiceovers/AB/mp/AB_1_watch_six_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_watchsix,1,voiceovers/AB/mp/AB_1_watch_six_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_rsp_yessir,1,voiceovers/AB/mp/AB_1_rsp_roger_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_rsp_nosir,1,voiceovers/AB/mp/AB_1_rsp_negative_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_rsp_onmyway,1,voiceovers/AB/mp/AB_1_rsp_moving_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_rsp_sorry,1,voiceovers/AB/mp/AB_1_rsp_sorry_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_rsp_greatshot,1,voiceovers/AB/mp/AB_1_rsp_nice_shot_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_rsp_areyoucrazy,1,voiceovers/AB/mp/AB_1_rsp_cmon_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_rsp_comeon,1,voiceovers/AB/mp/AB_1_rsp_cmon_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_rsp_tooklongenough,1,null.wav,0.7,0.7,,,,360,600,voice,,,,master,all_mp,,,,,,,,,0.1
+
+AB_mp_stm_enemydown,1,voiceovers/AB/mp/AB_1_inform_killfirm_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+
+# Russian Soldier,,,,,,,,,,,,,,,,,,,,,,,,
+
+RU_1_inform_attack_flashbang,1,voiceovers/RU/mp/RU_1_inform_attack_flashbang_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_attack_grenade,1,voiceovers/RU/mp/RU_1_inform_attack_grenade_01b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_attack_grenade,2,voiceovers/RU/mp/RU_1_inform_attack_grenade_01c.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_attack_grenade,3,voiceovers/RU/mp/RU_1_inform_attack_grenade_04.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_attack_grenade,4,voiceovers/RU/mp/RU_1_inform_attack_grenade_04b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_attack_smoke,1,voiceovers/RU/mp/RU_1_inform_attack_smoke_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_attack_stun,1,voiceovers/RU/mp/RU_1_inform_attack_grenade_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_attack_thwc4,1,voiceovers/RU/mp/RU_1_inform_attack_thwc4_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_killfirm_generic,1,voiceovers/RU/mp/RU_1_inform_killfirm_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_killfirm_generic,2,voiceovers/RU/mp/RU_1_inform_killfirm_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_killfirm_infantry,1,voiceovers/RU/mp/RU_1_inform_killfirm_infantry_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_killfirm_infantry,2,voiceovers/RU/mp/RU_1_inform_killfirm_infantry_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_killfirm_infantry,3,voiceovers/RU/mp/RU_1_inform_killfirm_infantry_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_plant_claymore,1,voiceovers/RU/mp/RU_1_inform_plant_claymore_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_reloading_generic,1,voiceovers/RU/mp/RU_1_inform_reloading_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_reloading_generic,2,voiceovers/RU/mp/RU_1_inform_reloading_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_reloading_generic,3,voiceovers/RU/mp/RU_1_inform_reloading_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_inform_suppressed_generic,1,voiceovers/RU/mp/RU_1_inform_suppressed_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_suppressed_generic,2,voiceovers/RU/mp/RU_1_inform_suppressed_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_suppressed_generic,3,voiceovers/RU/mp/RU_1_inform_suppressed_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_inform_suppressed_generic,4,voiceovers/RU/mp/RU_1_inform_suppressed_generic_04.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_order_action_suppress,1,voiceovers/RU/mp/RU_1_order_action_suppress_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_reaction_casualty_generic,1,voiceovers/RU/mp/RU_1_reaction_casualty_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_reaction_casualty_generic,2,voiceovers/RU/mp/RU_1_reaction_casualty_generic_01b.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_reaction_casualty_generic,3,voiceovers/RU/mp/RU_1_reaction_casualty_generic_02.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+RU_1_reaction_casualty_generic,4,voiceovers/RU/mp/RU_1_reaction_casualty_generic_03.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_1_threat_infantry_generic,1,voiceovers/RU/mp/RU_1_threat_infantry_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_cmd_attackleftflank,1,voiceovers/RU/MP/RU_1_attack_left_flank_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_cmd_attackrightflank,1,voiceovers/RU/MP/RU_1_attack_right_flank_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_cmd_suppressfire,1,voiceovers/RU/MP/RU_1_base_fire_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_cmd_fallback,1,voiceovers/RU/MP/RU_1_fall_back_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_cmd_holdposition,1,voiceovers/RU/MP/RU_1_hold_position_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_cmd_movein,1,voiceovers/RU/MP/RU_1_move_in_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_cmd_followme,1,voiceovers/RU/MP/RU_1_on_me_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_cmd_regroup,1,voiceovers/RU/MP/RU_1_regroup_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_rsp_areyoucrazy,1,voiceovers/RU/MP/RU_1_rsp_cmon_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_rsp_comeon,1,voiceovers/RU/MP/RU_1_rsp_cmon_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_rsp_onmyway,1,voiceovers/RU/MP/RU_1_rsp_moving_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_rsp_nosir,1,voiceovers/RU/MP/RU_1_rsp_negative_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_rsp_greatshot,1,voiceovers/RU/MP/RU_1_rsp_nice_shot_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_rsp_yessir,1,voiceovers/RU/MP/RU_1_rsp_roger_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_rsp_sorry,1,voiceovers/RU/MP/RU_1_rsp_sorry_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_areasecure,1,voiceovers/RU/MP/RU_1_area_secure_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_enemyspotted,1,voiceovers/RU/MP/RU_1_contact_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_enemiesspotted,1,voiceovers/RU/MP/RU_1_contact_multiple_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_grenade,1,voiceovers/RU/MP/RU_1_contact_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_iminposition,1,voiceovers/RU/MP/RU_1_in_position_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_needreinforcements,1,voiceovers/RU/MP/RU_1_reinforcements_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_sniper,1,voiceovers/RU/MP/RU_1_sniper_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_holdyourfire,1,voiceovers/RU/MP/RU_1_watch_six_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_watchsix,1,voiceovers/RU/MP/RU_1_watch_six_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_rsp_tooklongenough,1,null.wav,0.7,0.7,,,,360,600,voice,,,,master,all_mp,,,,,,,,,0.1
+
+RU_mp_stm_enemydown,1,voiceovers/RU/mp/RU_1_inform_killfirm_generic_01.wav,0.7,0.7,,,,360,600,voice,streamed,,,master,all_mp,,,,,,,,,0.1

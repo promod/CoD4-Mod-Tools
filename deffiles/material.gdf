@@ -1,0 +1,2076 @@
+#name "material"
+#dll "pc" "material"
+#dll "ps3" "material"
+#dll "xenon" "material_xenon"
+#dll "all" "material_properties"
+#source_dir "material_source"
+#target_dir "materials/"
+#target_dir "images/"
+#target_dir "material_properties/"
+#file_ext "*"
+#version 98
+
+string "material.template" template
+
+enum
+{
+	"world phong",
+	"model phong",
+	"model ambient",
+	"world unlit",
+	"model unlit",
+	"unlit",
+	"2d",
+	"impact mark",
+	"effect",
+	"distortion",
+	"particle cloud",
+	"tools",
+	"sky",
+	"water",
+	"objective",
+	"custom"
+} materialType
+
+// Locale specifications.  Adding a new locale also requires adding a checkbox for it.
+// Locale specifications must match the locales in 'locale.txt' exactly, with spaces
+// replaced by '_' and with 'locale_' prefixed.
+int 0 0 1 locale_case
+int 0 0 1 locale_test
+int 0 0 1 locale_tools
+int 0 0 1 locale_decal
+
+int 0 0 1 locale_Middle_East
+int 0 0 1 locale_London
+int 0 0 1 locale_Kiev
+
+int 0 0 1 locale_Chechnya
+int 0 0 1 locale_Generic
+int 0 0 1 locale_Duhoc
+int 0 0 1 locale_Villers
+
+int 0 0 1 locale_Egypt
+int 0 0 1 locale_Libya
+int 0 0 1 locale_Tunisia
+
+int 0 0 1 locale_Industrial
+int 0 0 1 locale_Poland
+
+int 0 0 1 locale_Modern_America
+
+// Usage specifications.  Adding a new usage only requires changing this list.
+enum
+{
+	"<not in editor>",
+	"case",
+	"tools",
+	"------------------------",
+	"door",
+	"floor",
+	"ceiling",
+	"roof",
+	"interior wall",
+	"interior trim",
+	"exterior wall",
+	"exterior trim",
+	"window",
+	"poster",
+	"sign",
+	"------------------------",
+	"core",
+	"damage",
+	"------------------------",
+	"trench",
+	"fence",
+	"background",
+	"foliage",
+	"ground",
+	"liquid",
+	"road",
+	"rock",
+	"sky",
+	"------------------------",
+	"barrel",
+	"crate"
+} usage
+
+enum {
+	"<error>",
+	"<none>",
+	"asphalt",
+	"brick",
+	"carpet",
+	"ceramic",
+	"cloth",
+	"concrete",
+	"dirt",
+	"flesh",
+	"foliage",
+	"glass",
+	"grass",
+	"gravel",
+	"ice",
+	"metal",
+	"mud",
+	"paper",
+	"plaster",
+	"plastic",
+	"rock",
+	"rubber",
+	"sand",
+	"snow",
+	"water",
+	"wood" | "bark",
+	"cushion",
+	"fruit",
+	"paintedmetal"
+} surfaceType
+
+int 0 0 1 missileClip
+int 0 0 1 bulletClip
+int 0 0 1 playerClip
+int 0 0 1 aiClip
+int 0 0 1 vehicleClip
+int 0 0 1 itemClip
+int 0 0 1 canShootClip
+int 0 0 1 aiSightClip
+
+int 0 0 1 noFallDamage
+int 0 0 1 noSteps
+int 0 0 1 noImpact
+int 0 0 1 noMarks
+int 0 0 1 noPenetrate
+int 0 0 1 noDrop
+int 0 0 1 slick
+int 0 0 1 ladder
+int 0 0 1 mantleOn
+int 0 0 1 mantleOver
+
+int 0 0 1 noLightmap
+int 0 0 1 noDynamicLight
+int 0 0 1 noCastShadow
+int 0 0 1 noReceiveDynamicShadow
+int 0 0 1 noDraw
+int 0 0 1 noFog
+int 0 0 1 drawToggle
+int 0 0 1 sky
+int 0 0 1 radialNormals
+
+int 0 0 1 nonColliding
+int 0 0 1 nonSolid
+int 0 0 1 transparent
+int 0 0 1 detail
+int 0 0 1 structural
+int 0 0 1 portal
+int 0 0 1 lightPortal
+int 0 0 1 origin
+int 0 0 1 physicsGeom
+int 0 0 1 hdrPortal
+int 0 0 1 hasEditorMaterial
+
+int 0 0 1 zFeather
+int 40 0 1024 zFeatherDepth
+
+int 0 -1024 1024 eyeOffsetDepth
+
+int 0 0 1 outdoorOnly
+int 0 0 1 falloff
+float 35.0 0.0 90.0 falloffBeginAngle
+float 65.0 0.0 90.0 falloffEndAngle
+
+int 0 0 1 useSpotLight
+
+int 0 0 1 distFalloff
+float 200.0 0.0 10000.0 distFalloffBeginDistance
+float 10.0 0.0 10000.0 distFalloffEndDistance
+color 1 1 1 1 falloffBeginColor
+color 0.5 0.5 0.5 0.5 falloffEndColor
+
+int 0 0 1 texScroll
+
+float 8 0.125 64 detailScaleX
+float 8 0.125 64 detailScaleY
+
+float 0.2 0.0 1.0 envMapMin
+float 1.0 0.0 3.0 envMapMax
+float 2.5 0.05 20.0 envMapExponent
+
+int 0 0 1 useLegacyNormalEncoding
+
+enum {
+	"<default>*",
+	"distortion",
+	"opaque water",
+	"boat hull",
+	"opaque ambient",
+	"opaque",
+	"sky",
+	"skybox - sun / moon",
+	"skybox - clouds",
+	"skybox - horizon",
+	"decal - bottom 1",
+	"decal - bottom 2",
+	"decal - bottom 3",
+	"decal - static decal",
+	"decal - middle 1",
+	"decal - middle 2",
+	"decal - middle 3",
+	"decal - weapon impact",
+	"decal - top 1",
+	"decal - top 2",
+	"decal - top 3",
+	"multiplicative",
+	"banner / curtain",
+	"hair",
+	"underwater",
+	"transparent water",
+	"corona",
+	"window inside",
+	"window outside",
+	"before effects - bottom",
+	"before effects - middle",
+	"before effects - top",
+	"blend / additive",
+	"effect - auto sort",
+	"after effects - bottom",
+	"after effects - middle",
+	"after effects - top",
+	"viewmodel effect"
+} sort
+
+string customTemplate
+string customString
+
+color 1 1 1 1 colorTint
+string colorMap
+string detailMap
+string normalMap
+string specColorMap
+string cosinePowerMap
+int 100 10 100 specColorStrength
+int 100 10 100 cosinePowerStrength
+
+enum { "tile both*", "tile horizontal", "tile vertical", "no tile" } tileColor
+enum { "tile both*", "tile horizontal", "tile vertical", "no tile" } tileNormal
+enum { "tile both*", "tile horizontal", "tile vertical", "no tile" } tileSpecular
+
+enum { 	"mip standard (2x bilinear)*" | "<auto filter>*" | "bilinear" | "trilinear" | "anisotropic",
+	"mip expensive (4x bilinear)",
+	"mip more expensive (2x trilinear)",
+	"mip most expensive (4x trilinear)",
+	"nomip nearest" | "nearest",
+	"nomip bilinear" | "linear" } filterColor
+
+enum { 	"mip standard (2x bilinear)*" | "<auto filter>*" | "bilinear" | "trilinear" | "anisotropic",
+	"mip expensive (4x bilinear)",
+	"mip more expensive (2x trilinear)",
+	"mip most expensive (4x trilinear)",
+	"nomip nearest" | "nearest",
+	"nomip bilinear" | "linear" } filterDetail
+
+enum { 	"mip standard (2x bilinear)*" | "<auto filter>*" | "bilinear" | "trilinear" | "anisotropic",
+	"mip expensive (4x bilinear)",
+	"mip more expensive (2x trilinear)",
+	"mip most expensive (4x trilinear)",
+	"nomip nearest" | "nearest",
+	"nomip bilinear" | "linear" } filterNormal
+
+enum { 	"mip standard (2x bilinear)*" | "<auto filter>*" | "bilinear" | "trilinear" | "anisotropic",
+	"mip expensive (4x bilinear)",
+	"mip more expensive (2x trilinear)",
+	"mip most expensive (4x trilinear)",
+	"nomip nearest" | "nearest",
+	"nomip bilinear" | "linear" } filterSpecular
+
+int 0 0 1 nopicmipColor
+int 0 0 1 nopicmipDetail
+int 0 0 1 nopicmipNormal
+int 0 0 1 nopicmipSpecular
+
+int 0 0 1 noStreamColor
+
+float 0 0 65536 tessSize
+int 1 1 64 textureAtlasRowCount
+int 1 1 64 textureAtlasColumnCount
+float 0.5 0 1000 distortionScaleX
+float 0.5 0 1000 distortionScaleY
+enum {
+	"scales distortion strength*",
+	"tints distorted pixel color"
+} distortionColorBehavior
+
+enum { "64", "32", "16", "8", "4" } waterMapTextureWidth
+float 37 0 10000 waterMapHorizontalWorldLength
+float 37 0 10000 waterMapVerticalWorldLength
+float 76 0 10000 waterMapWindSpeed
+float 1 0 1 waterMapWindDirectionX
+float 0 0 1 waterMapWindDirectionY
+float 0.06 0 10000 waterMapAmplitude
+
+float 0.2 0 1 waterColorR
+float 0.3 0 1 waterColorG
+float 0.4 0 1 waterColorB
+
+enum { "<auto compression>*", "Uncompressed", "Alpha Only", "DXT1", "DXT3", "DXT5" } formatColor
+enum { "<auto compression>*", "Uncompressed", "Alpha Only", "DXT1", "DXT3", "DXT5" } formatDetail
+enum { "<auto compression>*", "Uncompressed", "DXT3", "DXT5" } formatSpecular
+enum { "<auto compression>*", "Uncompressed" } formatNormal
+
+enum { "Replace*", "Blend", "Add", "Multiply", "Screen Add", "Custom" } blendFunc
+enum { "Add*", "Subtract", "RevSubtract", "Min", "Max", "Disable" } customBlendOpRgb
+enum { "Add*", "Subtract", "RevSubtract", "Min", "Max", "Disable" } customBlendOpAlpha
+enum { "One*", "Zero", "SrcColor", "InvSrcColor", "SrcAlpha", "InvSrcAlpha", "DestAlpha", "InvDestAlpha", "DestColor", "InvDestColor" } srcCustomBlendFunc
+enum { "One*", "Zero", "SrcColor", "InvSrcColor", "SrcAlpha", "InvSrcAlpha", "DestAlpha", "InvDestAlpha", "DestColor", "InvDestColor" } destCustomBlendFunc
+enum { "One*", "Zero", "SrcColor", "InvSrcColor", "SrcAlpha", "InvSrcAlpha", "DestAlpha", "InvDestAlpha", "DestColor", "InvDestColor" } srcCustomBlendFuncAlpha
+enum { "One*", "Zero", "SrcColor", "InvSrcColor", "SrcAlpha", "InvSrcAlpha", "DestAlpha", "InvDestAlpha", "DestColor", "InvDestColor" } destCustomBlendFuncAlpha
+
+enum { "Always*", "GE128" } alphaTest
+enum { "LessEqual*", "Less", "Equal", "Always", "Disable" } depthTest
+enum { "<auto>*", "On", "Off" } depthWrite
+enum { "Back*", "Front", "None" } cullFace
+enum { "None*", "Static Decal", "Weapon Impact" } polygonOffset
+
+enum { "<none>*", "PC / Xenon" } showAdvancedOptions
+
+enum { "Enable", "Disable" } colorWriteRed
+enum { "Enable", "Disable" } colorWriteGreen
+enum { "Enable", "Disable" } colorWriteBlue
+enum { "Enable", "Disable" } colorWriteAlpha
+
+enum { "Keep", "Zero", "Replace", "IncrSat", "DecrSat", "Invert", "Incr", "Decr" } stencilOpFail1
+enum { "Keep", "Zero", "Replace", "IncrSat", "DecrSat", "Invert", "Incr", "Decr" } stencilOpZFail1
+enum { "Keep", "Zero", "Replace", "IncrSat", "DecrSat", "Invert", "Incr", "Decr" } stencilOpPass1
+enum { "Keep", "Zero", "Replace", "IncrSat", "DecrSat", "Invert", "Incr", "Decr" } stencilOpFail2
+enum { "Keep", "Zero", "Replace", "IncrSat", "DecrSat", "Invert", "Incr", "Decr" } stencilOpZFail2
+enum { "Keep", "Zero", "Replace", "IncrSat", "DecrSat", "Invert", "Incr", "Decr" } stencilOpPass2
+
+enum { "Always", "Never", "Less", "Equal", "LessEqual", "Greater", "NotEqual", "GreaterEqual" } stencilFunc1
+enum { "Always", "Never", "Less", "Equal", "LessEqual", "Greater", "NotEqual", "GreaterEqual" } stencilFunc2
+
+enum { "Disable", "One-sided", "Two-sided" } stencil
+
+vcontainer
+{
+	hcontainer
+	{
+		scrollbox( materialType )
+		[
+			exec
+			{
+				width( 215 )
+				labelwidth( 100 )
+			}
+		]
+		scrollbox( sort )
+		[
+			exec
+			{
+				width( 230 )
+				labelwidth( 55 )
+				unsorted()
+			}
+		]
+	}
+	hcontainer
+	{
+		scrollbox( surfaceType )
+		[
+			exec
+			{
+				tooltip( "Sets the bullet collision particle for your material." )
+				width( 215 )
+				labelwidth( 100 )
+			}
+		]
+		scrollbox( usage )
+		[
+			exec
+			{
+				tooltip("Sets what filters show this material in Radiant")
+				width( 230 )
+				labelwidth( 55 )
+				unsorted()
+			}
+		]
+	}
+	vcontainer
+	{
+		hcontainer
+		{
+			checkbox( locale_case )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "case" )
+				}
+			]
+			checkbox( locale_test )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "test" )
+				}
+			]
+			checkbox( locale_tools )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "tools" )
+				}
+			]
+			checkbox( locale_decal )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "decal" )
+				}
+			]
+		}
+		hcontainer
+		{
+			checkbox( locale_Middle_East )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Middle East" )
+				}
+			]
+			checkbox( locale_London )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "London" )
+				}
+			]
+
+		}
+		hcontainer
+		{
+
+
+
+		}
+		hcontainer
+		{
+			checkbox( locale_Chechnya )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Chechnya" )
+				}
+			]
+			checkbox( locale_Generic )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Generic" )
+				}
+			]
+			checkbox( locale_Duhoc )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Duhoc" )
+				}
+			]
+			checkbox( locale_Villers )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Villers" )
+				}
+			]
+		}
+		hcontainer
+		{
+			checkbox( locale_Egypt )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Egypt" )
+				}
+			]
+			checkbox( locale_Libya )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Libya" )
+				}
+			]
+			checkbox( locale_Tunisia )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Tunisia" )
+				}
+			]
+		}
+		hcontainer
+		{
+			checkbox( locale_Industrial )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Industrial" )
+				}
+			]
+			checkbox( locale_Poland )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Poland" )
+				}
+			]
+			checkbox( locale_Modern_America )
+			[
+				exec
+				{
+					righttext()
+					height( 15 )
+					label( "Modern America" )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			visible( materialType != "2d" && materialType != "particle cloud" && materialType != "objective" )
+			groupBox( "Locales (select all appropriate for world materials)" )
+		}
+	]
+
+	vcontainer
+	{
+		hcontainer
+		{
+			scrollbox( blendFunc )
+			[
+				exec
+				{
+					tooltip("Transparancy settings, Replace is for most materials, Blend is for standard transparency like glass, multiply is used for grime decals, the rest are mostly for fx")
+					unsorted()
+					width( 215 )
+					labelwidth( 100 )
+				}
+			]
+			scrollbox( cullFace )
+			[
+				exec
+				{
+					tooltip("Back will only draw outside faces, Front will only draw inside faces, None will draw both.")
+					width( 215 )
+					labelwidth( 100 )
+				}
+			]
+			scrollbox( polygonOffset )
+			[
+				exec
+				{
+					width( 265 )
+					labelwidth( 100 )
+				}
+			]
+		}
+		hcontainer
+		{
+			scrollbox( customBlendOpRgb )
+			[
+				exec
+				{
+					width( 215 )
+					label( "blendOp" )
+					labelwidth( 100 )
+				}
+			]
+			scrollbox( srcCustomBlendFunc )
+			[
+				exec
+				{
+					width( 215 )
+					label( "srcBlend" )
+					labelwidth( 100 )
+				}
+			]
+			scrollbox( destCustomBlendFunc )
+			[
+				exec
+				{
+					width( 215 )
+					label( "destBlend" )
+					labelwidth( 100 )
+				}
+			]
+		}
+		[
+			exec
+			{
+				visible( blendFunc == "Custom" )
+			}
+		]
+		hcontainer
+		{
+			scrollbox( customBlendOpAlpha )
+			[
+				exec
+				{
+					width( 215 )
+					label( "separateAlpha" )
+					labelwidth( 100 )
+				}
+			]
+			scrollbox( srcCustomBlendFuncAlpha )
+			[
+				exec
+				{
+					width( 215 )
+					label( "srcBlend" )
+					labelwidth( 100 )
+				}
+			]
+			scrollbox( destCustomBlendFuncAlpha )
+			[
+				exec
+				{
+					width( 215 )
+					label( "destBlend" )
+					labelwidth( 100 )
+				}
+			]
+		}
+		[
+			exec
+			{
+				visible( blendFunc == "Custom" )
+			}
+		]
+		hcontainer
+		{
+			scrollbox( alphaTest )
+			[
+				exec
+				{
+					tooltip("GE128 = punchout alpha, black and white.  Always = everything else")
+					width( 215 )
+					labelwidth( 100 )
+				}
+			]
+			scrollbox( depthTest )
+			[
+				exec
+				{
+					width( 215 )
+					labelwidth( 100 )
+				}
+			]
+			scrollbox( depthWrite )
+			[
+				exec
+				{
+					tooltip("Turns z buffer info on or off, leave on default unless you know what you are doing!")
+					width( 175 )
+					labelwidth( 100 )
+				}
+			]
+			floatedit( tessSize, 32, 256 )
+			[
+				exec
+				{
+					width( 125 )
+					labelwidth( 65 )
+					visible( materialType == "world phong" || materialType == "custom" )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			visible( materialType != "sky" )
+			groupBox( "Framebuffer operations" )
+		}
+	]
+	vcontainer
+	{
+		edit( customTemplate )
+		[
+			exec
+			{
+				width( 450 )
+				label( "Template" )
+				labelwidth( 100 )
+			}
+		]
+		edit( customString )
+		[
+			exec
+			{
+				width( 450 )
+				label( "String" )
+				labelwidth( 100 )
+			}
+		]
+	}
+	[
+		exec
+		{
+			visible( materialType == "custom" )
+			groupBox( "Custom Settings" )
+		}
+	]
+	vcontainer
+	{
+		spinedit( textureAtlasRowCount, 1, 5 )
+		[
+			exec
+			{
+				width( 150 )
+				labelwidth( 100 )
+				label( "Row Count" )
+			}
+		]
+		spinedit( textureAtlasColumnCount, 1, 5 )
+		[
+			exec
+			{
+				width( 150 )
+				labelwidth( 100 )
+				label( "Column Count" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Texture Atlas Settings" )
+			visible( materialType == "effect" || materialType == "distortion" || materialType == "custom" )
+		}
+	]
+	hcontainer
+	{
+		vcontainer
+		{
+			floatedit( distortionScaleX, 1, 10 )
+			[
+				exec
+				{
+					width( 150 )
+					labelwidth( 100 )
+					label( "Scale X" )
+				}
+			]
+			floatedit( distortionScaleY, 1, 10 )
+			[
+				exec
+				{
+					width( 150 )
+					labelwidth( 100 )
+					label( "Scale Y" )
+				}
+			]
+		}
+		scrollbox( distortionColorBehavior )
+		[
+			exec
+			{
+				width( 300 )
+				labelwidth( 100 )
+				label( "Vertex Color..." )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Distortion Settings" )
+			visible( materialType == "distortion" || materialType == "custom" )
+		}
+	]
+	vcontainer
+	{
+		checkbox( falloff )
+		[
+			exec
+			{
+				righttext()
+				height( 15 )
+				label( "Enable" )
+			}
+		]
+		floatedit( falloffBeginAngle, 0, 90 )
+		[
+			exec
+			{
+				visible( falloff == 1 )
+				width( 370 )
+				labelwidth( 310 )
+				label( "Opaque Angle (0 is head-on, 90 is side-on)" )
+			}
+		]
+		floatedit( falloffEndAngle, 0, 90 )
+		[
+			exec
+			{
+				visible( falloff == 1 )
+				width( 370 )
+				labelwidth( 310 )
+				label( "Invisible Angle (0 is head-on, 90 is side-on)" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "God Ray Falloff" )
+			visible( materialType == "effect" || materialType == "model unlit" || materialType == "world unlit" || materialType == "custom" )
+		}
+	]
+	vcontainer
+	{
+		checkbox( distFalloff )
+		[
+			exec
+			{
+				righttext()
+				height( 15 )
+				label( "Enable" )
+			}
+		]
+		floatedit( distFalloffBeginDistance, 0, 10000 )
+		[
+			exec
+			{
+				visible( distFalloff == 1 )
+				width( 370 )
+				labelwidth( 310 )
+				label( "Opaque Distance" )
+			}
+		]
+		floatedit( distFalloffEndDistance, 0, 10000 )
+		[
+			exec
+			{
+				visible( distFalloff == 1 )
+				width( 370 )
+				labelwidth( 310 )
+				label( "Invisible Distance" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Distance (hdrPortal) Falloff" )
+			visible( materialType == "world unlit" || materialType == "custom" )
+			visible( hdrPortal == 1 )
+		}
+	]
+	vcontainer
+	{
+		colorpicker( falloffBeginColor )
+		[
+			exec
+			{
+				width( 370 )
+				labelwidth( 310 )
+				label( "Opaque Color" )
+			}
+		]
+		colorpicker( falloffEndColor )
+		[
+			exec
+			{
+				width( 370 )
+				labelwidth( 310 )
+				label( "Transparent Color" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Falloff Colors" )
+			visible( (falloff == 1 || distFalloff == 1) && (materialType == "effect" || materialType == "model unlit" || materialType == "world unlit" || materialType == "custom") )
+		}
+	]
+	vcontainer
+	{
+		checkbox( zFeather )
+		[
+			exec
+			{
+				righttext()
+				height( 15 )
+				label( "Enable" )
+			}
+		]
+		spinedit( zFeatherDepth, 1, 10 )
+		[
+			exec
+			{
+				width( 150 )
+				labelwidth( 100 )
+				label( "Depth" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Z Feathering" )
+			visible( materialType == "effect" || materialType == "custom" )
+		}
+	]
+	vcontainer
+	{
+		spinedit( eyeOffsetDepth, 1, 10 )
+		[
+			exec
+			{
+				width( 150 )
+				labelwidth( 100 )
+				label( "Depth" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Eye Offset" )
+			visible( materialType == "effect" || materialType == "model unlit" || materialType == "world unlit" || materialType == "custom" )
+		}
+	]
+	vcontainer
+	{
+		checkbox( outdoorOnly )
+		[
+			exec
+			{
+				righttext()
+				height( 15 )
+				label( "Outdoor Only" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			visible( ((materialType == "effect" || materialType == "model unlit" || materialType == "world unlit") && zFeather == 1) || materialType == "particle cloud" )
+		}
+	]
+	vcontainer
+	{
+		checkbox( useSpotLight )
+		[
+			exec
+			{
+				righttext()
+				height( 15 )
+				label( "Use spot light" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			visible( materialType == "effect" || materialType == "particle cloud" )
+		}
+	]
+	vcontainer
+	{
+		hcontainer
+		{
+			fileedit( colorMap )
+			[
+				exec
+				{
+					width( 450 )
+					labelwidth( 0 )
+				}
+			]
+			colorpicker( colorTint )
+			[
+				exec
+				{
+					labelwidth( 40 )
+					label( "Tint" )
+					visible( materialType != "2d" && materialType != "distortion" && materialType != "particle cloud" && materialType != "sky" && materialType != "water" && materialType != "objective" )
+				}
+			]
+		}
+		hcontainer
+		{
+			scrollbox( tileColor )
+			[
+				exec
+				{
+					visible( materialType != "sky" && materialType != "water" )
+					width( 115 )
+					labelwidth( 0 )
+					tooltip( "Wraps the image so it repeats at the edges, or clamps it so it stops at the edges" )
+				}
+			]
+			scrollbox( filterColor )
+			[
+				exec
+				{
+					unsorted()
+					width( 250 )
+					labelwidth( 0 )
+					tooltip( "Makes the image clearer when viewed from an angle, at some cost of rendering time")
+				}
+			]
+			scrollbox( formatColor )
+			[
+				exec
+				{
+					width( 165 )
+					labelwidth( 0 )
+				}
+			]
+			checkbox( nopicmipColor )
+			[
+				exec
+				{
+					righttext()
+					labelwidth( 65 )
+					label( "nopicmip" )
+					tooltip( "Prevents the game from reducing this image's resolution when trying to save texture memory." )
+				}
+			]
+			checkbox( noStreamColor )
+			[
+				exec
+				{
+					righttext()
+					labelwidth( 75 )
+					label( "no stream" )
+					visible( materialType == "world unlit" || materialType == "model unlit" )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox( "Color map" )
+			visible( materialType != "water" )
+		}
+	]
+	vcontainer
+	{
+		fileedit( detailMap )
+		[
+			exec
+			{
+				width( 450 )
+				labelwidth( 0 )
+			}
+		]
+		hcontainer
+		{
+			floatedit( detailScaleX, 1, 4 )
+			[
+				exec
+				{
+					tooltip("A higher number makes the detail map tile more often relative to the texture it's on.")
+					label( "x scale" )
+					labelwidth( 55 )
+					width( 115 )
+				}
+			]
+			floatedit( detailScaleY, 1, 4 )
+			[
+				exec
+				{
+					tooltip("A higher number makes the detail map tile more often relative to the texture it's on.")
+					label( "y scale" )
+					labelwidth( 55 )
+					width( 115 )
+				}
+			]
+			scrollbox( filterDetail )
+			[
+				exec
+				{
+					unsorted()
+					width( 250 )
+					labelwidth( 0 )
+					tooltip( "Makes the image clearer when viewed from an angle, at some cost of rendering time")
+				}
+			]
+			scrollbox( formatDetail )
+			[
+				exec
+				{
+					width( 165 )
+					labelwidth( 0 )
+				}
+			]
+			checkbox( nopicmipDetail )
+			[
+				exec
+				{
+					righttext()
+					labelwidth( 65 )
+					label( "nopicmip" )
+					tooltip( "Prevents the game from reducing this image's resolution when trying to save texture memory." )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox( "Detail map" )
+			visible( materialType == "world phong" || materialType == "model phong" || materialType == "custom" )
+		}
+	]
+
+	vcontainer
+	{
+		fileedit( normalMap )
+		[
+			exec
+			{
+				width( 450 )
+				labelwidth( 0 )
+			}
+		]
+		hcontainer
+		{
+			scrollbox( tileNormal )
+			[
+				exec
+				{
+					width( 115 )
+					labelwidth( 0 )
+					tooltip( "Wraps the image so it repeats at the edges, or clamps it so it stops at the edges" )
+				}
+			]
+			scrollbox( filterNormal )
+			[
+				exec
+				{
+					unsorted()
+					width( 250 )
+					labelwidth( 0 )
+					tooltip( "Makes the image clearer when viewed from an angle, at some cost of rendering time")
+				}
+			]
+			scrollbox( formatNormal )
+			[
+				exec
+				{
+					width( 165 )
+					labelwidth( 0 )
+				}
+			]
+			checkbox( nopicmipNormal )
+			[
+				exec
+				{
+					righttext()
+					labelwidth( 65 )
+					label( "nopicmip" )
+					tooltip( "Prevents the game from reducing this image's resolution when trying to save texture memory." )
+				}
+			]
+			checkbox( useLegacyNormalEncoding )
+			[
+				exec
+				{
+					righttext()
+					labelwidth( 110 )
+					label( "legacy encoding" )
+					tooltip( "Keeps backwards compatibility with a buggy version of the normal map compression.  New textures should always switch this off." )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			visible( materialType != "2d" && materialType != "unlit" && materialType != "world unlit" && materialType != "model unlit" && materialType != "effect" && materialType != "distortion" && materialType != "tools" && materialType != "sky" && materialType != "water" && materialType != "particle cloud" && materialType != "objective" && materialType != "model ambient" )
+			groupBox( "Normal map" )
+		}
+	]
+
+	vcontainer
+	{
+		hcontainer
+		{
+			scrollbox( waterMapTextureWidth )
+			[
+				exec
+				{
+					unsorted()
+					width( 250 )
+					labelwidth( 170 )
+					label( "Texture Width / Height" )
+				}
+			]
+			floatedit( waterMapWindSpeed, 1, 5  )
+			[
+				exec
+				{
+					width( 200 )
+					labelwidth( 120 )
+					label( "Wind Speed" )
+				}
+			]
+		}
+		hcontainer
+		{
+			floatedit( waterMapHorizontalWorldLength, 1, 5 )
+			[
+				exec
+				{
+					width( 250 )
+					labelwidth( 170 )
+					label( "Horizontal World Length" )
+				}
+			]
+			floatedit( waterMapWindDirectionX, 0.1, 0.2 )
+			[
+				exec
+				{
+					width( 200 )
+					labelwidth( 120 )
+					label( "Wind Direction X" )
+				}
+			]
+		}
+		hcontainer
+		{
+			floatedit( waterMapVerticalWorldLength, 1, 5 )
+			[
+				exec
+				{
+					width( 250 )
+					labelwidth( 170 )
+					label( "Vertical World Length" )
+				}
+			]
+			floatedit( waterMapWindDirectionY, 0.1, 0.2 )
+			[
+				exec
+				{
+					width( 200 )
+					labelwidth( 120 )
+					label( "Wind Direction Y" )
+				}
+			]
+		}
+		hcontainer
+		{
+			floatedit( waterMapAmplitude, 1, 5 )
+			[
+				exec
+				{
+					width( 250 )
+					labelwidth( 170 )
+					label( "Amplitude" )
+				}
+			]
+		}
+		hcontainer
+		{
+			floatedit( waterColorR, 0.01, 0.05 )
+			[
+				exec
+				{
+					width( 250 )
+					labelwidth( 170 )
+					label( "Color" )
+				}
+			]
+			floatedit( waterColorG, 0.01, 0.05 )
+			[
+				exec
+				{
+					width( 80 )
+					labelwidth( 0 )
+					label( "" )
+				}
+			]
+			floatedit( waterColorB, 0.01, 0.05 )
+			[
+				exec
+				{
+					width( 80 )
+					labelwidth( 0 )
+					label( "" )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			visible( materialType == "water" )
+			groupBox( "Water map" )
+		}
+	]
+
+	vcontainer
+	{
+		hcontainer
+		{
+			fileedit( specColorMap )
+			[
+				exec
+				{
+					width( 450 )
+					labelwidth( 0 )
+				}
+			]
+			spinedit( specColorStrength, 1, 5 )
+			[
+				exec
+				{
+					width( 110 )
+					labelwidth( 60 )
+					label( "strength" )
+				}
+			]
+		}
+		hcontainer
+		{
+			scrollbox( tileSpecular )
+			[
+				exec
+				{
+					width( 115 )
+					labelwidth( 0 )
+					tooltip( "Wraps the image so it repeats at the edges, or clamps it so it stops at the edges" )
+				}
+			]
+			scrollbox( filterSpecular )
+			[
+				exec
+				{
+					unsorted()
+					width( 250 )
+					labelwidth( 0 )
+					tooltip( "Makes the image clearer when viewed from an angle, at some cost of rendering time")
+				}
+			]
+			scrollbox( formatSpecular )
+			[
+				exec
+				{
+					width( 165 )
+					labelwidth( 0 )
+				}
+			]
+			checkbox( nopicmipSpecular )
+			[
+				exec
+				{
+					righttext()
+					labelwidth( 65 )
+					label( "nopicmip" )
+					tooltip( "Prevents the game from reducing this image's resolution when trying to save texture memory." )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			visible( materialType != "2d" && materialType != "unlit" && materialType != "world unlit" && materialType != "model unlit" && materialType != "effect" && materialType != "distortion" && materialType != "tools" && materialType != "sky" && materialType != "water" && materialType != "particle cloud" && materialType != "objective" && materialType != "model ambient" )
+			groupBox( "Specular color map" )
+		}
+	]
+
+	vcontainer
+	{
+		hcontainer
+		{
+			fileedit( cosinePowerMap )
+			[
+				exec
+				{
+					width( 450 )
+					labelwidth( 0 )
+				}
+			]
+			spinedit( cosinePowerStrength, 1, 5 )
+			[
+				exec
+				{
+					width( 110 )
+					labelwidth( 60 )
+					label( "strength" )
+				}
+			]
+		}
+		hcontainer
+		{
+			scrollbox( tileSpecular )
+			[
+				exec
+				{
+					width( 115 )
+					labelwidth( 0 )
+					tooltip( "Wraps the image so it repeats at the edges, or clamps it so it stops at the edges" )
+				}
+			]
+			scrollbox( filterSpecular )
+			[
+				exec
+				{
+					unsorted()
+					width( 250 )
+					labelwidth( 0 )
+					tooltip( "Makes the image clearer when viewed from an angle, at some cost of rendering time")
+				}
+			]
+			scrollbox( formatSpecular )
+			[
+				exec
+				{
+					width( 165 )
+					labelwidth( 0 )
+				}
+			]
+			checkbox( nopicmipSpecular )
+			[
+				exec
+				{
+					righttext()
+					labelwidth( 65 )
+					label( "nopicmip" )
+					tooltip( "Prevents the game from reducing this image's resolution when trying to save texture memory." )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			visible( materialType != "2d" && materialType != "unlit" && materialType != "world unlit" && materialType != "model unlit" && materialType != "effect" && materialType != "distortion" && materialType != "tools" && materialType != "sky" && materialType != "water" && materialType != "particle cloud" && materialType != "objective" && materialType != "model ambient" )
+			groupBox( "Cosine power map" )
+		}
+	]
+
+	vcontainer
+	{
+		hcontainer
+		{
+			floatedit( envMapMin, 0.01, 0.05 )
+			[
+				exec
+				{
+					label( "Minimum" )
+					tooltip( "Amount of reflection looking directly at a surface." )
+					labelwidth( 80 )
+					width( 140 )
+				}
+			]
+
+			floatedit( envMapMax, 0.01, 0.05 )
+			[
+				exec
+				{
+					label( "Maximum" )
+					tooltip( "Amount of reflection at full glancing angle." )
+					labelwidth( 80 )
+					width( 140 )
+				}
+			]
+
+			floatedit( envMapExponent, 0.01, 0.05 )
+			[
+				exec
+				{
+					label( "Exponent" )
+					tooltip( "Controls how quickly specular strength goes from 'Minimum' to 'Maximum' as the angle approaches glancing.  Larger values keep the strength near Minimum for longer." )
+					labelwidth( 80 )
+					width( 140 )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			visible( materialType == "world phong" || materialType == "model phong" || materialType == "custom" || materialType == "water" )
+			groupBox( "Env Mapping" )
+		}
+	]
+
+	vcontainer
+	{
+		checkbox( hasEditorMaterial )
+		[
+			exec
+			{
+				label( "Use '<materialname>_editor' as material in Radiant" )
+				righttext()
+				height( 15 )
+				labelwidth( 400 )
+			}
+		]
+	}	
+	[
+		exec
+		{
+			groupBox( "Custom Radiant Material" )
+			width( 400 )
+		}
+	]
+
+	hcontainer
+	{
+		vcontainer
+		{
+			checkbox( missileClip )
+			[
+				exec
+				{
+					tooltip( "Makes missiles collide with this material.  Setting this flag lets nothing whose flag isn't set collide with the material." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( bulletClip )
+			[
+				exec
+				{
+					tooltip( "Makes bullets collide with this material.  Setting this flag lets nothing whose flag isn't set collide with the material." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( playerClip )
+			[
+				exec
+				{
+					tooltip( "Makes the player collide with this material.  Setting this flag lets nothing whose flag isn't set collide with the material." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( aiClip )
+			[
+				exec
+				{
+					tooltip( "Makes AI collide with this material.  Setting this flag lets nothing whose flag isn't set collide with the material." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( vehicleClip )
+			[
+				exec
+				{
+					tooltip( "Makes vehicles collide with this material.  Setting this flag lets nothing whose flag isn't set collide with the material." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( itemClip )
+			[
+				exec
+				{
+					tooltip( "Makes items and guns collide with this material.  Setting this flag lets nothing whose flag isn't set collide with the material." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( canShootClip )
+			[
+				exec
+				{
+					tooltip( "AI can't shoot through this material." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( aiSightClip )
+			[
+				exec
+				{
+					tooltip( "AI can't see through this material.  Setting this flag lets nothing whose flag isn't set collide with the material." )
+					righttext()
+					height( 15 )
+				}
+			]
+		}
+		vcontainer
+		{
+			checkbox( noFallDamage )
+			[
+				exec
+				{
+					tooltip( "Landing on this prevents damage, regardless of the height fallen." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noSteps )
+			[
+				exec
+				{
+					tooltip( "Suppresses footstep and landing sounds for this surface." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noImpact )
+			[
+				exec
+				{
+					tooltip( "No impact mark will be made if the mark is centered on this surface.  This surface may receive a mark centered on a nearby surface, unless 'noMarks' is also set." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noMarks )
+			[
+				exec
+				{
+					tooltip( "This surface won't ever receive an impact mark.  Neighboring surfaces may still receive a mark when this surface is hit, unless 'noImpact' is also set." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noPenetrate )
+			[
+				exec
+				{
+					tooltip( "This surface will block bullet penetration." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noDrop )
+			[
+				exec
+				{
+					tooltip( "A character that dies in this brush won't drop any items, and any items that enter this brush will be removed." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( slick )
+			[
+				exec
+				{
+					tooltip( "Player movement has lower friction on this surface." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( ladder )
+			[
+				exec
+				{
+					tooltip( "Player can climb this surface like a ladder." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( mantleOn )
+			[
+				exec
+				{
+					tooltip( "Player can climb onto this brush." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( mantleOver )
+			[
+				exec
+				{
+					tooltip( "Player can climb over this brush." )
+					righttext()
+					height( 15 )
+				}
+			]
+		}
+		vcontainer
+		{
+			checkbox( noLightmap )
+			[
+				exec
+				{
+					tooltip( "Don't allocate a lightmap for this material, usually because it is a light source." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noDynamicLight )
+			[
+				exec
+				{
+					tooltip( "Prevent being lit by dynamic lights, usually because the material is a light source." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noCastShadow )
+			[
+				exec
+				{
+					tooltip( "Prevents ever casting shadows.  It may still receive shadows." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noReceiveDynamicShadow )
+			[
+				exec
+				{
+					label( "noRcvDynShadow" )
+					tooltip( "Prevents receiving dynamic shadows.  It may still cast dynamic shadows and receive precalculated shadows." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noDraw )
+			[
+				exec
+				{
+					tooltip( "Will be visible only in the editor." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( noFog )
+			[
+				exec
+				{
+					tooltip( "Always draws as if there were no fog." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( drawToggle )
+			[
+				exec
+				{
+					tooltip( "Hides all faces that aren't also 'drawToggle' in the editor if draw toggle is enabled." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( sky )
+			[
+				exec
+				{
+					tooltip( "This is a sky material." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( radialNormals )
+			[
+				exec
+				{
+					tooltip( "When used on a model without 'noRadialNormals' checked, surfaces with this material will have their normals auto-generated away from the model's origin." )
+					righttext()
+					height( 15 )
+				}
+			]
+		}
+		vcontainer
+		{
+			checkbox( nonColliding )
+			[
+				exec
+				{
+					tooltip( "No collision data is ever stored in the BSP, saving memory and CPU in the game." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( nonSolid )
+			[
+				exec
+				{
+					tooltip( "Nothing collides with this surface, but it still generates collision data.  Use 'nonColliding' if possible." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( transparent )
+			[
+				exec
+				{
+					tooltip( "This material isn't a boundary for portals, and geometry on the other side of it won't get deleted." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( detail )
+			[
+				exec
+				{
+					tooltip( "This material will never split the BSP in the map compiler.  This is usually set in the editor instead." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( structural )
+			[
+				exec
+				{
+					tooltip( "This material will split the BSP in the map compiler by default.  This can be overridden in the editor." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( portal )
+			[
+				exec
+				{
+					tooltip( "This material is a runtime portal.  The edges of brush faces using this material will cull geometry." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( lightPortal )
+			[
+				exec
+				{
+					tooltip( "This material starts a new region of influence for a primary light.  It doesn't split the BSP." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( origin )
+			[
+				exec
+				{
+					tooltip( "If a brush model entity has a brush with this material, the entity's origin is the center of that brush instead of the world origin." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( physicsGeom )
+			[
+				exec
+				{
+					tooltip( "Used in physics collision maps." )
+					righttext()
+					height( 15 )
+				}
+			]
+			checkbox( hdrPortal )
+			[
+				exec
+				{
+					tooltip( "Imitates the HDR effect of eyes adjusting to significantly brighter or darker geometry on the other side of this portal." )
+					righttext()
+					height( 15 )
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			visible( materialType != "2d" && materialType != "particle cloud" && materialType != "objective" )
+			groupBox( "Special surface properties (extremely rarely needed)" )
+		}
+	]
+	checkbox( texScroll )
+	[
+		exec
+		{
+			visible( materialType == "model phong" && blendFunc != "Add" )
+			righttext()
+			height( 15 )
+			label( "Texture Scroll" )
+		}
+	]
+	vcontainer
+	{
+		scrollbox( showAdvancedOptions )
+		[
+			exec
+			{
+				label( "Show Platform..." )
+			}
+		]
+		vcontainer
+		{
+			hcontainer
+			{
+				scrollbox( colorWriteRed )
+				[
+					exec
+					{
+						label( "Color Write - Red" )
+					}
+				]
+				scrollbox( colorWriteGreen )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Green" )
+					}
+				]
+				scrollbox( colorWriteBlue )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Blue" )
+					}
+				]
+				scrollbox( colorWriteAlpha )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Alpha" )
+					}
+				]
+			}
+			scrollbox( stencil )
+			[
+				exec
+				{
+					label( "Stencil" )
+				}
+			]
+			hcontainer
+			{
+				scrollbox( stencilFunc1 )
+				[
+					exec
+					{
+						label( "Front - Function" )
+					}
+				]
+				scrollbox( stencilOpFail1 )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Fail" )
+					}
+				]
+				scrollbox( stencilOpZFail1 )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Z-fail" )
+					}
+				]
+				scrollbox( stencilOpPass1 )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Pass" )
+					}
+				]
+			}
+			[
+				exec
+				{
+					visible( stencil != "Disable" )
+				}
+			]
+			hcontainer
+			{
+				scrollbox( stencilFunc2 )
+				[
+					exec
+					{
+						label( "Back - Function" )
+					}
+				]
+				scrollbox( stencilOpFail2 )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Fail" )
+					}
+				]
+				scrollbox( stencilOpZFail2 )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Z-fail" )
+					}
+				]
+				scrollbox( stencilOpPass2 )
+				[
+					exec
+					{
+						width( 150 )
+						labelwidth( 50 )
+						label( "Pass" )
+					}
+				]
+			}
+			[
+				exec
+				{
+					visible( stencil == "Two-sided" )
+				}
+			]
+		}
+		[
+			exec
+			{
+				visible( showAdvancedOptions == "PC / Xenon" )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Advanced Options" )
+		}
+	]
+}

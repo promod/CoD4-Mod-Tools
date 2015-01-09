@@ -1,0 +1,39 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 21.5 55 -21 ) ( -25 55 -21 ) ( -25 -55 -21 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -25 -55 20.5 ) ( -25 55 20.5 ) ( 21.5 55 20.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -25 -54.5 20.5 ) ( 21.5 -54.5 20.5 ) ( 21.5 -54.5 -21 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20.5 -55 20.5 ) ( 20.5 55 20.5 ) ( 20.5 55 -21 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 21.5 -38.5 25.5 ) ( -25 -38.5 25.5 ) ( -25 -38.5 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20.5 55 20 ) ( -20.5 -55 20 ) ( -20.5 -55 -21.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20.5 55 8 ) ( 8 55 20.5 ) ( 8 87 20.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 55 20.5 ) ( -20.5 55 8 ) ( -8 87 20.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7.5 55 -21 ) ( 20.5 55 -8 ) ( 20.5 87 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20.5 55 -8 ) ( -7.5 55 -21 ) ( -20.5 87 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -20.5 -33 18 ) ( -20.5 52.5 18 ) ( 20.5 52.5 18 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20.5 -38.5 19 ) ( 20.5 -38.5 19 ) ( 20.5 -38.5 -17.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 18 -32.5 20 ) ( 18 53 20 ) ( 18 53 -16.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16.5 36 20.5 ) ( 16.5 58 20.5 ) ( -16.5 36 52.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 52.5 20 ) ( -18 -33 20 ) ( -18 -33 -16.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 21 53 -17.5 ) ( -20 53 -17.5 ) ( -20 -32.5 -17.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6.5 58 18 ) ( -18 58 6.5 ) ( -6.5 90 18 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 18 58 6.5 ) ( 6.5 58 18 ) ( 6.5 90 18 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 58 -6.5 ) ( -7 58 -17.5 ) ( -18 90 -6.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6.5 58 -17.5 ) ( 18 58 -5.5 ) ( 6.5 90 -17.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_railpipe_med_03_d"
+"classname" "misc_model"
+}

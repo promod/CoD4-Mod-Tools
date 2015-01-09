@@ -1,0 +1,17 @@
+{
+	stateMap "build_shadowmap_color";
+
+	vertexShader 2.0 "shadowmap_build_atest_scroll_dtex.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "shadowmap_build_atest_sm3.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

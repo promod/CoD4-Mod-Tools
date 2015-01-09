@@ -1,0 +1,32 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 112 72 -48 ) ( -104 72 -48 ) ( -104 -16 -48 ) ch_concrete_04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 -16 8 ) ( -136 72 8 ) ( 80 72 8 ) ch_concrete_04 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -122 -48 8 ) ( 94 -48 8 ) ( 94 -48 0 ) ch_plasterwall_long 128 64 0 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 39 -32 8 ) ( 39 56 8 ) ( 39 56 0 ) ch_plasterwall_long 128 64 0 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 96 47 8 ) ( -120 47 8 ) ( -120 47 0 ) ch_plasterwall_long 128 64 0 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -45 72 8 ) ( -45 -16 8 ) ( -45 -16 0 ) ch_plasterwall_long 128 64 0 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 112 72 8 ) ( -104 72 8 ) ( -104 -16 8 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -137 -18 156 ) ( -137 70 156 ) ( 79 70 156 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -116 -46 186 ) ( 100 -46 186 ) ( 100 -46 178 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -56 0 0
+ ( 34 -32 64 ) ( 34 56 64 ) ( 34 56 56 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -56 0 0
+ ( 101 42 64 ) ( -115 42 64 ) ( -115 42 56 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -56 0 0
+ ( -70 70 186 ) ( -70 -18 186 ) ( -70 -18 178 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -56 0 0
+}
+}
+// entity 1
+{
+"origin" "-18.0 -2.0 8.0"
+"modelscale" "2"
+"model" "com_electrical_transformer"
+"classname" "misc_model"
+}

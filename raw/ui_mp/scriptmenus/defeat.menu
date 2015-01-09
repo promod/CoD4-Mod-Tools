@@ -1,0 +1,24 @@
+#include "ui/menudef.h"
+
+{
+	menuDef
+	{
+		name			"defeat"
+		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+		fullScreen		0
+		visible			1
+
+		itemDef
+		{
+			origin			0 0
+			text			"DEFEAT"
+			textfont		UI_FONT_BIG
+			textscale		1.0
+			textalign		ITEM_ALIGN_CENTER
+			forecolor		1 0 0 1
+			visible			1
+			decoration
+		}
+	}
+}
+

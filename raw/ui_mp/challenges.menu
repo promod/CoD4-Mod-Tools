@@ -1,0 +1,558 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SEP_1			5
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+// menu specifice re-positioning
+
+#undef CHOICE_X_START
+#define CHOICE_X_START			0
+
+#undef CHOICE_Y_START
+#define CHOICE_Y_START			34
+	
+#undef CHOICE_POPUP_BACKCOLOR
+#define CHOICE_POPUP_BACKCOLOR	0.2 0.2 0.22 1 //0.15 0.15 0.155 1//0.125 0.125 0.1275 1
+
+#undef HIGHLIGHT_COLOR
+#define HIGHLIGHT_COLOR			0.9 0.95 1 0.25
+
+#define LABEL_TEXT_COLOR		0.7 0.75 0.75 1
+
+#define SHOW_DESC( pnum ) \
+	show "desc_tier"#pnum;
+
+#define HIDE_DESC( pnum ) \
+	hide "desc_tier"#pnum; \
+	hide "desc2_tier"#pnum;
+	
+#define SHOW_DESC2( pnum ) \
+	show "desc2_tier"#pnum;
+
+#define HIDE_DESC2( pnum ) \
+	hide "desc2_tier"#pnum;	\
+	hide "desc_tier"#pnum;
+	
+#define HIDEALL_DESC \
+	HIDE_DESC( 1 ) HIDE_DESC( 6 ) HIDE_DESC( 11 ) HIDE_DESC( 16 ) \
+	HIDE_DESC( 2 ) HIDE_DESC( 7 ) HIDE_DESC( 12 ) HIDE_DESC( 17 ) \
+	HIDE_DESC( 3 ) HIDE_DESC( 8 ) HIDE_DESC( 13 ) \
+	HIDE_DESC( 4 ) HIDE_DESC( 9 ) HIDE_DESC( 14 ) \
+	HIDE_DESC( 5 ) HIDE_DESC( 10 ) HIDE_DESC( 15 )
+	
+#define ORIGIN_DESCRIPTION		(CHOICE_X_START + 15) 320
+
+#define LOCAL_TIER_ACTION( pnum_s, pstat ) \
+	play "mouse_click"; \
+	execnow "set ui_tier_num "pnum_s; \
+	execnow "set ui_table_name mp/challengeTable_tier"pnum_s".csv"; \
+	execnow "statset "pstat" 1"; \
+	open "popup_tier"
+
+#define LOCAL_NAME( pnum ) "@"+tablelookup("mp/challengetable.csv",0,pnum,1)
+
+#define LOCAL_DESC( pnum ) \
+	PREPROC_TEXT_DRAW_ALIGNED_EXP( ORIGIN_DESCRIPTION 220 22 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP, 0 0, "@"+tablelookup("mp/challengetable.csv",0,pnum,2), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_MIDDLE_LEFT, CHOICE_TEXTCOLOR name "desc_tier"#pnum )
+
+#define LOCAL_DESC2( pnum ) \
+	PREPROC_TEXT_DRAW_ALIGNED_EXP( ORIGIN_DESCRIPTION 220 22 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP, 0 0, "@"+tablelookup("mp/challengetable.csv",0,pnum,3), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_MIDDLE_LEFT, CHOICE_TEXTCOLOR name "desc2_tier"#pnum )
+
+#define LOCAL_UNLOCK_COLOR 		0.31 0.31 0.33 0.55 //0.21 0.21 0.23 0.65
+
+// ============= init dvars ==============
+
+#define INDEX_TIME_PLAYED_OTHER 2313
+#define STATTODVAR_TIME_PLAYED_OTHER execNow "statGetInDvar 2313 ui_stat_time_played_other"
+#define INDEX_TIME_PLAYED_OPFOR 2312
+#define STATTODVAR_TIME_PLAYED_OPFOR execNow "statGetInDvar 2312 ui_stat_time_played_opfor"
+#define INDEX_TIME_PLAYED_ALLIES 2311
+#define STATTODVAR_TIME_PLAYED_ALLIES execNow "statGetInDvar 2311 ui_stat_time_played_allies"
+#define INDEX_SUICIDES 2310
+#define STATTODVAR_SUICIDES execNow "statGetInDvar 2310 ui_stat_suicides"
+#define INDEX_TEAMKILLS 2309
+#define STATTODVAR_TEAMKILLS execNow "statGetInDvar 2309 ui_stat_teamkills"
+#define INDEX_HEADSHOTS 2308
+#define STATTODVAR_HEADSHOTS execNow "statGetInDvar 2308 ui_stat_headshots"
+#define INDEX_ASSISTS 2307
+#define STATTODVAR_ASSISTS execNow "statGetInDvar 2307 ui_stat_assists"
+#define INDEX_DEATH_STREAK 2306
+#define STATTODVAR_DEATH_STREAK execNow "statGetInDvar 2306 ui_stat_death_streak"
+#define INDEX_DEATHS 2305
+#define STATTODVAR_DEATHS execNow "statGetInDvar 2305 ui_stat_deaths"
+#define INDEX_KILL_STREAK 2304
+#define STATTODVAR_KILL_STREAK execNow "statGetInDvar 2304 ui_stat_kill_streak"
+#define INDEX_KILLS 2303
+#define STATTODVAR_KILLS execNow "statGetInDvar 2303 ui_stat_kills"
+#define INDEX_SCORE 2302
+#define STATTODVAR_SCORE execNow "statGetInDvar 2302 ui_stat_score"
+#define INDEX_RANKXP 2301
+#define STATTODVAR_RANKXP execNow "statGetInDvar 2301 ui_stat_rankxp"
+
+#define STAT_UPDATE \
+	STATTODVAR_TIME_PLAYED_OTHER; \
+	STATTODVAR_TIME_PLAYED_OPFOR; \
+	STATTODVAR_TIME_PLAYED_ALLIES; \
+	STATTODVAR_TEAMKILLS; \
+	STATTODVAR_HEADSHOTS; \
+	STATTODVAR_ASSISTS; \
+	STATTODVAR_DEATH_STREAK; \
+	STATTODVAR_DEATHS; \
+	STATTODVAR_KILL_STREAK; \
+	STATTODVAR_KILLS; \
+	STATTODVAR_SCORE; \
+	STATTODVAR_RANKXP;
+
+// ============== end init =============
+
+{
+	menuDef
+	{
+		name			menu_challenges
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		#ifndef PC_INGAME
+			fullscreen		1
+			style			WINDOW_STYLE_FILLED
+			soundloop 		"music_mainmenu_mp"
+			border			0
+		#else
+			style			WINDOW_STYLE_EMPTY
+			blurWorld		7.0
+		#endif
+		
+		onOpen	{
+			
+			#ifdef PC_INGAME
+				hidemenu "endofgame";
+			#endif
+			
+			STAT_UPDATE
+			HIDEALL_DESC
+			focusFirst;
+		}
+		onEsc	{
+			close menu_challenges;
+		}
+		#ifdef PC_INGAME
+			onClose	{
+				showmenu "endofgame";
+			}
+		#endif
+	
+		// ------------------  statics ------------------------
+		#ifndef PC_INGAME
+			#include "ui/blurredbg.inc"
+		#else
+			// background overlay
+			itemDef
+			{
+				style			WINDOW_STYLE_FILLED
+				rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+				backcolor		0 0 0 0.75 //0 0.05 0.15 0.5
+				visible			1
+				decoration
+			}
+	
+			// gradient_top
+			itemDef
+			{
+				style			WINDOW_STYLE_SHADER
+				rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+				background		"gradient_top"
+				visible			1
+				decoration
+			}
+	
+			// gradient_bottom
+			itemDef
+			{
+				style			WINDOW_STYLE_SHADER
+				rect			0 405 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+				background		"gradient_bottom"
+				visible			1
+				decoration
+			}
+		#endif
+		
+		#ifdef PC
+			CHOICE_MENU_TITLE( "@MENU_RANK_AND_CHALLENGES_CAP" )
+		#else
+			CHOICE_MENU_TITLE( "@MENU_CHALLENGES_CAP" )
+		#endif
+		
+		#include "ui_mp/navcontrols.inc"
+
+		//=========================================================
+		//===================== MENU SELECTION ====================
+		//=========================================================
+	
+		// description arrow thingy
+		itemDef	{
+			name			desc_arrow
+			style			WINDOW_STYLE_SHADER
+			rect			ORIGIN_DESCRIPTION 10 10 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			-12 6
+			background		"ui_arrow_right"
+			forecolor		1 1 1 0.3
+			visible			when( !dvarBool(ui_hide_desc) );
+			decoration
+		}
+		
+		LOCAL_DESC( 1 )     	LOCAL_DESC2( 1 )               
+		LOCAL_DESC( 2 )     	LOCAL_DESC2( 2 )               
+		LOCAL_DESC( 3 )     	LOCAL_DESC2( 3 )               
+		LOCAL_DESC( 4 )     	LOCAL_DESC2( 4 )               
+		LOCAL_DESC( 5 )     	LOCAL_DESC2( 5 )               
+		LOCAL_DESC( 6 )     	LOCAL_DESC2( 6 )               
+		LOCAL_DESC( 7 )     	LOCAL_DESC2( 7 )               
+		LOCAL_DESC( 8 )     	LOCAL_DESC2( 8 )               
+		LOCAL_DESC( 9 )     	LOCAL_DESC2( 9 )               
+		LOCAL_DESC( 10 )    	LOCAL_DESC2( 10 )               
+				
+		
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 1, LOCAL_NAME(1), LOCAL_TIER_ACTION( "1", "270" ), SHOW_DESC(1), HIDE_DESC(1), when( stat(270) > 0 );, stat(270) > 0 )
+				CHOICE_BUTTON_BG( 1, when( stat(270) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 1, LOCAL_NAME(1), ;, SHOW_DESC2(1), HIDE_DESC2(1), when( stat(270) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 2, LOCAL_NAME(2), LOCAL_TIER_ACTION( "2", "271" ), SHOW_DESC(2), HIDE_DESC(2), when( stat(271) > 0 );, stat(271) > 0 )
+				CHOICE_BUTTON_BG( 2, when( stat(271) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 2, LOCAL_NAME(2), ;, SHOW_DESC2(2), HIDE_DESC2(2), when( stat(271) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 3, LOCAL_NAME(3), LOCAL_TIER_ACTION( "3", "272" ), SHOW_DESC(3), HIDE_DESC(3), when( stat(272) > 0 );, stat(272) > 0 )
+				CHOICE_BUTTON_BG( 3, when( stat(272) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 3, LOCAL_NAME(3), ;, SHOW_DESC2(3), HIDE_DESC2(3), when( stat(272) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 4, LOCAL_NAME(4), LOCAL_TIER_ACTION( "4", "273" ), SHOW_DESC(4), HIDE_DESC(4), when( stat(273) > 0 );, stat(273) > 0 )
+				CHOICE_BUTTON_BG( 4, when( stat(273) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 4, LOCAL_NAME(4), ;, SHOW_DESC2(4), HIDE_DESC2(4), when( stat(273) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 5, LOCAL_NAME(5), LOCAL_TIER_ACTION( "5", "274" ), SHOW_DESC(5), HIDE_DESC(5), when( stat(274) > 0 );, stat(274) > 0 )
+				CHOICE_BUTTON_BG( 5, when( stat(274) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 5, LOCAL_NAME(5), ;, SHOW_DESC2(5), HIDE_DESC2(5), when( stat(274) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 6, LOCAL_NAME(6), LOCAL_TIER_ACTION( "6", "275" ), SHOW_DESC(6), HIDE_DESC(6), when( stat(275) > 0 );, stat(275) > 0 )
+				CHOICE_BUTTON_BG( 6, when( stat(275) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 6, LOCAL_NAME(6), ;, SHOW_DESC2(6), HIDE_DESC2(6), when( stat(275) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 7, LOCAL_NAME(7), LOCAL_TIER_ACTION( "7", "276" ), SHOW_DESC(7), HIDE_DESC(7), when( stat(276) > 0 );, stat(276) > 0 )
+				CHOICE_BUTTON_BG( 7, when( stat(276) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 7, LOCAL_NAME(7), ;, SHOW_DESC2(7), HIDE_DESC2(7), when( stat(276) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 8, LOCAL_NAME(8), LOCAL_TIER_ACTION( "8", "277" ), SHOW_DESC(8), HIDE_DESC(8), when( stat(277) > 0 );, stat(277) > 0 )
+				CHOICE_BUTTON_BG( 8, when( stat(277) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 8, LOCAL_NAME(8), ;, SHOW_DESC2(8), HIDE_DESC2(8), when( stat(277) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 9, LOCAL_NAME(9), LOCAL_TIER_ACTION( "9", "278" ), SHOW_DESC(9), HIDE_DESC(9), when( stat(278) > 0 );, stat(278) > 0 )
+				CHOICE_BUTTON_BG( 9, when( stat(278) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 9, LOCAL_NAME(9), ;, SHOW_DESC2(9), HIDE_DESC2(9), when( stat(278) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 10, LOCAL_NAME(10), LOCAL_TIER_ACTION( "10", "279" ), SHOW_DESC(10), HIDE_DESC(10), when( stat(279) > 0 );, stat(279) > 0 )   
+				CHOICE_BUTTON_BG( 10, when( stat(279) == 0 ); )
+				CHOICE_BUTTON_FOCUS_VIS_NOHI( 10, LOCAL_NAME(10), ;, SHOW_DESC2(10), HIDE_DESC2(10), when( stat(279) == 0 ); forecolor LOCAL_UNLOCK_COLOR )
+
+		/*
+		CHOICE_DBUTTON_VIS( 1,  "Tier 1", when( stat(270) == 0 ); )
+		CHOICE_DBUTTON_VIS( 2,  "Tier 2", when( stat(271) == 0 ); )
+		CHOICE_DBUTTON_VIS( 3,  "Tier 3", when( stat(272) == 0 ); )
+		CHOICE_DBUTTON_VIS( 4,  "Tier 4", when( stat(273) == 0 ); )
+		CHOICE_DBUTTON_VIS( 5,  "Tier 5", when( stat(274) == 0 ); )
+		CHOICE_DBUTTON_VIS( 6,  "Tier 6", when( stat(275) == 0 ); )
+		CHOICE_DBUTTON_VIS( 7,  "Tier 7", when( stat(276) == 0 ); )
+		CHOICE_DBUTTON_VIS( 8,  "Tier 8", when( stat(277) == 0 ); )
+		CHOICE_DBUTTON_VIS( 9,  "Tier 9", when( stat(278) == 0 ); )
+		CHOICE_DBUTTON_VIS( 10, "Tier 10", when( stat(279) == 0 ); )
+		CHOICE_DBUTTON_VIS( 11, "Tier 11", when( stat(280) == 0 ); )
+		CHOICE_DBUTTON_VIS( 12, "Tier 12", when( stat(281) == 0 ); )
+		CHOICE_DBUTTON_VIS( 13, "Tier 13", when( stat(282) == 0 ); )
+		CHOICE_DBUTTON_VIS( 14, "Tier 14", when( stat(283) == 0 ); )
+		CHOICE_DBUTTON_VIS( 15, "Tier 15", when( stat(284) == 0 ); )
+		CHOICE_DBUTTON_VIS( 16, "Tier 16", when( stat(285) == 0 ); )
+		CHOICE_DBUTTON_VIS( 17, "Tier 17", when( stat(286) == 0 ); )
+		*/       
+		                              
+		CHOICE_NEWICON_VIS( 1, "specialty_new", when( stat( "270" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 2, "specialty_new", when( stat( "271" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 3, "specialty_new", when( stat( "272" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 4, "specialty_new", when( stat( "273" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 5, "specialty_new", when( stat( "274" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 6, "specialty_new", when( stat( "275" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 7, "specialty_new", when( stat( "276" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 8, "specialty_new", when( stat( "277" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 9, "specialty_new", when( stat( "278" ) > 1 ) )
+		CHOICE_NEWICON_VIS( 10, "specialty_new", when( stat( "279" ) > 1 ) )
+		
+		CHOICE_NEWICON_VIS( 1, "specialty_locked", when( stat( "270" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 2, "specialty_locked", when( stat( "271" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 3, "specialty_locked", when( stat( "272" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 4, "specialty_locked", when( stat( "273" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 5, "specialty_locked", when( stat( "274" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 6, "specialty_locked", when( stat( "275" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 7, "specialty_locked", when( stat( "276" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 8, "specialty_locked", when( stat( "277" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 9, "specialty_locked", when( stat( "278" ) == 0 ) )
+		CHOICE_NEWICON_VIS( 10, "specialty_locked", when( stat( "279" ) == 0 ) )		
+		
+		#ifndef PC_INGAME
+			// player stats
+			#include "ui_mp/player_info.inc"
+		#endif
+		
+		#include "ui/safearea.menu"
+	}
+	
+	//=========================================================
+	//====================== TIER POPUPS ======================
+	//=========================================================		
+	
+	// main popup frame properties ----------------------------
+	#define ORIGIN_TIER_FRAME_X			46
+	#define ORIGIN_TIER_FRAME_Y			70
+	#define ORIGIN_TIER_FRAME 			ORIGIN_TIER_FRAME_X ORIGIN_TIER_FRAME_Y
+	
+	#define WIDTH_TIER_FRAME			540
+	#define HEIGHT_TIER_FRAME			338
+	#define SIZE_TIER_FRAME				WIDTH_TIER_FRAME HEIGHT_TIER_FRAME
+	#define RECT_TIER_FRAME				ORIGIN_TIER_FRAME SIZE_TIER_FRAME
+	
+	#define COLOR_TIER_FRAME			0.1 0.1 0.12 0.85 //0.05 0.1 0.15 0.85 //0.1 0.15 0.25 0.4
+	
+	#define BORDER_TIER_FRAME			WINDOW_BORDER_RAISED
+	#define BORDER_SIZE_TIER_FRAME		1
+	#define BORDER_COLOR_TIER_FRAME		0.35 0.35 0.37 1//0.4 0.4 0.425 1
+	
+	// list box properties -------------------------------------
+	#define PADDING						8
+	#define ORIGIN_LIST_BOX_X			(ORIGIN_TIER_FRAME_X+PADDING)
+	#define ORIGIN_LIST_BOX_Y			(ORIGIN_TIER_FRAME_Y+PADDING)
+	
+	#define WIDTH_LIST_BOX				((((WIDTH_TIER_FRAME+8)-PADDING*3)/2))
+	#define HEIGHT_LIST_BOX				((HEIGHT_TIER_FRAME+4)-PADDING*2)
+	
+	// info box properties -------------------------------------
+	#define ORIGIN_INFO_BOX_X			(ORIGIN_TIER_FRAME_X+((WIDTH_TIER_FRAME+4+PADDING)/2))
+	#define ORIGIN_INFO_BOX_Y			(ORIGIN_TIER_FRAME_Y+38)
+	
+	#define WIDTH_INFO_BOX				(((WIDTH_TIER_FRAME+4)-PADDING*3)/2)
+	#define HEIGHT_INFO_BOX				296
+		
+	// to be macro menu
+	menuDef	{
+		name 			"popup_tier"
+		visible			0
+		fullscreen		0
+		rect			0 0 640 480 0 0
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		popup
+		onESC { play "mouse_click"; close "popup_tier" }
+		onOpen { 
+			exec "set ui_hide_desc 1";
+			focusFirst; }
+		onClose{
+			exec "set ui_hide_desc 0";
+		}
+		//=================== main frame ==================
+		/*macro ex:	PREPROC_SHADER_DRAW_ADV( px, py, pw, ph, porigin, pshader, pcolor, pborder, pbordersize, pbordercolor ) */
+		/*mainframe*/	PREPROC_SHADER_DRAW( RECT_TIER_FRAME, 2 2, "white", 0.25 0.25 0.27 1, 0, 0, 0 0 0 0 )
+		/*mainframe*/	PREPROC_SHADER_DRAW( RECT_TIER_FRAME, 0 0, "white", COLOR_TIER_FRAME, BORDER_TIER_FRAME, BORDER_SIZE_TIER_FRAME, BORDER_COLOR_TIER_FRAME )
+		/*mainframe*/	PREPROC_SHADER_DRAW_ADV( ORIGIN_TIER_FRAME_X, ORIGIN_TIER_FRAME_Y+2, WIDTH_TIER_FRAME, HEIGHT_TIER_FRAME-2, "line_horizontal", 0.8 0.8 0.8 0.45, 0, 1, 1 1 1 1 )
+		/*perforation*/	PREPROC_PERFORATION( ORIGIN_TIER_FRAME_X+WIDTH_TIER_FRAME-64, ORIGIN_TIER_FRAME_Y, -64, 16, 0, 4, 0, 0 )
+		/*perforation*/	PREPROC_PERFORATION( ORIGIN_TIER_FRAME_X+WIDTH_TIER_FRAME-64, ORIGIN_TIER_FRAME_Y, -64, 16, 0, 20, 0, 0 )
+		/*listbox*/		PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X, ORIGIN_LIST_BOX_Y, WIDTH_LIST_BOX, HEIGHT_LIST_BOX, "gradient_center", 0 0 0 0.85, WINDOW_BORDER_SUNKEN, BORDER_SIZE_TIER_FRAME, BORDER_COLOR_TIER_FRAME )
+		/*infobox*/		PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X, ORIGIN_INFO_BOX_Y, WIDTH_INFO_BOX, HEIGHT_INFO_BOX, "gradient_center", 0 0 0 0.55, WINDOW_BORDER_SUNKEN, BORDER_SIZE_TIER_FRAME, BORDER_COLOR_TIER_FRAME )
+		/*title*/		PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X, ORIGIN_INFO_BOX_Y-2, WIDTH_INFO_BOX, 40,  exp text( "@"+tablelookup("mp/challengeTable.csv",0,dvarString( ui_tier_num ),2) ), TEXTSIZE_DEFAULT, 0, -6, ITEM_ALIGN_CENTER, LABEL_TEXT_COLOR )
+		
+		// ------ CHALLENGE ITEM NAME ------
+		#define PQ_NAME_IDX(pslot_s) \
+		int( tablelookup( dvarString(ui_table_name), 1, pslot_s, 0 ) )
+		
+		#define PQ_NAME_STAT_VALUE(pslot_s) \
+		stat( int( tablelookup( dvarString(ui_table_name), 1, pslot_s, 2 ) ) )
+		
+		// capped between 1 and 3
+		#define PQ_NAME_LEVEL(pslot_s) \
+		int( min( int( tablelookup( dvarString(ui_table_name), 1, pslot_s, 6 ) ), max( 1, PQ_NAME_STAT_VALUE(pslot_s) ) ) )
+		
+		#define PQ_NAME_STRING(pslot_s) \
+		string( PQ_NAME_IDX(pslot_s) + PQ_NAME_LEVEL(pslot_s) - 1 )
+		
+		#define PQ_NAME(pslot_s) \
+		"@"+tablelookup( dvarString(ui_table_name), 0, PQ_NAME_STRING(pslot_s), 8 )
+		
+		// ------ PROGRESS BAR WDITH ------
+		#define PQ_RAW(preturn) \
+		tablelookup( dvarString(ui_table_name), 0, PQ_NAME_STRING(dvarString(ui_table_slot)), preturn )
+		
+		#define PQ_RAW2(pslot_s) \
+		tablelookup( dvarString(ui_table_name), 0, PQ_NAME_STRING(pslot_s), 4 )		
+		
+		#define PQ_RAW_LEVEL_IRRELEVANT(preturn) \
+		tablelookup( dvarString(ui_table_name), 1, dvarString(ui_table_slot), preturn )
+		
+		#define PROGRESS_BAR_PROGRESS_STATDATA(pslot_s) \
+		stat( int( tablelookup( dvarString(ui_table_name), 1, pslot_s, 3 ) ) )
+		
+		#define PROGRESS_BAR_WIDTH( pslot_s ) \
+		min( PROGRESS_BAR_PROGRESS_STATDATA(pslot_s) / int( PQ_RAW2(pslot_s) ), 1 )
+		
+		// ------ VISIBLE WHEN ------
+		#define CHALLENGE_COMPLETE_RAW( ptablename, ptableslot ) \
+		visible when( stat( int( tablelookup( ptablename, 1, ptableslot, 2 ) ) ) == 255 )
+		#define CHALLENGE_COMPLETE CHALLENGE_COMPLETE_RAW( dvarString(ui_table_name), dvarString(ui_table_slot) )
+		#define CHALLENGE_COMPLETE_S(pslot_s) CHALLENGE_COMPLETE_RAW( dvarString(ui_table_name), pslot_s )
+		
+		#define CHALLENGE_INCOMPLETE( ptablename, ptableslot ) \
+		( stat( int( tablelookup( ptablename, 1, ptableslot, 2 ) ) ) != 255 )
+				
+		#define WHEN_CHALLENGE_LOCKED( ptablename, ptableslot ) \
+		visible when( ( tablelookup( ptablename, 1, ptableslot, 2 ) == "" ) || ( stat( int( tablelookup( ptablename, 1, ptableslot, 2 ) ) ) == 0 ) )
+		#define WHEN_LOCKED_S(pslot_s) WHEN_CHALLENGE_LOCKED( dvarString(ui_table_name), pslot_s )
+				
+		// visible when challenge locked; (stat#501-699's value) is 0
+		#define VIS_WHEN_CHALLENGE_LOCKED( ptablename, ptableslot ) \
+		visible when( ( tablelookup( ptablename, 1, ptableslot, 2 ) != "" ) && ( stat( int( tablelookup( ptablename, 1, ptableslot, 2 ) ) ) == 0 ) )
+		#define VIS_WHEN_LOCKED VIS_WHEN_CHALLENGE_LOCKED( dvarString(ui_table_name), dvarString(ui_table_slot) )
+		#define VIS_WHEN_LOCKED_S(pslot_s) VIS_WHEN_CHALLENGE_LOCKED( dvarString(ui_table_name), pslot_s )
+		
+		// visible when challenge locked; (stat#501-699's value) is 0
+		#define VIS_WHEN_CHALLENGE_UNLOCKED( ptablename, ptableslot ) \
+		visible when( ( tablelookup( ptablename, 1, ptableslot, 2 ) != "" ) && ( stat( int( tablelookup( ptablename, 1, ptableslot, 2 ) ) ) > 0 ) )
+		#define VIS_WHEN_UNLOCKED VIS_WHEN_CHALLENGE_UNLOCKED( dvarString(ui_table_name), dvarString(ui_table_slot) )
+		#define VIS_WHEN_UNLOCKED_S(pslot_s) VIS_WHEN_CHALLENGE_UNLOCKED( dvarString(ui_table_name), pslot_s )
+		
+		#define VIS_WHEN_CHALLENGE_INPROGRESS( ptablename, ptableslot ) \
+		visible when( ( tablelookup( ptablename, 1, ptableslot, 2 ) != "" ) && ( stat( int( tablelookup( ptablename, 1, ptableslot, 2 ) ) ) > 0 ) && CHALLENGE_INCOMPLETE( ptablename, ptableslot ) )
+		#define VIS_WHEN_INPROGRESS VIS_WHEN_CHALLENGE_INPROGRESS( dvarString(ui_table_name), dvarString(ui_table_slot) )
+		#define VIS_WHEN_INPROGRESS_S(pslot_s) VIS_WHEN_CHALLENGE_INPROGRESS( dvarString(ui_table_name), pslot_s )
+		
+		
+		// ------ CHALLENGE ITEMS ------
+		#define LIST_ITEM_HEIGHT	14
+		#define LIST_ITEM_COLOR		0.7 0.75 0.75 0.8
+		#define LIST_ITEM_COLOR_LOCKED	0.4 0.45 0.45 0.8
+		
+		#define PREPROC_LIST_ITEM( pslot, pslot_s ) \
+		itemDef	{ \
+			type			ITEM_TYPE_BUTTON \
+			exp				rect X( ORIGIN_LIST_BOX_X+10 ) \
+			exp				rect Y( ORIGIN_LIST_BOX_Y+4+(pslot-1)*(LIST_ITEM_HEIGHT+2) ) \
+			exp				rect W( WIDTH_LIST_BOX-58 ) \
+			exp				rect H( LIST_ITEM_HEIGHT ) \
+			forecolor		1 1 0.5 1 \
+			visible 		when( tablelookup(dvarString(ui_table_name),1,pslot_s,2)!=""  )  \
+			onFocus 		{	play "mouse_over"; \
+								execnow "set ui_table_slot "pslot_s } \
+			} \
+			/* item bg box */ PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+8, ORIGIN_LIST_BOX_Y+4+(pslot-1)*(LIST_ITEM_HEIGHT+2), WIDTH_LIST_BOX-58-(LIST_ITEM_HEIGHT/4), LIST_ITEM_HEIGHT, "white", 0.8 0.85 0.95 0.1, 0, 1, 1 1 1 0.25 ) \
+			/* item bg box edge */ PREPROC_SHADER_DRAW_ADV( (ORIGIN_LIST_BOX_X+WIDTH_LIST_BOX-50)-(LIST_ITEM_HEIGHT/4), ORIGIN_LIST_BOX_Y+4+(pslot-1)*(LIST_ITEM_HEIGHT+2), LIST_ITEM_HEIGHT/4, LIST_ITEM_HEIGHT, "button_highlight_end", 0.8 0.85 0.95 0.1, 0, 1, 1 1 1 0.25 ) \
+			/* bar bg box */ PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+WIDTH_LIST_BOX-48, ORIGIN_LIST_BOX_Y+4+(pslot-1)*(LIST_ITEM_HEIGHT+2), 40, LIST_ITEM_HEIGHT, "white", 0.8 0.85 0.95 0.1, 1, 2, 0.8 0.85 0.95 0.25 ) \
+			/* progress bar */ PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+WIDTH_LIST_BOX-46, ORIGIN_LIST_BOX_Y+6+(pslot-1)*(LIST_ITEM_HEIGHT+2), 36*(PROGRESS_BAR_WIDTH(pslot_s)), LIST_ITEM_HEIGHT-4, "white", 0.8 0.85 0.95 0.25, 0, 1, 0.9 0.95 1 0.25 VIS_WHEN_UNLOCKED_S(pslot_s) ) \
+			/* complete */ PREPROC_TEXT_DRAW_ADV( ORIGIN_LIST_BOX_X+WIDTH_LIST_BOX-49, ORIGIN_LIST_BOX_Y+2+(pslot)*(LIST_ITEM_HEIGHT+2), 40, LIST_ITEM_HEIGHT,  exp text( "@menu_100PERCENT" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_CENTER, 0.8 0.85 0.95 0.5 CHALLENGE_COMPLETE_S(pslot_s) ) \
+			/* item name */ PREPROC_TEXT_DRAW_ADV( ORIGIN_LIST_BOX_X+10, ORIGIN_LIST_BOX_Y+2+(pslot)*(LIST_ITEM_HEIGHT+2), WIDTH_LIST_BOX-6, LIST_ITEM_HEIGHT,  exp text(PQ_NAME(pslot_s)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, LIST_ITEM_COLOR VIS_WHEN_UNLOCKED_S(pslot_s) ) \
+			/* item name locked */ PREPROC_TEXT_DRAW_ADV( ORIGIN_LIST_BOX_X+10, ORIGIN_LIST_BOX_Y+2+(pslot)*(LIST_ITEM_HEIGHT+2), WIDTH_LIST_BOX-6, LIST_ITEM_HEIGHT,  exp text(PQ_NAME(pslot_s)), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, LIST_ITEM_COLOR_LOCKED WHEN_LOCKED_S(pslot_s) ) \
+			/* lock status */ PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+WIDTH_LIST_BOX-48, ORIGIN_LIST_BOX_Y+(pslot-1)*(LIST_ITEM_HEIGHT+2)+2, 40, LIST_ITEM_HEIGHT+4, "specialty_locked", 0.8 0.9 1 0.65, 0, 1, 0.9 0.95 1 0.25 VIS_WHEN_LOCKED_S(pslot_s) )
+			/* new status */ PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+WIDTH_LIST_BOX-48, ORIGIN_LIST_BOX_Y+(pslot-1)*(LIST_ITEM_HEIGHT+2)+2, 40, LIST_ITEM_HEIGHT+4, "specialty_new", 1 0.9 0.75 0.85, 0, 1, 0.9 0.95 1 0.25 visible when( ( tablelookup(dvarString(ui_table_name),1,pslot_s,2)!="" ) && ( stat( int( tablelookup(dvarString(ui_table_name),1,pslot_s,2) ) ) >= 11 ) ) )
+			
+		// ------------ info box content display --------------
+	
+		#define PQ_DESC "@"+PQ_RAW( 9 )
+		#define PQ_NAME2 "@"+PQ_RAW( 8 )
+		#define PQ_DESC_UNLOCK PQ_RAW( 10 )
+		#define PQ_UNLOCKS "@"+PQ_RAW( 11 )
+		#define PQ_STAT stat( int( PQ_RAW_LEVEL_IRRELEVANT(3) ) )
+		#define PQ_TARGET PQ_RAW( 4 )
+		#define PQ_TARGET_SCALE PQ_RAW_LEVEL_IRRELEVANT(15)
+		
+		// sin cycle for animation of the hightlighting bars
+		#define F_HEIGHT_OFFSET ((1- ((8+sin(milliseconds()/80))/8) )/2)*LIST_ITEM_HEIGHT
+		#define F_HEIGHT ((8+sin(milliseconds()/80))/8)*LIST_ITEM_HEIGHT
+		
+		/* highlight */
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+8, ORIGIN_LIST_BOX_Y+4+(dvarint(ui_table_slot)-1)*(LIST_ITEM_HEIGHT+2), WIDTH_LIST_BOX-58-(LIST_ITEM_HEIGHT/4), LIST_ITEM_HEIGHT,"gradient_fadein", 0.8 0.85 0.95 0.25, 0, 1, 1 1 1 0.65 )
+		PREPROC_SHADER_DRAW_ADV( (ORIGIN_LIST_BOX_X+WIDTH_LIST_BOX-50)-(LIST_ITEM_HEIGHT/4), ORIGIN_LIST_BOX_Y+4+(dvarint(ui_table_slot)-1)*(LIST_ITEM_HEIGHT+2), LIST_ITEM_HEIGHT/4, LIST_ITEM_HEIGHT,"button_highlight_end", 0.8 0.85 0.95 0.25, 0, 1, 1 1 1 0.65 )
+
+		//PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+8, ORIGIN_LIST_BOX_Y+4+(dvarint(ui_table_slot)-1)*(LIST_ITEM_HEIGHT+2), WIDTH_LIST_BOX-58, LIST_ITEM_HEIGHT,"line_horizontal", 0.9 0.75 0.1 0.225, 0, 1, 1 1 1 0.65 )
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+4, ORIGIN_LIST_BOX_Y+4+(dvarint(ui_table_slot)-1)*(LIST_ITEM_HEIGHT+2)+F_HEIGHT_OFFSET, 2, F_HEIGHT,"white", 0.55 1 0.55 0.8, 0, 1, 1 1 1 0.65 )
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+WIDTH_LIST_BOX-6, ORIGIN_LIST_BOX_Y+4+(dvarint(ui_table_slot)-1)*(LIST_ITEM_HEIGHT+2)+F_HEIGHT_OFFSET, 2, F_HEIGHT,"white", 0.55 1 0.55 0.8, 0, 1, 1 1 1 0.65 )				
+		//PREPROC_SHADER_DRAW_ADV( ORIGIN_LIST_BOX_X+8, ORIGIN_LIST_BOX_Y+4+(dvarint(ui_table_slot)-1)*(LIST_ITEM_HEIGHT+2), WIDTH_LIST_BOX-58, LIST_ITEM_HEIGHT,"line_vertical", 0.9 0.75 0.1 0.6, 0, 1, 1 1 1 0.65 visible when((tablelookup(dvarString(ui_table_name),1,dvarint(ui_table_slot),2)!="") && (stat(int(tablelookup(dvarString(ui_table_name),1,dvarint(ui_table_slot),2))) > 0)))
+
+		// background bar
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+2, ORIGIN_INFO_BOX_Y+2, WIDTH_INFO_BOX-4, 22,"white", 0.65 0.7 0.8 0.2, 0, 1, 0 0 0 0 )
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+2, ORIGIN_INFO_BOX_Y+24, WIDTH_INFO_BOX-4, 2,"white", 0 0 0 0.35, 0, 1, 0 0 0 0 )
+		// name
+		PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X+6, ORIGIN_INFO_BOX_Y+20, WIDTH_INFO_BOX-8, 20,  exp text( PQ_NAME2 ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, COLOR_TITLE autowrapped )
+		PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X+6, ORIGIN_INFO_BOX_Y+20, WIDTH_INFO_BOX-8, 20,  exp text( PQ_NAME2 ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, LIST_ITEM_COLOR autowrapped VIS_WHEN_LOCKED )
+		// desc
+		PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X+6, ORIGIN_INFO_BOX_Y+44, WIDTH_INFO_BOX-8, 20,  exp text( PQ_DESC ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, LIST_ITEM_COLOR autowrapped )
+		// desc 2
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+2, ORIGIN_INFO_BOX_Y+104, WIDTH_INFO_BOX-4, 2,"white", 0.75 0.8 0.9 0.2, 0, 1, 0 0 0 0 )	
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+2, ORIGIN_INFO_BOX_Y+102, WIDTH_INFO_BOX-4, 2,"white", 0 0 0 0.35, 0, 1, 0 0 0 0 )					
+		PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X+6, ORIGIN_INFO_BOX_Y+124, WIDTH_INFO_BOX-8, 20,  exp text( "@MENU_XP_REWARD" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, LIST_ITEM_COLOR autowrapped )
+		PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X+90, ORIGIN_INFO_BOX_Y+124, WIDTH_INFO_BOX-8, 20,  exp text( PQ_DESC_UNLOCK ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, LIST_ITEM_COLOR autowrapped )
+		// unlock desc
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+2, ORIGIN_INFO_BOX_Y+174, WIDTH_INFO_BOX-4, 2,"white", 0.75 0.8 0.9 0.2, 0, 1, 0 0 0 0 )
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+2, ORIGIN_INFO_BOX_Y+172, WIDTH_INFO_BOX-4, 2,"white", 0 0 0 0.35, 0, 1, 0 0 0 0 )						
+		PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X+6, ORIGIN_INFO_BOX_Y+194, WIDTH_INFO_BOX-8, 20,  exp text( PQ_UNLOCKS ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, LIST_ITEM_COLOR autowrapped )	
+		// progress
+		//PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+WIDTH_INFO_BOX-46, ORIGIN_INFO_BOX_Y+6, 40, LIST_ITEM_HEIGHT, "white", 0 0 0 0, 1, 1, 0.9 0.95 1 0.25 )
+		//PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+WIDTH_INFO_BOX-44, ORIGIN_INFO_BOX_Y+8, 36*(PROGRESS_BAR_WIDTH(dvarString(ui_table_slot))), LIST_ITEM_HEIGHT-4, "line_vertical", 1 1 1 1, 0, 1, 0.9 0.95 1 0.25 VIS_WHEN_INPROGRESS )
+		PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+2, ORIGIN_INFO_BOX_Y+2, (ORIGIN_INFO_BOX_X-67)*(PROGRESS_BAR_WIDTH(dvarString(ui_table_slot))), 22, "gradient_fadein", 0.8 0.8 0.825 0.175, 0, 1, 0.9 0.95 1 0.25 VIS_WHEN_INPROGRESS )
+		
+		/* lock status */ PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+WIDTH_INFO_BOX-46, ORIGIN_INFO_BOX_Y+4, 40, 18, "specialty_locked", 0.8 0.9 1 0.65, 0, 1, 0.9 0.95 1 0.25 VIS_WHEN_LOCKED )
+		/* new status PREPROC_SHADER_DRAW_ADV( ORIGIN_INFO_BOX_X+WIDTH_INFO_BOX-46, ORIGIN_INFO_BOX_Y+4, 40, 18, "specialty_new", 1 0.9 0.75 0.85, 0, 1, 0.9 0.95 1 0.25 visible when( ( tablelookup(dvarString(ui_table_name),1,dvarString(ui_table_slot),2)!="" ) && ( stat( int( tablelookup(dvarString(ui_table_name),1,dvarString(ui_table_slot),2) ) ) >= 11 ) ) ) */
+		
+		// progress in text
+		//PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X, ORIGIN_INFO_BOX_Y+20, WIDTH_INFO_BOX-52, 20,  exp text( PQ_STAT + "/" + PQ_TARGET ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, LIST_ITEM_COLOR autowrapped VIS_WHEN_INPROGRESS )	
+		//PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X+WIDTH_INFO_BOX-43, ORIGIN_INFO_BOX_Y+20, 80, 20,  exp text( "@MENU_100PERCENT" ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_LEFT, COLOR_TITLE autowrapped CHALLENGE_COMPLETE )
+		PREPROC_TEXT_DRAW_ADV( ORIGIN_INFO_BOX_X+43, ORIGIN_INFO_BOX_Y+20, WIDTH_INFO_BOX-52, 20,  exp text( int(PQ_STAT / PQ_TARGET_SCALE) + "/" + int(PQ_TARGET / PQ_TARGET_SCALE) ), TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_RIGHT, LIST_ITEM_COLOR autowrapped VIS_WHEN_UNLOCKED )	
+		
+		PREPROC_LIST_ITEM( 1, "1" )
+		PREPROC_LIST_ITEM( 2, "2" )
+		PREPROC_LIST_ITEM( 3, "3" )
+		PREPROC_LIST_ITEM( 4, "4" )
+		PREPROC_LIST_ITEM( 5, "5" )
+		PREPROC_LIST_ITEM( 6, "6" )
+		PREPROC_LIST_ITEM( 7, "7" )
+		PREPROC_LIST_ITEM( 8, "8" )
+		PREPROC_LIST_ITEM( 9, "9" )
+		PREPROC_LIST_ITEM( 10, "10" )
+		PREPROC_LIST_ITEM( 11, "11" )
+		PREPROC_LIST_ITEM( 12, "12" )
+		PREPROC_LIST_ITEM( 13, "13" )
+		PREPROC_LIST_ITEM( 14, "14" )
+		PREPROC_LIST_ITEM( 15, "15" )
+		PREPROC_LIST_ITEM( 16, "16" )
+		PREPROC_LIST_ITEM( 17, "17" )
+		PREPROC_LIST_ITEM( 18, "18" )
+		PREPROC_LIST_ITEM( 19, "19" )
+		PREPROC_LIST_ITEM( 20, "20" )			
+		
+		#ifdef PC
+			itemDef 
+			{
+				name			back
+				text			"@MENU_BACK"
+				type			1
+				style			WINDOW_STYLE_FILLED
+				textstyle		ITEM_TEXTSTYLE_SHADOWED
+				rect			-250 -26 40 20 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+				textfont		UI_FONT_NORMAL
+				textalign		ITEM_ALIGN_LEFT
+				textscale		TEXTSIZE_SMALL
+				textaligny		18
+				visible			1
+				mouseEnter		{ play "mouse_over"; }
+				action 
+				{
+					play "mouse_click";
+					close self;
+				}	
+			}
+		#endif
+	}
+}

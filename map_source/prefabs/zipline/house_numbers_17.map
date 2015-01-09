@@ -1,0 +1,116 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+ {
+  mesh
+  {
+  toolFlags splitGeo;
+   me_decal_darkstain_02
+   lightmap_gray
+   smoothing smoothing_hard
+   2 4 0 8
+   (
+	v 6 0 -15 c 255 255 255 0 t 715.00836 -865.78918 1.5 0.75
+	v 5 0 -15 t 731.00836 -865.78918 0.75 0.75
+	v -5 0 -15 t 891.00812 -865.78918 0 0.75
+	v -6 0 -15 c 255 255 255 0 t 907.00806 -865.78918 -1.5 0.75
+   )
+   (
+	v 6 0 -5 c 255 255 255 0 t 715.00836 -225.79245 1.5 -0.0625
+	v 5 0 -5 t 731.00836 -225.79245 0.75 -0.0625
+	v -5 0 -5 t 891.00812 -225.79245 0 -0.0625
+	v -6 0 -5 c 255 255 255 0 t 907.00806 -225.79245 -1.5 -0.0625
+   )
+  }
+ }
+// brush 1
+{
+  contents detail;
+ ( 448 -27 5 ) ( -240 -27 5 ) ( -240 5 5 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -32 36 ) ( 6 0 36 ) ( 6 0 -4 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 392 0 4 ) ( -296 0 4 ) ( -296 0 -36 ) caulk 64 -64 -288 -52 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 5 -4 ) ( -6 -27 -4 ) ( -6 -27 -44 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -296 -3 52 ) ( 392 -3 52 ) ( 392 -3 12 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 0 4 ) ( 3 0 4 ) ( 3 32 4 ) caulk 64 64 21 288 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 392 0 4 ) ( -296 0 4 ) ( -296 0 -36 ) caulk 64 -64 -288 -52 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -296 -3 52 ) ( 392 -3 52 ) ( 392 -3 12 ) me_plaster_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 0 -4 ) ( 1 0 -4 ) ( 1 32 -4 ) caulk 64 64 21 288 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 0 4 ) ( -4 0 4 ) ( 3 32 4 ) caulk 64 64 21 288 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 0 -1 ) ( 5 0 2 ) ( 5 32 -1 ) caulk 64 64 21 52 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 0 1 ) ( -5 0 -2 ) ( -5 32 1 ) caulk 64 64 21 52 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 392 0 4 ) ( -296 0 4 ) ( -296 0 -36 ) caulk 64 -64 -288 -52 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 5 -4 ) ( -6 -27 -4 ) ( -6 -27 -44 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -296 -3 52 ) ( 392 -3 52 ) ( 392 -3 12 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 0 -4 ) ( 1 0 -4 ) ( 1 32 -4 ) caulk 64 64 21 288 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 0 4 ) ( -4 0 4 ) ( 3 32 4 ) caulk 64 64 21 288 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 0 -2 ) ( -5 0 1 ) ( -5 32 1 ) caulk 64 64 21 52 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( -688 5 -5 ) ( -688 -27 -5 ) ( 0 -27 -5 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -32 36 ) ( 6 0 36 ) ( 6 0 -4 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 392 0 4 ) ( -296 0 4 ) ( -296 0 -36 ) caulk 64 -64 -288 -52 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 5 -4 ) ( -6 -27 -4 ) ( -6 -27 -44 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -296 -3 52 ) ( 392 -3 52 ) ( 392 -3 12 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 0 -4 ) ( -2 0 -4 ) ( 1 32 -4 ) caulk 64 64 21 288 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+ {
+  mesh
+  {
+   ch_housenumbers_white
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 0 -3 -4 t -12059.383 -3072 18 -3
+	v 0 -3 4 t -12059.383 -3584 18 -3.5
+   )
+   (
+	v 5 -3 -4 t -11899.383 -3072 17.6875 -3
+	v 5 -3 4 t -11899.383 -3584 17.6875 -3.5
+   )
+  }
+ }
+// brush 6
+{
+  contents detail;
+ ( 6 -32 36 ) ( 6 0 36 ) ( 6 0 -4 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 392 0 4 ) ( -296 0 4 ) ( -296 0 -36 ) caulk 64 -64 -288 -52 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -296 -3 52 ) ( 392 -3 52 ) ( 392 -3 12 ) me_plaster_02_interior 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 0 -4 ) ( 1 0 -4 ) ( 1 32 -4 ) caulk 64 64 21 288 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 0 4 ) ( -4 0 4 ) ( 3 32 4 ) caulk 64 64 21 288 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 0 2 ) ( 5 0 -1 ) ( 5 32 -1 ) caulk 64 64 21 52 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+ {
+  mesh
+  {
+   ch_housenumbers_white
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -5 -3 -4 t -12256 -3584 18.3125 -3
+	v -5 -3 4 t -12256 -4096 18.3125 -3.5
+   )
+   (
+	v 0 -3 -4 t -12096 -3584 18 -3
+	v 0 -3 4 t -12096 -4096 18 -3.5
+   )
+  }
+ }
+}

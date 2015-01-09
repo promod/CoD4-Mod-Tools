@@ -1,0 +1,16 @@
+{
+	stateMap "default";
+
+	vertexShader 2.0 "particle_cloud_add_spot.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "particle_cloud_add_spot.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

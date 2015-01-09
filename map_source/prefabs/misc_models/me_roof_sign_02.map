@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 256 64 0 ) ( 0 64 0 ) ( 0 0 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 160 ) ( 0 64 160 ) ( 256 64 160 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 160 ) ( 256 0 160 ) ( 256 0 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 256 0 160 ) ( 256 64 160 ) ( 256 64 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 256 64 160 ) ( 0 64 160 ) ( 0 64 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 64 160 ) ( 0 0 160 ) ( 0 0 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "me_roof_sign_02"
+"classname" "misc_model"
+}

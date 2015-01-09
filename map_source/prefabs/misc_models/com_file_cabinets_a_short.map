@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 17 38.5 0 ) ( -29 38.5 0 ) ( -29 -37.5 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -37.5 105.5 ) ( -29 38.5 105.5 ) ( 17 38.5 105.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -31 107.5 ) ( 17 -31 107.5 ) ( 17 -31 -1.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 -37.5 109 ) ( 17 38.5 109 ) ( 17 38.5 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 31 109 ) ( -29 31 109 ) ( -29 31 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17.5 34 109 ) ( -17.5 -42 109 ) ( -17.5 -42 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -17.5 20 22.5 ) ( -30.5 20 22.5 ) ( -30.5 11 22.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -33.5 11 34.5 ) ( -33.5 20 34.5 ) ( -20.5 20 34.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30.5 11 105.5 ) ( -17.5 11 105.5 ) ( -17.5 11 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17.5 11 105.5 ) ( -17.5 20 105.5 ) ( -17.5 20 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17.5 20 105.5 ) ( -30.5 20 105.5 ) ( -30.5 20 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29.5 19.5 105.5 ) ( -29.5 10.5 105.5 ) ( -29.5 10.5 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_file_cabinets_a_short"
+"classname" "misc_model"
+}

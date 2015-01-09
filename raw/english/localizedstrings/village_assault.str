@@ -1,0 +1,43 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           INTROSCREEN_LINE_1
+LANG_ENGLISH        "'Safehouse'"
+
+REFERENCE           INTROSCREEN_LINE_2
+LANG_ENGLISH        "Day 4 - 02:00:[{FAKE_INTRO_SECONDS:32}]"
+
+REFERENCE           INTROSCREEN_LINE_3
+LANG_ENGLISH        "Northern Azerbaijan"
+
+REFERENCE           INTROSCREEN_LINE_4
+LANG_ENGLISH        "Sgt. 'Soap' MacTavish"
+
+REFERENCE           INTROSCREEN_LINE_5
+LANG_ENGLISH        "22nd SAS Regiment"
+
+REFERENCE           OBJECTIVE_SECURE_VILLAGE
+LANG_ENGLISH        "Secure the village.^3 &&1 Buildings Remain^7"
+
+REFERENCE           OBJECTIVE_SECURE_VILLAGE_NOCOUNT
+LANG_ENGLISH        "Secure the village."
+
+REFERENCE           OBJECTIVE_LOCATE_ALASAD
+LANG_ENGLISH        "Search the village buildings and capture Khaled Al-Asad."
+
+
+ENDMARKER
+
+

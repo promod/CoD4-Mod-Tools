@@ -1,0 +1,205 @@
+iwfx 2
+
+{
+	name "smoke";
+	editorFlags looping useRandSize1 useRandVel1 absVel1;
+	flags spawnRelative spawnOffsetCylinder runRelToOffset nonUniformScale;
+	spawnRange 0 0;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 500;
+	spawnLooping 50 30;
+	spawnOneShot 0 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 30000 0;
+	spawnOrgX -50 100;
+	spawnOrgY 0 0;
+	spawnOrgZ 0 0;
+	spawnOffsetRadius 250 0;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 0;
+	gravity 0.2 0;
+	elasticity 1 0;
+	atlasBehavior startRandom;
+	atlasIndex 8;
+	atlasFps 0;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 450
+	{
+		{
+			0 0.5
+			0.133721 0.188995
+			0.218023 0.0741627
+			0.328488 0.0215311
+			0.479651 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Y 15
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Z 15
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y -8000
+	{
+		{
+			0 0
+			1 0.232057
+		}
+		{
+			0 0
+			1 0.00717705
+		}
+	};
+	velGraph1Z 200
+	{
+		{
+			0 0.5
+			0.0872093 0.303828
+			0.174419 0.184211
+			0.296512 0.0933014
+			0.421512 0.0454546
+			1 0
+		}
+		{
+			0 0.0550239
+			0.386628 0.00239235
+			1 0
+		}
+	};
+	rotGraph 50
+	{
+		{
+			0 0
+			1 -0.0509259
+		}
+		{
+			0 -0.5
+			0.0639535 -0.217593
+			0.142442 -0.138889
+			0.261628 -0.0833333
+			1 -0.037037
+		}
+	};
+	sizeGraph0 4000
+	{
+		{
+			0 0.11039
+			0.0352941 0.253247
+			0.120588 0.357143
+			1 0.766234
+		}
+		{
+			0 0.0324675
+			0.0470588 0.0974026
+			0.129412 0.155844
+			1 0.253247
+		}
+	};
+	sizeGraph1 3750
+	{
+		{
+			0 0.0584416
+			0.0676471 0.155844
+			0.158824 0.188312
+			1 0.227273
+		}
+		{
+			0 0.149351
+			0.0617647 0.279221
+			0.161765 0.38961
+			1 0.74026
+		}
+	};
+	scaleGraph 1
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.792157 0.780392 0.709804
+			1 0.847059 0.835294 0.780392
+		}
+		{
+			0 1 1 1
+			1 1 1 1
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.0319767 0.732057
+			1 0
+		}
+		{
+			0 0.215311
+			1 0.210526
+		}
+	};
+	lightingFrac 0;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 5;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_dark_smoke_atlas_z1024"
+	};
+}

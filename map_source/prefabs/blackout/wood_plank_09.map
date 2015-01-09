@@ -1,0 +1,27 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"contrastGain" "0.15"
+"diffusefraction" "0.45"
+"_color" "0.90 0.90 1"
+"sunlight" "1"
+"sundirection" "-35 200 0"
+"sundiffusecolor" "1 1 1"
+"suncolor" "1 1 1"
+"ambient" ".10"
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 52 12 2 ) ( -20 12 2 ) ( -20 -12 2 ) ch_woodpaint_white01 128 128 0 -421 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -12 4 ) ( -12 12 4 ) ( 60 12 4 ) ch_woodpaint_white01 128 128 0 -421 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -8 156 ) ( 54 -8 156 ) ( 54 -8 -4 ) ch_woodpaint_white01 128 128 0 -421 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 0 2 ) ( -29 0 4 ) ( -77 0 4 ) ch_woodpaint_white01 128 128 0 -421 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30 -4 4 ) ( -30 -12 4 ) ( -30 -4 36 ) ch_woodpaint_white01 128 128 0 -421 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -66 -12 4 ) ( -106 5 4 ) ( -66 -12 36 ) ch_woodpaint_white01 128 128 0 -421 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -90 -7 4 ) ( -78 6 4 ) ( -90 -7 36 ) ch_woodpaint_white01 128 128 0 -421 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -84 -6 4 ) ( -85 1 4 ) ( -84 -6 36 ) ch_woodpaint_white01 128 128 0 -421 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

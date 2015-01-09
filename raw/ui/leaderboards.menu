@@ -1,0 +1,175 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			220
+#define CHOICE_X_SPACING		280
+
+#define CHOICE_Y_COUNT			13
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_1			4
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#define PLAYERLIST_WIDTH 		270
+#define ORIGIN_PLAYERLIST 		(- (PLAYERLIST_WIDTH - RIGHTITEM_OFFSET)) 40
+#define ORIGIN_STATUS			(- (PLAYERLIST_WIDTH - RIGHTITEM_OFFSET)) 0
+
+#define ORIGIN_DESCRIPTION		(CHOICE_X_START + 15) 180
+#define COLOR_DESC_TEXT			1 1 1 0.7
+
+#define MENU_FONT_SIZE			TEXTSIZE_DEFAULT
+#define HIGHLIGHT_SIZE			142 22
+#define MENU_FONT_COLOR			1 1 1 0.5
+#define MENU_FONT_COLOR2		1 1 1 0.5
+#define MENU_LOCKED_COLOR		0.25 0.25 0.25 1
+
+#define ORIGIN_BUTTON_BACK		52 438
+#define ORIGIN_BUTTON_INVITE	390 86
+
+#define CLEARUIHINT	exec "set ui_hint_text @NULL_EMPTY"
+
+#define PREPROC_HIGHLIGHT( pname, porigin ) \
+itemDef { \
+	name			pname \
+	style			WINDOW_STYLE_SHADER \
+	rect			porigin  HIGHLIGHT_SIZE 0 0 \
+	background		HIGHLIGHT_SHADER \
+	forecolor		HIGHLIGHT_COLOR \
+	border			HIGHLIGHT_BORDER \
+	bordersize		1 \
+	bordercolor		HIGHLIGHT_BORDER_COLOR \
+	visible			1 \
+	decoration \
+}
+
+#define PREPROC_A_BUTTON( pname, porigin ) \
+itemDef { \
+	name			pname \
+	text			"@XBOXLIVE_SELECTBUTTON" \
+	textfont		UI_FONT_NORMAL \
+	textscale		A_BUTTON_SIZE \
+	origin			porigin \
+	forecolor		A_BUTTON_COLOR \
+	visible			1 \
+	decoration \
+}
+
+#define HIDEALL \
+	hide description_choice1; \
+	hide description2_choice1; \
+	hide highlight_choice1; \
+	hide a_button_choice1; \
+	hide description_choice2; \
+	hide description2_choice2; \
+	hide highlight_choice2; \
+	hide a_button_choice2; \
+	hide description_choice3; \
+	hide highlight_choice3; \
+	hide a_button_choice3; \
+	hide description_choice4; \
+	hide description2_choice4; \
+	hide highlight_choice4; \
+	hide a_button_choice4;
+	
+{
+	menuDef{
+		name			menu_leaderboards
+		fullscreen		1
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			0
+		soundloop 		"music_mainmenu_mp"
+		onOpen{
+			focusFirst;
+		}
+		onEsc{
+			CLEARUIHINT;
+			close menu_leaderboards;			
+		}
+
+		// ------------------  statics ------------------------
+#include "ui/blurredbg.inc"
+		
+		CHOICE_MENU_TITLE( "@MENU_LEADERBOARDS_CAP" )
+
+		#include "ui_mp/navcontrols.inc"
+
+		//=========================================================
+		//===================== MENU SELECTION ====================
+		//=========================================================
+
+		#define SETUP_ACTION_LEADERBOARD(pname) \
+			setdvar ui_lb_level pname;\
+			open menu_leaderboard_level;
+			
+		#define LEFT_NAV( pname, to )\
+			name pname \
+			execkeyint DPAD_LEFT { setfocus to; } \
+			execkeyint APAD_LEFT { setfocus to; }
+		
+		#define RIGHT_NAV( pname, to )\
+			name pname \
+			execkeyint DPAD_RIGHT { setfocus to; } \
+			execkeyint APAD_RIGHT { setfocus to; }	
+				
+		CHOICE_SECTION_TITLE( 1, "@MENU_LEADERBOARD_TIME_TRIAL" )
+		CHOICE_BUTTON_FOCUS_VIS( 2, "@MENU_SP_KILLHOUSE", SETUP_ACTION_LEADERBOARD("@MENU_SP_KILLHOUSE"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type killhouse", CLEARUIHINT, 1 )
+		                              
+		CHOICE_SECTION_TITLE( 3, "@MENU_ARCADEMODE" )
+		
+		CHOICE_BUTTON_FOCUS_VIS( 4, "@MENU_ARCADE_FULL", SETUP_ACTION_LEADERBOARD("@MENU_ARCADE_FULL"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type full", CLEARUIHINT, 1 )	
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 5, "@MENU_SP_CARGOSHIP", SETUP_ACTION_LEADERBOARD("@MENU_SP_CARGOSHIP"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type cargoship", CLEARUIHINT, 1, RIGHT_NAV("lvl5","lvl18") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 6, "@MENU_SP_BLACKOUT", SETUP_ACTION_LEADERBOARD("@MENU_SP_BLACKOUT"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type blackout", CLEARUIHINT, 1, RIGHT_NAV("lvl6","lvl19") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 7, "@MENU_SP_ARMADA", SETUP_ACTION_LEADERBOARD("@MENU_SP_ARMADA"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type armada", CLEARUIHINT, 1, RIGHT_NAV("lvl7","lvl20") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 8, "@MENU_SP_BOG_A", SETUP_ACTION_LEADERBOARD("@MENU_SP_BOG_A"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type bog_a", CLEARUIHINT, 1, RIGHT_NAV("lvl8","lvl21") )	
+		CHOICE_BUTTON_FOCUS_VIS_EX( 9, "@MENU_SP_HUNTED", SETUP_ACTION_LEADERBOARD("@MENU_SP_HUNTED"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type hunted", CLEARUIHINT, 1, RIGHT_NAV("lvl9","lvl22") )	
+		CHOICE_BUTTON_FOCUS_VIS_EX( 10, "@MENU_SP_AC130", SETUP_ACTION_LEADERBOARD("@MENU_SP_AC130"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type ac130", CLEARUIHINT, 1, RIGHT_NAV("lvl10","lvl23") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 11, "@MENU_SP_BOG_B", SETUP_ACTION_LEADERBOARD("@MENU_SP_BOG_B"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type bog_b", CLEARUIHINT, 1, RIGHT_NAV("lvl11","lvl24") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 12, "@MENU_SP_AIRLIFT", SETUP_ACTION_LEADERBOARD("@MENU_SP_AIRLIFT"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type airlift", CLEARUIHINT, 1, RIGHT_NAV("lvl12","lvl25") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 13, "@MENU_SP_VILLAGE_ASSAULT", SETUP_ACTION_LEADERBOARD("@MENU_SP_VILLAGE_ASSAULT"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type village_assault", CLEARUIHINT, 1, RIGHT_NAV("lvl13","lvl25") )
+		
+		CHOICE_BUTTON_FOCUS_VIS_EX( 18, "@MENU_SP_SCOUTSNIPER", SETUP_ACTION_LEADERBOARD("@MENU_SP_SCOUTSNIPER"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type scoutsniper", CLEARUIHINT, 1, LEFT_NAV("lvl18","lvl5") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 19, "@MENU_SP_VILLAGE_DEFEND", SETUP_ACTION_LEADERBOARD("@MENU_SP_VILLAGE_DEFEND"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type village_defend", CLEARUIHINT, 1, LEFT_NAV("lvl19","lvl6") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 20, "@MENU_SP_AMBUSH", SETUP_ACTION_LEADERBOARD("@MENU_SP_AMBUSH"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type ambush", CLEARUIHINT, 1, LEFT_NAV("lvl20","lvl7") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 21, "@MENU_SP_ICBM", SETUP_ACTION_LEADERBOARD("@MENU_SP_ICBM"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type icbm", CLEARUIHINT, 1, LEFT_NAV("lvl21","lvl8") )	
+		CHOICE_BUTTON_FOCUS_VIS_EX( 22, "@MENU_SP_LAUNCHFACILITY_A", SETUP_ACTION_LEADERBOARD("@MENU_SP_LAUNCHFACILITY_A"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type launchfacility_a", CLEARUIHINT, 1, LEFT_NAV("lvl22","lvl9") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 23, "@MENU_SP_LAUNCHFACILITY_B", SETUP_ACTION_LEADERBOARD("@MENU_SP_LAUNCHFACILITY_B"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type launchfacility_b", CLEARUIHINT, 1, LEFT_NAV("lvl23","lvl10") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 24, "@MENU_SP_JEEPRIDE", SETUP_ACTION_LEADERBOARD("@MENU_SP_JEEPRIDE"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type jeepride", CLEARUIHINT, 1, LEFT_NAV("lvl24","lvl11") )
+		CHOICE_BUTTON_FOCUS_VIS_EX( 25, "@MENU_SP_AIRPLANE", SETUP_ACTION_LEADERBOARD("@MENU_SP_AIRPLANE"), exec "set ui_hint_text @MENU_CHECK_HOW_YOUR_SCORE; set lb_type airplane", CLEARUIHINT, 1, LEFT_NAV("lvl25","lvl12") )
+
+		// ---------------------- menu selection description -------------------------
+
+		itemDef	{
+			name			desc_arrow
+			style			WINDOW_STYLE_SHADER
+			rect			0 180 10 10 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_DESCRIPTION
+			background		"ui_arrow_right"
+			forecolor		1 1 1 0.25
+			visible			1
+			decoration
+		}
+		itemDef	{
+			name			description_choice
+			type			ITEM_TYPE_TEXT
+			rect			12 177 500 32 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_DESCRIPTION
+			exp				text( dvarString( ui_hint_text ) )
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		16
+			forecolor		COLOR_DESC_TEXT
+			visible			1
+			autowrapped
+			decoration
+		}		
+
+		#include "ui/safearea.menu"
+	}
+}

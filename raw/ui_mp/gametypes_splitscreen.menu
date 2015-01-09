@@ -1,0 +1,135 @@
+#include "ui/menudef.h"
+
+#define ORIGIN_CHOICE1		80 100
+#define ORIGIN_CHOICE2		80 120
+#define ORIGIN_CHOICE3		80 140
+#define ORIGIN_CHOICE4		80 160
+
+{
+	menuDef
+	{
+		name			menu_gametypes_splitscreen
+		fullscreen		1
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			0
+		onEsc
+		{
+			close menu_gametypes_splitscreen;
+		}
+
+		// background
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			FULLSCREEN_WIDE
+			backcolor		0.2 0.2 0.2 1
+			visible			1
+			decoration
+		}
+
+		
+		#include "ui/navcontrols.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		COLOR_TITLE
+			text			"GAME TYPES"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE1
+			textfont		UI_FONT_NORMAL
+			text			"War"
+			textscale		TEXTSIZE_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			backcolor		0 0 0 0
+			visible			1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				setdvar ui_gametype "war";
+				close menu_gametypes_splitscreen;
+			}
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE2
+			textfont		UI_FONT_NORMAL
+			text			"Deathmatch"
+			textscale		TEXTSIZE_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			backcolor		0 0 0 0
+			visible			1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				setdvar ui_gametype "dm";
+				close menu_gametypes_splitscreen;
+			}
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE3
+			textfont		UI_FONT_NORMAL
+			text			"King of the Hill"
+			textscale		TEXTSIZE_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			backcolor		0 0 0 0
+			visible			1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				setdvar ui_gametype "koth";
+				close menu_gametypes_splitscreen;
+			}
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_BUTTON
+			origin			ORIGIN_CHOICE4
+			textfont		UI_FONT_NORMAL
+			text			"Tag"
+			textscale		TEXTSIZE_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			backcolor		0 0 0 0
+			visible			1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				setdvar ui_gametype "tag";
+				close menu_gametypes_splitscreen;
+			}
+		}
+	}
+}

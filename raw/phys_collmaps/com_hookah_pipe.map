@@ -1,0 +1,33 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"model" "prefabs/misc_models/me_electricbox2.map"
+"sunRadiosity" "1"
+"sunlight" "1"
+"sundirection" "-50 240 0"
+"suncolor" "1 1 1"
+"sundiffusecolor" "1 1 1"
+"radiosityScale" "1"
+"northyaw" "-45"
+"diffusefraction" "0.4"
+"bouncefracion" ".1"
+"ambient" ".02"
+"_color" "1 1 1"
+"classname" "worldspawn"
+// brush 0
+  {
+    physics_cylinder
+    {
+      0.000000 0.000000 1.000000 0.000000 0.000000 11.750000 23.500000 2.671291
+    }
+  }
+// brush 1
+  {
+    physics_box
+    {
+      1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 -5.000000 6.750000 0.500000 2.500000 6.750000
+    }
+  }
+}

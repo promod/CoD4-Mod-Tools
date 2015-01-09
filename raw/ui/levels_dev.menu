@@ -1,0 +1,27 @@
+#include "ui/menudef.h"
+
+#define CHOICE_SIZE_X		250
+#define CHOICE_SIZE_Y		20
+#include "ui/choices_setup_common.menu"
+#include "ui/choices_setup_levels.menu"
+
+{
+	menuDef
+	{
+		LEVELS_CHOICES_SETUP( levels_dev )
+
+		#include "ui/background_main_blurred.menu"
+
+		CHOICE_MENU_TITLE( "DEV LEVELS" )
+
+		CHOICE_BUTTON( 1, "Pilot Cobra Day (11-16-06)", exec "devmap pilotcobra_day" )
+		CHOICE_BUTTON( 2, "Pilot Cobra Night (11-16-06)", exec "devmap pilotcobra_night" )
+		CHOICE_BUTTON( 3, "Swat (12-04-06)", exec "devmap swat" )
+		CHOICE_BUTTON( 4, "Firing Range (01-30-07)", exec "devmap firingrange" )
+		CHOICE_BUTTON( 5, "Interior Concept (01-19-07)", exec "devmap interior_concept" )
+		CHOICE_BUTTON( 6, "Javelin Weapon Test (01-16-07)", exec "devmap javelin_test" )
+		CHOICE_BUTTON( 7, "Javelin Weapon Test, Night (01-16-07)", exec "devmap javelin_test_night" )
+		CHOICE_BUTTON( 8, "Dog Survival (05-01-07)", exec "devmap dog_survival" )
+		CHOICE_BUTTON( 9, "Bad Guys (04-05-07)", exec "devmap badguys" )
+	}
+}

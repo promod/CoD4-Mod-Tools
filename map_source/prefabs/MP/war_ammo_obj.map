@@ -1,0 +1,68 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"target" "auto1"
+"script_gameobjectname" "hardpoint"
+"targetname" "ammo_obj"
+"classname" "trigger_use_touch"
+// brush 0
+{
+ ( 8 8 16 ) ( -8 8 16 ) ( -8 -8 16 ) origin 128 128 -104 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 32 ) ( -8 8 32 ) ( 8 8 32 ) origin 128 128 -104 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 56 ) ( 8 -8 56 ) ( 8 -8 16 ) origin 128 128 -104 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -8 56 ) ( 8 8 56 ) ( 8 8 16 ) origin 128 128 8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 56 ) ( -8 8 56 ) ( -8 8 16 ) origin 128 128 -104 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 56 ) ( -8 -8 56 ) ( -8 -8 16 ) origin 128 128 8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 80 48 0 ) ( -56 48 0 ) ( -56 -56 0 ) trigger 64 64 -104 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -56 40 ) ( -48 48 40 ) ( 88 48 40 ) trigger 64 64 -104 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -48 16 ) ( 80 -48 16 ) ( 80 -48 8 ) trigger 64 64 -104 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 -56 16 ) ( 48 48 16 ) ( 48 48 8 ) trigger 64 64 8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 48 16 ) ( -56 48 16 ) ( -56 48 8 ) trigger 64 64 -104 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 48 16 ) ( -48 -56 16 ) ( -48 -56 8 ) trigger 64 64 8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 2
+{
+"targetname" "auto1"
+"classname" "trigger_multiple"
+// brush 0
+{
+ ( 78 54 0 ) ( -78 54 0 ) ( -78 -54 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -78 -54 38 ) ( -78 54 38 ) ( 78 54 38 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -78 -46 40 ) ( 78 -46 40 ) ( 78 -46 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 -54 40 ) ( 46 54 40 ) ( 46 54 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 46 40 ) ( -76 46 40 ) ( -76 46 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 54 40 ) ( -46 -54 40 ) ( -46 -54 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 3
+{
+"origin" "0.0 0.0 0.0"
+"script_gameobjectname" "hardpoint"
+"angles" "0 270 0"
+"model" "com_plasticcase_green_rifle"
+"classname" "script_model"
+}
+// entity 4
+{
+"script_gameobjectname" "hardpoint"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 10 26 0 ) ( -10 26 0 ) ( -10 -26 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -26 6 ) ( -10 26 6 ) ( 10 26 6 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -26 6 ) ( 10 -26 6 ) ( 10 -26 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -26 6 ) ( 10 26 6 ) ( 10 26 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 26 6 ) ( -10 26 6 ) ( -10 26 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 26 6 ) ( -10 -26 6 ) ( -10 -26 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,654 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define 	OPTIONS_STYLE			1
+#define 	CHOICE_SEP_1			23
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef 
+	{
+		name			"options_multi"
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen
+		{
+			exec "setfromdvar ui_name name";
+			
+			close options_look;
+			close options_move;
+			close options_shoot;
+			close options_graphics;
+			close options_sound;
+			close options_game;
+			close options_view;
+			close options_defaults;
+			close options_driverinfo;
+			close options_credits;
+			close options_graphics_defaults;
+			close options_graphics_texture;
+			close options_control_defaults;
+
+			setLocalVarBool ui_hideBack 1;
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+			exec "setfromdvar name ui_name";
+		}
+		onESC 
+		{ 
+			close self;		
+		}
+
+		#include "ui_mp/leftside_options.inc"
+		
+		CHOICE_SECTION_TITLE( 21, "@MENU_MULTIPLAYER_OPTIONS" )
+		
+		CHOICE_DVARYESNO( 22, "@MPUI_PUNKBUSTER", cl_punkbuster, ; )
+		CHOICE_DVARYESNO( 23, "@MENU_ALLOW_DOWNLOAD", cl_allowdownload, ; )
+		//CHOICE_DVARYESNO( 24, "@MENU_DRAW_HUD", hud_enable, ; )
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )
+		//CHOICE_DVAREDIT( 24, "@MENU_PLAYER_NAME", ui_name, ; )
+		CHOICE_DVAREDIT_VIS( 24, "@MENU_PLAYER_NAME", ui_name, 15, 15, ;, 1 )
+		CHOICE_BUTTON( 25, "@MENU_ENTER_KEY_CODE", open cdkey_menu; )
+				
+		//CHOICE_BACK( "@MENU_BACK", close self )
+
+		CHOICE_KEYBINDHELP
+	}
+}
+
+
+
+/*
+{
+menuDef 
+{
+	name options_multi
+	fullScreen 0				
+	rect 0 0 370 480				// Size and position of the menu
+	focusColor COLOR_FOCUSED			// Menu focus color for text and items
+	soundloop ""
+	onOpen
+	{
+		exec "setfromdvar ui_name name"
+		setdvar ui_background_gradient_show "1";
+	}
+	onClose
+	{
+		exec "setfromdvar name ui_name"
+	}
+	onESC 
+	{ 
+		close options_multi;		
+	}
+	itemDef
+	{
+		type			ITEM_TYPE_TEXT
+		origin			ORIGIN_TITLE
+		forecolor		1 1 1 1
+		text			"@MENU_MULTIPLAYER"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_TITLE
+		visible			1
+		decoration
+	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_VOICE_CHAT_BUTTON"
+		rect		0 0 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+   	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_VOTE_YES"
+		rect		0 15 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_VOTE_NO"
+		rect		0 30 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_CHAT"
+		rect		0 45 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_TEAM_CHAT"
+		rect		0 60 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_QUICK_CHAT"
+		rect		0 75 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_ALLOW_DOWNLOAD"
+		rect		0 90 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_DRAW_HUD"
+		rect		0 105 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_CONNECTION"
+		rect		0 120 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BUTTON
+		text "@MENU_WEAPON_MENU"
+		rect		0 135 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+    	}
+
+	itemDef
+	{
+		name		player_name
+		type		ITEM_TYPE_BUTTON
+		text		"@MENU_PLAYER_NAME"
+		rect		0 150 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+
+	}
+
+
+	itemDef
+	{
+		name		misc
+		type		ITEM_TYPE_BUTTON
+		text		"@MPUI_PUNKBUSTER"
+		rect		0 165 1 13 
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		decoration
+
+	}
+
+
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BIND
+		text " "
+		dvar "+talk"
+		rect		0 0 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		mouseEnter 
+		{
+			play "mouse_over";
+			show keyBindStatus
+		}
+		mouseexit { hide keyBindStatus }
+		action { play "mouse_click"; }
+   	}
+
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BIND
+		text " "
+		dvar "vote yes"
+		rect		0 15 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		mouseEnter 
+		{
+			play "mouse_over";
+			show keyBindStatus
+		}
+		mouseexit { hide keyBindStatus }
+		action { play "mouse_click"; }
+    	}
+
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BIND
+		text " "
+		dvar "vote no"
+		rect		0 30 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		mouseEnter 
+		{
+			play "mouse_over";
+			show keyBindStatus
+		}
+		mouseexit { hide keyBindStatus }
+		action { play "mouse_click"; }
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BIND
+		text " "
+		dvar "chatmodepublic"
+		rect		0 45 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		mouseEnter 
+		{
+			play "mouse_over";
+			show keyBindStatus
+		}
+		mouseexit { hide keyBindStatus }
+		action { play "mouse_click"; }
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BIND
+		text " "
+		dvar "chatmodeteam"
+		rect		0 60 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		mouseEnter 
+		{
+			play "mouse_over";
+			show keyBindStatus
+		}
+		mouseexit { hide keyBindStatus }
+		action { play "mouse_click"; }
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BIND
+		text " "
+		dvar "mp_QuickMessage"
+		rect		0 75 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		mouseEnter 
+		{
+			play "mouse_over";
+			show keyBindStatus
+		}
+		mouseexit { hide keyBindStatus }
+		action { play "mouse_click"; }
+    	}
+
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_YESNO
+		text " "
+		dvar "cl_allowdownload"
+		rect		0 90 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		action { play "mouse_click"; }
+		mouseEnter 
+		{
+			play "mouse_over";
+		}
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_YESNO
+		text " "
+		dvar "hud_enable"
+		rect		0 105 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		action { play "mouse_click"; }
+		mouseEnter 
+		{
+			play "mouse_over";
+		}
+    	}
+
+
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_MULTI
+		text " "
+		dvar "rate"
+		dvarFloatList { "@MENU_ISDN" 5000 "@MENU_LAN_CABLE_XDSL" 25000  }
+		rect		0 120 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		action { play "mouse_click"; }
+		mouseEnter 
+		{
+			play "mouse_over";
+		}
+    	}
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_BIND
+		text " "
+		dvar "openscriptmenu ingame changeweapon"
+		rect		0 135 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		action { play "mouse_click"; }
+		mouseEnter 
+		{
+			play "mouse_over";
+		}
+    }
+	itemDef
+	{
+		name		player_name
+		type		ITEM_TYPE_EDITFIELD
+		text		" "
+		dvar		"ui_name"
+		rect		0 150 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		maxChars	31
+		maxpaintchars	18
+		mouseEnter 
+		{
+			play "mouse_over";
+		}
+	}
+
+	itemDef
+	{
+		name misc		
+		type ITEM_TYPE_YESNO
+		text " "
+		dvar "cl_punkbuster"
+		rect		0 165 320 13
+		origin 50 120
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		textalign	ITEM_ALIGN_LEFT
+		textalignx	170 
+		textaligny	11
+		textscale	0.25
+		style		WINDOW_STYLE_FILLED
+		backcolor	0 0 0 0
+		forecolor	.9 .9 .9 1
+		visible		1 
+		action { play "mouse_click"; }
+		mouseEnter 
+		{
+			play "mouse_over";
+		}
+   	}
+
+///////////////////////////////////////////////////////////
+	itemDef 
+	{
+		name		cdkeybt
+		text		"@MENU_ENTER_KEY_CODE"
+		type		ITEM_TYPE_BUTTON
+		style		WINDOW_STYLE_FILLED
+		textstyle	ITEM_TEXTSTYLE_SHADOWED
+		rect		102 330 150 20 
+		textalign	ITEM_ALIGN_CENTER
+		textscale	.3		
+		textaligny	14
+		forecolor	.9 .9 .95 1
+		visible		1
+		textfont	UI_FONT_NORMAL
+		mouseEnter 
+		{
+			play "mouse_over";
+		}
+		action 
+		{ 
+			play "mouse_click";
+			open cdkey_menu;
+		}
+	}
+
+	itemDef 
+	{
+		name keyBindStatus
+		rect 0 350 360 15 
+		ownerdraw UI_KEYBINDSTATUS
+		text " "      
+		style WINDOW_STYLE_FILLED
+		backcolor 0 0 0 0
+		forecolor .9 .9 .9 1
+		textscale .20
+		textalignx -12
+		textalign ITEM_ALIGN_CENTER
+		textaligny 12
+		visible 0
+		decoration 
+	}
+
+}
+
+}//
+*/

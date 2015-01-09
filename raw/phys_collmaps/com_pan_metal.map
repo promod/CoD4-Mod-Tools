@@ -1,0 +1,30 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+  {
+    physics_cylinder
+    {
+      0.000000 0.000000 1.000000 0.000000 -0.000000 1.317554 3.130502 5.441647
+    }
+  }
+// brush 1
+  {
+    physics_box
+    {
+      1.000000 0.000000 0.000000 0.000000 0.935908 0.352244 0.000000 -0.352243 0.935909 0.000000 9.888272 3.644324 1.000000 8.329756 0.678494
+    }
+  }
+}
+// entity 1
+{
+"type" "clutter"
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+"model" "com_pan_metal"
+"physPreset" "default"
+"classname" "dyn_model"
+}

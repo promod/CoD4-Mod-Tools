@@ -1,0 +1,89 @@
+#name "rumble"
+#dll "all" "configstringconvert"
+#source_dir "rumble/"
+#target_dir "rumble/"
+#file_ext "*"
+#version 1
+
+// This tells the configstring converter what the file type identifier should be
+string "RUMBLE" configstringFileType
+
+string lowRumbleFile
+string highRumbleFile
+float 0 0 100 duration
+float 1 1 10000 range
+int 1 0 1 fadeWithDistance
+int 0 0 1 broadcast
+
+vcontainer
+{
+	fileedit(highRumbleFile)
+	[
+		exec
+		{
+			label("High Rumble File")
+			reldir("raw/rumble/")
+			width(500)
+		}
+	]
+	fileedit(lowRumbleFile)
+	[
+		exec
+		{
+			label("Low Rumble File")
+			reldir("raw/rumble/")
+			width(500)
+		}
+	]
+
+	floatedit(duration, 120, 8000)
+	[
+		exec
+		{
+			label("Duration (in sec)")
+		}
+	]
+	
+	checkbox(broadcast)
+	[
+		exec
+		{
+			label("Broadcast to World")
+			tooltip("If checked, this rumble will broadcast to any entities in range.  Otherwise, it only affects the player it is applied to directly.")
+			righttext()
+		}
+	]	
+
+	vcontainer
+	{
+		floatedit(range, 120, 8000)
+		[
+			exec
+			{
+				label( "Range" )
+				width( 150 )
+				labelwidth( 50 )
+			}
+		]
+
+		checkbox(fadeWithDistance)
+		[
+			exec
+			{
+				label( "Fade Intensity With Distance" )
+				tooltip( "If checked, rumble intensity will lerp from full (at the origin) to nothing (at the extent of it's range)." )
+				width( 350 )
+				labelwidth( 350 )
+				righttext()
+			}
+		]	
+	}
+	[
+		exec
+		{
+			groupBox( "" )
+			visible( broadcast == 1 )
+		}
+	]
+}
+

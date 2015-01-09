@@ -1,0 +1,1046 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 76 30 0 ) ( -92 30 0 ) ( -92 -78 0 ) ch_ground_mud02 128 128 0 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -78 8 ) ( -92 30 8 ) ( 76 30 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -58 0 ) ( -46 -58 8 ) ( -40 -58 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -78 260 ) ( -40 30 260 ) ( -40 30 252 ) caulk 64 64 -2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 -42 8 ) ( -44 -42 0 ) ( -40 -42 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 -42 0 ) ( -44 -42 8 ) ( -46 -58 8 ) ch_wall_floor_destroyed 80 -8 42 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 76 24 0 ) ( -92 24 0 ) ( -92 -84 0 ) ch_ground_mud02 128 128 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -84 8 ) ( -92 24 8 ) ( 76 24 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 -64 0 ) ( -52 -64 8 ) ( -40 -64 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -84 260 ) ( -40 24 260 ) ( -40 24 252 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -58 8 ) ( -46 -58 0 ) ( -40 -58 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -58 0 ) ( -46 -58 8 ) ( -52 -64 8 ) ch_wall_floor_destroyed 80 -8 48 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 76 40 0 ) ( -92 40 0 ) ( -92 -68 0 ) ch_ground_mud02 128 128 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -68 8 ) ( -92 40 8 ) ( 76 40 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 -42 0 ) ( -44 -42 8 ) ( -40 -42 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -68 260 ) ( -40 40 260 ) ( -40 40 252 ) caulk 64 64 8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 -32 8 ) ( -52 -32 0 ) ( -40 -32 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 -42 8 ) ( -44 -42 0 ) ( -52 -32 0 ) ch_wall_floor_destroyed 80 -8 32 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 196 104 0 ) ( 28 104 0 ) ( 28 -4 0 ) ch_ground_mud02 128 128 0 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -4 8 ) ( 28 104 8 ) ( 196 104 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 28 8 ) ( 48 28 0 ) ( 40 28 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 44 8 ) ( 46 44 0 ) ( 48 28 0 ) ch_wall_floor_destroyed 80 -8 24 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 44 0 ) ( 46 44 8 ) ( 40 44 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 104 260 ) ( 40 -4 260 ) ( 40 -4 252 ) caulk 64 64 16 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 196 130 0 ) ( 28 130 0 ) ( 28 22 0 ) ch_ground_mud02 128 128 0 -42 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 22 8 ) ( 28 130 8 ) ( 196 130 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 54 8 ) ( 52 54 0 ) ( 40 54 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 54 0 ) ( 52 54 8 ) ( 64 64 8 ) ch_wall_floor_destroyed 80 -8 -2 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 64 0 ) ( 64 64 8 ) ( 40 64 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 74 0 ) ( 40 74 8 ) ( 40 54 8 ) caulk 64 64 42 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 196 88 0 ) ( 28 88 0 ) ( 28 -20 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -20 8 ) ( 28 88 8 ) ( 196 88 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 12 260 ) ( 188 12 260 ) ( 188 12 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 28 8 ) ( 48 28 0 ) ( 56 12 0 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 28 0 ) ( 64 28 8 ) ( 40 28 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 88 260 ) ( 40 -20 260 ) ( 40 -20 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( 196 120 0 ) ( 28 120 0 ) ( 28 12 0 ) ch_ground_mud02 128 128 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 12 8 ) ( 28 120 8 ) ( 196 120 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 44 8 ) ( 46 44 0 ) ( 40 44 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 54 8 ) ( 52 54 0 ) ( 46 44 0 ) ch_wall_floor_destroyed 80 -8 8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 54 0 ) ( 52 54 8 ) ( 40 54 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 64 0 ) ( 40 64 8 ) ( 40 44 8 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( 196 32 0 ) ( 28 32 0 ) ( 28 -76 0 ) ch_ground_mud02 128 128 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -76 8 ) ( 28 32 8 ) ( 196 32 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 -64 8 ) ( 80 -64 0 ) ( 40 -64 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 -32 8 ) ( 76 -32 0 ) ( 80 -64 0 ) ch_wall_floor_destroyed 80 -8 52 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 -32 0 ) ( 76 -32 8 ) ( 40 -32 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 32 260 ) ( 40 -76 260 ) ( 40 -76 252 ) caulk 64 64 -12 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( 196 0 0 ) ( 28 0 0 ) ( 28 -108 0 ) ch_ground_mud02 128 128 0 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -108 8 ) ( 28 0 8 ) ( 196 0 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -80 8 ) ( 64 -80 0 ) ( 40 -84 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -80 0 ) ( 64 -80 8 ) ( 80 -64 8 ) ch_wall_floor_destroyed 80 -8 72 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 192 -64 260 ) ( 24 -64 260 ) ( 24 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -84 8 ) ( 40 -84 0 ) ( 40 -64 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( 156 -4 0 ) ( -12 -4 0 ) ( -12 -112 0 ) ch_ground_mud02 128 128 0 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -112 8 ) ( -12 -4 8 ) ( 156 -4 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -84 8 ) ( 40 -84 0 ) ( 20 -88 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -84 0 ) ( 40 -84 8 ) ( 40 -64 8 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 152 -64 260 ) ( -16 -64 260 ) ( -16 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -88 8 ) ( 20 -88 0 ) ( 20 -64 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 10
+{
+  contents detail;
+ ( 196 72 0 ) ( 28 72 0 ) ( 28 -36 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -36 8 ) ( 28 72 8 ) ( 196 72 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -4 8 ) ( 64 -4 0 ) ( 40 -4 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 12 8 ) ( 56 12 0 ) ( 64 -4 0 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 12 0 ) ( 56 12 8 ) ( 40 12 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 72 260 ) ( 40 -36 260 ) ( 40 -36 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 11
+{
+  contents detail;
+ ( 196 56 0 ) ( 28 56 0 ) ( 28 -52 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -52 8 ) ( 28 56 8 ) ( 196 56 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -20 8 ) ( 68 -20 0 ) ( 40 -20 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -4 8 ) ( 64 -4 0 ) ( 68 -20 0 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -4 0 ) ( 64 -4 8 ) ( 40 -4 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 56 260 ) ( 40 -52 260 ) ( 40 -52 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 12
+{
+  contents detail;
+ ( 196 44 0 ) ( 28 44 0 ) ( 28 -64 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -64 8 ) ( 28 44 8 ) ( 196 44 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 -32 8 ) ( 76 -32 0 ) ( 40 -32 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -20 8 ) ( 68 -20 0 ) ( 76 -32 0 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -20 0 ) ( 68 -20 8 ) ( 40 -20 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 44 260 ) ( 40 -64 260 ) ( 40 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 13
+{
+  contents detail;
+ ( 76 44 0 ) ( -92 44 0 ) ( -92 -64 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -64 8 ) ( -92 44 8 ) ( 76 44 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 -32 0 ) ( -52 -32 8 ) ( -40 -32 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -64 260 ) ( -40 44 260 ) ( -40 44 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 -20 260 ) ( -96 -20 260 ) ( -96 -20 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 -32 8 ) ( -52 -32 0 ) ( -56 -20 0 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 14
+{
+  contents detail;
+ ( 76 56 0 ) ( -92 56 0 ) ( -92 -52 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -52 8 ) ( -92 56 8 ) ( 76 56 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -20 0 ) ( -56 -20 8 ) ( -40 -20 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -52 260 ) ( -40 56 260 ) ( -40 56 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -4 8 ) ( -64 -4 0 ) ( -40 -4 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -4 0 ) ( -64 -4 8 ) ( -56 -20 8 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 15
+{
+  contents detail;
+ ( 96 60 0 ) ( -72 60 0 ) ( -72 -48 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 -48 8 ) ( -72 60 8 ) ( 96 60 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -64 260 ) ( 88 -64 260 ) ( 88 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -48 260 ) ( 40 60 260 ) ( 40 60 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 92 64 260 ) ( -76 64 260 ) ( -76 64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 56 260 ) ( -40 -52 260 ) ( -40 -52 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 16
+{
+  contents detail;
+ ( 136 -4 0 ) ( -32 -4 0 ) ( -32 -112 0 ) ch_ground_mud02 128 128 0 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -112 8 ) ( -32 -4 8 ) ( 136 -4 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -88 8 ) ( 20 -88 0 ) ( 0 -84 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -88 0 ) ( 20 -88 8 ) ( 20 -64 8 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 132 -64 260 ) ( -36 -64 260 ) ( -36 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -84 8 ) ( 0 -84 0 ) ( 0 -64 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 17
+{
+  contents detail;
+ ( 116 -4 0 ) ( -52 -4 0 ) ( -52 -112 0 ) ch_ground_mud02 128 128 0 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 -112 8 ) ( -52 -4 8 ) ( 116 -4 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -84 8 ) ( 0 -84 0 ) ( -20 -92 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -84 0 ) ( 0 -84 8 ) ( 0 -64 8 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 112 -64 260 ) ( -56 -64 260 ) ( -56 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -92 8 ) ( -20 -92 0 ) ( -20 -64 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 18
+{
+  contents detail;
+ ( 104 -4 0 ) ( -64 -4 0 ) ( -64 -112 0 ) ch_ground_mud02 128 128 0 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -112 8 ) ( -64 -4 8 ) ( 104 -4 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -92 8 ) ( -20 -92 0 ) ( -32 -96 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -92 0 ) ( -20 -92 8 ) ( -20 -64 8 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 100 -64 260 ) ( -68 -64 260 ) ( -68 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -8 260 ) ( -32 -116 260 ) ( -32 -116 252 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 19
+{
+  contents detail;
+ ( 96 -4 0 ) ( -72 -4 0 ) ( -72 -112 0 ) ch_ground_mud02 128 128 0 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 -112 8 ) ( -72 -4 8 ) ( 96 -4 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -88 0 ) ( -40 -88 8 ) ( -32 -96 8 ) ch_wall_floor_destroyed 80 -8 72 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -112 260 ) ( -32 -4 260 ) ( -32 -4 252 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 92 -64 260 ) ( -76 -64 260 ) ( -76 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -88 8 ) ( -40 -88 0 ) ( -40 -64 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 20
+{
+  contents detail;
+ ( 76 0 0 ) ( -92 0 0 ) ( -92 -108 0 ) ch_ground_mud02 128 128 0 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -108 8 ) ( -92 0 8 ) ( 76 0 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -80 0 ) ( -56 -80 8 ) ( -40 -88 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -108 260 ) ( -40 0 260 ) ( -40 0 252 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 -64 260 ) ( -96 -64 260 ) ( -96 -64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -80 8 ) ( -56 -80 0 ) ( -52 -64 0 ) ch_wall_floor_destroyed 80 -8 72 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 21
+{
+  contents detail;
+ ( 76 72 0 ) ( -92 72 0 ) ( -92 -36 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -36 8 ) ( -92 72 8 ) ( 76 72 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 -4 0 ) ( -68 -4 8 ) ( -40 -4 8 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -36 260 ) ( -40 72 260 ) ( -40 72 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 12 8 ) ( -72 12 0 ) ( -40 12 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 -4 8 ) ( -68 -4 0 ) ( -72 12 0 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 22
+{
+  contents detail;
+ ( 76 88 0 ) ( -92 88 0 ) ( -92 -20 0 ) ch_ground_mud02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -20 8 ) ( -92 88 8 ) ( 76 88 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 12 0 ) ( -72 12 8 ) ( -40 12 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -20 260 ) ( -40 88 260 ) ( -40 88 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 28 260 ) ( -96 28 260 ) ( -96 28 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 12 8 ) ( -72 12 0 ) ( -68 28 0 ) ch_wall_floor_destroyed -80 8 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 23
+{
+  contents detail;
+ ( 76 104 0 ) ( -92 104 0 ) ( -92 -4 0 ) ch_ground_mud02 128 128 0 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -4 8 ) ( -92 104 8 ) ( 76 104 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 28 0 ) ( -68 28 8 ) ( -40 28 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 42 8 ) ( -40 42 0 ) ( -40 28 0 ) caulk 64 64 16 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 42 0 ) ( -40 42 8 ) ( -62 42 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 42 0 ) ( -62 42 8 ) ( -68 28 8 ) ch_wall_floor_destroyed 80 -8 24 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 24
+{
+  contents detail;
+ ( 76 118 0 ) ( -92 118 0 ) ( -92 10 0 ) ch_ground_mud02 128 128 0 -30 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 10 8 ) ( -92 118 8 ) ( 76 118 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 42 0 ) ( -62 42 8 ) ( -40 42 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 64 8 ) ( -40 64 0 ) ( -40 42 0 ) caulk 64 64 30 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 64 0 ) ( -40 64 8 ) ( -68 64 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 64 0 ) ( -68 64 8 ) ( -62 42 8 ) ch_wall_floor_destroyed 80 -8 10 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 25
+{
+  contents detail;
+ ( 60 152 0 ) ( -108 152 0 ) ( -108 44 0 ) ch_ground_mud02 128 128 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -108 44 8 ) ( -108 152 8 ) ( 60 152 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -116 64 260 ) ( 52 64 260 ) ( 52 64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 44 260 ) ( -56 152 260 ) ( -56 152 252 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 80 8 ) ( -68 80 0 ) ( -56 88 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 80 0 ) ( -68 80 8 ) ( -68 64 8 ) ch_wall_floor_destroyed 80 -8 4 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 26
+{
+  contents detail;
+ ( 68 152 0 ) ( -100 152 0 ) ( -100 44 0 ) ch_ground_mud02 128 128 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -100 44 8 ) ( -100 152 8 ) ( 68 152 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -108 64 260 ) ( 60 64 260 ) ( 60 64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 92 8 ) ( -48 92 0 ) ( -48 64 0 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 88 8 ) ( -56 88 0 ) ( -48 92 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 88 0 ) ( -56 88 8 ) ( -56 64 8 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 27
+{
+  contents detail;
+ ( 76 152 0 ) ( -92 152 0 ) ( -92 44 0 ) ch_ground_mud02 128 128 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 44 8 ) ( -92 152 8 ) ( 76 152 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -100 64 260 ) ( 68 64 260 ) ( 68 64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 88 8 ) ( -40 88 0 ) ( -40 64 0 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 92 8 ) ( -48 92 0 ) ( -40 88 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 92 0 ) ( -48 92 8 ) ( -48 64 8 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 28
+{
+  contents detail;
+ ( 156 160 0 ) ( -12 160 0 ) ( -12 52 0 ) ch_ground_mud02 128 128 -40 -72 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 52 8 ) ( -12 160 8 ) ( 156 160 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 88 8 ) ( 20 88 0 ) ( 0 84 0 ) caulk 64 64 -40 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 94 8 ) ( 14 94 0 ) ( 20 88 0 ) ch_wall_floor_destroyed 80 -8 -46 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 94 0 ) ( 14 94 8 ) ( 4 90 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 90 0 ) ( 4 90 8 ) ( 0 84 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 29
+{
+  contents detail;
+ ( 136 156 0 ) ( -32 156 0 ) ( -32 48 0 ) ch_ground_mud02 128 128 -60 -68 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 48 8 ) ( -32 156 8 ) ( 136 156 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 84 8 ) ( 0 84 0 ) ( -20 80 0 ) caulk 64 64 -60 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 88 8 ) ( -8 88 0 ) ( 0 84 0 ) ch_wall_floor_destroyed 80 -8 -42 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 88 0 ) ( -8 88 8 ) ( -18 88 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 88 0 ) ( -18 88 8 ) ( -20 80 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 30
+{
+  contents detail;
+ ( 116 164 0 ) ( -52 164 0 ) ( -52 56 0 ) ch_ground_mud02 128 128 -80 -76 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 56 8 ) ( -52 164 8 ) ( 116 164 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 80 8 ) ( -20 80 0 ) ( -40 88 0 ) caulk 64 64 -80 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 94 8 ) ( -28 94 0 ) ( -20 80 0 ) ch_wall_floor_destroyed 80 -8 -22 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 94 8 ) ( -36 94 0 ) ( -28 94 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 94 0 ) ( -36 94 8 ) ( -40 88 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 31
+{
+  contents detail;
+ ( 96 156 0 ) ( -72 156 0 ) ( -72 48 0 ) ch_ground_mud02 128 128 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 48 8 ) ( -72 156 8 ) ( 96 156 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 64 260 ) ( 88 64 260 ) ( 88 64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 80 8 ) ( -20 80 0 ) ( -20 64 0 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 88 8 ) ( -40 88 0 ) ( -20 80 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 88 0 ) ( -40 88 8 ) ( -40 64 8 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 32
+{
+  contents detail;
+ ( 116 156 0 ) ( -52 156 0 ) ( -52 48 0 ) ch_ground_mud02 128 128 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 48 8 ) ( -52 156 8 ) ( 116 156 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 64 260 ) ( 108 64 260 ) ( 108 64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 84 8 ) ( 0 84 0 ) ( 0 64 0 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 80 8 ) ( -20 80 0 ) ( 0 84 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 80 0 ) ( -20 80 8 ) ( -20 64 8 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 33
+{
+  contents detail;
+ ( 136 156 0 ) ( -32 156 0 ) ( -32 48 0 ) ch_ground_mud02 128 128 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 48 8 ) ( -32 156 8 ) ( 136 156 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 64 260 ) ( 128 64 260 ) ( 128 64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 88 8 ) ( 20 88 0 ) ( 20 64 0 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 84 8 ) ( 0 84 0 ) ( 20 88 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 84 0 ) ( 0 84 8 ) ( 0 64 8 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 34
+{
+  contents detail;
+ ( 156 156 0 ) ( -12 156 0 ) ( -12 48 0 ) ch_ground_mud02 128 128 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 48 8 ) ( -12 156 8 ) ( 156 156 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 64 260 ) ( 148 64 260 ) ( 148 64 252 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 48 260 ) ( 40 156 260 ) ( 40 156 252 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 92 8 ) ( 20 92 0 ) ( 40 96 0 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 92 0 ) ( 20 92 8 ) ( 20 64 8 ) ch_wall_floor_destroyed 80 -8 4 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 35
+{
+  contents detail;
+ ( 196 152 0 ) ( 28 152 0 ) ( 28 44 0 ) ch_ground_mud02 128 128 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 44 8 ) ( 28 152 8 ) ( 196 152 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 64 8 ) ( 64 64 0 ) ( 40 64 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 84 8 ) ( 64 84 0 ) ( 64 64 0 ) ch_wall_floor_destroyed 80 -8 4 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 84 0 ) ( 64 84 8 ) ( 40 96 8 ) ch_wall_floor_destroyed 80 -8 40 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 152 260 ) ( 40 44 260 ) ( 40 44 252 ) caulk 64 64 36 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 36
+{
+  contents detail;
+ ( 220 140 0 ) ( 52 140 0 ) ( 52 32 0 ) ch_ground_mud02 128 128 24 -52 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 32 8 ) ( 52 140 8 ) ( 220 140 8 ) me_asphalt_road1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 68 8 ) ( 72 68 0 ) ( 64 64 0 ) ch_wall_floor_destroyed 80 -8 -26 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 74 74 8 ) ( 74 74 0 ) ( 72 68 0 ) ch_wall_floor_destroyed 80 -8 -26 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 74 74 0 ) ( 74 74 8 ) ( 64 84 8 ) ch_wall_floor_destroyed 80 -8 -26 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 84 0 ) ( 64 84 8 ) ( 64 64 8 ) caulk 64 64 52 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 37
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -56 -80 8 t -448 640 -3.5 5
+	v -52 -64 8 t -416 512 -3.25 4
+   )
+   (
+	v -40 -88 8 t -320 704 -2.5 5.5
+	v -40 -64 8 t -320 512 -2.5 4
+   )
+  }
+ }
+// brush 38
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -40 -88 8 t -320 704 -2.5 5.5
+	v -40 -64 8 t -320 512 -2.5 4
+   )
+   (
+	v -32 -96 8 t -256 768 -2 6
+	v -32 -64 8 t -256 512 -2 4
+   )
+  }
+ }
+// brush 39
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -32 -96 8 t -256 768 -2 6
+	v -32 -64 8 t -256 512 -2 4
+   )
+   (
+	v -20 -92 8 t -160 736 -1.25 5.75
+	v -20 -64 8 t -160 512 -1.25 4
+   )
+  }
+ }
+// brush 40
+ {
+  mesh
+  {
+  toolFlags;
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -20 -92 8 t -160 736 -1.25 5.75
+	v -20 -64 8 t -160 512 -1.25 4
+   )
+   (
+	v 0 -84 8 t 0 672 0 5.25
+	v 0 -64 8 t 0 512 0 4
+   )
+  }
+ }
+// brush 41
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 0 -84 8 t 0 672 0 5.25
+	v 0 -64 8 t 0 512 0 4
+   )
+   (
+	v 20 -88 8 t 160 704 1.25 5.5
+	v 20 -64 8 t 160 512 1.25 4
+   )
+  }
+ }
+// brush 42
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 20 -88 8 t 160 704 1.25 5.5
+	v 20 -64 8 t 160 512 1.25 4
+   )
+   (
+	v 40 -84 8 t 320 672 2.5 5.25
+	v 40 -64 8 t 320 512 2.5 4
+   )
+  }
+ }
+// brush 43
+ {
+  mesh
+  {
+  toolFlags;
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 -84 8 t 320 672 2.5 5.25
+	v 40 -64 8 t 320 512 2.5 4
+   )
+   (
+	v 64 -80 8 t 512 640 4 5
+	v 80 -64 8 t 640 512 5 4
+   )
+  }
+ }
+// brush 44
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 -64 8 t 320 512 2.5 4
+	v 40 -32 8 t 320 256 2.5 2
+   )
+   (
+	v 80 -64 8 t 640 512 5 4
+	v 76 -32 8 t 608 256 4.75 2
+   )
+  }
+ }
+// brush 45
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -40 -64 8 t -320 512 -2.5 4
+	v -40 64 8 t -320 -512 -2.5 -4
+   )
+   (
+	v 40 -64 8 t 320 512 2.5 4
+	v 40 64 8 t 320 -512 2.5 -4
+   )
+  }
+ }
+// brush 46
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -52 -64 8 t -416 512 -3.25 4
+	v -46 -58 8 t -368 464 -2.875 3.625
+   )
+   (
+	v -40 -64 8 t -320 512 -2.5 4
+	v -40 -58 8 t -320 464 -2.5 3.625
+   )
+  }
+ }
+// brush 47
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -46 -58 8 t -368 464 -2.875 3.625
+	v -44 -42 8 t -352 336 -2.75 2.625
+   )
+   (
+	v -40 -58 8 t -320 464 -2.5 3.625
+	v -40 -42 8 t -320 336 -2.5 2.625
+   )
+  }
+ }
+// brush 48
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -44 -42 8 t -352 336 -2.75 2.625
+	v -52 -32 8 t -416 256 -3.25 2
+   )
+   (
+	v -40 -42 8 t -320 336 -2.5 2.625
+	v -40 -32 8 t -320 256 -2.5 2
+   )
+  }
+ }
+// brush 49
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -52 -32 8 t -416 256 -3.25 2
+	v -56 -20 8 t -448 160 -3.5 1.25
+   )
+   (
+	v -40 -32 8 t -320 256 -2.5 2
+	v -40 -20 8 t -320 160 -2.5 1.25
+   )
+  }
+ }
+// brush 50
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -56 -20 8 t -448 160 -3.5 1.25
+	v -64 -4 8 t -512 32 -4 0.25
+   )
+   (
+	v -40 -20 8 t -320 160 -2.5 1.25
+	v -40 -4 8 t -320 32 -2.5 0.25
+   )
+  }
+ }
+// brush 51
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -68 -4 8 t -544 32 -4.25 0.25
+	v -72 12 8 t -576 -96 -4.5 -0.75
+   )
+   (
+	v -40 -4 8 t -320 32 -2.5 0.25
+	v -40 12 8 t -320 -96 -2.5 -0.75
+   )
+  }
+ }
+// brush 52
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -72 12 8 t -576 -96 -4.5 -0.75
+	v -68 28 8 t -544 -224 -4.25 -1.75
+   )
+   (
+	v -40 12 8 t -320 -96 -2.5 -0.75
+	v -40 28 8 t -320 -224 -2.5 -1.75
+   )
+  }
+ }
+// brush 53
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -68 28 8 t -544 -224 -4.25 -1.75
+	v -62 42 8 t -496 -336 -3.875 -2.625
+   )
+   (
+	v -40 28 8 t -320 -224 -2.5 -1.75
+	v -40 42 8 t -320 -336 -2.5 -2.625
+   )
+  }
+ }
+// brush 54
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -62 42 8 t -496 -336 -3.875 -2.625
+	v -68 64 8 t -544 -512 -4.25 -4
+   )
+   (
+	v -40 42 8 t -320 -336 -2.5 -2.625
+	v -40 64 8 t -320 -512 -2.5 -4
+   )
+  }
+ }
+// brush 55
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -56 64 8 t -448 -512 -3.5 -4
+	v -56 88 8 t -448 -704 -3.5 -5.5
+   )
+   (
+	v -48 64 8 t -384 -512 -3 -4
+	v -48 92 8 t -384 -736 -3 -5.75
+   )
+  }
+ }
+// brush 56
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -48 64 8 t -384 -512 -3 -4
+	v -48 92 8 t -384 -736 -3 -5.75
+   )
+   (
+	v -40 64 8 t -320 -512 -2.5 -4
+	v -40 88 8 t -320 -704 -2.5 -5.5
+   )
+  }
+ }
+// brush 57
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -40 64 8 t -320 -512 -2.5 -4
+	v -40 88 8 t -320 -704 -2.5 -5.5
+   )
+   (
+	v -20 64 8 t -160 -512 -1.25 -4
+	v -20 80 8 t -160 -640 -1.25 -5
+   )
+  }
+ }
+// brush 58
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -20 64 8 t -160 -512 -1.25 -4
+	v -20 80 8 t -160 -640 -1.25 -5
+   )
+   (
+	v 0 64 8 t 0 -512 0 -4
+	v 0 84 8 t 0 -672 0 -5.25
+   )
+  }
+ }
+// brush 59
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -40 88 8 t -320 -704 -2.5 -5.5
+	v -36 94 8 t -288 -752 -2.25 -5.875
+   )
+   (
+	v -20 80 8 t -160 -640 -1.25 -5
+	v -28 94 8 t -224 -752 -1.75 -5.875
+   )
+  }
+ }
+// brush 60
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -68 64 8 t -544 -512 -4.25 -4
+	v -68 80 8 t -544 -640 -4.25 -5
+   )
+   (
+	v -56 64 8 t -448 -512 -3.5 -4
+	v -56 88 8 t -448 -704 -3.5 -5.5
+   )
+  }
+ }
+// brush 61
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 0 64 8 t 0 -512 0 -4
+	v 0 84 8 t 0 -672 0 -5.25
+   )
+   (
+	v 20 64 8 t 160 -512 1.25 -4
+	v 20 88 8 t 160 -704 1.25 -5.5
+   )
+  }
+ }
+// brush 62
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 20 64 8 t 160 -512 1.25 -4
+	v 20 92 8 t 160 -736 1.25 -5.75
+   )
+   (
+	v 40 64 8 t 320 -512 2.5 -4
+	v 40 96 8 t 320 -768 2.5 -6
+   )
+  }
+ }
+// brush 63
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 64 8 t 320 -512 2.5 -4
+	v 40 96 8 t 320 -768 2.5 -6
+   )
+   (
+	v 64 64 8 t 512 -512 4 -4
+	v 64 84 8 t 512 -672 4 -5.25
+   )
+  }
+ }
+// brush 64
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 54 8 t 320 -432 2.5 -3.375
+	v 40 64 8 t 320 -512 2.5 -4
+   )
+   (
+	v 52 54 8 t 416 -432 3.25 -3.375
+	v 64 64 8 t 512 -512 4 -4
+   )
+  }
+ }
+// brush 65
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 64 64 8 t 512 -512 4 -4
+	v 64 84 8 t 512 -672 4 -5.25
+   )
+   (
+	v 72 68 8 t 576 -544 4.5 -4.25
+	v 74 74 8 t 592 -592 4.625 -4.625
+   )
+  }
+ }
+// brush 66
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 44 8 t 320 -352 2.5 -2.75
+	v 40 54 8 t 320 -432 2.5 -3.375
+   )
+   (
+	v 46 44 8 t 368 -352 2.875 -2.75
+	v 52 54 8 t 416 -432 3.25 -3.375
+   )
+  }
+ }
+// brush 67
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 28 8 t 320 -224 2.5 -1.75
+	v 40 44 8 t 320 -352 2.5 -2.75
+   )
+   (
+	v 48 28 8 t 384 -224 3 -1.75
+	v 46 44 8 t 368 -352 2.875 -2.75
+   )
+  }
+ }
+// brush 68
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 12 8 t 320 -96 2.5 -0.75
+	v 40 28 8 t 320 -224 2.5 -1.75
+   )
+   (
+	v 56 12 8 t 448 -96 3.5 -0.75
+	v 48 28 8 t 384 -224 3 -1.75
+   )
+  }
+ }
+// brush 69
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 -4 8 t 320 32 2.5 0.25
+	v 40 12 8 t 320 -96 2.5 -0.75
+   )
+   (
+	v 64 -4 8 t 512 32 4 0.25
+	v 56 12 8 t 448 -96 3.5 -0.75
+   )
+  }
+ }
+// brush 70
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 -20 8 t 320 160 2.5 1.25
+	v 40 -4 8 t 320 32 2.5 0.25
+   )
+   (
+	v 68 -20 8 t 544 160 4.25 1.25
+	v 64 -4 8 t 512 32 4 0.25
+   )
+  }
+ }
+// brush 71
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 40 -32 8 t 320 256 2.5 2
+	v 40 -20 8 t 320 160 2.5 1.25
+   )
+   (
+	v 76 -32 8 t 608 256 4.75 2
+	v 68 -20 8 t 544 160 4.25 1.25
+   )
+  }
+ }
+// brush 72
+ {
+  mesh
+  {
+  toolFlags;
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -20 80 8 t -160 -640 -1.25 -5
+	v -18 88 8 t -144 -704 -1.125 -5.5
+   )
+   (
+	v 0 84 8 t 0 -672 0 -5.25
+	v -8 88 8 t -64 -704 -0.5 -5.5
+   )
+  }
+ }
+// brush 73
+ {
+  mesh
+  {
+   ch_dec_darkstain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 0 84 8 t 0 -672 0 -5.25
+	v 4 90 8 t 32 -720 0.25 -5.625
+   )
+   (
+	v 20 88 8 t 160 -704 1.25 -5.5
+	v 14 94 8 t 112 -752 0.875 -5.875
+   )
+  }
+ }
+}

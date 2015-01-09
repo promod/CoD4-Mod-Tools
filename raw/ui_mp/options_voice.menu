@@ -1,0 +1,234 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define OPTIONS_STYLE			1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef
+	{
+		name options_voice
+		fullScreen 0
+		rect 0 0 640 480				// Size and position of the menu
+		focusColor COLOR_FOCUSED		// Menu focus color for text and items
+		soundloop ""
+		onOpen
+		{
+			setLocalVarBool ui_hideBack 1;
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+		}
+		onESC
+		{
+			close self;
+		}
+
+		#include "ui_mp/leftside_options.inc"
+		
+		CHOICE_SECTION_TITLE( 21, "@MENU_VOICECHAT" )
+	
+		CHOICE_DVARFLOATLIST( 22, "@MENU_VOICE_CHAT_ENABLE", cl_voice, { "@MENU_ON" 1 "@MENU_OFF" 0 }, ; )
+		CHOICE_DVARSLIDER( 23, "@MENU_VOICECHAT_RECORD_LEVEL", winvoice_mic_reclevel, 65535, 0, 65535, ; )
+		
+		PREPROC_TEXT_DRAW_ALIGNED( CHOICE_ORIGIN( 25 ) CHOICE_SIZE_X 20 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN, -10 22, text "@MENU_VOICECHAT_LEVEL_INDICATOR", CHOICE_TEXTSIZE, 0, 0, ITEM_ALIGN_RIGHT, CHOICE_TEXTCOLOR )
+
+		itemDef
+		{
+			name		voicechat_level_indicator
+			ownerdraw	UI_RECORDLEVEL
+			rect		CHOICE_ORIGIN( 25 ) 100 10 CHOICE_HORIZONTAL_ALIGN CHOICE_VERTICAL_ALIGN
+			origin 		520 8
+			style		WINDOW_STYLE_EMPTY
+			visible		1
+			decoration
+		}
+
+		//CHOICE_BACK( "@MENU_BACK", close self )
+	}
+}
+/*
+		itemDef
+		{
+			name voicechatselect
+			type ITEM_TYPE_BUTTON
+			text "@MENU_VOICE_CHAT_ENABLE"
+			rect		0 0 1 13
+			origin 50 120
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			textalign	ITEM_ALIGN_LEFT
+			textaligny	11
+			textscale	0.25
+			style		WINDOW_STYLE_FILLED
+			backcolor	0 0 0 0
+			forecolor	.9 .9 .9 1
+			visible		1
+			decoration
+		}
+	
+		itemDef
+		{
+			name graphics
+			group grpSystem
+			type ITEM_TYPE_BUTTON
+			text "@MENU_VOICECHAT_RECORD_LEVEL"
+			rect		0 15 1 13
+			origin 50 120
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			textalign	ITEM_ALIGN_LEFT
+			textaligny	11
+			textscale	0.25
+			style		WINDOW_STYLE_FILLED
+			backcolor	0 0 0 0
+			forecolor	.9 .9 .9 1
+			visible		1
+			decoration
+		}
+	
+		itemDef
+		{
+			name graphics
+			group grpSystem
+			type ITEM_TYPE_TEXT
+			text "@MENU_VOICE_CHAT_WILL_BE_DISABLED_BECAUSE"
+			rect		140 70 200 10
+			origin 50 120
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			textalign	ITEM_ALIGN_CENTER
+			textalignx	-100
+			textaligny	11
+			textscale	0.25
+			style		WINDOW_STYLE_FILLED
+			backcolor	0 0 0 0
+			forecolor	.9 .9 .9 1
+			visible		1
+			dvartest	"rate"
+			showdvar	{ "2500";"3000";"4000" }
+			decoration
+		}
+		itemDef
+		{
+			name graphics
+			group grpSystem
+			type ITEM_TYPE_TEXT
+			text "@MENU_YOUR_NETWORK_SETTINGS"
+			rect		140 85 200 10
+			origin 50 120
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			textalign	ITEM_ALIGN_CENTER
+			textalignx	-100
+			textaligny	11
+			textscale	0.25
+			style		WINDOW_STYLE_FILLED
+			backcolor	0 0 0 0
+			forecolor	.9 .9 .9 1
+			visible		1
+			dvartest	"rate"
+			showdvar	{ "2500";"3000";"4000" }
+			decoration
+		}
+		itemDef
+		{
+			name graphics
+			group grpSystem
+			type ITEM_TYPE_TEXT
+			text "@MENU_ARE_TOO_LOW_TO_SUPPORT_VOICE_CHAT"
+			rect		140 100 200 10
+			origin 50 120
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			textalign	ITEM_ALIGN_CENTER
+			textalignx	-100
+			textaligny	11
+			textscale	0.25
+			style		WINDOW_STYLE_FILLED
+			backcolor	0 0 0 0
+			forecolor	.9 .9 .9 1
+			visible		1
+			dvartest		"rate"
+			showdvar	{ "2500";"3000";"4000" }
+			decoration
+		}
+
+		itemDef
+		{
+			name voicechatselect
+			type ITEM_TYPE_MULTI
+			text " "
+			dvar "cl_voice"
+			dvarFloatList { "@MENU_ON" 1 "@MENU_OFF" 0 }
+			rect		0 0 320 13
+			origin 50 120
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			textalign	ITEM_ALIGN_LEFT
+			textalignx	170
+			textaligny	11
+			textscale	0.25
+			style		WINDOW_STYLE_FILLED
+			backcolor	0 0 0 0
+			forecolor	.9 .9 .9 1
+			visible		1
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action { play "mouse_click"; }
+		}
+	
+		itemDef
+		{
+			name graphics
+			group grpSystem
+			type ITEM_TYPE_SLIDER
+			text " "
+			dvarfloat "winvoice_mic_reclevel" 65535 0 65535
+			rect		0 15 320 13
+			origin 50 120
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			textalign	ITEM_ALIGN_LEFT
+			textalignx	170
+			textaligny	11
+			textscale	0.25
+			style		WINDOW_STYLE_FILLED
+			backcolor	0 0 0 0
+			forecolor	.9 .9 .9 1
+			visible		1
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+		}
+	
+	
+	
+		// voice recording level indicator
+		itemDef
+		{
+			name		voicechat_level_indicator
+			type		ITEM_TYPE_TEXT
+			text		"@MENU_VOICECHAT_LEVEL_INDICATOR"
+			rect		0 45 1 13
+			origin 50 120
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			textalign	ITEM_ALIGN_LEFT
+			textaligny	11
+			textscale	0.25
+			style		WINDOW_STYLE_FILLED
+			backcolor	0 0 0 0
+			forecolor	.9 .9 .9 1
+			visible		1
+		}
+		itemDef
+		{
+			name		voicechat_level_indicator
+			ownerdraw	UI_RECORDLEVEL
+			rect		180 47 100 10
+			forecolor	1 1 1 0.75
+			origin 		50 120
+			style		WINDOW_STYLE_EMPTY
+			visible		1
+			decoration
+		}
+	}
+}
+*/

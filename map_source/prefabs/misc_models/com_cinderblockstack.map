@@ -1,0 +1,58 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 24 8 ) ( -24 24 8 ) ( -24 -8 8 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -8 16 ) ( -24 24 16 ) ( 16 24 16 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 12 40 ) ( 16 12 40 ) ( 16 12 8 ) clip_nosight_rock 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 -8 40 ) ( 26 24 40 ) ( 26 24 8 ) clip_nosight_rock 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 24 40 ) ( -24 24 40 ) ( -24 24 8 ) clip_nosight_rock 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 20 40 ) ( -16 -12 40 ) ( -16 -12 8 ) clip_nosight_rock 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 16 12 8 ) ( -24 12 8 ) ( -24 -20 8 ) clip_nosight_rock 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -20 16 ) ( -24 12 16 ) ( 16 12 16 ) clip_nosight_rock 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -12 40 ) ( 16 -12 40 ) ( 16 -12 8 ) clip_nosight_rock 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 -20 40 ) ( 26 12 40 ) ( 26 12 8 ) clip_nosight_rock 64 64 -12 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 12 40 ) ( -24 12 40 ) ( -24 12 8 ) clip_nosight_rock 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 6 40 ) ( 2 -26 40 ) ( 2 -26 8 ) clip_nosight_rock 64 64 -12 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 16 24 0 ) ( -24 24 0 ) ( -24 -8 0 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -8 8 ) ( -24 24 8 ) ( 16 24 8 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 -24 32 ) ( 18 -24 32 ) ( 18 -24 0 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 -8 32 ) ( 26 24 32 ) ( 26 24 0 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 24 32 ) ( -24 24 32 ) ( -24 24 0 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 20 32 ) ( -22 -12 32 ) ( -22 -12 0 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 16 24 16 ) ( -24 24 16 ) ( -24 -8 16 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -8 24 ) ( -24 24 24 ) ( 16 24 24 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 48 ) ( 16 0 48 ) ( 16 0 16 ) clip_nosight_rock 64 64 0 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 -8 48 ) ( 26 24 48 ) ( 26 24 16 ) clip_nosight_rock 64 64 0 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 24 48 ) ( -24 24 48 ) ( -24 24 16 ) clip_nosight_rock 64 64 0 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 18 48 ) ( 8 -14 48 ) ( 8 -14 16 ) clip_nosight_rock 64 64 0 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( 16 24 24 ) ( -24 24 24 ) ( -24 -8 24 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -8 32 ) ( -24 24 32 ) ( 16 24 32 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 12 56 ) ( 16 12 56 ) ( 16 12 24 ) clip_nosight_rock 64 64 0 -24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 -8 56 ) ( 26 24 56 ) ( 26 24 24 ) clip_nosight_rock 64 64 0 -24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 24 56 ) ( -24 24 56 ) ( -24 24 24 ) clip_nosight_rock 64 64 0 -24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 18 56 ) ( 14 -14 56 ) ( 14 -14 24 ) clip_nosight_rock 64 64 0 -24 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_cinderblockstack"
+"classname" "misc_model"
+}

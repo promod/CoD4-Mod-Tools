@@ -1,0 +1,975 @@
+#name "bullet_penetration"
+#dll "all" "configstringconvert"
+#target_dir "info/"
+#file_ext "*"
+#version 3
+
+// This tells the configstring converter what the file type identifier should be
+enum { "BULLET_PEN_TABLE" } configstringFileType
+
+float 0 0 256 small_bark 
+float 0 0 256 small_brick
+float 0 0 256 small_carpet
+float 0 0 256 small_cloth
+float 0 0 256 small_concrete
+float 0 0 256 small_dirt
+float 0 0 256 small_flesh
+float 0 0 256 small_foliage
+float 0 0 256 small_glass
+float 0 0 256 small_grass
+float 0 0 256 small_gravel
+float 0 0 256 small_ice
+float 0 0 256 small_metal
+float 0 0 256 small_mud
+float 0 0 256 small_paper
+float 0 0 256 small_plaster
+float 0 0 256 small_rock
+float 0 0 256 small_sand
+float 0 0 256 small_snow
+float 0 0 256 small_water
+float 0 0 256 small_wood
+float 0 0 256 small_asphalt
+float 0 0 256 small_ceramic
+float 0 0 256 small_plastic
+float 0 0 256 small_rubber
+float 0 0 256 small_cushion
+float 0 0 256 small_fruit
+float 0 0 256 small_paintedmetal
+
+float 0 0 256 medium_bark 
+float 0 0 256 medium_brick
+float 0 0 256 medium_carpet
+float 0 0 256 medium_cloth
+float 0 0 256 medium_concrete
+float 0 0 256 medium_dirt
+float 0 0 256 medium_flesh
+float 0 0 256 medium_foliage
+float 0 0 256 medium_glass
+float 0 0 256 medium_grass
+float 0 0 256 medium_gravel
+float 0 0 256 medium_ice
+float 0 0 256 medium_metal
+float 0 0 256 medium_mud
+float 0 0 256 medium_paper
+float 0 0 256 medium_plaster
+float 0 0 256 medium_rock
+float 0 0 256 medium_sand
+float 0 0 256 medium_snow
+float 0 0 256 medium_water
+float 0 0 256 medium_wood
+float 0 0 256 medium_asphalt
+float 0 0 256 medium_ceramic
+float 0 0 256 medium_plastic
+float 0 0 256 medium_rubber
+float 0 0 256 medium_cushion
+float 0 0 256 medium_fruit
+float 0 0 256 medium_paintedmetal
+
+float 0 0 256 large_bark 
+float 0 0 256 large_brick
+float 0 0 256 large_carpet
+float 0 0 256 large_cloth
+float 0 0 256 large_concrete
+float 0 0 256 large_dirt
+float 0 0 256 large_flesh
+float 0 0 256 large_foliage
+float 0 0 256 large_glass
+float 0 0 256 large_grass
+float 0 0 256 large_gravel
+float 0 0 256 large_ice
+float 0 0 256 large_metal
+float 0 0 256 large_mud
+float 0 0 256 large_paper
+float 0 0 256 large_plaster
+float 0 0 256 large_rock
+float 0 0 256 large_sand
+float 0 0 256 large_snow
+float 0 0 256 large_water
+float 0 0 256 large_wood
+float 0 0 256 large_asphalt
+float 0 0 256 large_ceramic
+float 0 0 256 large_plastic
+float 0 0 256 large_rubber
+float 0 0 256 large_cushion
+float 0 0 256 large_fruit
+float 0 0 256 large_paintedmetal
+
+hcontainer
+{
+	/////////////////////////////////////////
+	// Small bullets
+	/////////////////////////////////////////
+	vcontainer
+	{
+		floatedit( small_bark, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "bark" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_brick, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "brick" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_carpet, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "carpet" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_cloth, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "cloth" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_concrete, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "concrete" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_dirt, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "dirt" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_flesh, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "flesh" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_foliage, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "foliage" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_glass, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "glass" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_grass, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "grass" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_gravel, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "gravel" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_ice, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "ice" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_metal, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "metal" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_mud, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "mud" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_paper, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "paper" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_plaster, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "plaster" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_rock, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "rock" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_sand, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "sand" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_snow, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "snow" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_water, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "water" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_wood, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "wood" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_asphalt, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "asphalt" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_ceramic, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "ceramic" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_plastic, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "plastic" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_rubber, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "rubber" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( small_cushion, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "cushion" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_fruit, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "fruit" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( small_paintedmetal, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "painted metal" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Small Bullets" )
+		}
+	]
+	
+	/////////////////////////////////////////
+	// Medium bullets
+	/////////////////////////////////////////
+	vcontainer
+	{
+		floatedit( medium_bark, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "bark" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_brick, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "brick" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_carpet, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "carpet" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_cloth, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "cloth" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_concrete, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "concrete" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_dirt, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "dirt" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_flesh, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "flesh" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_foliage, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "foliage" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_glass, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "glass" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_grass, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "grass" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_gravel, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "gravel" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_ice, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "ice" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_metal, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "metal" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_mud, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "mud" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_paper, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "paper" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_plaster, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "plaster" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_rock, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "rock" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_sand, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "sand" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_snow, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "snow" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_water, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "water" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_wood, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "wood" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( medium_asphalt, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "asphalt" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( medium_ceramic, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "ceramic" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( medium_plastic, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "plastic" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( medium_rubber, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "rubber" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( medium_cushion, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "cushion" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( medium_fruit, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "fruit" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( medium_paintedmetal, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "painted metal" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Medium Bullets" )
+		}
+	]
+
+	/////////////////////////////////////////
+	// Large bullets
+	/////////////////////////////////////////
+	vcontainer
+	{
+		floatedit( large_bark, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "bark" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_brick, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "brick" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_carpet, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "carpet" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_cloth, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "cloth" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_concrete, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "concrete" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_dirt, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "dirt" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_flesh, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "flesh" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_foliage, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "foliage" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_glass, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "glass" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_grass, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "grass" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_gravel, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "gravel" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_ice, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "ice" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_metal, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "metal" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_mud, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "mud" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_paper, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "paper" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_plaster, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "plaster" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_rock, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "rock" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_sand, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "sand" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_snow, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "snow" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_water, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "water" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_wood, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "wood" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		floatedit( large_asphalt, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "asphalt" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+		
+		
+		floatedit( large_ceramic, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "ceramic" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( large_plastic, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "plastic" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( large_rubber, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "rubber" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( large_cushion, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "cushion" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( large_fruit, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "fruit" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+
+		floatedit( large_paintedmetal, 0.1, 0.2 )
+		[
+			exec
+			{
+				label( "painted metal" )
+				labelwidth( 100 )
+				width( 200 )
+			}
+		]
+	}
+	[
+		exec
+		{
+			groupBox( "Large Bullets" )
+		}
+	]
+}

@@ -1,0 +1,67 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( -28 -12 18 ) ( -28 12 18 ) ( 28 12 18 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 -28 16 ) ( 28 -28 16 ) ( 28 -28 -16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -12 16 ) ( 56 12 16 ) ( 56 12 -16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 20 16 ) ( -28 20 16 ) ( -28 20 -16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 4 16 ) ( -56 -20 16 ) ( -56 -20 -16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 48 0 ) ( -8 48 0 ) ( -16 80 0 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 40 18 18 ) ( -40 18 18 ) ( -40 10 18 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 8 44 ) ( -40 16 44 ) ( 40 16 44 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 8 40 ) ( 40 8 40 ) ( 40 8 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 8 40 ) ( 56 16 40 ) ( 56 16 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 20 44 ) ( -40 20 44 ) ( -40 20 20 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 18 40 ) ( -56 10 40 ) ( -56 10 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 24 10 18 ) ( -56 10 18 ) ( -56 2 18 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -58 8 26 ) ( -58 16 26 ) ( 22 16 26 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -120 -28 40 ) ( -40 -28 40 ) ( -40 -28 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 8 40 ) ( -46 16 40 ) ( -46 16 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 40 ) ( -56 8 40 ) ( -56 8 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 16 40 ) ( -56 8 40 ) ( -56 8 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 126 10 18 ) ( 46 10 18 ) ( 46 2 18 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 44 8 26 ) ( 44 16 26 ) ( 124 16 26 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -28 40 ) ( 62 -28 40 ) ( 62 -28 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 8 40 ) ( 56 16 40 ) ( 56 16 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 126 8 40 ) ( 46 8 40 ) ( 46 8 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 16 40 ) ( 46 8 40 ) ( 46 8 16 ) me_wallpaper1 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( -28 -28 16 ) ( 28 -28 16 ) ( 28 -28 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -12 16 ) ( 56 12 16 ) ( 56 12 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 20 16 ) ( -28 20 16 ) ( -28 20 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 4 16 ) ( -56 -20 16 ) ( -56 -20 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 48 0 ) ( -8 48 0 ) ( -16 80 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -14 26 ) ( 56 -6 26 ) ( 88 -14 26 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -28 -4 44 ) ( -28 20 44 ) ( 28 20 44 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 8 16 ) ( 28 8 16 ) ( 28 8 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -12 16 ) ( 56 12 16 ) ( 56 12 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 20 16 ) ( -28 20 16 ) ( -28 20 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 4 16 ) ( -56 -20 16 ) ( -56 -20 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -6 26 ) ( 56 -14 26 ) ( 88 -14 26 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

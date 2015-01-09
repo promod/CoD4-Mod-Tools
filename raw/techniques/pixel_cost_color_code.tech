@@ -1,0 +1,17 @@
+{
+	stateMap "default2d";
+
+	vertexShader 2.0 "pixel_cost_color_code.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "pixel_cost_color_code.hlsl"
+	{
+		colorMapSampler = sampler.resolvedScene;
+		lookupMapSampler = sampler.feedback;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

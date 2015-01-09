@@ -1,0 +1,44 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"spawnflags" "4"
+"script_gameobjectname" "sab"
+"origin" "0.0 0.0 0.0"
+"targetname" "sab_bomb"
+"model" "mil_tntbomb_mp"
+"classname" "script_model"
+}
+// entity 2
+{
+"script_gameobjectname" "sab"
+"targetname" "sab_bomb_pickup_trig"
+"classname" "trigger_multiple"
+// brush 0
+{
+ ( 32 32 -4 ) ( -32 32 -4 ) ( -32 -32 -4 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -32 32 ) ( -32 32 32 ) ( 32 32 32 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -32 32 ) ( 32 -32 32 ) ( 32 -32 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -32 32 ) ( 32 32 32 ) ( 32 32 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 32 32 ) ( -32 32 32 ) ( -32 32 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 32 32 ) ( -32 -32 32 ) ( -32 -32 0 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 32 32 ) ( 32 12 32 ) ( 12 32 64 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -12 32 ) ( 12 -32 32 ) ( 32 -12 64 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -32 32 ) ( -32 -12 32 ) ( -12 -32 64 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 12 32 ) ( -12 32 32 ) ( -32 12 64 ) trigger 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 8 8 -8 ) ( -8 8 -8 ) ( -8 -8 -8 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 8 ) ( -8 8 8 ) ( 8 8 8 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 32 ) ( 8 -8 32 ) ( 8 -8 0 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -8 32 ) ( 8 8 32 ) ( 8 8 0 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 32 ) ( -8 8 32 ) ( -8 8 0 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 32 ) ( -8 -8 32 ) ( -8 -8 0 ) origin 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

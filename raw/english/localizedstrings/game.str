@@ -1,0 +1,292 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           "Game messages made by the server game dll go in this file."
+
+REFERENCE           OBJECTIVESUPDATED
+LANG_ENGLISH        "Objectives Updated."
+
+REFERENCE           OBJECTIVECOMPLETED
+LANG_ENGLISH        "Objective Completed."
+
+REFERENCE           OBJECTIVEFAILED
+LANG_ENGLISH        "Objective Failed."
+
+REFERENCE           MISSIONFAILED
+LANG_ENGLISH        "Mission Failed"
+
+REFERENCE           CANT_GET_GRENADE_WEAP_MESSAGE
+LANG_ENGLISH        "You must have the grenades selected to pickup a different type of grenades."
+
+REFERENCE           CANT_GET_PISTOL_WEAP_MESSAGE
+LANG_ENGLISH        "You must have the pistol selected to pickup a different pistol."
+
+REFERENCE           CANT_GET_PRIMARY_WEAP_MESSAGE
+LANG_ENGLISH        "You must have a primary weapon selected to pickup a different primary weapon."
+
+REFERENCE           CANT_GET_SMOKER_WEAP_MESSAGE
+LANG_ENGLISH        "You must have the smoke grenades selected to pickup a different type of smoke grenades."
+
+REFERENCE           PICKUP_AMMO
+LANG_ENGLISH        "Got &&1 ammo."
+
+REFERENCE           PICKUP_CANTCARRYMOREAMMO
+LANG_ENGLISH        "&&1 ammo full."
+
+REFERENCE           DIFFICULTY_EASY
+LANG_ENGLISH        "Difficulty: Greenhorn"
+
+REFERENCE           DIFFICULTY_MEDIUM
+LANG_ENGLISH        "Difficulty: Regular"
+
+REFERENCE           DIFFICULTY_HARD
+LANG_ENGLISH        "Difficulty: Hardened"
+
+REFERENCE           DIFFICULTY_FU
+LANG_ENGLISH        "Difficulty: Veteran"
+
+REFERENCE           DIFFICULTY_UNKNOWN
+LANG_ENGLISH        "Difficulty: Unknown"
+
+REFERENCE           HEALTH
+LANG_ENGLISH        "Health"
+
+REFERENCE           LEVELTIME
+LANG_ENGLISH        "Level Time"
+
+REFERENCE           BADCLIENTSLOT
+LANG_ENGLISH        "Bad client slot:"
+
+REFERENCE           CLIENTNOTACTIVE
+LANG_ENGLISH        "Client &&1 is not active"
+
+REFERENCE           USERNOTONSERVER
+LANG_ENGLISH        "User &&1 is not on the server."
+
+REFERENCE           CALLEDAVOTE
+LANG_ENGLISH        "&&1 called a vote."
+
+REFERENCE           CLIENTNOTONSERVER
+LANG_ENGLISH        "Client not on server."
+
+REFERENCE           COMPLAINTFILEDAGAINST
+LANG_ENGLISH        "Complaint filed against you. (&&1 until kicked)"
+
+REFERENCE           WARNING
+LANG_ENGLISH        "WARNING"
+
+REFERENCE           KICKEDFROMCOMPLAINTS
+LANG_ENGLISH        "kicked after too many complaints."
+
+REFERENCE           NOVOTEINPROGRESS
+LANG_ENGLISH        "No vote in progress."
+
+REFERENCE           VOTEALREADYCAST
+LANG_ENGLISH        "Vote already cast."
+
+REFERENCE           NOSPECTATORVOTE
+LANG_ENGLISH        "Not allowed to vote as spectator."
+
+REFERENCE           VOTECAST
+LANG_ENGLISH        "Vote cast."
+
+REFERENCE           VOTINGNOTENABLED
+LANG_ENGLISH        "Voting not enabled on this server."
+
+REFERENCE           VOTINGNOTENOUGHPLAYERS
+LANG_ENGLISH        "There are not enough players to call a vote."
+
+REFERENCE           VOTEALREADYINPROGRESS
+LANG_ENGLISH        "A vote is already in progress."
+
+REFERENCE           MAXVOTESCALLED
+LANG_ENGLISH        "You have called the maximum number of votes."
+
+REFERENCE           NOSPECTATORCALLVOTE
+LANG_ENGLISH        "Not allowed to call a vote as spectator."
+
+REFERENCE           INVALIDVOTESTRING
+LANG_ENGLISH        "Invalid vote string."
+
+REFERENCE           VOTECOMMANDSARE
+LANG_ENGLISH        "Vote commands are:"
+
+REFERENCE           INVALIDGAMETYPE
+LANG_ENGLISH        "Invalid gametype."
+
+REFERENCE           NEXTMAPNOTSET
+LANG_ENGLISH        "nextmap not set."
+
+REFERENCE           CHEATSNOTENABLED
+LANG_ENGLISH        "Cheats are not enabled on this server."
+
+REFERENCE           MUSTBEALIVECOMMAND
+LANG_ENGLISH        "You must be alive to use this command."
+
+REFERENCE           USAGE
+LANG_ENGLISH        "usage"
+
+REFERENCE           CHANGEDTO
+LANG_ENGLISH        "changed to"
+
+REFERENCE           SERVER
+LANG_ENGLISH        "Server"
+
+REFERENCE           VOICECHATIGNORED
+LANG_ENGLISH        "VoiceChat ignored"
+
+REFERENCE           SPAMPROTECT
+LANG_ENGLISH        "Spam Protection"
+
+REFERENCE           GC_HOLDYOURPOSITION
+LANG_ENGLISH        "Hold your position."
+
+REFERENCE           GC_HOLDTHISPOSITION
+LANG_ENGLISH        "Hold this position."
+
+REFERENCE           GC_COMEHERE
+LANG_ENGLISH        "Come here."
+
+REFERENCE           GC_COVERME
+LANG_ENGLISH        "Cover me."
+
+REFERENCE           GC_GUARDLOCATION
+LANG_ENGLISH        "Guard location."
+
+REFERENCE           GC_SEARCHDESTROY
+LANG_ENGLISH        "Search and destroy."
+
+REFERENCE           GC_REPORT
+LANG_ENGLISH        "Report."
+
+REFERENCE           UNKNOWNCLIENTCOMMAND
+LANG_ENGLISH        "Unknown cmd &&1"
+
+REFERENCE           GODMODE_ON
+LANG_ENGLISH        "godmode ON"
+
+REFERENCE           GODMODE_OFF
+LANG_ENGLISH        "godmode OFF"
+
+REFERENCE           DEMI_GODMODE_ON
+LANG_ENGLISH        "demigod mode ON"
+
+REFERENCE           DEMI_GODMODE_OFF
+LANG_ENGLISH        "demigod mode OFF"
+
+REFERENCE           NOTARGETON
+LANG_ENGLISH        "notarget ON"
+
+REFERENCE           NOTARGETOFF
+LANG_ENGLISH        "notarget OFF"
+
+REFERENCE           NOCLIPON
+LANG_ENGLISH        "noclip ON"
+
+REFERENCE           NOCLIPOFF
+LANG_ENGLISH        "noclip OFF"
+
+REFERENCE           UFOON
+LANG_ENGLISH        "ufomode ON"
+
+REFERENCE           UFOOFF
+LANG_ENGLISH        "ufomode OFF"
+
+REFERENCE           VOTEFAILED
+LANG_ENGLISH        "Vote failed."
+
+REFERENCE           VOTEPASSED
+LANG_ENGLISH        "Vote passed."
+
+REFERENCE           OPFOR
+LANG_ENGLISH        "Opposition"
+
+REFERENCE           MARINES
+LANG_ENGLISH        "Marines"
+
+REFERENCE           ALLIES
+LANG_ENGLISH        "Allies"
+
+REFERENCE           AXIS
+LANG_ENGLISH        "Axis"
+
+REFERENCE           PICKUP_CLIPONLY_AMMO
+LANG_ENGLISH        "Got &&1 ammo"
+
+REFERENCE           VOTE_GAMETYPE
+LANG_ENGLISH        "Game Type: "
+
+REFERENCE           VOTE_MAPRESTART
+LANG_ENGLISH        "Map Restart"
+
+REFERENCE           VOTE_MAP
+LANG_ENGLISH        "Map: "
+
+REFERENCE           VOTE_NEXTMAP
+LANG_ENGLISH        "Next Map"
+
+REFERENCE           VOTE_KICK
+LANG_ENGLISH        "Kick Player: &&1"
+
+REFERENCE           ERR_SAVEGAME_BAD
+LANG_ENGLISH        "Savegame is out-of-date or corrupt."
+
+REFERENCE           TYPEMAP_NOCHANGE
+LANG_ENGLISH        "Vote would not change Game Type or Map."
+
+REFERENCE           SPECTATOR
+LANG_ENGLISH        "Spectator"
+
+REFERENCE           DEAD
+LANG_ENGLISH        "Dead"
+
+REFERENCE           SAVE_INSUFFICIENT_FREE_DISK
+LANG_ENGLISH        "Insufficient free disk space.\n\nPlease free at least 5mb of free space on game drive."
+
+REFERENCE           INACTIVEDROPWARNING
+LANG_ENGLISH        "Warning: You are about to be kicked due to inactivity."
+
+REFERENCE           DROPPEDFORINACTIVITY
+LANG_ENGLISH        "Kicked from server due to inactivity."
+
+REFERENCE           INVALIDPASSWORD
+LANG_ENGLISH        "Invalid Password."
+
+REFERENCE           INVALIDSERVER
+LANG_ENGLISH		"Invalid Server."
+
+REFERENCE           SAVE_UNABLE_TO_ACCESS_DEVICE
+LANG_ENGLISH        "Unable to access save device. Please make sure that you have a valid User Profile(Xbox live acount. Use"Tools" in the Xenon Launcher)."
+
+REFERENCE           GET_TO_COVER
+LANG_ENGLISH        "You are Hurt. Get to Cover!"
+
+REFERENCE           SAVE_DESCRIPTION
+LANG_ENGLISH        "Call of Duty 4 Save Game"
+
+REFERENCE           SAVE_UNABLE_TO_READ_FROM_DEVICE
+LANG_ENGLISH        "Unable to read from memory device. Please check that the device is inserted correctly."
+
+REFERENCE           STAND_BLOCKED
+LANG_ENGLISH        "Can't Stand Here"
+
+REFERENCE           CROUCH_BLOCKED
+LANG_ENGLISH        "Can't Crouch Here"
+
+REFERENCE           CUSTOM_GAMEMODE
+LANG_ENGLISH        "Call of Duty 4 Custom Game Mode"
+
+
+ENDMARKER
+
+

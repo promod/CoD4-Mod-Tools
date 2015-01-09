@@ -1,0 +1,180 @@
+#include "ui/menudef.h"
+
+{
+	// CREATE AUTO-UPDATE CONFIRMATION POPUP MENU \\
+	menuDef 
+	{
+		name	"auconfirm"
+		fullscreen 0
+		rect 204 160 235 135
+		focusColor COLOR_FOCUSED
+		style 1
+		border 1
+		popup
+		
+		onESC
+		{
+			close auconfirm
+		}
+		
+		itemDef 
+		{
+			name acwindow
+			group grpControlbutton
+			rect 0 2 235 135
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .85
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name acwindow2
+			group grpControlbutton
+			rect 2 4 231 20	
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .2
+			forecolor 1 1 1 1
+//			backcolor .3 0.5 0.2 .55
+//			backcolor .3 0.2 0.6 .55
+			backcolor 1 1 .3 .3
+			visible 1
+			decoration
+		}
+		
+		
+		itemDef 
+		{
+			name acconfirm
+			text "@MENU_DOWNLOAD_AUTOUPDATE_PATCH" 
+			style 0
+			textscale .25 
+			textstyle 3
+			rect 116 20 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -55
+			textaligny 0
+			textfont UI_FONT_NORMAL
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+
+		// Current version display
+		itemDef 
+		{
+			name oldtitle
+			text "@MENU_VERSION_INSTALLED" 
+			style 0
+			textscale .25 
+			textstyle 3
+			rect 30 40 110 20
+			textalign ITEM_ALIGN_LEFT
+			textalignx 0
+			textaligny 0
+			textfont UI_FONT_NORMAL
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+		itemDef 
+		{
+			name oldver
+			dvar "cl_updateoldversion"
+			style 0
+			textscale .25 
+			textstyle 3
+			rect 30 55 110 20
+			textalign ITEM_ALIGN_LEFT
+			textalignx 0
+			textaligny 0
+			textfont UI_FONT_NORMAL
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+		
+		// Update version display
+		itemDef 
+		{
+			name newtitle
+			text "@MENU_VERSION_AVAILABLE" 
+			style 0
+			textscale .25 
+			textstyle 3
+			rect 30 70 110 20
+			textalign ITEM_ALIGN_LEFT
+			textalignx 0
+			textaligny 0
+			textfont UI_FONT_NORMAL
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+		itemDef 
+		{
+			name newver
+			dvar "cl_updateversion"
+			style 0
+			textscale .25 
+			textstyle 3
+			rect 30 85 110 20
+			textalign ITEM_ALIGN_LEFT
+			textalignx 0
+			textaligny 0
+			textfont UI_FONT_NORMAL
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+				
+		itemDef 
+		{
+			name yes
+			text "@MENU_YES"
+			type 1
+			textscale .3
+			style		WINDOW_STYLE_FILLED
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect 45 95 50 20
+			textalign ITEM_ALIGN_CENTER
+			textaligny 15
+			textfont UI_FONT_NORMAL
+			forecolor .9 .9 .95 1
+//			backcolor .3 0.5 0.2 .55
+			visible 1
+			mouseEnter 
+			{ 
+				play "mouse_over";
+			} 
+			action { play "mouse_click"; getautoupdate }	
+		}
+
+		itemDef 
+		{
+			name no
+			text "@MENU_NO"
+			type 1
+			textscale .3
+			style		WINDOW_STYLE_FILLED
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect 142 95 50 20
+			textalign ITEM_ALIGN_CENTER
+			textaligny 15
+			textfont UI_FONT_NORMAL
+			forecolor .9 .9 .95 1
+//			backcolor .3 0.5 0.2 .55
+			visible 1
+			mouseEnter 
+			{ 
+				play "mouse_over";
+			} 
+			action { play "mouse_click"; close auconfirm } 		
+		}
+	}
+}

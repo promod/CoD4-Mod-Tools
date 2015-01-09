@@ -1,0 +1,232 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           OBJ_REGROUP_WITH_SQUAD
+LANG_ENGLISH        "Regroup with 2nd squad at the obstacle course."
+
+REFERENCE           OBJ_BASH_DUMMY
+LANG_ENGLISH        "Bash the dummy at the end of the obstacle course."
+
+REFERENCE           OBJ_GOTO_RIFLE
+LANG_ENGLISH        "Proceed to the rifle range."
+
+REFERENCE           OBJ_GET_RIFLE_AMMO
+LANG_ENGLISH        "Get ammunition for your M4 Carbine and load a magazine."
+
+REFERENCE           OBJ_ENTER_STALL
+LANG_ENGLISH        "Enter the fourth firing station and aim down range."
+
+REFERENCE           OBJ_HIT_RIFLE_TARGETS
+LANG_ENGLISH        "Hit the four targets."
+
+REFERENCE           OBJ_HIT_RIFLE_TARGETS_TIMED
+LANG_ENGLISH        "Hit four targets in six seconds."
+
+REFERENCE           OBJ_GOTO_SIDEARM
+LANG_ENGLISH        "Proceed to the side arm range."
+
+REFERENCE           OBJ_GET_SIDEARM_AMMO
+LANG_ENGLISH        "Get ammunition at the sidearm range."
+
+REFERENCE           OBJ_EQUIP_SIDEARM
+LANG_ENGLISH        "Switch to your sidearm and load it."
+
+REFERENCE           OBJ_HIT_SIDEARM_TARGETS
+LANG_ENGLISH        "Hit the target five times with your sidarm."
+
+REFERENCE           OBJ_GOTO_FRAG
+LANG_ENGLISH        "Proceed to the frag grenade training area."
+
+REFERENCE           OBJ_GET_FRAG_AMMO
+LANG_ENGLISH        "Pick up some frag grenades and go to the instructor."
+
+REFERENCE           OBJ_THROW_FRAGS
+LANG_ENGLISH        "Throw one frag grenade through each window and one into the dumpster. [&&1 Remaining]"
+
+REFERENCE           OBJ_THROW_FRAGS_DONE
+LANG_ENGLISH        "Throw one frag grenade through each window and one into the dumpster."
+
+REFERENCE           OBJ_GOTO_LAUNCHER
+LANG_ENGLISH        "Proceed to the m203 training area."
+
+REFERENCE           OBJ_GET_LAUNCHER_AMMO
+LANG_ENGLISH        "Swap your current weapon for a M16A4 with a M203 grenade launcher attachment."
+
+REFERENCE           OBJ_HIT_WALL
+LANG_ENGLISH        "Hit the wall marked number 1 with the M203 grenade launcher."
+
+REFERENCE           OBJ_HIT_LAUNCHER_TARGETS
+LANG_ENGLISH        "Hit the three remaining targets with the M203 grenade launcher. [&&1 Remaining]"
+
+REFERENCE           OBJ_HIT_LAUNCHER_TARGETS_DONE
+LANG_ENGLISH        "Hit the three remaining targets with the M203 grenade launcher."
+
+REFERENCE           OBJ_GET_EXPLOSIVES_AMMO
+LANG_ENGLISH        "Pickup an explosive charge."
+
+REFERENCE           OBJ_DESTROY_VEHICLE
+LANG_ENGLISH        "Destroy the civilian vehicle with an explosive charge."
+
+REFERENCE           HINT_CHECK_OBJECTIVES_PAUSED
+LANG_ENGLISH        "Press [{pause}] to check your objectives."
+
+REFERENCE           HINT_CHECK_OBJECTIVES_SCORES
+LANG_ENGLISH        "Press [{+scores}] to check your objectives."
+
+REFERENCE           HINT_OBJECTIVE_MARKER
+LANG_ENGLISH        "The yellow circle in the compass tape at the bottom middle\n of your screen indicates the direction of your objective."
+
+REFERENCE           HINT_OBJECTIVE_REMINDER
+LANG_ENGLISH        "Your current objective is to regroup with your squad.\n Press [{toggle cl_paused}] to check your objectives."
+
+REFERENCE           HINT_OBJECTIVE_REMINDER2
+LANG_ENGLISH        "Turn until the yellow circle in your compass tape\n lines up with the white ticks and head in that direction\n to locate your current objective."
+
+REFERENCE           HINT_ATTACK
+LANG_ENGLISH        "Pull [{+attack}] to fire your weapon."
+
+REFERENCE           HINT_ADS
+LANG_ENGLISH        "Hold down [{+speed}] to aim down the sights of your weapon."
+
+REFERENCE           HINT_ADS_TOGGLE
+LANG_ENGLISH        "Press [{toggleads}] to aim down the sight."
+
+REFERENCE           HINT_BREATH_MELEE
+LANG_ENGLISH        "Press and hold [{+melee_breath}] to steady your breathing."
+
+REFERENCE           HINT_BREATH_SPRINT
+LANG_ENGLISH        "Press and hold [{+breath_sprint}] to steady your breathing."
+
+REFERENCE           HINT_BREATH_BINOCULARS
+LANG_ENGLISH        "Press and hold [{+breath_binoculars}] to steady your breathing."
+
+REFERENCE           HINT_MELEE_BREATH
+LANG_ENGLISH        "Press [{+breath_binoculars}] near your target to strike it with your weapon."
+
+REFERENCE           HINT_MELEE
+LANG_ENGLISH        "Press [{+melee}] near your target to strike it with your weapon."
+
+REFERENCE           HINT_PRONE
+LANG_ENGLISH        "Press [{goprone}] to go prone."
+
+REFERENCE           HINT_PRONE_HOLD
+LANG_ENGLISH        "Press and hold [{+prone}] to go prone."
+
+REFERENCE           HINT_PRONE_TOGGLE
+LANG_ENGLISH        "Press [{toggleprone}] to go prone."
+
+REFERENCE           HINT_PRONE_STANCE
+LANG_ENGLISH        "Hold down [{+stance}] to go prone."
+
+REFERENCE           HINT_PRONE_DOUBLE
+LANG_ENGLISH        "Double tap [{lowerstacnce}] to go prone."
+
+REFERENCE           HINT_CROUCH_STANCE
+LANG_ENGLISH        "Press [{+stance}] to crouch."
+
+REFERENCE           HINT_CROUCH
+LANG_ENGLISH        "Press [{gocrouch}] to crouch."
+
+REFERENCE           HINT_CROUCH_TOGGLE
+LANG_ENGLISH        "Press [{togglecrouch}] to crouch."
+
+REFERENCE           HINT_STAND
+LANG_ENGLISH        "Press [{+gostand}] to stand up."
+
+REFERENCE           HINT_STAND_STANCE
+LANG_ENGLISH        "Press [{+stance}] to stand up."
+
+REFERENCE           HINT_JUMP_STAND
+LANG_ENGLISH        "While standing, press [{+gostand}] to jump."
+
+REFERENCE           HINT_JUMP
+LANG_ENGLISH        "While standing, press [{+moveup}] to jump."
+
+REFERENCE           HINT_SPRINT
+LANG_ENGLISH        "Press [{+sprint}] while moving forward to sprint."
+
+REFERENCE           HINT_SPRINT_BREATH
+LANG_ENGLISH        "Press [{+breath_sprint}] while moving forward to sprint."
+
+REFERENCE           HINT_HOLDING_SPRINT
+LANG_ENGLISH        "You don't have to hold [{+sprint}] down to continue sprinting."
+
+REFERENCE           HINT_HOLDING_SPRINT_BREATH
+LANG_ENGLISH        "You don't have to hold [{+breath_sprint}] down to continue sprinting."
+
+REFERENCE           HINT_RELOAD_USE
+LANG_ENGLISH        "Press [{+usereload}] to reload your weapon."
+
+REFERENCE           HINT_RELOAD
+LANG_ENGLISH        "Press [{+reload}] to reload your weapon."
+
+REFERENCE           HINT_MANTLE
+LANG_ENGLISH        "Touch the obstacle and press [{+gostand}] to\n mantle over it."
+
+REFERENCE           HINT_ADS_SWITCH
+LANG_ENGLISH        "Release and pull [{+speed}] to automatically\n switch to a nearby target."
+
+REFERENCE           HINT_SIDEARM_SWAP
+LANG_ENGLISH        "Press [{weapnext}] to switch to your sidearm."
+
+REFERENCE           HINT_PRIMARY_SWAP
+LANG_ENGLISH        "Press [{weapnext}] to switch to your primary weapon."
+
+REFERENCE           HINT_SIDEARM
+LANG_ENGLISH        "Press [{weaponslot primaryb}] to switch to your sidearm."
+
+REFERENCE           HINT_SIDEARM_RELOAD
+LANG_ENGLISH        "Press [{+reload}] to load your sidearm."
+
+REFERENCE           HINT_SIDEARM_RELOAD_USE
+LANG_ENGLISH        "Press [{+usereload}] to load your sidearm."
+
+REFERENCE           HINT_LADDER
+LANG_ENGLISH        "Look up the ladder and press forward to climb it."
+
+REFERENCE           HINT_FRAG
+LANG_ENGLISH        "Pull and release [{+frag}] to throw a frag grenade."
+
+REFERENCE           HINT_SWAP
+LANG_ENGLISH        "Approach the M16A4 and hold [{+activate}]\n to swap your weapon for the M16A4."
+
+REFERENCE           HINT_SWAP_RELOAD
+LANG_ENGLISH        "Approach the M16A4 and hold [{+usereload}]\n to swap your weapon for the M16A4."
+
+REFERENCE           HINT_FIREMODE
+LANG_ENGLISH        "Press [{+actionslot 2}] to switch to the M203\n grenade launcher attachment."
+
+REFERENCE           HINT_LAUNCHER_ATTACK
+LANG_ENGLISH        "Pull and release [{+attack}] to fire a\n 40mm grenade."
+
+REFERENCE           HINT_EXPLOSIVES
+LANG_ENGLISH        "Approach the explosive charges and press\n [{+activate}] to pick one up."
+
+REFERENCE           HINT_EXPLOSIVES_RELOAD
+LANG_ENGLISH        "Approach the explosive charges and press\n [{+usereload}] to pick one up."
+
+REFERENCE           HINT_EXPLOSIVES_PLANT
+LANG_ENGLISH        "Locate the glowing explosive marker and\n press [{+activate}] to plant the explosives."
+
+REFERENCE           HINT_EXPLOSIVES_PLANT_RELOAD
+LANG_ENGLISH        "Locate the glowing explosive marker and\n press [{+usereload}] to plant the explosives."
+
+REFERENCE           MARINE3_USE_SIDEARM
+LANG_ENGLISH        "Carver! Use your sidearm!"
+
+
+ENDMARKER
+
+

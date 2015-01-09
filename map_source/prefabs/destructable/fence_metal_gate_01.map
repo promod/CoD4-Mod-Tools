@@ -1,0 +1,78 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"script_threshold" "180"
+"script_accumulate" "250"
+"targetname" "destructable"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 4 0 -2 ) ( 0 0 -2 ) ( 0 -2 -2 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -2 74 ) ( 0 0 74 ) ( 4 0 74 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2 50 ) ( 2 -2 50 ) ( 2 -2 0 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 0 72 ) ( 4 2 72 ) ( 4 2 22 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 2 50 ) ( 2 2 50 ) ( 2 2 0 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -4 50 ) ( 0 -6 50 ) ( 0 -6 0 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 70 2 68 ) ( 4 2 68 ) ( 4 -2 68 ) me_door_03 128 256 0 -82 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -2 72 ) ( 4 2 72 ) ( 70 2 72 ) me_door_03 128 256 0 -82 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -2 72 ) ( 70 -2 72 ) ( 70 -2 68 ) me_door_03 128 256 0 -74 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 -2 72 ) ( 70 2 72 ) ( 70 2 68 ) me_door_03 128 256 0 -74 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 2 72 ) ( 4 2 72 ) ( 4 2 68 ) me_door_03 128 256 0 -74 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 2 72 ) ( 4 -2 72 ) ( 4 -2 68 ) me_door_03 128 256 0 -74 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents nonColliding;
+ ( 70 2 48 ) ( 4 2 48 ) ( 4 -2 48 ) me_fence_chainlink 32 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -2 68 ) ( 4 2 68 ) ( 70 2 68 ) me_fence_chainlink 32 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 0 62 ) ( 70 0 62 ) ( 70 0 44 ) me_fence_chainlink 32 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 -2 66 ) ( 70 2 66 ) ( 70 2 48 ) me_fence_chainlink 32 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 2 66 ) ( 4 2 66 ) ( 4 2 48 ) me_fence_chainlink 32 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 2 66 ) ( 4 -2 66 ) ( 4 -2 48 ) me_fence_chainlink 32 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 76 0 -2 ) ( 72 0 -2 ) ( 72 -2 -2 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 -2 74 ) ( 72 0 74 ) ( 76 0 74 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 -2 50 ) ( 74 -2 50 ) ( 74 -2 0 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 74 -2 72 ) ( 74 0 72 ) ( 74 0 22 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 74 2 50 ) ( 70 2 50 ) ( 70 2 0 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 -2 50 ) ( 70 -4 50 ) ( 70 -4 0 ) me_door_03 128 256 4 36 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( 70 2 0 ) ( 4 2 0 ) ( 4 -2 0 ) me_door_03 128 256 4 38 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -2 48 ) ( 2 2 48 ) ( 68 2 48 ) me_door_03 128 256 4 38 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 0 2 ) ( 70 0 2 ) ( 70 0 -2 ) me_door_03 128 256 4 38 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 -2 4 ) ( 70 2 4 ) ( 70 2 0 ) me_door_03 128 256 4 38 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 2 4 ) ( 4 2 4 ) ( 4 2 0 ) me_door_03 128 256 4 38 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 2 4 ) ( 4 -2 4 ) ( 4 -2 0 ) me_door_03 128 256 4 38 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+ ( 44 8 28 ) ( 28 8 28 ) ( 28 -8 28 ) origin 64 64 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -8 44 ) ( 28 8 44 ) ( 44 8 44 ) origin 64 64 4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -8 76 ) ( 44 -8 76 ) ( 44 -8 28 ) origin 64 64 4 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 44 -8 44 ) ( 44 8 44 ) ( 44 8 -4 ) origin 64 64 0 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 44 8 44 ) ( 28 8 44 ) ( 28 8 -4 ) origin 64 64 4 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 8 44 ) ( 28 -8 44 ) ( 28 -8 -4 ) origin 64 64 0 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+ ( 16 0 8 ) ( 68 0 8 ) ( 68 4 8 ) nodraw_decal 64 64 12 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 4 48 ) ( 68 4 48 ) ( 68 0 48 ) nodraw_decal 64 64 12 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 8 ) ( 16 0 48 ) ( 68 0 48 ) gfx_impact_concrete01 -40 40 -24 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 4 8 ) ( 56 0 8 ) ( 56 0 48 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 2 8 ) ( 68 2 48 ) ( 16 2 48 ) gfx_impact_concrete01 -40 40 -24 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 4 48 ) ( 16 0 48 ) ( 16 0 8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,373 @@
+// ------------- stat assignment ------------------
+// stat allocation 0 -> 149 // most spaces are open for new weapons
+// --------- weapons ---------
+// pistol									// function( return the matching stat number from stat column, fetch using reference string in reference column, match this string )
+#define REF_M9BERETTA					"beretta"
+#define REF_COLT45						"colt45"
+#define REF_USP							"usp"
+#define REF_DESERTEAGLE					"deserteagle"
+#define REF_DESERTEAGLEGOLD				"deserteaglegold"
+#define STAT_PISTOL_M9BERETTA			tablelookup( "mp/statstable.csv", 4, REF_M9BERETTA, 0 )
+#define STAT_PISTOL_COLT45				tablelookup( "mp/statstable.csv", 4, REF_COLT45, 0 )
+#define STAT_PISTOL_USP					tablelookup( "mp/statstable.csv", 4, REF_USP, 0 )
+#define STAT_PISTOL_DESERTEAGLE			tablelookup( "mp/statstable.csv", 4, REF_DESERTEAGLE, 0 )
+#define STAT_PISTOL_DESERTEAGLEGOLD		tablelookup( "mp/statstable.csv", 4, REF_DESERTEAGLEGOLD, 0 )
+
+// smg
+#define REF_MP5							"mp5"
+#define REF_SKORPION					"skorpion"
+#define REF_UZI							"uzi"
+#define REF_AK74U						"ak74u"
+#define REF_P90							"p90"
+#define STAT_SMG_MP5					tablelookup( "mp/statstable.csv", 4, REF_MP5, 0 )
+#define STAT_SMG_SKORPION				tablelookup( "mp/statstable.csv", 4, REF_SKORPION, 0 )
+#define STAT_SMG_UZI					tablelookup( "mp/statstable.csv", 4, REF_UZI, 0 )
+#define STAT_SMG_AK74U					tablelookup( "mp/statstable.csv", 4, REF_AK74U, 0 )
+#define STAT_SMG_P90					tablelookup( "mp/statstable.csv", 4, REF_P90, 0 )
+
+// assault rifle
+#define REF_AK47						"ak47"
+#define REF_G3							"g3"
+#define REF_G36C						"g36c"
+#define REF_M16							"m16"
+#define REF_M4							"m4"
+#define REF_M14							"m14"
+#define REF_MP44						"mp44"
+#define STAT_ASSAULT_AK47				tablelookup( "mp/statstable.csv", 4, REF_AK47, 0 )
+#define STAT_ASSAULT_G3					tablelookup( "mp/statstable.csv", 4, REF_G3, 0 )
+#define STAT_ASSAULT_G36C				tablelookup( "mp/statstable.csv", 4, REF_G36C, 0 )
+#define STAT_ASSAULT_M16				tablelookup( "mp/statstable.csv", 4, REF_M16, 0 )
+#define STAT_ASSAULT_M4					tablelookup( "mp/statstable.csv", 4, REF_M4, 0 )
+#define STAT_ASSAULT_M14				tablelookup( "mp/statstable.csv", 4, REF_M14, 0 )
+#define STAT_ASSAULT_MP44				tablelookup( "mp/statstable.csv", 4, REF_MP44, 0 )
+
+// sniper rifle                                                                                            
+#define REF_DRAGUNOVSVD					"dragunov"    
+#define REF_M40A3						"m40a3"   
+#define REF_BARRETT						"barrett"  
+#define REF_REMINGTON700				"remington700"
+#define REF_M21							"m21"
+#define STAT_SNIPER_DRAGUNOVSVD			tablelookup( "mp/statstable.csv", 4, REF_DRAGUNOVSVD, 0 )          
+#define STAT_SNIPER_M40A3				tablelookup( "mp/statstable.csv", 4, REF_M40A3,	0 )             
+#define STAT_SNIPER_BARRETT				tablelookup( "mp/statstable.csv", 4, REF_BARRETT, 0 )           
+#define STAT_SNIPER_REMINGTON700		tablelookup( "mp/statstable.csv", 4, REF_REMINGTON700, 0 )      
+#define STAT_SNIPER_M21					tablelookup( "mp/statstable.csv", 4, REF_M21, 0 )               
+
+// shotguns
+#define REF_BENELLIM4					"m1014"
+#define REF_WINCHESTER1200				"winchester1200"
+#define STAT_SHOTGUN_BENELLIM4			tablelookup( "mp/statstable.csv", 4, REF_BENELLIM4, 0 )
+#define STAT_SHOTGUN_WINCHESTER1200		tablelookup( "mp/statstable.csv", 4, REF_WINCHESTER1200, 0 )
+
+// lmg
+#define REF_RPD							"rpd"
+#define REF_M249SAW						"saw"
+#define REF_M60E4						"m60e4"
+#define STAT_LMG_RPD					tablelookup( "mp/statstable.csv", 4, REF_RPD, 0 )
+#define STAT_LMG_M249SAW				tablelookup( "mp/statstable.csv", 4, REF_M249SAW, 0 )
+#define STAT_LMG_M60E4					tablelookup( "mp/statstable.csv", 4, REF_M60E4, 0 )
+
+// grenades
+#define REF_SMOKE_X1					"smoke_grenade"
+#define REF_FLASH_X1					"flash_grenade"
+#define REF_CONCUSSION_X1				"concussion_grenade"
+#define STAT_SMOKE_X1					tablelookup( "mp/statstable.csv", 4, REF_SMOKE_X1, 0 )
+#define STAT_FLASH_X1					tablelookup( "mp/statstable.csv", 4, REF_FLASH_X1, 0 )
+#define STAT_CONCUSSION_X1				tablelookup( "mp/statstable.csv", 4, REF_CONCUSSION_X1, 0 )
+
+// --------- specialty group 1 ----------
+// stat allocation 150 -> 199
+#define REF_PARABOLIC					"specialty_parabolic"
+#define REF_GPSJAMMER					"specialty_gpsjammer"
+#define REF_ARMORVEST					"specialty_armorvest"
+#define REF_FRAG_X3						"specialty_fraggrenade"
+#define REF_SPECIALGRENADE_X3			"specialty_specialgrenade"
+#define REF_CLAYMORE_X2					"claymore_mp"
+#define REF_C4_X2						"c4_mp"
+#define STAT_PARABOLIC					tablelookup( "mp/statstable.csv", 4, REF_PARABOLIC, 1 )
+#define STAT_GPSJAMMER					tablelookup( "mp/statstable.csv", 4, REF_GPSJAMMER, 1 )
+#define STAT_ARMORVEST					tablelookup( "mp/statstable.csv", 4, REF_ARMORVEST, 1 )
+#define STAT_FRAG_X3					tablelookup( "mp/statstable.csv", 4, REF_FRAG_X3, 1 )
+#define STAT_SPECIALGRENADE_X3			tablelookup( "mp/statstable.csv", 4, REF_SPECIALGRENADE_X3, 1 )
+#define STAT_CLAYMORE_X2				tablelookup( "mp/statstable.csv", 4, REF_CLAYMORE_X2, 1 )
+#define STAT_C4_X2						tablelookup( "mp/statstable.csv", 4, REF_C4_X2, 1 )
+
+
+// --------- specialty group 2 ---------
+#define REF_BULLETDAMAGE				"specialty_bulletdamage"
+#define REF_BULLETPENETRATION			"specialty_bulletpenetration"
+#define REF_BULLETACCURACY				"specialty_bulletaccuracy"
+#define REF_ROF							"specialty_rof"
+#define REF_FASTRELOAD					"specialty_fastreload"
+#define REF_EXTRAAMMO					"specialty_extraammo"
+#define REF_TWOPRIMARIES				"specialty_twoprimaries"
+#define REF_RPG_X2						"rpg_mp"
+#define STAT_BULLETDAMAGE				tablelookup( "mp/statstable.csv", 4, REF_BULLETDAMAGE, 1 )
+#define STAT_BULLETPENETRATION			tablelookup( "mp/statstable.csv", 4, REF_BULLETPENETRATION, 1 )
+#define STAT_BULLETACCURACY				tablelookup( "mp/statstable.csv", 4, REF_BULLETACCURACY, 1 )
+#define STAT_ROF						tablelookup( "mp/statstable.csv", 4, REF_ROF, 1 )
+#define STAT_FASTRELOAD					tablelookup( "mp/statstable.csv", 4, REF_FASTRELOAD, 1 )
+#define STAT_EXTRAAMMO					tablelookup( "mp/statstable.csv", 4, REF_EXTRAAMMO, 1 )
+#define STAT_TWOPRIMARIES				tablelookup( "mp/statstable.csv", 4, REF_TWOPRIMARIES, 1 )
+#define STAT_RPG_X2						tablelookup( "mp/statstable.csv", 4, REF_RPG_X2, 1 )
+
+
+// --------- specialty group 3 ---------
+#define REF_HOLDBREATH					"specialty_holdbreath"
+#define REF_QUIETER						"specialty_quieter"
+#define REF_LONGERSPRINT				"specialty_longersprint"
+#define REF_DETECTEXPLOSIVE				"specialty_detectexplosive"
+#define REF_EXPLOSIVEDAMAGE				"specialty_explosivedamage"
+#define REF_PISTOLDEATH					"specialty_pistoldeath"
+#define REF_GRENADEPULLDEATH			"specialty_grenadepulldeath"
+#define REF_EXPOSEENEMY					"specialty_exposeenemy"
+#define REF_NULL						"specialty_null"
+#define STAT_HOLDBREATH					tablelookup( "mp/statstable.csv", 4, REF_HOLDBREATH, 1 )
+#define STAT_QUIETER					tablelookup( "mp/statstable.csv", 4, REF_QUIETER, 1 )
+#define STAT_LONGERSPRINT				tablelookup( "mp/statstable.csv", 4, REF_LONGERSPRINT, 1 )
+#define STAT_DETECTEXPLOSIVE			tablelookup( "mp/statstable.csv", 4, REF_DETECTEXPLOSIVE, 1 )
+#define STAT_EXPLOSIVEDAMAGE			tablelookup( "mp/statstable.csv", 4, REF_EXPLOSIVEDAMAGE, 1 )
+#define STAT_PISTOLDEATH				tablelookup( "mp/statstable.csv", 4, REF_PISTOLDEATH, 1 )
+#define STAT_GRENADEPULLDEATH			tablelookup( "mp/statstable.csv", 4, REF_GRENADEPULLDEATH, 1 )
+#define STAT_EXPOSEENEMY				tablelookup( "mp/statstable.csv", 4, REF_EXPOSEENEMY, 1 )
+#define STAT_NULL						tablelookup( "mp/statstable.csv", 4, REF_NULL, 1 )
+
+// ---------- CAMO ------------
+#define REF_BLACKWHITEMARPAT			"camo_blackwhitemarpat"
+#define REF_BROCKHUARD					"camo_brockhaurd"
+#define REF_BUSHDWELLER					"camo_bushdweller"
+#define REF_STAGGER						"camo_stagger"
+#define REF_TIGERRED					"camo_tigerred"
+#define REF_CAMO_NONE					"camo_none"
+#define REF_GOLDEN						"camo_gold"
+#define REF_PRESTIGE					"camo_prestige"
+#define CAMO_BLACKWHITEMARPAT			tablelookup( "mp/attachmenttable.csv", 4, REF_BLACKWHITEMARPAT, 11 )
+#define CAMO_BROCKHUARD					tablelookup( "mp/attachmenttable.csv", 4, REF_BROCKHUARD, 11 )
+#define CAMO_BUSHDWELLER				tablelookup( "mp/attachmenttable.csv", 4, REF_BUSHDWELLER, 11 )
+#define CAMO_STAGGER					tablelookup( "mp/attachmenttable.csv", 4, REF_STAGGER, 11 )
+#define CAMO_TIGERRED					tablelookup( "mp/attachmenttable.csv", 4, REF_TIGERRED, 11 )
+#define CAMO_NONE						tablelookup( "mp/attachmenttable.csv", 4, REF_CAMO_NONE, 11 )
+#define CAMO_GOLDEN						tablelookup( "mp/attachmenttable.csv", 4, REF_GOLDEN, 11 )
+#define CAMO_PRESTIGE					tablelookup( "mp/attachmenttable.csv", 4, REF_PRESTIGE, 11 )
+
+// --------- weapon attachments ----------
+#define REF_GL							"gl"
+#define NUM_GL							tablelookup( "mp/attachmenttable.csv", 4, REF_GL, 9 )
+#define NAME_GL							"@"+tablelookup( "mp/attachmenttable.csv", 4, REF_GL, 3 )
+
+#define REF_GRIP						"grip"
+#define NUM_GRIP						tablelookup( "mp/attachmenttable.csv", 4, REF_GRIP, 9 )
+#define NAME_GRIP						"@"+tablelookup( "mp/attachmenttable.csv", 4, REF_GRIP, 3 )
+
+#define REF_SCOPE						"scoped"
+#define NUM_SCOPE						tablelookup( "mp/attachmenttable.csv", 4, REF_SCOPE, 9 )
+#define NAME_SCOPE						"@"+tablelookup( "mp/attachmenttable.csv", 4, REF_SCOPE, 3 )
+
+#define REF_ACOG						"acog"
+#define NUM_ACOG						tablelookup( "mp/attachmenttable.csv", 4, REF_ACOG, 9 )
+#define NAME_ACOG						"@"+tablelookup( "mp/attachmenttable.csv", 4, REF_ACOG, 3 )
+
+#define REF_SUPPRESSOR					"silencer"
+#define NUM_SUPPRESSOR					tablelookup( "mp/attachmenttable.csv", 4, REF_SUPPRESSOR, 9 )
+#define NAME_SUPPRESSOR					"@"+tablelookup( "mp/attachmenttable.csv", 4, REF_SUPPRESSOR, 3 )
+
+#define REF_REFLEX						"reflex"
+#define NUM_REFLEX						tablelookup( "mp/attachmenttable.csv", 4, REF_REFLEX, 9 )
+#define NAME_REFLEX						"@"+tablelookup( "mp/attachmenttable.csv", 4, REF_REFLEX, 3 )
+
+#define REF_ATTACHMENT_NONE				"none"
+#define NUM_NONE						tablelookup( "mp/attachmenttable.csv", 4, REF_ATTACHMENT_NONE, 9 )
+#define NAME_NONE						"@"+tablelookup( "mp/attachmenttable.csv", 4, REF_ATTACHMENT_NONE, 3 )
+
+// ============================================================================================
+// ============================ defines all primary weapons ===================================
+// ============================================================================================
+//ASSAULT
+#define ASSAULT1 PREPROC_PRIMARY( STAT_ASSAULT_M16, \
+"M16A4", ORIGIN_POPUP1, WEAPON_SLOT1, WEAPON_SLOT0, REF_M16 )
+#define ASSAULT2 PREPROC_PRIMARY( STAT_ASSAULT_AK47, \
+"AK-47", ORIGIN_POPUP1, WEAPON_SLOT2, WEAPON_SLOT1, REF_AK47 )
+#define ASSAULT3 PREPROC_PRIMARY( STAT_ASSAULT_M4, \
+"M4 Carbine", ORIGIN_POPUP1, WEAPON_SLOT3, WEAPON_SLOT2, REF_M4 )
+#define ASSAULT4 PREPROC_PRIMARY( STAT_ASSAULT_G36C, \
+"G36c", ORIGIN_POPUP1, WEAPON_SLOT4, WEAPON_SLOT3, REF_G36C )
+#define ASSAULT5 PREPROC_PRIMARY( STAT_ASSAULT_G3, \
+"G3", ORIGIN_POPUP1, WEAPON_SLOT5, WEAPON_SLOT4, REF_G3 )
+#define ASSAULT6 PREPROC_PRIMARY( STAT_ASSAULT_M14, \
+"M14", ORIGIN_POPUP1, WEAPON_SLOT6, WEAPON_SLOT5, REF_M14 )
+
+//LMG
+#define LMG1 PREPROC_PRIMARY( STAT_LMG_M249SAW, \
+"M249 SAW", ORIGIN_POPUP1, WEAPON_SLOT1, WEAPON_SLOT0, REF_M249SAW )
+#define LMG2 PREPROC_PRIMARY( STAT_LMG_RPD, \
+"RPD", ORIGIN_POPUP1, WEAPON_SLOT2, WEAPON_SLOT1, REF_RPD )
+#define LMG3 PREPROC_PRIMARY( STAT_LMG_M60E4, \
+"M60E4", ORIGIN_POPUP1, WEAPON_SLOT3, WEAPON_SLOT2, REF_M60E4 )
+
+//SMG
+#define SMG1 PREPROC_PRIMARY( STAT_SMG_MP5, \
+"MP5", ORIGIN_POPUP1, WEAPON_SLOT1, WEAPON_SLOT0, REF_MP5 )
+#define SMG2 PREPROC_PRIMARY( STAT_SMG_SKORPION, \
+"Skorpion", ORIGIN_POPUP1, WEAPON_SLOT2, WEAPON_SLOT1, REF_SKORPION )
+#define SMG3 PREPROC_PRIMARY( STAT_SMG_UZI, \
+"Mini-Uzi", ORIGIN_POPUP1, WEAPON_SLOT3, WEAPON_SLOT2, REF_UZI )
+#define SMG4 PREPROC_PRIMARY( STAT_SMG_AK74U, \
+"AK-74u", ORIGIN_POPUP1, WEAPON_SLOT4, WEAPON_SLOT3, REF_AK74U )
+#define SMG5 PREPROC_PRIMARY( STAT_SMG_P90, \
+"P90", ORIGIN_POPUP1, WEAPON_SLOT5, WEAPON_SLOT4, REF_P90 )
+
+//SHOTGUN
+#define SHOTGUN1 PREPROC_PRIMARY( STAT_SHOTGUN_WINCHESTER1200, \
+"W1200", ORIGIN_POPUP1, WEAPON_SLOT1, WEAPON_SLOT0, REF_WINCHESTER1200 )
+#define SHOTGUN2 PREPROC_PRIMARY( STAT_SHOTGUN_BENELLIM4, \
+"Benelli M4", ORIGIN_POPUP1, WEAPON_SLOT2, WEAPON_SLOT1, REF_BENELLIM4 )
+
+//SNIPER
+#define SNIPER1 PREPROC_PRIMARY( STAT_SNIPER_M21, \
+"M21", ORIGIN_POPUP1, WEAPON_SLOT1, WEAPON_SLOT0, REF_M21 )
+#define SNIPER2 PREPROC_PRIMARY( STAT_SNIPER_DRAGUNOVSVD, \
+"Dragunov", ORIGIN_POPUP1, WEAPON_SLOT2, WEAPON_SLOT1, REF_DRAGUNOVSVD )
+#define SNIPER3 PREPROC_PRIMARY( STAT_SNIPER_M40A3, \
+"M40A3", ORIGIN_POPUP1, WEAPON_SLOT3, WEAPON_SLOT2, REF_M40A3 )
+#define SNIPER4 PREPROC_PRIMARY( STAT_SNIPER_REMINGTON700, \
+"R700", ORIGIN_POPUP1, WEAPON_SLOT4, WEAPON_SLOT3, REF_REMINGTON700 )
+#define SNIPER5 PREPROC_PRIMARY( STAT_SNIPER_BARRETT, \
+"Barrett .50 Cal", ORIGIN_POPUP1, WEAPON_SLOT5, WEAPON_SLOT4, REF_BARRETT )
+
+// ============================================================================================
+// ===================================== Secondary Weapons ====================================
+// ============================================================================================
+		
+#define PISTOL1 PREPROC_SECONDARY( STAT_PISTOL_M9BERETTA, \
+"M9", ORIGIN_POPUP2, WEAPON_SLOT1, WEAPON_SLOT0, REF_M9BERETTA )
+#define PISTOL2 PREPROC_SECONDARY( STAT_PISTOL_USP, \
+"USP .45", ORIGIN_POPUP2, WEAPON_SLOT2, WEAPON_SLOT1, REF_USP )
+#define PISTOL3 PREPROC_SECONDARY( STAT_PISTOL_COLT45, \
+"M1911 Colt .45", ORIGIN_POPUP2, WEAPON_SLOT3, WEAPON_SLOT2, REF_COLT45 )
+#define PISTOL4 PREPROC_SECONDARY( STAT_PISTOL_DESERTEAGLE, \
+"Desert Eagle", ORIGIN_POPUP2, WEAPON_SLOT4, WEAPON_SLOT3, REF_DESERTEAGLE )
+#define PISTOL5 PREPROC_SECONDARY( STAT_PISTOL_DESERTEAGLEGOLD, \
+"Desert Eagle Gold", ORIGIN_POPUP2, WEAPON_SLOT5, WEAPON_SLOT4, REF_DESERTEAGLEGOLD )
+
+// ============================================================================================
+// ===================================== Primary Camo =========================================
+
+#define CAMO0 PREPROC_CAMO( CAMO_NONE, \
+"None", ORIGIN_POPUP1, WEAPON_SLOT1, WEAPON_SLOT0, REF_CAMO_NONE )
+#define CAMO1 PREPROC_CAMO( CAMO_BROCKHUARD, \
+"Desert", ORIGIN_POPUP1, WEAPON_SLOT2, WEAPON_SLOT1, REF_BROCKHUARD )
+#define CAMO2 PREPROC_CAMO( CAMO_BUSHDWELLER, \
+"Woodland", ORIGIN_POPUP1, WEAPON_SLOT3, WEAPON_SLOT2, REF_BUSHDWELLER )
+#define CAMO3 PREPROC_CAMO( CAMO_BLACKWHITEMARPAT, \
+"Digital", ORIGIN_POPUP1, WEAPON_SLOT4, WEAPON_SLOT3, REF_BLACKWHITEMARPAT )
+#define CAMO4 PREPROC_CAMO( CAMO_TIGERRED, \
+"Red Tiger", ORIGIN_POPUP1, WEAPON_SLOT5, WEAPON_SLOT4, REF_TIGERRED )
+#define CAMO5 PREPROC_CAMO( CAMO_STAGGER, \
+"Blue Tiger", ORIGIN_POPUP1, WEAPON_SLOT6, WEAPON_SLOT5, REF_STAGGER )
+
+// ============================================================================================
+// ===================================== Weapon attachments ===================================
+// ============================================================================================
+
+//PRIMARY ATTACHMENTS
+#define REFLEX( pslot, porigin, paligny, paligny2, ptype ) PREPROC_ATTACHMENT( pslot, "@WEAPON_REDDOT", NUM_REFLEX, NAME_REFLEX, porigin, paligny, paligny2, execNowOnDvarStringValue ui_perk1_slot 191 "statset "CAC_S_SPECIALTY_EQUIPMENT" 190"; play "mouse_click", ptype )
+#define SUPPRESSOR( pslot, porigin, paligny, paligny2, ptype ) PREPROC_ATTACHMENT( pslot, "@WEAPON_SILENCER", NUM_SUPPRESSOR, NAME_SUPPRESSOR, porigin, paligny, paligny2, execNowOnDvarStringValue ui_perk1_slot 191 "statset "CAC_S_SPECIALTY_EQUIPMENT" 190"; play "mouse_click", ptype )
+#define GRIP( pslot, porigin, paligny, paligny2, ptype ) PREPROC_ATTACHMENT( pslot, "@WEAPON_GRIP", NUM_GRIP, NAME_GRIP, porigin, paligny, paligny2, execNowOnDvarStringValue ui_perk1_slot 191 "statset "CAC_S_SPECIALTY_EQUIPMENT" 190"; play "mouse_click", ptype )
+#define GL( pslot, porigin, paligny, paligny2, ptype ) PREPROC_ATTACHMENT( pslot, "@WEAPON_GRENADE_LAUNCHER", NUM_GL, NAME_GL, porigin, paligny, paligny2, play "mouse_click"; execnow "statset "CAC_S_SPECIALTY_EQUIPMENT" 191", ptype )
+#define ATTACH_NONE( pslot, porigin, paligny, paligny2, ptype ) PREPROC_ATTACHMENT( pslot, "@WEAPON_NO_ATTACHMENT", NUM_NONE, NAME_NONE, porigin, paligny, paligny2, execNowOnDvarStringValue ui_perk1_slot 191 "statset "CAC_S_SPECIALTY_EQUIPMENT" 190"; play "mouse_click", ptype )
+#define ACOG( pslot, porigin, paligny, paligny2, ptype ) PREPROC_ATTACHMENT( pslot, "@WEAPON_ACOG", NUM_ACOG, NAME_ACOG, porigin, paligny, paligny2, execNowOnDvarStringValue ui_perk1_slot 191 "statset "CAC_S_SPECIALTY_EQUIPMENT" 190"; play "mouse_click", ptype )
+
+// ============================================================================================
+// ===================================== Specialty: Equipment =================================
+// ============================================================================================
+#define CLOSE_POPUP_PERK1 close CAC_PREFIX"popup_cac_perk1" close CAC_PREFIX"popup_cac_perk1"
+
+#define C42 PREPROC_PERK( STAT_C4_X2, CLOSE_POPUP_PERK1, \
+"@PERKS_C4_X_2", ORIGIN_POPUP5, PERK_SLOT1, PERK_SLOT0, PERK_HL1, CAC_SPECIALTY_EQUIPMENT, REF_C4_X2, "5" )
+
+#define CLAYMORE2 PREPROC_PERK( STAT_CLAYMORE_X2, CLOSE_POPUP_PERK1, \
+"@PERKS_CLAYMORE_X_2", ORIGIN_POPUP5, PERK_SLOT2, PERK_SLOT1, PERK_HL2, CAC_SPECIALTY_EQUIPMENT, REF_CLAYMORE_X2, "5" )
+
+#define SPECIALGRENADE_X3 PREPROC_PERK( STAT_SPECIALGRENADE_X3, CLOSE_POPUP_PERK1, \
+"@PERKS_SPECIAL_GRENADES_X_3", ORIGIN_POPUP5, PERK_SLOT3, PERK_SLOT2, PERK_HL3, CAC_SPECIALTY_EQUIPMENT, REF_SPECIALGRENADE_X3, "5" )
+
+#define GPSJAMMER PREPROC_PERK( STAT_GPSJAMMER, CLOSE_POPUP_PERK1, \
+"@PERKS_UAV_JAMMER", ORIGIN_POPUP5, PERK_SLOT4, PERK_SLOT3, PERK_HL4, CAC_SPECIALTY_EQUIPMENT, REF_GPSJAMMER, "5" )	
+
+#define RPG2 PREPROC_PERK( STAT_RPG_X2, CLOSE_POPUP_PERK1, \
+"@PERKS_RPG7_X_2", ORIGIN_POPUP5, PERK_SLOT5, PERK_SLOT4, PERK_HL5, CAC_SPECIALTY_EQUIPMENT, REF_RPG_X2, "5" )
+
+#define GRENADE4 PREPROC_PERK( STAT_FRAG_X3, CLOSE_POPUP_PERK1, \
+"@PERKS_FRAG_X_3", ORIGIN_POPUP5, PERK_SLOT6, PERK_SLOT5, PERK_HL6, CAC_SPECIALTY_EQUIPMENT, REF_FRAG_X3, "5" )
+
+#define PARABOLIC PREPROC_PERK( STAT_PARABOLIC, CLOSE_POPUP_PERK1, \
+"@PERKS_EAVESDROP", ORIGIN_POPUP5, PERK_SLOT7, PERK_SLOT6, PERK_HL7, CAC_SPECIALTY_EQUIPMENT, REF_PARABOLIC, "5" )	
+
+// ============================================================================================
+// ===================================== Specialty: abilities =================================
+// ============================================================================================
+#define CLOSE_POPUP_PERK2 close CAC_PREFIX"popup_cac_perk2" close CAC_PREFIX"popup_cac_perk2"
+
+#define QUIETER PREPROC_PERK( STAT_QUIETER, CLOSE_POPUP_PERK2, \
+"@PERKS_DEAD_SILENCE", ORIGIN_POPUP7, PERK_SLOT1, PERK_SLOT0, PERK_HL1, CAC_SPECIALTY_ABILITY, REF_QUIETER, "7" )
+
+#define LONGERSPRINT PREPROC_PERK( STAT_LONGERSPRINT, CLOSE_POPUP_PERK2, \
+"@PERKS_EXTREME_CONDITIONING", ORIGIN_POPUP7, PERK_SLOT2, PERK_SLOT1, PERK_HL2, CAC_SPECIALTY_ABILITY, REF_LONGERSPRINT, "7" )
+
+#define EXPLOSIVEDAMAGE PREPROC_PERK( STAT_EXPLOSIVEDAMAGE, CLOSE_POPUP_PERK2, \
+"@PERKS_SONIC_BOOM", ORIGIN_POPUP7, PERK_SLOT3, PERK_SLOT2, PERK_HL3, CAC_SPECIALTY_ABILITY, REF_EXPLOSIVEDAMAGE, "7" )
+
+#define HOLDBREATH PREPROC_PERK( STAT_HOLDBREATH, CLOSE_POPUP_PERK2, \
+"@PERKS_IRON_LUNGS", ORIGIN_POPUP7, PERK_SLOT4, PERK_SLOT3, PERK_HL4, CAC_SPECIALTY_ABILITY, REF_HOLDBREATH, "7" )
+
+#define DETECTEXPLOSIVE PREPROC_PERK( STAT_DETECTEXPLOSIVE, CLOSE_POPUP_PERK2, \
+"@PERKS_BOMB_SQUAD", ORIGIN_POPUP7, PERK_SLOT5, PERK_SLOT4, PERK_HL5, CAC_SPECIALTY_ABILITY, REF_DETECTEXPLOSIVE, "7" )
+
+#define EXTRAAMMO PREPROC_PERK( STAT_EXTRAAMMO, CLOSE_POPUP_PERK2, \
+"@PERKS_BANDOLIER", ORIGIN_POPUP7, PERK_SLOT6, PERK_SLOT5, PERK_HL6, CAC_SPECIALTY_ABILITY, REF_EXTRAAMMO, "7" )
+
+#define BULLETACCURACY PREPROC_PERK( STAT_BULLETACCURACY, CLOSE_POPUP_PERK2, \
+"@PERKS_STEADY_AIM", ORIGIN_POPUP7, PERK_SLOT7, PERK_SLOT6, PERK_HL7, CAC_SPECIALTY_ABILITY, REF_BULLETACCURACY, "7" )
+
+// ============================================================================================
+// ===================================== Specialty: Weapons ===================================
+// ============================================================================================
+#define CLOSE_POPUP_PERK3 close CAC_PREFIX"popup_cac_perk3" close CAC_PREFIX"popup_cac_perk3" \
+execnowondvarstringvalue ui_dual_primaries true "statset "CAC_S_SECONDARY" 0; statset "CAC_S_SECONDARY_ATTACHMENT" 0; set ui_dual_primaries false"
+
+#define BULLETDAMAGE PREPROC_PERK( STAT_BULLETDAMAGE, CLOSE_POPUP_PERK3, \
+"@PERKS_STOPPING_POWER", ORIGIN_POPUP6, PERK_SLOT1, PERK_SLOT0, PERK_HL1, CAC_SPECIALTY_WEAPON, REF_BULLETDAMAGE, "6" )
+
+#define FASTRELOAD PREPROC_PERK( STAT_FASTRELOAD, CLOSE_POPUP_PERK3, \
+"@PERKS_SLEIGHT_OF_HAND", ORIGIN_POPUP6, PERK_SLOT2, PERK_SLOT1, PERK_HL2, CAC_SPECIALTY_WEAPON, REF_FASTRELOAD, "6" )
+
+#define ARMORVEST PREPROC_PERK( STAT_ARMORVEST, CLOSE_POPUP_PERK3, \
+"@PERKS_JUGGERNAUT", ORIGIN_POPUP6, PERK_SLOT3, PERK_SLOT2, PERK_HL3, CAC_SPECIALTY_WEAPON, REF_ARMORVEST, "6" )	
+
+#define BULLETPENETRATION PREPROC_PERK( STAT_BULLETPENETRATION, CLOSE_POPUP_PERK3, \
+"@PERKS_DEEP_IMPACT", ORIGIN_POPUP6, PERK_SLOT4, PERK_SLOT3, PERK_HL4, CAC_SPECIALTY_WEAPON, REF_BULLETPENETRATION, "6" )
+
+#define ROF PREPROC_PERK( STAT_ROF, CLOSE_POPUP_PERK3, \
+"@PERKS_DOUBLE_TAP", ORIGIN_POPUP6, PERK_SLOT5, PERK_SLOT4, PERK_HL5, CAC_SPECIALTY_WEAPON, REF_ROF, "6" )
+
+#define TWOPRIMARIES PREPROC_PERK( STAT_TWOPRIMARIES, close CAC_PREFIX"popup_cac_perk3" close CAC_PREFIX"popup_cac_perk3" scriptMenuResponse "secondary,"REF_M16 scriptMenuResponse "attachment,secondary,"REF_ATTACHMENT_NONE execnow "statset "CAC_S_SECONDARY" 25; statset "CAC_S_SECONDARY_ATTACHMENT" 0; set ui_dual_primaries true", \
+"@PERKS_OVERKILL", ORIGIN_POPUP6, PERK_SLOT6, PERK_SLOT5, PERK_HL6, CAC_SPECIALTY_WEAPON, REF_TWOPRIMARIES, "6" )
+
+#define PISTOLDEATH PREPROC_PERK( STAT_PISTOLDEATH, CLOSE_POPUP_PERK3, \
+"@PERKS_LAST_STAND", ORIGIN_POPUP6, PERK_SLOT7, PERK_SLOT6, PERK_HL7, CAC_SPECIALTY_WEAPON, REF_PISTOLDEATH, "6" )
+
+#define GRENADEPULLDEATH PREPROC_PERK( STAT_GRENADEPULLDEATH, CLOSE_POPUP_PERK3, \
+"@PERKS_MARTYRDOM", ORIGIN_POPUP6, PERK_SLOT8, PERK_SLOT7, PERK_HL8, CAC_SPECIALTY_WEAPON, REF_GRENADEPULLDEATH, "6" )
+
+// ============================================================================================
+// ===================================== Special Grenades =====================================
+// ============================================================================================
+
+#define FLASH_X1 PREPROC_SGRENADE( STAT_FLASH_X1, \
+"@WEAPON_FLASH_GRENADE", ORIGIN_POPUP4, WEAPON_SLOT1, WEAPON_SLOT0, REF_FLASH_X1, play "mouse_click"; )
+
+#define CONCUSSION_X1 PREPROC_SGRENADE( STAT_CONCUSSION_X1, \
+"@WEAPON_STUN_GRENADE", ORIGIN_POPUP4, WEAPON_SLOT2, WEAPON_SLOT1, REF_CONCUSSION_X1, play "mouse_click"; )
+
+#define SMOKE_X1 PREPROC_SGRENADE( STAT_SMOKE_X1, \
+"@WEAPON_SMOKE_GRENADE", ORIGIN_POPUP4, WEAPON_SLOT3, WEAPON_SLOT2, REF_SMOKE_X1, play "mouse_click"; )

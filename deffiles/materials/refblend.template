@@ -1,0 +1,45 @@
+#if "@blendFunc@" == "Add" || "@blendFunc@" == "Screen Add"
+
+	refBlend( "Add" );
+
+#elif "@blendFunc@" == "Blend"
+
+	refBlend( "Blend" );
+
+#elif "@blendFunc@" == "Custom"
+
+	refBlend( "Blend" );
+
+#elif "@blendFunc@" == "Multiply" || "@blendFunc@" == "Replace"
+
+	#if "@alphaTest@" == "Always"
+
+		#if "@blendFunc@" == "Multiply"
+			refBlend( "Multiply" );
+		#else
+			refBlend( "Opaque" );
+		#endif
+
+	#elif "@alphaTest@" == "GE128"
+
+		refBlend( "GE128" );
+
+	#elif "@alphaTest@" == "GT0"
+
+		refBlend( "GT0" );
+
+	#elif "@alphaTest@" == "LT128"
+
+		refBlend( "LT128" );
+
+	#else
+
+		#error "unknown alphaTest \"@alphaTest@\""
+
+	#endif
+
+#else
+
+	#error "unknown blendFunc \"@blendFunc@\""
+
+#endif

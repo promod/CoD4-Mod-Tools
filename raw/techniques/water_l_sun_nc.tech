@@ -1,0 +1,18 @@
+{
+	stateMap "default";
+
+	vertexShader 2.0 "water_l_sun_nc.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "water_l_sun_nc.hlsl"
+	{
+		waterColor = material.waterColor;
+		envMapParms = material.envMapParms;
+		normalMapSampler = material.normalMap;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

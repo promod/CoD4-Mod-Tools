@@ -1,0 +1,202 @@
+iwfx 2
+
+{
+	name "groundsmoke";
+	editorFlags useRandColor useRandSize0 useRandRotDelta useRandVel0 useRandVel1 absVel0;
+	flags spawnRelative spawnOffsetCylinder runRelToSpawn;
+	spawnRange 0 4000;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 400 0;
+	spawnOneShot 1 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 3000 2000;
+	spawnOrgX 0 0;
+	spawnOrgY 0 0;
+	spawnOrgZ 0 0;
+	spawnOffsetRadius 5 0;
+	spawnOffsetHeight -5 10;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 -45;
+	gravity 0 0;
+	elasticity 1 0;
+	atlasBehavior startRandom;
+	atlasIndex 0;
+	atlasFps 24;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 40
+	{
+		{
+			0 0
+			1 0.5
+		}
+		{
+			0 0
+			1 0.5
+		}
+	};
+	velGraph0Y 40
+	{
+		{
+			0 0
+			1 -0.5
+		}
+		{
+			0 0
+			1 -0.5
+		}
+	};
+	velGraph0Z 40
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0.26555
+			1 0.26555
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0.222488
+			1 0.0119617
+		}
+		{
+			0 0.5
+			1 0.3333
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 50
+	{
+		{
+			0 0
+			0.247093 -0.0231481
+			0.537791 -0.101852
+			0.781977 -0.25463
+			1 -0.5
+		}
+		{
+			0 0
+			0.258721 0.037037
+			0.546512 0.148148
+			0.784884 0.268519
+			1 0.5
+		}
+	};
+	sizeGraph0 266.6
+	{
+		{
+			0 0.142857
+			0.367647 0.201299
+			0.608824 0.305195
+			0.832353 0.487013
+			1 0.75
+		}
+		{
+			0 0.0779221
+			0.382353 0.12987
+			0.629412 0.214286
+			0.844118 0.344156
+			1 0.493506
+		}
+	};
+	sizeGraph1 2
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 1
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.227451 0.227451 0.227451
+			1 0.235294 0.235294 0.235294
+		}
+		{
+			0 0.156863 0.156863 0.156863
+			1 0.121569 0.121569 0.121569
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.0406977 0.339713
+			0.0726744 0.69378
+			0.159884 0.755981
+			0.293605 0.69378
+			0.409884 0.507177
+			0.680233 0.22488
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	lightingFrac 0;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 5;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_smk_white_atlas"
+	};
+}

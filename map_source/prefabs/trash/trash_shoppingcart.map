@@ -1,0 +1,32 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -18 -6 4 ) ( -18 -6 18 ) ( 10 -6 22 ) clip 64 64 0 0 0 0 lightmap_gray 16384 -16384 0 -10 0 0
+ ( -18 16 18 ) ( -18 16 2 ) ( 18 22 -2 ) clip 64 64 0 0 0 0 lightmap_gray 16384 -16384 0 -10 0 0
+ ( 18 22 22 ) ( 18 -20 22 ) ( -18 -20 18 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 20 0 0
+ ( 10 -6 0 ) ( 10 -6 22 ) ( 18 22 22 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -10 20 -90 0
+ ( 14 -20 0 ) ( 14 22 0 ) ( -18 22 4 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 20 0 0
+ ( -18 -6 18 ) ( -18 -6 4 ) ( -18 16 4 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -10 20 -90 0
+}
+// brush 1
+{
+ ( -16 -14 4 ) ( -16 -14 18 ) ( 14 -14 22 ) clip 64 64 0 0 0 0 lightmap_gray 16384 -16384 0 -10 0 0
+ ( 10 -6 0 ) ( 10 -6 22 ) ( -18 -6 18 ) clip 64 64 0 0 0 0 lightmap_gray 16384 -16384 0 -10 0 0
+ ( 18 0 22 ) ( 18 -42 22 ) ( -18 -42 18 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 42 0 0
+ ( 14 -14 0 ) ( 14 -14 22 ) ( 10 -6 22 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -10 42 -90 0
+ ( 14 -42 0 ) ( 14 0 0 ) ( -18 0 4 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 42 0 0
+ ( -16 -14 18 ) ( -16 -14 4 ) ( -18 -6 4 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -10 42 -90 0
+}
+}
+// entity 1
+{
+"angles" "0 0 -90"
+"classname" "misc_model"
+"model" "com_shopping_cart"
+"origin" "0.0 -20.0 10.0"
+}

@@ -1,0 +1,229 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_1			3
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef
+	{
+		name			menu_leaderboard_kills
+		fullscreen		1
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		soundloop 		"music_mainmenu_mp"
+		onOpen
+		{
+            setdvar lb_type "kills";
+            setdvar lb_filter "friends";
+            uiScript RefreshLeaderboards;
+            execnow "nosplitscreen";
+			setfocus leaderboard;
+		}
+		onEsc
+		{
+			close menu_leaderboard_kills;
+		}
+
+// ------------------  statics ------------------------
+#include "ui/blurredbg.inc"
+
+		CHOICE_MENU_TITLE_VIS( "@MENU_KILLS_GLOBAL_CAP", dvarString( lb_filter ) == none )
+		CHOICE_MENU_TITLE_VIS( "@MENU_KILLS_FRIENDS_CAP", dvarString( lb_filter ) == friends )
+		
+		#define BUTTON_Y_FILTER		1
+		#define BUTTON_X_GOTOTOP	1
+		#define BUTTON_PGUP			1
+		#define BUTTON_PGDOWN		1
+		#define ALT_PANEL			1
+		#include "ui_mp/navcontrols.inc"
+
+
+		//SERVER LIST HEADER SORT TABS
+		//LOADOUT_PLATING_RAW( -284 42, 6, 0, 572, 18, HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, 0, 1 )
+		//LOADOUT_PLATING_RAW( -500 42, 6, 0, 1000, 18, HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, 0, 1 )
+		//LOADOUT_PLATING_RAW( -500 -22, 6, 0, 1000, 80, HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM, 1, 0 )
+		
+		PREPROC_SHADER_DRAW_ALIGNED( -304 34 612 18 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, 0 0, "line_horizontal", 0.9 0.9 0.925 0.5, 0, 0, 0 0 0 0 )
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			116 86
+			text			"@MENU_RANK"
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			142 86
+			text			"@MENU_LEVEL"
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_NORMAL
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			188 86
+			text			"@MENU_PLAYER"
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_NORMAL
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			423 86
+			text			"@MENU_KILLS"
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			488 86
+			text			"@MENU_DEATHS"
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			537 86
+			text			"@MENU_RATIO"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			584 86
+			text			"@MENU_STREAK"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+
+		// column dividers
+/*
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			71 66 1 349
+			backcolor		1 1 1 .5
+			visible			1
+			decoration
+		}
+		
+				
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			311 66 1 349
+			backcolor		1 1 1 .5
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			401 66 1 349
+			backcolor		1 1 1 .5
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			483 66 1 349
+			backcolor		1 1 1 .5
+			visible			1
+			decoration
+		}
+*/
+		// LEADERBOARD LIST TEXT
+		itemDef
+		{
+			name			leaderboard
+			rect			36 88 564 324
+			//rect			45 63 564 57
+			type			ITEM_TYPE_LISTBOX
+			style			WINDOW_STYLE_FILLED
+			elementwidth	120
+			elementheight	18
+			textfont		UI_FONT_NORMAL
+			textaligny		-2
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			elementtype		LISTBOX_TEXT
+			feeder			FEEDER_LEADERBOARD
+			forecolor		CHOICE_TEXTCOLOR		
+			outlinecolor	0.9 0.9 0.925 0.2 //0.3 0.35 0.55 0.25
+			selectBorder	0.8 0.95 1 0
+			//selectIcon		ALTERNATE_HINT_SHADER	
+//			numcols			xpos	xwidth	textlen  alignment
+			columns	8		50		30		10		ITEM_ALIGN_RIGHT
+							100		20		10		ITEM_ALIGN_RIGHT
+							120		20		10		ITEM_ALIGN_CENTER								
+							152		35		55
+							298		80		10		ITEM_ALIGN_RIGHT
+							380		64		10		ITEM_ALIGN_RIGHT
+							428		64		10		ITEM_ALIGN_RIGHT
+							490		48		10		ITEM_ALIGN_RIGHT
+			visible			1
+			//noscrollbars
+			usePaging
+			doubleClick
+			{
+				play "mouse_click"
+				uiScript ViewGamerCard
+			}
+			execKeyInt BUTTON_X
+			{
+				feederTop
+			}
+		}
+
+		#include "ui/safearea.menu"
+	}
+}

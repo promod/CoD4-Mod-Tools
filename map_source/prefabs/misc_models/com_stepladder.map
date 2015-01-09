@@ -1,0 +1,139 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 18.5 22.5 68.5 ) ( -14 22.5 68.5 ) ( -14 -22.5 68.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -22.5 71 ) ( -14 22.5 71 ) ( 18.5 22.5 71 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -5 72 ) ( 18.5 -5 72 ) ( 18.5 -5 -2.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 -22.5 74 ) ( 9.5 22.5 74 ) ( 9.5 22.5 -0.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 18.5 4.5 74.5 ) ( -14 4.5 74.5 ) ( -14 4.5 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9.5 22.5 73 ) ( -9.5 -22.5 73 ) ( -9.5 -22.5 -1.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -9.5 6.5 43 ) ( -10.5 6.5 43 ) ( -10.5 -10 43 ) clip_nosight_nothing 64 64 2 -0.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10.5 -9.5 45 ) ( -10.5 7 45 ) ( -9.5 7 45 ) clip_nosight_nothing 64 64 2 -0.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -6.5 43 ) ( -10.5 -6.5 43 ) ( -10.5 -7 45 ) clip_nosight_nothing 64 64 2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 6 43 ) ( -10 -7 43 ) ( -10 -7.5 45 ) clip_nosight_nothing 64 64 0.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10.5 6 43 ) ( -10 6 43 ) ( -10 5.5 45 ) clip_nosight_nothing 64 64 2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10.5 -7 43 ) ( -10.5 6 43 ) ( -10.5 5.5 45 ) clip_nosight_nothing 64 64 0.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 10 -6.5 43 ) ( 10.5 -6.5 43 ) ( 10.5 6 43 ) clip_nosight_nothing 64 64 22.5 -0.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 -7 45 ) ( 10 -7 45 ) ( 10 5.5 45 ) clip_nosight_nothing 64 64 22.5 -0.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -7 45 ) ( 10.5 -7 45 ) ( 10.5 -6.5 43 ) clip_nosight_nothing 64 64 22.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 -6.5 43 ) ( 10.5 -7 45 ) ( 10.5 5.5 45 ) clip_nosight_nothing 64 64 0.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 5.5 45 ) ( 10 5.5 45 ) ( 10 6 43 ) clip_nosight_nothing 64 64 22.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -7 45 ) ( 10 -6.5 43 ) ( 10 6 43 ) clip_nosight_nothing 64 64 0.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( -8.5 5.5 44.5 ) ( 8.5 5.5 44.5 ) ( 8.5 10.5 44.5 ) clip_nosight_nothing 64 64 -0.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8.5 5 46.5 ) ( -8.5 5 46.5 ) ( -8.5 10 46.5 ) clip_nosight_nothing 64 64 -0.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8.5 5 46.5 ) ( 8.5 5 46.5 ) ( 8.5 5.5 44.5 ) clip_nosight_nothing 64 64 -0.5 12.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8.5 5.5 44.5 ) ( 8.5 5 46.5 ) ( 8.5 10 46.5 ) clip_nosight_nothing 64 64 0 12.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8.5 10 46.5 ) ( -8.5 10 46.5 ) ( -8.5 10.5 44.5 ) clip_nosight_nothing 64 64 -0.5 12.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8.5 5 46.5 ) ( -8.5 5.5 44.5 ) ( -8.5 10.5 44.5 ) clip_nosight_nothing 64 64 0 12.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( -9 8 32.5 ) ( 9 8 32.5 ) ( 9 13.5 32.5 ) clip_nosight_nothing 64 64 -1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 7.5 34.5 ) ( -9 7.5 34.5 ) ( -9 13 34.5 ) clip_nosight_nothing 64 64 -1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 8 34.5 ) ( 9 8 34.5 ) ( 9 8.5 32.5 ) clip_nosight_nothing 64 64 -1 24.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 7.5 34.5 ) ( 9 13 34.5 ) ( 9 13.5 32.5 ) clip_nosight_nothing 64 64 0 24.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 13 34.5 ) ( -9 13 34.5 ) ( -9 13.5 32.5 ) clip_nosight_nothing 64 64 -1 24.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 13 34.5 ) ( -9 7.5 34.5 ) ( -9 8 32.5 ) clip_nosight_nothing 64 64 0 24.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+ ( -9 11.5 20.5 ) ( 9.5 11.5 20.5 ) ( 9.5 17 20.5 ) clip_nosight_nothing 64 64 -1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 11 22.5 ) ( -9 11 22.5 ) ( -9 16.5 22.5 ) clip_nosight_nothing 64 64 -1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 11 22.5 ) ( 9.5 11 22.5 ) ( 9.5 11.5 20.5 ) clip_nosight_nothing 64 64 -1 36.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 11 22.5 ) ( 9.5 16.5 22.5 ) ( 9.5 17 20.5 ) clip_nosight_nothing 64 64 0 36.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 16.5 22.5 ) ( -9 16.5 22.5 ) ( -9 17 20.5 ) clip_nosight_nothing 64 64 -1 36.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9.5 16.5 22.5 ) ( -9.5 11 22.5 ) ( -9.5 11.5 20.5 ) clip_nosight_nothing 64 64 0 36.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+ ( 5.5 22.5 7.5 ) ( -10 22.5 7.5 ) ( -10 3.5 7.5 ) clip_nosight_nothing 64 64 -2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 3 9.5 ) ( -10 22 9.5 ) ( 5.5 22 9.5 ) clip_nosight_nothing 64 64 -2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 14.5 9.5 ) ( 10.5 14.5 9.5 ) ( 10.5 15 7.5 ) clip_nosight_nothing 64 64 -2 49.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 14 9.5 ) ( 10.5 20 9.5 ) ( 10.5 20.5 7.5 ) clip_nosight_nothing 64 64 0 49.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 20 9.5 ) ( -10 20 9.5 ) ( -10 20.5 7.5 ) clip_nosight_nothing 64 64 -2 49.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10.5 20 9.5 ) ( -10.5 14 9.5 ) ( -10.5 14.5 7.5 ) clip_nosight_nothing 64 64 0 49.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+ ( -8 2.5 57 ) ( 8 2.5 57 ) ( 8 7 57 ) clip_nosight_nothing 64 64 -0.5 3 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 2 59 ) ( -8 2 59 ) ( -8 6.5 59 ) clip_nosight_nothing 64 64 -0.5 3 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 2 59 ) ( 8 2 59 ) ( 8 2.5 57 ) clip_nosight_nothing 64 64 -0.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 2.5 57 ) ( 8 2 59 ) ( 8 6.5 59 ) clip_nosight_nothing 64 64 -3 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 6.5 59 ) ( -8 6.5 59 ) ( -8 7 57 ) clip_nosight_nothing 64 64 -0.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 2 59 ) ( -8 2.5 57 ) ( -8 7 57 ) clip_nosight_nothing 64 64 -3 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+ ( 4 -19.5 0 ) ( -13 -19.5 0 ) ( -13 -23 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9.5 6 68.5 ) ( -9.5 9.5 68.5 ) ( 7.5 9.5 68.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9.5 -4.5 68.5 ) ( 7.5 -4.5 68.5 ) ( 4 -23 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7.5 -4.5 68 ) ( -7.5 -1 68 ) ( -11 -19.5 -0.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7.5 -1 68.5 ) ( -9.5 -1 68.5 ) ( -13 -19.5 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9.5 -1 68.5 ) ( -9.5 -4.5 68.5 ) ( -13 -23 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+ ( 13 -19.5 0 ) ( 11 -19.5 0 ) ( 11 -23 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7.5 -1 68.5 ) ( 9.5 -1 68.5 ) ( 9.5 -4.5 68.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7.5 -4.5 68.5 ) ( 9.5 -4.5 68.5 ) ( 13 -23 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 -4.5 68.5 ) ( 9.5 -1 68.5 ) ( 13 -19.5 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 -1 68.5 ) ( 7.5 -1 68.5 ) ( 11 -19.5 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7.5 -1 68.5 ) ( 7.5 -4.5 68.5 ) ( 11 -23 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 10
+{
+ ( 13 28.5 0 ) ( 7.5 28.5 0 ) ( 7.5 0 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -23 68.5 ) ( 4 5.5 68.5 ) ( 9.5 5.5 68.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7.5 -0.5 68.5 ) ( 9.5 -0.5 68.5 ) ( 13 17 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 -0.5 68.5 ) ( 9.5 4.5 68.5 ) ( 13 22 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9.5 4.5 68.5 ) ( 7.5 4.5 68.5 ) ( 11 22 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7.5 4.5 68.5 ) ( 7.5 -0.5 68.5 ) ( 11 17 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 11
+{
+ ( -9.5 22 0 ) ( -13.5 22 0 ) ( -13.5 -0.5 0 ) clip_nosight_nothing 64 64 -2.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -18 68.5 ) ( -10 4.5 68.5 ) ( -6 4.5 68.5 ) clip_nosight_nothing 64 64 -2.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9.5 -0.5 68.5 ) ( -7.5 -0.5 68.5 ) ( -11 17 0 ) clip_nosight_nothing 64 64 -2.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7.5 -0.5 68.5 ) ( -7.5 4.5 68.5 ) ( -11 22 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7.5 4.5 68.5 ) ( -9.5 4.5 68.5 ) ( -13 22 0 ) clip_nosight_nothing 64 64 -2.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9.5 4.5 68.5 ) ( -9.5 -0.5 68.5 ) ( -13 17 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 12
+{
+ ( 10 -14 13 ) ( -10 -14 13 ) ( -10 -20 13 ) clip_nosight_nothing 64 64 0 34.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -20 13.5 ) ( -10 -14 13.5 ) ( 10 -14 13.5 ) clip_nosight_nothing 64 64 0 34.5 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -18.5 13 ) ( -10 -18.5 13 ) ( -10 -18.5 13.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -17.5 13 ) ( 10 -18.5 13 ) ( 10 -18.5 13.5 ) clip_nosight_nothing 64 64 -34.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -17.5 13 ) ( 10 -17.5 13 ) ( 10 -17.5 13.5 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -18.5 13 ) ( -10 -17.5 13 ) ( -10 -17.5 13.5 ) clip_nosight_nothing 64 64 -34.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 13
+{
+ ( -77 -6.5 40 ) ( -97 -6.5 40 ) ( -97 -12.5 40 ) clip_nosight_nothing 64 64 1.5 27 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8.5 -12.5 40.5 ) ( -8.5 -6.5 40.5 ) ( 11.5 -6.5 40.5 ) clip_nosight_nothing 64 64 1.5 27 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 11.5 -11 40 ) ( -8.5 -11 40 ) ( -8.5 -11 40.5 ) clip_nosight_nothing 64 64 1.5 -27 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8.5 -10 40 ) ( 8.5 -11 40 ) ( 8.5 -11 40.5 ) clip_nosight_nothing 64 64 -27 -27 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8.5 -10 40 ) ( 11.5 -10 40 ) ( 11.5 -10 40.5 ) clip_nosight_nothing 64 64 1.5 -27 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8.5 -11 40 ) ( -8.5 -10 40 ) ( -8.5 -10 40.5 ) clip_nosight_nothing 64 64 -27 -27 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_stepladder"
+"classname" "misc_model"
+}

@@ -1,0 +1,38 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"model" "prefabs/misc_models/me_electricbox2.map"
+"sunRadiosity" "1"
+"sunlight" "1"
+"sundirection" "-50 240 0"
+"suncolor" "1 1 1"
+"sundiffusecolor" "1 1 1"
+"radiosityScale" "1"
+"northyaw" "-45"
+"diffusefraction" "0.4"
+"bouncefracion" ".1"
+"ambient" ".02"
+"_color" "1 1 1"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 19 16 0 ) ( -18 16 0 ) ( -18 -18 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -18 50 ) ( -18 16 50 ) ( 19 16 50 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -15 0 ) ( -8 -15 50 ) ( 6 -15 50 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 15 -7 0 ) ( 15 -7 50 ) ( 15 6 50 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 15 50 ) ( -7 15 0 ) ( 8 15 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -15 6 0 ) ( -15 6 50 ) ( -15 -7 50 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 15 0 ) ( -7 15 50 ) ( -15 6 50 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 15 50 ) ( 8 15 0 ) ( 15 6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -15 0 ) ( 6 -15 50 ) ( 15 -7 50 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -15 50 ) ( -8 -15 0 ) ( -15 -7 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "me_basket_rattan01"
+"classname" "misc_model"
+}

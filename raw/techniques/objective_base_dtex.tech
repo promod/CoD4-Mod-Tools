@@ -1,0 +1,17 @@
+{
+	stateMap "objective";
+
+	vertexShader 2.0 "objective_base_dtex.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "objective_base.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.normal = code.normal;
+
+}

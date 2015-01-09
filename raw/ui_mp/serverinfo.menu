@@ -1,0 +1,224 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_GROUP			"serverinfo"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+	
+#define SIDE_MARGIN		20
+#define INFO_BOX_WIDTH	390
+#define INFO_BOX_HEIGHT 280
+#define INFO_BOX_SIZE 	INFO_BOX_WIDTH INFO_BOX_HEIGHT
+	
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X	(INFO_BOX_WIDTH+(SIDE_MARGIN*2))
+
+#undef CHOICE_POPUP_TITLE_HEIGHT
+#define CHOICE_POPUP_TITLE_HEIGHT	(INFO_BOX_HEIGHT+SIDE_MARGIN+24)
+
+{
+	menuDef
+	{
+		name			serverinfo_popmenu
+    	visible			1
+   		fullscreen		0
+		rect			(0-(CHOICE_POPUP_WIDTH/2)) 70 CHOICE_POPUP_WIDTH CHOICE_POPUP_HEIGHT( 2 ) HORIZONTAL_ALIGN_CENTER 0
+		border			1 
+		backcolor		0 0 0 0 
+		bordersize		CHOICE_POPUP_BORDER_WIDTH 
+		bordercolor		CHOICE_POPUP_BORDER_COLOR 
+		focusColor		COLOR_FOCUSED 
+   		style			WINDOW_STYLE_FILLED 
+		popup 
+		onOpen 
+		{
+			uiScript ServerStatus;
+			setLocalVarBool	ui_centerPopup 1;
+		}
+		onClose
+		{
+			setLocalVarBool	ui_centerPopup 0;
+		}
+		onESC
+		{
+			setLocalVarBool	ui_centerPopup 0;
+			play "mouse_click";
+			close self;
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 (CHOICE_POPUP_WIDTH-(CHOICE_POPUP_BORDER_WIDTH*2)) (CHOICE_POPUP_HEIGHT( 2 )-(CHOICE_POPUP_BORDER_WIDTH*2))
+			background		"white"
+			forecolor		0.2 0.2 0.22 0.85
+			visible			1
+			decoration
+		}
+
+		#undef CHOICE_X_START
+		#define CHOICE_X_START				0		
+		#undef CHOICE_HORIZONTAL_ALIGN
+		#define CHOICE_HORIZONTAL_ALIGN		HORIZONTAL_ALIGN_CENTER
+		#undef CHOICE_VERTICAL_ALIGN
+		#define CHOICE_VERTICAL_ALIGN		VERTICAL_ALIGN_TOP
+				
+		CHOICE_POPMENU_TITLE( "@MENU_SERVER_INFO" )
+	
+		itemDef {
+			name			serverinfo
+			rect			SIDE_MARGIN 28 INFO_BOX_SIZE
+			type			ITEM_TYPE_LISTBOX
+			style			WINDOW_STYLE_FILLED
+			elementwidth	120
+			elementheight	16
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			backcolor		0 0 0 1
+			border			1
+			bordersize		1
+			bordercolor		.5 .5 .5 1
+			elementtype		LISTBOX_TEXT
+			feeder			FEEDER_SERVERSTATUS
+			notselectable
+			visible			1
+			columns			4	2 	50 	20
+								60 	40 	10
+								110 40 	10
+								155 40 	25
+	 	}
+
+		CHOICE_BUTTON( 1, "@MENU_CLOSE", close self; )
+		CHOICE_BUTTON( 2, "@MENU_REFRESH", uiScript	ServerStatus; )
+	}
+}
+/*
+//#include "ui/menudef.h"
+// PASSWORD POPUP MENU \\
+
+menuDef {
+	name				"serverinfo_popmenu"
+	visible 			0
+	fullscreen			0
+	rect				120 70 400 300
+	focusColor COLOR_FOCUSED
+	style				1
+	border				1
+	popup
+	onClose				{ }
+	onOpen				{ uiScript ServerStatus }
+	onESC				{ close serverinfo_popmenu }
+
+	itemDef
+	{
+		name			window
+		group			grpControlbutton
+		rect			0 40 400 300
+		style			WINDOW_STYLE_FILLED
+		border			1
+		bordercolor		.5 .5 .5 .5
+		forecolor		1 1 1 1
+		backcolor		.1 .1 .1 1
+		visible			1
+		decoration
+	}
+
+	itemDef 
+	{
+		name			window2
+		group			grpControlbutton
+		rect			2 42 396 20 
+		style			WINDOW_STYLE_FILLED
+		border			1
+		bordercolor		.1 .1 .1 .2
+		forecolor		1 1 1 1
+		backcolor		.3 0.5 0.2 0.5
+		visible			1
+		decoration
+	}
+
+	itemDef {
+		name			window_title
+		text			"@MENU_SERVER_INFO"
+		style			0
+		decoration
+		textscale		.3
+		rect			1 44 210 20
+		textalign		ITEM_ALIGN_CENTER
+		textalignx		95
+		textaligny		16
+		forecolor		1 1 1 1
+		visible			1
+		textfont		UI_FONT_NORMAL
+	}
+		itemDef {
+			name			serverinfo
+			rect			SIDE_MARGIN 28 INFO_BOX_SIZE
+			type			ITEM_TYPE_LISTBOX
+			style			WINDOW_STYLE_FILLED
+			elementwidth	120
+			elementheight	16
+			textfont		UI_FONT_NORMAL
+			textscale		.25
+			backcolor		0 0 0 1
+			border			1
+			bordersize		1
+			bordercolor		.5 .5 .5 1
+			elementtype		LISTBOX_TEXT
+			feeder			FEEDER_SERVERSTATUS
+			notselectable
+			visible			1
+			columns			4	2 	50 	20
+								60 	40 	10
+								110 40 	10
+								155 40 	25
+	 	}
+
+	itemDef {
+		name			yes
+		text			"@MENU_EXIT"
+		type			ITEM_TYPE_BUTTON
+		textfont		UI_FONT_NORMAL
+		textscale		0.25
+		style			WINDOW_STYLE_FILLED
+		textstyle		ITEM_TEXTSTYLE_SHADOWED
+		rect			100 310 100 15
+		textalign		ITEM_ALIGN_CENTER
+		textaligny		11
+		forecolor		.9 .9 .95 1
+		visible			1
+
+		action {
+			play "mouse_click"
+			close	serverinfo_popmenu
+		}
+
+		mouseEnter		{ play "mouse_over"; }
+	}
+
+	itemDef {
+		name			refresh
+		text			"@MENU_REFRESH"
+		type			ITEM_TYPE_BUTTON
+		textfont		UI_FONT_NORMAL
+		textscale		0.25
+		style			WINDOW_STYLE_FILLED
+		textstyle		ITEM_TEXTSTYLE_SHADOWED
+		rect			210 310 100 15
+		textalign		ITEM_ALIGN_CENTER
+		textaligny		11
+		forecolor		.9 .9 .95 1
+		visible			1
+
+		action {
+			play "mouse_click"
+			uiScript	ServerStatus
+		}
+
+		mouseEnter		{ play "mouse_over"; }
+	}
+}
+}*/

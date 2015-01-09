@@ -1,0 +1,33 @@
+// single player menu defs
+
+{	
+	loadMenu { "ui/main.menu" }
+	loadMenu { "ui/error.menu" }
+	loadMenu { "ui/levels.menu" }
+	loadMenu { "ui/levels_game.menu" }
+	loadMenu { "ui/levels_test.menu" }
+	loadMenu { "ui/levels_dev.menu" }
+	loadMenu { "ui/difficulty.menu" }
+
+	loadMenu { "ui_mp/options.menu" }
+	loadMenu { "ui/options_look_pc.menu" }
+	loadMenu { "ui/options_move_pc.menu" }
+	loadMenu { "ui/options_shoot_pc.menu" }
+	loadMenu { "ui/options_misc_pc.menu" }
+	loadMenu { "ui/options_graphics_pc.menu" }
+	loadMenu { "ui/options_game_pc.menu" }
+	loadMenu { "ui/options_sound_pc.menu" }
+	loadMenu { "ui/options_control_defaults.menu" }
+	loadMenu { "ui/options_graphics_defaults.menu" }
+
+
+	loadMenu { "ui/playerprofile.menu" }
+	loadMenu { "ui/briefing.menu" }
+	loadMenu { "ui/connect.menu" }
+	loadMenu { "ui/quit.menu" }
+	loadMenu { "ui/vid_restart_pc.menu" }
+	loadMenu { "ui/language_restart.menu" }
+	loadMenu { "ui/snd_restart.menu" }
+
+~	loadMenu { "ui/save_load.menu" }
+}

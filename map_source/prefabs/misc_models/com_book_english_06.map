@@ -1,0 +1,66 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents nonColliding;
+ ( 6 54 28 ) ( 6 54 36 ) ( 6 86 28 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -150 -6 40 ) ( -150 -6 32 ) ( -182 -6 32 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -2650 40 ) ( -8 -2650 32 ) ( -8 -2618 32 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1.5 4 1.5 ) ( -5.5 4 1.5 ) ( -5.5 36 1.5 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 4 0.5 ) ( 3 4 0.5 ) ( -3 36 0.5 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3.5 -4.5 1.5 ) ( 0 -4.5 1.5 ) ( -3.5 -4.5 33.5 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents nonColliding;
+ ( 6 44 28 ) ( 6 44 36 ) ( 6 76 28 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -16 0.5 ) ( 6 -16 0.5 ) ( 6 -16 0 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -6 1 ) ( 6 -6 1 ) ( 6 -6 1.5 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -6 1 ) ( -8 -6 1 ) ( -8 -16 0 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -2660 40 ) ( -8 -2660 32 ) ( -8 -2628 32 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -16 0.5 ) ( -8 -16 0.5 ) ( -8 -6 1.5 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents nonColliding;
+ ( 5.5 44.5 28.5 ) ( 5.5 44.5 36.5 ) ( 5.5 76.5 28.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -15.5 1 ) ( 6 -15.5 1 ) ( 6 -15.5 0.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -5.5 1.5 ) ( 6 -5.5 1.5 ) ( 6 -5.5 2 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -5.5 1.5 ) ( -8 -5.5 1.5 ) ( -8 -15.5 0.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7.5 -2659.5 40.5 ) ( -7.5 -2659.5 32.5 ) ( -7.5 -2627.5 32.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -15.5 1 ) ( -8 -15.5 1 ) ( -8 -5.5 2 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents nonColliding;
+ ( -8 -54.5 28 ) ( -8 -54.5 36 ) ( -8 -86.5 28 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 5.5 0.5 ) ( -8 5.5 0.5 ) ( -8 5.5 0 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -4.5 1 ) ( -8 -4.5 1 ) ( -8 -4.5 1.5 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -4.5 1 ) ( 6 -4.5 1 ) ( 6 5.5 0 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 2649.5 40 ) ( 6 2649.5 32 ) ( 6 2617.5 32 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 5.5 0.5 ) ( 6 5.5 0.5 ) ( 6 -4.5 1.5 ) me_wire_black 64 8 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents nonColliding;
+ ( -7.5 -55 28.5 ) ( -7.5 -55 36.5 ) ( -7.5 -87 28.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 5 1 ) ( -8 5 1 ) ( -8 5 0.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -5 1.5 ) ( -8 -5 1.5 ) ( -8 -5 2 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -5 1.5 ) ( 6 -5 1.5 ) ( 6 5 0.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5.5 2649 40.5 ) ( 5.5 2649 32.5 ) ( 5.5 2617 32.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 5 1 ) ( 6 5 1 ) ( 6 -5 2 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+ ( 6 -5 1.5 ) ( -8 -5 1.5 ) ( -8 -5.5 1.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -5.5 2 ) ( -8 -5 2 ) ( 6 -5 2 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -5.5 2 ) ( 6 -5.5 2 ) ( 6 -5.5 1.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5.5 -5.5 2 ) ( 5.5 -5 2 ) ( 5.5 -5 1.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -5 2 ) ( -8 -5 2 ) ( -8 -5 1.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7.5 -5 2 ) ( -7.5 -5.5 2 ) ( -7.5 -5.5 1.5 ) me_plaster_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

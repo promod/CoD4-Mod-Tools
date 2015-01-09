@@ -1,0 +1,22 @@
+{
+	stateMap "additive_stencil";
+
+	vertexShader 2.0 "l_point_flag_tc0n0_dtex.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "l_spot_flag_t0c0n0.hlsl"
+	{
+		fogColor = float4( 0, 0, 0, 0 );
+		colorMapSampler = material.colorMap;
+		normalMapSampler = material.normalMap;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.texcoord[2] = code.tangent;
+
+}

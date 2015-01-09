@@ -1,0 +1,182 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"sunlight" "1.7"
+"sundirection" "-40 225 0"
+"sundiffusecolor" "0.717647 0.776471 1.000000"
+"suncolor" "0.996078 0.921569 0.505882"
+"northyaw" "90"
+"diffusefraction" ".3"
+"ambient" "0.4"
+"_color" "0.717647 0.776471 1.000000"
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 14 16 148 ) ( -14 16 148 ) ( -14 -14 148 ) ch_concretewall02 128 128 2216 -2912 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -16 152 ) ( 14 -16 152 ) ( 14 -16 148 ) ch_concretewall02 128 128 2216 328 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -16 152 ) ( 16 14 152 ) ( 16 14 148 ) ch_concretewall02 128 128 2912 328 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 16 152 ) ( -14 16 152 ) ( -14 16 148 ) ch_concretewall02 128 128 2216 328 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 14 152 ) ( -16 -16 152 ) ( -16 -16 148 ) ch_concretewall02 128 128 2912 328 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 632 -16 150 ) ( 632 0 156 ) ( 664 -16 150 ) ch_concretewall02 128 128 2216 -2912 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 632 0 156 ) ( 632 16 150 ) ( 664 0 156 ) ch_concretewall02 128 128 2216 -2912 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -328 156 ) ( -16 -328 150 ) ( -16 -296 150 ) ch_concretewall02 128 128 2216 -2912 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -328 150 ) ( 0 -328 156 ) ( 0 -296 156 ) ch_concretewall02 128 128 2216 -2912 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 14 10 0 ) ( -8 10 0 ) ( -8 -14 0 ) ch_concretewall02 128 128 2216 -2912 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -14 148 ) ( -8 10 148 ) ( 14 10 148 ) ch_concretewall02 128 128 2216 -2912 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -14 88 ) ( 14 -14 88 ) ( 14 -14 -104 ) ch_concretewall02 128 128 2216 376 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -14 88 ) ( 14 10 88 ) ( 14 10 -104 ) ch_concretewall02 128 128 2912 376 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 14 88 ) ( -8 14 88 ) ( -8 14 -104 ) ch_concretewall02 128 128 2216 376 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 10 192 ) ( -14 -14 192 ) ( -14 -14 0 ) ch_concretewall02 128 128 2912 376 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+ {
+  mesh
+  {
+   me_decal_adobe_top_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 14 -14 116 t 56 -2048 0.875 -4.25
+	v -14 -14 116 t -56 -2048 -0.875 -4.25
+   )
+   (
+	v 14 -14 148 t 56 -3072 0.875 -6.25
+	v -14 -14 148 t -56 -3072 -0.875 -6.25
+   )
+  }
+ }
+// brush 3
+ {
+  mesh
+  {
+   me_decal_adobe_bottom_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -14 14 0 t 280 0 0.875 0
+	v -14 14 52 t 280 -832 0.875 -3.25
+   )
+   (
+	v -14 -14 0 t 392 0 -0.875 0
+	v -14 -14 52 t 392 -832 -0.875 -3.25
+   )
+  }
+ }
+// brush 4
+ {
+  mesh
+  {
+   me_decal_adobe_bottom_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -14 14 0 t 280 0 -0.875 0
+	v 14 14 0 t 168 0 0.875 0
+   )
+   (
+	v -14 14 52 t 280 -832 -0.875 -3.25
+	v 14 14 52 t 168 -832 0.875 -3.25
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+   me_decal_adobe_bottom_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 14 -14 0 t 504 0 0.875 0
+	v -14 -14 0 t 392 0 -0.875 0
+   )
+   (
+	v 14 -14 52 t 504 -832 0.875 -3.25
+	v -14 -14 52 t 392 -832 -0.875 -3.25
+   )
+  }
+ }
+// brush 6
+ {
+  mesh
+  {
+   me_decal_adobe_bottom_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 14 14 52 t 168 -832 0.875 -3.25
+	v 14 14 0 t 168 0 0.875 0
+   )
+   (
+	v 14 -14 52 t 56 -832 -0.875 -3.25
+	v 14 -14 0 t 56 0 -0.875 0
+   )
+  }
+ }
+// brush 7
+ {
+  mesh
+  {
+   me_decal_adobe_top_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 14 14 148 t -280 -3072 0.875 -6.25
+	v 14 14 116 t -280 -2048 0.875 -4.25
+   )
+   (
+	v 14 -14 148 t -392 -3072 -0.875 -6.25
+	v 14 -14 116 t -392 -2048 -0.875 -4.25
+   )
+  }
+ }
+// brush 8
+ {
+  mesh
+  {
+   me_decal_adobe_top_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -14 14 116 t -168 -2048 0.875 -4.25
+	v -14 14 148 t -168 -3072 0.875 -6.25
+   )
+   (
+	v -14 -14 116 t -56 -2048 -0.875 -4.25
+	v -14 -14 148 t -56 -3072 -0.875 -6.25
+   )
+  }
+ }
+// brush 9
+ {
+  mesh
+  {
+   me_decal_adobe_top_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -14 14 116 t -168 -2048 -0.875 -4.25
+	v 14 14 116 t -280 -2048 0.875 -4.25
+   )
+   (
+	v -14 14 148 t -168 -3072 -0.875 -6.25
+	v 14 14 148 t -280 -3072 0.875 -6.25
+   )
+  }
+ }
+}

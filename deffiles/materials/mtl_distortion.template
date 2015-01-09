@@ -1,0 +1,22 @@
+#include "commonsetup.template"
+
+#if "@distortionColorBehavior@" == "scales distortion strength"
+	techniqueSet( "distortion_scale_zfeather" );
+#else
+	techniqueSet( "distortion_shade_zfeather" );
+#endif
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in distortion effect materials"
+	#endif
+	"colorMap" = map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+}
+
+constantTable
+{
+	"distortionScale" = float4( @distortionScaleX@, @distortionScaleY@, 0, 0 );
+}
+
+refImage( "$colorMap$" );

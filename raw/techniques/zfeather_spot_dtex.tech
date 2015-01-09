@@ -1,0 +1,19 @@
+{
+		stateMap "default";
+
+	vertexShader 2.0 "zfeather_spot_nf_dtex.hlsl"
+	{
+		featherParms = material.featherParms;
+	}
+
+	pixelShader 2.0 "zfeather_spot_nf.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		featherParms = material.featherParms;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

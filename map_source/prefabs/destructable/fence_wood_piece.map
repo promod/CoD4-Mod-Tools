@@ -1,0 +1,138 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 64 244 0 ) ( -64 244 0 ) ( -64 -28 0 ) caulk 64 64 0 -572 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -28 80 ) ( -64 244 80 ) ( 64 244 80 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -104 -4 80 ) ( 24 -4 80 ) ( 24 -4 0 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -28 80 ) ( 32 244 80 ) ( 32 244 0 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 4 80 ) ( -64 4 80 ) ( -64 4 0 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 236 80 ) ( 24 -36 80 ) ( 24 -36 0 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -4 2 68 ) ( -56 2 68 ) ( -56 -2 68 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 72 ) ( -60 2 72 ) ( -8 2 72 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -2 138 ) ( -4 -2 138 ) ( -4 -2 58 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -4 138 ) ( 24 0 138 ) ( 24 0 58 ) caulk 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 138 ) ( -56 2 138 ) ( -56 2 58 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 2 138 ) ( -64 -2 138 ) ( -64 -2 58 ) caulk 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -4 2 12 ) ( -56 2 12 ) ( -56 -2 12 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 16 ) ( -60 2 16 ) ( -8 2 16 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -2 82 ) ( -4 -2 82 ) ( -4 -2 2 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -4 82 ) ( 24 0 82 ) ( 24 0 2 ) caulk 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 82 ) ( -56 2 82 ) ( -56 2 2 ) me_pinewood 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 2 82 ) ( -64 -2 82 ) ( -64 -2 2 ) caulk 64 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 64 244 0 ) ( -64 244 0 ) ( -64 -28 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -28 80 ) ( -64 244 80 ) ( 64 244 80 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -104 -4 80 ) ( 24 -4 80 ) ( 24 -4 0 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -28 80 ) ( 32 244 80 ) ( 32 244 0 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 4 80 ) ( -64 4 80 ) ( -64 4 0 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 236 80 ) ( 24 -36 80 ) ( 24 -36 0 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( -4 2 68 ) ( -56 2 68 ) ( -56 -2 68 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 72 ) ( -60 2 72 ) ( -8 2 72 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -2 138 ) ( -4 -2 138 ) ( -4 -2 58 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -4 138 ) ( 24 0 138 ) ( 24 0 58 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 138 ) ( -56 2 138 ) ( -56 2 58 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 2 138 ) ( -64 -2 138 ) ( -64 -2 58 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+ ( -4 2 12 ) ( -56 2 12 ) ( -56 -2 12 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 16 ) ( -60 2 16 ) ( -8 2 16 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -2 82 ) ( -4 -2 82 ) ( -4 -2 2 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -4 82 ) ( 24 0 82 ) ( 24 0 2 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 82 ) ( -56 2 82 ) ( -56 2 2 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 2 82 ) ( -64 -2 82 ) ( -64 -2 2 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "20 -3 7"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab4.map"
+"classname" "misc_prefab"
+}
+// entity 2
+{
+"origin" "12 -3 7"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab2.map"
+"classname" "misc_prefab"
+}
+// entity 3
+{
+"origin" "4 -3 5"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab1.map"
+"classname" "misc_prefab"
+}
+// entity 4
+{
+"origin" "-4 -3 6"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab3.map"
+"classname" "misc_prefab"
+}
+// entity 5
+{
+"origin" "-12 -3 8"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab2.map"
+"classname" "misc_prefab"
+}
+// entity 6
+{
+"origin" "-20 -3 6"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab4.map"
+"classname" "misc_prefab"
+}
+// entity 7
+{
+"origin" "-28 -3 7"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab2.map"
+"classname" "misc_prefab"
+}
+// entity 8
+{
+"origin" "-36 -3 6"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab1.map"
+"classname" "misc_prefab"
+}
+// entity 9
+{
+"origin" "-44 -3 5"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab3.map"
+"classname" "misc_prefab"
+}
+// entity 10
+{
+"origin" "-52 -3 6"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab2.map"
+"classname" "misc_prefab"
+}
+// entity 11
+{
+"origin" "-60 -3 8"
+"angles" "0 2.50448e-006 0"
+"model" "prefabs/destructable/fence_wood_woodslab4.map"
+"classname" "misc_prefab"
+}

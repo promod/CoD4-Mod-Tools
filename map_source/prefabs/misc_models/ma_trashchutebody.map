@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 46 40 0 ) ( -46 40 0 ) ( -46 -37 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -37 190 ) ( -46 40 190 ) ( 46 40 190 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -35 191 ) ( 46 -35 191 ) ( 46 -35 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 -37 191 ) ( 46 40 191 ) ( 46 40 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 39 191 ) ( -46 39 191 ) ( -46 39 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 40 191 ) ( -46 -37 191 ) ( -46 -37 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "44 39 0"
+"model" "xmodel/ma_trashchutebody"
+"classname" "misc_model"
+}

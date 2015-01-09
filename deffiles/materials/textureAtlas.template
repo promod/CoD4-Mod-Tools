@@ -1,0 +1,9 @@
+#if "$textureAtlasRowCount$" == ""
+	#error "textureAtlasRowCount may not be blank"
+#endif
+
+#if "$textureAtlasColumnCount$" == ""
+	#error "textureAtlasColumnCount may not be blank"
+#endif
+
+textureAtlas( @textureAtlasRowCount@, @textureAtlasColumnCount@ );

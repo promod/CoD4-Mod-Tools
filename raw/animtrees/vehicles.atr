@@ -1,0 +1,217 @@
+
+
+
+mi17_heli_idle
+
+
+
+technical_driving_idle_forward
+technical_driving_idle_backward
+
+
+sniper_escape_crash_mi28_entrance
+sniper_escape_crash_mi28_idle
+sniper_escape_crash_mi28_crash
+sniper_escape_crash_mi28_rotor_1
+sniper_escape_crash_mi28_rotor_2
+sniper_escape_crash_mi28_rotor_3
+sniper_escape_crash_mi28_rotor_4
+sniper_escape_crash_mi28_rotor_5
+
+
+mi17_heli_rotors
+
+blackhawk
+{
+	bh_cargo_path
+	bh_idle
+	bh_rotors
+}
+
+
+door_pickup_driver_climb_in
+door_pickup_passenger_climb_in
+door_pickup_driver_climb_out
+door_pickup_passenger_climb_out
+door_pickup_passenger_RL_climb_out
+door_pickup_passenger_RR_climb_out
+cobra_crash
+cobra_crash_relative
+abrams_movement
+abrams_movement_backwards
+
+pickup_tankcrush_front
+tank_tankcrush_front
+sedan_tankcrush_side
+tank_tankcrush_side
+
+cobra : additive
+{
+}
+
+bmp
+{
+	bmp_doors_open
+	bmp_movement
+	bmp_movement_backwards
+}
+
+
+
+bog_b_tank_explosion
+bog_b_tank_explosion2
+
+vehicle_80s_sedan1_flattire_LB
+vehicle_80s_sedan1_flattire_LF
+vehicle_80s_sedan1_flattire_RB
+vehicle_80s_sedan1_flattire_RF
+vehicle_80s_sedan1_destroy
+
+cobra_copilot_idle
+cobra_copilot_idle_l
+cobra_copilot_idle_r
+
+coup_opening_car
+coup_opening_car_driving
+coup_ending_drag_cardoor
+
+vehicle_steeringwheel
+{
+	coup_driver_bigleft2center_car
+	coup_driver_bigleft_idle_car
+	coup_driver_bigleft_loop_car
+	coup_driver_bigleftloop2center_car
+	coup_driver_center2smallleft_car
+	coup_driver_center2smallright_car
+	coup_driver_idle_car
+	coup_driver_smallleft2center_car
+	coup_driver_smallleft2bigleft_car
+	coup_driver_smallleft_idle_car
+	coup_driver_smallright2center_car
+	coup_driver_smallright_idle_car
+	coup_driver_bigleftloop_idle_car
+}
+
+vehicle_additives : additive
+{
+	coup_opening_car_driving_idle_bumpy
+	coup_opening_car_driving_idle_normal
+	coup_opening_car_driving_idle_smooth
+	coup_opening_car_driving_idle_static
+
+}
+
+ac130_carjack
+{
+	ac130_carjack_door_1a
+	ac130_carjack_door_1b
+	ac130_carjack_door_others
+}
+
+ch46_anims
+{
+	sniper_escape_ch46_take_off
+	sniper_escape_ch46_land
+	sniper_escape_ch46_idle
+}
+
+blackhawk_anims
+{
+	blackout_bh_evac_heli_idle
+	blackout_bh_evac_heli_land
+	blackout_bh_evac_heli_takeoff
+}
+
+ch46_rotors
+{
+	sniper_escape_ch46_rotors
+}
+
+ch46_turret
+{
+	ch46_turret_fire
+	ch46_turret_idle
+}
+
+ch46_doors
+{
+	ch46_doors_open
+	ch46_doors_close
+}
+
+cargoship_ch46_rescue_in
+cargoship_ch46_rescue_idle
+cargoship_ch46_rescue_out
+cargoship_ch46_rescue_drift
+cargoship_ch46_rescue_drift_idle
+
+armada_blackhawk_sniper_idle_loop_fastrope80
+armada_blackhawk_sniper_drop_fastrope80
+armada_blackhawk_sniper_idle_fastrope80
+
+bm21
+{
+	bm21_driving_idle_forward
+	bm21_driving_idle_backward	
+	bm21_passenger_climbout_door
+	bm21_driver_climbout_door
+	bm21_guy_climbout_truckdoor	
+}
+
+zpu_gun_fire_a
+
+bus_driving_idle_forward
+bus_driving_idle_backward
+tanker_truck_driving_idle_forward
+tanker_truck_driving_idle_backward
+jeepride_crash_tunnel_pickup
+jeepride_flip_pickup
+jeepride_crash_pillar
+
+
+uaz_drive
+{
+	uaz_driving_idle_forward
+	uaz_driving_idle_backward
+}
+
+uaz
+{
+	ambush_VIP_escape_UAZ
+	uaz_driver_enter_from_huntedrun_door
+	uaz_driver_exit_into_run_door
+	uaz_passenger_enter_from_huntedrun_door
+	uaz_passenger_exit_into_run_door
+	uaz_rear_driver_exit_into_run_door
+	uaz_passenger2_exit_into_run_door
+	uaz_rear_driver_enter_from_huntedrun_door
+	uaz_passenger2_enter_from_huntedrun_door	
+}
+
+uaz_driver
+{
+	UAZ_steeringwheel_death
+	UAZ_steeringwheel_duck
+	UAZ_steeringwheel_idle
+	UAZ_steeringwheel_turnleft
+	UAZ_steeringwheel_turnright
+	UAZ_steeringwheel_weave
+}
+
+
+
+mi28_path
+{
+	jeepride_mi28_flyby
+}
+mi28
+{
+	mi28_rotors
+}
+
+mi28_add : additive
+{
+	mi28_rotors_add
+}
+
+

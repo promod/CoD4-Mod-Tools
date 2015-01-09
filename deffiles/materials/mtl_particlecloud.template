@@ -1,0 +1,48 @@
+#include "refblend.template"
+#include "sort.template"
+#include "clamp.template"
+
+textureAtlas( 1, 1 );
+tessSize( 0 );
+
+hasEditorMaterial( @hasEditorMaterial@ );
+allocLightmap( false );
+forModel( false );
+#include "statebits.template"
+
+#if "@outdoorOnly@" == "1"
+	#define OUTDOOR_SUFFIX "_outdoor"
+#else
+	#define OUTDOOR_SUFFIX ""
+#endif
+
+#if "@blendFunc@" == "Add" || "@blendFunc@" == "Screen Add"
+	#define ADD_SUFFIX "_add"
+#else
+	#define ADD_SUFFIX ""
+#endif
+			
+#if "@useSpotLight@" == "1"
+	#define SPOT_SUFFIX "_spot"
+#else
+	#define SPOT_SUFFIX ""
+#endif
+
+#define TECH_SUFFIX OUTDOOR_SUFFIX + ADD_SUFFIX + SPOT_SUFFIX
+
+#if @useSpotLight@ && @outdoorOnly@
+	#error "Outdoor and spot aren't supported on cloud materials"
+#endif
+
+techniqueSet( "particle_cloud" + TECH_SUFFIX );
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in particle cloud materials"
+	#endif
+	"colorMap" = map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+}
+
+
+refImage( "$colorMap$" );

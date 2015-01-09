@@ -1,0 +1,91 @@
+#include "ui/menudef.h"
+
+
+#define PREPROC_OUTCOME( textName, subText, teamName, color ) itemDef { \
+	origin		320	120 \
+	text		textName \
+	textfont	UI_FONT_OBJECTIVE \
+	textscale	1 \
+	textalign	ITEM_ALIGN_CENTER \
+	textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE \
+	forecolor	color \
+	backcolor	0 0 0 1 \
+	visible	when ( team( name ) == teamName ); \
+	decoration } \
+	itemDef { \
+	origin		320 130 \
+	exp			text( "@" + dvarString( "ui_text_endreason" ) ); \
+	textfont	UI_FONT_OBJECTIVE \
+	textscale	.4 \
+	textalign	ITEM_ALIGN_CENTER \
+	textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE \
+	forecolor	1 1 1 1 \
+	backcolor	0 0 0 1 \
+	visible	when ( team( name ) == teamName ); \
+	decoration }
+	
+#define PREPROC_WINNERICON( iconName, showTeam ) itemDef { \
+	style			WINDOW_STYLE_SHADER \
+	rect			-30 0 60 60 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER \
+	origin			-100 -90 \
+	exp				material( iconName ); \
+	visible			when( team( name ) == showTeam );\
+	decoration }
+
+#define PREPROC_LOSERICON( iconName, showTeam ) itemDef { \
+	style			WINDOW_STYLE_SHADER \
+	rect			-30 0 60 60 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER \
+	origin			100 -90 \
+	exp				material( iconName ); \
+	visible			when( team( name ) == showTeam );\
+	decoration }
+
+
+{
+	menuDef
+	{
+		name			"victory_opfor"
+		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+		fullScreen		0
+		visible			0
+
+		PREPROC_OUTCOME( "VICTORY!", "MISSION ACCOMPLISHED", "TEAM_AXIS", 1 1 0 1 )
+		PREPROC_OUTCOME( "DEFEAT", "MISSION FAILED", "TEAM_ALLIES", 1 0 0 1 )
+		PREPROC_OUTCOME( "OPFOR WINS!", "MISSION ACCOMPLISHED", "TEAM_SPECTATOR", 1 1 0 1 )
+
+		PREPROC_WINNERICON( dvarString( "g_TeamIcon_Axis" ), "TEAM_AXIS" )
+		PREPROC_WINNERICON( dvarString( "g_TeamIcon_Axis" ), "TEAM_SPECTATOR" )
+		PREPROC_WINNERICON( dvarString( "g_TeamIcon_Axis" ), "TEAM_ALLIES" )
+
+		PREPROC_LOSERICON( dvarString( "g_TeamIcon_Allies" ), "TEAM_AXIS" )
+		PREPROC_LOSERICON( dvarString( "g_TeamIcon_Allies" ), "TEAM_SPECTATOR" )
+		PREPROC_LOSERICON( dvarString( "g_TeamIcon_Allies" ), "TEAM_ALLIES" )
+
+		itemDef 
+		{
+			rect		0 0 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			origin		-100 30
+			exp text	( opforfield( score ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	1
+			textalign	ITEM_ALIGN_CENTER
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible 	1
+			decoration 
+		}
+				
+		itemDef 
+		{
+			rect		0 0 1 1 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			origin		100 30
+			exp text	( marinesfield( score ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	1
+			textalign	ITEM_ALIGN_CENTER
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible 	1
+			decoration 
+		}
+	}
+}
+

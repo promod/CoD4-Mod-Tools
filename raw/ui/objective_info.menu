@@ -1,0 +1,621 @@
+#include "ui/menudef.h"
+
+#define PAUSESCREEN_MAP_RECT 	-150 230 130 120 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP //415 280 130 120 0 0
+#define PLATFORM_OFFSET			(-20)
+
+#define PAUSESCREEN_OPTION_SIZE 120 20
+
+#define LOCAL_VIS_OBJECTIVE_DISPLAY			dvarstring( mapname ) != "coup" && \
+											dvarstring( mapname ) != "aftermath"
+											
+#define LCOAL_VIS_MAP_DISPLAY				!dvarBool( ui_hidemap ) && \
+											dvarstring( mapname ) != "coup" && \
+											dvarstring( mapname ) != "aftermath" && \
+											dvarstring( mapname ) != "airplane" && \
+											dvarstring( mapname ) != "ac130" && \
+											dvarstring( mapname ) != "jeepride" && \
+											dvarstring( mapname ) != "simplecredits"
+
+{
+	// Pause menu
+	menuDef
+	{
+		name			"pausedmenu"
+		fullScreen		0
+		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+		focusColor		COLOR_FOCUSED
+		allowedBinding	"pause"
+		onOpen
+		{
+			showMenu "pausedbkgnd"
+			showMenu "objectiveinfo"
+			showMenu "overheadmap"
+			focusfirst
+			nosavehide "saveandquit"
+//#ifdef PC
+//			nosavehide "quitnosave"
+//#endif
+			saveAvailableHide "quit";
+		}
+		onClose
+		{
+			hideMenu "pausedbkgnd"
+			hideMenu "objectiveinfo"
+			hideMenu "overheadmap"
+		}
+		onEsc
+		{
+			close pausedmenu;
+		}
+
+		// "Paused" text
+		itemDef
+		{
+			name			"pausedMsg"
+			text			"@MENU_PAUSED_CAP"
+			rect			-150 40 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			forecolor		COLOR_TITLE
+			textscale		TEXTSIZE_TITLE
+			textfont		UI_FONT_DEFAULT
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			1
+			decoration
+		}
+		
+		
+		itemDef
+		{
+			name			"resumegame"
+			text			"@MENU_RESUME_CREDITS"
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 84 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			textaligny		-2
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) == "1" );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close pausedmenu;
+			}
+		}
+
+
+		itemDef
+		{
+			name			"resumegame"
+			text			"@MENU_RESUMEGAME"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 84 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close pausedmenu;
+			}
+		}
+		
+		itemDef
+		{
+			name			"credits_quit"
+			text			"@PLATFORM_QUIT"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			 WINDOW_STYLE_EMPTY
+			rect			-150 104 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) == "1" );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				setdvar credits_active 0;
+				close pausedmenu;
+				exec "disconnect";
+			}
+		}
+
+		itemDef
+		{
+			text			"@MENU_CONTROLS"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			 WINDOW_STYLE_EMPTY
+			rect			-150 104 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				open "options_look";
+				close pausedmenu;
+			}
+		}
+
+		itemDef
+		{
+			text			"@MENU_OPTIONS"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 124 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				execnow "set ui_allow_graphic_change 1";
+				open "main_options";
+				close pausedmenu;
+			}
+		}
+		/*
+		itemDef
+		{
+			name			"difficulty"
+			text			"@MENU_LOWER_DIFFICULTY"
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 164 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			exp				rect Y( PLATFORM_OFFSET+164+int(min(dvarInt(g_gameskill),1)*20)-20 );
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when( dvarInt( g_gameskill ) > 0 && dvarstring( "credits_active" ) != "1" );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				//close pausedmenu;
+				open "ingame_difficulty";
+			}
+		}*/
+
+		itemDef
+		{
+			name			"restartlevel"
+			text			"@MENU_RESTART_LEVEL"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 144 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			//exp			rect Y( PLATFORM_OFFSET+184+int(min(dvarInt(g_gameskill),1)*20)-20 );
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" && !dvarBool( arcademode ) );
+			onFocus			{	play "mouse_over";	}
+			action	{
+				play "mouse_click";
+				close pausedmenu;
+				open "restart_warning";
+			}
+		}
+		itemDef	{
+			name			"restartlevel_locked"
+			text			"@MENU_RESTART_LEVEL"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 144 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			forecolor		0.3 0.3 0.3 1
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" && dvarBool( arcademode ) );
+			decoration
+		}
+
+		itemDef
+		{
+			name			"saveandquit"
+			text			"@PLATFORM_SAVE_AND_QUIT"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 164 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			//exp				rect Y( PLATFORM_OFFSET+204+int(min(dvarInt(g_gameskill),1)*20)-20 );
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" && !dvarBool( arcademode ) );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close pausedmenu;
+				open "savegame_warning";
+			}
+		}
+		
+		itemDef
+		{
+			name			"arcade_quit"
+			text			"@PLATFORM_QUIT"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 164 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarBool( arcademode ) );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close pausedmenu;
+				open "savegame_warning_arcade";
+			}
+		}
+		
+		itemDef
+		{
+			name			"quit"
+			text			"@PLATFORM_QUIT"
+			textaligny		-2
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 164 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			//exp				rect Y( PLATFORM_OFFSET+204+int(min(dvarInt(g_gameskill),1)*20)-20 );
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" && !dvarBool( arcademode ) );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close pausedmenu;
+				open "savegame_warning_noprofile";
+			}
+		}
+/*
+#ifdef PC
+		itemDef
+		{
+			name			"quitnosave"
+			text			"@PLATFORM_QUIT"
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			rect			-150 224 PAUSESCREEN_OPTION_SIZE HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_DEFAULT
+			exp				rect Y( PLATFORM_OFFSET+224+int(min(dvarInt(g_gameskill),1)*20)-20 );
+			forecolor		COLOR_UNFOCUSED
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" );
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close pausedmenu;
+				open "savegame_warning_noprofile";
+			}
+		}
+#endif // #ifdef PC
+*/
+	}
+
+	// Pause menu background... separate menu so that it can draw behind the objective menu
+	menuDef
+	{
+		name			"pausedbkgnd"
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		blurWorld		4.8
+
+		// background overlay
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.50
+			visible			1
+			decoration
+		}
+
+		// gradient_top
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+
+		// gradient_bottom
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 480 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+
+		#ifndef PC
+			#include "ui/navcontrols.menu"
+		#endif
+	}
+
+	// objective info... shown when paused, or on PC when "TAB" is held
+	menuDef
+	{
+		name			"objectiveinfo"
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+
+		// objective header
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			48 68
+			forecolor		COLOR_TITLE
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_TOP_LEFT
+			visible			when ( dvarstring( "credits_active" ) != "1" && LOCAL_VIS_OBJECTIVE_DISPLAY );
+			ownerdraw		CG_MISSION_OBJECTIVE_HEADER
+			decoration
+		}
+
+		// objective check box stub
+		itemDef
+		{
+			name			"objectivecheckbox"
+			//rect	 		15 75 16 16
+			rect	 		55 99 16 16
+			forecolor		1.0 1.0 1.0 1.0
+			textscale		0.38
+			textfont		UI_FONT_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible 		when  ( LOCAL_VIS_OBJECTIVE_DISPLAY );
+			ownerdraw		CG_MISSION_OBJECTIVE_LIST
+			decoration
+		}
+		
+		// map --------------------
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compass_map_default"
+			ownerdraw		CG_PLAYER_COMPASS_MAP
+			visible 		when  ( LCOAL_VIS_MAP_DISPLAY );
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"hud_objective_tank"
+			ownerdraw		CG_PLAYER_COMPASS_TANKS
+			visible 		when  ( LCOAL_VIS_MAP_DISPLAY );
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"white"
+			ownerdraw		CG_PLAYER_COMPASS_AUTOMOBILES
+			visible 		when  ( LCOAL_VIS_MAP_DISPLAY );
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compass_objpoint_airstrike"
+			ownerdraw		CG_PLAYER_COMPASS_PLANES
+			visible 		when  ( LCOAL_VIS_MAP_DISPLAY );
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compass_objpoint_helicopter"
+			ownerdraw		CG_PLAYER_COMPASS_HELICOPTERS
+			visible 		when  ( LCOAL_VIS_MAP_DISPLAY );
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compassping_friendly"
+			ownerdraw		CG_PLAYER_COMPASS_ACTORS
+			visible 		when  ( LCOAL_VIS_MAP_DISPLAY );
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compassping_player"
+			ownerdraw		CG_PLAYER_COMPASS_PLAYER
+			visible 		when  ( LCOAL_VIS_MAP_DISPLAY );
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"objective_line"
+			ownerdraw		CG_PLAYER_COMPASS_POINTERS
+			visible 		when  ( LCOAL_VIS_MAP_DISPLAY );
+			decoration
+		}
+	}
+
+	// overhead map - old map code opens
+	menuDef
+	{
+		name			"overheadmap"
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		visible 		1
+		/*
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compass_map_default"
+			ownerdraw		CG_PLAYER_COMPASS_MAP
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"hud_objective_tank"
+			ownerdraw		CG_PLAYER_COMPASS_TANKS
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"white"
+			ownerdraw		CG_PLAYER_COMPASS_AUTOMOBILES
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compass_objpoint_airstrike"
+			ownerdraw		CG_PLAYER_COMPASS_PLANES
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compass_objpoint_helicopter"
+			ownerdraw		CG_PLAYER_COMPASS_HELICOPTERS
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compassping_friendly"
+			ownerdraw		CG_PLAYER_COMPASS_ACTORS
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"compassping_player"
+			ownerdraw		CG_PLAYER_COMPASS_PLAYER
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			rect			PAUSESCREEN_MAP_RECT
+			forecolor		1 1 1 1
+			background		"objective_line"
+			ownerdraw		CG_PLAYER_COMPASS_POINTERS
+			visible			1
+			decoration
+		}*/
+	}
+}

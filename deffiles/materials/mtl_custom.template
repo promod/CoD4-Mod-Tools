@@ -1,0 +1,21 @@
+#include "commonsetup.template"
+
+techniqueSet( "@customString@" );
+
+
+textureTable
+{
+	#if "$colorMap$" != ""
+		"colorMap" = map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+	#endif
+	#if "$detailMap$" != ""
+		"detailMap" = map( "tile both", "@filterDetail@", "$detailMap$", @nopicmipDetail@ ) "@formatDetail@" : "colorMap";
+	#endif
+}
+
+
+#if "$colorMap$" != ""
+	refImage( "$colorMap$" );
+#else
+	refImage( "$white" );
+#endif

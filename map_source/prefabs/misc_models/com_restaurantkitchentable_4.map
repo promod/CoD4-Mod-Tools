@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 2 -33 72 ) ( 8 -33 72 ) ( 8 -33 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22.5 10 71 ) ( 22.5 16.5 71 ) ( 22.5 16.5 -1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 -6 0 0 0
+ ( 12.5 0 72 ) ( 6.5 0 72 ) ( 6.5 0 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 26 70 ) ( -22 19.5 70 ) ( -22 19.5 -2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 -6 0 0 0
+ ( 19.5 -24 37 ) ( 19.5 -20 37 ) ( 51.5 -24 37 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 6 0 0
+ ( 20.5 -20 0 ) ( 20.5 -27 0 ) ( 52.5 -20 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 6 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_restaurantkitchentable_4"
+"classname" "misc_model"
+}

@@ -1,0 +1,39 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"radiosityScale" "1"
+"sunRadiosity" "2"
+"contrastGain" "0.15"
+"diffusefraction" "0.05"
+"_color" "0.90 0.90 1"
+"sunlight" "1.5"
+"sundirection" "-155 136 0"
+"sundiffusecolor" ".43 .39 1"
+"suncolor" ".9 .98 1"
+"ambient" ".1"
+"bouncefraction" ".1"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 12 0 ) ( -8 12 0 ) ( -8 0 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 76 ) ( -8 4 76 ) ( 8 4 76 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -4 432 ) ( 8 -4 432 ) ( 8 -4 344 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -4 432 ) ( 8 8 432 ) ( 8 8 344 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 4 432 ) ( -8 4 432 ) ( -8 4 344 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 432 ) ( -8 -4 432 ) ( -8 -4 344 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 58.0"
+"model" "com_studio_light_on"
+"classname" "misc_model"
+}
+// entity 2
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_tripod"
+"classname" "misc_model"
+}

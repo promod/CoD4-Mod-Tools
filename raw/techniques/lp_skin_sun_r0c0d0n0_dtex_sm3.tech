@@ -1,0 +1,24 @@
+{
+
+	stateMap "default";
+
+	vertexShader 3.0 "lp_skin_sun_tc0n0_dtex_sm3.hlsl"
+	{
+	}
+
+	pixelShader 3.0 "lp_skin_sun_r0c0d0n0_sm3.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		detailMapSampler = material.detailMap;
+		detailScale = material.detailScale;
+		normalMapSampler = material.normalMap;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.texcoord[2] = code.tangent;
+
+}

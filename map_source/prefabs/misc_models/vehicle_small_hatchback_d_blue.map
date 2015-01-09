@@ -1,0 +1,27 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"sunlight" "1.7"
+"sundirection" "-40 225 0"
+"sundiffusecolor" "0.717647 0.776471 1.000000"
+"suncolor" "0.996078 0.921569 0.505882"
+"northyaw" "90"
+"diffusefraction" ".3"
+"ambient" "0.4"
+"_color" "0.717647 0.776471 1.000000"
+"classname" "worldspawn"
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "vehicle_small_hatchback_d_blue_static"
+"origin" "0.0 0.0 0.0"
+}
+// entity 2
+{
+"origin" "0.0 0.0 0.0"
+"model" "prefabs/misc_models/shared/vehicle_small_hatchback.map"
+"classname" "misc_prefab"
+}

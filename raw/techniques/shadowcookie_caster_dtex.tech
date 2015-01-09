@@ -1,0 +1,14 @@
+{
+	stateMap "default";
+
+	vertexShader 2.0 "shadowcookie_caster_dtex.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "shadowcookie_caster.hlsl"
+	{
+	}
+
+	vertex.position = code.position;
+
+}

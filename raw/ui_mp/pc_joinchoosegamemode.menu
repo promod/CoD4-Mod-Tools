@@ -1,0 +1,177 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_1			1
+#define CHOICE_SEP_2			5
+#define CHOICE_SEP_3			8
+
+#define CHOICE_Y_COUNT			3
+#define CHOICE_GROUP			"joinserver"
+
+#define STYLE_PC	1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+// some names are too long
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X 264
+
+#define BACK_ENABLE 0
+
+{
+	menuDef
+	{
+		name			pc_join_unranked
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			1
+		onOpen	{
+			uiScript UpdateFilter ;
+			/*hide accept_alt ;
+			show accept ;
+			hide back_alt ;
+			show back ;
+			hide grpmessage
+			setdvar ui_logo_show "0";
+			setdvar ui_version_show "0";
+			setdvar ui_separator_show "0";
+			setdvar ui_background_gradient_show "0";
+			setlocalVarInt ui_hideBack 0;*/
+		}
+		onEsc	{
+			uiScript closeJoin
+			close self;
+			open main_text;
+		}
+		#include "ui/blurredbg.inc"
+
+		//=============================================
+		itemDef 	{ 
+			style			WINDOW_STYLE_SHADER 
+			rect			-120 -32 348 64 0 0 
+			background		"white" 
+			forecolor		0.9 0.9 0.95 0.175 
+			visible			1
+			decoration 	} 
+		itemDef 	{ 
+			style			WINDOW_STYLE_SHADER 
+			rect			228 -32 16 -64 0 0 
+			origin			0 0 
+			background		HIGHLIGHT_SHADER_ART 
+			forecolor		0.9 0.9 0.95 0.175 
+			visible			1
+			decoration	}
+		itemDef		{
+			style			WINDOW_STYLE_SHADER
+			rect			56 448 528 40 0 0
+			background		"white"
+			forecolor		0.9 0.9 0.95 0.175
+			visible			1
+			decoration	}
+		itemDef		{
+			style			WINDOW_STYLE_SHADER
+			rect			584 448 16 64 0 0
+			origin			0 0
+			background		HIGHLIGHT_SHADER_ART
+			forecolor		0.9 0.9 0.95 0.175
+			visible			1
+			decoration	}
+		itemDef		{
+			style			WINDOW_STYLE_SHADER
+			rect			40 448 -16 64 0 0
+			origin			0 0
+			background		HIGHLIGHT_SHADER_ART
+			forecolor		0.9 0.9 0.95 0.175
+			visible			1
+			decoration	}
+		itemDef		{
+			style			WINDOW_STYLE_SHADER
+			rect			-120 464 160 32 0 0
+			background		"white"
+			forecolor		0.9 0.9 0.95 0.175
+			visible			1
+			decoration	}
+		itemDef		{
+			style			WINDOW_STYLE_SHADER
+			rect			600 464 160 32 0 0
+			background		"white"
+			forecolor		0.9 0.9 0.95 0.175
+			visible			1
+			decoration	}		
+		//=============================================		
+		
+		CHOICE_MENU_TITLE( "@MENU_JOIN_SERVER_CAP" )
+		#undef RANKED_SERVER	
+		#include "ui_mp/joinserver.inc";
+	}
+
+/*	
+	#undef BACK_ENABLE
+	menuDef
+	{
+		name			pc_join_ranked
+		fullscreen		0
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			1
+		onOpen	{
+			uiScript UpdateFilter ;
+			hide accept_alt ;
+			show accept ;
+			hide back_alt ;
+			show back ;
+			hide grpmessage
+			setdvar ui_logo_show "0";
+			setdvar ui_version_show "0";
+			setdvar ui_separator_show "0";
+			setdvar ui_background_gradient_show "0";
+			setlocalVarInt ui_hideBack 0;
+		}
+		onEsc	{
+			uiScript closeJoin
+			close self;
+			open main_text;
+		}
+		#include "ui/blurredbg.inc"
+		
+		#include "ui_mp/navcontrols.inc"
+		CHOICE_MENU_TITLE( "Join Ranked Server" )		
+
+		CHOICE_BUTTON( 1, "All Games", ; )
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )
+		CHOICE_BUTTON( 2, "Team Deathmatch - High Speed", ; )
+		CHOICE_BUTTON( 3, "Free-for-all - High Speed", ; )
+		CHOICE_BUTTON( 4, "Capture the Flag - High Speed", ; )
+		CHOICE_BUTTON( 5, "Domination - High Speed", ; )
+		CHOICE_SEPARATOR( CHOICE_SEP_2 )
+		CHOICE_BUTTON( 6, "Team Deathmatch - Hardcore", ; )
+		CHOICE_BUTTON( 7, "Search and Destroy - Hardcore", ; )
+		CHOICE_BUTTON( 8, "Gridiron - Hardcore", ; )
+		CHOICE_SEPARATOR( CHOICE_SEP_3 )
+		CHOICE_BUTTON( 9, "Team Deathmatch - Old School", ; )
+		CHOICE_BUTTON( 10, "Free-for-all - Old School", ; )
+		CHOICE_BUTTON( 11, "Capture the Flag - Old School", ; )
+*/
+/*
+		CHOICE_BUTTON( 1, "All", close self; open joinserver; setdvar ui_joinGameType 0; )
+		CHOICE_BUTTON( 2, "Acquisition", close self; open joinserver; setdvar ui_joinGameType 1; )
+		CHOICE_BUTTON( 3, "Free-for-all", close self; open joinserver; setdvar ui_joinGameType 2; )
+		CHOICE_BUTTON( 4, "Capture and Hold", close self; open joinserver; setdvar ui_joinGameType 3; )
+		CHOICE_BUTTON( 5, "King of the Hill", close self; open joinserver; setdvar ui_joinGameType 4; )
+		CHOICE_BUTTON( 6, "Search and Destroy old", close self; open joinserver; setdvar ui_joinGameType 5; )
+		CHOICE_BUTTON( 7, "Sabotage", close self; open joinserver; setdvar ui_joinGameType 6; )
+		CHOICE_BUTTON( 8, "Tag", close self; open joinserver; setdvar ui_joinGameType 7; )
+		CHOICE_BUTTON( 9, "Team Deathmatch", close self; open joinserver; setdvar ui_joinGameType 8; )
+		CHOICE_BUTTON( 10, "Sabotage", close self; open joinserver; setdvar ui_joinGameType 9; )
+		CHOICE_BUTTON( 11, "Search and Destroy", close self; open joinserver; setdvar ui_joinGameType 10; )
+		CHOICE_BUTTON( 12, "Hardcore Team Deathmatch", close self; open joinserver; setdvar ui_joinGameType 11; )
+		CHOICE_BUTTON( 13, "Hardcore Free-for-all", close self; open joinserver; setdvar ui_joinGameType 12; )
+*/		
+		//#define RANKED_SERVER 1
+		//#include "ui_mp/joinserver.inc";
+	}
+}

@@ -1,0 +1,40 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -6 -12 0 ) ( 6 -12 0 ) ( 14 -4 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -2 0 0
+ ( -14 -4 16 ) ( -14 6 16 ) ( -6 14 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -2 0 0
+ ( -6 -12 0 ) ( -6 -12 16 ) ( 6 -12 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 6 0 ) ( 14 -4 0 ) ( 14 -4 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 0 0 0
+ ( 6 14 16 ) ( -6 14 16 ) ( -6 14 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 6 16 ) ( -14 -4 16 ) ( -14 -4 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 0 0 0
+ ( 14 -4 0 ) ( 6 -12 0 ) ( 6 -12 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 0 0 0
+ ( -14 -4 16 ) ( -6 -12 16 ) ( -6 -12 0 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 0 0 0
+ ( -6 14 0 ) ( -6 14 16 ) ( -14 6 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 0 0 0
+ ( 6 14 0 ) ( 14 6 0 ) ( 14 6 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 0 0 0
+}
+// brush 1
+{
+ ( -4 -9 16 ) ( 5 -9 16 ) ( 11 -3 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -2 0 0
+ ( -10 -3 25 ) ( -10 5 25 ) ( -4 11 25 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -2 0 0
+ ( -4 -8 16 ) ( -4 -8 28 ) ( 4 -8 28 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -14 0 0
+ ( 9 4 28 ) ( 9 4 16 ) ( 9 -3 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 -14 0 0
+ ( -4 10 28 ) ( -4 10 16 ) ( 4 10 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -14 0 0
+ ( -9 -2 28 ) ( -9 -2 16 ) ( -9 4 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 -14 0 0
+ ( 4 -8 16 ) ( 4 -8 28 ) ( 9 -3 28 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 -14 0 0
+ ( -4 -8 28 ) ( -4 -8 16 ) ( -9 -2 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 -14 0 0
+ ( -9 4 28 ) ( -9 4 16 ) ( -4 10 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 -14 0 0
+ ( 4 10 28 ) ( 4 10 16 ) ( 9 4 16 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 2 -14 0 0
+}
+}
+// entity 1
+{
+"angles" "0 90 0"
+"origin" "0.0 0.0 0.0"
+"model" "com_trashbag"
+"classname" "misc_model"
+}

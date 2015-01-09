@@ -1,0 +1,20 @@
+{
+	stateMap "default";
+
+	vertexShader 1.1 "reflexsight.hlsl"
+	{
+		detailScale = material.detailScale;
+	}
+
+	pixelShader 2.0 "reflexsight.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		detailMapSampler = material.detailMap;
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.texcoord[2] = code.tangent;
+
+}

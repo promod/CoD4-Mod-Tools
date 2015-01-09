@@ -1,0 +1,194 @@
+iwfx 2
+
+{
+	name "ASH";
+	editorFlags useRandSize0 useRandSize1 useRandRotDelta modColorByAlpha useRandVel0 useBackCompatVel absVel1;
+	flags spawnOffsetNone runRelToSpawn;
+	spawnRange 0 700;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 50 0;
+	spawnOneShot 15 0;
+	spawnDelayMsec 0 1000;
+	lifeSpanMsec 4000 0;
+	spawnOrgX 0 0;
+	spawnOrgY 0 0;
+	spawnOrgZ 0 0;
+	spawnOffsetRadius 50 50;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 0;
+	gravity -1 -3;
+	elasticity 0 0;
+	atlasBehavior startFixed;
+	atlasIndex 1;
+	atlasFps 0;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 20
+	{
+		{
+			0 -0.0885167
+			0.188953 0.117225
+			0.372093 -0.117225
+			1 0.188995
+		}
+		{
+			0 -0.0119617
+			0.119186 0.351675
+			0.229651 -0.0167464
+			0.311047 0.136364
+			1 0.227273
+		}
+	};
+	velGraph0Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Z 150
+	{
+		{
+			0 0.212919
+			0.0901163 -0.19378
+			0.174419 0.131579
+			1 0.5
+		}
+		{
+			0 0.318182
+			0.270349 0.0885168
+			0.505814 0.227273
+			1 0.236842
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 2000
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 -0.5
+			1 -0.5
+		}
+	};
+	sizeGraph0 1
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.506494
+			1 0.519481
+		}
+	};
+	sizeGraph1 20
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.519481
+			1 0.487013
+		}
+	};
+	scaleGraph 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 1 0.501961 0.25098
+			1 1 0.501961 0.25098
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 1
+			0.918605 1
+			1 0
+		}
+		{
+			0 0
+			0.656977 0.277512
+			1 0
+		}
+	};
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 30;
+	emission "";
+	emitDist 0 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_lava_ash"
+	};
+}

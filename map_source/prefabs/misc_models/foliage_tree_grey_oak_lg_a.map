@@ -1,0 +1,35 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 14.5 -15.5 -18 ) ( 14.5 -1 -18 ) ( -19 -1 -18 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -1 250 ) ( 42 -15.5 250 ) ( -17.5 -15.5 250 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -19 -15.5 154 ) ( 2 -15.5 154 ) ( 2 -15.5 115 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14.5 -1 -18 ) ( 14.5 -15.5 -18 ) ( 40.5 -15.5 158 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 18 163 ) ( -19 18 163 ) ( -19 18 124 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -19 146.5 158 ) ( -19 -141.5 158 ) ( -19 -141.5 119 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 70 64 158 ) ( -66 64 158 ) ( -66 -48 158 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -66 -48 325 ) ( -66 64 325 ) ( 70 64 325 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -92.5 406 ) ( 74 -92.5 406 ) ( 74 -92.5 102 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 107.5 -48.5 408 ) ( 107.5 63.5 408 ) ( 107.5 63.5 104 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 80 407.5 ) ( -64 80 407.5 ) ( -64 80 103.5 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92.5 64.5 408 ) ( -92.5 -47.5 408 ) ( -92.5 -47.5 104 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40.5 -83 158 ) ( -92 -34 158 ) ( -40.5 -83 190 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -82 33 158 ) ( -37 71.5 158 ) ( -82 33 190 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52.5 74 158 ) ( 108.5 24.5 158 ) ( 52.5 74 190 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 99 -31 158 ) ( 57 -81.5 158 ) ( 99 -31 190 ) clip_foliage 64 32 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "foliage_tree_grey_oak_lg_a"
+"classname" "misc_model"
+}

@@ -1,0 +1,105 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( -8 -4 86 ) ( 7 -4 86 ) ( 7 -4 -34 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 4 86 ) ( -8 4 86 ) ( -8 4 -34 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 4 8 ) ( -8 -4 8 ) ( -8 -4 0 ) me_cinderblock_wall2 128 128 14 8 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth_other
+ ( -8 -4 8 ) ( -8 4 8 ) ( -7 4 7 ) me_cinderblock_wall2 128 128 8 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 4 0 ) ( -8 -4 0 ) ( -7 -4 1 ) me_cinderblock_wall2 128 128 8 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 4 4 ) ( -7 4 7 ) ( -7 36 7 ) me_cinderblock_wall2 128 128 14 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -8 -4 86 ) ( 7 -4 86 ) ( 7 -4 -34 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 4 86 ) ( -8 4 86 ) ( -8 4 -34 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 4 7 ) ( -4 4 7 ) ( -4 36 7 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 4 1 ) ( 0 4 1 ) ( -3 36 1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -0.5 4 7 ) ( -0.5 4 4 ) ( -0.5 36 7 ) me_cinderblock_wall2 128 128 14 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0.5 4 3 ) ( 0.5 4 6.5 ) ( 0.5 36 3 ) me_cinderblock_wall2 128 128 8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -1.5 -4 7 ) ( -1.5 4 7 ) ( -0.5 4 7 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1.5 -4 7 ) ( -0.5 -4 7 ) ( -0.5 -4 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -0.5 -4 7 ) ( -0.5 4 7 ) ( -0.5 4 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -0.5 4 7 ) ( -1.5 4 7 ) ( -1.5 4 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 4 11 ) ( 0 4 6 ) ( 0 36 6 ) me_cinderblock_wall2 128 128 10 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 1.5 4 7 ) ( 1.5 -4 7 ) ( 0.5 -4 7 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1.5 4 7 ) ( 0.5 4 7 ) ( 0.5 4 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0.5 4 7 ) ( 0.5 -4 7 ) ( 0.5 -4 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0.5 -4 7 ) ( 1.5 -4 7 ) ( 1.5 -4 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -4 11 ) ( 0 -4 6 ) ( 0 -36 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( -6 4 7 ) ( -6 -4 7 ) ( -7 -4 7 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 4 7 ) ( -7 4 7 ) ( -7 4 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 4 7 ) ( -7 -4 7 ) ( -7 -4 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -4 7 ) ( -6 -4 7 ) ( -6 -4 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2.5 -4 11 ) ( -7.5 -4 6 ) ( -7.5 -36 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 0.5 4 2 ) ( 0.5 -4 2 ) ( 0.5 -4 1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0.5 4 2 ) ( 0.5 4 1 ) ( 1.5 4 1 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0.5 4 1 ) ( 0.5 -4 1 ) ( 1.5 -4 1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0.5 -4 1 ) ( 0.5 -4 2 ) ( 1.5 -4 2 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3.5 -4 5.5 ) ( 1.5 -4 0.5 ) ( 1.5 -36 0.5 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( -7 4 2 ) ( -7 -4 2 ) ( -7 -4 1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 4 2 ) ( -7 4 1 ) ( -6 4 1 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 4 1 ) ( -7 -4 1 ) ( -6 -4 1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -4 1 ) ( -7 -4 2 ) ( -6 -4 2 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 -4 5.5 ) ( -6 -4 0.5 ) ( -6 -36 0.5 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( -0.5 -4 1.5 ) ( -0.5 4 1.5 ) ( -0.5 4 0.5 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -0.5 -4 2 ) ( -0.5 -4 1 ) ( -1.5 -4 1 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -0.5 -4 1 ) ( -0.5 4 1 ) ( -1.5 4 1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -0.5 4 1 ) ( -0.5 4 2 ) ( -1.5 4 2 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3.5 4 5.5 ) ( -1.5 4 0.5 ) ( -1.5 36 0.5 ) me_cinderblock_wall2 128 128 10 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( -8 -4 8 ) ( -8 4 8 ) ( 8 4 8 ) me_cinderblock_wall2 128 128 8 4 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth_other
+ ( 1 -4 8 ) ( 1 -4 7 ) ( -7 -4 7 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 4 86 ) ( -8 4 86 ) ( -8 4 -34 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 4 7 ) ( 0 4 7 ) ( -4 36 7 ) me_cinderblock_wall2 128 128 8 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 4 8 ) ( -8 -4 8 ) ( -7 -4 7 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 4 6 ) ( 3 4 10 ) ( 3 36 6 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 4 8 ) ( 3 0 8 ) ( 2 4 40 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -4 7 ) ( 1 -4 8 ) ( 3 -2.5 8 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( 8 6.5 0 ) ( -7 6.5 0 ) ( -7 -4.5 0 ) me_cinderblock_wall2 128 128 8 4 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth_other
+ ( -8 -4 86 ) ( 7 -4 86 ) ( 7 -4 -34 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 7 4 86 ) ( -8 4 86 ) ( -8 4 -34 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -4.5 1 ) ( -4 3.5 1 ) ( 11 3.5 1 ) me_cinderblock_wall2 128 128 8 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 4 1 ) ( -7 -4 1 ) ( -8 -4 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 4 8 ) ( 4 0 8 ) ( 2 4 40 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 1 8 ) ( 4 -4.5 8 ) ( 4 1 40 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -2 8 ) ( 2.5 -3.5 8 ) ( 4 -2 40 ) me_cinderblock_wall2 128 128 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

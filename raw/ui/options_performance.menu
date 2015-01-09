@@ -1,0 +1,72 @@
+#include "ui/menudef.h"
+{
+menuDef 
+{
+	name options_performance
+	fullScreen 0				
+	rect 0 0 370 480				// Size and position of the menu
+	focusColor COLOR_FOCUSED			// Menu focus color for text and items
+	soundloop ""
+	onOpen
+	{
+		setdvar ui_background_gradient_show "1";
+//execOnDvarStringValue
+//execOnDvarIntValue
+//execOnDvarFloatValue
+		// Get proper setting for the LOD control
+
+	}
+	onClose
+	{
+			// Put appropriate settings back into the lod dvars
+//		execOnDvarIntValue ui_lod 4 "set r_lodscale 4;set r_lodbias -200";	// aggressive
+//		execOnDvarIntValue ui_lod 3 "set r_lodscale 2;set r_lodbias -100";	// low
+//		execOnDvarIntValue ui_lod 2 "set r_lodscale 1;set r_lodbias 0";		// normal
+//		execOnDvarIntValue ui_lod 1 "set r_lodscale 0.5;set r_lodbias 0";	// high
+//		execOnDvarIntValue ui_lod 0 "set r_lodscale 0;set r_lodbias 0";		// off
+
+
+
+	}
+	onESC 
+	{ 
+		close options_menu;		
+	}
+/*
+	itemDef 
+	{
+		name keyBindStatus
+		rect 0 322 640 30 
+		ownerdraw UI_KEYBINDSTATUS
+		text "-"      
+		forecolor 1 .75 0 1
+		textscale .23
+		textalignx -99
+		textalign ITEM_ALIGN_CENTER
+		textaligny 20
+		visible 1
+		decoration 
+	}
+*/
+	itemDef
+	{
+		type			ITEM_TYPE_TEXT
+		origin			ORIGIN_TITLE
+		forecolor		1 1 1 1
+		text			"@MENU_PERFORMANCE"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_TITLE
+		visible			1
+		decoration
+	}
+
+
+
+
+/* Actual Binds */
+
+
+
+}
+
+}

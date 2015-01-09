@@ -1,0 +1,4767 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 48 48 1280 ) ( -48 48 1280 ) ( -48 0 1280 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 0 1288 ) ( -48 48 1288 ) ( 48 48 1288 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -8 1296 ) ( 48 -8 1296 ) ( 48 -8 1280 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 0 1296 ) ( 40 48 1296 ) ( 40 48 1280 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 72 1296 ) ( -48 72 1296 ) ( -48 72 1280 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 48 1296 ) ( -40 0 1296 ) ( -40 0 1280 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 56 48 1288 ) ( -40 48 1288 ) ( -40 0 1288 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 0 1304 ) ( -56 48 1304 ) ( 40 48 1304 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 0 1304 ) ( 56 0 1304 ) ( 56 0 1288 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 1304 ) ( 32 48 1304 ) ( 32 48 1288 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 64 1304 ) ( -40 64 1304 ) ( -40 64 1288 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 48 1304 ) ( -32 0 1304 ) ( -32 0 1288 ) ma_trim_metal_red 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "func_group"
+// brush 0
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 240 t 0 0 0.5 -15
+	v 28 56 248 t 0 32 0.5 -15.5
+   )
+   (
+	v 28 8 208 t 1846.0422 0 -2.5 -13
+	v 28 8 216 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+// brush 1
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 208 t 0 0 -2.5 -13
+	v 28 8 200 t 0 32 -2.5 -12.5
+   )
+   (
+	v 28 56 176 t 1846.0422 0 0.5 -11
+	v 28 56 168 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 2
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 160 t 0 0 0.5 -10
+	v 28 56 168 t 0 32 0.5 -10.5
+   )
+   (
+	v 28 8 128 t 1846.0422 0 -2.5 -8
+	v 28 8 136 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 3
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 128 t 0 0 -2.5 -8
+	v 28 8 120 t 0 32 -2.5 -7.5
+   )
+   (
+	v 28 56 96 t 1846.0422 0 0.5 -6
+	v 28 56 88 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 4
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 80 t 0 0 0.5 -5
+	v 28 56 88 t 0 32 0.5 -5.5
+   )
+   (
+	v 28 8 48 t 1846.0422 0 -2.5 -3
+	v 28 8 56 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 248 t 0 0 0.5 -15.5
+	v 28 56 240 t 0 32 0.5 -15
+   )
+   (
+	v 28 8 216 t 1846.0422 0 -2.5 -13.5
+	v 28 8 208 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 6
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 200 t 0 0 -2.5 -12.5
+	v 28 8 208 t 0 32 -2.5 -13
+   )
+   (
+	v 28 56 168 t 1846.0422 0 0.5 -10.5
+	v 28 56 176 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 7
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 168 t 0 0 0.5 -10.5
+	v 28 56 160 t 0 32 0.5 -10
+   )
+   (
+	v 28 8 136 t 1846.0422 0 -2.5 -8.5
+	v 28 8 128 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 8
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 120 t 0 0 -2.5 -7.5
+	v 28 8 128 t 0 32 -2.5 -8
+   )
+   (
+	v 28 56 88 t 1846.0422 0 0.5 -5.5
+	v 28 56 96 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 9
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 88 t 0 0 0.5 -5.5
+	v 28 56 80 t 0 32 0.5 -5
+   )
+   (
+	v 28 8 56 t 1846.0422 0 -2.5 -3.5
+	v 28 8 48 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 10
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 48 t 0 0 -2.5 -3
+	v 28 8 40 t 0 32 -2.5 -2.5
+   )
+   (
+	v 28 56 16 t 1846.0422 0 0.5 -1
+	v 28 56 8 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 11
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 40 t 0 0 -2.5 -2.5
+	v 28 8 48 t 0 32 -2.5 -3
+   )
+   (
+	v 28 56 8 t 1846.0422 0 0.5 -0.5
+	v 28 56 16 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 12
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 240 t 0 0 -1.5 -15
+	v -24 4 248 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 208 t 1846.0422 0 1.5 -13
+	v 24 4 216 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 13
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 208 t 0 0 2 -15
+	v 24 4 200 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 176 t 1846.0422 0 -1 -13
+	v -24 4 168 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 14
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 160 t 0 0 -1.5 -15
+	v -24 4 168 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 128 t 1846.0422 0 1.5 -13
+	v 24 4 136 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 15
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 128 t 0 0 2 -15
+	v 24 4 120 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 96 t 1846.0422 0 -1 -13
+	v -24 4 88 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 16
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 80 t 0 0 -1.5 -15
+	v -24 4 88 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 48 t 1846.0422 0 1.5 -13
+	v 24 4 56 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 17
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 248 t 0 0 -1.5 -15.5
+	v -24 4 240 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 216 t 1846.0422 0 1.5 -13.5
+	v 24 4 208 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 18
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 200 t 0 0 2 -14.5
+	v 24 4 208 t 0 32 2 -15
+   )
+   (
+	v -24 4 168 t 1846.0422 0 -1 -12.5
+	v -24 4 176 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 19
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 168 t 0 0 -1.5 -15.5
+	v -24 4 160 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 136 t 1846.0422 0 1.5 -13.5
+	v 24 4 128 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 20
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 120 t 0 0 2 -14.5
+	v 24 4 128 t 0 32 2 -15
+   )
+   (
+	v -24 4 88 t 1846.0422 0 -1 -12.5
+	v -24 4 96 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 21
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 88 t 0 0 -1.5 -15.5
+	v -24 4 80 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 56 t 1846.0422 0 1.5 -13.5
+	v 24 4 48 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 22
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 48 t 0 0 2 -15
+	v 24 4 40 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 16 t 1846.0422 0 -1 -13
+	v -24 4 8 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 23
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 40 t 0 0 2 -14.5
+	v 24 4 48 t 0 32 2 -15
+   )
+   (
+	v -24 4 8 t 1846.0422 0 -1 -12.5
+	v -24 4 16 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 24
+{
+  contents detail;
+ ( -8 8 248 ) ( -24 8 248 ) ( -24 0 248 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 256 ) ( 16 8 256 ) ( 32 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 72 ) ( 32 0 72 ) ( 32 0 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 72 ) ( 24 8 72 ) ( 24 8 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 72 ) ( 16 8 72 ) ( 16 8 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 8 504 ) ( -24 0 504 ) ( -24 0 432 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 25
+{
+  contents detail;
+ ( -8 64 248 ) ( -24 64 248 ) ( -24 56 248 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 256 ) ( 16 64 256 ) ( 32 64 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 72 ) ( 32 56 72 ) ( 32 56 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 72 ) ( 24 64 72 ) ( 24 64 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 64 72 ) ( 16 64 72 ) ( 16 64 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 64 504 ) ( -24 56 504 ) ( -24 56 432 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 26
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 40 t 0 0 2 -14.5
+	v 24 60 48 t 0 32 2 -15
+   )
+   (
+	v -24 60 8 t 1846.0422 0 -1 -12.5
+	v -24 60 16 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 27
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 48 t 0 0 2 -15
+	v 24 60 40 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 16 t 1846.0422 0 -1 -13
+	v -24 60 8 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 28
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 88 t 0 0 -1.5 -15.5
+	v -24 60 80 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 56 t 1846.0422 0 1.5 -13.5
+	v 24 60 48 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 29
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 120 t 0 0 2 -14.5
+	v 24 60 128 t 0 32 2 -15
+   )
+   (
+	v -24 60 88 t 1846.0422 0 -1 -12.5
+	v -24 60 96 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 30
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 168 t 0 0 -1.5 -15.5
+	v -24 60 160 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 136 t 1846.0422 0 1.5 -13.5
+	v 24 60 128 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 31
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 200 t 0 0 2 -14.5
+	v 24 60 208 t 0 32 2 -15
+   )
+   (
+	v -24 60 168 t 1846.0422 0 -1 -12.5
+	v -24 60 176 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 32
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 248 t 0 0 -1.5 -15.5
+	v -24 60 240 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 216 t 1846.0422 0 1.5 -13.5
+	v 24 60 208 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 33
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 80 t 0 0 -1.5 -15
+	v -24 60 88 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 48 t 1846.0422 0 1.5 -13
+	v 24 60 56 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 34
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 128 t 0 0 2 -15
+	v 24 60 120 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 96 t 1846.0422 0 -1 -13
+	v -24 60 88 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 35
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 160 t 0 0 -1.5 -15
+	v -24 60 168 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 128 t 1846.0422 0 1.5 -13
+	v 24 60 136 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 36
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 208 t 0 0 2 -15
+	v 24 60 200 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 176 t 1846.0422 0 -1 -13
+	v -24 60 168 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 37
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 240 t 0 0 -1.5 -15
+	v -24 60 248 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 208 t 1846.0422 0 1.5 -13
+	v 24 60 216 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 38
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 240 t 0 0 0.5 -15
+	v -28 56 248 t 0 32 0.5 -15.5
+   )
+   (
+	v -28 8 208 t 1846.0422 0 -2.5 -13
+	v -28 8 216 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+// brush 39
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 208 t 0 0 -2.5 -13
+	v -28 8 200 t 0 32 -2.5 -12.5
+   )
+   (
+	v -28 56 176 t 1846.0422 0 0.5 -11
+	v -28 56 168 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 40
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 160 t 0 0 0.5 -10
+	v -28 56 168 t 0 32 0.5 -10.5
+   )
+   (
+	v -28 8 128 t 1846.0422 0 -2.5 -8
+	v -28 8 136 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 41
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 128 t 0 0 -2.5 -8
+	v -28 8 120 t 0 32 -2.5 -7.5
+   )
+   (
+	v -28 56 96 t 1846.0422 0 0.5 -6
+	v -28 56 88 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 42
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 80 t 0 0 0.5 -5
+	v -28 56 88 t 0 32 0.5 -5.5
+   )
+   (
+	v -28 8 48 t 1846.0422 0 -2.5 -3
+	v -28 8 56 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 43
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 248 t 0 0 0.5 -15.5
+	v -28 56 240 t 0 32 0.5 -15
+   )
+   (
+	v -28 8 216 t 1846.0422 0 -2.5 -13.5
+	v -28 8 208 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 44
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 200 t 0 0 -2.5 -12.5
+	v -28 8 208 t 0 32 -2.5 -13
+   )
+   (
+	v -28 56 168 t 1846.0422 0 0.5 -10.5
+	v -28 56 176 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 45
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 168 t 0 0 0.5 -10.5
+	v -28 56 160 t 0 32 0.5 -10
+   )
+   (
+	v -28 8 136 t 1846.0422 0 -2.5 -8.5
+	v -28 8 128 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 46
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 120 t 0 0 -2.5 -7.5
+	v -28 8 128 t 0 32 -2.5 -8
+   )
+   (
+	v -28 56 88 t 1846.0422 0 0.5 -5.5
+	v -28 56 96 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 47
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 88 t 0 0 0.5 -5.5
+	v -28 56 80 t 0 32 0.5 -5
+   )
+   (
+	v -28 8 56 t 1846.0422 0 -2.5 -3.5
+	v -28 8 48 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 48
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 48 t 0 0 -2.5 -3
+	v -28 8 40 t 0 32 -2.5 -2.5
+   )
+   (
+	v -28 56 16 t 1846.0422 0 0.5 -1
+	v -28 56 8 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 49
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 40 t 0 0 -2.5 -2.5
+	v -28 8 48 t 0 32 -2.5 -3
+   )
+   (
+	v -28 56 8 t 1846.0422 0 0.5 -0.5
+	v -28 56 16 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 50
+{
+  contents detail;
+ ( -24 40 248 ) ( -24 56 248 ) ( -32 56 248 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 256 ) ( -24 16 256 ) ( -24 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 72 ) ( -32 0 72 ) ( -32 0 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 72 ) ( -24 8 72 ) ( -24 8 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 72 ) ( -24 16 72 ) ( -24 16 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 504 ) ( -32 56 504 ) ( -32 56 432 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 51
+{
+  contents detail;
+ ( 32 40 248 ) ( 32 56 248 ) ( 24 56 248 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 256 ) ( 32 16 256 ) ( 32 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 72 ) ( 24 0 72 ) ( 24 0 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 72 ) ( 32 8 72 ) ( 32 8 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 72 ) ( 32 16 72 ) ( 32 16 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 504 ) ( 24 56 504 ) ( 24 56 432 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 52
+{
+  contents detail;
+ ( 40 64 0 ) ( 24 64 0 ) ( 24 56 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 256 ) ( 24 64 256 ) ( 40 64 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 72 ) ( 40 56 72 ) ( 40 56 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 72 ) ( 32 64 72 ) ( 32 64 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 64 72 ) ( 24 64 72 ) ( 24 64 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 64 256 ) ( 24 56 256 ) ( 24 56 184 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 53
+{
+  contents detail;
+ ( 40 8 0 ) ( 24 8 0 ) ( 24 0 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 256 ) ( 24 8 256 ) ( 40 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 72 ) ( 40 0 72 ) ( 40 0 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 72 ) ( 32 8 72 ) ( 32 8 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 8 72 ) ( 24 8 72 ) ( 24 8 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 256 ) ( 24 0 256 ) ( 24 0 184 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 54
+{
+  contents detail;
+ ( -16 8 0 ) ( -32 8 0 ) ( -32 0 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 256 ) ( -32 8 256 ) ( -16 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 72 ) ( -16 0 72 ) ( -16 0 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 256 ) ( -24 8 256 ) ( -24 8 184 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 8 72 ) ( -32 8 72 ) ( -32 8 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 72 ) ( -32 0 72 ) ( -32 0 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 55
+{
+  contents detail;
+ ( -16 64 0 ) ( -32 64 0 ) ( -32 56 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 256 ) ( -32 64 256 ) ( -16 64 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 72 ) ( -16 56 72 ) ( -16 56 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 256 ) ( -24 64 256 ) ( -24 64 184 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 64 72 ) ( -32 64 72 ) ( -32 64 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 64 72 ) ( -32 56 72 ) ( -32 56 0 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 2
+{
+"classname" "func_group"
+// brush 0
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 496 t 0 0 0.5 -15
+	v 28 56 504 t 0 32 0.5 -15.5
+   )
+   (
+	v 28 8 464 t 1846.0422 0 -2.5 -13
+	v 28 8 472 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+// brush 1
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 464 t 0 0 -2.5 -13
+	v 28 8 456 t 0 32 -2.5 -12.5
+   )
+   (
+	v 28 56 432 t 1846.0422 0 0.5 -11
+	v 28 56 424 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 2
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 416 t 0 0 0.5 -10
+	v 28 56 424 t 0 32 0.5 -10.5
+   )
+   (
+	v 28 8 384 t 1846.0422 0 -2.5 -8
+	v 28 8 392 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 3
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 384 t 0 0 -2.5 -8
+	v 28 8 376 t 0 32 -2.5 -7.5
+   )
+   (
+	v 28 56 352 t 1846.0422 0 0.5 -6
+	v 28 56 344 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 4
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 336 t 0 0 0.5 -5
+	v 28 56 344 t 0 32 0.5 -5.5
+   )
+   (
+	v 28 8 304 t 1846.0422 0 -2.5 -3
+	v 28 8 312 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 504 t 0 0 0.5 -15.5
+	v 28 56 496 t 0 32 0.5 -15
+   )
+   (
+	v 28 8 472 t 1846.0422 0 -2.5 -13.5
+	v 28 8 464 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 6
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 456 t 0 0 -2.5 -12.5
+	v 28 8 464 t 0 32 -2.5 -13
+   )
+   (
+	v 28 56 424 t 1846.0422 0 0.5 -10.5
+	v 28 56 432 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 7
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 424 t 0 0 0.5 -10.5
+	v 28 56 416 t 0 32 0.5 -10
+   )
+   (
+	v 28 8 392 t 1846.0422 0 -2.5 -8.5
+	v 28 8 384 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 8
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 376 t 0 0 -2.5 -7.5
+	v 28 8 384 t 0 32 -2.5 -8
+   )
+   (
+	v 28 56 344 t 1846.0422 0 0.5 -5.5
+	v 28 56 352 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 9
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 344 t 0 0 0.5 -5.5
+	v 28 56 336 t 0 32 0.5 -5
+   )
+   (
+	v 28 8 312 t 1846.0422 0 -2.5 -3.5
+	v 28 8 304 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 10
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 304 t 0 0 -2.5 -3
+	v 28 8 296 t 0 32 -2.5 -2.5
+   )
+   (
+	v 28 56 272 t 1846.0422 0 0.5 -1
+	v 28 56 264 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 11
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 296 t 0 0 -2.5 -2.5
+	v 28 8 304 t 0 32 -2.5 -3
+   )
+   (
+	v 28 56 264 t 1846.0422 0 0.5 -0.5
+	v 28 56 272 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 12
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 496 t 0 0 -1.5 -15
+	v -24 4 504 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 464 t 1846.0422 0 1.5 -13
+	v 24 4 472 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 13
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 464 t 0 0 2 -15
+	v 24 4 456 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 432 t 1846.0422 0 -1 -13
+	v -24 4 424 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 14
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 416 t 0 0 -1.5 -15
+	v -24 4 424 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 384 t 1846.0422 0 1.5 -13
+	v 24 4 392 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 15
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 384 t 0 0 2 -15
+	v 24 4 376 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 352 t 1846.0422 0 -1 -13
+	v -24 4 344 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 16
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 336 t 0 0 -1.5 -15
+	v -24 4 344 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 304 t 1846.0422 0 1.5 -13
+	v 24 4 312 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 17
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 504 t 0 0 -1.5 -15.5
+	v -24 4 496 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 472 t 1846.0422 0 1.5 -13.5
+	v 24 4 464 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 18
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 456 t 0 0 2 -14.5
+	v 24 4 464 t 0 32 2 -15
+   )
+   (
+	v -24 4 424 t 1846.0422 0 -1 -12.5
+	v -24 4 432 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 19
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 424 t 0 0 -1.5 -15.5
+	v -24 4 416 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 392 t 1846.0422 0 1.5 -13.5
+	v 24 4 384 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 20
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 376 t 0 0 2 -14.5
+	v 24 4 384 t 0 32 2 -15
+   )
+   (
+	v -24 4 344 t 1846.0422 0 -1 -12.5
+	v -24 4 352 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 21
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 344 t 0 0 -1.5 -15.5
+	v -24 4 336 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 312 t 1846.0422 0 1.5 -13.5
+	v 24 4 304 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 22
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 304 t 0 0 2 -15
+	v 24 4 296 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 272 t 1846.0422 0 -1 -13
+	v -24 4 264 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 23
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 296 t 0 0 2 -14.5
+	v 24 4 304 t 0 32 2 -15
+   )
+   (
+	v -24 4 264 t 1846.0422 0 -1 -12.5
+	v -24 4 272 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 24
+{
+  contents detail;
+ ( -8 8 504 ) ( -24 8 504 ) ( -24 0 504 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 512 ) ( 16 8 512 ) ( 32 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 328 ) ( 32 0 328 ) ( 32 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 328 ) ( 24 8 328 ) ( 24 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 328 ) ( 16 8 328 ) ( 16 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 8 760 ) ( -24 0 760 ) ( -24 0 688 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 25
+{
+  contents detail;
+ ( -8 64 504 ) ( -24 64 504 ) ( -24 56 504 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 512 ) ( 16 64 512 ) ( 32 64 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 328 ) ( 32 56 328 ) ( 32 56 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 328 ) ( 24 64 328 ) ( 24 64 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 64 328 ) ( 16 64 328 ) ( 16 64 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 64 760 ) ( -24 56 760 ) ( -24 56 688 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 26
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 296 t 0 0 2 -14.5
+	v 24 60 304 t 0 32 2 -15
+   )
+   (
+	v -24 60 264 t 1846.0422 0 -1 -12.5
+	v -24 60 272 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 27
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 304 t 0 0 2 -15
+	v 24 60 296 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 272 t 1846.0422 0 -1 -13
+	v -24 60 264 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 28
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 344 t 0 0 -1.5 -15.5
+	v -24 60 336 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 312 t 1846.0422 0 1.5 -13.5
+	v 24 60 304 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 29
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 376 t 0 0 2 -14.5
+	v 24 60 384 t 0 32 2 -15
+   )
+   (
+	v -24 60 344 t 1846.0422 0 -1 -12.5
+	v -24 60 352 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 30
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 424 t 0 0 -1.5 -15.5
+	v -24 60 416 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 392 t 1846.0422 0 1.5 -13.5
+	v 24 60 384 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 31
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 456 t 0 0 2 -14.5
+	v 24 60 464 t 0 32 2 -15
+   )
+   (
+	v -24 60 424 t 1846.0422 0 -1 -12.5
+	v -24 60 432 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 32
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 504 t 0 0 -1.5 -15.5
+	v -24 60 496 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 472 t 1846.0422 0 1.5 -13.5
+	v 24 60 464 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 33
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 336 t 0 0 -1.5 -15
+	v -24 60 344 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 304 t 1846.0422 0 1.5 -13
+	v 24 60 312 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 34
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 384 t 0 0 2 -15
+	v 24 60 376 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 352 t 1846.0422 0 -1 -13
+	v -24 60 344 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 35
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 416 t 0 0 -1.5 -15
+	v -24 60 424 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 384 t 1846.0422 0 1.5 -13
+	v 24 60 392 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 36
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 464 t 0 0 2 -15
+	v 24 60 456 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 432 t 1846.0422 0 -1 -13
+	v -24 60 424 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 37
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 496 t 0 0 -1.5 -15
+	v -24 60 504 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 464 t 1846.0422 0 1.5 -13
+	v 24 60 472 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 38
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 496 t 0 0 0.5 -15
+	v -28 56 504 t 0 32 0.5 -15.5
+   )
+   (
+	v -28 8 464 t 1846.0422 0 -2.5 -13
+	v -28 8 472 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+// brush 39
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 464 t 0 0 -2.5 -13
+	v -28 8 456 t 0 32 -2.5 -12.5
+   )
+   (
+	v -28 56 432 t 1846.0422 0 0.5 -11
+	v -28 56 424 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 40
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 416 t 0 0 0.5 -10
+	v -28 56 424 t 0 32 0.5 -10.5
+   )
+   (
+	v -28 8 384 t 1846.0422 0 -2.5 -8
+	v -28 8 392 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 41
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 384 t 0 0 -2.5 -8
+	v -28 8 376 t 0 32 -2.5 -7.5
+   )
+   (
+	v -28 56 352 t 1846.0422 0 0.5 -6
+	v -28 56 344 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 42
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 336 t 0 0 0.5 -5
+	v -28 56 344 t 0 32 0.5 -5.5
+   )
+   (
+	v -28 8 304 t 1846.0422 0 -2.5 -3
+	v -28 8 312 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 43
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 504 t 0 0 0.5 -15.5
+	v -28 56 496 t 0 32 0.5 -15
+   )
+   (
+	v -28 8 472 t 1846.0422 0 -2.5 -13.5
+	v -28 8 464 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 44
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 456 t 0 0 -2.5 -12.5
+	v -28 8 464 t 0 32 -2.5 -13
+   )
+   (
+	v -28 56 424 t 1846.0422 0 0.5 -10.5
+	v -28 56 432 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 45
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 424 t 0 0 0.5 -10.5
+	v -28 56 416 t 0 32 0.5 -10
+   )
+   (
+	v -28 8 392 t 1846.0422 0 -2.5 -8.5
+	v -28 8 384 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 46
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 376 t 0 0 -2.5 -7.5
+	v -28 8 384 t 0 32 -2.5 -8
+   )
+   (
+	v -28 56 344 t 1846.0422 0 0.5 -5.5
+	v -28 56 352 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 47
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 344 t 0 0 0.5 -5.5
+	v -28 56 336 t 0 32 0.5 -5
+   )
+   (
+	v -28 8 312 t 1846.0422 0 -2.5 -3.5
+	v -28 8 304 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 48
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 304 t 0 0 -2.5 -3
+	v -28 8 296 t 0 32 -2.5 -2.5
+   )
+   (
+	v -28 56 272 t 1846.0422 0 0.5 -1
+	v -28 56 264 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 49
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 296 t 0 0 -2.5 -2.5
+	v -28 8 304 t 0 32 -2.5 -3
+   )
+   (
+	v -28 56 264 t 1846.0422 0 0.5 -0.5
+	v -28 56 272 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 50
+{
+  contents detail;
+ ( -24 40 504 ) ( -24 56 504 ) ( -32 56 504 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 512 ) ( -24 16 512 ) ( -24 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 328 ) ( -32 0 328 ) ( -32 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 328 ) ( -24 8 328 ) ( -24 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 328 ) ( -24 16 328 ) ( -24 16 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 760 ) ( -32 56 760 ) ( -32 56 688 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 51
+{
+  contents detail;
+ ( 32 40 504 ) ( 32 56 504 ) ( 24 56 504 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 512 ) ( 32 16 512 ) ( 32 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 328 ) ( 24 0 328 ) ( 24 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 328 ) ( 32 8 328 ) ( 32 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 328 ) ( 32 16 328 ) ( 32 16 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 760 ) ( 24 56 760 ) ( 24 56 688 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 52
+{
+  contents detail;
+ ( 40 64 256 ) ( 24 64 256 ) ( 24 56 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 512 ) ( 24 64 512 ) ( 40 64 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 328 ) ( 40 56 328 ) ( 40 56 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 328 ) ( 32 64 328 ) ( 32 64 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 64 328 ) ( 24 64 328 ) ( 24 64 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 64 512 ) ( 24 56 512 ) ( 24 56 440 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 53
+{
+  contents detail;
+ ( 40 8 256 ) ( 24 8 256 ) ( 24 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 512 ) ( 24 8 512 ) ( 40 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 328 ) ( 40 0 328 ) ( 40 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 328 ) ( 32 8 328 ) ( 32 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 8 328 ) ( 24 8 328 ) ( 24 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 512 ) ( 24 0 512 ) ( 24 0 440 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 54
+{
+  contents detail;
+ ( -16 8 256 ) ( -32 8 256 ) ( -32 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 512 ) ( -32 8 512 ) ( -16 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 328 ) ( -16 0 328 ) ( -16 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 512 ) ( -24 8 512 ) ( -24 8 440 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 8 328 ) ( -32 8 328 ) ( -32 8 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 328 ) ( -32 0 328 ) ( -32 0 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 55
+{
+  contents detail;
+ ( -16 64 256 ) ( -32 64 256 ) ( -32 56 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 512 ) ( -32 64 512 ) ( -16 64 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 328 ) ( -16 56 328 ) ( -16 56 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 512 ) ( -24 64 512 ) ( -24 64 440 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 64 328 ) ( -32 64 328 ) ( -32 64 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 64 328 ) ( -32 56 328 ) ( -32 56 256 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 3
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( -16 64 512 ) ( -32 64 512 ) ( -32 56 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 768 ) ( -32 64 768 ) ( -16 64 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 584 ) ( -16 56 584 ) ( -16 56 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 768 ) ( -24 64 768 ) ( -24 64 696 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 64 584 ) ( -32 64 584 ) ( -32 64 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 64 584 ) ( -32 56 584 ) ( -32 56 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -16 8 512 ) ( -32 8 512 ) ( -32 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 768 ) ( -32 8 768 ) ( -16 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 584 ) ( -16 0 584 ) ( -16 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 768 ) ( -24 8 768 ) ( -24 8 696 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 8 584 ) ( -32 8 584 ) ( -32 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 584 ) ( -32 0 584 ) ( -32 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 40 8 512 ) ( 24 8 512 ) ( 24 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 768 ) ( 24 8 768 ) ( 40 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 584 ) ( 40 0 584 ) ( 40 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 584 ) ( 32 8 584 ) ( 32 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 8 584 ) ( 24 8 584 ) ( 24 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 768 ) ( 24 0 768 ) ( 24 0 696 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 40 64 512 ) ( 24 64 512 ) ( 24 56 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 768 ) ( 24 64 768 ) ( 40 64 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 584 ) ( 40 56 584 ) ( 40 56 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 584 ) ( 32 64 584 ) ( 32 64 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 64 584 ) ( 24 64 584 ) ( 24 64 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 64 768 ) ( 24 56 768 ) ( 24 56 696 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 32 40 760 ) ( 32 56 760 ) ( 24 56 760 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 768 ) ( 32 16 768 ) ( 32 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 584 ) ( 24 0 584 ) ( 24 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 584 ) ( 32 8 584 ) ( 32 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 584 ) ( 32 16 584 ) ( 32 16 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 1016 ) ( 24 56 1016 ) ( 24 56 944 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -24 40 760 ) ( -24 56 760 ) ( -32 56 760 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 768 ) ( -24 16 768 ) ( -24 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 584 ) ( -32 0 584 ) ( -32 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 584 ) ( -24 8 584 ) ( -24 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 584 ) ( -24 16 584 ) ( -24 16 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 1016 ) ( -32 56 1016 ) ( -32 56 944 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 552 t 0 0 -2.5 -2.5
+	v -28 8 560 t 0 32 -2.5 -3
+   )
+   (
+	v -28 56 520 t 1846.0422 0 0.5 -0.5
+	v -28 56 528 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 7
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 560 t 0 0 -2.5 -3
+	v -28 8 552 t 0 32 -2.5 -2.5
+   )
+   (
+	v -28 56 528 t 1846.0422 0 0.5 -1
+	v -28 56 520 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 8
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 600 t 0 0 0.5 -5.5
+	v -28 56 592 t 0 32 0.5 -5
+   )
+   (
+	v -28 8 568 t 1846.0422 0 -2.5 -3.5
+	v -28 8 560 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 9
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 632 t 0 0 -2.5 -7.5
+	v -28 8 640 t 0 32 -2.5 -8
+   )
+   (
+	v -28 56 600 t 1846.0422 0 0.5 -5.5
+	v -28 56 608 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 10
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 680 t 0 0 0.5 -10.5
+	v -28 56 672 t 0 32 0.5 -10
+   )
+   (
+	v -28 8 648 t 1846.0422 0 -2.5 -8.5
+	v -28 8 640 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 11
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 712 t 0 0 -2.5 -12.5
+	v -28 8 720 t 0 32 -2.5 -13
+   )
+   (
+	v -28 56 680 t 1846.0422 0 0.5 -10.5
+	v -28 56 688 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 12
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 760 t 0 0 0.5 -15.5
+	v -28 56 752 t 0 32 0.5 -15
+   )
+   (
+	v -28 8 728 t 1846.0422 0 -2.5 -13.5
+	v -28 8 720 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 13
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 592 t 0 0 0.5 -5
+	v -28 56 600 t 0 32 0.5 -5.5
+   )
+   (
+	v -28 8 560 t 1846.0422 0 -2.5 -3
+	v -28 8 568 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 14
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 640 t 0 0 -2.5 -8
+	v -28 8 632 t 0 32 -2.5 -7.5
+   )
+   (
+	v -28 56 608 t 1846.0422 0 0.5 -6
+	v -28 56 600 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 15
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 672 t 0 0 0.5 -10
+	v -28 56 680 t 0 32 0.5 -10.5
+   )
+   (
+	v -28 8 640 t 1846.0422 0 -2.5 -8
+	v -28 8 648 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 16
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 720 t 0 0 -2.5 -13
+	v -28 8 712 t 0 32 -2.5 -12.5
+   )
+   (
+	v -28 56 688 t 1846.0422 0 0.5 -11
+	v -28 56 680 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 17
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 752 t 0 0 0.5 -15
+	v -28 56 760 t 0 32 0.5 -15.5
+   )
+   (
+	v -28 8 720 t 1846.0422 0 -2.5 -13
+	v -28 8 728 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+// brush 18
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 752 t 0 0 -1.5 -15
+	v -24 60 760 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 720 t 1846.0422 0 1.5 -13
+	v 24 60 728 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 19
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 720 t 0 0 2 -15
+	v 24 60 712 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 688 t 1846.0422 0 -1 -13
+	v -24 60 680 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 20
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 672 t 0 0 -1.5 -15
+	v -24 60 680 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 640 t 1846.0422 0 1.5 -13
+	v 24 60 648 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 21
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 640 t 0 0 2 -15
+	v 24 60 632 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 608 t 1846.0422 0 -1 -13
+	v -24 60 600 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 22
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 592 t 0 0 -1.5 -15
+	v -24 60 600 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 560 t 1846.0422 0 1.5 -13
+	v 24 60 568 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 23
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 760 t 0 0 -1.5 -15.5
+	v -24 60 752 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 728 t 1846.0422 0 1.5 -13.5
+	v 24 60 720 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 24
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 712 t 0 0 2 -14.5
+	v 24 60 720 t 0 32 2 -15
+   )
+   (
+	v -24 60 680 t 1846.0422 0 -1 -12.5
+	v -24 60 688 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 25
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 680 t 0 0 -1.5 -15.5
+	v -24 60 672 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 648 t 1846.0422 0 1.5 -13.5
+	v 24 60 640 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 26
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 632 t 0 0 2 -14.5
+	v 24 60 640 t 0 32 2 -15
+   )
+   (
+	v -24 60 600 t 1846.0422 0 -1 -12.5
+	v -24 60 608 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 27
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 600 t 0 0 -1.5 -15.5
+	v -24 60 592 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 568 t 1846.0422 0 1.5 -13.5
+	v 24 60 560 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 28
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 560 t 0 0 2 -15
+	v 24 60 552 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 528 t 1846.0422 0 -1 -13
+	v -24 60 520 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 29
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 552 t 0 0 2 -14.5
+	v 24 60 560 t 0 32 2 -15
+   )
+   (
+	v -24 60 520 t 1846.0422 0 -1 -12.5
+	v -24 60 528 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 30
+{
+  contents detail;
+ ( -8 64 760 ) ( -24 64 760 ) ( -24 56 760 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 768 ) ( 16 64 768 ) ( 32 64 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 584 ) ( 32 56 584 ) ( 32 56 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 584 ) ( 24 64 584 ) ( 24 64 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 64 584 ) ( 16 64 584 ) ( 16 64 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 64 1016 ) ( -24 56 1016 ) ( -24 56 944 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 31
+{
+  contents detail;
+ ( -8 8 760 ) ( -24 8 760 ) ( -24 0 760 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 768 ) ( 16 8 768 ) ( 32 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 584 ) ( 32 0 584 ) ( 32 0 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 584 ) ( 24 8 584 ) ( 24 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 584 ) ( 16 8 584 ) ( 16 8 512 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 8 1016 ) ( -24 0 1016 ) ( -24 0 944 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 32
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 552 t 0 0 2 -14.5
+	v 24 4 560 t 0 32 2 -15
+   )
+   (
+	v -24 4 520 t 1846.0422 0 -1 -12.5
+	v -24 4 528 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 33
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 560 t 0 0 2 -15
+	v 24 4 552 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 528 t 1846.0422 0 -1 -13
+	v -24 4 520 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 34
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 600 t 0 0 -1.5 -15.5
+	v -24 4 592 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 568 t 1846.0422 0 1.5 -13.5
+	v 24 4 560 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 35
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 632 t 0 0 2 -14.5
+	v 24 4 640 t 0 32 2 -15
+   )
+   (
+	v -24 4 600 t 1846.0422 0 -1 -12.5
+	v -24 4 608 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 36
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 680 t 0 0 -1.5 -15.5
+	v -24 4 672 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 648 t 1846.0422 0 1.5 -13.5
+	v 24 4 640 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 37
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 712 t 0 0 2 -14.5
+	v 24 4 720 t 0 32 2 -15
+   )
+   (
+	v -24 4 680 t 1846.0422 0 -1 -12.5
+	v -24 4 688 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 38
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 760 t 0 0 -1.5 -15.5
+	v -24 4 752 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 728 t 1846.0422 0 1.5 -13.5
+	v 24 4 720 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 39
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 592 t 0 0 -1.5 -15
+	v -24 4 600 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 560 t 1846.0422 0 1.5 -13
+	v 24 4 568 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 40
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 640 t 0 0 2 -15
+	v 24 4 632 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 608 t 1846.0422 0 -1 -13
+	v -24 4 600 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 41
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 672 t 0 0 -1.5 -15
+	v -24 4 680 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 640 t 1846.0422 0 1.5 -13
+	v 24 4 648 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 42
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 720 t 0 0 2 -15
+	v 24 4 712 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 688 t 1846.0422 0 -1 -13
+	v -24 4 680 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 43
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 752 t 0 0 -1.5 -15
+	v -24 4 760 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 720 t 1846.0422 0 1.5 -13
+	v 24 4 728 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 44
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 552 t 0 0 -2.5 -2.5
+	v 28 8 560 t 0 32 -2.5 -3
+   )
+   (
+	v 28 56 520 t 1846.0422 0 0.5 -0.5
+	v 28 56 528 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 45
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 560 t 0 0 -2.5 -3
+	v 28 8 552 t 0 32 -2.5 -2.5
+   )
+   (
+	v 28 56 528 t 1846.0422 0 0.5 -1
+	v 28 56 520 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 46
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 600 t 0 0 0.5 -5.5
+	v 28 56 592 t 0 32 0.5 -5
+   )
+   (
+	v 28 8 568 t 1846.0422 0 -2.5 -3.5
+	v 28 8 560 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 47
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 632 t 0 0 -2.5 -7.5
+	v 28 8 640 t 0 32 -2.5 -8
+   )
+   (
+	v 28 56 600 t 1846.0422 0 0.5 -5.5
+	v 28 56 608 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 48
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 680 t 0 0 0.5 -10.5
+	v 28 56 672 t 0 32 0.5 -10
+   )
+   (
+	v 28 8 648 t 1846.0422 0 -2.5 -8.5
+	v 28 8 640 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 49
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 712 t 0 0 -2.5 -12.5
+	v 28 8 720 t 0 32 -2.5 -13
+   )
+   (
+	v 28 56 680 t 1846.0422 0 0.5 -10.5
+	v 28 56 688 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 50
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 760 t 0 0 0.5 -15.5
+	v 28 56 752 t 0 32 0.5 -15
+   )
+   (
+	v 28 8 728 t 1846.0422 0 -2.5 -13.5
+	v 28 8 720 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 51
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 592 t 0 0 0.5 -5
+	v 28 56 600 t 0 32 0.5 -5.5
+   )
+   (
+	v 28 8 560 t 1846.0422 0 -2.5 -3
+	v 28 8 568 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 52
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 640 t 0 0 -2.5 -8
+	v 28 8 632 t 0 32 -2.5 -7.5
+   )
+   (
+	v 28 56 608 t 1846.0422 0 0.5 -6
+	v 28 56 600 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 53
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 672 t 0 0 0.5 -10
+	v 28 56 680 t 0 32 0.5 -10.5
+   )
+   (
+	v 28 8 640 t 1846.0422 0 -2.5 -8
+	v 28 8 648 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 54
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 720 t 0 0 -2.5 -13
+	v 28 8 712 t 0 32 -2.5 -12.5
+   )
+   (
+	v 28 56 688 t 1846.0422 0 0.5 -11
+	v 28 56 680 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 55
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 752 t 0 0 0.5 -15
+	v 28 56 760 t 0 32 0.5 -15.5
+   )
+   (
+	v 28 8 720 t 1846.0422 0 -2.5 -13
+	v 28 8 728 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+}
+// entity 4
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( -16 64 768 ) ( -32 64 768 ) ( -32 56 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 1024 ) ( -32 64 1024 ) ( -16 64 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 840 ) ( -16 56 840 ) ( -16 56 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 1024 ) ( -24 64 1024 ) ( -24 64 952 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 64 840 ) ( -32 64 840 ) ( -32 64 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 64 840 ) ( -32 56 840 ) ( -32 56 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -16 8 768 ) ( -32 8 768 ) ( -32 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 1024 ) ( -32 8 1024 ) ( -16 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 840 ) ( -16 0 840 ) ( -16 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 1024 ) ( -24 8 1024 ) ( -24 8 952 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 8 840 ) ( -32 8 840 ) ( -32 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 840 ) ( -32 0 840 ) ( -32 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 40 8 768 ) ( 24 8 768 ) ( 24 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 1024 ) ( 24 8 1024 ) ( 40 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 840 ) ( 40 0 840 ) ( 40 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 840 ) ( 32 8 840 ) ( 32 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 8 840 ) ( 24 8 840 ) ( 24 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 1024 ) ( 24 0 1024 ) ( 24 0 952 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 40 64 768 ) ( 24 64 768 ) ( 24 56 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 1024 ) ( 24 64 1024 ) ( 40 64 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 840 ) ( 40 56 840 ) ( 40 56 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 840 ) ( 32 64 840 ) ( 32 64 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 64 840 ) ( 24 64 840 ) ( 24 64 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 64 1024 ) ( 24 56 1024 ) ( 24 56 952 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 32 40 1016 ) ( 32 56 1016 ) ( 24 56 1016 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 1024 ) ( 32 16 1024 ) ( 32 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 840 ) ( 24 0 840 ) ( 24 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 840 ) ( 32 8 840 ) ( 32 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 840 ) ( 32 16 840 ) ( 32 16 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 1272 ) ( 24 56 1272 ) ( 24 56 1200 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -24 40 1016 ) ( -24 56 1016 ) ( -32 56 1016 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 1024 ) ( -24 16 1024 ) ( -24 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 840 ) ( -32 0 840 ) ( -32 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 840 ) ( -24 8 840 ) ( -24 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 840 ) ( -24 16 840 ) ( -24 16 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 1272 ) ( -32 56 1272 ) ( -32 56 1200 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 808 t 0 0 -2.5 -2.5
+	v -28 8 816 t 0 32 -2.5 -3
+   )
+   (
+	v -28 56 776 t 1846.0422 0 0.5 -0.5
+	v -28 56 784 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 7
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 816 t 0 0 -2.5 -3
+	v -28 8 808 t 0 32 -2.5 -2.5
+   )
+   (
+	v -28 56 784 t 1846.0422 0 0.5 -1
+	v -28 56 776 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 8
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 856 t 0 0 0.5 -5.5
+	v -28 56 848 t 0 32 0.5 -5
+   )
+   (
+	v -28 8 824 t 1846.0422 0 -2.5 -3.5
+	v -28 8 816 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 9
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 888 t 0 0 -2.5 -7.5
+	v -28 8 896 t 0 32 -2.5 -8
+   )
+   (
+	v -28 56 856 t 1846.0422 0 0.5 -5.5
+	v -28 56 864 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 10
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 936 t 0 0 0.5 -10.5
+	v -28 56 928 t 0 32 0.5 -10
+   )
+   (
+	v -28 8 904 t 1846.0422 0 -2.5 -8.5
+	v -28 8 896 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 11
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 968 t 0 0 -2.5 -12.5
+	v -28 8 976 t 0 32 -2.5 -13
+   )
+   (
+	v -28 56 936 t 1846.0422 0 0.5 -10.5
+	v -28 56 944 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 12
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 1016 t 0 0 0.5 -15.5
+	v -28 56 1008 t 0 32 0.5 -15
+   )
+   (
+	v -28 8 984 t 1846.0422 0 -2.5 -13.5
+	v -28 8 976 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 13
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 848 t 0 0 0.5 -5
+	v -28 56 856 t 0 32 0.5 -5.5
+   )
+   (
+	v -28 8 816 t 1846.0422 0 -2.5 -3
+	v -28 8 824 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 14
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 896 t 0 0 -2.5 -8
+	v -28 8 888 t 0 32 -2.5 -7.5
+   )
+   (
+	v -28 56 864 t 1846.0422 0 0.5 -6
+	v -28 56 856 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 15
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 928 t 0 0 0.5 -10
+	v -28 56 936 t 0 32 0.5 -10.5
+   )
+   (
+	v -28 8 896 t 1846.0422 0 -2.5 -8
+	v -28 8 904 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 16
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 976 t 0 0 -2.5 -13
+	v -28 8 968 t 0 32 -2.5 -12.5
+   )
+   (
+	v -28 56 944 t 1846.0422 0 0.5 -11
+	v -28 56 936 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 17
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 1008 t 0 0 0.5 -15
+	v -28 56 1016 t 0 32 0.5 -15.5
+   )
+   (
+	v -28 8 976 t 1846.0422 0 -2.5 -13
+	v -28 8 984 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+// brush 18
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 1008 t 0 0 -1.5 -15
+	v -24 60 1016 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 976 t 1846.0422 0 1.5 -13
+	v 24 60 984 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 19
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 976 t 0 0 2 -15
+	v 24 60 968 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 944 t 1846.0422 0 -1 -13
+	v -24 60 936 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 20
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 928 t 0 0 -1.5 -15
+	v -24 60 936 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 896 t 1846.0422 0 1.5 -13
+	v 24 60 904 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 21
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 896 t 0 0 2 -15
+	v 24 60 888 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 864 t 1846.0422 0 -1 -13
+	v -24 60 856 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 22
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 848 t 0 0 -1.5 -15
+	v -24 60 856 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 816 t 1846.0422 0 1.5 -13
+	v 24 60 824 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 23
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 1016 t 0 0 -1.5 -15.5
+	v -24 60 1008 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 984 t 1846.0422 0 1.5 -13.5
+	v 24 60 976 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 24
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 968 t 0 0 2 -14.5
+	v 24 60 976 t 0 32 2 -15
+   )
+   (
+	v -24 60 936 t 1846.0422 0 -1 -12.5
+	v -24 60 944 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 25
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 936 t 0 0 -1.5 -15.5
+	v -24 60 928 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 904 t 1846.0422 0 1.5 -13.5
+	v 24 60 896 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 26
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 888 t 0 0 2 -14.5
+	v 24 60 896 t 0 32 2 -15
+   )
+   (
+	v -24 60 856 t 1846.0422 0 -1 -12.5
+	v -24 60 864 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 27
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 856 t 0 0 -1.5 -15.5
+	v -24 60 848 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 824 t 1846.0422 0 1.5 -13.5
+	v 24 60 816 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 28
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 816 t 0 0 2 -15
+	v 24 60 808 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 784 t 1846.0422 0 -1 -13
+	v -24 60 776 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 29
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 808 t 0 0 2 -14.5
+	v 24 60 816 t 0 32 2 -15
+   )
+   (
+	v -24 60 776 t 1846.0422 0 -1 -12.5
+	v -24 60 784 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 30
+{
+  contents detail;
+ ( -8 64 1016 ) ( -24 64 1016 ) ( -24 56 1016 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 1024 ) ( 16 64 1024 ) ( 32 64 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 840 ) ( 32 56 840 ) ( 32 56 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 840 ) ( 24 64 840 ) ( 24 64 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 64 840 ) ( 16 64 840 ) ( 16 64 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 64 1272 ) ( -24 56 1272 ) ( -24 56 1200 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 31
+{
+  contents detail;
+ ( -8 8 1016 ) ( -24 8 1016 ) ( -24 0 1016 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 1024 ) ( 16 8 1024 ) ( 32 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 840 ) ( 32 0 840 ) ( 32 0 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 840 ) ( 24 8 840 ) ( 24 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 840 ) ( 16 8 840 ) ( 16 8 768 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 8 1272 ) ( -24 0 1272 ) ( -24 0 1200 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 32
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 808 t 0 0 2 -14.5
+	v 24 4 816 t 0 32 2 -15
+   )
+   (
+	v -24 4 776 t 1846.0422 0 -1 -12.5
+	v -24 4 784 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 33
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 816 t 0 0 2 -15
+	v 24 4 808 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 784 t 1846.0422 0 -1 -13
+	v -24 4 776 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 34
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 856 t 0 0 -1.5 -15.5
+	v -24 4 848 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 824 t 1846.0422 0 1.5 -13.5
+	v 24 4 816 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 35
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 888 t 0 0 2 -14.5
+	v 24 4 896 t 0 32 2 -15
+   )
+   (
+	v -24 4 856 t 1846.0422 0 -1 -12.5
+	v -24 4 864 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 36
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 936 t 0 0 -1.5 -15.5
+	v -24 4 928 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 904 t 1846.0422 0 1.5 -13.5
+	v 24 4 896 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 37
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 968 t 0 0 2 -14.5
+	v 24 4 976 t 0 32 2 -15
+   )
+   (
+	v -24 4 936 t 1846.0422 0 -1 -12.5
+	v -24 4 944 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 38
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 1016 t 0 0 -1.5 -15.5
+	v -24 4 1008 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 984 t 1846.0422 0 1.5 -13.5
+	v 24 4 976 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 39
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 848 t 0 0 -1.5 -15
+	v -24 4 856 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 816 t 1846.0422 0 1.5 -13
+	v 24 4 824 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 40
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 896 t 0 0 2 -15
+	v 24 4 888 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 864 t 1846.0422 0 -1 -13
+	v -24 4 856 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 41
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 928 t 0 0 -1.5 -15
+	v -24 4 936 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 896 t 1846.0422 0 1.5 -13
+	v 24 4 904 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 42
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 976 t 0 0 2 -15
+	v 24 4 968 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 944 t 1846.0422 0 -1 -13
+	v -24 4 936 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 43
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 1008 t 0 0 -1.5 -15
+	v -24 4 1016 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 976 t 1846.0422 0 1.5 -13
+	v 24 4 984 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 44
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 808 t 0 0 -2.5 -2.5
+	v 28 8 816 t 0 32 -2.5 -3
+   )
+   (
+	v 28 56 776 t 1846.0422 0 0.5 -0.5
+	v 28 56 784 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 45
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 816 t 0 0 -2.5 -3
+	v 28 8 808 t 0 32 -2.5 -2.5
+   )
+   (
+	v 28 56 784 t 1846.0422 0 0.5 -1
+	v 28 56 776 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 46
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 856 t 0 0 0.5 -5.5
+	v 28 56 848 t 0 32 0.5 -5
+   )
+   (
+	v 28 8 824 t 1846.0422 0 -2.5 -3.5
+	v 28 8 816 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 47
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 888 t 0 0 -2.5 -7.5
+	v 28 8 896 t 0 32 -2.5 -8
+   )
+   (
+	v 28 56 856 t 1846.0422 0 0.5 -5.5
+	v 28 56 864 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 48
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 936 t 0 0 0.5 -10.5
+	v 28 56 928 t 0 32 0.5 -10
+   )
+   (
+	v 28 8 904 t 1846.0422 0 -2.5 -8.5
+	v 28 8 896 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 49
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 968 t 0 0 -2.5 -12.5
+	v 28 8 976 t 0 32 -2.5 -13
+   )
+   (
+	v 28 56 936 t 1846.0422 0 0.5 -10.5
+	v 28 56 944 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 50
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 1016 t 0 0 0.5 -15.5
+	v 28 56 1008 t 0 32 0.5 -15
+   )
+   (
+	v 28 8 984 t 1846.0422 0 -2.5 -13.5
+	v 28 8 976 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 51
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 848 t 0 0 0.5 -5
+	v 28 56 856 t 0 32 0.5 -5.5
+   )
+   (
+	v 28 8 816 t 1846.0422 0 -2.5 -3
+	v 28 8 824 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 52
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 896 t 0 0 -2.5 -8
+	v 28 8 888 t 0 32 -2.5 -7.5
+   )
+   (
+	v 28 56 864 t 1846.0422 0 0.5 -6
+	v 28 56 856 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 53
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 928 t 0 0 0.5 -10
+	v 28 56 936 t 0 32 0.5 -10.5
+   )
+   (
+	v 28 8 896 t 1846.0422 0 -2.5 -8
+	v 28 8 904 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 54
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 976 t 0 0 -2.5 -13
+	v 28 8 968 t 0 32 -2.5 -12.5
+   )
+   (
+	v 28 56 944 t 1846.0422 0 0.5 -11
+	v 28 56 936 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 55
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 1008 t 0 0 0.5 -15
+	v 28 56 1016 t 0 32 0.5 -15.5
+   )
+   (
+	v 28 8 976 t 1846.0422 0 -2.5 -13
+	v 28 8 984 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+}
+// entity 5
+{
+"classname" "func_group"
+// brush 0
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 1264 t 0 0 0.5 -15
+	v 28 56 1272 t 0 32 0.5 -15.5
+   )
+   (
+	v 28 8 1232 t 1846.0422 0 -2.5 -13
+	v 28 8 1240 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+// brush 1
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 1232 t 0 0 -2.5 -13
+	v 28 8 1224 t 0 32 -2.5 -12.5
+   )
+   (
+	v 28 56 1200 t 1846.0422 0 0.5 -11
+	v 28 56 1192 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 2
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 1184 t 0 0 0.5 -10
+	v 28 56 1192 t 0 32 0.5 -10.5
+   )
+   (
+	v 28 8 1152 t 1846.0422 0 -2.5 -8
+	v 28 8 1160 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 3
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 1152 t 0 0 -2.5 -8
+	v 28 8 1144 t 0 32 -2.5 -7.5
+   )
+   (
+	v 28 56 1120 t 1846.0422 0 0.5 -6
+	v 28 56 1112 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 4
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 1104 t 0 0 0.5 -5
+	v 28 56 1112 t 0 32 0.5 -5.5
+   )
+   (
+	v 28 8 1072 t 1846.0422 0 -2.5 -3
+	v 28 8 1080 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 1272 t 0 0 0.5 -15.5
+	v 28 56 1264 t 0 32 0.5 -15
+   )
+   (
+	v 28 8 1240 t 1846.0422 0 -2.5 -13.5
+	v 28 8 1232 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 6
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 1224 t 0 0 -2.5 -12.5
+	v 28 8 1232 t 0 32 -2.5 -13
+   )
+   (
+	v 28 56 1192 t 1846.0422 0 0.5 -10.5
+	v 28 56 1200 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 7
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 1192 t 0 0 0.5 -10.5
+	v 28 56 1184 t 0 32 0.5 -10
+   )
+   (
+	v 28 8 1160 t 1846.0422 0 -2.5 -8.5
+	v 28 8 1152 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 8
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 1144 t 0 0 -2.5 -7.5
+	v 28 8 1152 t 0 32 -2.5 -8
+   )
+   (
+	v 28 56 1112 t 1846.0422 0 0.5 -5.5
+	v 28 56 1120 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 9
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 56 1112 t 0 0 0.5 -5.5
+	v 28 56 1104 t 0 32 0.5 -5
+   )
+   (
+	v 28 8 1080 t 1846.0422 0 -2.5 -3.5
+	v 28 8 1072 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 10
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 1072 t 0 0 -2.5 -3
+	v 28 8 1064 t 0 32 -2.5 -2.5
+   )
+   (
+	v 28 56 1040 t 1846.0422 0 0.5 -1
+	v 28 56 1032 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 11
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 28 8 1064 t 0 0 -2.5 -2.5
+	v 28 8 1072 t 0 32 -2.5 -3
+   )
+   (
+	v 28 56 1032 t 1846.0422 0 0.5 -0.5
+	v 28 56 1040 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 12
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 1264 t 0 0 -1.5 -15
+	v -24 4 1272 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 1232 t 1846.0422 0 1.5 -13
+	v 24 4 1240 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 13
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 1232 t 0 0 2 -15
+	v 24 4 1224 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 1200 t 1846.0422 0 -1 -13
+	v -24 4 1192 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 14
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 1184 t 0 0 -1.5 -15
+	v -24 4 1192 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 1152 t 1846.0422 0 1.5 -13
+	v 24 4 1160 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 15
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 1152 t 0 0 2 -15
+	v 24 4 1144 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 1120 t 1846.0422 0 -1 -13
+	v -24 4 1112 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 16
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 1104 t 0 0 -1.5 -15
+	v -24 4 1112 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 4 1072 t 1846.0422 0 1.5 -13
+	v 24 4 1080 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 17
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 1272 t 0 0 -1.5 -15.5
+	v -24 4 1264 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 1240 t 1846.0422 0 1.5 -13.5
+	v 24 4 1232 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 18
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 1224 t 0 0 2 -14.5
+	v 24 4 1232 t 0 32 2 -15
+   )
+   (
+	v -24 4 1192 t 1846.0422 0 -1 -12.5
+	v -24 4 1200 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 19
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 1192 t 0 0 -1.5 -15.5
+	v -24 4 1184 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 1160 t 1846.0422 0 1.5 -13.5
+	v 24 4 1152 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 20
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 1144 t 0 0 2 -14.5
+	v 24 4 1152 t 0 32 2 -15
+   )
+   (
+	v -24 4 1112 t 1846.0422 0 -1 -12.5
+	v -24 4 1120 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 21
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 4 1112 t 0 0 -1.5 -15.5
+	v -24 4 1104 t 0 32 -1.5 -15
+   )
+   (
+	v 24 4 1080 t 1846.0422 0 1.5 -13.5
+	v 24 4 1072 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 22
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 1072 t 0 0 2 -15
+	v 24 4 1064 t 0 32 2 -14.5
+   )
+   (
+	v -24 4 1040 t 1846.0422 0 -1 -13
+	v -24 4 1032 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 23
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 4 1064 t 0 0 2 -14.5
+	v 24 4 1072 t 0 32 2 -15
+   )
+   (
+	v -24 4 1032 t 1846.0422 0 -1 -12.5
+	v -24 4 1040 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 24
+{
+  contents detail;
+ ( -8 8 1272 ) ( -24 8 1272 ) ( -24 0 1272 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 1280 ) ( 16 8 1280 ) ( 32 8 1280 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 0 1096 ) ( 32 0 1096 ) ( 32 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 1096 ) ( 24 8 1096 ) ( 24 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 1096 ) ( 16 8 1096 ) ( 16 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 8 1528 ) ( -24 0 1528 ) ( -24 0 1456 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 25
+{
+  contents detail;
+ ( -8 64 1272 ) ( -24 64 1272 ) ( -24 56 1272 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 1280 ) ( 16 64 1280 ) ( 32 64 1280 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 56 1096 ) ( 32 56 1096 ) ( 32 56 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 1096 ) ( 24 64 1096 ) ( 24 64 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 64 1096 ) ( 16 64 1096 ) ( 16 64 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 64 1528 ) ( -24 56 1528 ) ( -24 56 1456 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 26
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 1064 t 0 0 2 -14.5
+	v 24 60 1072 t 0 32 2 -15
+   )
+   (
+	v -24 60 1032 t 1846.0422 0 -1 -12.5
+	v -24 60 1040 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 27
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 1072 t 0 0 2 -15
+	v 24 60 1064 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 1040 t 1846.0422 0 -1 -13
+	v -24 60 1032 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 28
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 1112 t 0 0 -1.5 -15.5
+	v -24 60 1104 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 1080 t 1846.0422 0 1.5 -13.5
+	v 24 60 1072 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 29
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 1144 t 0 0 2 -14.5
+	v 24 60 1152 t 0 32 2 -15
+   )
+   (
+	v -24 60 1112 t 1846.0422 0 -1 -12.5
+	v -24 60 1120 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 30
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 1192 t 0 0 -1.5 -15.5
+	v -24 60 1184 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 1160 t 1846.0422 0 1.5 -13.5
+	v 24 60 1152 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 31
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 1224 t 0 0 2 -14.5
+	v 24 60 1232 t 0 32 2 -15
+   )
+   (
+	v -24 60 1192 t 1846.0422 0 -1 -12.5
+	v -24 60 1200 t 1846.0422 32 -1 -13
+   )
+  }
+ }
+// brush 32
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 1272 t 0 0 -1.5 -15.5
+	v -24 60 1264 t 0 32 -1.5 -15
+   )
+   (
+	v 24 60 1240 t 1846.0422 0 1.5 -13.5
+	v 24 60 1232 t 1846.0422 32 1.5 -13
+   )
+  }
+ }
+// brush 33
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 1104 t 0 0 -1.5 -15
+	v -24 60 1112 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 1072 t 1846.0422 0 1.5 -13
+	v 24 60 1080 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 34
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 1152 t 0 0 2 -15
+	v 24 60 1144 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 1120 t 1846.0422 0 -1 -13
+	v -24 60 1112 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 35
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 1184 t 0 0 -1.5 -15
+	v -24 60 1192 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 1152 t 1846.0422 0 1.5 -13
+	v 24 60 1160 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 36
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v 24 60 1232 t 0 0 2 -15
+	v 24 60 1224 t 0 32 2 -14.5
+   )
+   (
+	v -24 60 1200 t 1846.0422 0 -1 -13
+	v -24 60 1192 t 1846.0422 32 -1 -12.5
+   )
+  }
+ }
+// brush 37
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -24 60 1264 t 0 0 -1.5 -15
+	v -24 60 1272 t 0 32 -1.5 -15.5
+   )
+   (
+	v 24 60 1232 t 1846.0422 0 1.5 -13
+	v 24 60 1240 t 1846.0422 32 1.5 -13.5
+   )
+  }
+ }
+// brush 38
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 1264 t 0 0 0.5 -15
+	v -28 56 1272 t 0 32 0.5 -15.5
+   )
+   (
+	v -28 8 1232 t 1846.0422 0 -2.5 -13
+	v -28 8 1240 t 1846.0422 32 -2.5 -13.5
+   )
+  }
+ }
+// brush 39
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 1232 t 0 0 -2.5 -13
+	v -28 8 1224 t 0 32 -2.5 -12.5
+   )
+   (
+	v -28 56 1200 t 1846.0422 0 0.5 -11
+	v -28 56 1192 t 1846.0422 32 0.5 -10.5
+   )
+  }
+ }
+// brush 40
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 1184 t 0 0 0.5 -10
+	v -28 56 1192 t 0 32 0.5 -10.5
+   )
+   (
+	v -28 8 1152 t 1846.0422 0 -2.5 -8
+	v -28 8 1160 t 1846.0422 32 -2.5 -8.5
+   )
+  }
+ }
+// brush 41
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 1152 t 0 0 -2.5 -8
+	v -28 8 1144 t 0 32 -2.5 -7.5
+   )
+   (
+	v -28 56 1120 t 1846.0422 0 0.5 -6
+	v -28 56 1112 t 1846.0422 32 0.5 -5.5
+   )
+  }
+ }
+// brush 42
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 1104 t 0 0 0.5 -5
+	v -28 56 1112 t 0 32 0.5 -5.5
+   )
+   (
+	v -28 8 1072 t 1846.0422 0 -2.5 -3
+	v -28 8 1080 t 1846.0422 32 -2.5 -3.5
+   )
+  }
+ }
+// brush 43
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 1272 t 0 0 0.5 -15.5
+	v -28 56 1264 t 0 32 0.5 -15
+   )
+   (
+	v -28 8 1240 t 1846.0422 0 -2.5 -13.5
+	v -28 8 1232 t 1846.0422 32 -2.5 -13
+   )
+  }
+ }
+// brush 44
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 1224 t 0 0 -2.5 -12.5
+	v -28 8 1232 t 0 32 -2.5 -13
+   )
+   (
+	v -28 56 1192 t 1846.0422 0 0.5 -10.5
+	v -28 56 1200 t 1846.0422 32 0.5 -11
+   )
+  }
+ }
+// brush 45
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 1192 t 0 0 0.5 -10.5
+	v -28 56 1184 t 0 32 0.5 -10
+   )
+   (
+	v -28 8 1160 t 1846.0422 0 -2.5 -8.5
+	v -28 8 1152 t 1846.0422 32 -2.5 -8
+   )
+  }
+ }
+// brush 46
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 1144 t 0 0 -2.5 -7.5
+	v -28 8 1152 t 0 32 -2.5 -8
+   )
+   (
+	v -28 56 1112 t 1846.0422 0 0.5 -5.5
+	v -28 56 1120 t 1846.0422 32 0.5 -6
+   )
+  }
+ }
+// brush 47
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 56 1112 t 0 0 0.5 -5.5
+	v -28 56 1104 t 0 32 0.5 -5
+   )
+   (
+	v -28 8 1080 t 1846.0422 0 -2.5 -3.5
+	v -28 8 1072 t 1846.0422 32 -2.5 -3
+   )
+  }
+ }
+// brush 48
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 1072 t 0 0 -2.5 -3
+	v -28 8 1064 t 0 32 -2.5 -2.5
+   )
+   (
+	v -28 56 1040 t 1846.0422 0 0.5 -1
+	v -28 56 1032 t 1846.0422 32 0.5 -0.5
+   )
+  }
+ }
+// brush 49
+ {
+  mesh
+  {
+  contents detail;
+   ma_trim_metal01
+   lightmap_gray
+   2 2 16 8
+   (
+	v -28 8 1064 t 0 0 -2.5 -2.5
+	v -28 8 1072 t 0 32 -2.5 -3
+   )
+   (
+	v -28 56 1032 t 1846.0422 0 0.5 -0.5
+	v -28 56 1040 t 1846.0422 32 0.5 -1
+   )
+  }
+ }
+// brush 50
+{
+  contents detail;
+ ( -24 40 1272 ) ( -24 56 1272 ) ( -32 56 1272 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 1280 ) ( -24 16 1280 ) ( -24 0 1280 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 16 1096 ) ( -32 0 1096 ) ( -32 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 1096 ) ( -24 8 1096 ) ( -24 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 1096 ) ( -24 16 1096 ) ( -24 16 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 1528 ) ( -32 56 1528 ) ( -32 56 1456 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 51
+{
+  contents detail;
+ ( 32 40 1272 ) ( 32 56 1272 ) ( 24 56 1272 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 1280 ) ( 32 16 1280 ) ( 32 0 1280 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 16 1096 ) ( 24 0 1096 ) ( 24 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 1096 ) ( 32 8 1096 ) ( 32 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 1096 ) ( 32 16 1096 ) ( 32 16 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 1528 ) ( 24 56 1528 ) ( 24 56 1456 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 52
+{
+  contents detail;
+ ( 40 64 1024 ) ( 24 64 1024 ) ( 24 56 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 1280 ) ( 24 64 1280 ) ( 40 64 1280 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 56 1096 ) ( 40 56 1096 ) ( 40 56 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 56 1096 ) ( 32 64 1096 ) ( 32 64 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 64 1096 ) ( 24 64 1096 ) ( 24 64 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 64 1280 ) ( 24 56 1280 ) ( 24 56 1208 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 53
+{
+  contents detail;
+ ( 40 8 1024 ) ( 24 8 1024 ) ( 24 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 1280 ) ( 24 8 1280 ) ( 40 8 1280 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 1096 ) ( 40 0 1096 ) ( 40 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 1096 ) ( 32 8 1096 ) ( 32 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 8 1096 ) ( 24 8 1096 ) ( 24 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 1280 ) ( 24 0 1280 ) ( 24 0 1208 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 54
+{
+  contents detail;
+ ( -16 8 1024 ) ( -32 8 1024 ) ( -32 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 1280 ) ( -32 8 1280 ) ( -16 8 1280 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 1096 ) ( -16 0 1096 ) ( -16 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 1280 ) ( -24 8 1280 ) ( -24 8 1208 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 8 1096 ) ( -32 8 1096 ) ( -32 8 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 1096 ) ( -32 0 1096 ) ( -32 0 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 55
+{
+  contents detail;
+ ( -16 64 1024 ) ( -32 64 1024 ) ( -32 56 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 1280 ) ( -32 64 1280 ) ( -16 64 1280 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 56 1096 ) ( -16 56 1096 ) ( -16 56 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 56 1280 ) ( -24 64 1280 ) ( -24 64 1208 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 64 1096 ) ( -32 64 1096 ) ( -32 64 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 64 1096 ) ( -32 56 1096 ) ( -32 56 1024 ) ma_trim_metal01 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

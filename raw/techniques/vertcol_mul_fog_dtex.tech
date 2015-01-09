@@ -1,0 +1,34 @@
+{
+	stateMap "default";
+
+	vertexShader 1.1 "mul_dtex.hlsl"
+	{
+	}
+
+	pixelShader 1.1 "mul.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}
+{
+	stateMap "multiply_fog";
+
+	vertexShader 1.1 "mul_fog_dtex.hlsl"
+	{
+	}
+
+	pixelShader 1.1 "mul_fog.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

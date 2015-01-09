@@ -1,0 +1,471 @@
+#define MISSION_00_YEAR_TEXT		"194x"
+#define MISSION_00_YEAR_VISIBLE		0
+
+//#define MISSION_DONE			"10"
+//#define VIGNETTE_DONE			"10"
+#define VIGNETTE_DONE_CHEAT			"9"
+#define VIGNETTE_DONE_EASY			"10"
+#define VIGNETTE_DONE_NORMAL			"11"
+#define VIGNETTE_DONE_HARD			"12"
+#define VIGNETTE_DONE_FU			"13"
+
+#define VIGNETTE_STATE			"@MENU_STATUS"
+#define VIGNETTE_STATE_LOCKED		"@MENU_LOCKED"
+#define VIGNETTE_STATE_OPEN		"@MENU_NOT_STARTED"
+#define VIGNETTE_STATE_IN_PROGRESS	"@MENU_IN_PROGRESS"
+#define VIGNETTE_STATE_COMPLETED_CHEAT	"@MENU_COMPLETED_CHEAT"
+#define VIGNETTE_STATE_COMPLETED_EASY	"@MENU_COMPLETED_EASY"
+#define VIGNETTE_STATE_COMPLETED_NORMAL	"@MENU_COMPLETED_REGULAR"
+#define VIGNETTE_STATE_COMPLETED_HARD	"@MENU_COMPLETED_HARDENED"
+#define VIGNETTE_STATE_COMPLETED_FU	"@MENU_COMPLETED_VETERAN"
+
+#define MISSION_01_TITLE		"@MENU_THE_WINTER_WAR"
+#define MISSION_01_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_01_LOCATION		"@MENU_MISSION_01_LOCATION"
+#define MISSION_01_IMAGE		mission_select_russian_1941_01
+#define MISSION_01_BACKGROUND		mission_select_russian_background
+#define MISSION_01_BACKGROUND_TOP	mission_select_background_ru_top
+#define MISSION_01_BACKGROUND_BOTTOM	mission_select_background_ru_bottom
+#define MISSION_01_BACKDROP		mission_select_russian_backdrop
+#define MISSION_01_YEAR_TEXT		"@MENU_1941"
+#define MISSION_01_YEAR_VISIBLE		1
+#define MISSION_01_SHOW_DVAR		"mis_01"
+#define MISSION_01_UNLOCK_TEXT		"..."
+#define MISSION_01_BEGIN_EXEC		"map movie_eastern"
+
+#define MISSION_01_LEVEL_01_TITLE	"@MENU_MISSION_01_01_TITLE"
+#define MISSION_01_LEVEL_01_DESC	"@MENU_MISSION_01_01_DESC"
+#define MISSION_01_LEVEL_01_IMAGE	"LSL_lvl_moscow"
+#define MISSION_01_LEVEL_01_DVAR	"mis_01"	
+#define MISSION_01_LEVEL_01_EXEC	MISSION_01_BEGIN_EXEC
+
+#define MISSION_01_LEVEL_02_TITLE	"@MENU_MISSION_01_02"
+#define MISSION_01_LEVEL_02_DESC	"@MENU_MISSION_01_02_DESC"
+#define MISSION_01_LEVEL_02_IMAGE	"LSL_lvl_demolition"
+#define MISSION_01_LEVEL_02_DVAR	"mis_01"
+#define MISSION_01_LEVEL_02_EXEC	"map demolition"
+
+#define MISSION_01_LEVEL_03_TITLE	"@MENU_NONE"
+#define MISSION_01_LEVEL_03_DESC	"@MENU_NONE"
+#define MISSION_01_LEVEL_03_IMAGE	"LSL_lvl_demolition"
+#define MISSION_01_LEVEL_03_DVAR	"mis_none"
+
+#define MISSION_01_LEVEL_04_TITLE	"@MENU_NONE"
+#define MISSION_01_LEVEL_04_DESC	"@MENU_NONE"
+#define MISSION_01_LEVEL_04_IMAGE	"LSL_lvl_demolition"
+#define MISSION_01_LEVEL_04_DVAR	"mis_none"
+
+#define MISSION_01_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_01_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_01_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_01_LEVEL_05_DVAR	"mis_none"
+
+
+
+#define MISSION_02_TITLE		"@MENU_MISSION_02"
+#define MISSION_02_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_02_LOCATION		"@MENU_MISSION_02_LOCATION"
+#define MISSION_02_IMAGE		mission_select_british_1942_01
+#define MISSION_02_BACKGROUND		mission_select_british_background
+#define MISSION_02_BACKGROUND_TOP	mission_select_background_uk_top
+#define MISSION_02_BACKGROUND_BOTTOM	mission_select_background_uk_bottom
+#define MISSION_02_BACKDROP		mission_select_british_backdrop
+#define MISSION_02_YEAR_TEXT		"@MENU_1942"
+#define MISSION_02_YEAR_VISIBLE		1
+#define MISSION_02_SHOW_DVAR		"mis_02"
+//#define MISSION_02_UNLOCK_TEXT		"Complete The Winter War to Unlock"
+#define MISSION_02_BEGIN_EXEC		"map movie_africa"
+
+#define MISSION_02_LEVEL_01_TITLE	"@MENU_MISSION_02_01_TITLE"
+#define MISSION_02_LEVEL_01_DESC	"@MENU_MISSION_02_01_DESC"
+#define MISSION_02_LEVEL_01_IMAGE	"LSL_lvl_decoytrench"
+#define MISSION_02_LEVEL_01_DVAR	"mis_02"
+#define MISSION_02_LEVEL_01_EXEC	MISSION_02_BEGIN_EXEC
+
+#define MISSION_02_LEVEL_02_TITLE	"@MENU_MISSION_02_02_TITLE"
+#define MISSION_02_LEVEL_02_DESC	"@MENU_MISSION_02_02_DESC"
+#define MISSION_02_LEVEL_02_IMAGE	"LSL_lvl_decoytown"
+#define MISSION_02_LEVEL_02_DVAR	"mis_02"
+#define MISSION_02_LEVEL_02_EXEC	"map decoytown"
+
+#define MISSION_02_LEVEL_03_TITLE	"@MENU_MISSION_02_03_TITLE"
+#define MISSION_02_LEVEL_03_DESC	"@MENU_MISSION_02_03_DESC"
+#define MISSION_02_LEVEL_03_IMAGE	"LSL_lvl_elalamein"
+#define MISSION_02_LEVEL_03_DVAR	"mis_02"
+#define MISSION_02_LEVEL_03_EXEC	"map elalamein"
+
+#define MISSION_02_LEVEL_04_TITLE	"@MENU_MISSION_02_04_TITLE"
+#define MISSION_02_LEVEL_04_DESC	"@MENU_MISSION_02_04_DESC"
+#define MISSION_02_LEVEL_04_IMAGE	"LSL_lvl_eldaba"
+#define MISSION_02_LEVEL_04_DVAR	"mis_02"
+#define MISSION_02_LEVEL_04_EXEC	"map eldaba"
+
+#define MISSION_02_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_02_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_02_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_02_LEVEL_05_DVAR	"mis_none"
+
+
+#define MISSION_03_TITLE		"@MENU_MISSION_03_TITLE"
+#define MISSION_03_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_03_LOCATION		"@MENU_MISSION_03_LOCATION"
+#define MISSION_03_IMAGE		mission_select_russian_1943_01
+#define MISSION_03_BACKGROUND		mission_select_russian_background
+#define MISSION_03_BACKGROUND_TOP	mission_select_background_ru_top
+#define MISSION_03_BACKGROUND_BOTTOM	mission_select_background_ru_bottom
+#define MISSION_03_BACKDROP		mission_select_russian_backdrop
+#define MISSION_03_YEAR_TEXT		"@MENU_1943"
+#define MISSION_03_YEAR_VISIBLE		1
+#define MISSION_03_SHOW_DVAR		"mis_03"
+#define MISSION_03_BEGIN_EXEC		"map slideshow_earlygrad"
+
+//#define MISSION_03_LEVEL_01_TITLE	"Demolition"
+//#define MISSION_03_LEVEL_01_DESC	"Repel the enemy assault and demolish their hardpoint."
+//#define MISSION_03_LEVEL_01_IMAGE	"LSL_lvl_demolition"
+//#define MISSION_03_LEVEL_01_DVAR	"mis_03"
+//#define MISSION_03_LEVEL_01_EXEC	"map slideshow_earlygrad"
+
+#define MISSION_03_LEVEL_01_TITLE	"@MENU_MISSION_03_01_TITLE"
+#define MISSION_03_LEVEL_01_DESC	"@MENU_MISSION_03_LEVEL_01_DESC"
+#define MISSION_03_LEVEL_01_IMAGE	"LSL_lvl_tankhunt"
+#define MISSION_03_LEVEL_01_DVAR	"mis_03"	
+#define MISSION_03_LEVEL_01_EXEC	"map slideshow_earlygrad"	
+
+#define MISSION_03_LEVEL_02_TITLE	"@MENU_MISSION_03_LEVEL_02_TITLE"
+#define MISSION_03_LEVEL_02_DESC	"@MENU_MISSION_03_LEVEL_02_DESC"
+#define MISSION_03_LEVEL_02_IMAGE	"LSL_lvl_trainyard"
+#define MISSION_03_LEVEL_02_DVAR	"mis_03"
+#define MISSION_03_LEVEL_02_EXEC	"map trainyard"
+
+#define MISSION_03_LEVEL_03_TITLE	"@MENU_NONE"
+#define MISSION_03_LEVEL_03_DESC	"@MENU_NONE"
+#define MISSION_03_LEVEL_03_IMAGE	"LSL_lvl_demolition"
+#define MISSION_03_LEVEL_03_DVAR	"mis_none"
+#define MISSION_03_LEVEL_03_EXEC	""
+
+#define MISSION_03_LEVEL_04_TITLE	"@MENU_NONE"
+#define MISSION_03_LEVEL_04_DESC	"@MENU_NONE"
+#define MISSION_03_LEVEL_04_IMAGE	"LSL_lvl_demolition"
+#define MISSION_03_LEVEL_04_DVAR	"mis_none"
+#define MISSION_03_LEVEL_04_EXEC	""
+
+#define MISSION_03_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_03_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_03_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_03_LEVEL_05_DVAR	"mis_none"
+#define MISSION_03_LEVEL_05_EXEC	""
+
+#define MISSION_04_TITLE		"@MENU_MISSION_04_TITLE"
+#define MISSION_04_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_04_LOCATION		"@MENU_MISSION_04_LOCATION"
+#define MISSION_04_IMAGE		mission_select_russian_1942_01
+#define MISSION_04_BACKGROUND		mission_select_russian_background
+#define MISSION_04_BACKGROUND_TOP	mission_select_background_ru_top
+#define MISSION_04_BACKGROUND_BOTTOM	mission_select_background_ru_bottom
+#define MISSION_04_BACKDROP		mission_select_russian_backdrop
+#define MISSION_04_YEAR_TEXT		"@MENU_1942"
+#define MISSION_04_YEAR_VISIBLE		1
+#define MISSION_04_SHOW_DVAR		"mis_04"
+#define MISSION_04_BEGIN_EXEC		"map slideshow_lategrad"
+
+#define MISSION_04_LEVEL_01_TITLE	"@MENU_MISSION_04_LEVEL_01_TITLE"
+#define MISSION_04_LEVEL_01_DESC	"@MENU_MISSION_04_LEVEL_01_DESC"
+#define MISSION_04_LEVEL_01_IMAGE	"LSL_lvl_downtown_assault"
+#define MISSION_04_LEVEL_01_DVAR	"mis_04"
+#define MISSION_04_LEVEL_01_EXEC	"map slideshow_lategrad"
+
+#define MISSION_04_LEVEL_02_TITLE	"@MENU_MISSION_04_LEVEL_02_TITLE"
+#define MISSION_04_LEVEL_02_DESC	"@MENU_MISSION_04_LEVEL_02_DESC"
+#define MISSION_04_LEVEL_02_IMAGE	"LSL_lvl_cityhall"
+#define MISSION_04_LEVEL_02_DVAR	"mis_04"
+#define MISSION_04_LEVEL_02_EXEC	"map cityhall"
+
+#define MISSION_04_LEVEL_03_TITLE	"@MENU_MISSION_04_LEVEL_03_TITLE"
+#define MISSION_04_LEVEL_03_DESC	"@MENU_MISSION_04_LEVEL_03_DESC"
+#define MISSION_04_LEVEL_03_IMAGE	"LSL_lvl_downtown_sniper"
+#define MISSION_04_LEVEL_03_DVAR	"mis_04"	
+#define MISSION_04_LEVEL_03_EXEC	"map downtown_sniper"	
+
+#define MISSION_04_LEVEL_04_TITLE	"@MENU_NONE"
+#define MISSION_04_LEVEL_04_DESC	"@MENU_NONE"
+#define MISSION_04_LEVEL_04_IMAGE	"LSL_lvl_demolition"
+#define MISSION_04_LEVEL_04_DVAR	"mis_none"
+#define MISSION_04_LEVEL_04_EXEC	""
+
+#define MISSION_04_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_04_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_04_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_04_LEVEL_05_DVAR	"mis_none"
+#define MISSION_04_LEVEL_05_EXEC	""
+
+
+
+
+
+#define MISSION_05_TITLE		"@MENU_MISSION_05_TITLE"
+#define MISSION_05_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_05_LOCATION		"@MENU_MISSION_05_LOCATION"
+#define MISSION_05_IMAGE		mission_select_british_1943_01
+#define MISSION_05_BACKGROUND		mission_select_british_background
+#define MISSION_05_BACKGROUND_TOP	mission_select_background_uk_top
+#define MISSION_05_BACKGROUND_BOTTOM	mission_select_background_uk_bottom
+#define MISSION_05_BACKDROP		mission_select_british_backdrop
+#define MISSION_05_YEAR_TEXT		"@MENU_1943"
+#define MISSION_05_YEAR_VISIBLE		1
+#define MISSION_05_SHOW_DVAR		"mis_05"
+#define MISSION_05_BEGIN_EXEC		"map slideshow_libya"
+
+#define MISSION_05_LEVEL_01_TITLE	"@MENU_MISSION_05_LEVEL_01_TITLE"
+#define MISSION_05_LEVEL_01_DESC	"@MENU_MISSION_05_LEVEL_01_DESC"
+#define MISSION_05_LEVEL_01_IMAGE	"LSL_lvl_libya"
+#define MISSION_05_LEVEL_01_DVAR	"mis_05"
+#define MISSION_05_LEVEL_01_EXEC	"map slideshow_libya"
+
+#define MISSION_05_LEVEL_02_TITLE	"@MENU_MISSION_05_LEVEL_02_TITLE"
+#define MISSION_05_LEVEL_02_DESC	"@MENU_MISSION_05_LEVEL_02_DESC"
+#define MISSION_05_LEVEL_02_IMAGE	"LSL_lvl_88ridge"
+#define MISSION_05_LEVEL_02_DVAR	"mis_05"
+#define MISSION_05_LEVEL_02_EXEC	"map 88ridge"
+
+#define MISSION_05_LEVEL_03_TITLE	"@MENU_NONE"
+#define MISSION_05_LEVEL_03_DESC	"@MENU_NONE"
+#define MISSION_05_LEVEL_03_IMAGE	"LSL_lvl_demolition"
+#define MISSION_05_LEVEL_03_DVAR	"mis_none"
+#define MISSION_05_LEVEL_03_EXEC	""
+
+#define MISSION_05_LEVEL_04_TITLE	"@MENU_NONE"
+#define MISSION_05_LEVEL_04_DESC	"@MENU_NONE"
+#define MISSION_05_LEVEL_04_IMAGE	"LSL_lvl_demolition"
+#define MISSION_05_LEVEL_04_DVAR	"mis_none"
+#define MISSION_05_LEVEL_04_EXEC	""
+
+#define MISSION_05_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_05_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_05_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_05_LEVEL_05_DVAR	"mis_none"
+#define MISSION_05_LEVEL_05_EXEC	""
+
+
+#define MISSION_06_TITLE		"@MENU_MISSION_06_TITLE"
+#define MISSION_06_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_06_LOCATION		"@MENU_MISSION_06_LOCATION"
+#define MISSION_06_IMAGE		mission_select_british_1943_02
+#define MISSION_06_BACKGROUND		mission_select_british_background
+#define MISSION_06_BACKGROUND_TOP	mission_select_background_uk_top
+#define MISSION_06_BACKGROUND_BOTTOM	mission_select_background_uk_bottom
+#define MISSION_06_BACKDROP		mission_select_british_backdrop
+#define MISSION_06_YEAR_TEXT		"@MENU_1943"
+#define MISSION_06_YEAR_VISIBLE		1
+#define MISSION_06_SHOW_DVAR		"mis_06"
+#define MISSION_06_BEGIN_EXEC		"map slideshow_tunisia"
+
+#define MISSION_06_LEVEL_01_TITLE	"@MENU_MISSION_06_LEVEL_01_TITLE"
+#define MISSION_06_LEVEL_01_DESC	"@MENU_MISSION_06_LEVEL_01_DESC"
+#define MISSION_06_LEVEL_01_IMAGE	"LSL_lvl_toujane_ride"
+#define MISSION_06_LEVEL_01_DVAR	"mis_06"	
+#define MISSION_06_LEVEL_01_EXEC	"map slideshow_tunisia"	
+
+#define MISSION_06_LEVEL_02_TITLE	"@MENU_MISSION_06_LEVEL_02_TITLE"
+#define MISSION_06_LEVEL_02_DESC	"@MENU_MISSION_06_LEVEL_02_DESC"
+#define MISSION_06_LEVEL_02_IMAGE	"LSL_lvl_toujane"
+#define MISSION_06_LEVEL_02_DVAR	"mis_06"
+#define MISSION_06_LEVEL_02_EXEC	"map toujane"
+
+#define MISSION_06_LEVEL_03_TITLE	"@MENU_MISSION_06_LEVEL_03_TITLE"
+#define MISSION_06_LEVEL_03_DESC	"@MENU_MISSION_06_LEVEL_03_DESC"
+#define MISSION_06_LEVEL_03_IMAGE	"LSL_lvl_matmata"
+#define MISSION_06_LEVEL_03_DVAR	"mis_06"
+#define MISSION_06_LEVEL_03_EXEC	"map matmata"
+
+#define MISSION_06_LEVEL_04_TITLE	"@MENU_NONE"
+#define MISSION_06_LEVEL_04_DESC	"@MENU_NONE"
+#define MISSION_06_LEVEL_04_IMAGE	"LSL_lvl_demolition"
+#define MISSION_06_LEVEL_04_DVAR	"mis_none"
+#define MISSION_06_LEVEL_04_EXEC	""
+
+#define MISSION_06_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_06_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_06_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_06_LEVEL_05_DVAR	"mis_none"
+#define MISSION_06_LEVEL_05_EXEC	""
+
+
+#define MISSION_07_TITLE		"@MENU_MISSION_07_TITLE"
+#define MISSION_07_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_07_LOCATION		"@MENU_MISSION_07_LOCATION"
+#define MISSION_07_IMAGE		mission_select_american_1944_01
+#define MISSION_07_BACKGROUND		mission_select_american_background
+#define MISSION_07_BACKGROUND_TOP	mission_select_background_us_top
+#define MISSION_07_BACKGROUND_BOTTOM	mission_select_background_us_bottom
+#define MISSION_07_BACKDROP		mission_select_american_backdrop
+#define MISSION_07_YEAR_TEXT		"@MENU_1944"
+#define MISSION_07_YEAR_VISIBLE		1
+#define MISSION_07_SHOW_DVAR		"mis_07"
+#define MISSION_07_BEGIN_EXEC		"map movie_europe"
+
+#define MISSION_07_LEVEL_01_TITLE	"@MENU_MISSION_07_LEVEL_01_TITLE"
+#define MISSION_07_LEVEL_01_DESC	"@MENU_MISSION_07_LEVEL_01_DESC"
+#define MISSION_07_LEVEL_01_IMAGE	"LSL_lvl_duhoc_assault"
+#define MISSION_07_LEVEL_01_DVAR	"mis_07"	
+#define MISSION_07_LEVEL_01_EXEC	MISSION_07_BEGIN_EXEC	
+
+#define MISSION_07_LEVEL_02_TITLE	"@MENU_MISSION_07_LEVEL_02_TITLE"
+#define MISSION_07_LEVEL_02_DESC	"@MENU_NMISSION_07_LEVEL_02_DESC"
+#define MISSION_07_LEVEL_02_IMAGE	"LSL_lvl_duhoc_defend"
+#define MISSION_07_LEVEL_02_DVAR	"mis_07"
+#define MISSION_07_LEVEL_02_EXEC	"map duhoc_defend"
+
+#define MISSION_07_LEVEL_03_TITLE	"@MENU_MISSION_07_LEVEL_03_TITLE"
+#define MISSION_07_LEVEL_03_DESC	"@MENU_MISSION_07_LEVEL_03_DESC"
+#define MISSION_07_LEVEL_03_IMAGE	"LSL_lvl_silotown_assault"
+#define MISSION_07_LEVEL_03_DVAR	"mis_07"
+#define MISSION_07_LEVEL_03_EXEC	"map silotown_assault"
+
+#define MISSION_07_LEVEL_04_TITLE	"@MENU_NONE"
+#define MISSION_07_LEVEL_04_DESC	"@MENU_NONE"
+#define MISSION_07_LEVEL_04_IMAGE	"LSL_lvl_demolition"
+#define MISSION_07_LEVEL_04_DVAR	"mis_none"
+#define MISSION_07_LEVEL_04_EXEC	""
+
+#define MISSION_07_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_07_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_07_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_07_LEVEL_05_DVAR	"mis_none"
+#define MISSION_07_LEVEL_05_EXEC	""
+
+
+#define MISSION_08_TITLE		"@MENU_MISSION_08_TITLE"
+#define MISSION_08_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_08_LOCATION		"@MENU_MISSION_08_LOCATION"
+#define MISSION_08_IMAGE		mission_select_british_1944_01
+#define MISSION_08_BACKGROUND		mission_select_british_background
+#define MISSION_08_BACKGROUND_TOP	mission_select_background_uk_top
+#define MISSION_08_BACKGROUND_BOTTOM	mission_select_background_uk_bottom
+#define MISSION_08_BACKDROP		mission_select_british_backdrop
+#define MISSION_08_YEAR_TEXT		"@MENU_1944"
+#define MISSION_08_YEAR_VISIBLE		1
+#define MISSION_08_SHOW_DVAR		"mis_08"
+#define MISSION_08_BEGIN_EXEC		"map slideshow_caen"
+
+#define MISSION_08_LEVEL_01_TITLE	"@MENU_MISSION_08_LEVEL_01_TITLE"
+#define MISSION_08_LEVEL_01_DESC	"@MENU_MISSION_08_LEVEL_01_DESC"
+#define MISSION_08_LEVEL_01_IMAGE	"LSL_lvl_beltot"
+#define MISSION_08_LEVEL_01_DVAR	"mis_08"	
+#define MISSION_08_LEVEL_01_EXEC	"map slideshow_caen"	
+
+#define MISSION_08_LEVEL_02_TITLE	"@MENU_MISSION_08_LEVEL_02_TITLE"
+#define MISSION_08_LEVEL_02_DESC	"@MENU_MISSION_08_LEVEL_02_DESC"
+#define MISSION_08_LEVEL_02_IMAGE	"LSL_lvl_crossroads"
+#define MISSION_08_LEVEL_02_DVAR	"mis_08"
+#define MISSION_08_LEVEL_02_EXEC	"map crossroads"
+
+#define MISSION_08_LEVEL_03_TITLE	"@MENU_MISSION_08_LEVEL_03_TITLE"
+#define MISSION_08_LEVEL_03_DESC	"@MENU_MISSION_08_LEVEL_03_DESC"
+#define MISSION_08_LEVEL_03_IMAGE	"LSL_lvl_newvillers"
+#define MISSION_08_LEVEL_03_DVAR	"mis_08"
+#define MISSION_08_LEVEL_03_EXEC	"map newvillers"
+
+#define MISSION_08_LEVEL_04_TITLE	"@MENU_MISSION_08_LEVEL_04_TITLE"
+#define MISSION_08_LEVEL_04_DESC	"@MENU_MISSION_08_LEVEL_04_DESC"
+#define MISSION_08_LEVEL_04_IMAGE	"LSL_lvl_breakout"
+#define MISSION_08_LEVEL_04_DVAR	"mis_08"
+#define MISSION_08_LEVEL_04_EXEC	"map breakout"
+
+#define MISSION_08_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_08_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_08_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_08_LEVEL_05_DVAR	"mis_none"
+#define MISSION_08_LEVEL_05_EXEC	""
+
+
+#define MISSION_09_TITLE		"@MENU_MISSION_09_TITLE"
+#define MISSION_09_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_09_LOCATION		"@MENU_MISSION_09_LOCATION"
+#define MISSION_09_IMAGE		mission_select_american_1944_02
+#define MISSION_09_BACKGROUND		mission_select_american_background
+#define MISSION_09_BACKGROUND_TOP	mission_select_background_us_top
+#define MISSION_09_BACKGROUND_BOTTOM	mission_select_background_us_bottom
+#define MISSION_09_BACKDROP		mission_select_american_backdrop
+#define MISSION_09_YEAR_TEXT		"@MENU_1944"
+#define MISSION_09_YEAR_VISIBLE		1
+#define MISSION_09_SHOW_DVAR		"mis_09"
+#define MISSION_09_BEGIN_EXEC		"map slideshow_bergstein"
+
+#define MISSION_09_LEVEL_01_TITLE	"@MENU_MISSION_09_LEVEL_01_TITLE"
+#define MISSION_09_LEVEL_01_DESC	"@MENU_MISSION_09_LEVEL_01_DESC"
+#define MISSION_09_LEVEL_01_IMAGE	"LSL_lvl_bergstein"
+#define MISSION_09_LEVEL_01_DVAR	"mis_09"	
+#define MISSION_09_LEVEL_01_EXEC	"map slideshow_bergstein"	
+
+#define MISSION_09_LEVEL_02_TITLE	"@MENU_MISSION_09_LEVEL_02_TITLE"
+#define MISSION_09_LEVEL_02_DESC	"@MENU_MISSION_09_LEVEL_02_DESC"
+#define MISSION_09_LEVEL_02_IMAGE	"LSL_lvl_hill400_assault"
+#define MISSION_09_LEVEL_02_DVAR	"mis_09"
+#define MISSION_09_LEVEL_02_EXEC	"map hill400_assault"
+
+#define MISSION_09_LEVEL_03_TITLE	"@MENU_MISSION_09_LEVEL_03_TITLE"
+#define MISSION_09_LEVEL_03_DESC	"@MENU_MISSION_09_LEVEL_03_DESC"
+#define MISSION_09_LEVEL_03_IMAGE	"LSL_lvl_hill400_defend"
+#define MISSION_09_LEVEL_03_DVAR	"mis_09"
+#define MISSION_09_LEVEL_03_EXEC	"map hill400_defend"
+
+#define MISSION_09_LEVEL_04_TITLE	"@MENU_NONE"
+#define MISSION_09_LEVEL_04_DESC	"@MENU_NONE"
+#define MISSION_09_LEVEL_04_IMAGE	"LSL_lvl_demolition"
+#define MISSION_09_LEVEL_04_DVAR	"mis_none"
+#define MISSION_09_LEVEL_04_EXEC	""
+
+
+#define MISSION_09_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_09_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_09_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_09_LEVEL_05_DVAR	"mis_none"
+#define MISSION_09_LEVEL_05_EXEC	""
+
+
+
+#define MISSION_10_TITLE		"@MENU_MISSION_10_TITLE"
+#define MISSION_10_TITLE_LOCKED		"@MENU_LOCKED"
+#define MISSION_10_LOCATION		"@MENU_MISSION_10_LOCATION"
+#define MISSION_10_IMAGE		mission_select_american_1945_01
+#define MISSION_10_BACKGROUND		mission_select_american_background
+#define MISSION_10_BACKGROUND_TOP	mission_select_background_us_top
+#define MISSION_10_BACKGROUND_BOTTOM	mission_select_background_us_bottom
+#define MISSION_10_BACKDROP		mission_select_american_backdrop
+#define MISSION_10_YEAR_TEXT		"@MENU_1945"
+#define MISSION_10_YEAR_VISIBLE		1
+#define MISSION_10_SHOW_DVAR		"mis_10"
+#define MISSION_10_BEGIN_EXEC		"map slideshow_rhine"
+
+#define MISSION_10_LEVEL_01_TITLE	"@MENU_MISSION_10_LEVEL_01_TITLE"
+#define MISSION_10_LEVEL_01_DESC	"@MENU_MISSION_10_LEVEL_01_DESC"
+#define MISSION_10_LEVEL_01_IMAGE	"LSL_lvl_rhine"
+#define MISSION_10_LEVEL_01_DVAR	"mis_10"	
+#define MISSION_10_LEVEL_01_EXEC	"map rhine"	
+
+#define MISSION_10_LEVEL_02_TITLE	"@MENU_NONE"
+#define MISSION_10_LEVEL_02_DESC	"@MENU_NONE"
+#define MISSION_10_LEVEL_02_IMAGE	"LSL_lvl_demolition"
+#define MISSION_10_LEVEL_02_DVAR	"mis_none"
+#define MISSION_10_LEVEL_02_EXEC	""
+
+#define MISSION_10_LEVEL_03_TITLE	"@MENU_NONE"
+#define MISSION_10_LEVEL_03_DESC	"@MENU_NONE"
+#define MISSION_10_LEVEL_03_IMAGE	"LSL_lvl_demolition"
+#define MISSION_10_LEVEL_03_DVAR	"mis_none"
+#define MISSION_10_LEVEL_03_EXEC	""
+
+#define MISSION_10_LEVEL_04_TITLE	"@MENU_NONE"
+#define MISSION_10_LEVEL_04_DESC	"@MENU_NONE"
+#define MISSION_10_LEVEL_04_IMAGE	"LSL_lvl_demolition"
+#define MISSION_10_LEVEL_04_DVAR	"mis_none"
+#define MISSION_10_LEVEL_04_EXEC	""
+
+#define MISSION_10_LEVEL_05_TITLE	"@MENU_NONE"
+#define MISSION_10_LEVEL_05_DESC	"@MENU_NONE"
+#define MISSION_10_LEVEL_05_IMAGE	"LSL_lvl_demolition"
+#define MISSION_10_LEVEL_05_DVAR	"mis_none"
+#define MISSION_10_LEVEL_05_EXEC	""
+
+#define MISSION_11_YEAR_TEXT		"194x"
+#define MISSION_11_YEAR_VISIBLE		0

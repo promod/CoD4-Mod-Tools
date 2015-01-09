@@ -1,0 +1,25 @@
+#if "@depthTest@" == "Always"
+
+	depthTest( Always );
+
+#elif "@depthTest@" == "Less"
+
+	depthTest( Less );
+
+#elif "@depthTest@" == "LessEqual"
+
+	depthTest( LessEqual );
+
+#elif "@depthTest@" == "Equal"
+
+	depthTest( Equal );
+
+#elif "@depthTest@" == "Disable"
+
+	depthTest( Disable );
+
+#else
+
+	#error "unknown depthTest \"@depthTest@\""
+
+#endif

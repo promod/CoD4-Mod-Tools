@@ -1,0 +1,276 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define OPTIONS_STYLE			1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef
+	{
+		name			options_graphics
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen
+		{
+			close options_look;
+			close options_move;
+			close options_shoot;
+			close options_misc;
+			close options_sound;
+			close options_game;
+			close options_view;
+			close options_defaults;
+			close options_driverinfo;
+			close options_credits;
+			close options_multi;
+			close options_graphics_defaults;
+			close options_graphics_texture;
+			close options_control_defaults;
+
+			setLocalVarBool ui_showApply 0;
+			setLocalVarBool ui_hideBack 1;
+
+			// setfromdvar dst src
+			exec "exec options_graphics.cfg";
+
+			execOnDvarFloatValue r_zfeather 0 "set ui_zfeather 0";	// off
+			execOnDvarFloatValue r_zfeather 1 "set ui_zfeather 1";	// world
+			execOnDvarFloatValue r_depthPrepassModels 1 "set ui_zfeather 2";	// everything
+
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+			execOnDvarIntValue ui_zfeather 0 "set r_zfeather 0;set r_depthPrepassModels 0";	// off
+			execOnDvarIntValue ui_zfeather 1 "set r_zfeather 1;set r_depthPrepassModels 0";	// world
+			
+			// Model detail level setting set
+			execondvarintvalue r_lodScaleRigid 2 "set r_lodScaleSkinned 4; set r_lodBiasSkinned -200; set r_lodBiasRigid -100";
+			execondvarintvalue r_lodScaleRigid 1 "set r_lodScaleSkinned 1; set r_lodBiasSkinned 0; set r_lodBiasRigid 0";
+		}
+		onESC
+		{
+			close self;
+		}
+		
+		#include "ui_mp/leftside_options.inc"
+		
+		CHOICE_SECTION_TITLE( 21, "@MENU_GRAPHICS" )
+
+		CHOICE_DVARENUMLIST( 22, "@MENU_VIDEO_MODE", ui_r_mode, r_mode, setLocalVarBool ui_showApply 1 )
+		//CHOICE_DVARYESNO( 23, "@MENU_FULLSCREEN", ui_r_fullscreen, setLocalVarBool ui_showApply 1 )
+		CHOICE_DVARENUMLIST( 23, "@MENU_SCREEN_REFRESH_RATE", ui_r_displayRefresh, r_displayRefresh, setLocalVarBool ui_showApply 1; )
+		CHOICE_DVARSTRINGLIST( 24, "@MENU_ASPECT_RATIO", ui_r_aspectratio, { "@MENU_AUTO"; "auto"; "@MENU_STANDARD_4_3"; "standard"; "@MENU_WIDE_16_10"; "wide 16:10"; "@MENU_WIDE_16_9"; "wide 16:9" }, setLocalVarBool ui_showApply 1 )
+		CHOICE_DVARFLOATLIST( 25, "@MENU_ANTIALIASING", ui_r_aasamples, { "@MENU_OFF" 1 "@MENU_2X" 2 "@MENU_4X" 4 }, setLocalVarBool ui_showApply 1; )
+		//CHOICE_DVARSTRINGLIST( 26, "@MENU_RENDERING_METHOD_PREFERENCE", ui_r_rendererpreference, { "@MENU_AUTO"; "Default"; "2.0"; "Shader model 2.0"; "3.0"; "Shader Model 3.0"  }, setLocalVarBool ui_showApply 1 )
+		CHOICE_DVARSLIDER( 26, "@MENU_BRIGHTNESS", r_gamma, 1, 0.5, 3, ; )
+		CHOICE_DVARYESNO( 27, "@MENU_SYNC_EVERY_FRAME", ui_r_vsync, setLocalVarBool ui_showApply 1 )
+		CHOICE_DVARYESNO( 28, "@MENU_OPTIMIZE_FOR_DUAL_VIDEO_CARDS", r_multiGpu, ; )
+		CHOICE_DVARYESNO( 29, "@MENU_SHADOWS", sm_enable, ; )
+		CHOICE_DVARYESNO( 30, "@MENU_SPECULAR_MAP", r_specular, ; )
+		CHOICE_DVARYESNO( 31, "@MENU_DOF", r_dof_enable, ; )
+		CHOICE_DVARYESNO( 32, "@MENU_GLOW", r_glow_allowed, ; )
+		CHOICE_DVARFLOATLIST( 33, "@MENU_NUMBER_OF_DYNAMIC_LIGHTS", r_dlightlimit, { "@MENU_OFF" 0 "@MENU_LOW" 2 "@MENU_NORMAL" 4 }, ; )
+		CHOICE_DVARFLOATLIST( 34, "@MENU_ZFEATHER_SMOKE", ui_zfeather, { "@MENU_NO" 0 "@MENU_YES" 1 }, setLocalVarBool ui_showApply 1 )
+		
+		CHOICE_DVARYESNO( 35, "@MENU_RAGDOLL", ragdoll_enable, ;)
+		CHOICE_DVARYESNO( 36, "@MENU_BULLET_IMPACTS", fx_marks, ; )
+		CHOICE_DVARFLOATLIST( 37, "@MENU_MODEL_DETAIL", r_lodScaleRigid, { "@MENU_NORMAL" 1 "@MENU_LOW" 2 }, ; )
+		CHOICE_DVARFLOATLIST( 38, "@MENU_WATER_DETAIL", r_drawWater, { "@MENU_NORMAL" 1 "@MENU_LOW" 0 }, ; )
+		
+		CHOICE_DVARFLOATLIST_VIS( 39, "@MENU_NUMBER_OF_CORPSES", ai_corpsecount, { "@MENU_TINY" 3 "@MENU_SMALL" 5 "@MENU_MEDIUM" 10 "@MENU_LARGE" 20 "@MENU_INSANE" 64 }, ;, when( !dvarint( ui_multiplayer ) ) )
+
+		//CHOICE_BUTTON( 34, "@MENU_TEXTURE_SETTINGS", close self; open options_graphics_texture )
+
+		itemDef 
+		{
+			name			apply
+			text			"@MENU_APPLY"
+			type			1
+			style			WINDOW_STYLE_FILLED
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			rect			200 -26 80 20 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			textaligny		18
+			visible			when( localVarBool( ui_showApply ) && !dvarint( sv_running ) );
+			mouseEnter		{ play "mouse_over"; }
+			action 
+			{
+				play "mouse_click";
+				open vid_restart_popmenu
+			}	
+		}
+		itemDef 
+		{
+			name			apply2
+			text			"@MENU_APPLY"
+			type			1
+			style			WINDOW_STYLE_FILLED
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			rect			200 -26 80 20 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			textaligny		18
+			visible			when( localVarBool( ui_showApply ) && dvarint( sv_running ) );
+			mouseEnter		{ play "mouse_over"; }
+			action 
+			{
+				play "mouse_click";
+				uiScript openMenuOnDvar g_reloading 0 vid_restart_popmenu_listen; 
+				uiScript openMenuOnDvarNot g_reloading 0 vid_restart_popmenu_dead;
+			}	
+		}
+	
+		//CHOICE_APPLY_VIS( "@MENU_APPLY", open vid_restart_popmenu, when( ( localVarBool( ui_showApply ) && !dvarint( sv_running ) ) || dvarInt(ui_allow_graphic_change) ); )
+		//CHOICE_APPLY_VIS( "@MENU_APPLY", uiScript openMenuOnDvar g_reloading 0 vid_restart_popmenu_listen; uiScript openMenuOnDvarNot g_reloading 0 vid_restart_popmenu_dead;, when( localVarBool( ui_showApply ) && dvarint( sv_running ) && dvarInt( ui_allow_graphic_change ) == 0 ); )
+		//CHOICE_BACK( "@MENU_BACK", close self )
+		
+		itemDef 
+		{
+			name			graphic_warning
+			text			"@MENU_GRAPHICS_WARNING"
+			type			1
+			style			WINDOW_STYLE_FILLED
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			rect			20 -116 240 240 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			visible			1
+			mouseEnter		{ play "mouse_over"; }
+			decoration
+			autowrapped
+		}
+		//CHOICE_FOOTNOTE( "@MENU_GRAPHICS_WARNING", 340, 340 )
+	}
+	
+	// restoring button properties
+	
+	// ---
+	#undef TEXTSIZE_BUTTON_PC
+	#define TEXTSIZE_BUTTON_PC	0.4
+	
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X 		220
+	
+	#undef CHOICE_SIZE_Y
+	#define CHOICE_SIZE_Y 		22
+	
+	#undef  SECTION_X_OFFSET
+	#define SECTION_X_OFFSET 	0
+	// ---
+		
+	menuDef
+	{
+		name			options_graphics_texture
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen
+		{
+			setLocalVarBool ui_hideBack 1;
+			setLocalVarBool ui_showApply 0;
+
+			exec "setfromdvar ui_r_picmip			r_picmip";
+			exec "setfromdvar ui_r_picmip_bump		r_picmip_bump";
+			exec "setfromdvar ui_r_picmip_spec		r_picmip_spec";
+			exec "setfromdvar ui_r_picmip_manual	r_picmip_manual";
+		}
+		onClose
+		{
+			setLocalVarBool ui_hideBack 0;
+		}
+
+		onESC
+		{
+			close self;
+			//open options_graphics;
+		}
+		
+		#include "ui_mp/leftside_options.inc"
+		
+		CHOICE_SECTION_TITLE( 21, "@MENU_TEXTURE_SETTINGS" )
+
+		CHOICE_DVARSTRINGLIST( 22, "@MENU_TEXTURE_MIPMAPS", r_texFilterMipMode, { "@MENU_AUTOMATIC"; "Unchanged"; "@MENU_BILINEAR"; "Force Bilinear"; "@MENU_TRILINEAR"; "Force Trilinear" }, setLocalVarBool ui_showApply 1 )
+		CHOICE_DVARSLIDER( 23, "@MENU_TEXTURE_ANISOTROPY", r_texFilterAnisoMin, 1, 1, 16, setLocalVarBool ui_showApply 1 )
+		CHOICE_DVARFLOATLIST( 24, "@MENU_TEXTURE_QUALITY", ui_r_picmip_manual, { "@MENU_AUTOMATIC" 0 "@MENU_MANUAL" 1 }, setLocalVarBool ui_showApply 1 )
+		CHOICE_DVARFLOATLIST_VIS( 25, "@MENU_TEXTURE_RESOLUTION", ui_r_picmip, { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }, setLocalVarBool ui_showApply 1, when( dvarint( ui_r_picmip_manual ) ) )
+		CHOICE_DVARFLOATLIST_VIS( 26, "@MENU_NORMAL_MAP_RESOLUTION", ui_r_picmip_bump, { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }, setLocalVarBool ui_showApply 1, when( dvarint( ui_r_picmip_manual ) ) )
+		CHOICE_DVARFLOATLIST_VIS( 27, "@MENU_SPECULAR_MAP_RESOLUTION", ui_r_picmip_spec, { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }, setLocalVarBool ui_showApply 1, when( dvarint( ui_r_picmip_manual ) ) )
+
+		itemDef 
+		{
+			name			apply
+			text			"@MENU_APPLY"
+			type			1
+			style			WINDOW_STYLE_FILLED
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			rect			200 -26 80 20 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			textaligny		18
+			visible			when( localVarBool( ui_showApply ) );
+			mouseEnter		{ play "mouse_over"; }
+			action 
+			{
+				play "mouse_click";
+				close self; 
+				open apply_picmip_popmenu;
+			}	
+		}
+		//CHOICE_APPLY_VIS( "@MENU_APPLY", close self; open apply_picmip_popmenu, when( localVarBool( ui_showApply ) ) )
+		
+		//CHOICE_BACK( "@MENU_BACK", close self; open options_graphics )
+
+		itemDef 
+		{
+			name			graphic_warning
+			text			"@MENU_GRAPHICS_WARNING"
+			type			1
+			style			WINDOW_STYLE_FILLED
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			rect			20 -116 240 240 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			visible			1
+			mouseEnter		{ play "mouse_over"; }
+			decoration
+			autowrapped
+		}
+		//CHOICE_FOOTNOTE( "@MENU_GRAPHICS_WARNING", 340, 340 )
+	}
+
+	menuDef
+	{
+		name			apply_picmip_popmenu
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen
+		{
+			setLocalVarBool ui_showApply 0;
+
+			execnow "setfromdvar r_picmip ui_r_picmip";
+			execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
+			execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
+			execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+			exec "wait; wait; r_applyPicmip";
+			close apply_picmip_popmenu;
+			open options_graphics;
+		}
+		
+		// background black frame
+		PREPROC_SHADER_DRAW( ORIGIN_OPTIONS_FRAME 600 480, 100 0, "white", 0.1 0.1 0.12 1, 0, 1, 0 0 0 0 )
+		
+		CHOICE_SECTION_TITLE( 1, "@MENU_APPLYING_CHANGES" )
+	}
+}

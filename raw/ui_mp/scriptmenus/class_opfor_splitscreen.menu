@@ -1,0 +1,12 @@
+{
+	menuDef
+	{
+		name			"class_opfor_splitscreen"
+		onOpen
+		{
+			setLocalVarString ui_team "opfor"
+			open class_splitscreen
+			close self
+		}
+	}
+}

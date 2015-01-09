@@ -1,0 +1,17 @@
+{
+	stateMap "default2d";
+
+	vertexShader 2.0 "glow_setup.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "glow_setup.hlsl"
+	{
+		colorMapSampler = sampler.resolvedScene;
+		colorMapPostSunSampler = sampler.resolvedPostSun;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

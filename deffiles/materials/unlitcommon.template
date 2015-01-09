@@ -1,0 +1,124 @@
+#if @distFalloff@
+	#if !@hdrPortal@
+		#error "Cannot have distance falloff active without hdrPortal. (NOTE: Dist falloff option is not visible unless hdrPortal is checked.)"
+	#endif
+
+	#if "@blendFunc@" == "Multiply"
+		#error "Distance Falloff does not currently support Multiply."
+	#endif
+
+	#if @outdoorOnly@
+		#error "Distance Falloff does not currently support outdoor-only types."
+	#endif
+
+	#define DIST_FALLOFF_SUFFIX "_distfalloff"
+#else
+	#define DIST_FALLOFF_SUFFIX ""
+#endif
+
+#if @falloff@
+	#if "@blendFunc@" == "Multiply"
+		#error "Falloff does not currently support Multiply."
+	#endif
+
+	#if @outdoorOnly@
+		#error "Falloff does not currently support outdoor-only types."
+	#endif
+
+	#define GOD_FALLOFF_SUFFIX "_falloff"
+#else
+	#define GOD_FALLOFF_SUFFIX ""
+#endif
+
+#define FALLOFF_SUFFIX DIST_FALLOFF_SUFFIX + GOD_FALLOFF_SUFFIX
+
+
+#if @noFog@
+	#define FOG_SUFFIX "_nofog"
+#else
+	#define FOG_SUFFIX ""
+#endif
+
+#if @useSpotLight@
+	#define SPOT_SUFFIX "_spot"
+#else
+	#define SPOT_SUFFIX ""
+#endif
+
+#if @eyeOffsetDepth@ != 0
+	#define EYE_OFFSET "_eyeoffset"
+#else
+	#define EYE_OFFSET ""
+#endif
+
+#define TECH_SUFFIX FOG_SUFFIX + SPOT_SUFFIX + EYE_OFFSET
+
+#if "@materialType@" == "effect" && @zFeather@
+	#if "@blendFunc@" == "Multiply"
+		#error "zFeather does not support multiply."
+	#elif "@blendFunc@" == "Add" || "@blendFunc@" == "Screen Add"
+		#if @outdoorOnly@
+			techniqueSet( "effect_zfeather_outdoor_add" + TECH_SUFFIX );
+		#else
+			techniqueSet( "effect_zfeather" + FALLOFF_SUFFIX + "_add" + TECH_SUFFIX );
+		#endif
+	#else
+		#if @outdoorOnly@
+			techniqueSet( "effect_zfeather_outdoor" + TECH_SUFFIX );
+		#else 
+			techniqueSet( "effect_zfeather" + FALLOFF_SUFFIX + TECH_SUFFIX  );
+		#endif
+	#endif
+#else // "@materialType@" == "effect" && @zFeather@
+	#if "@materialType@" == "effect"
+		#define BASE_TECH_NAME "effect"
+	#else
+		#define BASE_TECH_NAME "unlit"
+	#endif
+
+	#if "@blendFunc@" == "Multiply"
+		techniqueSet( BASE_TECH_NAME + "_multiply" + TECH_SUFFIX );
+	#elif "@blendFunc@" == "Add" || "@blendFunc@" == "Screen Add"
+		techniqueSet( BASE_TECH_NAME + FALLOFF_SUFFIX + "_add" + TECH_SUFFIX );
+	#else
+		techniqueSet( BASE_TECH_NAME + FALLOFF_SUFFIX + TECH_SUFFIX );
+	#endif
+#endif // #else // #if "@materialType@" == "effect" && @zFeather@
+
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in effect/unlit materials"
+	#endif
+	"colorMap" = STREAM_PREFIX map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+}
+
+
+constantTable
+{
+#if @falloff@ || @distFalloff@
+	#define COS_BEGIN (cos( @falloffBeginAngle@ ) * cos( @falloffBeginAngle@ ))
+	#define COS_END (cos( @falloffEndAngle@ ) * cos( @falloffEndAngle@ ))
+	#define FALLOFF_SCALE (1.0 / (COS_BEGIN - COS_END))
+	#define FALLOFF_TRANS (1.0 - COS_BEGIN * FALLOFF_SCALE )
+
+	#define DIST_BEGIN ( @distFalloffBeginDistance@ )
+	#define DIST_END ( @distFalloffEndDistance@ )
+	#define DIST_FALLOFF_SCALE (1.0 / (DIST_BEGIN - DIST_END))
+	#define DIST_FALLOFF_TRANS (-1.0 * DIST_END * DIST_FALLOFF_SCALE)
+	"falloffParms" = float4( DIST_FALLOFF_SCALE, DIST_FALLOFF_TRANS, FALLOFF_SCALE, FALLOFF_TRANS );
+	"falloffBeginColor" = float4( @,falloffBeginColor@ );
+	"falloffEndColor" = float4( @,falloffEndColor@ );
+#endif // #if @falloff@ || @distFalloff@
+#if @zFeather@
+	"featherParms" = float4( 1.0 / @zFeatherDepth@, @zFeatherDepth@, 0, 0 );
+#endif // #if @zFeather@
+#if @eyeOffsetDepth@ != 0
+	"eyeOffsetParms" = float4( @eyeOffsetDepth@, 0, 0, 0 );
+#endif // #if @eyeOffsetDepth@ != 0
+	"colorTint" = float4( @,colorTint@ );
+}
+
+
+refImage( "$colorMap$" );

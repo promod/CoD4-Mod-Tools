@@ -1,0 +1,58 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 28 -48 0 ) ( 28 48 0 ) ( -29 48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -48 68 ) ( -29 0 68 ) ( 28 0 58 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -48 67 ) ( 28 -48 67 ) ( 28 -48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -48 56 ) ( 28 48 56 ) ( 28 48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 0 68 ) ( -29 -48 68 ) ( -29 -48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -31 0 67 ) ( -14 0 67 ) ( -31 0 99 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 28 -48 0 ) ( 28 48 0 ) ( -29 48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 48 56 ) ( 28 -48 56 ) ( -29 -48 67 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 45 0 ) ( -26 45 66 ) ( -29 48 67 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -48 0 ) ( -29 48 0 ) ( -29 48 67 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 0 67 ) ( -31 0 67 ) ( -31 0 99 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 45 66 ) ( -26 45 0 ) ( -26 0 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 28 -48 0 ) ( 28 48 0 ) ( -29 48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 48 56 ) ( 28 -48 56 ) ( -29 -48 67 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 45 0 ) ( 26 45 56 ) ( 28 48 56 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 48 66 ) ( -29 48 0 ) ( 28 48 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 48 0 ) ( -29 48 66 ) ( -26 45 66 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 45 56 ) ( 26 45 0 ) ( -26 45 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 28 -48 0 ) ( 28 48 0 ) ( -29 48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 48 56 ) ( 28 -48 56 ) ( -29 -48 67 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 48 56 ) ( 28 48 0 ) ( 28 0 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 0 67 ) ( -31 0 67 ) ( -31 0 99 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 48 0 ) ( 28 48 56 ) ( 26 45 56 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 25 66.5 ) ( 26 39 66.5 ) ( 26 39 98.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( 26 45 0 ) ( -26 45 0 ) ( -26 0 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 0 6 ) ( -27 45 6 ) ( 25 45 6 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 0 67 ) ( 26 0 67 ) ( 26 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 0 67 ) ( 26 45 67 ) ( 26 45 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 45 67 ) ( -26 45 67 ) ( -26 45 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 45 67 ) ( -26 0 67 ) ( -26 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "me_dumpster"
+"classname" "misc_model"
+}

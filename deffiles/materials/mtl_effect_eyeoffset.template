@@ -1,0 +1,24 @@
+#include "commonsetup.template"
+
+techniqueSet( "effect_add_eyeoffset" );
+
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in effect materials"
+	#endif
+	"colorMap" = map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+}
+
+
+constantTable
+{
+#if @zFeather@
+	"featherParms" = float4( 1.0 / @zFeatherDepth@, @zFeatherDepth@, 0, 0 );
+#endif // #if @zFeather@
+	"eyeOffsetParms" = float4( @customString@, 0, 0, 0 );
+}
+
+
+refImage( "$colorMap$" );

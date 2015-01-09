@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 136 16 -12.5 ) ( -136 16 -12.5 ) ( -136 -16 -12.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 -17 12.5 ) ( -136 15 12.5 ) ( 136 15 12.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 -98 38.5 ) ( 136 -98 38.5 ) ( 136 -98 14.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( 12 -14.5 28 ) ( 12 17.5 28 ) ( 12 17.5 4 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( 136 98.5 27 ) ( -136 98.5 27 ) ( -136 98.5 3 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( -11.5 14.5 28 ) ( -11.5 -17.5 28 ) ( -11.5 -17.5 4 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( -7 -2934 10 ) ( -11 -2934 4.5 ) ( -11 -2902 4.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2934 12.5 ) ( -7 -2934 10 ) ( -7 -2902 10 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3.5 -2934 11.5 ) ( -1.5 -2934 13 ) ( -1.5 -2902 13 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -2934 7 ) ( 4.5 -2934 11 ) ( 4.5 -2902 11 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 11.5 -2934 1 ) ( 10 -2934 7 ) ( 10 -2902 7 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -2934 -9.5 ) ( 12 -2934 -4.5 ) ( 12 -2902 -4.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2.5 -2934 -12 ) ( 8 -2934 -9.5 ) ( 8 -2902 -9.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9.5 -2934 -8 ) ( -4 -2934 -12.5 ) ( -4 -2902 -12.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11.5 -2934 -3 ) ( -9.5 -2934 -8 ) ( -9.5 -2902 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_woodlog_24_192_a"
+"classname" "misc_model"
+}

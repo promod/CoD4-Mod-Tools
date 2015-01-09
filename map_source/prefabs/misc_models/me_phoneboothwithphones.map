@@ -1,0 +1,64 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"radiosityScale" "1"
+"sunRadiosity" "2"
+"contrastGain" "0.15"
+"diffusefraction" "0.05"
+"_color" "0.90 0.90 1"
+"sunlight" "1.5"
+"sundirection" "-155 136 0"
+"sundiffusecolor" ".43 .39 1"
+"suncolor" ".9 .98 1"
+"ambient" ".1"
+"bouncefraction" ".1"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 6 -150 0 ) ( -6 -150 0 ) ( -6 -196 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -196 42 ) ( -6 -150 42 ) ( 6 -150 42 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -2 74 ) ( 6 -2 74 ) ( 6 -2 -8 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -196 82 ) ( 6 -150 82 ) ( 6 -150 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 2 74 ) ( -6 2 74 ) ( -6 2 -8 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -150 82 ) ( -6 -196 82 ) ( -6 -196 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 6 -150 42 ) ( -6 -150 42 ) ( -6 -196 42 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 26 74 ) ( 6 26 74 ) ( 6 -26 74 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -26 80 ) ( 6 -26 80 ) ( 6 -8 42 ) clip_nosight_metal 64 64 0 -42 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -196 124 ) ( 10 -150 124 ) ( 10 -150 42 ) clip_nosight_metal 64 64 0 -42 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 26 80 ) ( -6 26 80 ) ( -6 8 42 ) clip_nosight_metal 64 64 0 -42 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 -150 124 ) ( -10 -196 124 ) ( -10 -196 42 ) clip_nosight_metal 64 64 0 -42 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 6 26 74 ) ( -6 26 74 ) ( -6 -26 74 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -26 82 ) ( -6 26 82 ) ( 6 26 82 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -26 82 ) ( 6 -26 82 ) ( 6 -26 74 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -26 82 ) ( 10 26 82 ) ( 10 26 74 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 26 82 ) ( -6 26 82 ) ( -6 26 74 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10 26 82 ) ( -10 -26 82 ) ( -10 -26 74 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "prefabs/misc_models/me_phonebooth.map"
+"classname" "misc_prefab"
+}
+// entity 2
+{
+"origin" "-2.0 -2.0 48.0"
+"model" "prefabs/misc_models/me_phonebooth_phone.map"
+"classname" "misc_prefab"
+}
+// entity 3
+{
+"angles" "0 180 0"
+"origin" "2.0 2.0 48.0"
+"model" "prefabs/misc_models/me_phonebooth_phone.map"
+"classname" "misc_prefab"
+}

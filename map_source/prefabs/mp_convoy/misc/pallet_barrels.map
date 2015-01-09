@@ -1,0 +1,50 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 0 0 0 ) ( 64 0 0 ) ( 64 56 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 56 56 ) ( 64 56 56 ) ( 64 0 56 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 0 ) ( 0 0 56 ) ( 64 0 56 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -164 0 0
+ ( 64 56 0 ) ( 64 0 0 ) ( 64 0 56 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -164 0 0
+ ( 64 56 0 ) ( 64 56 56 ) ( 0 56 56 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -164 0 0
+ ( 0 56 56 ) ( 0 0 56 ) ( 0 0 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -164 0 0
+}
+}
+// entity 1
+{
+"angles" "0 0 0"
+"origin" "19.0 42.0 8.4"
+"model" "prefabs/misc_models/com_barrel_white_rust.map"
+"classname" "misc_prefab"
+}
+// entity 2
+{
+"angles" "0 50 0"
+"origin" "19.0 14.0 8.4"
+"model" "prefabs/misc_models/com_barrel_white_rust.map"
+"classname" "misc_prefab"
+}
+// entity 3
+{
+"angles" "0 200 0"
+"origin" "47.0 14.0 8.4"
+"model" "prefabs/misc_models/com_barrel_white_rust.map"
+"classname" "misc_prefab"
+}
+// entity 4
+{
+"angles" "0 275 0"
+"origin" "47.0 42.0 8.4"
+"model" "prefabs/misc_models/com_barrel_blue_rust.map"
+"classname" "misc_prefab"
+}
+// entity 5
+{
+"origin" "33.0 28.0 0.0"
+"model" "prefabs/mp_crash/misc/pallet.map"
+"classname" "misc_prefab"
+}

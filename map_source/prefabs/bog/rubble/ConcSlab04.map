@@ -1,0 +1,1635 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( -8 48 12 ) ( -8 44 12 ) ( -16 44 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( -16 44 0 ) ( -8 44 0 ) ( -8 48 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( -16 44 12 ) ( -8 44 12 ) ( -8 44 0 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 48 12 ) ( -8 48 0 ) ( -8 44 0 ) caulk 64 64 961.5 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 44 12 ) ( -16 44 0 ) ( -8 48 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 1
+{
+  contents detail;
+ ( 28 44 12 ) ( 28 48 12 ) ( 40 44 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 40 44 0 ) ( 28 48 0 ) ( 28 44 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 36 44 0 ) ( 36 44 12 ) ( 28 48 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 28 44 0 ) ( 28 48 0 ) ( 28 48 12 ) caulk 64 64 961.5 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 44 12 ) ( 36 44 0 ) ( 28 44 0 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 184 -156 12 ) ( 128 -156 12 ) ( 128 -56 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 -56 0 ) ( 128 -56 0 ) ( 128 -156 0 ) ch_concretewall02 128 128 -691.5 -861.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 128 -64 12 ) ( 128 -64 0 ) ( 184 -64 0 ) caulk 64 64 -692 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 -156 0 ) ( 128 -56 0 ) ( 128 -56 12 ) caulk 64 64 -100 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 -64 12 ) ( 128 -72 12 ) ( 128 -72 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 3
+{
+  contents detail;
+ ( 184 -56 12 ) ( 128 -56 12 ) ( 128 44 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 128 44 0 ) ( 128 -56 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -64 12 ) ( 184 -64 0 ) ( 128 -64 0 ) caulk 64 64 -692 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 -56 0 ) ( 128 44 0 ) ( 128 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 36 12 ) ( 176 44 12 ) ( 128 36 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 -44 16 ) ( 144 -64 16 ) ( 144 -64 48 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 184 44 0 ) ( 128 44 0 ) ( 128 -56 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 144 -64 16 ) ( 144 -44 16 ) ( 144 -64 48 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -64 12 ) ( 184 -60 0 ) ( 216 -64 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 148 -60 12 ) ( 144 -64 12 ) ( 144 -64 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 5
+{
+  contents detail;
+ ( 184 44 0 ) ( 128 44 0 ) ( 128 -56 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -56 12 ) ( 184 44 12 ) ( 184 44 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -64 12 ) ( 184 -60 0 ) ( 216 -64 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -64 12 ) ( 180 -60 12 ) ( 184 -64 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 6
+{
+  contents detail;
+ ( 112 -88 0 ) ( 112 -88 12 ) ( 116 -84 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 108 -84 12 ) ( 116 -84 12 ) ( 116 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 -88 0 ) ( 80 -88 12 ) ( 112 -88 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 116 -88 6 ) ( 116 -84 12 ) ( 148 -84 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 116 -84 0 ) ( 116 -88 2 ) ( 148 -84 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 96 -88 12 ) ( 76 -84 12 ) ( 96 -88 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 7
+{
+  contents detail;
+ ( 20 -88 6 ) ( 20 -88 10 ) ( 36 -84 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 28 -84 12 ) ( -12 -84 12 ) ( -12 -84 0 ) caulk 64 64 -88 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -88 10 ) ( 12 -88 10 ) ( 12 -88 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 12 -88 10 ) ( -4 -88 10 ) ( -12 -84 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -4 -88 6 ) ( 12 -88 6 ) ( 28 -84 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -4 -88 10 ) ( -4 -88 6 ) ( -12 -84 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 8
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( -24 44 12 ) ( -24 44 0 ) ( 128 44 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 116 -84 12 ) ( 116 -84 0 ) ( -24 -84 0 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 -72 12 ) ( 128 44 12 ) ( 128 44 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 -72 12 ) ( 128 -72 0 ) ( 116 -84 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 96 44 12 ) ( 128 36 12 ) ( 128 36 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 -84 12 ) ( 76 -74 12 ) ( 76 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 36 -84 12 ) ( 36 -74 12 ) ( 36 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -84 12 ) ( 62 -80 0 ) ( 94 -84 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -80 12 ) ( 36 -84 12 ) ( 36 -84 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 10
+{
+  contents detail;
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 62 -66 12 ) ( 62 -78 12 ) ( 62 -78 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -84 12 ) ( 62 -80 0 ) ( 94 -84 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -84 12 ) ( 54 -80 12 ) ( 54 -80 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 11
+{
+  contents detail;
+ ( 184 -56 12 ) ( 128 -56 12 ) ( 128 44 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 128 44 0 ) ( 128 -56 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 128 44 12 ) ( 128 44 0 ) ( 184 44 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 184 -56 12 ) ( 184 44 12 ) ( 184 44 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 36 12 ) ( 176 44 12 ) ( 128 36 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 -64 16 ) ( 144 -44 16 ) ( 144 -64 48 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -60 12 ) ( 144 -60 12 ) ( 184 -60 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 12
+{
+  contents detail;
+ ( 184 -56 12 ) ( 184 44 12 ) ( 184 44 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -60 0 ) ( 184 -64 12 ) ( 216 -64 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 -60 12 ) ( 184 -60 12 ) ( 184 -60 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -60 12 ) ( 180 -60 0 ) ( 180 -28 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 13
+{
+  contents detail;
+ ( 144 -64 16 ) ( 144 -44 16 ) ( 144 -64 48 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -60 0 ) ( 184 -64 12 ) ( 216 -64 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 -60 12 ) ( 184 -60 12 ) ( 184 -60 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 148 -60 0 ) ( 144 -60 12 ) ( 148 -28 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 14
+{
+  contents detail;
+ ( 184 -56 12 ) ( 128 -56 12 ) ( 128 44 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 -60 0 ) ( 184 -64 12 ) ( 216 -64 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 144 -60 12 ) ( 184 -60 12 ) ( 184 -60 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 180 -60 0 ) ( 184 -60 12 ) ( 180 -28 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 -60 12 ) ( 148 -60 0 ) ( 148 -28 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 15
+{
+  contents detail;
+ ( 62 -66 12 ) ( 62 -78 12 ) ( 62 -78 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -80 0 ) ( 62 -84 12 ) ( 94 -84 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -80 12 ) ( 62 -80 12 ) ( 62 -80 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -80 12 ) ( 54 -80 0 ) ( 54 -48 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 16
+{
+  contents detail;
+ ( 36 -84 12 ) ( 36 -74 12 ) ( 36 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -80 0 ) ( 62 -84 12 ) ( 94 -84 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -80 12 ) ( 62 -80 12 ) ( 62 -80 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -80 0 ) ( 36 -80 12 ) ( 36 -48 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 17
+{
+  contents detail;
+ ( 212 -84 12 ) ( 220 -84 12 ) ( 220 -84 44 ) caulk 64 64 104 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 220 -88 6 ) ( 220 -88 2 ) ( 200 -88 2 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 220 -88 6 ) ( 220 -84 12 ) ( 252 -84 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 220 -84 0 ) ( 220 -88 2 ) ( 252 -84 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 208 -88 12 ) ( 200 -84 12 ) ( 200 -84 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 220 -84 12 ) ( 212 -88 12 ) ( 212 -88 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 18
+{
+  contents detail;
+ ( 252 -68 12 ) ( 252 -68 0 ) ( 260 -52 0 ) caulk 64 64 -166 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 256 -68 2 ) ( 256 -68 6 ) ( 264 -52 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 256 -68 6 ) ( 252 -68 12 ) ( 260 -52 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 252 -68 0 ) ( 256 -68 2 ) ( 264 -52 2 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 258 -64 12 ) ( 252 -68 12 ) ( 252 -68 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 260 -52 12 ) ( 260 -60 12 ) ( 260 -52 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 19
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 260 -52 12 ) ( 244 -84 12 ) ( 244 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 252 -68 12 ) ( 220 -84 12 ) ( 252 -68 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 184 -64 12 ) ( 194 -64 12 ) ( 184 -64 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -72 12 ) ( 244 -68 12 ) ( 244 -72 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 20
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -64 12 ) ( 194 -64 12 ) ( 184 -64 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -68 12 ) ( 244 -72 12 ) ( 244 -72 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 220 -84 12 ) ( 220 -80 12 ) ( 220 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -68 12 ) ( 220 -80 12 ) ( 220 -80 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 21
+{
+  contents detail;
+ ( 244 -72 0 ) ( 244 -68 0 ) ( 220 -80 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 244 -68 12 ) ( 244 -72 12 ) ( 244 -72 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -68 0 ) ( 244 -72 12 ) ( 220 -84 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -72 12 ) ( 238 -72 12 ) ( 244 -72 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 22
+{
+  contents detail;
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 208 -84 12 ) ( 260 -84 12 ) ( 260 -84 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 204 -88 12 ) ( 204 -88 0 ) ( 180 -64 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 220 -80 12 ) ( 220 -84 12 ) ( 220 -84 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 244 -84 12 ) ( 244 -80 0 ) ( 276 -84 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 23
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -60 0 ) ( 184 44 0 ) ( 184 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 204 -88 12 ) ( 204 -88 0 ) ( 180 -64 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 184 -64 12 ) ( 194 -64 12 ) ( 184 -64 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 220 -80 12 ) ( 220 -84 12 ) ( 220 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -80 0 ) ( 244 -84 12 ) ( 276 -84 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 24
+{
+  contents detail;
+ ( 244 -68 12 ) ( 244 -72 12 ) ( 244 -72 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -68 0 ) ( 244 -68 12 ) ( 220 -80 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -72 12 ) ( 244 -68 0 ) ( 220 -80 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -64 12 ) ( 236 -64 0 ) ( 244 -32 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 25
+{
+  contents detail;
+ ( 244 -68 12 ) ( 244 -72 12 ) ( 220 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 220 -84 12 ) ( 220 -80 12 ) ( 220 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -68 0 ) ( 244 -68 12 ) ( 220 -80 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 244 -72 12 ) ( 244 -68 0 ) ( 220 -80 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 236 -64 0 ) ( 244 -64 12 ) ( 244 -32 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 26
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 116 -84 12 ) ( 116 -84 0 ) ( -24 -84 0 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -74 12 ) ( 36 -84 12 ) ( 36 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -84 12 ) ( 36 -80 12 ) ( 36 -80 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 27
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -60 0 ) ( 184 44 0 ) ( 184 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 260 -52 12 ) ( 244 -84 12 ) ( 244 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 194 -64 12 ) ( 184 -64 12 ) ( 184 -64 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -52 12 ) ( 260 -52 12 ) ( 260 -52 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 28
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 260 -84 12 ) ( 260 44 12 ) ( 260 44 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 184 -60 0 ) ( 184 44 0 ) ( 184 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 260 -52 12 ) ( 184 -52 12 ) ( 260 -52 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 252 -38 12 ) ( 260 -38 12 ) ( 260 -38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 29
+{
+  contents detail;
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( -46 -38 -54 ) ( -54 -38 -54 ) ( -46 -38 -22 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 260 -38 12 ) ( 256 -38 0 ) ( 260 -6 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 256 -30 12 ) ( 260 -38 12 ) ( 260 -38 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 30
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 224 44 12 ) ( 248 20 12 ) ( 248 20 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 248 20 12 ) ( 236 20 12 ) ( 248 20 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 236 22 12 ) ( 236 30 12 ) ( 236 30 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 236 32 0 ) ( 244 32 12 ) ( 244 64 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 31
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 212 44 12 ) ( 236 32 12 ) ( 236 32 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 248 20 12 ) ( 236 20 12 ) ( 248 20 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 236 30 12 ) ( 236 22 12 ) ( 236 30 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 30 12 ) ( 212 42 12 ) ( 212 42 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 44 12 ) ( 212 32 0 ) ( 244 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 32
+{
+  contents detail;
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -60 0 ) ( 184 44 0 ) ( 184 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 32 0 ) ( 212 44 12 ) ( 244 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 44 12 ) ( 196 32 12 ) ( 184 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 33
+{
+  contents detail;
+ ( 128 -4 14 ) ( 128 16 14 ) ( 128 -4 46 ) caulk 64 64 68 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 176 44 10 ) ( 176 44 0 ) ( 128 36 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 176 48 6 ) ( 176 48 10.5 ) ( 128 40 10.5 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 176 48 10.5 ) ( 176 44 12 ) ( 128 36 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 176 44 0 ) ( 176 48 4 ) ( 128 40 4 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 152 44 12 ) ( 176 44 12 ) ( 176 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 34
+{
+  contents detail;
+ ( 96 44 0 ) ( 96 44 10 ) ( 128 36 10 ) caulk 64 64 -24 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 96 48 10.5 ) ( 96 48 6 ) ( 128 40 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 96 44 12 ) ( 96 48 10.5 ) ( 128 40 10.5 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 96 48 4 ) ( 96 44 0 ) ( 128 36 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 128 40 10 ) ( 128 36 10 ) ( 128 40 42 ) caulk 64 64 -18 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 96 44 12 ) ( 112 44 12 ) ( 96 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 35
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -60 0 ) ( 184 44 0 ) ( 184 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 194 -4 12 ) ( 260 -4 12 ) ( 260 -4 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 256 -38 0 ) ( 260 -38 12 ) ( 260 -6 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 128 -30 0 ) ( 128 -38 12 ) ( 160 -30 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 36
+{
+  contents detail;
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -60 0 ) ( 184 44 0 ) ( 184 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 260 -38 12 ) ( 252 -38 12 ) ( 260 -38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 256 -38 0 ) ( 260 -38 12 ) ( 260 -6 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 -38 12 ) ( 128 -30 0 ) ( 160 -30 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 37
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 236 44 12 ) ( 260 -4 12 ) ( 260 -4 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 260 -4 12 ) ( 194 -4 12 ) ( 260 -4 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 256 44 0 ) ( 260 44 12 ) ( 260 76 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 236 20 12 ) ( 248 20 12 ) ( 248 20 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 244 20 12 ) ( 236 20 0 ) ( 244 52 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 38
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -60 0 ) ( 184 44 0 ) ( 184 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 260 -4 12 ) ( 194 -4 12 ) ( 260 -4 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 236 20 12 ) ( 248 20 12 ) ( 248 20 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 236 20 0 ) ( 244 20 12 ) ( 244 52 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 39
+{
+  contents detail;
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 184 -60 0 ) ( 184 44 0 ) ( 184 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 248 20 12 ) ( 236 20 12 ) ( 248 20 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 44 12 ) ( 212 32 0 ) ( 244 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 196 20 0 ) ( 184 20 12 ) ( 196 52 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 40
+{
+  contents detail;
+ ( 84 48 12 ) ( 92 48 12 ) ( 84 48 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 96 44 12 ) ( 88 44 12 ) ( 96 44 44 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 732 44 12 ) ( 732 48 6 ) ( 764 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 732 48 2 ) ( 732 44 0 ) ( 764 48 2 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 88 48 12 ) ( 96 44 12 ) ( 88 48 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 62 44 12 ) ( 76 48 12 ) ( 62 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 41
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 184 44 0 ) ( 184 -60 0 ) ( 208 -84 0 ) ch_concretewall02 128 128 -691.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 248 20 12 ) ( 236 20 12 ) ( 248 20 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 42 12 ) ( 212 30 12 ) ( 212 42 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 44 12 ) ( 212 32 0 ) ( 244 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 184 20 12 ) ( 196 20 0 ) ( 196 52 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 38 12 ) ( 212 38 6 ) ( 244 38 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 42
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 212 42 12 ) ( 212 30 12 ) ( 212 42 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 44 12 ) ( 212 32 0 ) ( 244 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 212 38 6 ) ( 212 38 12 ) ( 244 38 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 204 38 12 ) ( 208 44 12 ) ( 208 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 43
+{
+  contents detail;
+ ( 260 44 12 ) ( 260 -84 12 ) ( 208 -84 12 ) ch_concretewall02 128 128 -692 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 212 44 12 ) ( 212 32 0 ) ( 244 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 184 20 12 ) ( 196 20 0 ) ( 196 52 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 212 38 6 ) ( 212 38 12 ) ( 244 38 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 192 44 12 ) ( 204 38 12 ) ( 204 38 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 44
+{
+  contents detail;
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 36 -84 12 ) ( 36 -74 12 ) ( 36 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 38 0 ) ( 62 44 12 ) ( 94 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 44 12 ) ( 48 38 12 ) ( 36 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 45
+{
+  contents detail;
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 62 -66 12 ) ( 62 -78 12 ) ( 62 -78 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 38 0 ) ( 62 44 12 ) ( 94 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 38 12 ) ( 62 44 12 ) ( 62 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 46
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 36 -84 12 ) ( 36 -74 12 ) ( 36 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -66 12 ) ( 62 -78 12 ) ( 62 -78 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -80 12 ) ( 40 -80 12 ) ( 62 -80 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 38 12 ) ( 62 38 12 ) ( 62 38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 47
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 -66 12 ) ( 62 -78 12 ) ( 62 -78 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 44 12 ) ( 62 38 0 ) ( 94 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 38 12 ) ( 46 38 12 ) ( 62 38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 38 12 ) ( 62 44 12 ) ( 62 44 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 48
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 36 -84 12 ) ( 36 -74 12 ) ( 36 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 44 12 ) ( 62 38 0 ) ( 94 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 38 12 ) ( 46 38 12 ) ( 62 38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 44 12 ) ( 48 38 12 ) ( 48 38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 49
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 44 12 ) ( 62 38 0 ) ( 94 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 62 38 12 ) ( 46 38 12 ) ( 62 38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 44 12 ) ( 56 38 12 ) ( 62 44 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 38 12 ) ( 36 44 12 ) ( 48 38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 96 42 12 ) ( 96 42 8 ) ( 128 42 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 50
+{
+  contents detail;
+ ( 62 44 12 ) ( 60 42 12 ) ( 46 42 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 46 42 8 ) ( 60 42 8 ) ( 62 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 60 42 12 ) ( 62 44 12 ) ( 60 42 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 42 12 ) ( 60 42 12 ) ( 60 42 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 42 8 ) ( 54 44 12 ) ( 46 42 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 51
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 44 12 ) ( 62 38 0 ) ( 94 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 48 38 12 ) ( 36 44 12 ) ( 48 38 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 96 42 8 ) ( 96 42 12 ) ( 128 42 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 44 12 ) ( 46 42 12 ) ( 46 42 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 52
+{
+  contents detail;
+ ( 12 44 12 ) ( -8 44 12 ) ( -8 48 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 12 52 0 ) ( -8 48 0 ) ( -8 44 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( -8 48 12 ) ( -8 48 0 ) ( 12 52 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -8 44 0 ) ( -8 48 0 ) ( -8 48 12 ) caulk 64 64 961.5 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 44 12 ) ( 12 44 0 ) ( -8 44 0 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 44 12 ) ( 12 52 12 ) ( 12 52 0 ) caulk 64 64 961.5 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 52 6 ) ( 12 48 0 ) ( 44 52 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 53
+{
+  contents detail;
+ ( 28 44 12 ) ( 12 44 12 ) ( 12 52 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 28 48 0 ) ( 12 52 0 ) ( 12 44 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 12 52 12 ) ( 12 52 0 ) ( 28 48 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 12 44 0 ) ( 12 52 0 ) ( 12 52 12 ) caulk 64 64 961.5 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 44 12 ) ( 28 44 0 ) ( 12 44 0 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 44 12 ) ( 28 48 12 ) ( 28 48 0 ) caulk 64 64 961.5 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 52 6 ) ( 12 48 0 ) ( 44 52 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 54
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( -24 -84 0 ) ( -24 44 0 ) ( -24 44 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 116 -84 12 ) ( 116 -84 0 ) ( -24 -84 0 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -84 12 ) ( -24 -60 12 ) ( -12 -84 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 36 -74 12 ) ( 36 -84 12 ) ( 36 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -80 12 ) ( 32 -84 12 ) ( 36 -80 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 28 6 ) ( -16 28 6 ) ( -22 28 38 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 55
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 128 44 0 ) ( -24 44 0 ) ( -24 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( -24 44 12 ) ( -24 44 0 ) ( 128 44 0 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -74 12 ) ( 36 -84 12 ) ( 36 -84 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 28 6 ) ( -22 28 6 ) ( -22 28 38 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 32 12 ) ( -16 42 12 ) ( -16 42 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 56
+{
+  contents detail;
+ ( -24 28 12 ) ( -16 44 12 ) ( -16 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -16 28 6 ) ( -22 28 6 ) ( -22 28 38 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 44 0 ) ( -24 44 12 ) ( -24 76 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 36 6 ) ( -16 28 0 ) ( 16 36 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 57
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( -24 28 12 ) ( -16 44 12 ) ( -16 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -16 28 6 ) ( -22 28 6 ) ( -22 28 38 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 42 12 ) ( -16 32 12 ) ( -16 42 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 44 12 ) ( -16 44 0 ) ( -24 76 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 44 12 ) ( -16 28 0 ) ( 16 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 58
+{
+  contents detail;
+ ( -24 28 12 ) ( -16 44 12 ) ( -16 44 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -16 42 12 ) ( -16 32 12 ) ( -16 42 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 44 12 ) ( -16 44 0 ) ( -24 76 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -16 28 0 ) ( -16 44 12 ) ( 16 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 59
+{
+  contents detail;
+ ( -24 -62 12 ) ( -24 -72 12 ) ( -24 -72 44 ) caulk 64 64 12 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 12 ) ( -44 0 12 ) ( -44 0 44 ) caulk 64 64 6 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 24 12 ) ( -28 24 4 ) ( -24 56 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -28 24 4 ) ( -24 24 0 ) ( -24 56 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -28 20 12 ) ( -24 28 12 ) ( -24 28 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 60
+{
+  contents detail;
+ ( -84 0 12 ) ( -84 0 0 ) ( 68 0 0 ) caulk 64 64 -785 644 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -118 12 ) ( -24 -128 12 ) ( -24 -128 44 ) caulk 64 64 -44 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -60 12 ) ( -34 -50 12 ) ( -24 -60 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -24 0 12 ) ( -28 0 4 ) ( -24 32 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 0 4 ) ( -24 0 0 ) ( -28 32 4 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 61
+{
+  contents detail;
+ ( 68 0 0 ) ( -84 0 0 ) ( -84 -128 0 ) ch_concretewall02 128 128 -784.5 -917.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( -84 0 12 ) ( -84 0 0 ) ( 68 0 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -34 -6 12 ) ( -28 0 12 ) ( -28 0 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -24 -60 12 ) ( -34 -50 12 ) ( -24 -60 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -34 0 6 ) ( -28 0 0 ) ( -34 32 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -24 0 12 ) ( -28 0 4 ) ( -24 32 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 0 ) ( -28 0 4 ) ( -28 32 4 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 62
+{
+  contents detail;
+ ( 68 -116 12 ) ( 56 -128 12 ) ( -84 -128 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( -84 0 12 ) ( -84 0 0 ) ( 68 0 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -34 -6 12 ) ( -28 0 12 ) ( -28 0 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -24 -60 12 ) ( -34 -50 12 ) ( -24 -60 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -28 0 12 ) ( -34 0 6 ) ( -28 32 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -34 0 6 ) ( -28 0 0 ) ( -34 32 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -28 0 4 ) ( -24 0 12 ) ( -24 32 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -14 4 ) ( -32 -8 4 ) ( -32 -8 36 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 63
+{
+  contents detail;
+ ( -34 -6 12 ) ( -28 0 12 ) ( -28 0 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -28 0 12 ) ( -34 0 6 ) ( -28 32 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -34 0 6 ) ( -28 0 0 ) ( -34 32 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -32 -8 4 ) ( -32 -14 4 ) ( -32 -8 36 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -16 12 ) ( -34 -12 12 ) ( -34 -12 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 64
+{
+  contents detail;
+ ( -28 0 12 ) ( -34 0 6 ) ( -28 32 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -34 0 6 ) ( -28 0 0 ) ( -34 32 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -32 -8 4 ) ( -32 -14 4 ) ( -32 -8 36 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -34 -26 8 ) ( -32 -16 8 ) ( -32 -16 40 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -32 -38 8 ) ( -34 -34 8 ) ( -32 -38 40 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 65
+{
+  contents detail;
+ ( -24 -60 12 ) ( -34 -50 12 ) ( -24 -60 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -28 0 12 ) ( -34 0 6 ) ( -28 32 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -34 0 6 ) ( -28 0 0 ) ( -34 32 6 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -32 -8 4 ) ( -32 -14 4 ) ( -32 -8 36 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -34 -50 8 ) ( -32 -38 8 ) ( -34 -50 40 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 66
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 -80 0 ) ( 62 -84 12 ) ( 94 -84 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 40 -80 12 ) ( 62 -80 12 ) ( 62 -80 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 -80 0 ) ( 62 -80 12 ) ( 54 -48 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -80 12 ) ( 40 -80 0 ) ( 36 -48 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -82 6 ) ( 36 -82 12 ) ( 68 -82 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 67
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 -80 0 ) ( 62 -84 12 ) ( 94 -84 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 36 -80 12 ) ( 40 -80 0 ) ( 36 -48 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -82 12 ) ( 36 -82 6 ) ( 68 -82 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -82 12 ) ( 36 -84 12 ) ( 36 -84 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 68
+{
+  contents detail;
+ ( 128 -72 12 ) ( 116 -84 12 ) ( -24 -84 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 -80 0 ) ( 62 -84 12 ) ( 94 -84 12 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 54 -80 0 ) ( 62 -80 12 ) ( 54 -48 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -82 12 ) ( 36 -82 6 ) ( 68 -82 6 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 52 -84 12 ) ( 42 -82 12 ) ( 42 -82 44 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 69
+{
+  contents detail;
+ ( 68 -82 12 ) ( 62 -84 12 ) ( 62 -80 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 -80 0 ) ( 62 -84 0 ) ( 68 -82 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 62 -84 12 ) ( 62 -84 0 ) ( 62 -80 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -80 12 ) ( 62 -80 0 ) ( 68 -82 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -82 12 ) ( 68 -82 0 ) ( 62 -84 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 70
+{
+  contents detail;
+ ( 76 44 12 ) ( 76 -84 12 ) ( 62 -80 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 44 0 ) ( 62 -80 0 ) ( 76 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 62 44 0 ) ( 76 44 0 ) ( 76 44 12 ) caulk 64 64 -725 644 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 76 -84 12 ) ( 76 44 12 ) ( 76 44 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -80 0 ) ( 62 44 0 ) ( 62 44 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 -80 12 ) ( 62 -80 12 ) ( 62 -80 44 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 71
+{
+  contents detail;
+ ( 76 -84 12 ) ( 68 -82 12 ) ( 76 -80 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 76 -80 0 ) ( 68 -82 0 ) ( 76 -84 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 76 -80 12 ) ( 76 -80 0 ) ( 76 -84 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -82 12 ) ( 76 -84 12 ) ( 76 -84 0 ) me_concrete_dest1 128 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -82 0 ) ( 76 -80 0 ) ( 76 -80 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 72
+{
+  contents detail;
+ ( 76 -80 12 ) ( 68 -82 12 ) ( 62 -80 12 ) ch_concretewall02 128 128 -725 -961.5 0 0 lightmap_gray 16384 22297.119 0 -356.21637 0 0
+ ( 62 -80 0 ) ( 68 -82 0 ) ( 76 -80 0 ) ch_concretewall02 128 128 -724.5 -961.5 0 0 lightmap_gray 16381.229 16380.097 -1145.7742 552.92969 49.560337 0.00041774244 smoothing smoothing_smooth
+ ( 68 -82 12 ) ( 68 -82 0 ) ( 62 -80 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 -80 0 ) ( 76 -80 0 ) ( 76 -80 12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -82 12 ) ( 76 -80 12 ) ( 76 -80 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 73
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v -24 -60 0 c 129 129 129 255 t -192 480 67.795837 -33.275242
+	v -24 0 0 c 129 129 129 255 t -192 0 70.649391 -35.708248
+   )
+   (
+	v -28 -56 0 c 129 129 129 255 t -224 448 67.823807 -33.627762
+	v -28 0 0 c 129 129 129 255 t -224 0 70.487122 -35.898567
+   )
+  }
+ }
+// brush 74
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 62 38 12 c 104 104 104 102 t 496 -304 3.875 14.614156
+	v 56 38 12 c 104 104 104 102 t 448 -304 3.5 14.614156
+   )
+   (
+	v 62 44 12 c 104 104 104 102 t 496 -352 3.875 14.338605
+	v 56 38 12 c 104 104 104 102 t 448 -304 3.5 14.614156
+   )
+  }
+ }
+// brush 75
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 248 20 12 c 104 104 104 0 t 1984 -160 15.5 15.440809
+	v 260 -4 12 c 104 104 104 0 t 2080 32 16.25 16.543015
+   )
+   (
+	v 244 20 12 c 104 104 104 0 t 1952 -160 15.25 15.440809
+	v 244 -4 12 c 104 104 104 0 t 1952 32 15.25 16.543015
+   )
+  }
+ }
+// brush 76
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 244 24 12 c 104 104 104 0 t 1952 -192 15.25 15.257109
+	v 244 20 12 c 104 104 104 0 t 1952 -160 15.25 15.440809
+   )
+   (
+	v 236 32 12 c 104 104 104 0 t 1888 -256 14.75 14.889708
+	v 236 20 12 c 104 104 104 0 t 1888 -160 14.75 15.440809
+   )
+  }
+ }
+// brush 77
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   3 2 0 8
+   (
+	v 184 -64 12 c 104 104 104 201 t 1472 512 11.5 19.298527
+	v 220 -64 12 c 104 104 104 134 t 1760 512 13.75 19.298527
+   )
+   (
+	v 184 -68 12 c 104 104 104 201 t 1472 544 11.5 19.482229
+	v 220 -64 12 c 104 104 104 134 t 1760 512 13.75 19.298527
+   )
+   (
+	v 200 -84 12 c 104 104 104 201 t 1600 672 12.5 20.217031
+	v 220 -84 12 c 104 104 104 201 t 1760 672 13.75 20.217031
+   )
+  }
+ }
+// brush 78
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 220 -64 12 c 104 104 104 134 t 1760 512 13.75 19.298527
+	v 244 -64 12 c 104 104 104 41 t 1952 512 15.25 19.298527
+   )
+   (
+	v 220 -80 12 c 104 104 104 201 t 1760 640 13.75 20.033331
+	v 244 -68 12 c 104 104 104 41 t 1952 544 15.25 19.482229
+   )
+  }
+ }
+// brush 79
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 184 -52 12 c 104 104 104 171 t 1472 416 11.5 18.747425
+	v 260 -52 12 c 104 104 104 38 t 2080 416 16.25 18.747425
+   )
+   (
+	v 184 -64 12 c 104 104 104 201 t 1472 512 11.5 19.298527
+	v 254 -64 12 c 104 104 104 38 t 2032 512 15.875 19.298527
+   )
+  }
+ }
+// brush 80
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 260 -38 12 c 104 104 104 38 t 2080 304 16.25 18.104471
+	v 260 -52 12 c 104 104 104 38 t 2080 416 16.25 18.747425
+   )
+   (
+	v 184 -38 12 c 104 104 104 102 t 1472 304 11.5 18.104471
+	v 184 -52 12 c 104 104 104 171 t 1472 416 11.5 18.747425
+   )
+  }
+ }
+// brush 81
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 184 20 12 c 104 104 104 201 t 1472 -160 11.5 15.440809
+	v 244 20 12 c 104 104 104 0 t 1952 -160 15.25 15.440809
+   )
+   (
+	v 184 -8 12 c 104 104 104 51 t 1472 62.720005 11.5 16.543015
+	v 244 -4 12 c 104 104 104 0 t 1952 32 15.25 16.543015
+   )
+  }
+ }
+// brush 82
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 184 20 12 c 104 104 104 201 t 1472 -160 11.5 15.440809
+	v 184 38 12 c 104 104 104 201 t 1472 -304 11.5 14.614156
+   )
+   (
+	v 212 20 12 c 104 104 104 95 t 1696 -160 13.25 15.440809
+	v 212 38 12 c 104 104 104 201 t 1696 -304 13.25 14.614156
+   )
+  }
+ }
+// brush 83
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 212 44 12 c 104 104 104 201 t 1696 -352 13.25 14.338605
+	v 236 32 12 c 104 104 104 0 t 1888 -256 14.75 14.889708
+   )
+   (
+	v 212 20 12 c 104 104 104 95 t 1696 -160 13.25 15.440809
+	v 236 20 12 c 104 104 104 0 t 1888 -160 14.75 15.440809
+   )
+  }
+ }
+// brush 84
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   3 2 0 8
+   (
+	v 144 -64 12 c 104 104 104 201 t 1152 512 9 19.298527
+	v 128 -64 12 c 104 104 104 61 t 1024 512 8 19.298527
+   )
+   (
+	v 144 -12.666666 12 c 104 104 104 201 t 1152 101.33333 9 16.941032
+	v 128 -14 12 c 104 104 104 0 t 1024 112 8 17.002266
+   )
+   (
+	v 144 37.666668 12 c 104 104 104 201 t 1152 -309.33334 9 14.583539
+	v 128 36 12 c 104 104 104 201 t 1024 -288 8 14.706006
+   )
+  }
+ }
+// brush 85
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   3 2 0 8
+   (
+	v 62 44 12 c 104 104 104 201 t 496 -352 3.875 14.338605
+	v 76 44 12 c 104 104 104 201 t 608 -352 4.75 14.338605
+   )
+   (
+	v 62 -21 12 c 104 104 104 0 t 496 168.57605 3.875 17.185968
+	v 76 -20 12 c 104 104 104 0 t 608 158.33603 4.75 17.185968
+   )
+   (
+	v 62 -80 12 c 104 104 104 61 t 496 640 3.875 20.033331
+	v 76 -80 12 c 104 104 104 61 t 608 640 4.75 20.033331
+   )
+  }
+ }
+// brush 86
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   3 2 0 8
+   (
+	v 36 38 12 c 104 104 104 201 t 288 -304 2.25 14.614156
+	v 62 38 12 c 104 104 104 201 t 496 -304 3.875 14.614156
+   )
+   (
+	v 36 -25 12 c 104 104 104 0 t 275.57947 204.06474 2.25 17.323744
+	v 62 -21 12 c 104 104 104 0 t 496 168 3.875 17.323744
+   )
+   (
+	v 36 -80 12 c 104 104 104 61 t 288 640 2.25 20.033331
+	v 62 -80 12 c 104 104 104 61 t 496 640 3.875 20.033331
+   )
+  }
+ }
+// brush 87
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   4 2 0 8
+   (
+	v -24 28 12 c 104 104 104 201 t -192 -224 -1.5 15.073408
+	v 36 28 12 c 104 104 104 201 t 288 -224 2.25 15.073408
+   )
+   (
+	v -24 -15.5 12 c 104 104 104 201 t -192 128 -1.5 17.094116
+	v 36 -25 12 c 104 104 104 0 t 288 210.048 2.25 17.55337
+   )
+   (
+	v -24 -60 12 c 104 104 104 201 t -192 480 -1.5 19.114826
+	v 36 -80 12 c 104 104 104 61 t 288 640 2.25 20.033331
+   )
+   (
+	v -12 -84 12 c 104 104 104 201 t -96 672 -0.75 20.217031
+	v 32 -84 12 c 104 104 104 61 t 256 672 2 20.217031
+   )
+  }
+ }
+// brush 88
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -16 44 12 c 104 104 104 201 t -128 -352 -1 14.338605
+	v 36 44 12 c 104 104 104 201 t 288 -352 2.25 14.338605
+   )
+   (
+	v -16 28 12 c 104 104 104 201 t -128 -224 -1 15.073408
+	v 36 28 12 c 104 104 104 201 t 288 -224 2.25 15.073408
+   )
+  }
+ }
+// brush 89
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -24 0 12 c 104 104 104 201 t -192 0 -1.5 16.359314
+	v -24 -60 12 c 104 104 104 201 t -192 480 -1.5 19.114826
+   )
+   (
+	v -28 0 12 c 104 104 104 201 t -224 0 -1.75 16.359314
+	v -28 -56 12 c 104 104 104 201 t -224 448 -1.75 18.931126
+   )
+  }
+ }
+// brush 90
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   5 3 0 8
+   (
+	v 76 44 12 c 104 104 104 201 t 608 -352 4.75 14.338605
+	v 86 44 12 c 104 104 104 201 t 688 -352 5.375 14.338605
+	v 96 44 12 c 104 104 104 201 t 768 -352 6 14.338605
+   )
+   (
+	v 76 -20 12 c 104 104 104 0 t 608 160 4.75 17.277819
+	v 94 10 12 c 104 104 104 0 t 752 -80 5.875 15.900063
+	v 112 40 12 c 104 104 104 201 t 896 -320 7 14.522305
+   )
+   (
+	v 76 -84 12 c 104 104 104 61 t 608 672 4.75 20.217031
+	v 102 -24 12 c 104 104 104 0 t 816 192 6.375 17.461519
+	v 128 36 12 c 104 104 104 201 t 1024 -288 8 14.706006
+   )
+   (
+	v 96 -84 12 c 104 104 104 61 t 768 672 6 20.217031
+	v 112 -51 12 c 104 104 104 0 t 896 408 7 18.7015
+	v 128 -14 12 c 104 104 104 0 t 1024 135.80798 8 17.185968
+   )
+   (
+	v 116 -84 12 c 104 104 104 61 t 928 672 7.25 20.217031
+	v 122 -78 12 c 104 104 104 61 t 976 624 7.625 19.941481
+	v 128 -72 12 c 104 104 104 61 t 1024 576 8 19.66593
+   )
+  }
+ }
+// brush 91
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 144 37.666668 12 c 104 104 104 201 t 1152 -309.33334 9 14.583539
+	v 184 44 12 c 104 104 104 201 t 1472 -352 11.5 14.338605
+   )
+   (
+	v 144 -60 12 c 104 104 104 201 t 1152 480 9 19.114826
+	v 184 -60 12 c 104 104 104 201 t 1472 480 11.5 19.114826
+   )
+  }
+ }
+// brush 92
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 144 -64 12 c 104 104 104 201 t 1152 512 9 19.298527
+	v 144 -60 12 c 104 104 104 201 t 1152 480 9 19.114826
+   )
+   (
+	v 184 -64 12 c 104 104 104 201 t 1472 512 11.5 19.298527
+	v 184 -60 12 c 104 104 104 201 t 1472 480 11.5 19.114826
+   )
+  }
+ }
+// brush 93
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 184 -38 12 c 104 104 104 102 t 1472 304 11.5 18.104471
+	v 184 -8 12 c 104 104 104 51 t 1472 62.720005 11.5 16.543015
+   )
+   (
+	v 260 -38 12 c 104 104 104 38 t 2080 304 16.25 18.104471
+	v 260 -4 12 c 104 104 104 0 t 2080 32 16.25 16.543015
+   )
+  }
+ }
+// brush 94
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 192 44 12 c 104 104 104 201 t 1536 -352 12 14.338605
+	v 204 38 12 c 104 104 104 201 t 1632 -304 12.75 14.614156
+   )
+   (
+	v 184 44 12 c 104 104 104 201 t 1472 -352 11.5 14.338605
+	v 184 38 12 c 104 104 104 201 t 1472 -304 11.5 14.614156
+   )
+  }
+ }
+// brush 95
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 54 44 12 c 104 104 104 201 t 432 -352 3.375 14.338605
+	v 62 44 12 c 104 104 104 201 t 496 -352 3.875 14.338605
+   )
+   (
+	v 46 42 12 c 104 104 104 201 t 368 -336 2.875 14.430455
+	v 60 42 12 c 104 104 104 201 t 480 -336 3.75 14.430455
+   )
+  }
+ }
+// brush 96
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 48 38 12 c 104 104 104 201 t 384 -304 3 14.614156
+	v 40 42 12 c 104 104 104 201 t 320 -336 2.5 14.430455
+   )
+   (
+	v 56 38 12 c 104 104 104 201 t 448 -304 3.5 14.614156
+	v 60 42 12 c 104 104 104 201 t 480 -336 3.75 14.430455
+   )
+  }
+ }
+// brush 97
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 36 38 12 c 104 104 104 201 t 288 -304 2.25 14.614156
+	v 36 44 12 c 104 104 104 201 t 288 -352 2.25 14.338605
+   )
+   (
+	v 48 38 12 c 104 104 104 201 t 384 -304 3 14.614156
+	v 36 44 12 c 104 104 104 201 t 288 -352 2.25 14.338605
+   )
+  }
+ }
+// brush 98
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 36 44 12 c 104 104 104 201 t 288 -352 2.25 14.338605
+	v 28 44 12 c 104 104 104 201 t 224 -352 1.75 14.338605
+   )
+   (
+	v 28 48 12 c 104 104 104 201 t 224 -384 1.75 14.154903
+	v 28 44 12 c 104 104 104 201 t 224 -352 1.75 14.338605
+   )
+  }
+ }
+// brush 99
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 28 48 12 c 104 104 104 201 t 224 -384 1.75 14.154903
+	v 28 44 12 c 104 104 104 201 t 224 -352 1.75 14.338605
+   )
+   (
+	v 12 52 12 c 104 104 104 201 t 96 -416 0.75 13.971203
+	v 12 44 12 c 104 104 104 201 t 96 -352 0.75 14.338605
+   )
+  }
+ }
+// brush 100
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 12 52 12 c 104 104 104 201 t 96 -416 0.75 13.971203
+	v 12 44 12 c 104 104 104 201 t 96 -352 0.75 14.338605
+   )
+   (
+	v -8 48 12 c 104 104 104 201 t -64 -384 -0.5 14.154903
+	v -8 44 12 c 104 104 104 201 t -64 -352 -0.5 14.338605
+   )
+  }
+ }
+// brush 101
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -16 44 12 c 104 104 104 201 t -128 -352 -1 14.338605
+	v -16 28 12 c 104 104 104 201 t -128 -224 -1 15.073408
+   )
+   (
+	v -24 28 12 c 104 104 104 201 t -192 -224 -1.5 15.073408
+	v -16 28 12 c 104 104 104 201 t -128 -224 -1 15.073408
+   )
+  }
+ }
+// brush 102
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 36 44 0 c 129 129 129 18 t 288 -352 75.176025 -34.637688
+	v -16 44 0 c 129 129 129 0 t -128 -352 73.066528 -37.111816
+   )
+   (
+	v 36 28 0 c 129 129 129 18 t 288 -224 74.415077 -33.988884
+	v -16 28 0 c 129 129 129 96 t -128 -224 72.305588 -36.463017
+   )
+  }
+ }
+// brush 103
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 62 38 0 c 129 129 129 18 t 496 -304 75.945412 -33.157322
+	v 36 38 0 c 129 129 129 18 t 288 -304 74.890671 -34.394386
+   )
+   (
+	v 62 -80 0 c 129 129 129 255 t 496 640 70.333427 -28.37241
+	v 36 -80 0 c 129 129 129 255 t 288 640 69.278687 -29.609474
+   )
+  }
+ }
+// brush 104
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 76 44 0 c 129 129 129 0 t 608 -352 76.798714 -32.734509
+	v 62 44 0 c 129 129 129 18 t 496 -352 76.230766 -33.40062
+   )
+   (
+	v 76 -80 0 c 129 129 129 255 t 608 640 70.901367 -27.706297
+	v 62 -80 0 c 129 129 129 255 t 496 640 70.333427 -28.37241
+   )
+  }
+ }
+// brush 105
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   5 3 0 8
+   (
+	v 96 44 0 c 129 129 129 0 t 768 -352 77.610054 -31.782921
+	v 86 44 0 c 129 129 129 0 t 688 -352 77.204384 -32.258713
+	v 76 44 0 c 129 129 129 0 t 608 -352 76.798714 -32.734509
+   )
+   (
+	v 112 40 0 c 129 129 129 0 t 896 -320 78.068893 -30.859449
+	v 94 10 0 c 129 129 129 255 t 752 -80 75.911911 -30.499376
+	v 76 -20 0 c 129 129 129 255 t 608 160 73.754929 -30.139303
+   )
+   (
+	v 128 35 0 c 129 129 129 255 t 1024 -288 78.527733 -29.935978
+	v 102 -24 0 c 129 129 129 255 t 816 192 74.619431 -28.740038
+	v 76 -84 0 c 129 129 129 255 t 608 672 70.711136 -27.544098
+   )
+   (
+	v 128 -14 0 c 129 129 129 255 t 1024 131.71198 75.959534 -27.746273
+	v 112 -51 0 c 129 129 129 0 t 896 408 73.741005 -27.169392
+	v 96 -84 0 c 129 129 129 255 t 768 672 71.522476 -26.59251
+   )
+   (
+	v 128 -72 0 c 129 129 129 0 t 1024 576 73.391335 -25.556568
+	v 122 -78 0 c 129 129 129 0 t 976 624 72.862579 -25.598743
+	v 116 -84 0 c 129 129 129 0 t 928 672 72.333817 -25.640921
+   )
+  }
+ }
+// brush 106
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   3 2 0 8
+   (
+	v 36 28 0 c 129 129 129 18 t 288 -224 74.415077 -33.988884
+	v -24 28 0 c 129 129 129 96 t -192 -224 71.981049 -36.843651
+   )
+   (
+	v 36 -80 0 c 129 129 129 255 t 288 640 69.278687 -29.609474
+	v -24 -60 0 c 129 129 129 255 t -192 480 67.795837 -33.275242
+   )
+   (
+	v 32 -84 0 c 129 129 129 255 t 256 672 68.926178 -29.637592
+	v -12 -84 0 c 129 129 129 255 t -96 672 67.14122 -31.731087
+   )
+  }
+ }
+// brush 107
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   3 2 0 8
+   (
+	v 128 -64 0 c 129 129 129 0 t 1024 512 73.771812 -25.88097
+	v 144 -64 0 c 129 129 129 0 t 1152 512 74.420883 -25.119698
+   )
+   (
+	v 128 -14 0 c 129 129 129 255 t 1024 112 76.149773 -27.908474
+	v 144 -12.666666 0 c 129 129 129 0 t 1152 101.33333 76.862259 -27.201269
+   )
+   (
+	v 128 36 0 c 129 129 129 255 t 1024 -288 78.527733 -29.935978
+	v 144 38.666668 0 c 129 129 129 255 t 1152 -309.33334 79.303627 -29.282841
+   )
+  }
+ }
+// brush 108
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   3 3 0 8
+   (
+	v 184 44 0 c 129 129 129 255 t 1472 -352 81.179962 -27.59593
+	v 180 44 0 c 129 129 129 255 t 1440 -352 81.017693 -27.786247
+	v 176 44 0 c 129 129 129 255 t 1408 -352 80.855423 -27.976566
+   )
+   (
+	v 184 -60 0 c 129 129 129 0 t 1472 480 76.23381 -23.378721
+	v 180 -8 0 c 129 129 129 0 t 1440 64 78.544617 -25.677643
+	v 176 44 0 c 129 129 129 255 t 1408 -352 80.855423 -27.976566
+   )
+   (
+	v 144 -60 0 c 129 129 129 0 t 1152 480 74.611122 -25.281898
+	v 144 -10.666666 0 c 129 129 129 0 t 1152 85.333328 76.957375 -27.28237
+	v 144 38.666668 0 c 129 129 129 255 t 1152 -309.33334 79.303627 -29.282841
+   )
+  }
+ }
+// brush 109
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 256 -30 0 c 129 129 129 255 t 2048 240 80.581421 -21.169506
+	v 184 -30 0 c 129 129 129 0 t 1472 240 77.660583 -24.595224
+   )
+   (
+	v 256 -38 0 c 129 129 129 255 t 2048 304 80.200943 -20.845104
+	v 184 -38 0 c 129 129 129 0 t 1472 304 77.280113 -24.270824
+   )
+  }
+ }
+// brush 110
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 260 -52 0 c 129 129 129 255 t 2080 416 79.697388 -20.087086
+	v 260 -38 0 c 129 129 129 255 t 2080 304 80.363213 -20.654787
+   )
+   (
+	v 184 -52 0 c 129 129 129 0 t 1472 416 76.614281 -23.703123
+	v 184 -38 0 c 129 129 129 0 t 1472 304 77.280113 -24.270824
+   )
+  }
+ }
+// brush 111
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 260 -52 0 c 129 129 129 255 t 2080 416 79.697388 -20.087086
+	v 184 -52 0 c 129 129 129 0 t 1472 416 76.614281 -23.703123
+   )
+   (
+	v 254 -64 0 c 129 129 129 0 t 2032 512 78.88327 -19.885962
+	v 184 -64 0 c 129 129 129 0 t 1472 512 76.043571 -23.21652
+   )
+  }
+ }
+// brush 112
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   3 2 0 8
+   (
+	v 220 -64 0 c 129 129 129 0 t 1760 512 77.50399 -21.503662
+	v 184 -64 0 c 129 129 129 0 t 1472 512 76.043571 -23.21652
+   )
+   (
+	v 220 -80 0 c 129 129 129 0 t 1760 640 76.743042 -20.85486
+	v 184 -64 0 c 129 129 129 0 t 1472 512 76.043571 -23.21652
+   )
+   (
+	v 196 -80 0 c 129 129 129 0 t 1568 640 75.769432 -21.996767
+	v 184 -68 0 c 129 129 129 0 t 1472 544 75.853333 -23.054321
+   )
+  }
+ }
+// brush 113
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 244 -64 0 c 129 129 129 0 t 1952 512 78.4776 -20.361755
+	v 220 -64 0 c 129 129 129 0 t 1760 512 77.50399 -21.503662
+   )
+   (
+	v 244 -68 0 c 129 129 129 0 t 1952 544 78.287361 -20.199554
+	v 220 -80 0 c 129 129 129 0 t 1760 640 76.743042 -20.85486
+   )
+  }
+ }
+// brush 114
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 252 -68 0 c 129 129 129 0 t 2016 544 78.6119 -19.81892
+	v 254 -64 0 c 129 129 129 0 t 2032 512 78.88327 -19.885962
+   )
+   (
+	v 244 -72 0 c 129 129 129 0 t 1952 576 78.09713 -20.037355
+	v 244 -64 0 c 129 129 129 0 t 1952 512 78.4776 -20.361755
+   )
+  }
+ }
+// brush 115
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 184 -4 0 c 129 129 129 255 t 1472 32 78.897125 -25.649527
+	v 184 -30 0 c 129 129 129 0 t 1472 240 77.660583 -24.595224
+   )
+   (
+	v 256 -4 0 c 129 129 129 130 t 2048 32 81.817955 -22.223808
+	v 256 -30 0 c 129 129 129 255 t 2048 240 80.581421 -21.169506
+   )
+  }
+ }
+// brush 116
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 236 20 0 c 129 129 129 130 t 1888 -160 82.148033 -24.148598
+	v 184 20 0 c 129 129 129 255 t 1472 -160 80.038544 -26.622728
+   )
+   (
+	v 236 -4 0 c 129 129 129 130 t 1888 32 81.006615 -23.175396
+	v 184 -4 0 c 129 129 129 255 t 1472 32 78.897125 -25.649527
+   )
+  }
+ }
+// brush 117
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 196 32 0 c 129 129 129 130 t 1568 -256 81.096062 -26.538376
+	v 184 32 0 c 129 129 129 255 t 1472 -256 80.609253 -27.109329
+   )
+   (
+	v 196 20 0 c 129 129 129 130 t 1568 -160 80.525352 -26.051775
+	v 184 20 0 c 129 129 129 255 t 1472 -160 80.038544 -26.622728
+   )
+  }
+ }
+// brush 118
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 196 32 0 c 129 129 129 130 t 1568 -256 81.096062 -26.538376
+	v 184 44 0 c 129 129 129 255 t 1472 -352 81.179962 -27.59593
+   )
+   (
+	v 184 32 0 c 129 129 129 255 t 1472 -256 80.609253 -27.109329
+	v 184 44 0 c 129 129 129 255 t 1472 -352 81.179962 -27.59593
+   )
+  }
+ }
+// brush 119
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 196 32 0 c 129 129 129 130 t 1568 -256 81.096062 -26.538376
+	v 196 20 0 c 129 129 129 130 t 1568 -160 80.525352 -26.051775
+   )
+   (
+	v 212 32 0 c 129 129 129 130 t 1696 -256 81.745132 -25.777105
+	v 212 20 0 c 129 129 129 130 t 1696 -160 81.174423 -25.290504
+   )
+  }
+ }
+// brush 120
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   2 2 0 8
+   (
+	v 212 20 0 c 129 129 129 130 t 1696 -160 81.174423 -25.290504
+	v 236 20 0 c 129 129 129 130 t 1888 -160 82.148033 -24.148598
+   )
+   (
+	v 212 32 0 c 129 129 129 130 t 1696 -256 81.745132 -25.777105
+	v 236 32 0 c 129 129 129 130 t 1888 -256 82.718742 -24.635201
+   )
+  }
+ }
+// brush 121
+ {
+  mesh
+  {
+   me_decal_cracks_01
+   lightmap_gray
+   3 2 0 8
+   (
+	v 256 4 0 c 129 129 129 130 t 2048 -32 82.198433 -22.548208
+	v 248 20 0 c 129 129 129 130 t 1984 -160 82.634842 -23.577646
+   )
+   (
+	v 256 -4 0 c 129 129 129 130 t 2048 32 81.817955 -22.223808
+	v 248 20 0 c 129 129 129 130 t 1984 -160 82.634842 -23.577646
+   )
+   (
+	v 236 -4 0 c 129 129 129 130 t 1888 32 81.006615 -23.175396
+	v 236 20 0 c 129 129 129 130 t 1888 -160 82.148033 -24.148598
+   )
+  }
+ }
+}

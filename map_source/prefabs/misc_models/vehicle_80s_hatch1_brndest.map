@@ -1,0 +1,61 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 10 18 0 ) ( 30 30 0 ) ( -2 52 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 52 44 ) ( 30 30 46 ) ( 10 18 46 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 22 54 ) ( 10 18 52 ) ( 10 18 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 18 26 ) ( 10 18 80 ) ( 30 30 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 30 46 ) ( -2 52 44 ) ( -2 52 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 24 56 ) ( -44 24 0 ) ( -2 52 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 30 62 ) ( -22 38 62 ) ( -22 38 94 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 16 32 0 ) ( -64 32 0 ) ( -64 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 32 52 ) ( 12 32 52 ) ( 12 0 54 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 32 52 ) ( -36 32 52 ) ( -46 32 46 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 32 48 ) ( -72 -32 48 ) ( -72 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 36 54 ) ( -70 36 30 ) ( -70 68 30 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 36 28 ) ( 36 36 40 ) ( 36 68 40 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 32 40 ) ( 12 32 54 ) ( 12 64 54 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 28 53.5 ) ( -46 32 53.5 ) ( -72 28 85.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 18 54 ) ( 36 30 34 ) ( 68 18 54 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 0 54 ) ( 12 -32 52 ) ( -36 -32 52 ) clip_nosight_metal 64 -64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -32 46 ) ( -36 -32 52 ) ( 12 -32 52 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -72 -28 85.5 ) ( -46 -32 53.5 ) ( -72 -28 53.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -18 54 ) ( 36 -30 34 ) ( 36 -18 54 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 16 32 0 ) ( -64 32 0 ) ( -64 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 32 32 ) ( 80 -32 32 ) ( 36 -32 40 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 32 32 ) ( 80 32 0 ) ( 80 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 32 0 ) ( 80 32 32 ) ( 36 32 40 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 36 40 ) ( 36 36 28 ) ( 36 68 40 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 58 32 40 ) ( 80 28 40 ) ( 58 32 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 18 54 ) ( 36 30 34 ) ( 68 18 54 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -32 40 ) ( 80 -32 32 ) ( 80 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 58 -32 72 ) ( 80 -28 40 ) ( 58 -32 40 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 68 -18 54 ) ( 36 -30 34 ) ( 36 -18 54 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 80 32 0 ) ( 40 32 0 ) ( 40 -32 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -32 40 ) ( 40 32 40 ) ( 80 32 40 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 -34 40 ) ( 80 -34 40 ) ( 80 -34 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 82 -32 40 ) ( 82 32 40 ) ( 82 32 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 34 40 ) ( 40 34 40 ) ( 40 34 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 32 40 ) ( 32 -32 40 ) ( 32 -32 0 ) mantle_on 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "vehicle_80s_hatch1_brndest"
+"classname" "misc_model"
+}

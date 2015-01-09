@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 43 38.5 0 ) ( -41.5 38.5 0 ) ( -41.5 -31 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44.5 38.5 42 ) ( 40 38.5 42 ) ( 40 -31 42 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -54.5 -42.5 32 ) ( 94.5 -42.5 32 ) ( 94.5 -42.5 -18 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 38.5 26.5 ) ( 64 38.5 22.5 ) ( 64 -31 22.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 94.5 42.5 35 ) ( -54.5 42.5 35 ) ( -54.5 42.5 -15 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 38.5 13 ) ( -64 38.5 17 ) ( -64 -31 17 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_prop_rail_wheeltrack"
+"classname" "misc_model"
+}

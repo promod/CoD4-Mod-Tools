@@ -1,0 +1,51 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"sunlight" "1.6"
+"sundirection" "-12 310.007 0"
+"sundiffusecolor" "0.78 0.80 1"
+"suncolor" "1 1 0.95"
+"diffusefraction" ".25"
+"_color" "0.90 0.90 1"
+"ambient" ".1"
+"contrastGain" ".15"
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 8 96 0 ) ( -8 96 0 ) ( -8 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 80 ) ( 8 0 80 ) ( 8 0 0 ) caulk 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 0 80 ) ( 8 96 80 ) ( 8 96 0 ) me_asphalt_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 128 80 ) ( -10 128 80 ) ( -10 128 0 ) caulk 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 96 80 ) ( -8 0 80 ) ( -8 0 0 ) me_asphalt_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -544 8 ) ( 0 -544 8 ) ( 0 -512 8 ) me_asphalt_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -8 0 80 ) ( 8 0 80 ) ( 8 0 0 ) caulk -8 68 -4 60 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 0 80 ) ( 4 96 80 ) ( 4 96 0 ) me_cinderblock_wall 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 128 80 ) ( -10 128 80 ) ( -10 128 0 ) caulk -8 68 -4 60 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 96 84 ) ( -4 0 84 ) ( -4 0 4 ) me_cinderblock_wall 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -544 8 ) ( 16 -544 8 ) ( 0 -512 8 ) caulk -8 128 -4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -544 108 ) ( 0 -544 108 ) ( 0 -512 108 ) caulk -8 128 -4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -8 0 112 ) ( -8 96 112 ) ( 8 96 112 ) me_asphalt_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 112 ) ( 8 0 112 ) ( 8 0 32 ) caulk -8 68 -4 60 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 128 112 ) ( -10 128 112 ) ( -10 128 32 ) caulk -8 68 -4 60 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -544 108 ) ( 8 -544 108 ) ( 0 -512 108 ) me_asphalt_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 0 108 ) ( 6 0 112 ) ( 6 32 112 ) me_asphalt_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 0 112 ) ( -6 0 108 ) ( -6 32 112 ) me_asphalt_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 0 -4"
+"model" "prefabs/fallujah/walls/neighborhood_flat_end.map"
+"classname" "misc_prefab"
+}

@@ -1,0 +1,93 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 24 0 76 ) ( 20 0 72 ) ( -40 0 72 ) me_metal_rust_03 128 -128 0 -150 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 8 76 ) ( -40 8 72 ) ( 20 8 72 ) me_metal_rust_03 128 128 0 10 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 0 76 ) ( 26 8 76 ) ( 22 8 72 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 0 72 ) ( -20 8 72 ) ( -24 8 76 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 8 76 ) ( 24 8 76 ) ( 24 0 76 ) caulk 64 64 -10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 23 8 74 ) ( 32 8 74 ) ( 23 40 74 ) me_metal_rust_03 128 128 0 76 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -24 0 76 ) ( -24 8 76 ) ( -20 8 72 ) caulk 64 64 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 -12 ) ( -24 0 100 ) ( -20 0 96 ) me_metal_rust_03 128 -128 96 -98 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 8 -12 ) ( -20 8 96 ) ( -24 8 100 ) me_metal_rust_03 128 128 96 62 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 8 100 ) ( -24 0 100 ) ( -24 0 -12 ) caulk 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 8 80 ) ( -22 8 86 ) ( -22 40 86 ) me_metal_rust_03 128 -128 96 -76 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 5 0 ) ( -20 5 4 ) ( -20 37 4 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 26 0 0 ) ( 22 0 0 ) ( 22 0 108 ) me_metal_rust_03 128 -128 -98 -100 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 8 112 ) ( 22 8 108 ) ( 22 8 0 ) me_metal_rust_03 128 128 -98 60 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 8 0 ) ( 26 0 0 ) ( 26 0 112 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 0 72 ) ( 22 8 72 ) ( 26 8 76 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 8 108 ) ( 24 8 103 ) ( 24 40 108 ) me_metal_rust_03 128 128 -98 76 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 5 4 ) ( 26 5 0 ) ( 26 37 0 ) caulk 64 64 -8 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( -26 0 0 ) ( -22 0 4 ) ( 38 0 4 ) me_metal_rust_03 128 -128 116 -74 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 8 0 ) ( 38 8 4 ) ( -22 8 4 ) me_metal_rust_03 128 128 116 86 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 0 0 ) ( -24 8 0 ) ( -20 8 4 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 0 4 ) ( 22 8 4 ) ( 26 8 0 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 8 0 ) ( -26 8 0 ) ( -26 0 0 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17 8 2 ) ( -26 8 2 ) ( -17 40 2 ) me_metal_rust_03 128 -128 116 -76 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 24 8 2 ) ( -22 8 2 ) ( -22 0 2 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 0 74 ) ( -22 8 74 ) ( 24 8 74 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 2 74 ) ( 24 2 74 ) ( 24 2 18 ) me_door_rollup1 128 128 -26 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 74 ) ( 24 8 74 ) ( 24 8 18 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 6 74 ) ( -22 6 74 ) ( -22 6 18 ) me_door_rollup1 128 128 -26 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 8 74 ) ( -22 0 74 ) ( -22 0 18 ) caulk 64 -64 -8 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 24 2 2 t 400 -16 1.5 -0.125
+	v -22 2 2 t 32 -16 -1.375 -0.125
+   )
+   (
+	v 24 2 74 t 400 -592 1.5 -4.625
+	v -22 2 74 t 32 -592 -1.375 -4.625
+   )
+  }
+ }
+// brush 6
+ {
+  mesh
+  {
+   com_stain_01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -22 6 2 t 32 -16 -1.375 -0.125
+	v 24 6 2 t 400 -16 1.5 -0.125
+   )
+   (
+	v -22 6 74 t 32 -592 -1.375 -4.625
+	v 24 6 74 t 400 -592 1.5 -4.625
+   )
+  }
+ }
+}

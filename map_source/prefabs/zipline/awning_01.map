@@ -1,0 +1,113 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 65 46 -2 ) ( 65 44 -2 ) ( 1 44 14 ) me_wire_black 64 8 -1252 2167 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 -460 -160 ) ( 65 -460 132 ) ( 65 372 132 ) me_wire_black 64 -8 -1252 -284 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -90 28 ) ( 1 -90 -108 ) ( 1 70 -108 ) me_wire_black 64 -8 -1252 -284 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 46 -4 ) ( 65 46 -2 ) ( 1 46 14 ) me_wire_black 64 8 -2167 284 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 44 -2 ) ( 65 44 -4 ) ( 1 44 12 ) me_wire_black 64 8 -2167 284 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 44 -4 ) ( 65 46 -4 ) ( 1 46 12 ) me_wire_black 64 8 -1252 2167 -90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 65 -44 -2 ) ( 65 -46 -2 ) ( 1 -46 14 ) me_wire_black 64 8 -1276 2167 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 -550 -160 ) ( 65 -550 132 ) ( 65 282 132 ) me_wire_black 64 -8 -1276 -284 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -180 28 ) ( 1 -180 -108 ) ( 1 -20 -108 ) me_wire_black 64 -8 -1276 -284 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 -44 -4 ) ( 65 -44 -2 ) ( 1 -44 14 ) me_wire_black 64 8 -2167 284 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 -46 -2 ) ( 65 -46 -4 ) ( 1 -46 12 ) me_wire_black 64 8 -2167 284 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 -46 -4 ) ( 65 -44 -4 ) ( 1 -44 12 ) me_wire_black 64 8 -1276 2167 -90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 1 44 -8 ) ( 1 46 -8 ) ( 27 46 8 ) me_wire_black 64 8 -1252 2167 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -90 6 ) ( 1 -90 -130 ) ( 1 70 -130 ) me_wire_black 64 -8 -1252 -294 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 46 -8 ) ( 1 46 -10 ) ( 27 46 6 ) me_wire_black 64 8 -2167 294 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 44 -10 ) ( 1 44 -8 ) ( 27 44 8 ) me_wire_black 64 8 -2167 294 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 46 -10 ) ( 1 44 -10 ) ( 27 44 6 ) me_wire_black 64 8 -1252 2167 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 -44 -4 ) ( 1 -44 12 ) ( 1 -12 12 ) caulk 64 64 1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 1 -46 -8 ) ( 1 -44 -8 ) ( 27 -44 8 ) me_wire_black 64 8 -1162 2167 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -180 6 ) ( 1 -180 -130 ) ( 1 -20 -130 ) me_wire_black 64 -8 -1162 -294 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -44 -8 ) ( 1 -44 -10 ) ( 27 -44 6 ) me_wire_black 64 8 -2167 294 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -46 -10 ) ( 1 -46 -8 ) ( 27 -46 8 ) me_wire_black 64 8 -2167 294 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -44 -10 ) ( 1 -46 -10 ) ( 27 -46 6 ) me_wire_black 64 8 -1162 2167 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 -44 -4 ) ( 1 -44 12 ) ( 1 -12 12 ) caulk 64 64 1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents nonColliding;
+ ( 1 46 11 ) ( 0 46 11 ) ( 0 44 11 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 15 ) ( 0 46 15 ) ( 1 46 15 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 43 15 ) ( 1 43 15 ) ( 1 43 10 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 44 15 ) ( 1 46 15 ) ( 1 46 10 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 47 16 ) ( 0 47 16 ) ( 0 47 11 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 46 15 ) ( 0 44 15 ) ( 0 44 10 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents nonColliding;
+ ( 1 46 -11 ) ( 0 46 -11 ) ( 0 44 -11 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 -7 ) ( 0 46 -7 ) ( 1 46 -7 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 43 -7 ) ( 1 43 -7 ) ( 1 43 -12 ) me_wire_black 64 8 -1230 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 44 -7 ) ( 1 46 -7 ) ( 1 46 -12 ) me_wire_black 64 8 -1230 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 47 -6 ) ( 0 47 -6 ) ( 0 47 -11 ) me_wire_black 64 8 -1230 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 46 -7 ) ( 0 44 -7 ) ( 0 44 -12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents nonColliding;
+ ( 1 -44 11 ) ( 0 -44 11 ) ( 0 -46 11 ) me_wire_black 64 8 -1162 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -46 15 ) ( 0 -44 15 ) ( 1 -44 15 ) me_wire_black 64 8 -1162 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -47 15 ) ( 1 -47 15 ) ( 1 -47 10 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -46 15 ) ( 1 -44 15 ) ( 1 -44 10 ) me_wire_black 64 8 -1252 2258 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -43 16 ) ( 0 -43 16 ) ( 0 -43 11 ) me_wire_black 64 8 -1252 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -44 15 ) ( 0 -46 15 ) ( 0 -46 10 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents nonColliding;
+ ( 1 -44 -11 ) ( 0 -44 -11 ) ( 0 -46 -11 ) me_wire_black 64 8 -1162 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -46 -7 ) ( 0 -44 -7 ) ( 1 -44 -7 ) me_wire_black 64 8 -1162 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -47 -7 ) ( 1 -47 -7 ) ( 1 -47 -12 ) me_wire_black 64 8 -1230 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -46 -7 ) ( 1 -44 -7 ) ( 1 -44 -12 ) me_wire_black 64 8 -1230 2258 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -43 -6 ) ( 0 -43 -6 ) ( 0 -43 -11 ) me_wire_black 64 8 -1230 2168 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -44 -7 ) ( 0 -46 -7 ) ( 0 -46 -12 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents nonColliding;
+ ( 31 -44 16 ) ( 34 -44 16 ) ( 34 -44 -1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 33 -43 16 ) ( 33 44 16 ) ( 33 44 -1 ) me_wire_black 64 8 -2167 284 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 34 44 16 ) ( 31 44 16 ) ( 31 44 -1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 31 43 16 ) ( 31 -44 16 ) ( 31 -44 -1 ) me_wire_black 64 8 -2167 284 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 5.5 12 ) ( 65 5.5 -4 ) ( 1 37.5 12 ) me_wire_black 64 8 -2167 284 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 65 5.5 -2 ) ( 1 5.5 14 ) ( 1 37.5 14 ) me_wire_black 64 8 -2167 284 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "me_corrugated_metal4x4"
+"angles" "9.78936e-006 90 -75"
+"modelscale" "1.3"
+"origin" "32.3 16.0 6.0"
+}
+// entity 2
+{
+"classname" "misc_model"
+"model" "me_corrugated_metal4x4"
+"angles" "9.78936e-006 90 -75"
+"modelscale" "1.3"
+"origin" "34.3 -26.0 7.0"
+}

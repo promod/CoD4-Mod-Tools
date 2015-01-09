@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 38 10.5 -38.5 ) ( -38 10.5 -38.5 ) ( -38 -12 -38.5 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -12 38.5 ) ( -38 10.5 38.5 ) ( 38 10.5 38.5 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -10.5 38.5 ) ( 38 -10.5 38.5 ) ( 38 -10.5 -38 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 -12 38.5 ) ( 38 10.5 38.5 ) ( 38 10.5 -38 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 38 10.5 38.5 ) ( -38 10.5 38.5 ) ( -38 10.5 -38 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 10.5 38.5 ) ( -38 -12 38.5 ) ( -38 -12 -38 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_railpipe_bolts"
+"classname" "misc_model"
+}

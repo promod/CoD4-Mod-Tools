@@ -1,0 +1,50 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"fov_inner" "60"
+"fov_outer" "120"
+"bouncefraction" "2"
+"_color" ".6 .6 .6"
+"ambient" ".03"
+"classname" "worldspawn"
+"sunlight" "2"
+"suncolor" ".9 .9 1"
+"sundirection" "-18 100 0"
+"sundiffusecolor" "0.015 0.015 0.013"
+"diffusefraction" "0.01"
+// brush 0
+{
+ ( 22 20 32 ) ( -18 20 32 ) ( -18 -20 32 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -20 34 ) ( -20 20 34 ) ( 20 20 34 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -20 34 ) ( 20 -20 34 ) ( 20 -20 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -20 34 ) ( 20 20 34 ) ( 20 20 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 20 34 ) ( -20 20 34 ) ( -20 20 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 20 34 ) ( -20 -20 34 ) ( -20 -20 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 19 20 0 ) ( -21 20 0 ) ( -21 -20 0 ) clip_nosight 64 64 5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -15 -20 2 ) ( -15 20 2 ) ( 25 20 2 ) clip_nosight 64 64 5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -15 -8 5 ) ( 25 -8 5 ) ( 25 -8 -29 ) clip_nosight 64 64 5 29 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -20 4 ) ( 8 20 4 ) ( 8 20 -30 ) clip_nosight 64 64 0 29 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 25 8 5 ) ( -15 8 5 ) ( -15 8 -29 ) clip_nosight 64 64 5 29 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 20 5 ) ( -8 -20 5 ) ( -8 -20 -29 ) clip_nosight 64 64 0 29 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 19 21 2 ) ( -21 21 2 ) ( -21 -19 2 ) clip_nosight 64 64 5 -1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -15 -19 32 ) ( -15 21 32 ) ( 25 21 32 ) clip_nosight 64 64 5 -1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -15 -2 7 ) ( 25 -2 7 ) ( 25 -2 -27 ) clip_nosight 64 64 5 27 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -18 34 ) ( 2 22 34 ) ( 2 22 0 ) clip_nosight 64 64 1 27 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 25 2 7 ) ( -15 2 7 ) ( -15 2 -27 ) clip_nosight 64 64 5 27 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 21 7 ) ( -2 -19 7 ) ( -2 -19 -27 ) clip_nosight 64 64 1 27 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "ap_table_square01"
+"classname" "misc_model"
+}

@@ -1,0 +1,124 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -143 -52 2 ) ( -143 -53 2 ) ( 192 -53 2 ) shadowcaster 64 64 0 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -159 -32 46 ) ( -159 -24 55 ) ( 92 -24 55 ) shadowcaster 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 132 -24 2 ) ( 132 -24 79 ) ( -119 -24 79 ) shadowcaster 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 138 -53 27 ) ( 138 -53 111 ) ( 138 -52 111 ) shadowcaster 64 64 -4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -143 -32 15 ) ( -143 -32 99 ) ( 192 -32 99 ) shadowcaster 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -71 -52 24 ) ( -71 -52 108 ) ( -71 -53 108 ) shadowcaster 64 64 -4 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 138 -32 46 ) ( -71 -32 46 ) ( -71 -76 58 ) shadowcaster 64 64 0 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -71 -24 55 ) ( 138 -24 55 ) ( 138 -76 67 ) shadowcaster 64 64 0 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -159 -24 55 ) ( -159 -32 46 ) ( 92 -32 46 ) shadowcaster 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 138 -24 55 ) ( 138 -32 46 ) ( 138 -76 58 ) shadowcaster 64 64 -4 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -143 -68 15 ) ( -143 -68 99 ) ( 192 -68 99 ) shadowcaster 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -71 -32 46 ) ( -71 -24 55 ) ( -71 -76 67 ) shadowcaster 64 64 -4 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 192 85 2 ) ( -143 85 2 ) ( -143 84 2 ) shadowcaster 64 -64 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 92 56 55 ) ( -159 56 55 ) ( -159 64 46 ) shadowcaster 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -119 56 79 ) ( 132 56 79 ) ( 132 56 2 ) shadowcaster 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 138 84 111 ) ( 138 85 111 ) ( 138 85 27 ) shadowcaster 64 -64 -36 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 192 64 99 ) ( -143 64 99 ) ( -143 64 15 ) shadowcaster 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -71 85 108 ) ( -71 84 108 ) ( -71 84 24 ) shadowcaster 64 -64 -36 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( -71 108 58 ) ( -71 64 46 ) ( 138 64 46 ) shadowcaster 64 -64 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 138 108 67 ) ( 138 56 55 ) ( -71 56 55 ) shadowcaster 64 -64 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 92 64 46 ) ( -159 64 46 ) ( -159 56 55 ) shadowcaster 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 138 108 58 ) ( 138 64 46 ) ( 138 56 55 ) shadowcaster 64 -64 -36 -12 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 192 104 99 ) ( -143 104 99 ) ( -143 104 15 ) shadowcaster 64 64 0 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -71 108 67 ) ( -71 56 55 ) ( -71 64 46 ) shadowcaster 64 -64 -36 -12 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( -88 104 0 ) ( -88 -72 0 ) ( 136 -72 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 0 0 0
+ ( -112 -72 32 ) ( -112 104 32 ) ( 184 104 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 0 0 0
+ ( -136 -72 -152 ) ( 208 -72 -152 ) ( 208 -72 -240 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 48 0 0
+ ( 136 104 0 ) ( 136 -72 0 ) ( 184 -72 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 16 0 0
+ ( 208 -24 -152 ) ( -136 -24 -152 ) ( -136 -24 -240 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 48 0 0
+ ( -88 -72 0 ) ( -88 104 0 ) ( -112 104 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 32 0 0
+}
+// brush 5
+{
+ ( -88 232 0 ) ( -88 56 0 ) ( 136 56 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 -128 0 0
+ ( -112 56 32 ) ( -112 232 32 ) ( 184 232 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 -128 0 0
+ ( -136 56 -152 ) ( 208 56 -152 ) ( 208 56 -240 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 48 0 0
+ ( 136 232 0 ) ( 136 56 0 ) ( 184 56 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -112 0 0
+ ( 208 104 -152 ) ( -136 104 -152 ) ( -136 104 -240 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 48 0 0
+ ( -88 56 0 ) ( -88 232 0 ) ( -112 232 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 136 32 0 0
+}
+// brush 6
+{
+ ( -88 184 0 ) ( -88 8 0 ) ( 136 8 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 -80 0 0
+ ( -112 8 32 ) ( -112 184 32 ) ( 184 184 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 -80 0 0
+ ( -136 -24 -152 ) ( 208 -24 -152 ) ( 208 -24 -240 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 48 0 0
+ ( 128 184 0 ) ( 128 8 0 ) ( 176 8 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -64 0 0
+ ( 208 56 -152 ) ( -136 56 -152 ) ( -136 56 -240 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 8 48 0 0
+ ( -88 8 0 ) ( -88 184 0 ) ( -112 184 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 88 32 0 0
+}
+// brush 7
+{
+ ( -112 104 32 ) ( -112 -72 32 ) ( 184 -72 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -144 -72 -136 ) ( 200 -72 -136 ) ( 200 -72 -224 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 32 0 0
+ ( 184 104 32 ) ( 184 -72 32 ) ( 200 -72 56 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 200 -24 -136 ) ( -144 -24 -136 ) ( -144 -24 -224 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 32 0 0
+ ( -112 -72 32 ) ( -112 104 32 ) ( -144 104 48 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 32 0 0
+ ( -137 758 68 ) ( -137 344 62 ) ( -137 376 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 -72 72 ) ( -136 104 72 ) ( 144 104 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 200 104 56 ) ( 200 -72 56 ) ( 144 -72 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 104 72 ) ( -136 -72 72 ) ( -144 -72 48 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+ ( -112 232 32 ) ( -112 56 32 ) ( 184 56 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -128 0 0
+ ( -144 56 -136 ) ( 200 56 -136 ) ( 200 56 -224 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 32 0 0
+ ( 184 232 32 ) ( 184 56 32 ) ( 200 56 56 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 128 0 0 0
+ ( 200 104 -136 ) ( -144 104 -136 ) ( -144 104 -224 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 32 0 0
+ ( -112 56 32 ) ( -112 232 32 ) ( -144 232 48 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -96 0 0
+ ( -137 758 68 ) ( -137 344 62 ) ( -137 376 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 56 72 ) ( -136 232 72 ) ( 144 232 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -128 0 0
+ ( 200 232 56 ) ( 200 56 56 ) ( 144 56 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -128 0 0
+ ( -136 232 72 ) ( -136 56 72 ) ( -144 56 48 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 128 0 0 0
+}
+// brush 9
+{
+ ( -112 184 32 ) ( -112 8 32 ) ( 184 8 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -80 0 0
+ ( -144 -24 -136 ) ( 200 -24 -136 ) ( 200 -24 -224 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 32 0 0
+ ( 176 -24 56 ) ( 176 56 56 ) ( 176 56 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 80 0 0 0
+ ( 200 56 -136 ) ( -144 56 -136 ) ( -144 56 -224 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 32 0 0
+ ( -112 8 32 ) ( -112 184 32 ) ( -144 184 48 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -48 0 0
+ ( -137 758 68 ) ( -137 344 62 ) ( -137 376 62 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 8 72 ) ( -136 184 72 ) ( 144 184 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -80 0 0
+ ( 176 56 56 ) ( 176 -24 56 ) ( 136 -24 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -80 0 0
+ ( -136 184 72 ) ( -136 8 72 ) ( -144 8 48 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 80 0 0 0
+}
+}
+// entity 1
+{
+"origin" "16.0 16.0 0.0"
+"model" "vehicle_t72_tank_d_body_notreads_static"
+"classname" "misc_model"
+}
+// entity 2
+{
+"origin" "16.0 80.0 0.0"
+"model" "vehicle_t72_tank_d_tread_l_static"
+"classname" "misc_model"
+}
+// entity 3
+{
+"origin" "16.0 -48.0 0.0"
+"model" "vehicle_t72_tank_d_tread_r_static"
+"classname" "misc_model"
+}

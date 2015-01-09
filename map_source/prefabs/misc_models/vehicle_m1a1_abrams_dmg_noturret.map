@@ -1,0 +1,24 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 248 -32 0 ) ( -16 -32 0 ) ( -16 -48 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 104 0 0
+ ( 248 -32 56 ) ( 248 -48 56 ) ( -80 -48 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 104 0 0
+ ( -16 -48 56 ) ( 248 -48 56 ) ( 248 -48 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 248 -48 56 ) ( 248 -32 56 ) ( 248 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 -104 0 0 0
+ ( 248 96 56 ) ( -16 96 56 ) ( -16 96 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -80 -32 56 ) ( -80 -48 56 ) ( -80 -48 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 -104 0 0 0
+ ( -80 -28 32 ) ( -24 -28 0 ) ( -24 4 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 104 0 0
+ ( 192 -28 0 ) ( 248 -28 24 ) ( 248 4 24 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 104 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "vehicle_m1a1_abrams_d_static_noturret"
+"origin" "88.0 24.0 0.0"
+}

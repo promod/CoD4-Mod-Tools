@@ -1,0 +1,298 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+//#define CHOICE_GROUP			"xboxlive_privatematch"
+
+#define CHOICE_SEP_1			3
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+#include "ui_mp/stats_info.inc"
+
+#define PLAYERLIST_WIDTH 		270
+#define ORIGIN_STATUS			(- (PLAYERLIST_WIDTH - RIGHTITEM_OFFSET)) 0
+
+#define ORIGIN_DESCRIPTION		(CHOICE_X_START + 15) 180
+#define COLOR_DESC_TEXT			1 1 1 0.7
+
+#define MENU_FONT_SIZE			TEXTSIZE_DEFAULT
+#define HIGHLIGHT_SIZE			142 22
+#define MENU_FONT_COLOR			1 1 1 0.5
+#define MENU_FONT_COLOR2		1 1 1 0.5
+#define MENU_LOCKED_COLOR		0.25 0.25 0.25 1
+
+#define ORIGIN_BUTTON_BACK		52 438
+#define ORIGIN_BUTTON_INVITE	390 86
+
+#define PREPROC_HIGHLIGHT( pname, porigin ) \
+itemDef { \
+	name			pname \
+	style			WINDOW_STYLE_SHADER \
+	rect			porigin  HIGHLIGHT_SIZE 0 0 \
+	background		HIGHLIGHT_SHADER \
+	forecolor		HIGHLIGHT_COLOR \
+	border			HIGHLIGHT_BORDER \
+	bordersize		1 \
+	bordercolor		HIGHLIGHT_BORDER_COLOR \
+	visible			1 \
+	decoration \
+}
+
+#define PREPROC_A_BUTTON( pname, porigin ) \
+itemDef { \
+	name			pname \
+	text			"@XBOXLIVE_SELECTBUTTON" \
+	textfont		UI_FONT_NORMAL \
+	textscale		A_BUTTON_SIZE \
+	origin			porigin \
+	forecolor		A_BUTTON_COLOR \
+	visible			1 \
+	decoration \
+}
+
+#define INDEX_TIME_PLAYED_OTHER 2313
+#define STATTODVAR_TIME_PLAYED_OTHER execNow "statGetInDvar 2313 ui_stat_time_played_other"
+#define INDEX_TIME_PLAYED_OPFOR 2312
+#define STATTODVAR_TIME_PLAYED_OPFOR execNow "statGetInDvar 2312 ui_stat_time_played_opfor"
+#define INDEX_TIME_PLAYED_ALLIES 2311
+#define STATTODVAR_TIME_PLAYED_ALLIES execNow "statGetInDvar 2311 ui_stat_time_played_allies"
+#define INDEX_SUICIDES 2310
+#define STATTODVAR_SUICIDES execNow "statGetInDvar 2310 ui_stat_suicides"
+#define INDEX_TEAMKILLS 2309
+#define STATTODVAR_TEAMKILLS execNow "statGetInDvar 2309 ui_stat_teamkills"
+#define INDEX_HEADSHOTS 2308
+#define STATTODVAR_HEADSHOTS execNow "statGetInDvar 2308 ui_stat_headshots"
+#define INDEX_ASSISTS 2307
+#define STATTODVAR_ASSISTS execNow "statGetInDvar 2307 ui_stat_assists"
+#define INDEX_DEATH_STREAK 2306
+#define STATTODVAR_DEATH_STREAK execNow "statGetInDvar 2306 ui_stat_death_streak"
+#define INDEX_DEATHS 2305
+#define STATTODVAR_DEATHS execNow "statGetInDvar 2305 ui_stat_deaths"
+#define INDEX_KILL_STREAK 2304
+#define STATTODVAR_KILL_STREAK execNow "statGetInDvar 2304 ui_stat_kill_streak"
+#define INDEX_KILLS 2303
+#define STATTODVAR_KILLS execNow "statGetInDvar 2303 ui_stat_kills"
+#define INDEX_SCORE 2302
+#define STATTODVAR_SCORE execNow "statGetInDvar 2302 ui_stat_score"
+#define INDEX_RANKXP 2301
+#define STATTODVAR_RANKXP execNow "statGetInDvar 2301 ui_stat_rankxp"
+
+#define STAT_UPDATE \
+	STATTODVAR_TIME_PLAYED_OTHER; \
+	STATTODVAR_TIME_PLAYED_OPFOR; \
+	STATTODVAR_TIME_PLAYED_ALLIES; \
+	STATTODVAR_TEAMKILLS; \
+	STATTODVAR_HEADSHOTS; \
+	STATTODVAR_ASSISTS; \
+	STATTODVAR_DEATH_STREAK; \
+	STATTODVAR_DEATHS; \
+	STATTODVAR_KILL_STREAK; \
+	STATTODVAR_KILLS; \
+	STATTODVAR_SCORE; \
+	STATTODVAR_RANKXP;
+
+{
+	menuDef{
+		name			menu_xboxlive_barracks
+		fullscreen		1
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			0
+		soundloop 		"music_mainmenu_mp"
+		onOpen{
+			STAT_UPDATE
+			focusFirst;
+		}
+		onEsc{
+			close menu_xboxlive_barracks	
+		}
+
+		// ------------------  statics ------------------------
+#include "ui/blurredbg.inc"
+		
+		CHOICE_MENU_TITLE( "@MPUI_BARRACKS_CAP" )
+
+		// ------------------------ lobby status ----------------------------
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			0 0 0 0 RIGHTITEM_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_STATUS
+			textaligny		12
+			textalign		ITEM_ALIGN_LEFT
+			forecolor		MENU_FONT_COLOR2
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			ownerdraw		UI_PARTYSTATUS
+			decoration
+			visible when ( dvarint( party_timerVisible ) == 0 );
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			0 0 0 0 RIGHTITEM_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_STATUS
+			textaligny		12
+			textalign		ITEM_ALIGN_LEFT
+			forecolor		MENU_FONT_COLOR2
+			text			"@MENU_MATCH_BEGINNING_IN"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			decoration
+			visible when ( dvarint( party_timerVisible ) == 1 );
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			rect			130 0 0 0 RIGHTITEM_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_STATUS
+			textaligny		12
+			textalign		ITEM_ALIGN_LEFT
+			forecolor		MENU_FONT_COLOR2
+			dvar			"party_timer"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			decoration
+			visible when ( dvarint( party_timerVisible ) == 1 );
+		}
+
+		#include "ui_mp/navcontrols.inc"
+
+		//=========================================================
+		//===================== MENU SELECTION ====================
+		//=========================================================
+
+		#define CLEARUIHINT	exec "set ui_hint_text @NULL_EMPTY"
+
+		#define SETUP_ACTION_LEADERBOARDS \
+				open menu_leaderboards;
+
+		#define SETUP_ACTION_CHALLENGES \
+				execnow "statset 263 1"; \
+				open menu_challenges
+
+		#define SETUP_ACTION_CLANTAG \
+				execnow "statset 261 1"; \
+				execnow "editclanname";
+
+		#define SETUP_ACTION_PRESTIGEMODE \
+			 	exec "statset 267 1";\
+				open prestige_reset1
+
+		CHOICE_BUTTON_FOCUS_VIS( 1, "@XBOXLIVE_LEADERBOARDS", SETUP_ACTION_LEADERBOARDS, exec "set ui_hint_text @MPUI_DESC_LEADERBOARDS", CLEARUIHINT, 1 )
+		
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 2, "@MPUI_CHALLENGES", SETUP_ACTION_CHALLENGES, exec "set ui_hint_text @MPUI_DESC_CHALLENGES", CLEARUIHINT, when( stat( 263 ) >= 1 ), stat( 263 ) >= 1 )
+		CHOICE_BUTTON_FOCUS_VIS_NOHI( 2, "", ;, exec "set ui_hint_text @MPUI_DESC_CHALLENGES2", CLEARUIHINT, when( stat( 263 ) < 1 ) )
+		CHOICE_DBUTTON_VIS( 2, "@MPUI_CHALLENGES", when( stat( 263 ) < 1 ) )
+		CHOICE_NEWICON_VIS( 2, "specialty_new", when( ANY_NEW_CHALLENGES ) )
+		
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 3, "@MPUI_CLAN_TAG", SETUP_ACTION_CLANTAG, exec "set ui_hint_text @MPUI_DESC_CLANTAG", CLEARUIHINT, when( stat( 261 ) >= 1 ), stat( 261 ) >= 1 )
+		CHOICE_BUTTON_FOCUS_VIS_NOHI( 3, "", ;, exec "set ui_hint_text @MPUI_DESC_CLANTAG2", CLEARUIHINT, when( stat( 261 ) < 1 ) )
+		CHOICE_DBUTTON_VIS( 3, "@MPUI_CLAN_TAG", when( stat( 261 ) < 1 ) )
+		CHOICE_NEWICON_VIS( 3, "specialty_new", when( stat( 261 ) > 1 ) )
+
+		CHOICE_SEPARATOR_VIS( CHOICE_SEP_1, when( PRESTIGE_FINISH == 0 ) )
+
+		/* prestige mode */		
+		CHOICE_BUTTON_FOCUS_VIS_ADV( 4, "@MPUI_PRESTIGE_MODE", SETUP_ACTION_PRESTIGEMODE, exec "set ui_hint_text @MPUI_DESC_PRESTIGE", CLEARUIHINT, when( PRESTIGE_AVAIL ), PRESTIGE_AVAIL )
+		CHOICE_NEWICON_VIS( 4, "specialty_new", when( PRESTIGE_AVAIL && stat( 267 )==0 ) )
+
+		/* prestige mode locked */
+		CHOICE_BUTTON_FOCUS_VIS_NOHI( 4, "", ;, exec "set ui_hint_text @MPUI_DESC_PRESTIGE2", CLEARUIHINT, when( PRESTIGE_AVAIL==0 && PRESTIGE_FINISH==0 ) )
+		CHOICE_DBUTTON_VIS( 4, "@MPUI_PRESTIGE_MODE", when( PRESTIGE_AVAIL == 0 && PRESTIGE_FINISH == 0 ) )
+
+		// ---------------------- menu selection description -------------------------
+		itemDef	{
+			name			desc_arrow
+			style			WINDOW_STYLE_SHADER
+			rect			0 3 10 10 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_DESCRIPTION
+			background		"ui_arrow_right"
+			forecolor		1 1 1 0.25
+			visible			1
+			decoration
+		}
+		itemDef	{
+			name			description_choice
+			type			ITEM_TYPE_TEXT
+			rect			12 0 240 32 CHOICE_HORIZONTAL_ALIGN VERTICAL_ALIGN_TOP
+			origin			ORIGIN_DESCRIPTION
+			exp				text( dvarString( ui_hint_text ) )
+			textfont		UI_FONT_DEFAULT
+			textscale		TEXTSIZE_SMALL
+			textaligny		16
+			forecolor		COLOR_DESC_TEXT
+			visible			1
+			autowrapped
+			decoration
+		}		
+
+		// player stat section
+		#include "ui_mp/player_info.inc"
+		
+		#include "ui/popup_background.inc"
+		#include "ui/safearea.menu"
+	}
+
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X			320
+	
+	#undef CHOICE_HORIZONTAL_ALIGN
+	#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+	#undef CHOICE_VERTICAL_ALIGN
+	#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+	
+	#define CHOICE_POPUP_TITLE_HEIGHT	24
+	#define CHOICE_POPUP_SUBTITLE_HEIGHT 142
+	
+	#include "ui_mp/popupstyle.inc"
+	#include "ui/choices_setup_popmenu.menu"
+
+	// ---------- system link popup to choose create or find game ----------
+	menuDef
+	{
+		CENTER_POPUP_SETUP_ONOPEN( prestige_reset1, 2, ;, setfocus cancel_button, 1 )
+
+		CHOICE_POPMENU_TITLE( "@MENU_PRESTIGE_RESET_TITLE1" )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_PRESTIGE_RESET_WARNING1" )
+		CHOICE_BUTTON( 1, "@MENU_PRESTIGE_RESET_TITLE2", close prestige_reset1; open prestige_reset2 )
+		CHOICE_BUTTON_EX( 2, "@MENU_CANCEL", close prestige_reset1, name cancel_button )
+	}
+
+	// ---------- system link popup to choose create or find game ----------
+	menuDef
+	{
+		CENTER_POPUP_SETUP_ONOPEN( prestige_reset2, 2, ;, setfocus cancel_button, 1 )
+
+		CHOICE_POPMENU_TITLE( "@MENU_PRESTIGE_RESET_TITLE2" )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_PRESTIGE_RESET_WARNING2" )
+		CHOICE_BUTTON( 1, "@MENU_CONTINUE", close prestige_reset2; open prestige_reset3 )
+		CHOICE_BUTTON_EX( 2, "@MENU_CANCEL", close prestige_reset2, name cancel_button )
+	}
+
+	#define PRESTIGE_RESET \
+		exec "statGetInDvar 2326 prestige_level"; \
+		exec "prestigeReset"; \
+		play "enter_prestige"; \
+		execNow "updategamerprofile"; \
+		STATTODVAR_RANKXP
+
+
+	// ---------- system link popup to choose create or find game ----------
+	menuDef
+	{
+		CENTER_POPUP_SETUP_ONOPEN( prestige_reset3, 2, ;, setfocus cancel_button, 1 )
+
+		CHOICE_POPMENU_TITLE( "@MENU_PRESTIGE_RESET_TITLE3" )
+		CHOICE_POPMENU_SUBTITLE( "@MENU_PRESTIGE_RESET_WARNING3" )
+		CHOICE_BUTTON( 1, "@MENU_PRESTIGE_ENTER", PRESTIGE_RESET; close prestige_reset3; )
+		CHOICE_BUTTON_EX( 2, "@MENU_CANCEL", close prestige_reset3;, name cancel_button )
+	}
+}

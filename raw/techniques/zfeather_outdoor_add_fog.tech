@@ -1,0 +1,21 @@
+{
+		stateMap "zfeather_add";
+
+	vertexShader 2.0 "zfeather_outdoor.hlsl"
+	{
+		featherParms = material.featherParms;
+	}
+
+	pixelShader 2.0 "zfeather_outdoor_add.hlsl"
+	{
+		fogColor = float4( 0, 0, 0, 0 );
+		colorMapSampler = material.colorMap;
+		featherParms = material.featherParms;
+		outdoorMapSampler = sampler.outdoor;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

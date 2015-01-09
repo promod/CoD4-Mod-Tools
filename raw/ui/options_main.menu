@@ -1,0 +1,9 @@
+#define OPTIONS_MAIN
+
+#ifdef CONSOLE
+#include "ui/options.menu"
+#endif // #ifdef CONSOLE
+
+#ifdef PC
+#include "ui/options_pc.menu"
+#endif // #ifdef PC

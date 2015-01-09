@@ -1,0 +1,171 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"contrastGain" ".25"
+"sunlight" "0.6"
+"sundiffusecolor" ".5 .6 1"
+"suncolor" ".75 .9 1"
+"diffusefraction" ".48"
+"ambient" "0.2"
+"_color" "0.6 0.7 1"
+"sundirection" "-41 -15 0"
+"sunRadiosity" "1.5"
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( -4 -4 74 ) ( -4 -1 75 ) ( 4 -1 75 ) ch_woodpaint_white01 128 121.43148 -140 81.620453 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 4 -1 2 ) ( 4 -9 2 ) ( 4 -9 68 ) ch_woodpaint_white01 128 128 -153 6 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -1 2 ) ( 4 -1 75 ) ( -4 -1 75 ) ch_woodpaint_white01 128 -128 -156 -6 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -1 75 ) ( -4 -4 74 ) ( -4 -7 71 ) ch_woodpaint_white01 128 -128 -127 -6 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -8 70 ) ( -4 -8 70 ) ( -4 -4 74 ) ch_woodpaint_white01 128 90.509689 -140 61.854893 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( -4 -8 70 ) ( 4 -8 70 ) ( 4 -9 67 ) ch_woodpaint_white01 128 121.43148 -140 2.2538903 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 4 -5 67 ) ( 4 -8 67 ) ( 36 -8 67 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+ {
+  mesh
+  {
+   ch_dec_darkstain_02
+   lightmap_gray
+   smoothing smoothing_smooth_other
+   2 2 0 8
+   (
+	v 4 -9 -6 t 1152 0 4.65625 0.5
+	v -4 -9 -6 t 1088 0 4.15625 0.5
+   )
+   (
+	v 4 -9 67 c 255 255 255 0 t 1152 -584 4.65625 -4.0625
+	v -4 -9 67 c 255 255 255 0 t 1088 -584 4.15625 -4.0625
+   )
+  }
+ }
+// brush 2
+ {
+  mesh
+  {
+   ch_dec_darkstain_02
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 4 -1 67 c 255 255 255 0 t 1216 -584 0.375 -4.0625
+	v 4 -1 -6 t 1216 0 0.375 0.5
+   )
+   (
+	v 4 -9 67 c 255 255 255 0 t 1152 -584 -0.125 -4.0625
+	v 4 -9 -6 t 1152 0 -0.125 0.5
+   )
+  }
+ }
+// brush 3
+ {
+  mesh
+  {
+   ch_dec_darkstain_02
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -4 -1 -6 t 1024 0 0.375 0.5
+	v -4 -1 67 c 255 255 255 0 t 1024 -584 0.375 -4.0625
+   )
+   (
+	v -4 -9 -6 t 1088 0 -0.125 0.5
+	v -4 -9 67 c 255 255 255 0 t 1088 -584 -0.125 -4.0625
+   )
+  }
+ }
+// brush 4
+ {
+  mesh
+  {
+   ch_dec_darkstain_02
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -4 -1 -6 t 1280 0 4.15625 0.5
+	v 4 -1 -6 t 1216 0 4.65625 0.5
+   )
+   (
+	v -4 -1 67 c 255 255 255 0 t 1280 -584 4.15625 -4.0625
+	v 4 -1 67 c 255 255 255 0 t 1216 -584 4.65625 -4.0625
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+   ch_woodpaint_white01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -4 -1 -6 t 1024 0 -0.0625 0.375
+	v -4 -1 67 t 1024 -584 -0.0625 -4.1875
+   )
+   (
+	v -4 -9 -6 t 1088 0 -0.5625 0.375
+	v -4 -9 67 t 1088 -584 -0.5625 -4.1875
+   )
+  }
+ }
+// brush 6
+ {
+  mesh
+  {
+   ch_woodpaint_white01
+   lightmap_gray
+   smoothing smoothing_smooth_other
+   2 2 0 8
+   (
+	v 4 -9 -6 t 1152 0 0.25 0.375
+	v -4 -9 -6 t 1088 0 -0.25 0.375
+   )
+   (
+	v 4 -9 67 t 1152 -584 0.25 -4.1875
+	v -4 -9 67 t 1088 -584 -0.25 -4.1875
+   )
+  }
+ }
+// brush 7
+ {
+  mesh
+  {
+   ch_woodpaint_white01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v 4 -1 67 t 1216 -584 -0.0625 -4.1875
+	v 4 -1 -6 t 1216 0 -0.0625 0.375
+   )
+   (
+	v 4 -9 67 t 1152 -584 -0.5625 -4.1875
+	v 4 -9 -6 t 1152 0 -0.5625 0.375
+   )
+  }
+ }
+// brush 8
+ {
+  mesh
+  {
+   ch_woodpaint_white01
+   lightmap_gray
+   smoothing smoothing_hard
+   2 2 0 8
+   (
+	v -4 -1 -6 t 1280 0 -0.25 0.375
+	v 4 -1 -6 t 1216 0 0.25 0.375
+   )
+   (
+	v -4 -1 67 t 1280 -584 -0.25 -4.1875
+	v 4 -1 67 t 1216 -584 0.25 -4.1875
+   )
+  }
+ }
+}

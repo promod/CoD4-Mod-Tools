@@ -1,0 +1,37 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+ {
+  mesh
+  {
+   ch_poster_chalkboard
+   lightmap_gray
+   3 3 16 8
+   (
+	v 1 -56 -29 t 0 0 -3.5 1.8125
+	v 1 -56 0 t 0 -512 -3.5 0
+	v 1 -56 29 t 0 -1024 -3.5 -1.8125
+   )
+   (
+	v 1 0 -29 t 512 0 0 1.8125
+	v 1 0 0 t 512 -512 0 0
+	v 1 0 29 t 512 -1024 0 -1.8125
+   )
+   (
+	v 1 56 -29 t 1024 0 3.5 1.8125
+	v 1 56 0 t 1024 -512 3.5 0
+	v 1 56 29 t 1024 -1024 3.5 -1.8125
+   )
+  }
+ }
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"classname" "misc_model"
+"model" "com_chalkboard"
+}

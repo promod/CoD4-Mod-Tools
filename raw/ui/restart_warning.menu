@@ -1,0 +1,183 @@
+/*#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			320
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+
+#define CHOICE_POPUP_TITLE_HEIGHT	24
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+
+{
+	menuDef
+	{
+		CENTER_POPUP_SETUP_ONOPEN( restart_warning, 6, open "pausedmenu";, focusfirst;, 1 )
+		CHOICE_POPMENU_TITLE( "@MENU_CONTINUE_RESTART" )
+
+		CHOICE_POPMENU_SUBTITLE( "If you restart now, you will lose any progress that you have made in this mission." )
+
+		CHOICE_BUTTON( 5, "@MENU_RESUMEGAME", close self; )
+		CHOICE_BUTTON( 6, "@MENU_RESTART_LEVEL", close self; exec "stopControllerRumble"; exec "fast_restart"; )
+	}
+}
+
+*/
+
+#include "ui/menudef.h"
+
+{
+	menuDef 
+	{
+		name restart_warning
+	   	visible 0
+   		fullscreen 0
+	   	//rect 217 200 210 85
+		rect 204 135 235 160
+		focusColor COLOR_FOCUSED
+   		style WINDOW_STYLE_FILLED
+   		border 1
+		popup
+		blurWorld		4.8
+		onOpen
+		{ 
+			setfocus re;
+		}
+		onEsc
+		{
+			open "pausedmenu";
+			close "restart_warning";
+		}
+	
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -160 2 555 180
+	 		background "popmenu_bg"
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MENU_CONTINUE_RESTART" 
+			style WINDOW_STYLE_EMPTY
+			textscale TEXTSIZE_TITLE 
+			rect 126 25 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -62
+			textaligny 5
+			decoration
+			forecolor		COLOR_TITLE
+			visible 1
+		}
+		itemDef 
+		{
+			name txt
+			text "@MENU_RESTART_TEXT_1"
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 35 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name txt
+			text "@MENU_RESTART_TEXT_2"
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 50 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name txt
+			text "@MENU_RESTART_TEXT_3"
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 65 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name re
+			text "@MENU_RESUMEGAME"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 100 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "restart_warning";
+			}
+		}
+		itemDef 
+		{
+			name rs
+			text "@MENU_RESTART_LEVEL"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 125 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "restart_warning";
+				exec "stopControllerRumble";
+				exec "fast_restart"
+			}
+		}
+	}
+}

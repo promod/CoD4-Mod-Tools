@@ -1,0 +1,201 @@
+iwfx 2
+
+{
+	name "dirt_burst_L";
+	editorFlags useRandRotDelta absVel1;
+	flags spawnFrustumCull spawnOffsetCylinder runRelToOffset;
+	spawnRange 0 6000;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 600;
+	spawnLooping 25 0;
+	spawnOneShot 2 0;
+	spawnDelayMsec 0 100;
+	lifeSpanMsec 1000 500;
+	spawnOrgX 0 0;
+	spawnOrgY 0 0;
+	spawnOrgZ 5 0;
+	spawnOffsetRadius 1 0;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 90 0;
+	gravity 1.5 1.25;
+	elasticity 1 0;
+	atlasBehavior startRandom;
+	atlasIndex 0;
+	atlasFps 30;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 800
+	{
+		{
+			0 0.5
+			1 0
+		}
+		{
+			0 0.5
+			1 0
+		}
+	};
+	velGraph0Y 100
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Z 100
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 200
+	{
+		{
+			0 0
+			1 0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 200
+	{
+		{
+			0 0.00925928
+			1 0.5
+		}
+		{
+			0 -0.00462964
+			1 -0.5
+		}
+	};
+	sizeGraph0 600
+	{
+		{
+			0 0.207792
+			0.282353 0.25974
+			0.529412 0.415584
+			0.752941 0.623377
+			1 1
+		}
+		{
+			0 0
+			0.282353 0.175325
+			0.414706 0.350649
+			0.538235 0.480519
+			0.611765 0.551948
+			0.661765 0.662338
+			0.720588 0.75974
+			0.785294 0.857143
+			0.852941 0.961039
+			0.938235 0.993506
+			1 1
+		}
+	};
+	sizeGraph1 2
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 1
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.435294 0.482353 0.509804
+			1 0.430052 0.46114 0.512953
+		}
+		{
+			0 0.701961 0.686275 0.509804
+			1 0.686275 0.670588 0.486275
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.104651 0.172249
+			0.22093 0.267943
+			0.363372 0.287081
+			0.584302 0.248804
+			0.784884 0.100478
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	lightingFrac 0;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 5;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_wind_rain_lhts_atlas"
+	};
+}

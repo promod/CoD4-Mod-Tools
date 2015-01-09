@@ -1,0 +1,97 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 28 320 98 ) ( -36 320 98 ) ( -36 0 98 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 0 100 ) ( -36 320 100 ) ( 28 320 100 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -4 100 ) ( 28 -4 100 ) ( 28 -4 4 ) me_woodboard_02 128 -128 0 -94 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 4 108 ) ( -36 4 108 ) ( -36 4 12 ) me_woodboard_02 128 128 0 -94 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 4 96 ) ( 24 4 100 ) ( 24 36 100 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 4 100 ) ( -20 4 96 ) ( -20 36 96 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -28 320 36 ) ( 36 320 36 ) ( 36 0 36 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 0 34 ) ( 36 320 34 ) ( -28 320 34 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -4 34 ) ( -28 -4 34 ) ( -28 -4 130 ) me_woodboard_02 128 128 0 -40 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 4 26 ) ( 36 4 26 ) ( 36 4 122 ) me_woodboard_02 128 -128 0 -40 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 4 38 ) ( -24 4 34 ) ( -24 36 34 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 4 34 ) ( 20 4 38 ) ( 20 36 38 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -28 -4 98 ) ( 36 -4 98 ) ( 36 -4 2 ) me_woodboard_02 128 128 -18 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 4 106 ) ( -28 4 106 ) ( -28 4 10 ) me_woodboard_02 128 -128 18 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 320 98 ) ( -24 0 98 ) ( -24 0 2 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 4 74 ) ( -22 4 82 ) ( -22 36 82 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 4 94 ) ( -24 4 100 ) ( -24 36 100 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 4 34 ) ( -20 4 38 ) ( -24 36 34 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( -36 -4 98 ) ( 28 -4 98 ) ( 28 -4 2 ) me_woodboard_02 128 -128 0 18 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 0 98 ) ( 24 320 98 ) ( 24 320 2 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 4 106 ) ( -36 4 106 ) ( -36 4 10 ) me_woodboard_02 128 128 0 18 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 4 90 ) ( 22 4 82 ) ( 22 36 90 ) me_woodboard_02 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 4 100 ) ( 20 4 96 ) ( 24 36 100 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 4 38 ) ( 24 4 34 ) ( 24 36 34 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 45 320 36 ) ( -19 320 36 ) ( -19 0 36 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 3 0 0 0
+ ( 25 4 98 ) ( 25 -4 98 ) ( -19 -4 98 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 3 0 0 0
+ ( -33 -1 98 ) ( 31 -1 98 ) ( 31 -1 2 ) me_woodboard_02 128 -128 0 -94 0 0 lightmap_gray 16384 16384 3 2 0 0
+ ( 31 1 106 ) ( -33 1 106 ) ( -33 1 10 ) me_woodboard_02 128 128 0 -94 0 0 lightmap_gray 16384 16384 3 2 0 0
+ ( 1 -4 96 ) ( 1 4 96 ) ( 1 4 94 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 0 0 0
+ ( -1 4 98 ) ( -1 -4 98 ) ( -1 -4 96 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -1 320 124 ) ( -1 320 60 ) ( -1 0 60 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 -16384 82 0 90 0
+ ( -22 4 104 ) ( -22 -4 104 ) ( -22 -4 60 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 -16384 82 0 90 0
+ ( -22 -1 46 ) ( -22 -1 110 ) ( 74 -1 110 ) me_woodboard_02 128 -128 0 -94 0 0 lightmap_gray 16384 16384 82 78 90 0
+ ( -30 1 110 ) ( -30 1 46 ) ( 66 1 46 ) me_woodboard_02 128 128 0 -94 0 0 lightmap_gray 16384 16384 82 78 90 0
+ ( -20 -4 80 ) ( -20 4 80 ) ( -18 4 80 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 76 90 0
+ ( -63 4 78 ) ( -63 -4 78 ) ( -61 -4 78 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 76 90 0
+}
+// brush 6
+{
+  contents detail;
+ ( 22 320 124 ) ( 22 320 60 ) ( 22 0 60 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 -16384 82 0 90 0
+ ( 1 4 104 ) ( 1 -4 104 ) ( 1 -4 60 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 -16384 82 0 90 0
+ ( 1 -1 46 ) ( 1 -1 110 ) ( 97 -1 110 ) me_woodboard_02 128 -128 0 -94 0 0 lightmap_gray 16384 16384 82 101 90 0
+ ( -7 1 110 ) ( -7 1 46 ) ( 89 1 46 ) me_woodboard_02 128 128 0 -94 0 0 lightmap_gray 16384 16384 82 101 90 0
+ ( 3 -4 80 ) ( 3 4 80 ) ( 5 4 80 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 99 90 0
+ ( -40 4 78 ) ( -40 -4 78 ) ( -38 -4 78 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 99 90 0
+}
+// brush 7
+{
+  contents detail;
+ ( 22 320 100 ) ( 22 320 36 ) ( 22 0 36 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 -16384 58 0 90 0
+ ( 1 4 80 ) ( 1 -4 80 ) ( 1 -4 36 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 -16384 58 0 90 0
+ ( 1 -1 22 ) ( 1 -1 86 ) ( 97 -1 86 ) me_woodboard_02 128 -128 0 -94 0 0 lightmap_gray 16384 16384 58 101 90 0
+ ( -7 1 86 ) ( -7 1 22 ) ( 89 1 22 ) me_woodboard_02 128 128 0 -94 0 0 lightmap_gray 16384 16384 58 101 90 0
+ ( 3 -4 56 ) ( 3 4 56 ) ( 5 4 56 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 99 90 0
+ ( -40 4 54 ) ( -40 -4 54 ) ( -38 -4 54 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 99 90 0
+}
+// brush 8
+{
+  contents detail;
+ ( -1 320 100 ) ( -1 320 36 ) ( -1 0 36 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 -16384 58 0 90 0
+ ( -22 4 80 ) ( -22 -4 80 ) ( -22 -4 36 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 -16384 58 0 90 0
+ ( -22 -1 22 ) ( -22 -1 86 ) ( 74 -1 86 ) me_woodboard_02 128 -128 0 -94 0 0 lightmap_gray 16384 16384 58 78 90 0
+ ( -30 1 86 ) ( -30 1 22 ) ( 66 1 22 ) me_woodboard_02 128 128 0 -94 0 0 lightmap_gray 16384 16384 58 78 90 0
+ ( -20 -4 56 ) ( -20 4 56 ) ( -18 4 56 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 76 90 0
+ ( -63 4 54 ) ( -63 -4 54 ) ( -61 -4 54 ) me_woodboard_02 128 128 0 0 0 0 lightmap_gray 16384 16384 4 76 90 0
+}
+}

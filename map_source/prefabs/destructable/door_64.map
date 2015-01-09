@@ -1,0 +1,41 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"script_threshold" "5"
+"script_accumulate" "140"
+"targetname" "destructable"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 2 20 26 ) ( -2 20 26 ) ( -2 -18 26 ) nodraw_decal -4 48 -2 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -18 82 ) ( -2 20 82 ) ( 2 20 82 ) nodraw_decal -4 48 -2 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -24 76 ) ( 2 -24 76 ) ( 2 -24 30 ) nodraw_decal -4 56 -2 30 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -18 76 ) ( 2 20 76 ) ( 2 20 30 ) me_decal_plasterwall_05 -48 56 -24 30 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 24 76 ) ( -2 24 76 ) ( -2 24 30 ) nodraw_decal -4 56 -2 30 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 20 76 ) ( -2 -18 76 ) ( -2 -18 30 ) me_decal_plasterwall_05 -48 56 -24 30 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 4 30 0 ) ( -4 30 0 ) ( -4 -30 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -30 102 ) ( -4 30 102 ) ( 4 30 102 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -30 102 ) ( 4 -30 102 ) ( 4 -30 0 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -30 102 ) ( 2 30 102 ) ( 2 30 0 ) me_door_03 -60 102 -30 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 30 102 ) ( -4 30 102 ) ( -4 30 0 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 30 102 ) ( -2 -30 102 ) ( -2 -30 0 ) me_door_03 -60 102 -30 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 56 8 44 ) ( -8 8 44 ) ( -8 -8 44 ) origin 64 64 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 60 ) ( -8 8 60 ) ( 56 8 60 ) origin 64 64 -64 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 60 ) ( 56 -8 60 ) ( 56 -8 44 ) origin 64 64 -64 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -8 60 ) ( 8 8 60 ) ( 8 8 44 ) origin 64 64 0 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 8 60 ) ( -8 8 60 ) ( -8 8 44 ) origin 64 64 -64 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 60 ) ( -8 -8 60 ) ( -8 -8 44 ) origin 64 64 0 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,33 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 72 22 0 ) ( -1 22 0 ) ( -1 0 0 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 0 36 ) ( -1 22 36 ) ( 72 22 36 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 0 36 ) ( 72 0 36 ) ( 72 0 1 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 0 36 ) ( 72 22 36 ) ( 72 22 1 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 22 36 ) ( -1 22 36 ) ( -1 22 1 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 22 36 ) ( -1 0 36 ) ( -1 0 1 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 7 ) ( 0 7 36 ) ( 32 0 7 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 14 36 ) ( 0 22 7 ) ( 32 14 36 ) clip_nosight_rock 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 70 32 0 ) ( 0 32 0 ) ( 0 -7 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -7 36 ) ( 0 32 36 ) ( 70 32 36 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -10 36 ) ( 71 -10 36 ) ( 71 -10 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 79 -7 36 ) ( 79 32 36 ) ( 79 32 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 70 32 36 ) ( 0 32 36 ) ( 0 32 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 33 36 ) ( -12 -6 36 ) ( -12 -6 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "36 11 0"
+"model" "me_concrete_barrier"
+"classname" "misc_model"
+}

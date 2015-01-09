@@ -1,0 +1,74 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_GROUP			"map_selection"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#undef A_BUTTON_SIZE
+#define A_BUTTON_SIZE			0.3
+
+#undef A_BUTTON_OFFSET_X
+#define A_BUTTON_OFFSET_X		-2
+// ------------------- end preprocessing definitions ----------------------
+{
+	menuDef
+	{
+		name			settings_map
+		fullscreen		1
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			0
+		soundloop 		"music_mainmenu_mp"
+		onOpen
+		{
+			focusFirst;
+			setfocusbydvar "ui_mapname";
+		}
+		onEsc
+		{
+			close settings_map;
+		}
+		onClose
+		{
+			execNow "xupdatepartystate";
+		}
+		
+		// ------------------  statics ------------------------
+#include "ui/blurredbg.inc"
+
+		CHOICE_MENU_TITLE( "@MENU_CHOOSE_MAP_CAP" )
+		
+		#define MAP_LIST\
+			LOCAL_MAP_SELECTION( 1, "@MPUI_CONVOY", 	"mp_convoy" )\
+			LOCAL_MAP_SELECTION( 2, "@MPUI_BACKLOT",    "mp_backlot" )\    
+			LOCAL_MAP_SELECTION( 3, "@MPUI_BLOC",       "mp_bloc" )\  
+			LOCAL_MAP_SELECTION( 4, "@MPUI_BOG",       "mp_bog" )\ 
+			LOCAL_MAP_SELECTION( 5, "@MPUI_COUNTDOWN",  "mp_countdown" )\
+			LOCAL_MAP_SELECTION( 6, "@MPUI_CRASH",      "mp_crash" )\ 
+			LOCAL_MAP_SELECTION( 7, "@MPUI_CROSSFIRE",  "mp_crossfire" )\ 
+			LOCAL_MAP_SELECTION( 8, "@MPUI_CITYSTREETS","mp_citystreets" )\ 
+			LOCAL_MAP_SELECTION( 9, "@MPUI_FARM",       "mp_farm" )\       
+			LOCAL_MAP_SELECTION( 10, "@MPUI_OVERGROWN",  "mp_overgrown" )\
+			LOCAL_MAP_SELECTION( 11, "@MPUI_PIPELINE",  "mp_pipeline" )\ 
+			LOCAL_MAP_SELECTION( 12, "@MPUI_SHIPMENT",  "mp_shipment" )\  
+			LOCAL_MAP_SELECTION( 13, "@MPUI_SHOWDOWN",  "mp_showdown" )\ 
+			LOCAL_MAP_SELECTION( 14, "@MPUI_STRIKE",    "mp_strike" )\  
+			LOCAL_MAP_SELECTION( 15, "@MPUI_VACANT",    "mp_vacant" )\    
+			LOCAL_MAP_SELECTION( 16, "@MPUI_CARGOSHIP", "mp_cargoship" )
+			
+		#define MAP_TABLE	"mp/mapsTable.csv"
+		
+		#include "ui_mp/map_info.inc"
+	}
+}

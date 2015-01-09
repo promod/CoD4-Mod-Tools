@@ -1,0 +1,15 @@
+#include "ui/menudef.h"
+
+{
+    menuDef
+    {
+        name            "uiscript_refreshservers"
+        fullScreen      1
+        rect            0 0 640 480
+        onOpen
+        {
+            uiScript RefreshServers;
+            close "uiscript_refreshservers";
+        }
+    }
+}

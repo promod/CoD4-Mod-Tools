@@ -1,0 +1,205 @@
+iwfx 1
+
+{
+	name "dirt_burst_L";
+	editorFlags useRandSize0 useRandVel0;
+	flags spawnRelative spawnOffsetNone runRelToSpawn;
+	spawnRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 200 1;
+	spawnOneShot 1 0;
+	spawnDelayMsec 0 100;
+	lifeSpanMsec 1000 500;
+	spawnOrgX 0 0;
+	spawnOrgY -10 20;
+	spawnOrgZ -10 20;
+	spawnOffsetRadius 60 0;
+	spawnOffsetHeight 1 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot -180 360;
+	gravity 1.5 1.25;
+	elasticity 1 0;
+	atlasBehavior startFixed;
+	atlasIndex 0;
+	atlasFps 1;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 100
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0.5
+			1 0.5
+		}
+	};
+	velGraph0Y 100
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Z 100
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1X 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 300
+	{
+		{
+			0 0.5
+			0.0901163 0.453704
+			0.168605 0.407407
+			0.218023 0.180556
+			0.351744 0.0925926
+			0.56686 0.0509259
+			0.784884 0.037037
+			1 0.0138889
+		}
+		{
+			0 -0.00462964
+			1 -0.00462964
+		}
+	};
+	sizeGraph0 400
+	{
+		{
+			0 0.0909091
+			0.0735294 0.149351
+			0.152941 0.168831
+			0.232353 0.214286
+			0.364706 0.285714
+			0.597059 0.409091
+			0.823529 0.487013
+			1 0.590909
+		}
+		{
+			0 0
+			0.282353 0.175325
+			0.414706 0.350649
+			0.538235 0.480519
+			0.611765 0.551948
+			0.661765 0.662338
+			0.720588 0.75974
+			0.785294 0.857143
+			0.852941 0.961039
+			0.938235 0.993506
+			1 1
+		}
+	};
+	sizeGraph1 2
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 1
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.699482 0.621762 0.502591
+			1 0.709845 0.621762 0.507772
+		}
+		{
+			0 0.595855 0.590674 0.601036
+			1 0.601036 0.595855 0.595855
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0.569378
+			0.104651 0.574163
+			0.383721 0.244019
+			0.930233 0.062201
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 5;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_whisp_spiral"
+	};
+}

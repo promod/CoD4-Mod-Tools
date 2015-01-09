@@ -1,0 +1,15 @@
+{
+	stateMap "default";
+
+	vertexShader 1.1 "cinematic_nc.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "cinematic_nc.hlsl"
+	{
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

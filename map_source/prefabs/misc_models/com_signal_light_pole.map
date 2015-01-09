@@ -1,0 +1,41 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 6 6 0 ) ( -6 6 0 ) ( -6 -6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -6 266 ) ( -6 6 266 ) ( 6 6 266 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -6 268 ) ( 6 -6 268 ) ( 6 -6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -6 268 ) ( 6 6 268 ) ( 6 6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 6 268 ) ( -6 6 268 ) ( -6 6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 6 268 ) ( -6 -6 268 ) ( -6 -6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -6 -38 256 ) ( 6 -38 256 ) ( 6 -6 234 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -38 266 ) ( -6 -38 266 ) ( -6 -6 244 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -38 266 ) ( 6 -38 266 ) ( 6 -38 256 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -38 256 ) ( 4 -38 266 ) ( 4 -6 244 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -6 244 ) ( -6 -6 244 ) ( -6 -6 234 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -38 266 ) ( -4 -38 256 ) ( -4 -6 234 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -4 -116 258 ) ( 4 -116 258 ) ( 4 -38 256 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -116 270 ) ( -4 -116 270 ) ( -4 -38 266 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -116 258 ) ( -4 -116 270 ) ( 4 -116 270 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -44 266 ) ( 4 -38 266 ) ( 4 -38 256 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -38 266 ) ( -4 -38 266 ) ( -4 -38 256 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -116 270 ) ( -4 -116 258 ) ( -4 -38 256 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"angles" "0 270 0"
+"model" "com_signal_light_pole"
+"classname" "misc_model"
+}

@@ -1,0 +1,181 @@
+iwfx 1
+
+{
+	name "sand_dust";
+	editorFlags useRandAlpha useRandRotDelta useRandVel0 absVel1;
+	flags spawnFrustumCull spawnOffsetNone runRelToSpawn;
+	spawnRange 0 2000;
+	spawnFrustumCullRadius 0;
+	spawnLooping 350 0;
+	spawnOneShot 1 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 4000 6000;
+	spawnOrgX 500 -500;
+	spawnOrgY 300 -400;
+	spawnOrgZ 30 -60;
+	spawnOffsetRadius 50 50;
+	spawnOffsetHeight 0 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 360;
+	gravity -0.25 0;
+	elasticity 0 0;
+	atlasBehavior startRandom;
+	atlasIndex 10;
+	atlasFps 0;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 0
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Y 30
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Z 100
+	{
+		{
+			0 -0.0741627
+			1 -0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 30
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 -0.5
+			1 -0.5
+		}
+	};
+	sizeGraph0 500
+	{
+		{
+			0 0.474026
+			1 0.597403
+		}
+		{
+			0 0.344156
+			1 0.435065
+		}
+	};
+	sizeGraph1 200
+	{
+		{
+			0 0
+			1 0.896104
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.776471 0.796079 0.713726
+			0.502907 0.611765 0.529412 0.47451
+			0.656977 0.780392 0.733333 0.572549
+			1 0.588235 0.588235 0.588235
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.505814 0.239234
+			1 0
+		}
+		{
+			0 0
+			0.502907 0.0813397
+			1 0
+		}
+	};
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	emission "";
+	emitDist 0 0;
+	emitDistVariance 0 0;
+	billboardSprite
+	{
+		"gfx_smk_white_atlas"
+	};
+}

@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 24 22 0 ) ( -24 22 0 ) ( -24 -22 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 -22 75 ) ( -22 22 75 ) ( 26 22 75 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -20.5 83 ) ( 24 -20.5 83 ) ( 24 -20.5 -1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 43 -22 83.5 ) ( 43 22 83.5 ) ( 43 22 -0.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 20.5 83.5 ) ( -24 20.5 83.5 ) ( -24 20.5 -0.5 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 22 85 ) ( 0 -22 85 ) ( 0 -22 1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "ch_snack_machine_small_2"
+"classname" "misc_model"
+}

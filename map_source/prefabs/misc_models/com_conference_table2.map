@@ -1,0 +1,40 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 128 28 30 ) ( -82 28 30 ) ( -82 -26 30 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -76 -26 34 ) ( -76 28 34 ) ( 134 28 34 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -106 -26 -432 ) ( 104 -26 -432 ) ( 104 -26 -464 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 104 -26 -432 ) ( 104 28 -432 ) ( 104 28 -464 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 104 28 -432 ) ( -106 28 -432 ) ( -106 28 -464 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -106 28 -432 ) ( -106 -26 -432 ) ( -106 -26 -464 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -62 28 0 ) ( -68 28 0 ) ( -68 -26 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 -26 30 ) ( -68 28 30 ) ( -62 28 30 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 -16 30 ) ( -62 -16 30 ) ( -62 -16 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -26 30 ) ( -62 28 30 ) ( -62 28 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 16 32 ) ( -68 16 32 ) ( -68 16 2 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -66 28 30 ) ( -66 -26 30 ) ( -66 -26 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 66 28 0 ) ( 60 28 0 ) ( 60 -26 0 ) clip_nosight 64 64 128 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 -26 30 ) ( 60 28 30 ) ( 66 28 30 ) clip_nosight 64 64 128 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 -16 30 ) ( 66 -16 30 ) ( 66 -16 0 ) clip_nosight 64 64 128 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 66 -26 30 ) ( 66 28 30 ) ( 66 28 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 66 16 32 ) ( 60 16 32 ) ( 60 16 2 ) clip_nosight 64 64 128 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 62 28 30 ) ( 62 -26 30 ) ( 62 -26 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_conference_table2"
+"classname" "misc_model"
+}

@@ -1,0 +1,72 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"contrastGain" ".5"
+"sunRadiosity" "1.2"
+"brightness" "0.1"
+"sunlight" "0.8"
+"sundirection" "-45 60 0"
+"sundiffusecolor" "0.4 0.6 1"
+"suncolor" "0.8 0.9 1"
+"diffusefraction" "0.6"
+"ambient" "0.1"
+"_color" "0.717647 0.776471 1.000000"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 64 0 ) ( 0 64 0 ) ( 0 -12 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -10 192 ) ( 4 66 192 ) ( 12 66 192 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -8 16 ) ( 8 -8 16 ) ( 8 -8 8 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -12 16 ) ( 8 64 16 ) ( 8 64 8 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 60 16 ) ( 0 60 16 ) ( 0 60 8 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 64 16 ) ( 0 -12 16 ) ( 0 -12 8 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 5 27 18 ) ( 3 27 18 ) ( 3 -4 17 ) ch_woodpaint_white01 128 -127.93354 -27.131628 -0.83835626 1.8466808 3.2961929e-005 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 26 25 ) ( 5 26 25 ) ( 5 -4 25 ) ch_woodpaint_white01 128 128 -45 1 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -4 25 ) ( 6 -4 25 ) ( 6 -4 17 ) ch_woodpaint_white01 128 128 -15 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -4 25 ) ( 5 20 25 ) ( 5 20 17 ) ch_woodpaint_white01 128 128 -15 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 20 25 ) ( 3 -4 25 ) ( 3 -4 17 ) ch_woodpaint_white01 128 128 -15 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 27 18 ) ( 5 27 18 ) ( 5 26 25 ) ch_woodpaint_white01 128 128 -15 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 5 27 39 ) ( 3 27 39 ) ( 3 -4 40 ) ch_woodpaint_white01 128 -127.93354 -59.873573 -1.1606047 -1.8466808 -3.3115455e-005 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 28 47 ) ( 5 28 47 ) ( 5 -4 48 ) ch_woodpaint_white01 128 127.93759 -77.872559 0.84341121 -178.21089 -2.9766295e-005 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -4 48 ) ( 6 -4 48 ) ( 6 -4 40 ) ch_woodpaint_white01 128 128 -25 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -4 48 ) ( 5 20 48 ) ( 5 20 40 ) ch_woodpaint_white01 128 128 -25 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 20 48 ) ( 3 -4 48 ) ( 3 -4 40 ) ch_woodpaint_white01 128 128 -25 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 27 39 ) ( 5 27 39 ) ( 5 28 47 ) ch_woodpaint_white01 128 128 -25 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 3 27 39 ) ( 5 27 39 ) ( 5 60 40 ) ch_woodpaint_white01 128 -127.94133 -58.184109 -0.84816319 1.7349386 2.7393065e-005 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 28 47 ) ( 3 28 47 ) ( 3 60 48 ) ch_woodpaint_white01 128 127.93759 -76.122559 1.1556128 178.21089 2.9766295e-005 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -4 48 ) ( 5 20 48 ) ( 5 20 40 ) ch_woodpaint_white01 128 128 -25 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 60 44 ) ( 2 60 44 ) ( 2 60 36 ) ch_woodpaint_white01 128 128 -25 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 20 48 ) ( 3 -4 48 ) ( 3 -4 40 ) ch_woodpaint_white01 128 128 -25 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 27 39 ) ( 3 27 39 ) ( 3 28 47 ) ch_woodpaint_white01 128 128 -25 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 3 27 18 ) ( 5 27 18 ) ( 5 60 17 ) ch_woodpaint_white01 128 -127.94133 -28.820478 -1.1509161 -1.734884 -2.7766679e-005 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 26 25 ) ( 3 26 25 ) ( 3 60 25 ) ch_woodpaint_white01 128 128 -45 1 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -4 25 ) ( 5 20 25 ) ( 5 20 17 ) ch_woodpaint_white01 128 128 -15 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 60 21 ) ( 2 60 21 ) ( 2 60 13 ) ch_woodpaint_white01 128 128 -15 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 20 25 ) ( 3 -4 25 ) ( 3 -4 17 ) ch_woodpaint_white01 128 128 -15 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 27 18 ) ( 3 27 18 ) ( 3 26 25 ) ch_woodpaint_white01 128 128 -15 1 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "4.0 -4.0 0.0"
+"model" "ch_wooden_fence_post_03"
+"classname" "misc_model"
+}

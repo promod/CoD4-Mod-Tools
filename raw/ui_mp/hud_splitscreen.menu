@@ -1,0 +1,821 @@
+#include "ui/menudef.h"
+
+#define HUD_ALPHA 0.65
+#define HUD_FOREGROUND_ALPHA 0.75
+#define DPAD_ICON_ALPHA 0.65
+
+#define NOT_SPECTATING (!spectatingClient())
+
+{
+	assetGlobalDef
+	{
+		fadeClamp		1					// sets the fadeup alpha
+		fadeCycle		1					// how often fade happens in milliseconds
+		fadeAmount		0.1					// amount to adjust alpha per cycle
+	}
+
+	// Low health overlay
+	menuDef
+	{
+		name			"Low Health_mp"
+		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+		fullScreen		0
+		visible			1
+		
+		itemDef
+		{
+			name			"healthoverlay"
+			rect			0 0 640 480
+			forecolor		1 1 1 1
+			background		"overlay_low_health"
+			ownerdraw		CG_PLAYER_LOW_HEALTH_OVERLAY
+			visible			1
+			decoration
+		}
+	}
+	
+	menuDef
+	{
+		name			"killcam_ss"
+		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+		fullScreen		0
+		visible 		when ( inkillcam() );
+
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-100 -100 840 190 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_TOP
+			background		"white"
+			forecolor		.49 .05 .03 0.5
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-100 -70 840 170 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_BOTTOM
+			background		"white"
+			forecolor		.49 .05 .03 0.5
+			visible			1
+			decoration
+		}
+
+		itemDef 
+		{
+			rect		0 45 1 1 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_TOP
+			origin		0 0
+			exp text	( "@MP_KILLCAM" );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	TEXTSIZE_SMALL_SS
+			textalign	ITEM_ALIGN_CENTER
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible 	1
+			decoration 
+		}
+	}
+					
+	// Invalid cmd hint
+	menuDef 
+	{
+		name			"InvalidCmdHint_ss"
+		rect			0 -130 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+		fullScreen		0
+		visible			1
+
+		itemDef 
+		{
+			name			"chRect"
+			rect			0 0 0 0
+			textscale		TEXTSIZE_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			ownerdraw		CG_INVALID_CMD_HINT
+			textfont		UI_FONT_OBJECTIVE
+			visible			when( NOT_SPECTATING )
+			decoration
+		}
+	}
+
+	// Stance indicator
+	menuDef 
+	{
+    	name			"stance_mp"
+		rect			80 -54 60 60 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+    	fullScreen		0
+    	visible	when ( !inkillcam() && !dvarint( ui_hud_hardcore ) );
+    	hiddenDuringFlashbang
+
+		itemDef 
+		{
+			name			"chRect"
+			rect			0 0 60 60 // 64x64
+			ownerdraw		CG_PLAYER_STANCE
+			textfont		UI_FONT_OBJECTIVE
+			forecolor 1 1 1 HUD_ALPHA
+			visible when ( dvarint( ui_hud_showstanceicon ) != 0 && !selecting_location() && NOT_SPECTATING );
+			decoration
+		}
+	}
+
+#define SCOREBARS_ORIGIN 0 350
+#define	BOTTOM_RECT_X 0
+#define	BOTTOM_RECT_Y 10
+
+#define	TEAMICON_SIZE	48
+#define SCOREBAR_WIDTH	60
+#define SCOREBAR_OFFSET_X	(0+4)
+#define TEAMCARET_OFFSET_X	(SCOREBAR_OFFSET_X + SCOREBAR_WIDTH)
+
+#define TEAM_IS_TIED	(team(score) == otherteam(score))
+#define TEAM_IS_WINNING (team(score) > otherteam(score))
+#define TEAM_IS_LOSING	(team(score) < otherteam(score))
+
+#define PLAYER_IS_TIED		(player(score) == scoreatrank(1) && scoreatrank(1) == scoreatrank(2))
+#define PLAYER_IS_WINNING	(player(score) > scoreatrank(2))
+#define PLAYER_IS_LOSING	(player(score) < scoreatrank(1))
+
+#define SHOULD_DISPLAY_SCOREBAR (team( name ) != "TEAM_SPECTATOR")
+
+	// Bottom bar
+	menuDef
+	{
+		name			"scorebars_splitscreen"
+		rect			BOTTOM_RECT_X BOTTOM_RECT_Y 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+		exp				rect Y( BOTTOM_RECT_Y - (ONLINEGAME * ONLINEGAME_OFFSET) );
+		fullScreen		0
+		visible 		when( !inkillcam() && !ui_active() && dvarint( ui_hud_hardcore ) == 0 );
+		legacySplitscreenScale
+
+
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			4 -TEAMICON_SIZE TEAMICON_SIZE TEAMICON_SIZE HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			origin			2 -15
+			exp				material( dvarString( "g_TeamIcon_Allies" ) );
+			visible			when ( team( name ) == "TEAM_ALLIES" && SHOULD_DISPLAY_SCOREBAR ); 
+			forecolor		1 1 1 0.4
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			4 -TEAMICON_SIZE TEAMICON_SIZE TEAMICON_SIZE HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			origin			2 -15
+			exp				material( dvarString( "g_TeamIcon_Allies" ) );
+			visible			when (  team( name ) == "TEAM_SPECTATOR" && SHOULD_DISPLAY_SCOREBAR ); 
+			forecolor		1 1 1 0.4
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			4 -TEAMICON_SIZE TEAMICON_SIZE TEAMICON_SIZE HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			origin			2 -15
+			exp				material( dvarString( "g_TeamIcon_Axis" ) );
+			visible			when ( team( name ) == "TEAM_AXIS" && SHOULD_DISPLAY_SCOREBAR );
+			forecolor		1 1 1 0.4
+			decoration
+		}
+		
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-6 -49 24 24 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			exp				rect Y( -49 + 0-(TEAM_IS_LOSING*19) );
+			background		"hud_arrow_right"
+			forecolor		1 1 1 HUD_ALPHA
+			visible			when ( (team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS") && SHOULD_DISPLAY_SCOREBAR ); 
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			-6 -49 24 24 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			exp				rect Y( -49 + 0-(PLAYER_IS_LOSING*19) );
+			background		"hud_arrow_right"
+			forecolor		1 1 1 HUD_ALPHA
+			visible			when ( team( name ) == "TEAM_FREE" && SHOULD_DISPLAY_SCOREBAR ); 
+			decoration
+		}
+		
+		itemDef 
+		{
+			rect		20 -27 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			exp			rect Y( -27 + 0-(TEAM_IS_LOSING*19) );
+			exp text	( team( score ) );
+			textfont	UI_FONT_SMALL
+			textscale	TEXTSIZE_DEFAULT
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
+			visible 	when ( (team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS") && SHOULD_DISPLAY_SCOREBAR )
+			decoration 
+		}
+		itemDef 
+		{
+			rect		20 -27 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			exp			rect Y( -27 + 0-(PLAYER_IS_LOSING*19) );
+			exp text	( player( score ) );
+			textfont	UI_FONT_SMALL
+			textscale	TEXTSIZE_DEFAULT
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
+			visible 	when ( team( name ) == "TEAM_FREE" && SHOULD_DISPLAY_SCOREBAR )
+			decoration 
+		}
+		
+		itemDef 
+		{
+			rect		20 -8 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			exp			rect Y( -8 + (TEAM_IS_LOSING*19) );
+			exp text	( otherteam( score ) );
+			textfont	UI_FONT_SMALL
+			textscale	TEXTSIZE_DEFAULT
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
+			visible 	when ( (team( name ) == "TEAM_ALLIES" || team( name ) == "TEAM_AXIS") && SHOULD_DISPLAY_SCOREBAR )
+			decoration 
+		}
+		itemDef 
+		{
+			rect		20 -8 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			exp			rect Y( -8 + (PLAYER_IS_LOSING*19) );
+			exp text	( scoreatrank( 2 ) );
+			textfont	UI_FONT_SMALL
+			textscale	TEXTSIZE_DEFAULT
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
+			visible 	when ( team( name ) == "TEAM_FREE" && player( score ) == scoreatrank( 1 ) && SHOULD_DISPLAY_SCOREBAR )
+			decoration 
+		}
+		itemDef 
+		{
+			rect		20 -8 1 1 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+			exp			rect Y( -8 + (PLAYER_IS_LOSING*19) );
+			exp text	( scoreatrank( 1 ) );
+			textfont	UI_FONT_SMALL
+			textscale	TEXTSIZE_DEFAULT
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 1 1 HUD_FOREGROUND_ALPHA
+			visible 	when ( team( name ) == "TEAM_FREE" && player( score ) != scoreatrank( 1 ) && SHOULD_DISPLAY_SCOREBAR )
+			decoration 
+		}
+
+		itemDef 
+		{
+			rect		-4 0 1 1 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+			exp text	( secondsAsCountdown( timeLeft() ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	TEXTSIZE_SMALL
+			textalign	ITEM_ALIGN_TOP_RIGHT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			visible 	when ( timeLeft() >= 60 );
+			decoration 
+		}
+
+		itemDef 
+		{
+			rect		-4 0 1 1 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+			exp text	( secondsAsCountdown( timeLeft() ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	TEXTSIZE_SMALL
+			textalign	ITEM_ALIGN_TOP_RIGHT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 0.75 0 1
+			visible 	when ( timeLeft() >= 30 && timeLeft() < 60 );
+			decoration 
+		}
+
+		itemDef 
+		{
+			rect		-4 0 1 1 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+			exp text	( secondsAsCountdown( timeLeft() ) );
+			textfont	UI_FONT_OBJECTIVE
+			textscale	TEXTSIZE_SMALL
+			textalign	ITEM_ALIGN_TOP_RIGHT
+			textstyle	ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor	1 0.5 0 1
+			visible 	when ( timeLeft() >= 0 && timeLeft() < 30 );
+			decoration 
+		}		
+
+	}
+	
+	// Mantle hint
+	menuDef 
+	{
+		name			"MantleHint_mp"
+		rect			0 -50 0 0 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_BOTTOM
+		fullScreen		0
+		visible			when( dvarInt( ui_hud_hardcore ) == 0 )
+
+		itemDef 
+		{
+			name			"chRect"
+			rect			0 0 40 40
+			textscale		TEXTSIZE_SMALL_SS
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_SMALL
+			ownerdraw		CG_MANTLE_HINT
+			visible			when( NOT_SPECTATING )
+			forecolor		1 1 1 1
+			decoration
+		}
+	}
+	
+	// Cursor hints (pick up weapon, throw back grenade)
+	menuDef 
+	{
+		name			"Cursorhints_mp"
+		rect			0 -86 40 40 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_BOTTOM
+		fullScreen		0
+		visible			when( dvarInt( ui_hud_hardcore ) == 0 )
+
+		itemDef 
+		{
+			name			"chRect"
+			rect			0 0 40 40 // 64x64
+			textscale		TEXTSIZE_SMALL_SS
+			textfont		UI_FONT_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			ownerdraw		CG_CURSORHINT
+			visible			when( NOT_SPECTATING )
+			forecolor		1 1 1 1
+			decoration
+		}
+	}
+	
+	// Center obituary (you killed/were killed by)
+	menuDef 
+	{
+		name			"CenterObituary_ss"
+		rect			0 -100 40 40 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_BOTTOM
+		fullScreen		0
+		visible			when( dvarInt( ui_hud_hardcore ) == 0 )
+
+		itemDef 
+		{
+			name			"chRect"
+			rect			0 0 0 0
+			textscale		TEXTSIZE_SMALL_SS
+			textfont		UI_FONT_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			ownerdraw		CG_CENTER_MESSAGE
+			visible			when( NOT_SPECTATING )
+			decoration
+		}
+	}
+	
+	// Full Screen Map
+	#define FULL_SCREEN_MAP_WIDTH 500
+	#define FULL_SCREEN_MAP_HEIGHT 300
+	menuDef
+	{
+		name			"FullScreenMap_splitscreen"
+ 	   	rect			-125 -75 FULL_SCREEN_MAP_WIDTH FULL_SCREEN_MAP_HEIGHT HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_CENTER_SAFEAREA
+ 	   	fullScreen		0
+ 	   	visible			1		
+		#define FSM_VISIBILITY (selecting_location() && !spectatingClient())
+		
+		itemDef
+ 	   	{
+			name			"mini_map"
+			rect			0 0 FULL_SCREEN_MAP_WIDTH FULL_SCREEN_MAP_HEIGHT
+			forecolor		1 1 1 1
+			background		"compass_map_default"
+			ownerdraw		CG_PLAYER_FULLMAP_MAP
+			visible			when( FSM_VISIBILITY );
+			decoration
+ 	   	}
+
+		itemDef
+ 	   	{
+			name			"map_locator"
+			rect			0 0 FULL_SCREEN_MAP_WIDTH FULL_SCREEN_MAP_HEIGHT
+			forecolor		1 1 1 1
+			background		"compass_map_default"
+			ownerdraw		CG_PLAYER_FULLMAP_LOCATION_SELECTOR
+			visible			when( FSM_VISIBILITY );
+			decoration
+ 	   	}
+
+		// Player direction indicator
+		itemDef
+		{
+			name			"compassplayer"
+			rect			0 0 FULL_SCREEN_MAP_WIDTH FULL_SCREEN_MAP_HEIGHT
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			background		"compassping_player"
+			ownerdraw		CG_PLAYER_FULLMAP_PLAYER
+			visible			when( FSM_VISIBILITY );
+		}
+
+ 	   	// Friendlies pointers
+		itemDef
+		{
+			name			"compassfriendlies"
+			rect			0 0 FULL_SCREEN_MAP_WIDTH FULL_SCREEN_MAP_HEIGHT
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			background		"compassping_friendly"
+			ownerdraw		CG_PLAYER_FULLMAP_FRIENDS
+			visible			when( FSM_VISIBILITY );
+		}
+
+ 	   	// Enemies pointers
+		itemDef
+		{
+			name			"compassenemies"
+			rect			0 0 FULL_SCREEN_MAP_WIDTH FULL_SCREEN_MAP_HEIGHT
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			background		"compassping_friendly"
+			ownerdraw		CG_PLAYER_FULLMAP_ENEMIES
+			visible			when( FSM_VISIBILITY );
+		}
+
+		
+		// Objective pointers
+		itemDef
+		{
+			name			"compasspointers"
+			rect			0 0 FULL_SCREEN_MAP_WIDTH FULL_SCREEN_MAP_HEIGHT
+			forecolor		1 1 1 1
+			background		"objective_line"
+			ownerdraw		CG_PLAYER_FULLMAP_POINTERS
+			visible			when( FSM_VISIBILITY );
+			decoration
+		}
+
+		// border
+		itemDef
+		{
+			name			"mapborder"
+			rect			0 0 FULL_SCREEN_MAP_WIDTH FULL_SCREEN_MAP_HEIGHT
+			forecolor		1 1 1 1
+			background		"map_border"
+			ownerdraw		CG_PLAYER_FULLMAP_BORDER
+			visible			when( FSM_VISIBILITY );
+			decoration
+		}
+		
+		// instruction
+		itemDef
+		{
+			name			"airstrikeinstruction"
+			rect			125 -35 1 1 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_CENTER_SAFEAREA
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_CENTER
+			textscale		TEXTSIZE_SMALL_SS
+			forecolor		1 1 1 1
+			text			"@PLATFORM_PRESS_TO_SET_AIRSTRIKE"
+			visible			when( FSM_VISIBILITY );
+			decoration
+		}
+	}
+
+#define COMPASS_SIZE_SS 		92
+#define MINIMAP_X_SS			10.5
+#define MINIMAP_Y_SS			4.5
+#define MINIMAP_W_SS			75
+#define	MINIMAP_H_SS			75
+
+	// Compass
+	menuDef
+	{
+		name			"Compass_old_mp"
+ 	   	rect			0 0 COMPASS_SIZE_SS COMPASS_SIZE_SS HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+ 	   	fullScreen		0
+// 	   	visible when  ( !inkillcam() && !ui_active() && (dvarint( ui_hud_hardcore ) == 0 || dvarInt( g_compassShowEnemies ) ) && (dvarString( createfx ) != "on") && NOT_SPECTATING );
+		visible when ( !inkillcam() && !flashbanged() && !ui_active() && !scoped() && (dvarString( createfx ) != "on") && (dvarint( ui_hud_hardcore ) == 0 || ALLIES_HAVE_UAV || AXIS_HAVE_UAV || CLIENT_HAS_UAV || dvarInt( g_compassShowEnemies ) ) && NOT_SPECTATING );
+ 	   	hiddenDuringScope
+		hiddenDuringFlashbang
+
+		itemDef
+		{
+			name			"minimapBG"
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 138 138
+			forecolor		1 1 1 1
+			background		"minimap_background"
+			visible when ( !selecting_location() );
+			visible 0
+			decoration
+		}
+
+		itemDef
+ 	   	{
+			name			"mini_map"
+			rect			MINIMAP_X_SS MINIMAP_Y_SS MINIMAP_W_SS MINIMAP_H_SS
+			forecolor		1 1 1 1
+			background		"compass_map_default"
+			ownerdraw		CG_PLAYER_COMPASS_MAP
+			visible when ( !selecting_location() );
+			decoration
+ 	   	}
+		/*		
+ 	   	itemDef
+        {
+			name			"minimap_gridoverlay"
+            rect			0 0 COMPASS_SIZE_SS COMPASS_SIZE_SS
+            forecolor		1 1 1 1
+            background		"minimap_gridoverlay"
+            ownerdraw		CG_PLAYER_COMPASS_BACK
+			visible when ( !selecting_location() );
+            decoration
+         }
+		*/
+		// Objective pointers
+		itemDef
+		{
+			name			"compasspointers"
+			rect			MINIMAP_X_SS MINIMAP_Y_SS MINIMAP_W_SS MINIMAP_H_SS
+			forecolor		1 1 1 1
+			background		"objective_line"
+			ownerdraw		CG_PLAYER_COMPASS_POINTERS
+			visible when ( !selecting_location() && dvarint( ui_hud_showobjicons ) > 0 );
+			decoration
+		}
+
+		// Player direction indicator
+		itemDef
+		{
+			name			"compassplayer"
+			rect			MINIMAP_X_SS MINIMAP_Y_SS MINIMAP_W_SS MINIMAP_H_SS
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			background		"compassping_player"
+			ownerdraw		CG_PLAYER_COMPASS_PLAYER
+			visible when ( !selecting_location() );
+		}
+
+ 	   	// Friendlies pointers
+		itemDef
+		{
+			name			"compassfriendlies"
+			rect			MINIMAP_X_SS MINIMAP_Y_SS MINIMAP_W_SS MINIMAP_H_SS
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			background		"compassping_friendly_mp"
+			ownerdraw		CG_PLAYER_COMPASS_FRIENDS
+			visible when ( !selecting_location() );
+		}
+
+ 	   	// Enemy pointers
+		itemDef
+		{
+			name			"compassenemies"
+			rect			MINIMAP_X_SS MINIMAP_Y_SS MINIMAP_W_SS MINIMAP_H_SS
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			background		"compassping_friendly_mp"
+			ownerdraw		CG_PLAYER_COMPASS_ENEMIES
+			visible when ( !selecting_location() );
+		}
+
+
+ 	   	// Helicopter pointers
+		itemDef
+		{
+			name			"compasshelicopters"
+			rect			MINIMAP_X_SS MINIMAP_Y_SS MINIMAP_W_SS MINIMAP_H_SS
+			forecolor		1 1 1 1
+			ownerdraw		CG_PLAYER_COMPASS_HELICOPTERS
+			visible when ( !selecting_location() );
+		}
+ 	   	// Plane pointers
+		itemDef
+		{
+			name			"compassplanes"
+			rect			MINIMAP_X_SS MINIMAP_Y_SS MINIMAP_W_SS MINIMAP_H_SS
+			forecolor		1 1 1 1
+			ownerdraw		CG_PLAYER_COMPASS_PLANES
+			visible when ( !selecting_location() );
+		}
+	}
+
+#define WEAPINFO_X 0
+#define WEAPINFO_Y -32
+
+	// WEAPON INFO
+	menuDef
+	{
+		name			"weaponinfo_splitscreen"
+		rect			0 0 0 0 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_BOTTOM
+		fullScreen		0
+		visible	when ( !inkillcam() && !ui_active() && !dvarint( ui_hud_hardcore ) && NOT_SPECTATING );
+		legacySplitScreenScale
+
+		// weapon name
+		itemDef
+		{
+			name			"weapname"
+			rect			-360 -1 290 40
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		0.35
+			forecolor		1 1 1 HUD_ALPHA
+			ownerdraw		CG_PLAYER_WEAPON_NAME
+			visible			1
+			decoration
+		}
+
+		// ammo text
+		itemDef
+		{
+ 			name			"ammotex"
+			rect			-75 0 70 40
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_OBJECTIVE
+			forecolor		1 1 1 1
+			ownerdraw		CG_PLAYER_AMMO_VALUE
+			dvartest		"ui_hud_showweaponinfo"
+			hidedvar		{ "0" }
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"lowammowarning_ss"	
+			rect			-10 10 100 30 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			textfont		UI_FONT_SMALL
+			textscale		TEXTSIZE_SMALL
+			textalign		(ITEM_ALIGN_CENTER | ITEM_ALIGN_MIDDLE)
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			forecolor		1 1 1 1
+			//background	"white"
+			ownerdraw		CG_PLAYER_WEAPON_LOW_AMMO_WARNING
+			visible			1
+			decoration
+		}
+	}
+
+	// Offhand weapons
+	menuDef
+	{
+		name				"offhandinfo_mp"
+		rect				0 -12 0 0 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_BOTTOM
+		fullScreen			0
+		visible	when ( !inkillcam() && !ui_active() && !dvarint( ui_hud_hardcore ) && NOT_SPECTATING );
+		legacySplitScreenScale
+		hiddenDuringFlashbang
+		
+		// offhand frag icon 
+		itemDef
+		{
+			name			"offhandfragicon"
+			rect			-29 -25 20 20
+			forecolor		1 1 1 .55
+			ownerdraw		CG_OFFHAND_WEAPON_ICON_FRAG
+			background		"hud_us_grenade" // default texture
+			visible			1
+			decoration
+		}
+		
+		// offhand frag ammo
+		itemDef
+		{
+			name			"offhandfragammo"
+			rect			-15 -4 25 25
+			textscale		0.4
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_DEFAULT
+			forecolor		1 1 1 .75
+			ownerdraw		CG_OFFHAND_WEAPON_AMMO_FRAG
+			visible			1
+			decoration
+		}
+	
+		// offhand smoke icon
+		itemDef
+		{
+			name			"offhandsmokeicon"
+			rect			-52 -25 20 20
+			forecolor		1 1 1 .55
+			ownerdraw		CG_OFFHAND_WEAPON_ICON_SMOKEFLASH
+			background		"hud_us_smokegrenade" // default texture
+			visible			1
+			decoration
+		}
+		
+		// offhand smoke ammo
+		itemDef
+		{
+			name			"offhandsmokeammo"
+			rect			-39 -4 25 25
+			textscale		0.4
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_DEFAULT
+			forecolor		1 1 1 .75
+			ownerdraw		CG_OFFHAND_WEAPON_AMMO_SMOKEFLASH
+			visible			1
+			decoration
+		}
+	}
+	
+	menuDef
+	{
+		name			"DPad_SS"
+		rect			0 0 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+ 	   	fullScreen		0
+		visible			when( !inkillcam() && !flashbanged() && !ui_active() && !scoped() && (dvarString( createfx ) != "on") && !dvarint( ui_hud_hardcore ) && NOT_SPECTATING );
+		legacySplitScreenScale
+		
+		itemDef
+        {
+			style			WINDOW_STYLE_SHADER			
+			background		"hud_dpad"
+			rect			6 63 20 20
+            forecolor		1 1 1 .4
+			visible			1
+			decoration
+		}
+		itemDef
+        {
+			style			WINDOW_STYLE_SHADER			
+			background		"hud_arrow_left"
+			rect			6 63 20 20
+            forecolor		1 1 1 .4
+			visible			1
+			decoration
+        }
+		itemDef // Left
+        {
+            name			"slot3"
+			rect			6 63 20 20
+			ownerdraw		CG_PLAYER_ACTIONSLOT_3
+			forecolor		1 1 1 HUD_ALPHA
+			visible			1 
+			decoration
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_DEFAULT
+			textfont		UI_FONT_SMALL
+        }
+    }
+
+
+// game messages
+	// these just don't fit and don't have any important information.
+	/*menuDef
+	{
+		name			"gamemessages_splitscreen"
+		rect			6 -60 10 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+		fullScreen		0
+		visible			1
+		legacySplitScreenScale
+		itemDef
+		{
+			origin				0 0
+			type				ITEM_TYPE_GAME_MESSAGE_WINDOW
+			gamemsgwindowindex	0
+			gamemsgwindowmode	MODE_BOTTOMUP_ALIGN_BOTTOM
+			textfont			UI_FONT_DEFAULT
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			textalign			ITEM_ALIGN_LEFT
+			textscale			0.18 // SP: 0.417
+			visible				when ( dvarint( ui_hud_obituaries ) == 1 );
+		}
+	}*/
+	menuDef
+	{
+		name			"boldgamemessages_splitscreen"
+		rect			0 0 10 10 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_CENTER_SAFEAREA
+		fullScreen		0
+		visible 		when ( !inkillcam() && !selecting_location() );
+		legacySplitScreenScale
+		itemDef
+		{
+			origin				0 -40
+			type				ITEM_TYPE_GAME_MESSAGE_WINDOW
+			gamemsgwindowindex	1
+			gamemsgwindowmode	MODE_BOTTOMUP_ALIGN_BOTTOM
+			textfont			UI_FONT_SMALL
+			textscale			0.3
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			textalign			ITEM_ALIGN_CENTER
+			visible				when ( dvarint( ui_hud_obituaries ) == 1 );
+		}
+	}
+	menuDef
+	{
+		name			"subtitles_splitscreen"
+		rect			200 400 10 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+		fullScreen		0
+		visible			1
+		legacySplitScreenScale
+		itemDef
+		{
+			origin				0 0
+			type				ITEM_TYPE_GAME_MESSAGE_WINDOW
+			gamemsgwindowindex	2
+			gamemsgwindowmode	MODE_BOTTOMUP_ALIGN_BOTTOM
+			textfont			UI_FONT_DEFAULT
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			textalign			ITEM_ALIGN_LEFT
+			textscale			0.2
+			visible				when ( dvarint( ui_hud_obituaries ) == 1 );
+		}
+	}
+}

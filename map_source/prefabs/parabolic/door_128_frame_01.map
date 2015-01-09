@@ -1,0 +1,137 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 29 0 96 ) ( 29 8 96 ) ( -29 8 96 ) ch_woodwall01 128 128 66 -50 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 100 ) ( 32 0 100 ) ( -32 0 100 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 0 104 ) ( 32 0 104 ) ( 32 0 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 0 100 ) ( 64 8 100 ) ( 60 8 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 8 104 ) ( -32 8 104 ) ( -32 8 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 8 100 ) ( -64 0 100 ) ( -60 0 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents weaponClip;
+ ( 61 8 96 ) ( 61 10 96 ) ( 3 10 96 ) ch_woodwall01 128 128 66 -50 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 12 100 ) ( 32 8 100 ) ( -32 8 100 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 8 104 ) ( 32 8 104 ) ( 32 8 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 8 100 ) ( 64 12 100 ) ( 60 12 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 10 104 ) ( -32 10 104 ) ( -32 10 8 ) ch_woodwall01 128 128 64 -44 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 12 100 ) ( -64 8 100 ) ( -60 8 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents weaponClip;
+ ( 1 0 95 ) ( 1 8 95 ) ( -123 8 95 ) me_woodbeam_01 256 16 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 2 96 ) ( -28 6 96 ) ( 30 6 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 2 97 ) ( 32 2 97 ) ( 32 2 1 ) me_woodbeam_01 256 16 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 2 96 ) ( 60 6 96 ) ( 59 6 95 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 6 97 ) ( -32 6 97 ) ( -32 6 1 ) me_woodbeam_01 256 16 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 6 96 ) ( -60 2 96 ) ( -59 2 95 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents weaponClip;
+ ( 0 10 0 ) ( -64 10 0 ) ( -64 2 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 8 96 ) ( 0 8 96 ) ( 0 8 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 2 92 ) ( -60 10 92 ) ( -60 10 0 ) ch_woodwall01 128 128 66 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 10 96 ) ( -64 10 96 ) ( -64 10 0 ) ch_woodwall01 128 128 40 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 10 100 ) ( -64 8 100 ) ( -64 8 0 ) ch_woodwall01 128 128 72 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 8 100 ) ( -64 10 100 ) ( -61 10 97 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents weaponClip;
+ ( 0 10 0 ) ( -64 10 0 ) ( -64 2 0 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 8 96 ) ( 0 8 96 ) ( 0 8 0 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 8 100 ) ( 64 10 100 ) ( 64 10 0 ) ch_woodwall01 128 128 72 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 10 96 ) ( -64 10 96 ) ( -64 10 0 ) ch_woodwall01 128 128 98 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 16 92 ) ( 60 8 92 ) ( 60 8 0 ) ch_woodwall01 128 128 66 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 10 100 ) ( 64 8 100 ) ( 61 8 97 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents weaponClip;
+ ( -4 8 1 ) ( -68 8 1 ) ( -68 0 1 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -68 2 96 ) ( -4 2 96 ) ( -4 2 0 ) me_woodbeam_01 256 16 0 -32 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 2 97 ) ( 60 6 97 ) ( 60 6 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 6 96 ) ( -68 6 96 ) ( -68 6 0 ) me_woodbeam_01 256 16 0 32 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 59 8 98 ) ( 59 0 98 ) ( 59 0 6 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 6 96 ) ( 60 2 96 ) ( 59 2 95 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents weaponClip;
+ ( 4 4 1 ) ( -60 4 1 ) ( -60 -4 1 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 2 95 ) ( 4 2 95 ) ( 4 2 -1 ) me_woodbeam_01 256 16 0 32 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -59 -4 94 ) ( -59 4 94 ) ( -59 4 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 6 95 ) ( -60 6 95 ) ( -60 6 -1 ) me_woodbeam_01 256 16 0 -32 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 6 96 ) ( -60 2 96 ) ( -60 2 -1 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 2 96 ) ( -60 6 96 ) ( -59 6 95 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents weaponClip;
+ ( 0 0 0 ) ( -64 0 0 ) ( -64 -8 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -2 96 ) ( 0 -2 96 ) ( 0 -2 0 ) ch_woodwall01 128 128 30 -48 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -8 92 ) ( -60 0 92 ) ( -60 0 0 ) ch_woodwall01 128 128 66 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 96 ) ( -64 0 96 ) ( -64 0 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 0 100 ) ( -64 -2 100 ) ( -64 -2 0 ) ch_woodwall01 128 128 64 -48 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -2 100 ) ( -64 0 100 ) ( -61 0 97 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( 0 8 0 ) ( -64 8 0 ) ( -64 0 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 0 96 ) ( 0 0 96 ) ( 0 0 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 0 92 ) ( -60 8 92 ) ( -60 8 0 ) ch_woodwall01 128 128 66 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 8 96 ) ( -64 8 96 ) ( -64 8 0 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 8 100 ) ( -64 0 100 ) ( -64 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 0 100 ) ( -64 8 100 ) ( -61 8 97 ) caulk 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( 0 8 0 ) ( -64 8 0 ) ( -64 0 0 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 0 96 ) ( 0 0 96 ) ( 0 0 0 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 0 100 ) ( 64 8 100 ) ( 64 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 8 96 ) ( -64 8 96 ) ( -64 8 0 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 8 92 ) ( 60 0 92 ) ( 60 0 0 ) ch_woodwall01 128 128 66 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 8 100 ) ( 64 0 100 ) ( 61 0 97 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 10
+{
+  contents weaponClip;
+ ( 0 0 0 ) ( -64 0 0 ) ( -64 -8 0 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -2 96 ) ( 0 -2 96 ) ( 0 -2 0 ) ch_woodwall01 128 128 98 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -2 100 ) ( 64 0 100 ) ( 64 0 0 ) ch_woodwall01 128 128 50 -44 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 96 ) ( -64 0 96 ) ( -64 0 0 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 6 92 ) ( 60 -2 92 ) ( 60 -2 0 ) ch_woodwall01 128 128 66 -50 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 0 100 ) ( 64 -2 100 ) ( 61 -2 97 ) caulk 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 11
+{
+  contents weaponClip;
+ ( 29 -2 96 ) ( 29 0 96 ) ( -29 0 96 ) ch_woodwall01 128 128 66 -50 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 100 ) ( 32 -2 100 ) ( -32 -2 100 ) ch_woodwall01 128 128 64 -46 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -2 104 ) ( 32 -2 104 ) ( 32 -2 8 ) ch_woodwall01 128 128 64 -46 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -2 100 ) ( 64 0 100 ) ( 61 0 97 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 104 ) ( -32 0 104 ) ( -32 0 8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -61 -2 97 ) ( -61 0 97 ) ( -64 0 100 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 12
+{
+  contents detail;
+ ( 27 10 0 ) ( -27 10 0 ) ( -27 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 -2 1 ) ( -27 0 1 ) ( 27 0 1 ) me_woodbeam_01 256 16 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 -3 1 ) ( 27 -3 1 ) ( 27 -3 0 ) me_woodbeam_01 256 16 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 60 -2 1 ) ( 60 0 1 ) ( 60 0 0 ) me_woodbeam_01 256 16 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27 11 1 ) ( -27 11 1 ) ( -27 11 0 ) me_woodbeam_01 256 16 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 0 1 ) ( -60 -2 1 ) ( -60 -2 0 ) me_woodbeam_01 256 16 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

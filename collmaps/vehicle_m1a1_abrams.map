@@ -1,0 +1,40 @@
+iwmap 4
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 56 88 72 ) ( -48 88 72 ) ( -48 -88 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -88 98 ) ( -56 88 98 ) ( 48 88 98 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -72 104 ) ( 56 -72 104 ) ( 56 -72 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 -88 104 ) ( 80 88 104 ) ( 80 88 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 70 102 ) ( -48 70 102 ) ( -48 70 70 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -100 88 104 ) ( -100 -88 104 ) ( -100 -88 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 112 -56 0 ) ( 112 56 0 ) ( -144 56 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -144 -56 72 ) ( -144 56 72 ) ( 56 56 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 112 -74 2 ) ( -144 -74 2 ) ( -144 -74 74 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 112 74 64 ) ( 56 74 72 ) ( -144 74 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -156 56 72 ) ( -156 -56 72 ) ( -156 -56 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 112 56 64 ) ( 112 -56 64 ) ( 56 -56 72 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 166 56 0 ) ( 166 -56 0 ) ( 166 -56 64 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -156 56 46 ) ( -164 56 46 ) ( -164 -56 46 ) clip_nosight_metal 64 64 -20 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -164 -56 72 ) ( -164 56 72 ) ( -156 56 72 ) clip_nosight_metal 64 64 -20 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -164 -44 64 ) ( -156 -44 64 ) ( -156 -44 48 ) clip_nosight_metal 64 64 -20 26 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -156 -56 62 ) ( -156 56 62 ) ( -156 56 46 ) clip_nosight_metal 64 64 0 26 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -156 44 62 ) ( -164 44 62 ) ( -164 44 46 ) clip_nosight_metal 64 64 -20 26 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -170 56 62 ) ( -170 -56 62 ) ( -170 -56 46 ) clip_nosight_metal 64 64 0 26 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"model" "vehicle_m1a1_abrams"
+"classname" "misc_model"
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+}

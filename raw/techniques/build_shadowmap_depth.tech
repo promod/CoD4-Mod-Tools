@@ -1,0 +1,14 @@
+{
+	stateMap "build_shadowmap_depth";
+
+	vertexShader 1.1 "transform_only.hlsl"
+	{
+	}
+
+	pixelShader 1.1 "null.hlsl"
+	{
+	}
+
+	vertex.position = code.position;
+
+}

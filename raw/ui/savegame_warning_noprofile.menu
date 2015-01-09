@@ -1,0 +1,323 @@
+/*#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			320
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+
+#define CHOICE_POPUP_TITLE_HEIGHT	24
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+
+{
+	menuDef
+	{
+		CENTER_POPUP_SETUP_ONOPEN( savegame_warning_noprofile, 6, open "pausedmenu";, focusfirst;, 1 )
+		CHOICE_POPMENU_TITLE( "@MENU_QUIT_CURRENT_GAME" )
+
+		//CHOICE_POPMENU_SUBTITLE( "If you save now, you will lose any progress since your last checkpoint." )
+
+		CHOICE_BUTTON( 5, "@MENU_RESUMEGAME", close self; )
+		CHOICE_BUTTON( 6, "@PLATFORM_QUIT", close self; exec "disconnect"; )
+	}
+}
+
+*/
+
+#include "ui/menudef.h"
+
+{
+	
+	menuDef
+	{
+		name savegame_warning_arcade
+	    visible 0
+   		fullscreen 0
+	   	//rect 217 200 210 85
+		rect 204 155 235 160
+		focusColor COLOR_FOCUSED
+   		style WINDOW_STYLE_FILLED
+   		border 1
+		popup
+		blurWorld		4.8
+		onOpen
+		{ 
+			setfocus re;
+		}
+		onEsc
+		{
+			close "savegame_warning_arcade";
+			open "pausedmenu";
+		}
+
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -160 2 555 140
+	 		background "popmenu_bg"
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MENU_QUIT_WARNING_ARCADE" 
+			style WINDOW_STYLE_EMPTY
+			textscale TEXTSIZE_DEFAULT
+			rect 126 25 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -62
+			textaligny 0
+			decoration
+			forecolor		COLOR_TITLE
+			visible 1
+		}
+
+		itemDef 
+		{
+			name re
+			text "@MENU_RESUMEGAME"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 60 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "savegame_warning_arcade";
+				close "pausedmenu";
+			}
+		}
+		itemDef 
+		{
+			name rs
+			text "@PLATFORM_QUIT"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 90 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "savegame_warning_arcade";
+				exec "disconnect";
+			}
+		}
+	
+	}		
+	
+	menuDef 
+	{
+		name savegame_warning_noprofile
+	    visible 0
+   		fullscreen 0
+	   	//rect 217 200 210 85
+		rect 204 155 235 160
+		focusColor COLOR_FOCUSED
+   		style WINDOW_STYLE_FILLED
+   		border 1
+		popup
+		blurWorld		4.8
+		onOpen
+		{ 
+			setfocus re;
+		}
+		onEsc
+		{
+			close "savegame_warning_noprofile";
+			open "pausedmenu";
+		}
+
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -160 2 555 140
+	 		background "popmenu_bg"
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MENU_QUIT_WARNING" 
+			style WINDOW_STYLE_EMPTY
+			textscale TEXTSIZE_TITLE 
+			rect 126 25 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -62
+			textaligny 5
+			decoration
+			forecolor		COLOR_TITLE
+			visible 1
+		}
+
+		itemDef 
+		{
+			name re
+			text "@MENU_RESUMEGAME"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 60 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "savegame_warning_noprofile";
+				close "pausedmenu";
+			}
+		}
+		itemDef 
+		{
+			name rs
+			text "@PLATFORM_QUIT"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 90 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "savegame_warning_noprofile";
+				exec "disconnect";
+			}
+		}
+	
+	}
+	// Pause menu
+	menuDef
+	{
+		name "savegame_warning_noprofile1"
+		fullScreen 0
+		visible 1
+		focusColor COLOR_FOCUSED
+		rect 0 0 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+		blurWorld		4.8
+	
+		itemDef
+		{
+			name "backdrop"
+			rect -1 -1 1 1
+			visible 1
+			forecolor 0 0 0 0.7 
+			ownerdraw CG_MISSION_OBJECTIVE_BACKDROP
+			decoration			
+		}
+		
+		// warning text
+		itemDef
+		{
+			name "warningMsg"
+			text "@MENU_QUIT_WARNING"
+			rect -180 -40 120 120 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			forecolor 1.0 1.0 1.0 1.0
+			textscale TEXTSIZE_DEFAULT
+			textfont UI_FONT_DEFAULT
+			visible 1
+			hideDvar { "0" }
+			decoration
+		}
+		
+		itemDef 
+		{
+			name "resumegame"
+			group "pauseoptions"
+			text "@MENU_RESUMEGAME"
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_EMPTY
+			rect -150 75 140 15 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			textscale TEXTSIZE_DEFAULT		
+			forecolor .9 .9 .9 .9
+			visible 1
+			textfont UI_FONT_DEFAULT
+			dvarTest "cg_drawpaused"
+			hideDvar { "0" }
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "savegame_warning_noprofile";
+			}
+		}
+
+		itemDef 
+		{
+			name "saveandquit"
+			group "pauseoptions"
+			text "@PLATFORM_QUIT"
+			type ITEM_TYPE_BUTTON
+			style WINDOW_STYLE_EMPTY
+			rect -150 115 130 15 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			textscale TEXTSIZE_DEFAULT		
+			forecolor .9 .9 .9 .9
+			visible 1
+			textfont UI_FONT_DEFAULT
+			hideDvar { "0" }
+
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "savegame_warning_noprofile";
+				exec "disconnect";
+			}
+		}
+	}	
+}

@@ -1,0 +1,81 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"classname" "func_group"
+// brush 0
+{
+  contents weaponClip;
+ ( 10 70 78 ) ( 8 70 78 ) ( 8 68 76 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 4 76 ) ( 2 4 76 ) ( 2 68 76 ) me_plaster_stripes 64 64 0 4 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -402 244 ) ( 10 -282 244 ) ( 10 -282 84 ) me_plaster_stripes 64 64 0 176 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 70 80 ) ( 10 70 80 ) ( 10 2 80 ) me_plaster_stripes 64 64 0 12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -18 -156 ) ( 0 102 -156 ) ( 0 102 4 ) caulk 64 64 -60 372 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 4 76 ) ( 0 4 76 ) ( 0 2 78 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents weaponClip;
+ ( 8 68 76 ) ( 8 70 78 ) ( 10 70 78 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 72 8 ) ( 10 72 74 ) ( 8 72 74 ) me_plaster_stripes 64 64 -172 12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -98 -396 ) ( 10 -98 -276 ) ( 10 62 -276 ) me_plaster_stripes 64 64 172 2.5 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 68 -386 ) ( 12 68 -266 ) ( 28 68 -266 ) me_plaster_stripes 64 64 172 2.5 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 302 -12 ) ( 0 302 108 ) ( 0 142 108 ) caulk 64 64 -60 372 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 281 4 ) ( 24 281 4 ) ( 24 265 4 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents weaponClip;
+ ( 2 2 78 ) ( 0 2 78 ) ( 0 4 76 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 0 74 ) ( 10 0 74 ) ( 10 0 8 ) me_plaster_stripes 64 64 -172 12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 10 -276 ) ( 10 170 -276 ) ( 10 170 -396 ) me_plaster_stripes 64 64 -182 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 4 -266 ) ( 12 4 -266 ) ( 12 4 -386 ) me_plaster_stripes 64 64 -172 10 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -70 108 ) ( 0 -230 108 ) ( 0 -230 -12 ) caulk 64 64 -60 372 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -192 4 ) ( 24 -208 4 ) ( 56 -208 4 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents weaponClip;
+ ( -2 -224 4 ) ( -2 -64 4 ) ( 14 -64 4 ) me_plaster_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 0 -286 ) ( 18 0 -286 ) ( 18 0 -406 ) me_plaster_01 128 128 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 12 -280 ) ( 10 172 -280 ) ( 10 172 -400 ) me_plaster_01 128 128 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 72 -280 ) ( 10 72 -280 ) ( 10 72 -400 ) me_plaster_01 128 128 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -68 104 ) ( 0 -228 104 ) ( 0 -228 -16 ) me_plaster_01 128 128 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 -190 0 ) ( 22 -206 0 ) ( 54 -206 0 ) me_plaster_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents weaponClip;
+ ( 2 -224 4 ) ( 2 -64 4 ) ( 18 -64 4 ) me_plaster_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 0 -286 ) ( 22 0 -286 ) ( 22 0 -406 ) me_plaster_01 128 128 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 12 -280 ) ( 12 172 -280 ) ( 12 172 -400 ) me_plaster_01 128 128 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 30 72 -280 ) ( 14 72 -280 ) ( 14 72 -400 ) me_plaster_01 128 128 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -68 104 ) ( 10 -228 104 ) ( 10 -228 -16 ) me_plaster_01 128 128 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 -190 0 ) ( 26 -206 0 ) ( 58 -206 0 ) me_plaster_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents weaponClip;
+ ( 9 36 76 ) ( 8 36 76 ) ( 8 68 76 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 36 4 ) ( 9 36 76 ) ( 9 68 76 ) me_window_04 64 72 -60 212 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 68 8 ) ( 9 68 72 ) ( 8 68 72 ) me_woodbeam_01 256 16 -172 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 36 76 ) ( 8 36 4 ) ( 8 68 4 ) me_window_04 64 72 -60 212 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 36 4 ) ( 9 36 4 ) ( 9 68 4 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 36 72 ) ( 9 36 8 ) ( 8 36 8 ) me_window_04 64 72 -12 212 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents weaponClip;
+ ( 8 36 76 ) ( 9 36 76 ) ( 9 4 76 ) me_metal_rust_02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 4 4 ) ( 8 4 76 ) ( 10 4 76 ) me_woodbeam_01 256 16 -172 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 36 76 ) ( 9 36 4 ) ( 9 4 4 ) me_window_04 64 72 -60 212 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 4 76 ) ( 8 4 4 ) ( 8 36 4 ) me_window_04 64 64 0 172 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 36 4 ) ( 8 36 4 ) ( 8 4 4 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 36 76 ) ( 8 36 4 ) ( 9 36 4 ) me_window_04 64 72 -84 244 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

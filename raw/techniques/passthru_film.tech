@@ -1,0 +1,17 @@
+{
+	stateMap "default2d";
+
+	vertexShader 1.1 "vertcol_simple.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "vertcol_film.hlsl"
+	{
+		colorMapSampler = sampler.feedback;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

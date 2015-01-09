@@ -1,0 +1,200 @@
+iwfx 2
+
+{
+	name "mist";
+	editorFlags looping useRandAlpha useRandSize0 useRandVel0 useBackCompatVel absVel0 playOnTouch;
+	flags spawnOffsetNone runRelToEffect dieOnTouch nonUniformScale;
+	spawnRange 0 0;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 3000;
+	spawnLooping 3 1000;
+	spawnOneShot 8 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 500 0;
+	spawnOrgX 25 -50;
+	spawnOrgY 25 -50;
+	spawnOrgZ 100 -50;
+	spawnOffsetRadius 700 200;
+	spawnOffsetHeight 1 0;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 0;
+	gravity 0 0;
+	elasticity 1 0;
+	atlasBehavior startRandom;
+	atlasIndex 0;
+	atlasFps 30;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 0
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 0.055
+			1 0.055
+		}
+	};
+	velGraph0Y 0
+	{
+		{
+			0 -0.5
+			1 -0.5
+		}
+		{
+			0 -0.12201
+			1 -0.136364
+		}
+	};
+	velGraph0Z 1000
+	{
+		{
+			0 -0.5
+			1 -0.5
+		}
+		{
+			0 -0.356459
+			1 -0.356459
+		}
+	};
+	velGraph1X 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 1
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 0
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 -0.5
+			1 -0.5
+		}
+	};
+	sizeGraph0 0.5
+	{
+		{
+			0 0.584416
+			1 0.571429
+		}
+		{
+			0 0.493506
+			1 0.5
+		}
+	};
+	sizeGraph1 25
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 133.3
+	{
+		{
+			0 0.75
+			0.06667 0.75
+			0.1333 0.75
+			0.2 0.75
+			0.2667 0.75
+			0.3333 0.75
+			0.4 0.75
+			0.4667 0.75
+			0.5333 0.75
+			0.6 0.75
+			0.6667 0.75
+			0.7333 0.75
+			0.8 0.75
+			0.8667 0.75
+			0.9333 0.75
+			1 0.75
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.7529 0.7529 0.7529
+			1 0.7529 0.7529 0.7529
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.502907 0.315789
+			1 0
+		}
+		{
+			0 0
+			0.508721 0.215311
+			1 0
+		}
+	};
+	lightingFrac 0;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "weather/rain_splash";
+	fxOnDeath "";
+	sortOrder 5;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	tail
+	{
+		"gfx_rain_drop"
+	};
+}

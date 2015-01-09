@@ -1,0 +1,25 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 80 -64 0 ) ( 80 64 0 ) ( -80 64 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -136 -64 80 ) ( -136 64 80 ) ( 56 64 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 -64 0 ) ( -80 -64 0 ) ( -128 -64 16 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 -64 32 ) ( 128 -64 48 ) ( 128 64 48 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 64 32 ) ( 128 64 48 ) ( 56 64 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -128 -64 16 ) ( -128 64 16 ) ( -136 64 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -128 64 16 ) ( -128 -64 16 ) ( -80 -64 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 64 48 ) ( 128 -64 48 ) ( 56 -64 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 64 0 ) ( 80 -64 0 ) ( 128 -64 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "-10.0 1.0 1.0"
+"model" "vehicle_bradley_static_noturret"
+"classname" "misc_model"
+}

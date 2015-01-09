@@ -1,0 +1,30 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"diffusefraction" "0.5"
+"_color" ".8 .9 1"
+"sunlight" "1.7"
+"sundirection" "-50 136 0"
+"sundiffusecolor" ".9 1 .75"
+"suncolor" "1 1 0.95"
+"ambient" ".1"
+"bouncefraction" ".7"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 48 -24 0 ) ( 48 8 0 ) ( -16 8 0 ) clip_nosight_nothing 64 64 0 -56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -31 8 48 ) ( 33 8 48 ) ( 33 -24 48 ) clip_nosight_nothing 64 64 0 -56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 11 72 ) ( -21 -21 72 ) ( -21 -21 0 ) clip_nosight_nothing 64 64 0 -56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -43 -18 72 ) ( 21 -18 72 ) ( 21 -18 0 ) clip_nosight_nothing 64 64 0 -56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 -25 72 ) ( 22 7 72 ) ( 22 7 0 ) clip_nosight_nothing 64 64 0 -56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 17 72 ) ( -32 17 72 ) ( -32 17 0 ) clip_nosight_nothing 64 64 0 -56 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_photocopier"
+"classname" "misc_model"
+}

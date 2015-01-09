@@ -1,0 +1,18 @@
+#include "commonsetup.template"
+
+techniqueSet( "objective" );
+
+
+textureTable
+{
+	#if "$colorMap$" != ""
+		"colorMap" = streamable map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+	#endif
+}
+
+
+#if "$colorMap$" != ""
+	refImage( "$colorMap$" );
+#else
+	refImage( "$white" );
+#endif

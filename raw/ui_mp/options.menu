@@ -1,0 +1,58 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+#define OPTIONS_STYLE			1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef 
+	{
+		name			main_controls
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen
+		{
+			setLocalVarBool ui_showApply 0;
+			setLocalVarBool ui_hideBack 1;
+			
+			setitemcolor fadebox backcolor 0 0 0 1;
+			fadeout fadebox ;
+			setdvar g_reloading "0";
+		}
+		onclose{ setLocalVarBool ui_hideBack 0; }
+		onESC 
+		{ 
+			close self;		
+		}
+		#include "ui_mp/leftside_controls.inc"
+	}	
+	
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X 				220
+
+	menuDef 
+	{
+		name			main_options
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen
+		{
+			setLocalVarBool ui_showApply 0;
+			setLocalVarBool ui_hideBack 1;
+			
+			setitemcolor fadebox backcolor 0 0 0 1;
+			fadeout fadebox;
+			setdvar g_reloading "0";
+		}
+		onclose{ setLocalVarBool ui_hideBack 0; }
+		onESC 
+		{ 
+			close self;		
+		}
+		#include "ui_mp/leftside_options.inc"
+	}
+}

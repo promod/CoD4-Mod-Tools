@@ -1,0 +1,33 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 16 -8 ) ( -16 16 -8 ) ( -16 -16 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 -32 -16 0 0
+ ( 40 -8 504 ) ( 56 -8 504 ) ( 56 -24 504 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 -32 -16 0 0
+ ( 40 -24 504 ) ( 56 -24 504 ) ( 16 -16 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 -32 0 0 0
+ ( 56 0 504 ) ( 56 8 504 ) ( 16 24 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 16 0 0 0
+ ( 56 -8 504 ) ( 40 -8 504 ) ( -16 16 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 -32 0 0 0
+ ( 40 8 504 ) ( 40 0 504 ) ( -16 -16 -8 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 16 0 0 0
+}
+// brush 1
+{
+ ( 64 16 -64 ) ( -64 16 -64 ) ( -64 -16 -64 ) lightgrid_volume 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -16 64 ) ( -64 16 64 ) ( 64 16 64 ) lightgrid_volume 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -64 96 ) ( 64 -64 96 ) ( 64 -64 -48 ) lightgrid_volume 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 -16 80 ) ( 64 16 80 ) ( 64 16 -64 ) lightgrid_volume 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 64 80 ) ( -64 64 80 ) ( -64 64 -64 ) lightgrid_volume 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 16 80 ) ( -64 -16 80 ) ( -64 -16 -64 ) lightgrid_volume 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"targetname" "animated_model"
+"classname" "script_model"
+"model" "foliage_tree_palm_med_1"
+"angles" "357.135 149.5 1.65764"
+"origin" "0.0 0.0 0.0"
+}

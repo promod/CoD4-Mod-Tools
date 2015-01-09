@@ -1,0 +1,48 @@
+#include "ui/menudef.h"
+
+// Displayed when client is initially connecting to the server.
+{
+	menuDef 
+	{
+		name			"connect"
+		style			WINDOW_STYLE_FILLED
+		fullScreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		backcolor		1 1 1 1
+		visible			1
+
+		// background
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			FULLSCREEN_WIDE
+			backcolor		0.2 0.2 0.2 1
+			visible			1
+			decoration
+		}
+      	
+		
+		
+		// load progress bar background
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			192 424 256 8
+	 		backcolor		0.2 0.2 0.2 1
+			visible			1
+			decoration
+		}
+		
+		// load progress bar
+		itemDef 
+		{
+			name			"loadbar"
+			style			WINDOW_STYLE_LOADBAR
+			rect			192 424 256 8
+	 		background		"white"
+			visible			1
+			decoration
+		}
+	}
+}

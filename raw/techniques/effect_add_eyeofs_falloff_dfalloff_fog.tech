@@ -1,0 +1,23 @@
+{
+	stateMap "effect_add";
+
+	vertexShader 1.1 "vertcol_eyeofs_fog_foa_dfa.hlsl"
+	{
+		eyeOffsetParms = material.eyeOffsetParms;
+		falloffParms = material.falloffParms;
+		falloffBeginColor = material.falloffBeginColor;
+		falloffEndColor = material.falloffEndColor;
+	}
+
+	pixelShader 2.0 "vertcol_simple_add_fog.hlsl"
+	{
+		fogColor = float4( 0, 0, 0, 0 );
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.normal = code.normal;
+
+}

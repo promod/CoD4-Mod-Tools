@@ -1,0 +1,40 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -12 20 33 ) ( -20 20 33 ) ( -20 -20 33 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -20 34 ) ( -20 20 34 ) ( -12 20 34 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -20 34 ) ( -12 -20 34 ) ( -12 -20 33 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -20 34 ) ( 20 20 34 ) ( 20 20 33 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 20 34 ) ( -20 20 34 ) ( -20 20 33 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 20 34 ) ( -20 -20 34 ) ( -20 -20 33 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -31 20 1 ) ( -39 20 1 ) ( -39 -20 1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -20 33 ) ( -20 20 33 ) ( -12 20 33 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -1 33 ) ( -12 -1 33 ) ( -12 -1 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 -20 33 ) ( 1 20 33 ) ( 1 20 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 1 33 ) ( -19 1 33 ) ( -19 1 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 20 33 ) ( -1 -20 33 ) ( -1 -20 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 1 9 0 ) ( -1 9 0 ) ( -1 -9 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 -9 1 ) ( -1 9 1 ) ( 1 9 1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 -8 1 ) ( 1 -8 1 ) ( 1 -8 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -8 1 ) ( 8 10 1 ) ( 8 10 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 1 8 1 ) ( -1 8 1 ) ( -1 8 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 1 ) ( -8 -10 1 ) ( -8 -10 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_cafe_table2"
+"classname" "misc_model"
+}

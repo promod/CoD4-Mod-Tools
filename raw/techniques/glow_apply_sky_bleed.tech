@@ -1,0 +1,17 @@
+{
+	stateMap "default2d";
+
+	vertexShader 2.0 "glow_apply_sky_bleed.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "glow_apply_sky_bleed.hlsl"
+	{
+		colorMapSampler = sampler.feedback;
+		skySampler = sampler.sky;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

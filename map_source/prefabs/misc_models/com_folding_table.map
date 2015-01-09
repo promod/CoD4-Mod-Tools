@@ -1,0 +1,49 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"diffusefraction" "0.5"
+"_color" ".8 .9 1"
+"sunlight" "1.7"
+"sundirection" "-50 136 0"
+"sundiffusecolor" ".9 1 .75"
+"suncolor" "1 1 0.95"
+"ambient" ".1"
+"bouncefraction" ".7"
+"classname" "worldspawn"
+// brush 0
+{
+ ( -19 -41 32 ) ( 19 -41 32 ) ( 19 41 32 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 1 0 0
+ ( -19 41 34 ) ( 19 41 34 ) ( 19 -41 34 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 1 0 0
+ ( -19 -41 32 ) ( -19 -41 34 ) ( 19 -41 34 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 41 32 ) ( 19 -41 32 ) ( 19 -41 34 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 -1 0 0 0
+ ( 19 41 32 ) ( 19 41 34 ) ( -19 41 34 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -19 41 34 ) ( -19 -41 34 ) ( -19 -41 32 ) clip_nosight_nothing 64 64 0 0 0 0 lightmap_gray 16384 16384 -1 0 0 0
+}
+// brush 1
+{
+ ( -9 -34 0 ) ( 9 -34 0 ) ( 9 -29 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -29 32 ) ( 9 -29 32 ) ( 9 -34 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -34 0 ) ( -9 -34 32 ) ( 9 -34 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -29 0 ) ( 9 -34 0 ) ( 9 -34 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -33 0 ) ( 9 -33 32 ) ( -9 -33 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -29 32 ) ( -9 -34 32 ) ( -9 -34 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -9 29 0 ) ( 9 29 0 ) ( 9 34 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -67 0 0
+ ( -9 34 32 ) ( 9 34 32 ) ( 9 29 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -67 0 0
+ ( -9 33 0 ) ( -9 33 32 ) ( 9 33 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 34 0 ) ( 9 29 0 ) ( 9 29 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 67 0 0 0
+ ( 9 34 0 ) ( 9 34 32 ) ( -9 34 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 34 32 ) ( -9 29 32 ) ( -9 29 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 67 0 0 0
+}
+}
+// entity 1
+{
+"angles" "0 0 0"
+"model" "com_folding_table"
+"origin" "0.0 0.0 0.0"
+"classname" "misc_model"
+}

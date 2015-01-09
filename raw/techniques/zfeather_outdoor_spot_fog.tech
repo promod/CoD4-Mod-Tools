@@ -1,0 +1,20 @@
+{
+		stateMap "default";
+
+	vertexShader 2.0 "zfeather_outdoor_spot.hlsl"
+	{
+		featherParms = material.featherParms;
+	}
+
+	pixelShader 2.0 "zfeather_outdoor_spot.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		featherParms = material.featherParms;
+		outdoorMapSampler = sampler.outdoor;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

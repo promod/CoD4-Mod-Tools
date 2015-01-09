@@ -1,0 +1,38 @@
+// these assets are for the hardpoint game mode
+
+// helicopter assets
+rawfile,vehicles/defaultvehicle_mp
+rawfile,vehicles/cobra_mp
+rawfile,animtrees/vehicles.atr
+xanim,bh_rotors
+xmodel,vehicle_cobra_helicopter_fly
+
+// xmodel for the HIND - uses the Cobra's vehicles/ file
+xmodel,vehicle_mi24p_hind_desert
+
+// weapons for both helicopters
+weapon,mp/cobra_FFAR_mp
+weapon,mp/hind_FFAR_mp
+weapon,mp/cobra_20mm_mp
+
+// helicopter missle
+xmodel,projectile_hellfire_missile
+
+// helicopter fx
+fx,treadfx/heli_water
+fx,treadfx/heli_dust_default
+fx,explosions/aerial_explosion_large,,
+fx,explosions/helicopter_explosion_cobra,,
+fx,explosions/aerial_explosion,,
+fx,smoke/smoke_trail_black_heli,,
+fx,smoke/smoke_trail_white_heli,,
+fx,fire/fire_smoke_trail_L,,
+
+
+// airstrike flyover
+xmodel,vehicle_mig29_desert
+
+// airstrike fx
+fx,fire/jet_afterburner,,
+fx,smoke/jet_contrail,,
+

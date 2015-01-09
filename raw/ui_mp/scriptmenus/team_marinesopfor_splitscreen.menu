@@ -1,0 +1,124 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_SEP_1			3
+
+#define STYLE2_NOPOSITION	1
+#define SPLITSCREEN_ENABLED 1
+
+#ifndef CHOICE_X_START
+#define CHOICE_X_START			0
+#endif
+
+#ifndef CHOICE_Y_START
+#define CHOICE_Y_START			70
+
+#include "ui_mp/menustyle.inc"
+
+//#undef CHOICE_TEXTFONT
+//#define CHOICE_TEXTFONT	UI_FONT_SMALL
+
+#include "ui_mp/choices_setup_teams.menu"
+
+#undef A_BUTTON_SIZE
+#define A_BUTTON_SIZE			0.3
+
+#undef A_BUTTON_OFFSET_Y
+#define A_BUTTON_OFFSET_Y		1
+
+#undef A_BUTTON_OFFSET_X
+#define A_BUTTON_OFFSET_X		(0-2)
+
+#undef A_BUTTON_FONT
+#define A_BUTTON_FONT			UI_FONT_SMALL
+
+#undef CHOICE_TEXTFONT
+#define CHOICE_TEXTFONT			UI_FONT_SMALL
+
+
+{
+	menuDef
+	{
+		name			"team_marinesopfor_splitscreen"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		7.0
+		legacySplitScreenScale
+		onEsc	{
+			scriptMenuResponse "back";
+		}
+		onOpen	{
+			setfocus "auto_assign";
+		}
+		
+		#ifndef PC
+		execkeyint BUTTON_START
+		{
+			close self;
+		}
+		#endif
+		
+		// background overlay
+		itemDef	{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.85 //0 0.05 0.15 0.5
+			visible			1
+			decoration
+		}
+		// gradient_top
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+		// gradient_bottom
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 400 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+		
+		// ------------------ TREE TITLE ------------------
+		
+		CHOICE_MENU_TITLE_SS( "CHOOSE TEAM" )
+		
+		// map display ================================================
+		#include "ui_mp/tactical_map.inc";		
+		
+		// ------------------ buttons ---------------------
+		#include "ui_mp/navcontrols.inc"
+		
+		//=========================================================
+		//===================== MENU SELECTION ====================
+		//=========================================================
+		#include "ui_mp/teamicon.inc"
+
+		#define SPLITSCREEN_PLAYERS		dvarint( leavegame0_vis ) + dvarint( leavegame1_vis ) + dvarint( leavegame2_vis ) + dvarint( leavegame3_vis )
+		#define SPLITSCREEN_2P			SPLITSCREEN_PLAYERS <= 2
+		#define NOT_SPLITSCREEN_2P		SPLITSCREEN_PLAYERS > 2
+		
+		//CHOICE_BUTTON_VIS( itemIndex, textArg, actionArg, visArg )
+		CHOICE_BUTTON_VIS( 1, "@" + dvarString( g_TeamName_Axis ), play "mouse_click"; scriptMenuResponse "axis";, when( TEAM_IS_NONE ); )
+		
+		CHOICE_BUTTON_BG( 2, 1 )
+		CHOICE_HIGHLIGHT( 2, 1 )
+		CHOICE_BUTTON_VIS_NOHI( 2, "@" + dvarString( g_TeamName_Allies ), play "mouse_click"; scriptMenuResponse "allies";, when( TEAM_IS_MARINES == 0 ); )
+		CHOICE_BUTTON_VIS_NOHI( 2, "@" + dvarString( g_TeamName_Axis ), play "mouse_click"; scriptMenuResponse "axis";, when( TEAM_IS_MARINES ); )		
+		CHOICE_BUTTON_EX( 3, "@MENU_AUTOASSIGN", play "mouse_click"; scriptMenuResponse "autoassign";, name "auto_assign" )	
+		CHOICE_SEPARATOR( CHOICE_SEP_1 )	
+		CHOICE_BUTTON_VIS_NOHI( 4, "@MENU_SPECTATOR", play "mouse_click"; scriptMenuResponse "spectator";, when( team( name ) != "TEAM_SPECTATOR" && dvarbool( scr_game_spectatetype ) ); )
+		
+		CHOICE_BUTTON_BG( 4, 1 )
+		CHOICE_HIGHLIGHT( 4, 1 ) 						
+		CHOICE_BUTTON_VIS_NOHI( 4, "@MENU_END_GAME", open popup_endgame_splitscreen, when( team( name ) == "TEAM_SPECTATOR" ) )
+		//CHOICE_BUTTON_VIS_NOHI( 4, "Leave Game", open popup_leavegame_splitscreen, when( team( name ) == "TEAM_SPECTATOR" && dvarInt( splitscreen_playerNum ) > 2 ); )		
+	}
+}

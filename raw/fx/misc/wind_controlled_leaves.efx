@@ -1,0 +1,199 @@
+iwfx 2
+
+{
+	name "leaves_ambient";
+	editorFlags useRandSize1 useRandVel0 absVel1;
+	flags spawnRelative spawnOffsetCylinder runRelToEffect useCollision dieOnTouch;
+	spawnRange 0 0;
+	fadeInRange 0 0;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 500 0;
+	spawnOneShot 5 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 8000 2000;
+	spawnOrgX 0 0;
+	spawnOrgY 0 0;
+	spawnOrgZ 0 0;
+	spawnOffsetRadius 200 -200;
+	spawnOffsetHeight 200 -200;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot 0 360;
+	gravity 0 0;
+	elasticity 0 0;
+	atlasBehavior startRandom;
+	atlasIndex 0;
+	atlasFps 8;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 100
+	{
+		{
+			0 0
+			0.0319767 0.5
+			0.459302 -0.241627
+			0.604651 -0.42823
+			0.767442 -0.485646
+			1 -0.5
+		}
+		{
+			0 0
+			0.0465116 0.5
+			0.459302 -0.227273
+			0.59593 -0.409091
+			0.738372 -0.485646
+			1 -0.5
+		}
+	};
+	velGraph0Y 100
+	{
+		{
+			0 0
+			0.0436046 0.126794
+			1 0
+		}
+		{
+			0 0
+			0.0581395 -0.12201
+			1 0
+		}
+	};
+	velGraph0Z 100
+	{
+		{
+			0 0
+			0.0494186 0.126794
+			1 0
+		}
+		{
+			0 0
+			0.0726744 -0.136364
+			1 0
+		}
+	};
+	velGraph1X 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Y 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 0
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 100
+	{
+		{
+			0 0.5
+			1 0.5
+		}
+		{
+			0 -0.5
+			1 -0.5
+		}
+	};
+	sizeGraph0 6
+	{
+		{
+			0 0
+			0.1 1
+			0.879412 1
+			1 0
+		}
+		{
+			0 0.246753
+			1 0.246753
+		}
+	};
+	sizeGraph1 7
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0.25974
+			1 0.266234
+		}
+	};
+	scaleGraph 0
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.596078 0.611765 0.388235
+			1 0.309804 0.317647 0.2
+		}
+		{
+			0 1 1 1
+			1 0 0 0
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 1
+			1 1
+		}
+		{
+			0 0
+			0.656977 0.277512
+			1 0
+		}
+	};
+	lightingFrac 0;
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 30;
+	emission "";
+	emitDist 0 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_leaves"
+	};
+}

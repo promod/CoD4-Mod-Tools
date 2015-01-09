@@ -1,0 +1,59 @@
+/*
+	This script takes a directory and file type as an input and returns all the files of that type in the 
+	given directory and all it's sub directorys.
+
+	It uses the windows command dir /S /B to calculate this, so it only works on windows OS.
+
+	The dir command returns the list as one string, seperated by \n.
+	After truncating the list into an array, there is still a /n at the end of each entry. This \n will
+	mess up maya calls trying to use the string as a file name, so at the end of this proc, the \n is removed 
+	with substring by cutting the string up from the begining to 1 character less than the size of the string.
+
+*/
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CalcSubDirFileList
+//
+//	This proc calculates the file list that needs to be exported
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc string[] CalcSubDirFileList( string $TopDir, string $FileType)
+{
+
+	string $ExportList[];
+	clear $ExportList;
+
+	string $Full_MB_List;
+
+	if ($FileType == "DIRECTORY")
+	{
+		$Full_MB_List = `system ("dir /S /B /AD \"" + $TopDir )`;
+	}
+	else if ($FileType == "MBNOSUB")
+	{
+		 $Full_MB_List = `system ("dir /B /AA \"" + $TopDir + "\"\\*.mb\"")`;
+	}
+	else
+	{
+		 $Full_MB_List = `system ("dir /S /B /AA \"" + $TopDir + "\"\\*." +$FileType + "")`;
+	}
+
+	$Full_MB_List = substituteAllString ( $Full_MB_List, "\\", "/");
+
+	tokenize $Full_MB_List "\n" $ExportList;
+
+	int $Loop = 0;
+	int $LoopEnd = `size $ExportList`;
+
+	for ($Loop = 0; $Loop < $LoopEnd ; $Loop++ )
+	{
+		int $FileNameLen = `size $ExportList[$Loop]`;
+
+		$ExportList[$Loop]  = `substring  $ExportList[$Loop] 1 ($FileNameLen-1)`;
+
+	}
+
+	return $ExportList;
+}

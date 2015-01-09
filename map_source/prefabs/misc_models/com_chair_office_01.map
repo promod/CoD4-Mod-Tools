@@ -1,0 +1,97 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 16 18 24 ) ( -16 18 24 ) ( -16 8 24 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 12 56 ) ( -16 12 56 ) ( -16 18 56 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 12 56 ) ( 16 12 56 ) ( 16 8 24 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 62 ) ( 16 18 62 ) ( 16 18 24 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 18 56 ) ( -16 18 56 ) ( -16 16 24 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 18 62 ) ( -16 8 62 ) ( -16 8 24 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 16 16 20 ) ( -16 16 20 ) ( -16 12 20 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 12 24 ) ( -16 16 24 ) ( 16 16 24 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -16 24 ) ( 16 -16 24 ) ( 16 -16 22 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 12 24 ) ( 16 16 24 ) ( 16 16 22 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 16 24 ) ( -16 16 24 ) ( -16 16 22 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 16 24 ) ( -16 12 24 ) ( -16 12 22 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 16 2 4 ) ( -16 2 4 ) ( -16 -2 4 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -2 20 ) ( -16 2 20 ) ( 16 2 20 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -2 22 ) ( 16 -2 22 ) ( 16 -2 4 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -2 22 ) ( 4 2 22 ) ( 4 2 4 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 4 22 ) ( -26 4 22 ) ( -26 4 4 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 22 ) ( -4 -2 22 ) ( -4 -2 4 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 16 4 2 ) ( -16 4 2 ) ( -16 -2 2 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -2 4 ) ( -16 4 4 ) ( 16 4 4 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -2 4 ) ( 16 -2 4 ) ( 16 -2 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -2 4 ) ( 16 4 4 ) ( 16 4 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 4 4 ) ( -16 4 4 ) ( -16 4 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 4 4 ) ( -16 -2 4 ) ( -16 -2 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 16 18 2 ) ( -16 18 2 ) ( -16 12 2 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 12 4 ) ( -16 18 4 ) ( 16 18 4 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -14 4 ) ( 18 -14 4 ) ( 18 -14 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 12 4 ) ( 4 18 4 ) ( 4 18 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 18 4 ) ( -16 18 4 ) ( -16 18 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 18 4 ) ( -4 12 4 ) ( -4 12 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 2 18 0 ) ( -2 18 0 ) ( -2 -14 0 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -42 2 ) ( -2 -10 2 ) ( 2 -10 2 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -14 2 ) ( 2 -14 2 ) ( 2 -14 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -14 2 ) ( 2 18 2 ) ( 2 18 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -10 2 ) ( -2 -10 2 ) ( -2 -10 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 18 2 ) ( -2 -14 2 ) ( -2 -14 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( 2 46 0 ) ( -2 46 0 ) ( -2 14 0 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -14 2 ) ( -2 18 2 ) ( 2 18 2 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 14 2 ) ( 2 14 2 ) ( 2 14 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 14 2 ) ( 2 46 2 ) ( 2 46 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 18 2 ) ( -2 18 2 ) ( -2 18 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 46 2 ) ( -2 14 2 ) ( -2 14 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( -12 30 0 ) ( -16 30 0 ) ( -16 -2 0 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -30 2 ) ( -16 2 2 ) ( -12 2 2 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -2 2 ) ( -12 -2 2 ) ( -12 -2 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -2 2 ) ( -12 30 2 ) ( -12 30 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 2 2 ) ( -16 2 2 ) ( -16 2 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 30 2 ) ( -16 -2 2 ) ( -16 -2 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( 16 30 0 ) ( 12 30 0 ) ( 12 -2 0 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -30 2 ) ( 12 2 2 ) ( 16 2 2 ) ship_body_wall 128 128 22 32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -2 2 ) ( 16 -2 2 ) ( 16 -2 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -2 2 ) ( 16 30 2 ) ( 16 30 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 2 2 ) ( 12 2 2 ) ( 12 2 0 ) ship_body_wall 128 128 22 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 30 2 ) ( 12 -2 2 ) ( 12 -2 0 ) ship_body_wall 128 128 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

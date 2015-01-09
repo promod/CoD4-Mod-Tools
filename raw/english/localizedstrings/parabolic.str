@@ -1,0 +1,94 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           HINTSTR_BLANK
+LANG_ENGLISH        " "
+
+REFERENCE           OBJ_CONVERSATIONS
+LANG_ENGLISH        "Gather intel with the parabolic microphone"
+
+REFERENCE           OBJ_CONVERSATION_01
+LANG_ENGLISH        "Gather intel from the sentries on the bridge"
+
+REFERENCE           OBJ_CONVERSATION_02
+LANG_ENGLISH        "Gather intel from the sentry on his cell phone"
+
+REFERENCE           OBJ_CONVERSATION_03
+LANG_ENGLISH        "Gather intel from the officer on the river bank"
+
+REFERENCE           OBJ_SAFEHOUSE_ASSAULT
+LANG_ENGLISH        "Assault the safehouse"
+
+REFERENCE           OBJ_LOCATE_PRISONER
+LANG_ENGLISH        "Locate the prisoner"
+
+REFERENCE           OBJ_EXTRACT_TO_LZ_ALPHA
+LANG_ENGLISH        "Proceed to the LZ"
+
+REFERENCE           OBJ_DESTROY_ARTILLERY
+LANG_ENGLISH        "Disable all mobile artillery [&&1 remaining]"
+
+REFERENCE           OBJ_EXTRACT_TO_LZ_CHARLIE
+LANG_ENGLISH        "Extract to the graveyard LZ"
+
+REFERENCE           TIMER_LABEL
+LANG_ENGLISH        "Time left: "
+
+REFERENCE          	DEBUG_LEVEL_END
+LANG_ENGLISH        "End of currently scripted level. Proceed outside to see BM21 rocket test."
+
+REFERENCE          	HINTSTR_MIC_TRIGGER
+LANG_ENGLISH        "Hold down [[{+speed}]] to target\nand amplify conversations"
+
+REFERENCE           HINTSTR_GATHERING_INTEL
+LANG_ENGLISH        "Gathering intel..."
+
+REFERENCE           HINTSTR_FLASHBANG
+LANG_ENGLISH        "Use flashbangs [[{+smoke}]] to stun sentries."
+
+REFERENCE           HINTSTR_BREACH
+LANG_ENGLISH        "Press and hold [USE] to initiate assault."
+
+REFERENCE           HINTSTR_CONVERSATION_SUCCESS
+LANG_ENGLISH        "Conversation captured."
+
+REFERENCE           HINTSTR_CONVERSATION_FAILURE
+LANG_ENGLISH        "Conversation lost."
+
+REFERENCE           HINTSTR_ALERT_GUNFIRE
+LANG_ENGLISH        "Enemies have been alerted by gunfire."
+
+REFERENCE           HINTSTR_ALERT_SPOTTED
+LANG_ENGLISH        "Enemies have spotted you."
+
+REFERENCE           HINTSTR_HUMANSHIELD_AIM
+LANG_ENGLISH        "Your weapon is slung. Line up your shot and wait for the signal."
+
+REFERENCE           HINTSTR_HUMANSHIELD_SHOOT
+LANG_ENGLISH        "Pull [[{+speed}]] or [[{+attack}]] to draw pistol."
+
+REFERENCE           MISSION_FAILED_HOSTAGE_KILLED
+LANG_ENGLISH        "Mission Failed: You killed the hostage."
+
+REFERENCE           MISSION_FAILED_HOSTAGE_TIMER
+LANG_ENGLISH        "Mission Failed: The hostage was executed."
+
+
+
+
+
+
+
+ENDMARKER

@@ -1,0 +1,41 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"fov_inner" "60"
+"fov_outer" "120"
+"bouncefraction" "2"
+"_color" ".6 .6 .6"
+"ambient" ".03"
+"classname" "worldspawn"
+"sunlight" "2"
+"suncolor" ".9 .9 1"
+"sundirection" "-18 100 0"
+"sundiffusecolor" "0.015 0.015 0.013"
+"diffusefraction" "0.01"
+// brush 0
+{
+ ( 17 42 0 ) ( -18 42 0 ) ( -18 -42 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -42 36 ) ( -18 42 36 ) ( 17 42 36 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -41 37 ) ( 17 -41 37 ) ( 17 -41 0 ) clip_nosight 64 64 0 128 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 -42 37 ) ( 17 42 37 ) ( 17 42 0 ) clip_nosight 64 64 0 128 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 41 37 ) ( -18 41 37 ) ( -18 41 0 ) clip_nosight 64 64 0 128 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17 42 37 ) ( -17 -42 37 ) ( -17 -42 0 ) clip_nosight 64 64 0 128 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 17 42 0 ) ( -18 42 0 ) ( -18 -42 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -42 36 ) ( -18 42 36 ) ( 17 42 36 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -41 37 ) ( 17 -41 37 ) ( 17 -41 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 -42 37 ) ( 17 42 37 ) ( 17 42 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 17 41 37 ) ( -18 41 37 ) ( -18 41 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17 42 37 ) ( -17 -42 37 ) ( -17 -42 0 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "ap_couch01"
+"classname" "misc_model"
+}

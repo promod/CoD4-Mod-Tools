@@ -1,0 +1,853 @@
+// PC HUD - SP
+
+#include "ui/menudef.h"
+
+#define HUD_ALPHA 0.65
+#define HUD_FOREGROUND_ALPHA 0.75
+#define DPAD_ICON_ALPHA 0.65
+#define SUBTITLES_ACTIVE (gameMsgWndActive( 2 ))
+#define CHAPLIN_CHEAT_OFF (dvarBool( chaplinCheat ) == 0)
+
+{
+	assetGlobalDef
+	{
+		fadeClamp		1					// sets the fadeup alpha
+		fadeCycle		1					// how often fade happens in milliseconds
+		fadeAmount		0.1					// amount to adjust alpha per cycle
+	}
+
+	menuDef
+	{
+		name			"FacemaskOverlay"
+		rect			0 0 960 480 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+		fullScreen		0
+		visible when ( dvarBool( hud_gasMaskOverlay ) == 1 );
+
+		itemDef
+		{
+			name		FacemaskOverlayBG
+			style		WINDOW_STYLE_SHADER
+			forecolor	1 1 1 1
+			rect		-427 -240 854 480
+			background	"gasmask_overlay"
+			visible		1
+			decoration
+		}
+	}
+
+	// Mantle hint
+	menuDef
+	{
+    	name			"MantleHint"
+    	rect			0 126 40 40 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+		fullScreen		0
+		visible when ( !SUBTITLES_ACTIVE && CHAPLIN_CHEAT_OFF );
+
+		itemDef
+		{
+			name			"chRect"
+			rect			0 0 40 40
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			ownerdraw		CG_MANTLE_HINT
+			visible			1
+			decoration
+		}
+	}
+
+	// Cursor hints
+	menuDef
+	{
+		name			"Cursorhints"
+    	rect			0 70 40 40 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+		fullScreen		0
+		visible	when ( CHAPLIN_CHEAT_OFF );
+
+		itemDef
+		{
+			name			"chRect"
+			rect			0 0 40 40 // 64x64
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			ownerdraw		CG_CURSORHINT
+			visible			1
+			decoration
+		}
+	}
+
+	// Stance indicator
+	menuDef
+	{
+    	name			"stance"
+		rect			90 -70 48 48 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+    	fullScreen		0
+		exp visible when ( !SUBTITLES_ACTIVE && CHAPLIN_CHEAT_OFF && !flashbanged() && dvarBool( hud_missionFailed ) == 0 && !ui_active() );
+
+		itemDef
+		{
+			name			"chRect"
+			rect			0 0 80 80 // 64x64
+			ownerdraw		CG_PLAYER_STANCE
+			textfont		UI_FONT_OBJECTIVE
+			visible			1
+			forecolor		1 1 1 HUD_ALPHA
+			decoration
+		}
+	}
+	
+	//	SPRINT
+	menuDef 
+	{
+    	name "sprintMeter"
+    	fullScreen MENU_FALSE
+    	visible MENU_TRUE
+		rect 62 -15 40 10 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+
+	}
+
+
+	#define WEAPINFO_X -154
+	#define WEAPINFO_Y -64
+
+	menuDef
+	{
+		name			"weaponinfo"
+		rect			0 0 0 0 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_BOTTOM
+		fullScreen		0
+		visible when ( !SUBTITLES_ACTIVE && CHAPLIN_CHEAT_OFF && dvarBool( ammoCounterHide ) == 0 && dvarBool( hud_missionFailed ) == 0 && !flashbanged() && !ui_active() );
+
+		itemDef
+		{
+			name			"clipGraphic"
+			rect			(WEAPINFO_X +111) (WEAPINFO_Y +54) 1 1
+			forecolor		1 1 1 HUD_ALPHA
+			ownerdraw		CG_PLAYER_WEAPON_AMMO_CLIP_GRAPHIC
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"offhandFragIcon"
+			rect			(WEAPINFO_X +86) (WEAPINFO_Y +22) 24 24
+			forecolor		1 1 1 HUD_ALPHA
+			ownerdraw		CG_OFFHAND_WEAPON_ICON_FRAG
+			background		"hud_us_grenade" // default texture
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"offhandSmokeIcon"
+			rect			(WEAPINFO_X +56) (WEAPINFO_Y +22) 24 24
+			forecolor		1 1 1 HUD_ALPHA
+			ownerdraw		CG_OFFHAND_WEAPON_ICON_SMOKEFLASH
+			background		"hud_us_smokegrenade" // default texture
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			"offhandsmokeammo"
+			rect			(WEAPINFO_X +76) (WEAPINFO_Y +52) 25 25
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_OBJECTIVE
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			ownerdraw		CG_OFFHAND_WEAPON_AMMO_SMOKEFLASH
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"offhandfragammo"
+			rect			(WEAPINFO_X +106) (WEAPINFO_Y +52) 25 25
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_OBJECTIVE
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			ownerdraw		CG_OFFHAND_WEAPON_AMMO_FRAG
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"ammostock"
+			rect			(WEAPINFO_X +115) (WEAPINFO_Y +62) 25 25
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textfont		UI_FONT_OBJECTIVE
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			ownerdraw		CG_PLAYER_WEAPON_AMMO_STOCK
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			"weapname_lowdef"
+			rect			(WEAPINFO_X -115) (WEAPINFO_Y +20) 290 40
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_OBJECTIVE
+			forecolor		1 1 1 HUD_FOREGROUND_ALPHA
+			ownerdraw		CG_PLAYER_WEAPON_NAME
+			visible			1
+			decoration
+		}
+	}
+
+	#define COMPASS_OFFSET	0 -10
+
+	// Compass
+	menuDef
+	{
+		name			"Compass"
+ 	   	rect			0 0 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+ 	   	fullScreen		0
+ 	   	visible			1
+ 	   	hiddenDuringScope
+		hiddenDuringFlashbang
+		visible when  ( CHAPLIN_CHEAT_OFF && dvarBool( compass ) == 1 && dvarBool( hud_missionFailed ) == 0 && (dvarString( createfx ) != "on") && !ui_active() );
+
+		itemDef
+        {
+            name			"TickerBorder"
+            rect			-62 -24 124 13
+            origin			COMPASS_OFFSET
+            forecolor		1 1 1 1
+            background		"minimap_tickertape_background"
+            ownerdraw		CG_PLAYER_COMPASS_BACK
+			visible			1
+			decoration
+        }
+
+		itemDef
+        {
+            name			"TickerPipUp"
+            rect			-0.5 -24 1 4
+            origin			COMPASS_OFFSET
+            forecolor		1 1 1 .8
+            background		"white"
+            ownerdraw		CG_PLAYER_COMPASS_BACK
+			visible			1
+			decoration
+        }
+
+		itemDef
+        {
+            name			"TickerPipDown"
+            rect			-0.5 -11.5 1 4
+            origin			COMPASS_OFFSET
+            forecolor		1 1 1 .8
+            background		"white"
+            ownerdraw		CG_PLAYER_COMPASS_BACK
+			visible			1
+			decoration
+        }
+
+		itemDef
+        {
+            name			"Ticker"
+            rect			-60 -20 120 8
+            origin			COMPASS_OFFSET
+            forecolor		1 1 1 1
+            background		"minimap_tickertape"
+            ownerdraw		CG_PLAYER_COMPASS_TICKERTAPE
+			textscale		0.25
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+		}
+	}
+
+	#define	DPAD_BASE_SIZE		28
+	#define DPAD_BASE_X			4
+	#define DPAD_BASE_Y			16
+	#define DPAD_ICON_SPACING	34
+	#define DPAD_LABEL_OFFSET_X	0
+	#define DPAD_LABEL_OFFSET_Y	22
+	#define DPAD_ALPHA_MOD		1.3
+
+	#define	BOTTOM_RECT_X 		0
+	#define	BOTTOM_RECT_Y 		-6
+
+	#define ONLINEGAME 			(dvarInt( "onlinegame" ) && !dvarInt( "xblive_privatematch" ) )
+	#define ONLINEGAME_OFFSET 	10
+
+	menuDef
+	{
+		name			"DPad"
+ 	   	rect			0 0 25 25 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM
+ 	   	exp				rect X( 0 )
+		exp				rect Y( (BOTTOM_RECT_Y-46) - (ONLINEGAME * ONLINEGAME_OFFSET) );
+ 	   	fullScreen		0
+		visible			when( !SUBTITLES_ACTIVE && CHAPLIN_CHEAT_OFF && dvarBool( actionSlotsHide ) == 0 && dvarBool( hud_missionFailed ) == 0 && !inkillcam() && !flashbanged() && !ui_active() && !scoped() && dvarBool( compass ) == 1 && (dvarString( createfx ) != "on") );
+
+		itemDef
+        {
+			name			"slot1"
+			exp rect X		( DPAD_BASE_X )
+			exp rect Y		( DPAD_BASE_Y )
+			exp rect W		( DPAD_BASE_SIZE )
+			exp rect H		( DPAD_BASE_SIZE )
+			ownerdraw		CG_PLAYER_ACTIONSLOT_1
+			forecolor		1 1 1 HUD_ALPHA
+			visible			1
+			decoration
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_OBJECTIVE
+        }
+		itemDef 
+		{
+			exp rect X	( DPAD_LABEL_OFFSET_X )
+			exp rect Y	( DPAD_LABEL_OFFSET_Y )
+			exp rect W	( 1 )
+			exp rect H	( 1 )
+			exp text	( "[" + KeyBinding( "+actionslot 1" ) + "]" );
+			forecolor	1 1 1 0
+			exp forecolor A	( HUD_ALPHA * DPAD_ALPHA_MOD * HudFade( "dpad" ) )
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.25
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			visible 	when( ActionSlotUsable( 1 ) )
+			decoration
+		}
+
+		itemDef
+        {
+			name			"slot2"
+			exp rect X		( DPAD_BASE_X )
+			exp rect Y		( DPAD_BASE_Y - DPAD_ICON_SPACING * (ActionSlotUsable( 1 )) )
+			exp rect W		( DPAD_BASE_SIZE )
+			exp rect H		( DPAD_BASE_SIZE )
+			ownerdraw		CG_PLAYER_ACTIONSLOT_2
+			forecolor		1 1 1 HUD_ALPHA
+			visible			1
+			decoration
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_OBJECTIVE
+        }
+		itemDef 
+		{
+			exp rect X	( DPAD_LABEL_OFFSET_X )
+			exp rect Y	( DPAD_LABEL_OFFSET_Y - DPAD_ICON_SPACING * (ActionSlotUsable( 1 )) )
+			exp rect W	( 1 )
+			exp rect H	( 1 )
+			exp text	( "[" + KeyBinding( "+actionslot 2" ) + "]" );
+			forecolor	1 1 1 0
+			exp forecolor A	( HUD_ALPHA * DPAD_ALPHA_MOD * HudFade( "dpad" ) )
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.25
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			visible 	when( ActionSlotUsable( 2 ) )
+			decoration
+		}
+		
+		// position of 3rd and 4th slots are flipped due to default button assignments
+		itemDef
+        {
+			name			"slot3"
+			exp rect X		( DPAD_BASE_X )
+			exp rect Y		( DPAD_BASE_Y - DPAD_ICON_SPACING * (ActionSlotUsable( 1 ) + ActionSlotUsable( 2 )) )
+			exp rect W		( DPAD_BASE_SIZE )
+			exp rect H		( DPAD_BASE_SIZE )
+			ownerdraw		CG_PLAYER_ACTIONSLOT_4
+			forecolor		1 1 1 HUD_ALPHA
+			visible			1
+			decoration
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_OBJECTIVE
+        }
+		itemDef 
+		{
+			exp rect X	( DPAD_LABEL_OFFSET_X )
+			exp rect Y	( DPAD_LABEL_OFFSET_Y - DPAD_ICON_SPACING * (ActionSlotUsable( 1 ) + ActionSlotUsable( 2 )) )
+			exp rect W	( 1 )
+			exp rect H	( 1 )
+			exp text	( "[" + KeyBinding( "+actionslot 4" ) + "]" );
+			forecolor	1 1 1 1
+			exp forecolor A	( HUD_ALPHA * DPAD_ALPHA_MOD * HudFade( "dpad" ) )
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.25
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			visible 	when( ActionSlotUsable( 4 ) )
+			decoration
+		}
+		
+		itemDef
+        {
+			name			"slot4"
+			exp rect X		( DPAD_BASE_X )
+			exp rect Y		( DPAD_BASE_Y - DPAD_ICON_SPACING * (ActionSlotUsable( 1 ) + ActionSlotUsable( 2 ) + ActionSlotUsable( 3 )) )
+			exp rect W		( DPAD_BASE_SIZE )
+			exp rect H		( DPAD_BASE_SIZE )
+			ownerdraw		CG_PLAYER_ACTIONSLOT_3
+			forecolor		1 1 1 HUD_ALPHA
+			visible			1
+			decoration
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_LEFT
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_OBJECTIVE
+        }
+		itemDef 
+		{
+			exp rect X	( DPAD_LABEL_OFFSET_X )
+			exp rect Y	( DPAD_LABEL_OFFSET_Y - DPAD_ICON_SPACING * (ActionSlotUsable( 1 ) + ActionSlotUsable( 2 ) + ActionSlotUsable( 3 )) )
+			exp rect W	( 1 )
+			exp rect H	( 1 )
+			exp text	( "[" + KeyBinding( "+actionslot 3" ) + "]" );
+			forecolor		1 1 1 0
+			exp forecolor A	( HUD_ALPHA * DPAD_ALPHA_MOD * HudFade( "dpad" ) )
+			textfont	UI_FONT_OBJECTIVE
+			textscale	0.25
+			textalign	ITEM_ALIGN_LEFT
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			visible 	when( ActionSlotUsable( 3 ) )
+			decoration
+		}
+
+    }
+
+	//	Tank status
+	menuDef 
+	{
+		name			"tankstatus"
+		rect			100 -46 40 40 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_BOTTOM 
+		fullScreen		0
+		visible			1
+
+		itemDef 
+		{
+			name			"tankbody"
+			rect			0 0 40 40 // 64x64
+			forecolor		1 1 1 1
+			background		"hud_tankbody"
+			ownerdraw		CG_TANK_BODY_DIR
+			visible			1
+			decoration
+		}
+		
+		itemDef 
+		{
+			name			"tankbarrel"
+			rect			20 20 40 40 // 64x64
+			forecolor		1 1 1 1
+			background		"hud_tankbarrel"
+			ownerdraw		CG_TANK_BARREL_DIR
+			visible			1
+			decoration
+		}
+	}
+
+	menuDef 
+	{
+		name			"deadscreen"
+		fullScreen		0				
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		visible			1
+		
+		// Death quote
+		itemDef 
+		{
+			name			quote
+			dvar			"ui_deadquote"
+			textscale		TEXTSIZE_DEFAULT
+			type			ITEM_TYPE_TEXT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			rect			80 200 480 20
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		0 // point to center around
+			textalignx		0 // point to center around
+			ownerdraw		CG_DEADQUOTE
+			forecolor		1 1 1 1
+			visible			1
+			decoration 
+		}
+		
+		itemDef
+		{
+			name			hud_grenadeicon
+			rect			315 300 60 60
+			origin			0 0
+			style			WINDOW_STYLE_SHADER
+			background		"hud_grenadeicon"
+			dvartest		"ui_grenade_death"
+			showdvar		{ "1" }
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name			hud_grenadepointer
+			rect			320 270 50 25
+			origin			0 0
+			style			WINDOW_STYLE_SHADER
+			background		"hud_grenadepointer"
+			dvartest		"ui_grenade_death"
+			showdvar		{ "1" }
+			visible			1
+			decoration
+		}
+	}
+
+	// Hold breath hint
+	menuDef 
+	{
+		name			"HoldBreathHint"
+		rect			0 -130 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+		fullScreen		0
+		visible when ( !adsjavelin() && CHAPLIN_CHEAT_OFF );
+
+		itemDef 
+		{
+			name			"chRect"
+			rect			0 0 0 0
+			textscale		TEXTSIZE_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			ownerdraw		CG_HOLD_BREATH_HINT
+			visible			1
+			decoration
+		}
+	}
+	
+	// Saving Icon
+	menuDef 
+	{
+		name			"SavingIcon"
+    	rect			-100 10 40 40 HORIZONTAL_ALIGN_RIGHT VERTICAL_ALIGN_TOP
+		fullScreen		0
+		visible			1
+		
+		itemDef 
+		{
+			name			"chRect"
+			background		"saving"
+			forecolor		1 1 1 1
+			rect			0 0 40 40 // 64x64
+			ownerdraw		CG_SAVING
+			visible			1
+			decoration
+		}
+	}
+
+	// Invalid cmd hint
+	menuDef 
+	{
+		name			"InvalidCmdHint"
+		rect			0 -150 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+		fullScreen		0
+		visible when ( CHAPLIN_CHEAT_OFF );
+
+		itemDef 
+		{
+			name			"chRect"
+			rect			0 0 0 0
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			ownerdraw		CG_INVALID_CMD_HINT
+			textfont		UI_FONT_DEFAULT
+			visible			1
+			decoration
+		}
+	}
+	
+	// Vehicle hud
+	menuDef
+	{
+		name			"VehicleHud"
+ 	   	rect			0 0 640 480 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+ 	   	fullScreen		0
+ 	   	visible			1
+		
+		itemDef
+		{
+			name			"VehicleHudTargets"
+			rect			-320 -240 640 480
+			forecolor		1 1 1 1
+			background		"javelin_hud_target"
+			ownerdraw		CG_HUD_TARGETS_VEHICLE
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			"VehicleWeaponReticle"
+			rect			-320 -240 640 480
+			forecolor		1 1 1 1
+			ownerdraw		CG_VEHICLE_RETICLE
+			visible			1
+			decoration
+		}
+	}
+
+	// Javelin hud
+	menuDef
+	{
+		name			"WeaponJavelinHud"
+		rect			0 0 960 480 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+		fullScreen		0
+		visible when ( adsjavelin() );
+
+		itemDef
+		{
+			name			"WeaponJavelinTargets"
+			rect			-320 -240 640 480
+			forecolor		1 1 1 1
+			background		"white"
+			ownerdraw		CG_HUD_TARGETS_JAVELIN
+			visible			1
+			decoration
+		}
+
+        itemDef
+        {
+			name		javelinlockbox
+			style		WINDOW_STYLE_SHADER
+			rect		-80 -40 160 80
+			background	"hud_javelin_lock_box"
+			visible when ( weaplockblink( 11 ) );
+			decoration
+        }
+
+        itemDef
+        {
+			name		javelinfilmgrain
+			style		WINDOW_STYLE_SHADER
+			rect		-230 -125 460 260
+			background	"javelin_overlay_grain"
+			visible		1
+			decoration
+        }
+		
+		itemDef
+		{
+			name		WeaponJavelinBG
+			style		WINDOW_STYLE_SHADER
+			rect		-427 -240 854 480
+			background	"hud_javelin_bg"
+			visible 	1
+			decoration
+		}
+        itemDef
+        {
+			name		javelinlockon
+			style		WINDOW_STYLE_SHADER
+			rect		154 -198 64 64
+			background	"hud_javelin_lock_on"
+			visible when ( weaplockblink( 4.5 ) );
+			decoration
+        }
+        itemDef
+        {
+			name		javelincluon
+			style		WINDOW_STYLE_SHADER
+			rect		-300 -28 64 64
+			background	"hud_javelin_clu_on"
+			visible when ( weaplockblink( 0 ) && !weapattacktop() && !weapattackdirect() );
+			decoration
+        }
+        itemDef
+        {
+			name		javelintopoff
+			style		WINDOW_STYLE_SHADER
+			rect		228 -124 64 64
+			background	"hud_javelin_top_on"
+			visible when ( weapattacktop() );
+			decoration
+        }
+        itemDef
+        {
+			name		javelindiroff
+			style		WINDOW_STYLE_SHADER
+			rect		228 -28 64 64
+			background	"hud_javelin_dir_on"
+			visible when ( weapattackdirect() );
+			decoration
+        }
+
+        itemDef
+        {
+			name		javelinday
+			style		WINDOW_STYLE_SHADER
+			rect		-226 -198 64 64
+			background	"hud_javelin_day_on"
+			visible	when ( !player( "nightvision" ) );
+			decoration
+        }
+        itemDef
+        {
+            name		javelinnight
+            style		WINDOW_STYLE_SHADER
+			rect		-300 -125 64 64
+            background	"hud_javelin_night_on"
+			visible	when ( player( "nightvision" ) );
+            decoration
+        }
+
+        itemDef
+        {
+			name		javelinrocket_on
+			style		WINDOW_STYLE_SHADER
+			rect		30 144 64 64
+			background	"hud_javelin_rocket_on"
+			visible when ( player( "clipammo" ) );
+			decoration
+        }
+        itemDef
+        {
+			name		javelinnorocket_on
+			style		WINDOW_STYLE_SHADER
+			rect		154 144 64 64
+			background	"hud_javelin_norocket_on"
+			visible when ( !player( "clipammo" ) );
+			decoration
+        }
+		itemDef 
+		{
+			name			"chRect"
+			rect			0 -90 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			textscale		TEXTSIZE_DEFAULT
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			ownerdraw		CG_INVALID_CMD_HINT
+			textfont		UI_FONT_OBJECTIVE
+			visible			1
+			decoration
+		}
+	}
+
+	// game messages
+	menuDef
+	{
+		name			"gamemessages"
+		rect			6 10 0 0 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+		fullScreen		0
+		visible when ( CHAPLIN_CHEAT_OFF );
+		
+		itemDef
+		{
+			origin				0 0
+			type				ITEM_TYPE_GAME_MESSAGE_WINDOW
+			gamemsgwindowindex	0
+			gamemsgwindowmode	MODE_BOTTOMUP_ALIGN_TOP
+			textfont			UI_FONT_DEFAULT
+			textstyle			ITEM_TEXTSTYLE_SHADOWEDMORE
+			textalign			ITEM_ALIGN_TOP_LEFT
+			textscale			0.36
+			forecolor			1 1 1 1
+			visible				1
+		}
+	}
+	
+	menuDef
+	{
+		name			"boldgamemessages"
+		rect			0 180 0 0 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_TOP
+		fullScreen		0
+		visible when ( CHAPLIN_CHEAT_OFF );
+		
+		itemDef
+		{
+			origin				0 0
+			type				ITEM_TYPE_GAME_MESSAGE_WINDOW
+			gamemsgwindowindex	1
+			gamemsgwindowmode	MODE_BOTTOMUP_ALIGN_BOTTOM
+			textfont			UI_FONT_BOLD
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			textalign			ITEM_ALIGN_TOP_CENTER
+			textscale			0.417
+			visible				1
+		}
+	}
+	
+	menuDef
+	{
+		name			"subtitles"
+		rect			0 432 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+		fullScreen		0
+		visible when ( CHAPLIN_CHEAT_OFF && dvarBool( credits_active ) == 0 );
+		
+		itemDef
+		{
+			origin				0 0
+			type				ITEM_TYPE_GAME_MESSAGE_WINDOW
+			gamemsgwindowindex	2
+			gamemsgwindowmode	MODE_BOTTOMUP_ALIGN_BOTTOM
+			textfont			UI_FONT_DEFAULT
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			textalign			ITEM_ALIGN_TOP_CENTER
+			forecolor			1 1 1 1
+			textscale			0.34
+			visible				1
+		}
+	}
+
+	menuDef
+	{
+		name			"subtitles_chaplin"
+		rect			0 432 0 0 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP
+		fullScreen		0
+		visible when ( !CHAPLIN_CHEAT_OFF );
+		
+		itemDef
+		{
+			origin				0 0
+			type				ITEM_TYPE_GAME_MESSAGE_WINDOW
+			gamemsgwindowindex	2
+			gamemsgwindowmode	MODE_BOTTOMUP_ALIGN_BOTTOM
+			textfont			UI_FONT_DEFAULT
+			textstyle			ITEM_TEXTSTYLE_SHADOWED
+			textalign			ITEM_ALIGN_TOP_CENTER
+			forecolor			1 1 1 0
+			textscale			0.34
+			visible				1
+		}
+	}
+
+	// Mission objective display
+	menuDef
+	{
+		name			"missionobjective"
+		fullScreen		0				
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		visible			1
+		
+		itemDef
+		{
+			name			"backdrop"
+			rect			-1 -1 1 1
+			visible			1
+			forecolor		0 0 0 0.7 
+			ownerdraw		CG_MISSION_OBJECTIVE_BACKDROP
+			decoration			
+		}
+	}
+	
+	// Safe area
+	menuDef
+	{
+		name			"safearea"
+		rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+		fullScreen		0
+		visible			1
+
+		#include "ui/safearea.menu"
+	}
+}

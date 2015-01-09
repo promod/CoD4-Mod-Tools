@@ -1,0 +1,21 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"destructible_type" "vehicle_small_hatch_thermal"
+"targetname" "destructible"
+"origin" "0.0 0.0 0.0"
+"model" "vehicle_small_hatch_thermal_destructible"
+"classname" "script_model"
+}
+// entity 2
+{
+"origin" "0.0 0.0 0.0"
+"model" "prefabs/misc_models/shared/vehicle_small_hatchback.map"
+"classname" "misc_prefab"
+}

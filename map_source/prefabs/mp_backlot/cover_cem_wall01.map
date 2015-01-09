@@ -1,0 +1,55 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 120 -8 0 ) ( -16 -8 0 ) ( -16 -48 0 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 48 0 0
+ ( -16 -48 4 ) ( -16 -8 4 ) ( 120 -8 4 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 48 0 0
+ ( -16 -46 16 ) ( 120 -46 16 ) ( 120 -46 0 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 -48 16 ) ( 120 -8 16 ) ( 120 -8 0 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 -48 0 0 0
+ ( 120 -30 16 ) ( -16 -30 16 ) ( -16 -30 0 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -8 16 ) ( -16 -48 16 ) ( -16 -48 0 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 -48 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 120 -4 12 ) ( -16 -4 12 ) ( -16 -44 12 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 44 0 0
+ ( -16 -34 40 ) ( 120 -34 40 ) ( 120 -42 40 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 44 0 0
+ ( -16 -42 40 ) ( 120 -42 40 ) ( 120 -44 12 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( 120 -44 28 ) ( 120 -4 28 ) ( 120 -4 12 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 -44 -12 0 0
+ ( 120 -34 40 ) ( -16 -34 40 ) ( -16 -32 12 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( -16 -4 28 ) ( -16 -44 28 ) ( -16 -44 12 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 -44 -12 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 120 -30 4 ) ( -16 -30 4 ) ( -16 -46 4 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 48 0 0
+ ( -16 -32 12 ) ( 120 -32 12 ) ( 120 -44 12 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 48 0 0
+ ( 120 -46 4 ) ( -16 -46 4 ) ( -16 -44 12 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( 120 -48 20 ) ( 120 -8 20 ) ( 120 -8 4 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 -48 -4 0 0
+ ( -16 -30 4 ) ( 120 -30 4 ) ( 120 -32 12 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 0 -4 0 0
+ ( -16 -8 20 ) ( -16 -48 20 ) ( -16 -48 4 ) ma_floor_concrete2 128 128 0 0 0 0 lightmap_gray 16384 16384 -48 -4 0 0
+}
+// brush 3
+{
+ ( 120 -4 0 ) ( -16 -4 0 ) ( -16 -44 0 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 44 0 0
+ ( -16 -44 40 ) ( -16 -4 40 ) ( 120 -4 40 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 44 0 0
+ ( -16 -46 28 ) ( 120 -46 28 ) ( 120 -46 12 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( 120 -44 28 ) ( 120 -4 28 ) ( 120 -4 12 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 -44 -12 0 0
+ ( 120 -30 28 ) ( -16 -30 28 ) ( -16 -30 12 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( -16 -4 28 ) ( -16 -44 28 ) ( -16 -44 12 ) clip_snow 64 64 0 0 0 0 lightmap_gray 16384 16384 -44 -12 0 0
+}
+// brush 4
+{
+ ( 120 -4 10 ) ( -16 -4 10 ) ( -16 -44 10 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 44 0 0
+ ( -16 -44 42 ) ( -16 -4 42 ) ( 120 -4 42 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 44 0 0
+ ( -16 -48 32 ) ( 120 -48 32 ) ( 120 -48 16 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( 120 -44 32 ) ( 120 -4 32 ) ( 120 -4 16 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 -44 -12 0 0
+ ( 120 -28 32 ) ( -16 -28 32 ) ( -16 -28 16 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -12 0 0
+ ( -16 -4 32 ) ( -16 -44 32 ) ( -16 -44 16 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 -44 -12 0 0
+}
+}

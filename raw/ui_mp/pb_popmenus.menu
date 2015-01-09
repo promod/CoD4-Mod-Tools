@@ -1,0 +1,364 @@
+#include "ui/menudef.h"
+
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_GROUP			"punkbuster"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+	
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X	280
+
+{
+
+	#define LOCAL_STARTPB_ACTION\
+		close self;\
+		close createserver ;\
+		close pc_join_unranked ;\
+		uiScript setPbClStatus 1;\
+		uiScript StartServer;
+		
+	#define LOCAL_JOINPB_ACTION\
+		close self;\
+		close createserver ;\
+		close pc_join_unranked ;\
+		close main;\
+		uiScript setPbClStatus 1;\
+		uiScript joinserver;
+
+	menuDef
+	{
+		CENTER_POPUP_SETUP( startpb_popmenu, 7, ;, 1 )
+		CHOICE_POPMENU_SUBTITLE( "@MPUI_SYNCPUNKBUSTERSTARTLISTENSERVER" )
+		
+		CHOICE_BUTTON( 6, "@MENU_YES", LOCAL_STARTPB_ACTION )
+		CHOICE_BUTTON( 7, "@MENU_NO", close self )
+	}
+	
+	menuDef
+	{
+		CENTER_POPUP_SETUP( joinpb_popmenu, 7, ;, 1 )
+		CHOICE_POPMENU_SUBTITLE( "@MPUI_ENABLEPUNKBUSTERTOCONNECT" )
+		
+		CHOICE_BUTTON( 6, "@MENU_YES", LOCAL_JOINPB_ACTION )
+		CHOICE_BUTTON( 7, "@MENU_NO", close self )
+	}
+}
+
+/*
+{
+
+// START PB POPUP MENU \\
+	menuDef 
+	{
+		name startpb_popmenu
+		visible 0
+		fullscreen 0
+		//rect 217 200 210 85
+		rect 204 140 235 135
+		focusColor COLOR_FOCUSED
+		style 1
+		border 1
+		popup
+		onESC { close startpb_popmenu;  }
+		onOpen { setfocus yes; }
+
+		itemDef 
+		{
+			name window
+			group grpControlbutton
+			rect 0 2 235 135
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .5
+			visible 0
+			decoration
+		}
+
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -332 -162 896 484
+	 		background "white"
+			forecolor 0 0 0 0.3
+			backcolor 0 0 0 0.3
+			visible 1
+			decoration
+		}
+	
+		itemDef 
+		{
+			name window2
+			group grpControlbutton
+			rect 2 3 231 20	
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .2
+			forecolor 1 1 1 1
+			backcolor 1 1 .3 .3
+			visible 0
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -150 2 535 150
+	 		background "popmenu_bg"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -50 45 335 24
+	 		background "popmenu_goldline"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MPUI_SYNCPUNKBUSTERSTARTLISTENSERVER" 
+			style 0
+			textscale 0.25 
+			textstyle ITEM_TEXTSTYLE_NORMAL
+			rect 126 25 110 60
+			textalign 1
+			textalignx -7
+			textaligny 5
+			decoration
+			forecolor		COLOR_UNFOCUSED
+			visible 1
+		}
+
+		itemDef 
+		{
+			name		yes
+			text		"@MENU_YES"
+			type		1
+			textscale	.45
+			style		WINDOW_STYLE_EMPTY
+			textfont	UI_FONT_NORMAL
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		90 70 60 30
+			textalign	1
+			textalignx	29
+			textaligny	21
+			forecolor	COLOR_UNFOCUSED
+			visible		1
+
+			action 
+			{ 
+				play "mouse_click"; 
+				close startpb_popmenu;
+				hide grpControls ;
+				close createserver ;
+				close joinserver ;
+				close multi_menu ;
+				uiScript setPbClStatus 1;
+				uiScript StartServer
+			}
+			mouseEnter { play "mouse_over";  } 
+//			mouseExit { setitemcolor yes backcolor UI_BUTTON_BACK_COLOR } 	
+		}
+
+		itemDef 
+		{
+			name		no
+			text		"@MENU_NO"
+			type		1
+			textscale	.45
+			style		WINDOW_STYLE_EMPTY
+			textfont	UI_FONT_NORMAL
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		91 110 60 30
+			textalign	1
+			textalignx	29
+			textaligny	21
+			forecolor	COLOR_UNFOCUSED
+			visible		1
+			action 
+			{ 
+				play "mouse_click"; 
+				close startpb_popmenu; 
+			}
+			mouseEnter { play "mouse_over";  } 
+		}	
+	}
+
+
+//  JOIN PB POPUP MENU \\
+	menuDef 
+	{
+		name joinpb_popmenu
+		visible 0
+		fullscreen 0
+		//rect 217 200 210 85
+		rect 204 140 235 135
+		focusColor COLOR_FOCUSED
+		style 1
+		border 1
+		popup
+		onESC { close joinpb_popmenu;  }
+		onOpen { setfocus yes; }
+
+		itemDef 
+		{
+			name window
+			group grpControlbutton
+			rect 0 2 235 135
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .5
+			visible 0
+			decoration
+		}
+
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -332 -162 896 484
+	 		background "white"
+			forecolor 0 0 0 0.3
+			backcolor 0 0 0 0.3
+			visible 1
+			decoration
+		}
+	
+		itemDef 
+		{
+			name window2
+			group grpControlbutton
+			rect 2 3 231 20	
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .2
+			forecolor 1 1 1 1
+			backcolor 1 1 .3 .3
+			visible 0
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -150 2 535 150
+	 		background "popmenu_bg"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -50 45 335 24
+	 		background "popmenu_goldline"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MPUI_ENABLEPUNKBUSTERTOCONNECT" 
+			style 0
+			textscale 0.25 
+			textstyle ITEM_TEXTSTYLE_NORMAL
+			rect 126 25 110 60
+			textalign 1
+			textalignx -7
+			textaligny 5
+			decoration
+			forecolor		COLOR_TITLE
+			visible 1
+		}
+
+		itemDef 
+		{
+			name		yes
+			text		"@MENU_YES"
+			type		1
+			textscale	.45
+			style		WINDOW_STYLE_EMPTY
+			textfont	UI_FONT_NORMAL
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		90 70 60 30
+			textalign	1
+			textalignx	29
+			textaligny	21
+			forecolor	COLOR_UNFOCUSED
+//			backcolor	UI_BUTTON_BACK_COLOR 
+			visible		1
+//			border		UI_BUTTON_BORDER
+//			bordercolor	UI_BUTTON_BORDER_COLOR
+
+			action 
+			{ 
+				play "mouse_click"; 
+				close joinpb_popmenu;
+				close createserver ;
+				close joinserver ;
+				close multi_menu ;
+				close main;
+				uiScript setPbClStatus 1;
+				uiScript joinserver;
+			}
+			mouseEnter { play "mouse_over";  } 
+//			mouseExit { setitemcolor yes backcolor UI_BUTTON_BACK_COLOR } 	
+		}
+
+		itemDef 
+		{
+			name		no
+			text		"@MENU_NO"
+			type		1
+			textscale	.45
+			style		WINDOW_STYLE_EMPTY
+			textfont	UI_FONT_NORMAL
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		91 110 60 30
+			textalign	1
+			textalignx	29
+			textaligny	21
+			forecolor	COLOR_UNFOCUSED
+//			backcolor	UI_BUTTON_BACK_COLOR 
+			visible		1
+//			border		UI_BUTTON_BORDER
+//			bordercolor	UI_BUTTON_BORDER_COLOR
+			action 
+			{ 
+				play "mouse_click"; 
+				close joinpb_popmenu; 
+			}
+			mouseEnter { play "mouse_over";  } 
+//			mouseExit { setitemcolor no backcolor UI_BUTTON_BACK_COLOR } 		
+		}	
+	}
+}
+*/

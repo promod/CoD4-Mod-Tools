@@ -1,0 +1,17 @@
+{
+	stateMap "default";
+
+	vertexShader 1.1 "fakelight_view_nc_dtex.hlsl"
+	{
+	}
+
+	pixelShader 1.1 "vertcol_shaded_nc.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

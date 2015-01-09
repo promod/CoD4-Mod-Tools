@@ -1,0 +1,419 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define STYLE2_NOPOSITION	1
+#define SPLITSCREEN_ENABLED 1
+
+#ifndef CHOICE_X_START
+#define CHOICE_X_START			0
+#endif
+
+#ifndef CHOICE_Y_START
+#define CHOICE_Y_START			14//70
+
+#include "ui_mp/menustyle.inc"
+#include "ui_mp/choices_setup_teams.menu"
+
+#undef CHOICE_SIZE_Y
+#define CHOICE_SIZE_Y			17
+
+#undef CHOICE_Y_SPACING
+#define CHOICE_Y_SPACING		18
+
+#undef A_BUTTON_SIZE
+#define A_BUTTON_SIZE			0.27
+
+#undef A_BUTTON_OFFSET_Y
+#define A_BUTTON_OFFSET_Y		1
+
+#undef A_BUTTON_OFFSET_X
+#define A_BUTTON_OFFSET_X		(0-2)
+
+#undef A_BUTTON_FONT
+#define A_BUTTON_FONT			UI_FONT_SMALL
+
+#undef CHOICE_TEXTFONT
+#define CHOICE_TEXTFONT			UI_FONT_SMALL
+
+// ------
+
+{
+	menuDef
+	{
+		name			"changeclass_splitscreen"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		7.0
+		legacySplitScreenScale
+		onOpen
+		{
+			// update player's XP
+			//STAT_XP
+		}
+		onEsc 
+		{
+			scriptMenuResponse "back";
+		}
+		
+		#ifndef PC
+		execkeyint BUTTON_START
+		{
+			close self;
+		}
+		#endif
+		
+		// background overlay
+		itemDef	{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.85 //0 0.05 0.15 0.5
+			visible			1
+			decoration
+		}
+		// gradient_top
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+		// gradient_bottom
+		itemDef	{
+			style			WINDOW_STYLE_SHADER
+			rect			0 400 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+		
+		// ------------------ TREE TITLE ------------------
+		//CHOICE_MENU_TITLE_SS( "CHOOSE CLASS" )
+
+		// ------------------ buttons ---------------------
+		//#include "ui_mp/navcontrols.inc"
+		
+		//=========================================================================
+		//================ MENU SELECTION FOR ONLINE/OFFLINE GAME =================
+		//=========================================================================
+		#include "ui_mp/teamicon.inc"
+		
+		CHOICE_BUTTON_FOCUS( 1, "@CLASS_OFFLINE_CLASS1", scriptMenuResponse "offline_class1_mp,0"; close self, hide "class_group"; show "offline_c1", ; )
+		CHOICE_BUTTON_FOCUS( 2, "@CLASS_OFFLINE_CLASS2", scriptMenuResponse "offline_class2_mp,0"; close self, hide "class_group"; show "offline_c2", ; )
+		CHOICE_BUTTON_FOCUS( 3, "@CLASS_OFFLINE_CLASS3", scriptMenuResponse "offline_class3_mp,0"; close self, hide "class_group"; show "offline_c3", ; )		
+		CHOICE_BUTTON_FOCUS( 4, "@CLASS_OFFLINE_CLASS4", scriptMenuResponse "offline_class4_mp,0"; close self, hide "class_group"; show "offline_c4", ; )
+		CHOICE_BUTTON_FOCUS( 5, "@CLASS_OFFLINE_CLASS5", scriptMenuResponse "offline_class5_mp,0"; close self, hide "class_group"; show "offline_c5", ; )	                                                                 
+		CHOICE_BUTTON_FOCUS( 6, "@CLASS_OFFLINE_CLASS6", scriptMenuResponse "offline_class6_mp,0"; close self, hide "class_group"; show "offline_c6", ; )
+		CHOICE_BUTTON_FOCUS( 7, "@CLASS_OFFLINE_CLASS7", scriptMenuResponse "offline_class7_mp,0"; close self, hide "class_group"; show "offline_c7", ; )
+		CHOICE_BUTTON_FOCUS( 8, "@CLASS_OFFLINE_CLASS8", scriptMenuResponse "offline_class8_mp,0"; close self, hide "class_group"; show "offline_c8", ; )		
+		CHOICE_BUTTON_FOCUS( 9, "@CLASS_OFFLINE_CLASS9", scriptMenuResponse "offline_class9_mp,0"; close self, hide "class_group"; show "offline_c9", ; )
+		CHOICE_BUTTON_FOCUS( 10, "@CLASS_OFFLINE_CLASS10", scriptMenuResponse "offline_class10_mp,0"; close self, hide "class_group"; show "offline_c10", ; )
+		
+		/*
+		CHOICE_BUTTON_FOCUS( 1, "@CLASS_CLASS1", scriptMenuResponse "assault_mp,0"; close self, hide "class_group"; show "c_assault", ; )
+		CHOICE_BUTTON_FOCUS( 2, "@CLASS_CLASS2", scriptMenuResponse "specops_mp,0"; close self, hide "class_group"; show "c_specops", ; )
+		CHOICE_BUTTON_FOCUS( 3, "@CLASS_CLASS3", scriptMenuResponse "heavygunner_mp,0"; close self, hide "class_group"; show "c_heavygunner", ; )		
+		CHOICE_BUTTON_FOCUS( 4, "@CLASS_CLASS4", scriptMenuResponse "demolitions_mp,0"; close self, hide "class_group"; show "c_demolitions", ; )
+		CHOICE_BUTTON_FOCUS( 5, "@CLASS_CLASS5", scriptMenuResponse "sniper_mp,0"; close self, hide "class_group"; show "c_sniper", ; )	
+*/
+		#include "ui/safearea.menu"
+		/* ================================================================================= */
+		/* ================================ LOADOUT DISPLAY ================================ */
+		/* ================================================================================= */
+		
+		#define LOADOUT_WIDTH 			270
+		#define ORIGIN_LOADOUT			(-(LOADOUT_WIDTH - RIGHTITEM_OFFSET)+10) 50
+		
+		#define RATEBAR_FRAME_BORDER		0//WINDOW_BORDER_SUNKEN
+		#define RATEBAR_FRAME_BORDERSIZE	2
+		#define RATEBAR_FRAME_BORDERCOLOR	0.4 0.4 0.425 1
+		
+		#define RATEBAR_BAR_SHADER			"gradient_fadein"
+		#define RATEBAR_BAR_COLOR			1 1 1 0.3
+		
+		#define RATE_BAR_WIDTH				98
+		#define RATE_BAR_HEIGHT				12
+		
+		#define INFO_BOX_ORIENT			0
+		#define INFO_BOX_WIDTH			222
+		#define INFO_BOX_HEIGHT			126
+		#define INFO_BOX_X				(CHOICE_X_START+CHOICE_SIZE_X-INFO_BOX_WIDTH)
+		#define INFO_BOX_Y				270
+			
+		#define INFO_TEXT				""
+		#define INFO_TITLE				"@MENU_PRIMARY_ATTRIBUTES"
+		#define INFO_TITLE_COLOR		CHOICE_TEXTCOLOR
+		#include "ui_mp/info_box.inc"
+		
+		#define ORIGIN_ATTRIBUTE_LABEL	(INFO_BOX_X) (INFO_BOX_Y+2)
+		
+		#define LOADOUT_ALIGN 	RIGHTITEM_ALIGN VERTICAL_ALIGN_TOP
+		#define PERK_ALIGN			
+		
+		#define PERK_Y_OFFSET	82
+		#define PERK_X_OFFSET	(CHOICE_SIZE_X+104)
+		#define PERK_X_OFFSET2	(PERK_X_OFFSET-36)
+		#define PERK_Y_SPACING	30
+		
+		PREPROC_SHADER_DRAW_ALIGNED( CHOICE_SIZE_X CHOICE_Y(1) -128 62 LOADOUT_ALIGN, ORIGIN_LOADOUT, "gradient_fadein", 0.9 0.9 1 0.25, 0, 1, 1 1 1 1) 
+		PREPROC_SHADER_DRAW_ALIGNED( CHOICE_SIZE_X (CHOICE_Y(1)+64) -128 64 LOADOUT_ALIGN, ORIGIN_LOADOUT, "gradient_fadein", 0.9 0.9 1 0.25, 0, 1, 1 1 1 1) 
+		
+		// grenade name -------------
+		#define LOCAL_GRENADE( pname, pgroup, ptext, visArg ) \
+		PREPROC_TEXT_DRAW_ALIGNED_EXP( 36 (PERK_Y_OFFSET+(PERK_Y_SPACING*3)) (LOADOUT_WIDTH+8) 20 LOADOUT_ALIGN, \
+		ORIGIN_LOADOUT, ptext, TEXTSIZE_SMALL, 0, 0, ITEM_ALIGN_MIDDLE_LEFT, COLOR_TITLE visible when( visArg ); name pname group pgroup )
+
+		#define GROUP_NAME	"class_group"
+		
+		#define STAT_OFFSET	200
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#define CLASS_NAME	"offline_c1"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	210
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+				
+		#undef CLASS_NAME
+		#define CLASS_NAME	"offline_c2"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	220
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#undef CLASS_NAME		
+		#define CLASS_NAME	"offline_c3"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	230
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#undef CLASS_NAME		
+		#define CLASS_NAME	"offline_c4"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	240
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#undef CLASS_NAME		
+		#define CLASS_NAME	"offline_c5"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	250
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#undef CLASS_NAME		
+		#define CLASS_NAME	"offline_c6"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+		
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	260
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#undef CLASS_NAME		
+		#define CLASS_NAME	"offline_c7"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	270
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#undef CLASS_NAME		
+		#define CLASS_NAME	"offline_c8"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	280
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#undef CLASS_NAME		
+		#define CLASS_NAME	"offline_c9"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+
+		#undef STAT_OFFSET
+		#undef STAT_CAC_PRIMARY			
+		#undef STAT_CAC_PRIMARY_ATTACHMENT		
+		#undef STAT_CAC_SECONDARY				
+		#undef STAT_CAC_SECONDARY_ATTACHMENT	
+		#undef STAT_CAC_SPECIALTY_EQUIPMENT	    
+		#undef STAT_CAC_SPECIALTY_WEAPON		
+		#undef STAT_CAC_SPECIALTY_ABILITY		
+		#undef STAT_CAC_SPECIAL_GRENADE		    
+		#undef STAT_CAC_CAMO			
+				
+		#define STAT_OFFSET	290
+		#define STAT_CAC_PRIMARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+1), 5 )
+		#define STAT_CAC_PRIMARY_ATTACHMENT		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+2), 5 )
+		#define STAT_CAC_SECONDARY				tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+3), 5 )
+		#define STAT_CAC_SECONDARY_ATTACHMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+4), 5 )
+		#define STAT_CAC_SPECIALTY_EQUIPMENT	tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+5), 5 )
+		#define STAT_CAC_SPECIALTY_WEAPON		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+6), 5 )
+		#define STAT_CAC_SPECIALTY_ABILITY		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+7), 5 )
+		#define STAT_CAC_SPECIAL_GRENADE		tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+8), 5 )
+		#define STAT_CAC_CAMO					tablelookup( "mp/offline_classTable.csv", 1, (STAT_OFFSET+9), 5 )
+		
+		#undef CLASS_NAME		
+		#define CLASS_NAME	"offline_c10"
+		#include "ui_mp/cac_loadout_splitscreen.inc"
+	}
+}

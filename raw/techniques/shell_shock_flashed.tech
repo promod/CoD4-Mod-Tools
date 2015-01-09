@@ -1,0 +1,17 @@
+{
+	stateMap "default2d";
+
+	vertexShader 2.0 "shell_shock_flashed.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "shell_shock_flashed.hlsl"
+	{
+		colorMapSampler = sampler.feedback;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

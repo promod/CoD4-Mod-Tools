@@ -1,0 +1,46 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"exponent" "0"
+"sunlight" "2"
+"suncolor" "1 .85 .67"
+"sundirection" "-25 315 0"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 10 -14 0 ) ( 10 14 0 ) ( -7 14 0 ) clip_nosight_metal 64 64 0 -1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 14 23 ) ( 10 -14 23 ) ( -7 -14 21.5 ) clip_nosight_metal 64 64 0 -1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -12 23 ) ( 10 14 23 ) ( 10 14 0 ) clip_nosight_metal 64 64 0 195 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 14 0 ) ( 10 14 23 ) ( -7 14 21.5 ) clip_nosight_metal 64 64 0 195 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 12 20.5 ) ( -11 -10 20.5 ) ( -9 -11 0 ) clip_nosight_metal 64 64 0 195 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 12 23 ) ( -7 14 23 ) ( -11 12 55 ) clip_nosight_metal 64 64 0 195 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 14 21.5 ) ( -7 -12 21.5 ) ( -11 -10 19 ) clip_nosight_metal 64 64 0 -1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10 -14 23 ) ( 10 -14 0 ) ( -7 -14 0 ) clip_nosight_metal 64 64 0 195 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -7 -14 23 ) ( -11 -12 23 ) ( -7 -14 55 ) clip_nosight_metal 64 64 0 195 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"targetname" "auto1"
+"classname" "trigger_use"
+// brush 0
+{
+ ( 12 14 2 ) ( 0 14 2 ) ( 0 -14 2 ) trigger 64 64 -72.426849 144.14665 147.59959 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -12 22 ) ( 0 -14 22 ) ( 0 14 22 ) trigger 64 64 -72.426849 144.14665 147.59956 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 12 22 ) ( 0 12 22 ) ( 0 12 0 ) trigger 77.042519 -64 -95.884911 -34 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -12 22 ) ( 0 -12 0 ) ( 0 14 0 ) trigger 77.118622 -64 -173.88448 -34 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -12 0 ) ( 0 -12 22 ) ( 12 -12 22 ) trigger 77.042755 -64 -78.468056 -34 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -12 0 ) ( 12 -12 22 ) ( 12 14 22 ) trigger 75.718239 -64 -162.95184 -34 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 2
+{
+"target" "auto1"
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+"model" "com_tv1_testpattern"
+"classname" "script_model"
+"targetname" "interactive_tv"
+}

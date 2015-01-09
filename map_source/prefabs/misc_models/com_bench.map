@@ -1,0 +1,67 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 32 0 0 ) ( -32 0 0 ) ( -32 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30 -32 22 ) ( -30 0 22 ) ( 34 0 22 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -35 -3 16 ) ( 29 -3 16 ) ( 29 -3 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -32 16 ) ( -38 0 16 ) ( -38 0 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 16 ) ( -32 0 16 ) ( -32 0 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -41 0 16 ) ( -41 -32 16 ) ( -41 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 34 22 24 ) ( -30 22 24 ) ( -30 -10 24 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -11 48 ) ( -32 21 48 ) ( 32 21 48 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -4 40 ) ( 32 -4 40 ) ( 32 -4 24 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 -10 40 ) ( 46 22 40 ) ( 46 22 24 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 38 ) ( -32 0 38 ) ( -32 0 22 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 22 40 ) ( -44 -10 40 ) ( -44 -10 24 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 32 -1 22 ) ( -32 -1 22 ) ( -32 -33 22 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30 -32 24 ) ( -30 0 24 ) ( 34 0 24 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -26 16 ) ( 32 -26 16 ) ( 32 -26 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 -32 16 ) ( 46 0 16 ) ( 46 0 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 16 ) ( -32 0 16 ) ( -32 0 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 0 16 ) ( -44 -32 16 ) ( -44 -32 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 112 0 0 ) ( 48 0 0 ) ( 48 -32 0 ) clip_nosight_metal 64 64 80 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 50 -32 22 ) ( 50 0 22 ) ( 114 0 22 ) clip_nosight_metal 64 64 80 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 45 -3 16 ) ( 109 -3 16 ) ( 109 -3 0 ) clip_nosight_metal 64 64 80 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -32 16 ) ( 42 0 16 ) ( 42 0 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 112 0 16 ) ( 48 0 16 ) ( 48 0 0 ) clip_nosight_metal 64 64 80 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 39 0 16 ) ( 39 -32 16 ) ( 39 -32 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+ ( 112 -25 0 ) ( 48 -25 0 ) ( 48 -57 0 ) clip_nosight_metal 64 64 80 25 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 50 -57 22 ) ( 50 -25 22 ) ( 114 -25 22 ) clip_nosight_metal 64 64 80 25 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 45 -28 16 ) ( 109 -28 16 ) ( 109 -28 0 ) clip_nosight_metal 64 64 80 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -57 16 ) ( 42 -25 16 ) ( 42 -25 0 ) clip_nosight_metal 64 64 -25 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 112 -25 16 ) ( 48 -25 16 ) ( 48 -25 0 ) clip_nosight_metal 64 64 80 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 39 -25 16 ) ( 39 -57 16 ) ( 39 -57 0 ) clip_nosight_metal 64 64 -25 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+ ( 32 -24 0 ) ( -32 -24 0 ) ( -32 -56 0 ) clip_nosight_metal 64 64 0 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -30 -56 22 ) ( -30 -24 22 ) ( 34 -24 22 ) clip_nosight_metal 64 64 0 24 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -35 -27 16 ) ( 29 -27 16 ) ( 29 -27 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -56 16 ) ( -38 -24 16 ) ( -38 -24 0 ) clip_nosight_metal 64 64 -24 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -24 16 ) ( -32 -24 16 ) ( -32 -24 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -41 -24 16 ) ( -41 -56 16 ) ( -41 -56 0 ) clip_nosight_metal 64 64 -24 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_bench"
+"classname" "misc_model"
+}

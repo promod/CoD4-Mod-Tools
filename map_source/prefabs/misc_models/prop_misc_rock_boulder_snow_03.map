@@ -1,0 +1,29 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 144 80 0 ) ( 64 80 0 ) ( 64 0 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 80 80 ) ( 144 0 80 ) ( 64 0 80 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 96 -96 80 ) ( 176 -96 80 ) ( 176 -96 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 0 32 ) ( 144 80 32 ) ( 144 80 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 80 80 ) ( 64 80 80 ) ( 64 80 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -144 64 80 ) ( -144 -16 80 ) ( -144 -16 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -144 16 32 ) ( 64 80 32 ) ( -144 16 64 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 -16 32 ) ( 32 -96 32 ) ( 144 -16 64 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -96 32 ) ( -144 -48 32 ) ( -48 -96 64 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 -6266 16 ) ( 16 -6266 80 ) ( 16 -6234 80 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 -6266 80 ) ( -144 -6266 24 ) ( -144 -6234 24 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -264 -96 32 ) ( -264 -40 80 ) ( -232 -96 32 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 144 0 80 ) ( 144 80 16 ) ( 176 0 80 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "prop_misc_rock_boulder_snow_03"
+"classname" "misc_model"
+}

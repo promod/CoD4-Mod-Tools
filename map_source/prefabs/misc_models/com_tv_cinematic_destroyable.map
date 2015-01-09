@@ -1,0 +1,42 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"model" "prefabs/misc_models/me_electricbox2.map"
+"sunRadiosity" "1"
+"sunlight" "1"
+"sundirection" "-50 240 0"
+"suncolor" "1 1 1"
+"sundiffusecolor" "1 1 1"
+"radiosityScale" "1"
+"northyaw" "-45"
+"diffusefraction" "0.4"
+"bouncefracion" ".1"
+"ambient" ".02"
+"_color" "1 1 1"
+"classname" "worldspawn"
+}
+// entity 1
+{
+"targetname" "auto1"
+"classname" "trigger_use"
+// brush 0
+{
+ ( 12 14 2 ) ( 0 14 2 ) ( 0 -14 2 ) trigger 64 64 -72.426849 144.14665 147.59959 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -12 22 ) ( 0 -14 22 ) ( 0 14 22 ) trigger 64 64 -72.426849 144.14665 147.59956 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 12 22 ) ( 0 12 22 ) ( 0 12 0 ) trigger 77.042519 -64 -95.884911 -34 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -12 22 ) ( 0 -12 0 ) ( 0 14 0 ) trigger 77.118622 -64 -173.88448 -34 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -12 0 ) ( 0 -12 22 ) ( 12 -12 22 ) trigger 77.042755 -64 -78.468056 -34 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -12 0 ) ( 12 -12 22 ) ( 12 14 22 ) trigger 75.718239 -64 -162.95184 -34 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 2
+{
+"targetname" "interactive_tv"
+"classname" "script_model"
+"model" "com_tv1_cinematic"
+"origin" "0.0 0.0 0.0"
+"angles" "0 0 0"
+"target" "auto1"
+}

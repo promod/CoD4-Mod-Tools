@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 5 14 0 ) ( -5 14 0 ) ( -5 -7 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 -7 142 ) ( -5 14 142 ) ( 5 14 142 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 -4 141 ) ( 5 -4 141 ) ( 5 -4 -1 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -7 142 ) ( 5 14 142 ) ( 5 14 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 3 142 ) ( -5 3 142 ) ( -5 3 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 14 142 ) ( -5 -7 142 ) ( -5 -7 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 5 23 101 ) ( -5 23 101 ) ( -5 2 101 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 2 133 ) ( -5 2 133 ) ( -5 22 133 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 2 133 ) ( 5 2 133 ) ( 5 2 101 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 2 137 ) ( 5 23 137 ) ( 5 23 100 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 22 137 ) ( -5 22 137 ) ( -5 22 100 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 23 137 ) ( -5 2 137 ) ( -5 2 100 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 0 0"
+"model" "xmodel/me_trafficsignal"
+"classname" "misc_model"
+}

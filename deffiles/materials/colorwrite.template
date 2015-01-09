@@ -1,0 +1,9 @@
+#if "@showAdvancedOptions@" == "PC / Xenon"
+
+	colorWrite( @colorWriteRed@, @colorWriteGreen@, @colorWriteBlue@, @colorWriteAlpha@ );
+
+#else // #if "@showAdvancedOptions@" == "PC / Xenon"
+
+	colorWrite( Enable, Enable, Enable, Disable );
+
+#endif

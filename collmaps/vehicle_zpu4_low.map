@@ -1,0 +1,23 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 44 88 0 ) ( -60 88 0 ) ( -60 -88 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 0 0 0
+ ( -56 -88 80 ) ( -56 88 80 ) ( 48 88 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 0 0 0
+ ( -56 -40 96 ) ( 48 -40 96 ) ( 48 -40 64 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 8 0 0
+ ( 68 -76 96 ) ( 68 100 96 ) ( 68 100 64 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 8 0 0
+ ( 48 40 96 ) ( -56 40 96 ) ( -56 40 64 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 -8 8 0 0
+ ( -68 92 96 ) ( -68 -84 96 ) ( -68 -84 64 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 8 0 0
+}
+}
+// entity 1
+{
+"model" "vehicle_zpu4_low"
+"classname" "misc_model"
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+}

@@ -1,0 +1,1299 @@
+#Dialog_generic - All the dialog called automaticall from animscripts.,,
+
+"# If the text in the first column of a row starts with a # character, the row is ignored",,"If the first column for a row is blank, then the row is ignored"
+,"If the first column for a row is blank, then the row is ignored",
+# The first non-comment line of a sound alias file specifies the key name for all values appearing in this column.,,
+"# This means it is safe to swap entire columns around, though you should never swap partial columns.",,
+"# You can invent new keys, but the game will ignore them if it doesn't know about them.",,
+"# You can leave out keys, but the ""name"" and ""file"" keys must always be present.",,
+
+,name,name of the alias that is used to play this sound (required)
+,sequence,"used to uniquely identify alias entries when more than one sound goes to an alias, used only to catch unwanted duplicates (default = 0)"
+,file,the name of the file that contains the sound data (required)
+,vol_min,"0 is silent, 1 is full volume (default = 1)"
+,vol_max,"0 is silent, 1 is full volume (default = same as vol_min)"
+,vol_mod,"blank causes no effect on vol_min and vol_max, otherwise the string must match a string in the volumemodgroups.def file and the value in that file corresponding to that string will be used to adjust vol_min and vol_max, clamped to the valid range"
+,pitch_min,"1 is normal playback, 2 is twice as fast, 0.5 is half as fast (default = 1)"
+,pitch_max,"1 is normal playback, 2 is twice as fast, 0.5 is half as fast (default = same as pitch_min)"
+,dist_min,"within this distance in inches, the sound is always full volume (default = 120)"
+,dist_max,"outside this distance in inches, the sound is not started.  If left blank or set to 0, the sound will play from any distance.  This does not affect sound volume falloff."
+,channel,"auto, menu, weapon, voice, item, body, local, music, announcer (default = auto)"
+,type,primed (a streamed sound which gets primed on some platforms) / streamed / loaded (default = loaded)
+,probability,weight to use for the weighted probability of playing this sound instead of another sound (default = 1)
+,loop,"whether this sound is ""looping"" or ""nonlooping"" (default = ""nonlooping"")"
+,masterslave,"if ""master"", this is a master sound.  If a number, then this sound's volume will be multiplied by that number (a percentage between 0 and 1) any master sound is playing.  If blank, then neither master nor slave."
+,loadspec,"space-separated list of which maps should use this alias; eg, ""burnville dawnville"".  If blank, the alias is used on all maps."
+,compression,"a string corresponding to an entry in ""XMAUpdate.tbl"" which is used to determine compression by XMAUpdate.exe"
+,secondaryaliasname,"defined the name of an additional sound alias to play in addition to the current alias being played. Note that it is an error for the secondaryalias to also define a secondaryaliasname (eg, if B is a secondaryalias of A, B is not allowed to have its own secondaryalias)."
+,volumefalloffcurve,if blank uses the linear curve which can not be changed. A string 'XXXX' corresponds to the curve defined by the file 'soundaliases/XXXX.vfcurve'
+,startdelay,defaults to no delay. The value is the number of milliseconds to delay starting the sound by
+,speakermap,if blank uses the default speakermappings which cannot be changed. A string 'XXXX' corresponds to the speakermap defined by the file 'soundaliases/XXXX.spkrmap'. 
+,reverb,"blank means the alias is affected normally by wet and dry levels, ""fulldrylevel"" forces the alias to use a full drylevel (ignoring the global drylevel), ""nowetlevel"" forces the alias to use no wetlevel (ignoring the global wetlevel)"
+,lfe percentage,this determines what percentage of the highest calculated spatialized speaker volume should be passed to the LFE. blank means no LFE for the sound
+,center percentage,this determines what percentage of the volume should be redirected to the center channel (equal percentage taken from all speakers).,,,,,,,,,,,,,,,,,,,,,,,,,,
+,platform,"used by XMAUpdate to determine whether the alias should be processed for a particular platform.  If blank, process for all platforms.  Platforms are PC, XB, PS, WI.  Multiple values should be separated by spaces.  !PC will exclude alias from PC but include in all other platforms.  PC will only include alias for PC.  !PC XB is invalid.",,,,,,,,,,,,,,,,,,,,,,,,,,
+,envelop_min,any sounds within this distance of the listener will use the full envelop percentage,,,,,,,,,,,,,,,,,,,,,,,,,,
+,envelop_max,sounds between enevlop_min and envelop_max use a fraction of the envelop percentage,,,,,,,,,,,,,,,,,,,,,,,,,,
+,envelop percentage,amount of omnidirectionality to apply,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+name,sequence,probability,file,vol_min,vol_max,vol_mod,pitch_min,pitch_max,dist_min,dist_max,channel,type,loop,masterslave,loadspec,subtitle,compression,secondaryaliasname,volumefalloffcurve,startdelay,speakermap,reverb,lfe percentage,center percentage,platform,envelop_min,envelop_max,envelop percentage
+
+#American,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+generic_pain_american_1,1,,voiceovers/generic/UK2/uk2_pain_01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,,,,,,,
+generic_pain_american_1,2,,voiceovers/generic/UK2/uk2_pain_02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,,,,,,,
+generic_pain_american_1,3,,voiceovers/generic/UK2/uk2_pain_03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,,,,,,,
+generic_pain_american_1,4,,voiceovers/generic/UK2/uk2_pain_04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,,,,,,,
+generic_pain_american_2,1,,voiceovers/generic/US5/us5_pain_01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,,,,,,,
+generic_pain_american_2,2,,voiceovers/generic/US5/us5_pain_02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,,,,,,,
+generic_pain_american_2,3,,voiceovers/generic/US5/us5_pain_03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,,,,,,,
+generic_pain_american_2,4,,voiceovers/generic/US5/us5_pain_04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_2,5,,voiceovers/generic/US5/us5_pain_05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_3,1,,voiceovers/generic/US8/us8_pain_01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_3,2,,voiceovers/generic/US8/us8_pain_02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_3,3,,voiceovers/generic/US8/us8_pain_03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_3,4,,voiceovers/generic/US8/us8_pain_04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_4,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_5,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_6,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_7,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_american_8,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+
+generic_death_american_1,1,,voiceovers/generic/UK2/uk2_death_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_1,2,,voiceovers/generic/UK2/uk2_death_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_1,3,,voiceovers/generic/UK2/uk2_death_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_1,4,,voiceovers/generic/UK2/uk2_death_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_1,5,,voiceovers/generic/UK2/uk2_death_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_1,6,,voiceovers/generic/UK2/uk2_death_06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_1,7,,voiceovers/generic/UK2/uk2_death_07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_1,8,,voiceovers/generic/UK2/uk2_death_08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_2,1,,voiceovers/generic/US5/us5_death_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_2,2,,voiceovers/generic/US5/us5_death_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_2,3,,voiceovers/generic/US5/us5_death_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_3,1,,voiceovers/generic/US8/us8_death_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_3,2,,voiceovers/generic/US8/us8_death_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_3,3,,voiceovers/generic/US8/us8_death_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_3,4,,voiceovers/generic/US8/us8_death_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_3,5,,voiceovers/generic/US8/us8_death_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_4,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_5,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_6,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_7,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_american_8,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+
+generic_meleecharge_american_1,1,,voiceovers/generic/UK2/uk2_meleecharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_2,1,,voiceovers/generic/US5/us5_meleecharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_2,2,,voiceovers/generic/US5/us5_meleecharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_3,1,,voiceovers/generic/US8/us8_meleecharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_3,2,,voiceovers/generic/US8/us8_meleecharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_3,3,,voiceovers/generic/US8/us8_meleecharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_3,4,,voiceovers/generic/US8/us8_meleecharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_4,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_4,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_4,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_4,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_4,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_5,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_5,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_5,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_5,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_5,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_6,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_6,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_6,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_6,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_6,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_7,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_7,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_7,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_7,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_7,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_8,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_8,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_8,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_8,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_american_8,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+
+generic_meleeattack_american_1,1,,voiceovers/generic/UK2/uk2_meleeattack_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_1,2,,voiceovers/generic/UK2/uk2_meleeattack_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_2,1,,voiceovers/generic/US5/us5_meleeattack_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_2,2,,voiceovers/generic/US5/us5_meleeattack_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_3,1,,voiceovers/generic/US8/us8_meleeattack_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_4,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_4,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_4,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_4,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_4,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_4,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_5,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_5,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_5,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_5,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_5,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_5,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_6,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_6,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_6,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_6,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_6,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_6,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_7,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_7,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_7,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_7,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_7,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_7,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_8,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_8,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_8,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_american_8,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_american_8,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_american_8,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction,,,
+
+generic_flashbang_american_1,1,,voiceovers/generic/UK2/uk2_pain_01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_1,2,,voiceovers/generic/UK2/uk2_pain_02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_1,3,,voiceovers/generic/UK2/uk2_pain_03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_1,4,,voiceovers/generic/UK2/uk2_pain_04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_1,5,4,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_2,1,,voiceovers/generic/US5/us5_pain_01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_2,2,,voiceovers/generic/US5/us5_pain_02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_2,3,,voiceovers/generic/US5/us5_pain_03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_2,4,,voiceovers/generic/US5/us5_pain_04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_2,5,,voiceovers/generic/US5/us5_pain_05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_2,6,5,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_3,1,,voiceovers/generic/US8/us8_pain_01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_3,2,,voiceovers/generic/US8/us8_pain_02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_3,3,,voiceovers/generic/US8/us8_pain_03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_3,4,,voiceovers/generic/US8/us8_pain_04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_3,5,4,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_4,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_5,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_6,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_7,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_american_8,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+
+#British,,,,,,,,,,,,,,,,,,,,,,
+generic_pain_british_1,1,,voiceovers/generic/UK2/uk2_pain_01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_british_1,2,,voiceovers/generic/UK2/uk2_pain_02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_british_1,3,,voiceovers/generic/UK2/uk2_pain_03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_british_1,4,,voiceovers/generic/UK2/uk2_pain_04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_british_2,1,,voiceovers/generic/US5/us5_pain_01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_british_2,2,,voiceovers/generic/US5/us5_pain_02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_2,3,,voiceovers/generic/US5/us5_pain_03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_2,4,,voiceovers/generic/US5/us5_pain_04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_2,5,,voiceovers/generic/US5/us5_pain_05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_3,1,,voiceovers/generic/US8/us8_pain_01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_3,2,,voiceovers/generic/US8/us8_pain_02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_3,3,,voiceovers/generic/US8/us8_pain_03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_3,4,,voiceovers/generic/US8/us8_pain_04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_4,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_5,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_6,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_7,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_british_8,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,,,50,3200,auto,streamed,,,,,,,reaction
+
+generic_death_british_1,1,,voiceovers/generic/UK2/uk2_death_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_1,2,,voiceovers/generic/UK2/uk2_death_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_1,3,,voiceovers/generic/UK2/uk2_death_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_1,4,,voiceovers/generic/UK2/uk2_death_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_1,5,,voiceovers/generic/UK2/uk2_death_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_1,6,,voiceovers/generic/UK2/uk2_death_06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_1,7,,voiceovers/generic/UK2/uk2_death_07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_1,8,,voiceovers/generic/UK2/uk2_death_08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_2,1,,voiceovers/generic/US5/us5_death_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_2,2,,voiceovers/generic/US5/us5_death_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_2,3,,voiceovers/generic/US5/us5_death_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_3,1,,voiceovers/generic/US8/us8_death_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_3,2,,voiceovers/generic/US8/us8_death_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_3,3,,voiceovers/generic/US8/us8_death_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_3,4,,voiceovers/generic/US8/us8_death_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_3,5,,voiceovers/generic/US8/us8_death_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_4,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_5,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_6,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_7,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,1,,voiceovers/generic/OA/death01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,2,,voiceovers/generic/OA/death02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,3,,voiceovers/generic/OA/death03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,4,,voiceovers/generic/OA/death04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,5,,voiceovers/generic/OA/death05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,6,,voiceovers/generic/OA/death06.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,7,,voiceovers/generic/OA/death07.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,8,,voiceovers/generic/OA/death08.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,9,,voiceovers/generic/OA/death09.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,10,,voiceovers/generic/OA/death10.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_british_8,11,,voiceovers/generic/OA/death11.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+
+generic_meleecharge_british_1,1,,voiceovers/generic/UK2/uk2_meleecharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_2,1,,voiceovers/generic/US5/us5_meleecharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_2,2,,voiceovers/generic/US5/us5_meleecharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_3,1,,voiceovers/generic/US8/us8_meleecharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_3,2,,voiceovers/generic/US8/us8_meleecharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_3,3,,voiceovers/generic/US8/us8_meleecharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_3,4,,voiceovers/generic/US8/us8_meleecharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_4,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_4,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_4,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_4,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_4,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_5,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_5,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_5,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_5,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_5,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_6,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_6,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_6,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_6,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_6,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_7,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_7,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_7,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_7,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_7,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_8,1,,voiceovers/generic/OA/ElderCharge_01.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_8,2,,voiceovers/generic/OA/ElderCharge_02.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_8,3,,voiceovers/generic/OA/ElderCharge_03.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_8,4,,voiceovers/generic/OA/ElderCharge_04.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_british_8,5,,voiceovers/generic/OA/ElderCharge_05.wav,0.7,0.7,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+
+generic_meleeattack_british_1,1,,voiceovers/generic/UK2/uk2_meleeattack_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_1,2,,voiceovers/generic/UK2/uk2_meleeattack_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_2,1,,voiceovers/generic/US5/us5_meleeattack_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_2,2,,voiceovers/generic/US5/us5_meleeattack_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_3,1,,voiceovers/generic/US8/us8_meleeattack_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_4,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_4,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_4,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_4,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_4,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_4,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_5,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_5,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_5,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_5,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_5,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_5,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_6,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_6,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_6,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_6,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_6,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_6,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_7,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_7,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_7,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_7,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_7,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_7,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_8,1,,voiceovers/generic/OA/ElderExert_01.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_british_8,2,,voiceovers/generic/OA/ElderExert_02.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_british_8,3,,voiceovers/generic/OA/ElderExert_03.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_british_8,4,,voiceovers/generic/OA/ElderExert_04.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_british_8,5,,voiceovers/generic/OA/ElderExert_05.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_british_8,6,,voiceovers/generic/OA/ElderExert_06.wav,0.6,0.6,reactional,,,50,3200,voice,streamed,,,,,,,reaction,,,
+
+generic_flashbang_british_1,1,,voiceovers/generic/UK2/uk2_pain_01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_1,2,,voiceovers/generic/UK2/uk2_pain_02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_1,3,,voiceovers/generic/UK2/uk2_pain_03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_1,4,,voiceovers/generic/UK2/uk2_pain_04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_1,5,4,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_2,1,,voiceovers/generic/US5/us5_pain_01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_2,2,,voiceovers/generic/US5/us5_pain_02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_2,3,,voiceovers/generic/US5/us5_pain_03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_2,4,,voiceovers/generic/US5/us5_pain_04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_2,5,,voiceovers/generic/US5/us5_pain_05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_2,6,5,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_3,1,,voiceovers/generic/US8/us8_pain_01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_3,2,,voiceovers/generic/US8/us8_pain_02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_3,3,,voiceovers/generic/US8/us8_pain_03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_3,4,,voiceovers/generic/US8/us8_pain_04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_3,5,4,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_4,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_5,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_6,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_7,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,1,,voiceovers/generic/OA/pain01.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,2,,voiceovers/generic/OA/pain02.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,3,,voiceovers/generic/OA/pain03.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,4,,voiceovers/generic/OA/pain04.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,5,,voiceovers/generic/OA/pain05.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,6,,voiceovers/generic/OA/pain06.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,7,,voiceovers/generic/OA/pain07.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,8,,voiceovers/generic/OA/pain08.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,9,,voiceovers/generic/OA/pain09.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,10,,voiceovers/generic/OA/pain10.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,11,,voiceovers/generic/OA/pain11.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,12,,voiceovers/generic/OA/pain12.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,13,,voiceovers/generic/OA/pain13.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,14,,voiceovers/generic/OA/pain14.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,15,,voiceovers/generic/OA/pain15.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,16,,voiceovers/generic/OA/pain16.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_british_8,17,16,null.wav,0.7,0.7,reactional,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+
+#Russian,,,,,,,,,,,,,,,,,,,,,,
+generic_pain_russian_1,1,,voiceovers/generic/RU1/ru1_pain_01.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_russian_1,2,,voiceovers/generic/RU1/ru1_pain_02.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_russian_1,3,,voiceovers/generic/RU1/ru1_pain_03.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_russian_1,4,,voiceovers/generic/RU2/ru2_pain_01.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_1,5,,voiceovers/generic/RU2/ru2_pain_02.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_1,6,,voiceovers/generic/RU2/ru2_pain_03.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_1,7,,voiceovers/generic/RU2/ru2_pain_04.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_1,8,,voiceovers/generic/RU2/ru2_pain_05.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_1,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_russian_2,1,,voiceovers/generic/RU3/ru3_pain_01.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_2,2,,voiceovers/generic/RU3/ru3_pain_02.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_2,3,,voiceovers/generic/RU3/ru3_pain_03.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_2,4,,voiceovers/generic/RU4/ru4_pain_01.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_2,5,,voiceovers/generic/RU4/ru4_pain_02.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_2,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_russian_3,1,,voiceovers/generic/US7/us7_pain_01.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_3,2,,voiceovers/generic/US7/us7_pain_02.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_3,3,,voiceovers/generic/US7/us7_pain_03.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_3,4,,voiceovers/generic/US7/us7_pain_04.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_3,5,,voiceovers/generic/US7/us7_pain_05.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_3,6,,voiceovers/generic/US7/us7_pain_06.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_3,7,,voiceovers/generic/US7/us7_pain_07.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_3,8,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_russian_4,1,,voiceovers/generic/OM/gen_m_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_4,2,,voiceovers/generic/OM/gen_m_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_4,3,,voiceovers/generic/OM/gen_m_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_4,4,,voiceovers/generic/OM/gen_m_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_4,5,,voiceovers/generic/OM/gen_m_pain5.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_4,6,,voiceovers/generic/OM/gen_m_pain6.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_4,7,,voiceovers/generic/OM/gen_m_pain7.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_4,8,,voiceovers/generic/OM/gen_m_pain8.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_4,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_russian_5,1,,voiceovers/generic/ON/gen_n_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_5,2,,voiceovers/generic/ON/gen_n_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_5,3,,voiceovers/generic/ON/gen_n_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_5,4,,voiceovers/generic/ON/gen_n_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_5,5,,voiceovers/generic/ON/gen_n_pain5.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_5,6,,voiceovers/generic/ON/gen_n_pain6.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_5,7,,voiceovers/generic/ON/gen_n_pain7.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_5,8,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_russian_6,1,,voiceovers/generic/OO/gen_o_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_6,2,,voiceovers/generic/OO/gen_o_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_6,3,,voiceovers/generic/OO/gen_o_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_6,4,,voiceovers/generic/OO/gen_o_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_6,5,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_russian_7,1,,voiceovers/generic/OM/gen_m_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_7,2,,voiceovers/generic/OM/gen_m_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_7,3,,voiceovers/generic/OM/gen_m_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_7,4,,voiceovers/generic/OM/gen_m_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_7,5,,voiceovers/generic/OM/gen_m_pain5.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_7,6,,voiceovers/generic/OM/gen_m_pain6.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_7,7,,voiceovers/generic/OM/gen_m_pain7.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_7,8,,voiceovers/generic/OM/gen_m_pain8.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_7,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_russian_8,1,,voiceovers/generic/ON/gen_n_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_8,2,,voiceovers/generic/ON/gen_n_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_8,3,,voiceovers/generic/ON/gen_n_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_8,4,,voiceovers/generic/ON/gen_n_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_8,5,,voiceovers/generic/ON/gen_n_pain5.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_8,6,,voiceovers/generic/ON/gen_n_pain6.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_8,7,,voiceovers/generic/ON/gen_n_pain7.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_russian_8,8,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+
+generic_death_russian_1,1,,voiceovers/generic/RU1/ru1_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_1,2,,voiceovers/generic/RU1/ru1_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_1,3,,voiceovers/generic/RU2/ru2_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_1,4,,voiceovers/generic/AB4/ab4_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_1,5,,voiceovers/generic/AB4/ab4_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_1,6,,voiceovers/generic/AB4/ab4_death_03.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_1,7,,voiceovers/generic/AB4/ab4_death_04.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_1,8,,voiceovers/generic/AB4/ab4_death_05.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_1,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,,,,,reaction
+generic_death_russian_2,1,,voiceovers/generic/RU3/ru3_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_2,2,,voiceovers/generic/RU3/ru3_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_2,3,,voiceovers/generic/RU4/ru4_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_2,4,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_russian_2,1,,voiceovers/generic/RU3/ru3_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_2,2,,voiceovers/generic/RU3/ru3_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_2,3,,voiceovers/generic/RU4/ru4_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_2,4,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_3,1,,voiceovers/generic/US7/us7_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_3,2,,voiceovers/generic/US7/us7_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_3,3,,voiceovers/generic/US7/us7_death_03.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_3,4,,voiceovers/generic/US7/us7_death_04.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_3,5,,voiceovers/generic/US7/us7_death_05.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_3,6,,voiceovers/generic/US7/us7_death_06.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_3,7,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_russian_3,1,,voiceovers/generic/US7/us7_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_3,2,,voiceovers/generic/US7/us7_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_3,3,,voiceovers/generic/US7/us7_death_03.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_3,4,,voiceovers/generic/US7/us7_death_04.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_3,5,,voiceovers/generic/US7/us7_death_05.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_3,6,,voiceovers/generic/US7/us7_death_06.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_3,7,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,1,,voiceovers/generic/OM/gen_m_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_4,2,,voiceovers/generic/OM/gen_m_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_4,3,,voiceovers/generic/OM/gen_m_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_4,4,,voiceovers/generic/OM/gen_m_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_4,5,,voiceovers/generic/OM/gen_m_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_4,6,,voiceovers/generic/OM/gen_m_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_4,7,,voiceovers/generic/OM/gen_m_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_4,8,,voiceovers/generic/OM/gen_m_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_4,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_russian_4,1,,voiceovers/generic/OM/gen_m_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,2,,voiceovers/generic/OM/gen_m_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,3,,voiceovers/generic/OM/gen_m_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,4,,voiceovers/generic/OM/gen_m_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,5,,voiceovers/generic/OM/gen_m_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,6,,voiceovers/generic/OM/gen_m_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,7,,voiceovers/generic/OM/gen_m_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,8,,voiceovers/generic/OM/gen_m_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_4,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_5,1,,voiceovers/generic/ON/gen_n_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_5,2,,voiceovers/generic/ON/gen_n_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_5,3,,voiceovers/generic/ON/gen_n_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_5,4,,voiceovers/generic/ON/gen_n_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_5,5,,voiceovers/generic/ON/gen_n_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_5,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_russian_5,1,,voiceovers/generic/ON/gen_n_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_5,2,,voiceovers/generic/ON/gen_n_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_5,3,,voiceovers/generic/ON/gen_n_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_5,4,,voiceovers/generic/ON/gen_n_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_5,5,,voiceovers/generic/ON/gen_n_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_5,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_6,1,,voiceovers/generic/OO/gen_o_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,2,,voiceovers/generic/OO/gen_o_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,3,,voiceovers/generic/OO/gen_o_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,4,,voiceovers/generic/OO/gen_o_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,5,,voiceovers/generic/OO/gen_o_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,6,,voiceovers/generic/OO/gen_o_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,7,,voiceovers/generic/OO/gen_o_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,8,,voiceovers/generic/OO/gen_o_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,9,,voiceovers/generic/OO/gen_o_death9.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,10,,voiceovers/generic/OO/gen_o_death10.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,11,,voiceovers/generic/OO/gen_o_death11.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,12,0.1,voiceovers/generic/OO/gen_o_death12.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_russian_6,13,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,,,,,reaction
+generic_death_russian_7,1,,voiceovers/generic/OM/gen_m_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_7,2,,voiceovers/generic/OM/gen_m_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_7,3,,voiceovers/generic/OM/gen_m_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_7,4,,voiceovers/generic/OM/gen_m_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_7,5,,voiceovers/generic/OM/gen_m_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_7,6,,voiceovers/generic/OM/gen_m_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_7,7,,voiceovers/generic/OM/gen_m_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_7,8,,voiceovers/generic/OM/gen_m_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_7,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_russian_7,1,,voiceovers/generic/OM/gen_m_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_7,2,,voiceovers/generic/OM/gen_m_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_7,3,,voiceovers/generic/OM/gen_m_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_7,4,,voiceovers/generic/OM/gen_m_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_7,5,,voiceovers/generic/OM/gen_m_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_7,6,,voiceovers/generic/OM/gen_m_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_7,7,,voiceovers/generic/OM/gen_m_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_7,8,,voiceovers/generic/OM/gen_m_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_7,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_8,1,,voiceovers/generic/ON/gen_n_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_8,2,,voiceovers/generic/ON/gen_n_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_8,3,,voiceovers/generic/ON/gen_n_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_8,4,,voiceovers/generic/ON/gen_n_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_8,5,,voiceovers/generic/ON/gen_n_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_russian_8,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_russian_8,1,,voiceovers/generic/ON/gen_n_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_8,2,,voiceovers/generic/ON/gen_n_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_8,3,,voiceovers/generic/ON/gen_n_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_8,4,,voiceovers/generic/ON/gen_n_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_8,5,,voiceovers/generic/ON/gen_n_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_russian_8,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+
+generic_meleecharge_russian_1,1,,voiceovers/generic/RU1/ru1_meleecharge_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_1,2,,voiceovers/generic/RU1/ru1_meleecharge_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_1,3,,voiceovers/generic/RU2/ru2_meleecharge_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_2,1,,voiceovers/generic/RU3/ru3_meleecharge_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_3,1,,voiceovers/generic/US7/us7_meleecharge_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_3,2,,voiceovers/generic/US7/us7_meleecharge_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_3,3,,voiceovers/generic/US7/us7_meleecharge_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_4,1,,voiceovers/generic/OG/meleecharge_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_4,2,,voiceovers/generic/OG/meleecharge_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_4,3,,voiceovers/generic/OG/meleecharge_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_4,4,,voiceovers/generic/OG/meleecharge_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_5,1,,voiceovers/generic/OG/meleecharge_ge_0_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_5,2,,voiceovers/generic/OG/meleecharge_ge_0_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_5,3,,voiceovers/generic/OG/meleecharge_ge_0_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_5,4,,voiceovers/generic/OG/meleecharge_ge_0_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_6,1,,voiceovers/generic/OG/meleecharge_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_6,2,,voiceovers/generic/OG/meleecharge_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_6,3,,voiceovers/generic/OG/meleecharge_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_6,4,,voiceovers/generic/OG/meleecharge_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_7,1,,voiceovers/generic/OG/meleecharge_ge_0_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_7,2,,voiceovers/generic/OG/meleecharge_ge_0_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_7,3,,voiceovers/generic/OG/meleecharge_ge_0_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_7,4,,voiceovers/generic/OG/meleecharge_ge_0_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_8,1,,voiceovers/generic/OG/meleecharge_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_8,2,,voiceovers/generic/OG/meleecharge_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_8,3,,voiceovers/generic/OG/meleecharge_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_russian_8,4,,voiceovers/generic/OG/meleecharge_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+
+generic_meleeattack_russian_1,1,,voiceovers/generic/RU1/ru1_meleeattack_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_1,2,,voiceovers/generic/RU1/ru1_meleeattack_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_1,3,,voiceovers/generic/RU2/ru2_meleeattack_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_1,4,,voiceovers/generic/RU2/ru2_meleeattack_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_2,1,,voiceovers/generic/RU3/ru3_meleeattack_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_2,2,,voiceovers/generic/RU3/ru3_meleeattack_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_2,3,,voiceovers/generic/RU3/ru3_meleeattack_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_2,4,,voiceovers/generic/RU4/ru4_meleeattack_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_3,1,,voiceovers/generic/US7/us7_meleeattack_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_3,2,,voiceovers/generic/US7/us7_meleeattack_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_4,1,,voiceovers/generic/OG/meleeattack_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_4,2,,voiceovers/generic/OG/meleeattack_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_4,3,,voiceovers/generic/OG/meleeattack_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_4,4,,voiceovers/generic/OG/meleeattack_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_4,5,,voiceovers/generic/OG/meleeattack_ge_3_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_5,1,,voiceovers/generic/OG/meleeattack_ge_0_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_5,2,,voiceovers/generic/OG/meleeattack_ge_0_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_5,3,,voiceovers/generic/OG/meleeattack_ge_0_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_5,4,,voiceovers/generic/OG/meleeattack_ge_0_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_5,5,,voiceovers/generic/OG/meleeattack_ge_0_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_6,1,,voiceovers/generic/OG/meleeattack_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_6,2,,voiceovers/generic/OG/meleeattack_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_6,3,,voiceovers/generic/OG/meleeattack_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_6,4,,voiceovers/generic/OG/meleeattack_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_6,5,,voiceovers/generic/OG/meleeattack_ge_3_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_7,1,,voiceovers/generic/OG/meleeattack_ge_0_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_7,2,,voiceovers/generic/OG/meleeattack_ge_0_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_7,3,,voiceovers/generic/OG/meleeattack_ge_0_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_7,4,,voiceovers/generic/OG/meleeattack_ge_0_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_7,5,,voiceovers/generic/OG/meleeattack_ge_0_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_8,1,,voiceovers/generic/OG/meleeattack_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_russian_8,2,,voiceovers/generic/OG/meleeattack_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_russian_8,3,,voiceovers/generic/OG/meleeattack_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_russian_8,4,,voiceovers/generic/OG/meleeattack_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_russian_8,5,,voiceovers/generic/OG/meleeattack_ge_3_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+
+generic_flashbang_russian_1,1,,voiceovers/generic/RU1/ru1_pain_01.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,
+generic_flashbang_russian_1,2,,voiceovers/generic/RU1/ru1_pain_02.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_1,3,,voiceovers/generic/RU1/ru1_pain_03.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_1,4,,voiceovers/generic/RU2/ru2_pain_01.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_1,5,,voiceovers/generic/RU2/ru2_pain_02.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_1,6,,voiceovers/generic/RU2/ru2_pain_03.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_1,7,,voiceovers/generic/RU2/ru2_pain_04.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_1,8,,voiceovers/generic/RU2/ru2_pain_05.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_1,9,8,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_2,1,,voiceovers/generic/RU3/ru3_pain_01.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_2,2,,voiceovers/generic/RU3/ru3_pain_02.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_2,3,,voiceovers/generic/RU3/ru3_pain_03.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_2,4,,voiceovers/generic/RU4/ru4_pain_01.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_2,5,,voiceovers/generic/RU4/ru4_pain_02.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_2,6,5,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_3,1,,voiceovers/generic/US7/us7_pain_01.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_3,2,,voiceovers/generic/US7/us7_pain_02.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_3,3,,voiceovers/generic/US7/us7_pain_03.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_3,4,,voiceovers/generic/US7/us7_pain_04.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_3,5,,voiceovers/generic/US7/us7_pain_05.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_3,6,,voiceovers/generic/US7/us7_pain_06.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_3,7,,voiceovers/generic/US7/us7_pain_07.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_3,8,7,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,1,,voiceovers/generic/OM/gen_m_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,2,,voiceovers/generic/OM/gen_m_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,3,,voiceovers/generic/OM/gen_m_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,4,,voiceovers/generic/OM/gen_m_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,5,,voiceovers/generic/OM/gen_m_pain5.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,6,,voiceovers/generic/OM/gen_m_pain6.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,7,,voiceovers/generic/OM/gen_m_pain7.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,8,,voiceovers/generic/OM/gen_m_pain8.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_4,9,8,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_5,1,,voiceovers/generic/ON/gen_n_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_5,2,,voiceovers/generic/ON/gen_n_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_5,3,,voiceovers/generic/ON/gen_n_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_5,4,,voiceovers/generic/ON/gen_n_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_5,5,,voiceovers/generic/ON/gen_n_pain5.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_5,6,,voiceovers/generic/ON/gen_n_pain6.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_5,7,,voiceovers/generic/ON/gen_n_pain7.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_5,8,7,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_6,1,,voiceovers/generic/OO/gen_o_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_6,2,,voiceovers/generic/OO/gen_o_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_6,3,,voiceovers/generic/OO/gen_o_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_6,4,,voiceovers/generic/OO/gen_o_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_6,5,4,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,1,,voiceovers/generic/OM/gen_m_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,2,,voiceovers/generic/OM/gen_m_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,3,,voiceovers/generic/OM/gen_m_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,4,,voiceovers/generic/OM/gen_m_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,5,,voiceovers/generic/OM/gen_m_pain5.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,6,,voiceovers/generic/OM/gen_m_pain6.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,7,,voiceovers/generic/OM/gen_m_pain7.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,8,,voiceovers/generic/OM/gen_m_pain8.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_7,9,8,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_8,1,,voiceovers/generic/ON/gen_n_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_8,2,,voiceovers/generic/ON/gen_n_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_8,3,,voiceovers/generic/ON/gen_n_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_8,4,,voiceovers/generic/ON/gen_n_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_8,5,,voiceovers/generic/ON/gen_n_pain5.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_8,6,,voiceovers/generic/ON/gen_n_pain6.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_8,7,,voiceovers/generic/ON/gen_n_pain7.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_russian_8,8,7,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+
+#Arab,,,,,,,,,,,,,,,,,,,,,,
+generic_pain_arab_1,1,,voiceovers/generic/AB2/ab2_pain_01.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_1,2,,voiceovers/generic/AB2/ab2_pain_02.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_1,3,,voiceovers/generic/AB2/ab2_pain_03.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_1,4,,voiceovers/generic/AB2/ab2_pain_04.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_1,5,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction,,,
+generic_pain_arab_2,1,,voiceovers/generic/AB3/ab3_pain_01.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_2,2,,voiceovers/generic/AB3/ab3_pain_02.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_2,3,,voiceovers/generic/AB3/ab3_pain_03.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_2,4,,voiceovers/generic/AB3/ab3_pain_04.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_2,5,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction,,,
+generic_pain_arab_3,1,,voiceovers/generic/AB4/ab4_pain_01.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction,,,
+generic_pain_arab_3,2,,voiceovers/generic/AB4/ab4_pain_02.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_3,3,,voiceovers/generic/AB4/ab4_pain_03.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_3,4,,voiceovers/generic/AB4/ab4_pain_04.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_3,5,,voiceovers/generic/AB4/ab4_pain_05.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_3,6,,voiceovers/generic/AB4/ab4_pain_06.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_3,7,,voiceovers/generic/AB4/ab4_pain_07.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_3,8,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_arab_4,1,,voiceovers/generic/OM/gen_m_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_4,2,,voiceovers/generic/OM/gen_m_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_4,3,,voiceovers/generic/OM/gen_m_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_4,4,,voiceovers/generic/OM/gen_m_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_4,5,,voiceovers/generic/OM/gen_m_pain5.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_4,6,,voiceovers/generic/OM/gen_m_pain6.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_4,7,,voiceovers/generic/OM/gen_m_pain7.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_4,8,,voiceovers/generic/OM/gen_m_pain8.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_4,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_arab_5,1,,voiceovers/generic/ON/gen_n_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_5,2,,voiceovers/generic/ON/gen_n_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_5,3,,voiceovers/generic/ON/gen_n_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_5,4,,voiceovers/generic/ON/gen_n_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_5,5,,voiceovers/generic/ON/gen_n_pain5.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_5,6,,voiceovers/generic/ON/gen_n_pain6.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_5,7,,voiceovers/generic/ON/gen_n_pain7.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_5,8,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_arab_6,1,,voiceovers/generic/OO/gen_o_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_6,2,,voiceovers/generic/OO/gen_o_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_6,3,,voiceovers/generic/OO/gen_o_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_6,4,,voiceovers/generic/OO/gen_o_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_6,5,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_arab_7,1,,voiceovers/generic/OM/gen_m_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_7,2,,voiceovers/generic/OM/gen_m_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_7,3,,voiceovers/generic/OM/gen_m_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_7,4,,voiceovers/generic/OM/gen_m_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_7,5,,voiceovers/generic/OM/gen_m_pain5.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_7,6,,voiceovers/generic/OM/gen_m_pain6.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_7,7,,voiceovers/generic/OM/gen_m_pain7.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_7,8,,voiceovers/generic/OM/gen_m_pain8.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_7,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+generic_pain_arab_8,1,,voiceovers/generic/ON/gen_n_pain1.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_8,2,,voiceovers/generic/ON/gen_n_pain2.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_8,3,,voiceovers/generic/ON/gen_n_pain3.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_8,4,,voiceovers/generic/ON/gen_n_pain4.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_8,5,,voiceovers/generic/ON/gen_n_pain5.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_8,6,,voiceovers/generic/ON/gen_n_pain6.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_8,7,,voiceovers/generic/ON/gen_n_pain7.wav,0.93,0.93,reactionax,,,50,3200,auto,streamed,,,,,,,reaction
+generic_pain_arab_8,8,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,auto,,,,,,,,reaction
+
+generic_death_arab_1,1,,voiceovers/generic/AB2/ab2_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,2,,voiceovers/generic/AB2/ab2_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,3,,voiceovers/generic/AB2/ab2_death_03.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,4,,voiceovers/generic/AB2/ab2_death_04.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,5,,voiceovers/generic/AB2/ab2_death_05.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,6,,voiceovers/generic/AB2/ab2_death_06.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,7,,voiceovers/generic/AB2/ab2_death_07.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,8,,voiceovers/generic/AB2/ab2_death_08.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,9,,voiceovers/generic/AB2/ab2_death_09.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_1,10,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,,,,,reaction
+generic_death_arab_2,1,,voiceovers/generic/AB3/ab3_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_2,2,,voiceovers/generic/AB3/ab3_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_2,3,,voiceovers/generic/AB3/ab3_death_03.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_2,4,,voiceovers/generic/AB3/ab3_death_04.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_2,5,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,,,,,reaction
+generic_death_arab_3,1,,voiceovers/generic/AB4/ab4_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_3,2,,voiceovers/generic/AB4/ab4_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_3,3,,voiceovers/generic/AB4/ab4_death_03.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_3,4,,voiceovers/generic/AB4/ab4_death_04.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_3,5,,voiceovers/generic/AB4/ab4_death_05.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_3,6,,voiceovers/generic/RU1/ru1_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_3,7,,voiceovers/generic/RU1/ru1_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_3,8,,voiceovers/generic/RU2/ru2_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_3,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,,,,,reaction
+generic_death_arab_4,1,,voiceovers/generic/OM/gen_m_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_4,2,,voiceovers/generic/OM/gen_m_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_4,3,,voiceovers/generic/OM/gen_m_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_4,4,,voiceovers/generic/OM/gen_m_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_4,5,,voiceovers/generic/OM/gen_m_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_4,6,,voiceovers/generic/OM/gen_m_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_4,7,,voiceovers/generic/OM/gen_m_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_4,8,,voiceovers/generic/OM/gen_m_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_4,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_arab_4,1,,voiceovers/generic/OM/gen_m_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_4,2,,voiceovers/generic/OM/gen_m_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_4,3,,voiceovers/generic/OM/gen_m_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_4,4,,voiceovers/generic/OM/gen_m_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_4,5,,voiceovers/generic/OM/gen_m_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_4,6,,voiceovers/generic/OM/gen_m_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_4,7,,voiceovers/generic/OM/gen_m_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_4,8,,voiceovers/generic/OM/gen_m_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_4,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_5,1,,voiceovers/generic/ON/gen_n_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_5,2,,voiceovers/generic/ON/gen_n_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_5,3,,voiceovers/generic/ON/gen_n_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_5,4,,voiceovers/generic/ON/gen_n_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_5,5,,voiceovers/generic/ON/gen_n_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_5,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_arab_5,1,,voiceovers/generic/ON/gen_n_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_5,2,,voiceovers/generic/ON/gen_n_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_5,3,,voiceovers/generic/ON/gen_n_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_5,4,,voiceovers/generic/ON/gen_n_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_5,5,,voiceovers/generic/ON/gen_n_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_5,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_6,1,,voiceovers/generic/OO/gen_o_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,2,,voiceovers/generic/OO/gen_o_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,3,,voiceovers/generic/OO/gen_o_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,4,,voiceovers/generic/OO/gen_o_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,5,,voiceovers/generic/OO/gen_o_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,6,,voiceovers/generic/OO/gen_o_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,7,,voiceovers/generic/OO/gen_o_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,8,,voiceovers/generic/OO/gen_o_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,9,,voiceovers/generic/OO/gen_o_death9.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,10,,voiceovers/generic/OO/gen_o_death10.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,11,,voiceovers/generic/OO/gen_o_death11.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,12,0.1,voiceovers/generic/OO/gen_o_death12.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_death_arab_6,13,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,,,,,reaction
+generic_death_arab_7,1,,voiceovers/generic/OM/gen_m_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_7,2,,voiceovers/generic/OM/gen_m_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_7,3,,voiceovers/generic/OM/gen_m_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_7,4,,voiceovers/generic/OM/gen_m_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_7,5,,voiceovers/generic/OM/gen_m_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_7,6,,voiceovers/generic/OM/gen_m_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_7,7,,voiceovers/generic/OM/gen_m_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_7,8,,voiceovers/generic/OM/gen_m_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_7,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_arab_7,1,,voiceovers/generic/OM/gen_m_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_7,2,,voiceovers/generic/OM/gen_m_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_7,3,,voiceovers/generic/OM/gen_m_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_7,4,,voiceovers/generic/OM/gen_m_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_7,5,,voiceovers/generic/OM/gen_m_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_7,6,,voiceovers/generic/OM/gen_m_death6.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_7,7,,voiceovers/generic/OM/gen_m_death7.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_7,8,,voiceovers/generic/OM/gen_m_death8.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_7,9,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_8,1,,voiceovers/generic/ON/gen_n_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_8,2,,voiceovers/generic/ON/gen_n_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_8,3,,voiceovers/generic/ON/gen_n_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_8,4,,voiceovers/generic/ON/gen_n_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_8,5,,voiceovers/generic/ON/gen_n_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,!village_defend,,,,reaction
+generic_death_arab_8,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,!village_defend,,,,reaction
+generic_death_arab_8,1,,voiceovers/generic/ON/gen_n_death1.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_8,2,,voiceovers/generic/ON/gen_n_death2.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_8,3,,voiceovers/generic/ON/gen_n_death3.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_8,4,,voiceovers/generic/ON/gen_n_death4.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_8,5,,voiceovers/generic/ON/gen_n_death5.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+generic_death_arab_8,6,0.1,null.wav,0.93,0.93,reactionax,,,50,3200,voice,,,,village_defend,,,,reaction
+
+generic_meleecharge_arab_1,1,,voiceovers/generic/AB2/ab2_meleecharge_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_1,2,,voiceovers/generic/AB2/ab2_meleecharge_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_2,1,,voiceovers/generic/AB3/ab3_meleecharge_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_3,1,,voiceovers/generic/AB4/ab4_meleecharge_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_3,2,,voiceovers/generic/AB4/ab4_meleecharge_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_4,1,,voiceovers/generic/OG/meleecharge_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_4,2,,voiceovers/generic/OG/meleecharge_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_4,3,,voiceovers/generic/OG/meleecharge_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_4,4,,voiceovers/generic/OG/meleecharge_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_5,1,,voiceovers/generic/OG/meleecharge_ge_0_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_5,2,,voiceovers/generic/OG/meleecharge_ge_0_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_5,3,,voiceovers/generic/OG/meleecharge_ge_0_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_5,4,,voiceovers/generic/OG/meleecharge_ge_0_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_6,1,,voiceovers/generic/OG/meleecharge_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_6,2,,voiceovers/generic/OG/meleecharge_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_6,3,,voiceovers/generic/OG/meleecharge_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_6,4,,voiceovers/generic/OG/meleecharge_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_7,1,,voiceovers/generic/OG/meleecharge_ge_0_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_7,2,,voiceovers/generic/OG/meleecharge_ge_0_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_7,3,,voiceovers/generic/OG/meleecharge_ge_0_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_7,4,,voiceovers/generic/OG/meleecharge_ge_0_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_8,1,,voiceovers/generic/OG/meleecharge_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_8,2,,voiceovers/generic/OG/meleecharge_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_8,3,,voiceovers/generic/OG/meleecharge_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleecharge_arab_8,4,,voiceovers/generic/OG/meleecharge_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+
+generic_meleeattack_arab_1,1,,voiceovers/generic/AB2/ab2_meleeattack_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_1,2,,voiceovers/generic/AB2/ab2_meleeattack_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_2,1,,voiceovers/generic/AB3/ab3_meleeattack_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_2,2,,voiceovers/generic/AB3/ab3_meleeattack_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_3,1,,voiceovers/generic/AB4/ab4_meleeattack_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_3,2,,voiceovers/generic/AB4/ab4_meleeattack_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_4,1,,voiceovers/generic/OG/meleeattack_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_4,2,,voiceovers/generic/OG/meleeattack_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_4,3,,voiceovers/generic/OG/meleeattack_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_4,4,,voiceovers/generic/OG/meleeattack_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_4,5,,voiceovers/generic/OG/meleeattack_ge_3_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_5,1,,voiceovers/generic/OG/meleeattack_ge_0_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_5,2,,voiceovers/generic/OG/meleeattack_ge_0_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_5,3,,voiceovers/generic/OG/meleeattack_ge_0_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_5,4,,voiceovers/generic/OG/meleeattack_ge_0_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_5,5,,voiceovers/generic/OG/meleeattack_ge_0_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_6,1,,voiceovers/generic/OG/meleeattack_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_6,2,,voiceovers/generic/OG/meleeattack_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_6,3,,voiceovers/generic/OG/meleeattack_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_6,4,,voiceovers/generic/OG/meleeattack_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_6,5,,voiceovers/generic/OG/meleeattack_ge_3_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+generic_meleeattack_arab_7,1,,voiceovers/generic/OG/meleeattack_ge_0_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_7,2,,voiceovers/generic/OG/meleeattack_ge_0_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_7,3,,voiceovers/generic/OG/meleeattack_ge_0_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_7,4,,voiceovers/generic/OG/meleeattack_ge_0_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_7,5,,voiceovers/generic/OG/meleeattack_ge_0_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_8,1,,voiceovers/generic/OG/meleeattack_ge_3_01.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_8,2,,voiceovers/generic/OG/meleeattack_ge_3_02.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_8,3,,voiceovers/generic/OG/meleeattack_ge_3_03.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_8,4,,voiceovers/generic/OG/meleeattack_ge_3_04.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_meleeattack_arab_8,5,,voiceovers/generic/OG/meleeattack_ge_3_05.wav,0.99,0.99,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+
+generic_flashbang_arab_1,1,,voiceovers/generic/AB2/ab2_pain_01.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_1,2,,voiceovers/generic/AB2/ab2_pain_02.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_1,3,,voiceovers/generic/AB2/ab2_pain_03.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_1,4,,voiceovers/generic/AB2/ab2_pain_04.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_1,5,4,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_2,1,,voiceovers/generic/AB3/ab3_pain_01.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_2,2,,voiceovers/generic/AB3/ab3_pain_02.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_2,3,,voiceovers/generic/AB3/ab3_pain_03.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_2,4,,voiceovers/generic/AB3/ab3_pain_04.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_2,5,4,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_3,1,,voiceovers/generic/AB4/ab4_pain_01.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_3,2,,voiceovers/generic/AB4/ab4_pain_02.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_3,3,,voiceovers/generic/AB4/ab4_pain_03.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_3,4,,voiceovers/generic/AB4/ab4_pain_04.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_3,5,,voiceovers/generic/AB4/ab4_pain_05.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_3,6,,voiceovers/generic/AB4/ab4_pain_06.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_3,7,,voiceovers/generic/AB4/ab4_pain_07.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_3,8,7,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,1,,voiceovers/generic/OM/gen_m_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,2,,voiceovers/generic/OM/gen_m_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,3,,voiceovers/generic/OM/gen_m_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,4,,voiceovers/generic/OM/gen_m_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,5,,voiceovers/generic/OM/gen_m_pain5.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,6,,voiceovers/generic/OM/gen_m_pain6.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,7,,voiceovers/generic/OM/gen_m_pain7.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,8,,voiceovers/generic/OM/gen_m_pain8.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_4,9,8,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_5,1,,voiceovers/generic/ON/gen_n_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_5,2,,voiceovers/generic/ON/gen_n_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_5,3,,voiceovers/generic/ON/gen_n_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_5,4,,voiceovers/generic/ON/gen_n_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_5,5,,voiceovers/generic/ON/gen_n_pain5.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_5,6,,voiceovers/generic/ON/gen_n_pain6.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_5,7,,voiceovers/generic/ON/gen_n_pain7.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_5,8,7,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_6,1,,voiceovers/generic/OO/gen_o_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_6,2,,voiceovers/generic/OO/gen_o_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_6,3,,voiceovers/generic/OO/gen_o_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_6,4,,voiceovers/generic/OO/gen_o_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_6,5,4,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,1,,voiceovers/generic/OM/gen_m_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,2,,voiceovers/generic/OM/gen_m_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,3,,voiceovers/generic/OM/gen_m_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,4,,voiceovers/generic/OM/gen_m_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,5,,voiceovers/generic/OM/gen_m_pain5.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,6,,voiceovers/generic/OM/gen_m_pain6.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,7,,voiceovers/generic/OM/gen_m_pain7.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,8,,voiceovers/generic/OM/gen_m_pain8.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_7,9,8,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_8,1,,voiceovers/generic/ON/gen_n_pain1.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_8,2,,voiceovers/generic/ON/gen_n_pain2.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_8,3,,voiceovers/generic/ON/gen_n_pain3.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_8,4,,voiceovers/generic/ON/gen_n_pain4.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_8,5,,voiceovers/generic/ON/gen_n_pain5.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_8,6,,voiceovers/generic/ON/gen_n_pain6.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_8,7,,voiceovers/generic/ON/gen_n_pain7.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,streamed,,,,,,,reaction,,,nowetlevel fulldrylevel
+generic_flashbang_arab_8,8,7,null.wav,0.9,0.9,reactionax,0.8,1.1,50,3200,nonshock,,,,,,,,reaction,,,nowetlevel fulldrylevel
+
+generic_death_falling,1,1.5,voiceovers/generic/falls/deathfall1.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,2,1.5,voiceovers/generic/falls/deathfall2.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,3,1.5,voiceovers/generic/falls/deathfall3.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,4,1.5,voiceovers/generic/falls/deathfall4.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,5,1.5,voiceovers/generic/falls/deathfall5.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,6,1.5,voiceovers/generic/falls/deathfall6.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,7,1.5,voiceovers/generic/falls/deathfall7.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,8,,voiceovers/generic/AB2/ab2_death_01.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,9,,voiceovers/generic/AB2/ab2_death_04.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,10,,voiceovers/generic/AB2/ab2_death_07.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,11,,voiceovers/generic/AB3/ab3_death_02.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction,,,
+generic_death_falling,12,,voiceovers/generic/AB3/ab3_death_03.wav,0.93,0.93,reactionax,,,50,3200,voice,streamed,,,,,,,reaction
+
+## END,,,,,,,,,,,,,,,,,,,

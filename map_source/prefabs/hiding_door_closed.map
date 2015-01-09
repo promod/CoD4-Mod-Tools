@@ -1,0 +1,108 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 72 11 0 ) ( 72 -3 0 ) ( 75 -3 0 ) traverse 64 64 -424 -189 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -74 11 1 ) ( -74 -3 1 ) ( -77 -3 1 ) traverse 64 64 -424 -189 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 11.5 -186 ) ( -28 11.5 -92 ) ( -28 -2.5 -92 ) traverse 64 -64 -424 -200 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 -3 5 ) ( -25 -3 5 ) ( -25 -3 99 ) traverse 64 64 189 200 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -3 99 ) ( 28 -3 193 ) ( 28 11 193 ) traverse 64 -64 -424 -200 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 11 99 ) ( -25 11 99 ) ( -25 11 5 ) traverse 64 64 189 200 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 23 11 95 ) ( 23 -3 95 ) ( 26 -3 95 ) traverse 64 64 -424 -189 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 11 100 ) ( -24 -3 100 ) ( -27 -3 100 ) traverse 64 64 -424 -189 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 11 6 ) ( -27 11 100 ) ( -27 -3 100 ) traverse 64 -64 -424 -200 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 -2 5 ) ( -25 -2 5 ) ( -25 -2 99 ) traverse 64 64 189 200 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27 -3 99 ) ( 27 -3 193 ) ( 27 11 193 ) traverse 64 -64 -424 -200 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 10 99 ) ( -25 10 99 ) ( -25 10 5 ) traverse 64 64 189 200 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 77 11 0 ) ( 77 -3 0 ) ( 80 -3 0 ) traverse 64 64 -424 -194 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -19 11 100 ) ( -19 -3 100 ) ( -22 -3 100 ) traverse 64 64 -424 -194 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27 11 -88 ) ( 27 11 6 ) ( 27 -3 6 ) traverse 64 -64 -424 -200 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17 -2 5 ) ( -20 -2 5 ) ( -20 -2 99 ) traverse 64 64 194 200 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -3 99 ) ( 32 -3 193 ) ( 32 11 193 ) traverse 64 -64 -424 -200 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -17 10 99 ) ( -20 10 99 ) ( -20 10 5 ) traverse 64 64 194 200 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( -31 11 0 ) ( -31 -3 0 ) ( -28 -3 0 ) traverse 64 64 -424 -184 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 11 100 ) ( -29 -3 100 ) ( -32 -3 100 ) traverse 64 64 -424 -184 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 11 6 ) ( -32 11 100 ) ( -32 -3 100 ) traverse 64 -64 -424 -200 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 -2 5 ) ( -30 -2 5 ) ( -30 -2 99 ) traverse 64 64 184 200 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 -3 5 ) ( -27 -3 99 ) ( -27 11 99 ) traverse 64 -64 -424 -200 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 10 99 ) ( -30 10 99 ) ( -30 10 5 ) traverse 64 64 184 200 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"target" "auto1"
+"origin" "-28.0 4.0 1.0"
+"targetname" "hiding_door_guy_org"
+"angles" "0 2.50448e-006 0"
+"classname" "script_origin"
+}
+// entity 2
+{
+"target" "auto2"
+"origin" "-28.0 3.0 0.0"
+"targetname" "auto1"
+"angles" "0 90 0"
+"model" "com_door_01_handleleft"
+"classname" "script_model"
+}
+// entity 3
+{
+"target" "auto3"
+"spawnflags" "1"
+"targetname" "auto2"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( -22 5 0 ) ( -28 5 0 ) ( -28 3.5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 3.5 96 ) ( -28 5 96 ) ( -22 5 96 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 3 96 ) ( 22 3 96 ) ( 22 3 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 3.5 96 ) ( 28 5 96 ) ( 28 5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 5 96 ) ( -22 5 96 ) ( -22 5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 5 96 ) ( -28 3.5 96 ) ( -28 3.5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -30 4 -7 ) ( -36 4 -7 ) ( -36 2.5 -7 ) origin 16 -16 4 -4 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -76 4.5 9 ) ( -76 6 9 ) ( -70 6 9 ) origin 16 -16 4 -4 -180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -4 89 ) ( 14 -4 89 ) ( 14 -4 -7 ) origin 16 -16 4 -7 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 3.5 -4 ) ( -20 5 -4 ) ( -20 5 -100 ) origin 16 -16 4 -7 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 12 89 ) ( -30 12 89 ) ( -30 12 -7 ) origin 16 -16 4 -7 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 5 80 ) ( -36 3.5 80 ) ( -36 3.5 -16 ) origin 16 -16 4 -7 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 4
+{
+"targetname" "auto3"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 7 -54 -7 ) ( -49 -54 -7 ) ( -49 -56 -7 ) origin -16 16 -4 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -47 -56 9 ) ( -47 -54 9 ) ( 9 -54 9 ) origin -16 16 -4 12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -61 -60 116 ) ( -5 -60 116 ) ( -5 -60 0 ) origin -16 16 -4 7 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 -44 116 ) ( -20 -42 116 ) ( -20 -42 0 ) origin -16 16 -12 7 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 -44 116 ) ( -37 -44 116 ) ( -37 -44 0 ) origin -16 16 -4 7 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -70 116 ) ( -36 -72 116 ) ( -36 -72 0 ) origin -16 16 -12 7 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 29 -26 0 ) ( -27 -26 0 ) ( -27 -28 0 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 -28 96 ) ( -27 -26 96 ) ( 29 -26 96 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -27 -52 116 ) ( 29 -52 116 ) ( 29 -52 0 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -28 116 ) ( 28 -26 116 ) ( 28 -26 0 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 26 4 116 ) ( -30 4 116 ) ( -30 4 0 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -26 116 ) ( -40 -28 116 ) ( -40 -28 0 ) clip_player 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,72 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"script_threshold" "100"
+"targetname" "destructable"
+"script_accumulate" "250"
+"classname" "script_brushmodel"
+// brush 0
+{
+  contents detail;
+ ( 4 48 2 ) ( -2 48 2 ) ( -2 -48 2 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -48 98 ) ( -2 48 98 ) ( 4 48 98 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -48 98 ) ( 4 -48 98 ) ( 4 -48 0 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -48 98 ) ( 2 48 98 ) ( 2 48 0 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 48 98 ) ( -2 48 98 ) ( -2 48 0 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 48 98 ) ( 0 -48 98 ) ( 0 -48 0 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 0 80 28 ) ( -4 80 28 ) ( -4 -40 28 ) me_woodbeam_01 256 16 14 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -40 32 ) ( -4 80 32 ) ( 0 80 32 ) me_woodbeam_01 256 16 14 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 -34 ) ( 0 -40 66 ) ( 0 80 66 ) me_woodbeam_01 256 16 14 52 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 80 -34 ) ( -4 80 66 ) ( -4 -40 66 ) me_woodbeam_01 256 16 14 52 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 -34 ) ( 0 44 66 ) ( -4 44 66 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -44 -20 ) ( 2 -44 -52 ) ( -6 -44 -52 ) me_woodbeam_01 256 16 -52 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 0 80 80 ) ( -4 80 80 ) ( -4 -40 80 ) me_woodbeam_01 256 16 14 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -40 84 ) ( -4 80 84 ) ( 0 80 84 ) me_woodbeam_01 256 16 14 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 18 ) ( 0 -40 118 ) ( 0 80 118 ) me_woodbeam_01 256 16 14 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 80 18 ) ( -4 80 118 ) ( -4 -40 118 ) me_woodbeam_01 256 16 14 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 44 18 ) ( 0 44 118 ) ( -4 44 118 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -44 32 ) ( 2 -44 0 ) ( -6 -44 0 ) me_woodbeam_01 256 16 0 -4 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( 8 32 24 ) ( 0 32 24 ) ( 0 -40 24 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 88 ) ( 0 32 88 ) ( 8 32 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -40 88 ) ( 8 -40 88 ) ( 8 -40 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -40 88 ) ( 2 32 88 ) ( 2 32 32 ) gfx_impact_concrete01 -72 64 -40 40 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 32 88 ) ( 0 32 88 ) ( 0 32 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 32 88 ) ( 0 -40 88 ) ( 0 -40 32 ) gfx_impact_concrete01 -72 64 -40 40 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 2 154 2 ) ( -6 154 2 ) ( -6 2 2 ) clip_nosight_metal 64 64 -456 908 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( -6 -6 98 ) ( -6 146 98 ) ( 2 146 98 ) clip_nosight_metal 64 64 -456 908 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( 2 6 28 ) ( 2 6 36 ) ( 2 158 36 ) clip_nosight_metal 64 64 -908 0 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( 0 158 28 ) ( 0 158 36 ) ( 0 6 36 ) clip_nosight_metal 64 64 -908 0 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( 20 -48 32 ) ( 20 -48 0 ) ( 6 -48 0 ) clip_nosight_metal 64 64 -456 0 0 0 lightmap_gray 4096 4096 0 0 0 0
+ ( 0 48 32 ) ( 0 48 0 ) ( 6 48 0 ) clip_nosight_metal 64 64 -456 0 0 0 lightmap_gray 4096 4096 0 0 0 0
+}
+// brush 5
+{
+ ( 8 8 44 ) ( -8 8 44 ) ( -8 -8 44 ) origin 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 60 ) ( -8 8 60 ) ( 8 8 60 ) origin 64 64 -32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 92 ) ( 8 -8 92 ) ( 8 -8 44 ) origin 64 64 -32 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -8 60 ) ( 8 8 60 ) ( 8 8 12 ) origin 64 64 0 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 60 ) ( -8 8 60 ) ( -8 8 12 ) origin 64 64 -32 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 8 60 ) ( -8 -8 60 ) ( -8 -8 12 ) origin 64 64 0 -12 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

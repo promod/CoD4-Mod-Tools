@@ -1,0 +1,200 @@
+#name "My Test"
+// JBW - don't convert #dll "all" "defaultconvert"
+#source_dir "source_data/"
+// #target_dir "output/temp/"
+#file_ext "*.txt"
+
+data testdata("weapon.gdf")
+
+enum { "name1", "name2", "name3", "name4", "name5" } mapnames
+
+//int 100 1 500 f
+
+struct
+{
+//	bool verbose
+	enum
+	{
+		"action",
+		"movement"
+	} animtype
+	
+	enum
+	{
+		"val1",
+		"val2"
+	} testenum
+
+	struct
+	{
+		enum
+		{
+			"val3",
+			"val4"
+		} testenum2
+
+		int 100 1 500 testint
+	} teststruct
+} animation
+
+enum
+{
+	"idle",
+	"patrol",
+	"balcony_idle"
+} type_idle
+
+enum
+{
+	"idle",
+	"patrol",
+	"balcony_idle"
+} type_idle2
+
+enum
+{
+	"idle",
+	"patrol",
+	"balcony_idle"
+} type_idle3
+
+enum
+{
+	"idle",
+	"patrol",
+	"balcony_idle"
+} type_idle4
+
+string mapkey
+
+map struct
+{
+	int 100 1 500 f
+	string here
+
+	enum
+	{
+		"1",
+		"2",
+		"3"
+	} testenum
+} testmap
+[
+	event "event_name"
+	{
+		newentry(type_idle4)
+		newentry(type_idle)
+	}
+]
+
+ref(struct
+{
+	int 100 1 500 f
+	string here
+
+	enum
+	{
+		"1",
+		"2",
+		"3"
+	} testenum
+}) ref_var(testmap, mapkey)
+
+string filename
+
+int 0 0 1 f
+int 0 0 1 g
+
+/*
+list entity map // map here is a variable name - essentially a list of values
+map shader shaderlist // map here is a type - essentially a list of variables all of the same type (so they are not predefined)
+*/
+
+vcontainer
+{
+	spinedit(f, 1, 1)
+	spinedit(g, 1, 1)
+	spinedit(f == g, 1, 1)
+	spinedit(filename == "here", 1, 1)
+	spinedit((f == g) && (f == g ? f : NULL), 1, 1)
+
+	using ref_var
+	{
+		spinedit(f, 5, 10)
+		edit(here)
+		scrollbox(testenum)
+		button("new file", "new_file")
+	}
+
+	fileedit(filename)
+	edit(mapkey)
+
+	button("clickme text", "event_name")
+
+	spinedit(f, 5, 10)
+
+	hcontainer
+	{
+		scrollbox(type_idle)
+		scrollbox(type_idle4)
+	}
+
+	vcontainer
+	{
+		scrollbox(type_idle2)
+		scrollbox(type_idle)
+	}
+
+	using animation
+	{
+		vcontainer
+		{
+//			bool(verbose)
+			scrollbox(animtype)
+			scrollbox(testenum)
+
+			using teststruct
+			{
+				scrollbox(testenum2)
+				spinedit(testint, 5, 10)
+			}
+		}
+	}
+
+	vcontainer
+	{
+//		bool animation.verbose
+		scrollbox(animation.animtype)
+		scrollbox(animation.testenum)
+
+		spinedit(animation.teststruct.testint, 5, 10)
+
+		scrollbox(animation.teststruct.testenum2)
+	}
+
+	listbox(testmap, mapkey)
+}
+/*
+// variable values
+type_idle3 "idle3"
+type_idle4 "idle4"
+type_idle2 "idle2"
+type_idle "idle"
+
+models/human/animation/viewmodel/sten/raise_sten_stand
+{
+	verbose 1
+	animtype action
+}
+
+struct
+{
+	bool verbose
+	enum
+	{
+		action
+		movement
+	} animtype
+} animation
+
+*/

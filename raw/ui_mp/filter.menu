@@ -1,0 +1,540 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_GROUP			"filter"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+	
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X	250
+
+{
+	menuDef
+	{
+		CENTER_POPUP_SETUP( filter_popmenu, 13, ;, 1 )
+		CHOICE_POPMENU_TITLE( "@MENU_FILTER_SERVERS" )
+		
+		#undef	CHOICE_SIZE_X
+		#define CHOICE_SIZE_X		140
+		
+		#undef	CHOICE_X_START
+		#define CHOICE_X_START			24
+
+		CHOICE_DVARYESNO( 3, "@MENU_VIEW_EMPTY", ui_browserShowEmpty, ; )
+		CHOICE_DVARYESNO( 4, "@MENU_VIEW_FULL", ui_browserShowFull, ; )
+		CHOICE_DVARFLOATLIST( 5, "@MENU_VIEW_PASSWORD", ui_browserShowPassword, { "@MENU_ALL" -1 "@MENU_NO" 0 "@MENU_YES" 1 }, ; )
+		//CHOICE_DVARYESNO( 6, "@MENU_VIEW_PURE", ui_browserShowPure, ; )
+		CHOICE_DVARYESNO( 6, "@MENU_DEDICATEDONLY", ui_browserShowDedicated, ; )
+		CHOICE_DVARFLOATLIST( 7, "@MENU_MODSWITHCOLON", ui_browserMod, { "@MENU_ALL" -1 "@MENU_NO" 0 "@MENU_YES" 1 }, ; )
+		CHOICE_DVARFLOATLIST( 8, "@MENU_VIEW_FRIENDLY_FIRE", ui_browserFriendlyfire, { "@MENU_ALL" -1 "@MENU_OFF" 0 "@MENU_ON" 1 "@MENU_REFLECT" 2 "@MENU_SHARED" 3 }, ; )
+		CHOICE_DVARFLOATLIST( 9, "@MENU_VIEW_KILLCAM", ui_browserKillcam, { "@MENU_ALL" -1 "@MENU_OFF" 0 "@MENU_ON" 1 }, ; )
+		CHOICE_DVARFLOATLIST( 10, "@MPUI_PUNKBUSTERWITHCOLON", ui_browserShowPunkbuster, { "@MENU_ALL" -1 "@MENU_OFF" 0 "@MENU_ON" 1 }, ; )
+		
+		#undef CHOICE_SIZE_X
+		#define CHOICE_SIZE_X	250
+		
+		#undef	CHOICE_X_START
+		#define CHOICE_X_START			0
+		
+		CHOICE_BUTTON( 12, "@MENU_OK", close self; )
+		CHOICE_BUTTON( 13, "@MENU_RESET", exec "exec default_filter.cfg"; )
+	}
+
+}
+
+
+/*
+{
+// CREATE FAVORITE POPUP MENU \\
+	menuDef
+	{
+		name				"filter_popmenu"
+		visible				0
+		fullscreen			0
+		rect				189 150 235 250
+		focusColor COLOR_FOCUSED
+		style				1
+		border				1
+		popup
+		onESC				{ close filter_popmenu ; open joinserver }
+	
+		itemDef
+		{
+			name			window
+			group			grpControlbutton
+			rect			0 40 235 225
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		.5 .5 .5 .5
+			forecolor		1 1 1 1
+			backcolor		.1 .1 .1 1
+			visible			1
+			decoration
+		}
+	
+		itemDef 
+		{
+			name			window2
+			group			grpControlbutton
+			rect			2 42 231 20 
+			style			WINDOW_STYLE_FILLED
+			border			1
+			bordercolor		.1 .1 .1 .2
+			forecolor		1 1 1 1
+			backcolor		.3 0.5 0.2 0.5
+			visible			1
+			decoration
+		}
+	
+		itemDef
+		{
+			name			window_title
+			text			"@MENU_FILTER_SERVERS"
+			style			0
+			decoration
+			textscale		.3
+			rect			1 44 110 20
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		62
+			textaligny		16
+			forecolor		1 1 1 1
+			visible			1
+		}
+	
+		// ENTER NAME AND ADDRESS	//
+		itemDef
+		{
+			name			nameEntryText
+			text			"@MENU_VIEW_EMPTY"
+			rect			10 75 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textalignx		0
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		.9 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			nameEntry
+			group			grpControls
+			type			ITEM_TYPE_YESNO
+			text			"@MENU_VIEW_EMPTY"
+			dvar			"ui_browserShowEmpty"
+			rect			40 75 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 .9 0 0
+			visible			1
+			mouseEnter { play "mouse_over" }
+			action { play "mouse_click" }
+		}
+		
+	
+		itemDef
+		{
+			name			viewFullText
+			text			"@MENU_VIEW_FULL"
+			rect			10 90 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			viewFull
+			group			grpControls
+			type			ITEM_TYPE_YESNO
+			text			"@MENU_VIEW_FULL"
+			dvar			"ui_browserShowFull"
+			rect			40 90 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			mouseEnter { play "mouse_over" }
+			action { play "mouse_click" }
+		}
+	
+		itemDef
+		{
+			name			viewPasswordText
+			text			"@MENU_VIEW_PASSWORD"
+			rect			10 105 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			viewPassword
+			group			grpControls
+			type			ITEM_TYPE_YESNO
+			text			"@MENU_VIEW_PASSWORD"
+			dvar			"ui_browserShowPassword"
+			rect			40 105 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			mouseEnter { play "mouse_over" }
+			action { play "mouse_click" }
+		}
+	
+		itemDef
+		{
+			name			viewNoPasswordText
+			text			"@MENU_VIEW_NOPASSWORD"
+			rect			10 120 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			viewNoPassword
+			group			grpControls
+			type			ITEM_TYPE_YESNO
+			text			"@MENU_VIEW_NOPASSWORD"
+			dvar			"ui_browserShowNoPassword"
+			rect			40 120 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			action { play "mouse_click" }
+			mouseEnter { play "mouse_over" }
+		}
+	
+		itemDef
+		{
+			name			viewPureText
+			text			"@MENU_VIEW_PURE"
+			rect			10 135 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			viewPure
+			group			grpControls
+			type			ITEM_TYPE_YESNO
+			text			"@MENU_VIEW_PURE"
+			dvar			"ui_browserShowPure"
+			rect			40 135 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			action { play "mouse_click" }
+			mouseEnter { play "mouse_over" }
+		}
+	
+		itemDef
+		{
+			name			dedicatedOnlyText
+			text			"@MENU_DEDICATEDONLY"
+			rect			10 150 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			dedicatedOnly
+			group			grpControls
+			type			ITEM_TYPE_YESNO
+			text			"@MENU_DEDICATEDONLY"
+			dvar			"ui_browserShowDedicated"
+			rect			40 150 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			action { play "mouse_click" }
+			mouseEnter { play "mouse_over" }
+		}
+	
+		itemDef
+		{
+			name			modSwitchText
+			text			"@MENU_MODSWITHCOLON"
+			rect			10 165 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			modSwitch
+			group			grpControls
+			type			ITEM_TYPE_MULTI
+			text			"@MENU_MODSWITHCOLON"
+			dvar			"ui_browserMod"
+			dvarFloatList		{ "@MENU_ALL" -1 "@MENU_NO" 0 "@MENU_YES" 1 }
+			rect			40 165 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			action { play "mouse_click" }
+			mouseEnter { play "mouse_over" }
+		}
+		
+		itemDef
+		{
+			name			friendlyFireText
+			text			"@MENU_VIEW_FRIENDLY_FIRE"
+			rect			10 180 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			friendlyFire
+			group			grpControls
+			type			ITEM_TYPE_MULTI
+			text			"@MENU_VIEW_FRIENDLY_FIRE"
+			dvar			"ui_browserFriendlyfire"
+			dvarFloatList		{ "@MENU_ALL" -1 "@MENU_OFF" 0 "@MENU_ON" 1 "@MENU_REFLECT" 2 "@MENU_SHARED" 3 }
+			rect			40 180 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			action { play "mouse_click" }
+			mouseEnter { play "mouse_over" }
+		}
+		
+		itemDef
+		{
+			name			viewKillcamText
+			text			"@MENU_VIEW_KILLCAM"
+			rect			10 195 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			viewKillcam
+			group			grpControls
+			type			ITEM_TYPE_MULTI
+			text			"@MENU_VIEW_KILLCAM"
+			dvar			"ui_browserKillcam"
+			dvarFloatList	{ "@MENU_ALL" -1 "@MENU_OFF" 0 "@MENU_ON" 1 }
+			rect			40 195 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			action { play "mouse_click" }
+			mouseEnter { play "mouse_over" }
+		}
+	
+
+		itemDef
+		{
+			name			showTourneyText
+			text			"@MPUI_PUNKBUSTERWITHCOLON"
+			rect			10 225 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			name			nameEntry
+			group			grpControls
+			type			ITEM_TYPE_MULTI
+			dvar			"ui_browserShowPunkbuster"
+			dvarFloatList	{ "@MENU_ALL" -1 "@MENU_OFF" 0 "@MENU_ON" 1 }
+			rect			40 225 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			1
+			action { play "mouse_click" }
+			mouseEnter { play "mouse_over" }
+		}
+
+		itemDef
+		{
+			name			showTourneyText
+			text			"@MENU_SHOW_TOURNEY"
+			rect			10 240 120 12
+			textalign		ITEM_ALIGN_RIGHT
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			0
+			decoration
+		}
+		itemDef
+		{
+			name			showTourney
+			group			grpControls
+			type			ITEM_TYPE_YESNO
+			text			"@MENU_SHOW_TOURNEY"
+			dvar			"ui_browserShowTourney"
+			rect			40 240 220 12
+			textalign		ITEM_ALIGN_LEFT
+			textalignx		100
+			textaligny		10
+			textfont		UI_FONT_NORMAL
+			textscale		.25 		 
+			forecolor		.9 .9 .9 1
+			style			WINDOW_STYLE_FILLED
+			backcolor		0 0 0 0
+			visible			0
+			action { play "mouse_click" }
+			mouseEnter { play "mouse_over" }
+		}
+	
+		itemDef
+		{
+			name			yes
+			text			"@MENU_OK"
+			type			ITEM_TYPE_BUTTON
+			textfont		UI_FONT_NORMAL
+			textscale		0.25
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			style			WINDOW_STYLE_FILLED
+			rect			70 240 100 15
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		11
+			forecolor		.9 .9 .95 1
+			visible			1
+			action
+			{
+				play		"mouse_click" ;
+				close		filter_popmenu ;
+				open		joinserver
+			}
+			mouseEnter	{ play "mouse_over"; }
+		}
+	}
+}
+*/

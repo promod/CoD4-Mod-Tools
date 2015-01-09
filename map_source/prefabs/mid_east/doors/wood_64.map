@@ -1,0 +1,37 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents weaponClip;
+ ( 156 -80 0 ) ( -4 -80 0 ) ( -4 -100 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -32 104 ) ( -4 -32 104 ) ( -4 -30 102 ) me_woodbeam_01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -32 104 ) ( 4 -32 104 ) ( 4 -32 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -96 138 ) ( 4 -76 138 ) ( 4 -76 98 ) ch_woodplank02 128 128 8 22 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -80 38 ) ( -4 -100 38 ) ( -4 -100 -2 ) ch_woodplank02 128 128 8 22 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -30 -132 ) ( 8 -30 -132 ) ( 0 -30 -100 ) ch_woodplank02 128 128 8 22 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents weaponClip;
+ ( -4 -30 102 ) ( 4 -30 102 ) ( 4 30 102 ) ch_woodplank02 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -100 104 ) ( -4 -80 104 ) ( 156 -80 104 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -30 102 ) ( -4 -30 102 ) ( -4 -32 104 ) me_woodbeam_01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -96 140 ) ( 4 -76 140 ) ( 4 -76 100 ) ch_woodplank02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -80 40 ) ( -4 -100 40 ) ( -4 -100 0 ) ch_woodplank02 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 30 102 ) ( 4 30 102 ) ( 4 32 104 ) me_woodbeam_01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents weaponClip;
+ ( 156 -18 0 ) ( -4 -18 0 ) ( -4 -38 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 32 104 ) ( 4 32 104 ) ( 4 30 102 ) me_woodbeam_01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 30 38 ) ( 156 30 38 ) ( 156 30 -2 ) ch_woodplank02 128 128 8 22 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -34 138 ) ( 4 -14 138 ) ( 4 -14 98 ) ch_woodplank02 128 128 8 22 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -18 38 ) ( -4 -38 38 ) ( -4 -38 -2 ) ch_woodplank02 128 128 8 22 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 32 104 ) ( -4 32 104 ) ( -4 32 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

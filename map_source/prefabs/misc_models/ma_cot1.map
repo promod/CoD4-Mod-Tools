@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 40 48 20 ) ( -32 48 20 ) ( -32 -48 20 ) clip_nosight 64 64 -176 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -48 24 ) ( -32 48 24 ) ( 40 48 24 ) clip_nosight 64 64 -176 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -48 32 ) ( 40 -48 32 ) ( 40 -48 0 ) clip_nosight 64 64 -176 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -48 32 ) ( 20 48 32 ) ( 20 48 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 48 32 ) ( -32 48 32 ) ( -32 48 0 ) clip_nosight 64 64 -176 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -20 48 32 ) ( -20 -48 32 ) ( -20 -48 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0 0 0"
+"model" "xmodel/ma_cot1"
+"classname" "misc_model"
+}

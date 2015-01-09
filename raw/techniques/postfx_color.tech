@@ -1,0 +1,16 @@
+{
+	stateMap "default2d";
+
+	vertexShader 1.1 "textured_simple.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "postfx_color.hlsl"
+	{
+		colorMapSampler = sampler.resolvedScene;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

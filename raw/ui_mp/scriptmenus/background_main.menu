@@ -1,0 +1,120 @@
+#include "ui/menudef.h"
+
+#define ORIGIN_CHOICE1		80 150
+#define ORIGIN_CHOICE2		80 170
+#define ORIGIN_CHOICE3		80 190
+#define ORIGIN_CHOICE4		80 210
+#define ORIGIN_CHOICE5		80 230
+
+{
+    assetGlobalDef
+    {
+        fadeClamp       1.0                     // sets the fadeup alpha
+        fadeCycle       1                       // how often fade happens in milliseconds
+        fadeAmount      0.1                     // amount to adjust alpha per cycle
+    }
+
+    menuDef
+    {
+        name            "background_main"
+        rect            0 0 640 480
+        focusColor      COLOR_FOCUSED
+		onEsc
+		{
+		}
+        onOpen
+        {
+            //setdvar ui_version_show "0";
+            //execnow "splitscreencontrols";
+            execnow "g_friendlyfiredist 0";
+            execnow "g_friendlynamedist 0";
+            execnow "loc_warnings 0";
+            execnow "loc_warningsaserrors 0";
+        }
+
+		// gradient_top
+		/*itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 55 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}*/
+
+		// gradient_bottom
+		/*itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 351 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}*/
+
+		/*itemDef
+		{
+			visible			1
+			rect			0 60 288 72
+			origin			0 0
+			style			WINDOW_STYLE_SHADER
+			background		"logo_cod2"
+			decoration
+		}*/
+		
+        //
+
+		itemDef
+		{
+			text			"@PLATFORM_SELECT"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			origin			499 438
+			visible			1
+			decoration
+		}
+
+        itemDef
+        {
+            name            signedinas
+            type            ITEM_TYPE_TEXT
+            rect            0 0 250 15 HORIZONTAL_ALIGN_DEFAULT VERTICAL_ALIGN_DEFAULT
+            style           WINDOW_STYLE_EMPTY
+            textscale       TEXTSIZE_DEFAULT
+            textfont        UI_FONT_NORMAL
+            forecolor       COLOR_UNFOCUSED
+            ownerdraw       UI_LOGGEDINUSER
+            visible         1
+            decoration
+        }
+
+        itemDef
+        {
+//            text            "@MENU_CONTROLS"
+            type            ITEM_TYPE_BUTTON
+            rect            0 0 250 15 HORIZONTAL_ALIGN_DEFAULT VERTICAL_ALIGN_DEFAULT
+            origin			ORIGIN_CHOICE2
+            textscale       TEXTSIZE_DEFAULT
+            textfont        UI_FONT_NORMAL
+            forecolor       COLOR_UNFOCUSED
+            visible         1
+            
+			execKeyInt DPAD_RIGHT		{ scriptmenuresponse "DPAD_RIGHT"; }
+			execKeyInt DPAD_LEFT 		{ scriptmenuresponse "DPAD_LEFT"; }
+			execKeyInt DPAD_UP 			{ scriptmenuresponse "DPAD_UP"; }
+			execKeyInt DPAD_DOWN 		{ scriptmenuresponse "DPAD_DOWN"; }
+			execKeyInt BUTTON_A 		{ scriptmenuresponse "BUTTON_A"; }
+			execKeyInt BUTTON_B 		{ scriptmenuresponse "BUTTON_B"; }
+			execKeyInt BUTTON_X 		{ scriptmenuresponse "BUTTON_X"; }
+			execKeyInt BUTTON_Y 		{ scriptmenuresponse "BUTTON_Y"; }
+			execKeyInt BUTTON_LSHLDR 	{ scriptmenuresponse "BUTTON_LSHLDR"; }
+			execKeyInt BUTTON_RSHLDR 	{ scriptmenuresponse "BUTTON_RSHLDR"; }
+			execKeyInt BUTTON_START 	{ scriptmenuresponse "BUTTON_START"; }
+			execKeyInt BUTTON_BACK 		{ scriptmenuresponse "BUTTON_BACK"; }
+			execKeyInt BUTTON_LSTICK 	{ scriptmenuresponse "BUTTON_LSTICK"; }
+			execKeyInt BUTTON_RSTICK 	{ scriptmenuresponse "BUTTON_RSTICK"; }
+			execKeyInt BUTTON_LTRIG 	{ scriptmenuresponse "BUTTON_LTRIG"; }
+			execKeyInt BUTTON_RTRIG 	{ scriptmenuresponse "BUTTON_RTRIG"; }
+        }
+    }
+}

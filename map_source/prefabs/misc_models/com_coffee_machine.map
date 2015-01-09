@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 32.5 1.5 0 ) ( 10.5 1.5 0 ) ( 10.5 -29.5 0 ) clip_nosight_nothing 64 64 -15.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 -29.5 74 ) ( 10.5 1.5 74 ) ( 32.5 1.5 74 ) clip_nosight_nothing 64 64 -15.5 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 -33 74 ) ( 32.5 -33 74 ) ( 32.5 -33 0 ) clip_nosight_nothing 64 64 -15.5 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -29.5 74 ) ( 0 1.5 74 ) ( 0 1.5 0 ) clip_nosight_nothing 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 33 0 74 ) ( 11 0 74 ) ( 11 0 0 ) clip_nosight_nothing 64 64 -15.5 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -42 -2.5 74 ) ( -42 -33.5 74 ) ( -42 -33.5 0 ) clip_nosight_nothing 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_coffee_machine"
+"classname" "misc_model"
+}

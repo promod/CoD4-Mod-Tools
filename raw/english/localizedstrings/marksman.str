@@ -1,0 +1,55 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod2\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           TITLE
+LANG_ENGLISH        "Designated Marksman"
+
+REFERENCE           TIME
+LANG_ENGLISH        "Day 6 - 1500 HRS - 30 miles south of Riyadh - R.O.A."
+
+REFERENCE           NAME
+LANG_ENGLISH        "PFC Michael Carver, 1st BN, 7th Marines"
+
+REFERENCE           ACTION
+LANG_ENGLISH        "ACTION HERE"
+
+REFERENCE           OBJ_DESTROY_OVERPASS
+LANG_ENGLISH        "Destroy the overpass and eliminate all hostile targets."
+
+REFERENCE           OBJ_SECURE_DROP_POINT
+LANG_ENGLISH        "Secure a drop point for reinforcements."
+
+REFERENCE           OBJ_CHECK_CAFE
+LANG_ENGLISH        "Check the ground floor of the Cafe for hostiles."
+
+REFERENCE           OBJ_SECURE_CONSTRUCTION_BUILDING
+LANG_ENGLISH        "Secure the top of the building in the construction yard."
+
+REFERENCE           OBJ_DESTROY_SATELLITE_ARRAY
+LANG_ENGLISH        "Destroy the enemy satellite array."
+
+REFERENCE           OBJ_DESTROY_ANTI_AIR
+LANG_ENGLISH        "Destroy the enemy Anti-Air units. [&&1 Remaining]"
+
+REFERENCE           OBJ_MARK_OVERPASS
+LANG_ENGLISH        "Mark the overpass pillars for destruction. [&&1 Remaining]"
+
+REFERENCE           OBJ_MINIMUM_SAFE_DISTANCE
+LANG_ENGLISH        "Retreat to a minimum safe distance from the overpass area."
+
+REFERENCE           HINTSTR_DETPACK
+LANG_ENGLISH        "Hold &&1 to plant the detpack."
+
+ENDMARKER

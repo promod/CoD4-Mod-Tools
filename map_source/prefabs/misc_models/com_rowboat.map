@@ -1,0 +1,26 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 46.5 58.5 0 ) ( -37 58.5 0 ) ( -37 28 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -37 28 23.5 ) ( -37 58.5 23.5 ) ( 46.5 58.5 23.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -39 -58.5 64 ) ( 44.5 -58.5 64 ) ( 44.5 -58.5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 21.5 28 64 ) ( 21.5 58.5 64 ) ( 21.5 58.5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 57.5 64 ) ( -37.5 57.5 64 ) ( -37.5 57.5 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -22 56.5 64 ) ( -22 26 64 ) ( -22 26 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 13.5 71.5 64 ) ( 26 2 64 ) ( 13.5 71.5 96 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26.5 -2 64 ) ( -15 65 64 ) ( -15 65 96 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 -72 23.5 ) ( -25 -3.5 23.5 ) ( -25 -3.5 55.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 29.5 10 23.5 ) ( 1.5 -68.5 23.5 ) ( 1.5 -68.5 55.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_rowboat"
+"classname" "misc_model"
+}

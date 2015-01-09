@@ -1,0 +1,69 @@
+#ifdef PC
+
+	#undef CHOICE_X_START
+	#define CHOICE_X_START			((CHOICE_POPUP_WIDTH - CHOICE_SIZE_X) / 2)
+	
+	#undef CHOICE_Y_START
+	#define CHOICE_Y_START			(CHOICE_POPUP_TITLE_HEIGHT + CHOICE_POPUP_BORDER_Y )
+	
+	#undef CHOICE_SEP_TOTAL_SPACING
+	#define CHOICE_SEP_TOTAL_SPACING( itemIndex )	0
+
+	#undef CHOICE_GROUP
+	#define CHOICE_GROUP			"popmenu"
+	
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X	180
+
+	#undef POPUP_NOPOS
+#endif
+
+#ifdef POPUP_NOPOS
+	#undef CHOICE_X_START
+	#define CHOICE_X_START			((CHOICE_POPUP_WIDTH - CHOICE_SIZE_X) / 2 - 2)
+	
+	#undef CHOICE_Y_START
+	#define CHOICE_Y_START			(CHOICE_POPUP_TITLE_HEIGHT + CHOICE_POPUP_BORDER_Y - 3)
+	
+	#undef CHOICE_SEP_TOTAL_SPACING
+	#define CHOICE_SEP_TOTAL_SPACING( itemIndex )	0
+
+	#undef CHOICE_GROUP
+	#define CHOICE_GROUP			"popmenu"
+#endif
+
+#ifdef POPUP_HAS_TITLE
+	#undef CHOICE_POPUP_TITLE_HEIGHT
+	#define CHOICE_POPUP_TITLE_HEIGHT	(24)
+#endif
+
+// -------------------------------------------
+
+#undef CHOICE_SIZE_Y
+#define CHOICE_SIZE_Y			18
+
+#undef CHOICE_TEXTSIZE
+#define CHOICE_TEXTSIZE			TEXTSIZE_SMALL	
+
+#undef HIGHLIGHT_COLOR
+#define HIGHLIGHT_COLOR			0.9 0.95 1 0.25
+
+#undef CHOICE_POPUP_BORDER_X
+#define CHOICE_POPUP_BORDER_X	4
+#undef CHOICE_POPUP_BORDER_Y	
+#define CHOICE_POPUP_BORDER_Y	4
+#undef CHOICE_POPUP_BACKCOLOR
+#define CHOICE_POPUP_BACKCOLOR	0.2 0.2 0.22 1 //0.85
+#undef CHOICE_POPUP_BORDER_COLOR
+#define CHOICE_POPUP_BORDER_COLOR	0.4 0.4 0.42 1
+
+#undef A_BUTTON_SIZE
+#define A_BUTTON_SIZE 			0.3
+
+#undef A_BUTTON_OFFSET_X
+#define A_BUTTON_OFFSET_X		-2
+
+#ifdef PC
+	#undef CHOICE_TEXTSIZE
+	#define CHOICE_TEXTSIZE			0.4
+#endif

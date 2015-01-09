@@ -1,0 +1,22 @@
+#include "commonsetup.template"
+
+techniqueSet( "tools" );
+
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in tools materials"
+	#endif
+	"colorMap" = map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+	"normalMap" = map( "tile both", "nomip nearest", "$identityNormalMap", 1 ) "<auto compression>" : "normalMap";
+}
+
+
+constantTable
+{
+	"colorTint" = float4( @,colorTint@ );
+}
+
+
+refImage( "$colorMap$" );

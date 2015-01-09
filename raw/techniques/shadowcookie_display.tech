@@ -1,0 +1,16 @@
+{
+	stateMap "default2d";
+
+	vertexShader 1.1 "shadowcookie_display.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "shadowcookie_display.hlsl"
+	{
+		colorMapSampler = sampler.shadowCookie;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

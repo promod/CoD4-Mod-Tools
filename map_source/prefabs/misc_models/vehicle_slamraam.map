@@ -1,0 +1,45 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -36 -104 0 ) ( -36 104 0 ) ( -48 104 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 -100 196 ) ( -44 108 196 ) ( -32 108 196 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -104 0 ) ( -36 -104 196 ) ( -36 104 196 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 104 0 ) ( -36 104 196 ) ( -48 104 196 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 104 0 ) ( -48 104 196 ) ( -48 -104 196 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -104 0 ) ( -48 -104 196 ) ( -36 -104 196 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -40 44 196 ) ( 96 44 196 ) ( 96 -60 196 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -52 196 ) ( 88 -52 196 ) ( 88 -52 0 ) clip_nosight_metal 64 64 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 88 52 196 ) ( 88 52 0 ) ( 88 -52 0 ) clip_nosight_metal 64 64 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 52 0 ) ( 88 52 0 ) ( 88 52 196 ) clip_nosight_metal 64 64 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -52 196 ) ( -48 -52 0 ) ( -48 52 0 ) clip_nosight_metal 64 64 0 -36 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -52 0 ) ( 88 -52 0 ) ( 88 52 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 52 44 ) ( 88 12 44 ) ( 24 52 76 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 88 -12 44 ) ( 24 -52 44 ) ( 88 -12 76 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "vehicle_slamraam_missiles"
+"origin" "0.0 0.0 0.0"
+}
+// entity 2
+{
+"classname" "misc_model"
+"model" "vehicle_slamraam_launcher"
+"origin" "0.0 0.0 0.0"
+}
+// entity 3
+{
+"classname" "misc_model"
+"model" "vehicle_slamraam_base"
+"origin" "0.0 0.0 0.0"
+}

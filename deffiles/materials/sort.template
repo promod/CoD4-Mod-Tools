@@ -1,0 +1,115 @@
+#if "@sort@" == "" || "@sort@" == "<default>"
+	#if "@materialType@" == "distortion"
+		#define SORTKEY "distortion"
+	#elif "@polygonOffset@" == "Static Decal"
+		#define SORTKEY "decal - static decal"
+	#elif "@polygonOffset@" == "Weapon Impact"
+		#define SORTKEY "decal - weapon impact"
+	#elif "@materialType@" == "effect"
+		#define SORTKEY "effect - auto sort"
+	#elif "@materialType@" == "objective" || "@blendFunc@" == "Blend" || "@blendFunc@" == "Add" || "@blendFunc@" == "Screen Add"
+		#define SORTKEY "blend / additive"
+	#elif "@blendFunc@" == "Multiply"
+		#define SORTKEY "multiplicative"
+	#elif "@materialType@" == "sky"
+		#define SORTKEY "sky"
+	#elif "@materialType@" == "model ambient"
+		#define SORTKEY "opaque ambient"
+	#else
+		#define SORTKEY "opaque"
+	#endif
+#else
+	#define SORTKEY "@sort@"
+#endif
+
+// The sort key is stored in an 8-bit number (0-255).
+// There are four sort keys that allow auto-sorting:  32, 96, 160, and 224.
+// These are followed by 31 sort keys that are reserved and should never be explicitly specified: 33-63, 97-127, 161-191, and 225-255.
+// The code relies on auto-sorting for effects and weapon impact decals.
+
+#if SORTKEY == "distortion"
+	sort( 0 );
+#elif SORTKEY == "opaque water"
+	sort( 1 );
+#elif SORTKEY == "boat hull"
+	sort( 2 );
+#elif SORTKEY == "opaque ambient"
+	sort( 3 );
+#elif SORTKEY == "opaque"
+	sort( 4 );
+#elif SORTKEY == "sky"
+	sort( 5 );
+#elif SORTKEY == "skybox - sun / moon"
+	sort( 6 );
+#elif SORTKEY == "skybox - clouds"
+	sort( 7 );
+#elif SORTKEY == "skybox - horizon"
+	sort( 8 );
+#elif SORTKEY == "decal - bottom 1"
+	sort( 9 );
+#elif SORTKEY == "decal - bottom 2"
+	sort( 10 );
+#elif SORTKEY == "decal - bottom 3"
+	sort( 11 );
+#elif SORTKEY == "decal - static decal"
+	sort( 12 );
+#elif SORTKEY == "decal - middle 1"
+	sort( 13 );
+#elif SORTKEY == "decal - middle 2"
+	sort( 14 );
+#elif SORTKEY == "decal - middle 3"
+	sort( 15 );
+
+// This must equal SORTKEY_DECAL in the engine.
+#elif SORTKEY == "decal - weapon impact"
+	sort( 24 );
+
+#elif SORTKEY == "decal - top 1"
+	sort( 29 );
+#elif SORTKEY == "decal - top 2"
+	sort( 30 );
+#elif SORTKEY == "decal - top 3"
+	sort( 31 );
+#elif SORTKEY == "multiplicative"
+	sort( 32 );
+#elif SORTKEY == "banner / curtain"
+	sort( 33 );
+#elif SORTKEY == "hair"
+	sort( 34 );
+#elif SORTKEY == "underwater"
+	sort( 35 );
+#elif SORTKEY == "transparent water"
+	sort( 36 );
+#elif SORTKEY == "corona"
+	sort( 37 );
+#elif SORTKEY == "window inside"
+	sort( 38 );
+#elif SORTKEY == "window outside"
+	sort( 39 );
+#elif SORTKEY == "before effects - bottom"
+	sort( 40 );
+#elif SORTKEY == "before effects - middle"
+	sort( 41 );
+#elif SORTKEY == "before effects - top"
+	sort( 42 );
+#elif SORTKEY == "blend / additive"
+	sort( 43 );
+
+// This must equal SORTKEY_EFFECT_AUTO in the engine.
+#elif SORTKEY == "effect - auto sort"
+	sort( 48 );
+
+#elif SORTKEY == "after effects - bottom"
+	sort( 56 );
+#elif SORTKEY == "after effects - middle"
+	sort( 57 );
+#elif SORTKEY == "after effects - top"
+	sort( 58 );
+#elif SORTKEY == "viewmodel effect"
+	sort( 59 );
+
+#else
+	#error "Unknown sort '@sort@'"
+#endif
+
+#undef SORTKEY

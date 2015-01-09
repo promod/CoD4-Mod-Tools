@@ -1,0 +1,25 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 36 244 0 ) ( -92 244 0 ) ( -92 -28 0 ) nodraw_decal 64 64 -28 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -28 80 ) ( -92 244 80 ) ( 36 244 80 ) ch_dec_darkstain_01 128 128 -28 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -132 -4 80 ) ( -4 -4 80 ) ( -4 -4 0 ) ch_dec_darkstain_01 128 128 -28 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -28 80 ) ( 4 244 80 ) ( 4 244 0 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 4 80 ) ( -92 4 80 ) ( -92 4 0 ) ch_dec_darkstain_01 128 128 -28 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 236 80 ) ( -4 -36 80 ) ( -4 -36 0 ) ch_dec_darkstain_01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 36 244 0 ) ( -92 244 0 ) ( -92 -28 0 ) caulk 64 64 -28 -572 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -92 -28 80 ) ( -92 244 80 ) ( 36 244 80 ) me_pinewood 64 128 -28 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -132 -4 80 ) ( -4 -4 80 ) ( -4 -4 0 ) me_pinewood 64 128 -28 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -28 80 ) ( 4 244 80 ) ( 4 244 0 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 4 80 ) ( -92 4 80 ) ( -92 4 0 ) me_pinewood 64 128 -28 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 236 80 ) ( -4 -36 80 ) ( -4 -36 0 ) me_pinewood 64 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

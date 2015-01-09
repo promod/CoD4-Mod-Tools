@@ -1,0 +1,20 @@
+{
+		stateMap "zfeather_add";
+
+	vertexShader 2.0 "zfeather_spot.hlsl"
+	{
+		featherParms = material.featherParms;
+	}
+
+	pixelShader 2.0 "zfeather_add_spot.hlsl"
+	{
+		fogColor = float4( 0, 0, 0, 0 );
+		colorMapSampler = material.colorMap;
+		featherParms = material.featherParms;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

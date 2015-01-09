@@ -1,0 +1,23 @@
+#include "commonsetup.template"
+
+techniqueSet( "water" );
+
+textureTable
+{
+	"colorMap" = map( "tile both", "mip standard (2x bilinear)", "texture_assets\case\case64blue.tga", 0 ) "@formatColor@" : "colorMap";
+	"normalMap" = watermap( @waterMapTextureWidth@, @waterMapHorizontalWorldLength@, @waterMapVerticalWorldLength@, @waterMapAmplitude@, @waterMapWindSpeed@,  @waterMapWindDirectionX@,  @waterMapWindDirectionY@ ) "Uncompressed" : "waterMap";
+}
+
+
+constantTable
+{
+	"waterColor" = float4( @waterColorR@, @waterColorG@, @waterColorB@, 1 );
+	#if  @envMapMin@ > @envMapMax@
+		#error "Minimum reflectance greater than maximum reflectance"
+	#endif
+	#define SUN_INTENSITY 2.5
+	"envMapParms" = float4( @envMapMin@, @envMapMax@, @envMapExponent@, SUN_INTENSITY );
+}
+
+refImage( "texture_assets\case\case64blue.tga" );
+allocReflectionProbe();

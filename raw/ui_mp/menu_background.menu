@@ -1,0 +1,32 @@
+	itemDef 
+	{
+		name main_back_top
+		style WINDOW_STYLE_SHADER
+		rect 0 0 640 320
+		background "background_american_top"
+		visible 1
+		decoration
+	}
+	itemDef 
+	{
+		name main_back_bottom
+		style WINDOW_STYLE_SHADER
+		rect 0 320 640 160
+		background "background_american_bottom"
+		visible 1
+		decoration
+	}
+	
+	itemDef
+	{
+		name background_version_display
+		type 1
+		rect 630 472 0 0
+		visible 1
+		dvar "shortversion"
+		decoration
+		textscale .23
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 0
+		textaligny 0
+	}

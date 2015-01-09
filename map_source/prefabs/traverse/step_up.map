@@ -1,0 +1,45 @@
+iwmap 4
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -6 -38 0 ) ( 6 -38 0 ) ( 6 36 0 ) traverse 64 64 -12 28 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -38 16 ) ( -7 -38 16 ) ( -7 36 16 ) traverse 64 64 -12 28 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -36 0 ) ( -6 -36 0 ) ( -6 -36 40 ) traverse 64 64 -12 56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 36 0 ) ( 6 -38 0 ) ( 6 -38 40 ) traverse 64 64 -28 56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 36 0 ) ( 6 36 0 ) ( 6 36 40 ) traverse 64 64 -12 56 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -38 0 ) ( -6 36 0 ) ( -6 36 40 ) traverse 64 64 -28 56 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 0 -32 0 ) ( 16 -32 0 ) ( 16 32 0 ) clip_ai 64 64 1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -32 112 ) ( 0 -32 112 ) ( 0 32 112 ) clip_ai 64 64 1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -32 0 ) ( 0 -32 0 ) ( 0 -32 112 ) clip_ai 64 64 1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 32 4 ) ( -4 -32 4 ) ( -4 -32 116 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 32 0 ) ( 16 32 0 ) ( 16 32 112 ) clip_ai 64 64 1 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -32 1 ) ( -6 32 1 ) ( -6 32 113 ) clip_ai 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "30 0 40"
+"targetname" "auto2108"
+"angles" "0 0 0"
+"classname" "node_negotiation_end"
+}
+// entity 2
+{
+"targetname" "traverse"
+"classname" "node_negotiation_begin"
+"angles" "0 0 0"
+"animscript" "step_up_12"
+"origin" "-40 0 40"
+"target" "auto2108"
+}
+// entity 3
+{
+"targetname" "auto2108"
+"origin" "-6 0 16"
+"classname" "script_origin"
+}

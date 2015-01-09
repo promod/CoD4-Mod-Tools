@@ -1,0 +1,21 @@
+{
+	stateMap "additive_stencil";
+
+	vertexShader 2.0 "sunpre_s_tc0_nc.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "sunpre_b0c0d0s0_nc.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		detailMapSampler = material.detailMap;
+		detailScale = material.detailScale;
+		specularMapSampler = material.specularMap;
+
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.normal = code.normal;
+
+}

@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 44 20 0 ) ( -45 20 0 ) ( -45 -20 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -45 -20 29 ) ( -45 20 29 ) ( 44 20 29 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -45 -18.5 29.5 ) ( 44 -18.5 29.5 ) ( 44 -18.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 42 -20 29.5 ) ( 42 20 29.5 ) ( 42 20 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 44 18.5 29.5 ) ( -45 18.5 29.5 ) ( -45 18.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -42 18.5 29 ) ( -19 18.5 0 ) ( -42 50.5 29 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_french_bathtub_metal"
+"classname" "misc_model"
+}

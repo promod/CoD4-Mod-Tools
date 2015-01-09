@@ -1,0 +1,142 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+{
+	menuDef
+	{
+		name			menu_leaderboard_level
+		fullscreen		1
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		soundloop 		"music_mainmenu_mp"
+		onOpen
+		{
+            setdvar lb_filter "friends";
+            uiScript RefreshLeaderboards;
+			setfocus leaderboard;
+		}
+		onEsc
+		{
+			close menu_leaderboard_level;
+		}
+
+// ------------------  statics ------------------------
+#include "ui/blurredbg.inc"
+
+		CHOICE_MENU_TITLE_VIS( "@MENU_ARCADE_GLOBAL_CAP", dvarString( lb_filter ) == none && dvarString(lb_type) != "killhouse" )
+		CHOICE_MENU_TITLE_VIS( "@MENU_ARCADE_FRIENDS_CAP", dvarString( lb_filter ) == friends && dvarString(lb_type) != "killhouse" )
+		
+		CHOICE_MENU_TITLE_VIS( "@MENU_TRIAL_GLOBAL_CAP", dvarString( lb_filter ) == none && dvarString(lb_type) == "killhouse" )
+		CHOICE_MENU_TITLE_VIS( "@MENU_TRIAL_FRIENDS_CAP", dvarString( lb_filter ) == friends && dvarString(lb_type) == "killhouse" )
+				
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			ORIGIN_TITLE
+			forecolor		COLOR_TITLE
+			exp				text( dvarString(ui_lb_level) );
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textstyle		CHOICE_TEXTSTYLE
+			textalign		ITEM_ALIGN_TOP_RIGHT
+			textalignx		506
+			textaligny		4
+			visible			1
+			decoration
+		}
+		
+		#define BUTTON_Y_FILTER		1
+		#define BUTTON_X_GOTOTOP	1
+		#define BUTTON_PGUP			1
+		#define BUTTON_PGDOWN		1
+		#define ALT_PANEL			1
+		#include "ui_mp/navcontrols.inc"
+
+
+		PREPROC_SHADER_DRAW_ALIGNED( -304 34 612 18 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, 0 0, "line_horizontal", 0.9 0.9 0.925 0.5, 0, 0, 0 0 0 0 )
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			130 86
+			text			"@MENU_RANK"
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			202 86
+			text			"@MENU_PLAYER"
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_NORMAL
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			554 86
+			text			"@MENU_ARCADE_LBSCORE"
+			textscale		TEXTSIZE_SMALL
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_RIGHT
+			forecolor		1 1 1 1
+			visible			1
+			decoration
+		}
+		
+		// LEADERBOARD LIST TEXT
+		itemDef
+		{
+			name			leaderboard
+			rect			46 88 544 324
+			//rect			45 63 564 57
+			type			ITEM_TYPE_LISTBOX
+			style			WINDOW_STYLE_FILLED
+			elementwidth	120
+			elementheight	18
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			elementtype		LISTBOX_TEXT
+			feeder			FEEDER_LEADERBOARD
+			forecolor		CHOICE_TEXTCOLOR		
+			outlinecolor	0.9 0.9 0.925 0.2 //0.3 0.35 0.55 0.25
+			selectBorder	0.8 0.95 1 0
+//			numcols			xpos	xwidth	textlen  alignment
+			columns	3		50		30		10		ITEM_ALIGN_RIGHT
+							152		35		55
+							440		64		10		ITEM_ALIGN_RIGHT
+			visible			1
+			usePaging
+			doubleClick
+			{
+				play "mouse_click"
+				uiScript ViewGamerCard
+			}
+			execKeyInt BUTTON_X
+			{
+				feederTop
+			}
+		}
+
+		#include "ui/safearea.menu"
+	}
+}

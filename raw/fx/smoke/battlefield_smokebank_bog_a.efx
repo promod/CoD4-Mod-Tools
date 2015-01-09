@@ -1,0 +1,189 @@
+iwfx 1
+
+{
+	name "groundsmoke_near";
+	editorFlags looping useRandColor useRandSize0 useRandRotDelta useRandVel0 useRandVel1;
+	flags spawnRelative spawnOffsetNone runRelToSpawn;
+	spawnRange 0 2500;
+	fadeInRange 2000 500;
+	fadeOutRange 0 0;
+	spawnFrustumCullRadius 0;
+	spawnLooping 1000 0;
+	spawnOneShot 1 0;
+	spawnDelayMsec 0 0;
+	lifeSpanMsec 15000 0;
+	spawnOrgX 20 0;
+	spawnOrgY -300 600;
+	spawnOrgZ -300 600;
+	spawnOffsetRadius 5 0;
+	spawnOffsetHeight 5 5;
+	spawnAnglePitch 0 0;
+	spawnAngleYaw 0 0;
+	spawnAngleRoll 0 0;
+	angleVelPitch 0 0;
+	angleVelYaw 0 0;
+	angleVelRoll 0 0;
+	initialRot -360 720;
+	gravity 0 0;
+	elasticity 1 0;
+	atlasBehavior startFixed;
+	atlasIndex 0;
+	atlasFps 1;
+	atlasLoopCount 0;
+	atlasColIndexBits 0;
+	atlasRowIndexBits 0;
+	atlasEntryCount 0;
+	velGraph0X 6
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0.5
+			1 0.5
+		}
+	};
+	velGraph0Y 6
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph0Z 6
+	{
+		{
+			0 0
+			1 0
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1X 180
+	{
+		{
+			0 0
+			1 0.08333
+		}
+		{
+			0 0
+			1 0.227273
+		}
+	};
+	velGraph1Y 20
+	{
+		{
+			0 0
+			1 0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	velGraph1Z 180
+	{
+		{
+			0 0
+			1 -0.5
+		}
+		{
+			0 0
+			1 0
+		}
+	};
+	rotGraph 25
+	{
+		{
+			0 -0.5
+			1 -0.037037
+		}
+		{
+			0 0.5
+			1 0.0416667
+		}
+	};
+	sizeGraph0 700
+	{
+		{
+			0 0.6582
+			1 0.75
+		}
+		{
+			0 0.5316
+			1 0.6456
+		}
+	};
+	sizeGraph1 2
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	scaleGraph 1
+	{
+		{
+			0 1
+			1 0
+		}
+		{
+			0 1
+			1 0
+		}
+	};
+	colorGraph 1
+	{
+		{
+			0 0.447059 0.529412 0.486275
+			1 0.447059 0.529412 0.486275
+		}
+		{
+			0 0.686275 0.607843 0.529412
+			1 0.686275 0.607843 0.529412
+		}
+	};
+	alphaGraph 1
+	{
+		{
+			0 0
+			0.107558 0.287081
+			0.156977 0.358852
+			0.232558 0.392345
+			0.438953 0.330144
+			1 0
+		}
+		{
+			0 0
+			0.1121 0.401
+			1 0
+		}
+	};
+	collOffset 0 0 0;
+	collRadius 0;
+	fxOnImpact "";
+	fxOnDeath "";
+	sortOrder 5;
+	emission "";
+	emitDist 1 0;
+	emitDistVariance 0 0;
+	trailSplitDist 0;
+	trailScrollTime 0;
+	trailRepeatDist 0;
+	billboardSprite
+	{
+		"gfx_fog_wisp_afm"
+		"gfx_fog1_wisp_afm"
+	};
+}

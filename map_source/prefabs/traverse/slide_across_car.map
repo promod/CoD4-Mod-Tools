@@ -1,0 +1,49 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 18 34 -64 ) ( -34 34 -64 ) ( -34 -20 -64 ) traverse 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -34 -20 -26 ) ( -34 34 -26 ) ( 18 34 -26 ) traverse 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -34 -34 -24 ) ( 18 -34 -24 ) ( 18 -34 -64 ) traverse 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 -20 -24 ) ( 22 34 -24 ) ( 22 34 -64 ) traverse 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 18 34 -24 ) ( -34 34 -24 ) ( -34 34 -64 ) traverse 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 34 -24 ) ( -26 -20 -24 ) ( -26 -20 -64 ) traverse 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 28 66 -64 ) ( -24 66 -64 ) ( -24 12 -64 ) traverse 64 64 10 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -24 12 -26 ) ( -24 66 -26 ) ( 28 66 -26 ) traverse 64 64 10 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -26 34 -24 ) ( 26 34 -24 ) ( 26 34 -64 ) traverse 64 64 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 12 -24 ) ( 16 66 -24 ) ( 16 66 -64 ) traverse 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 66 -24 ) ( -24 66 -24 ) ( -24 66 -64 ) traverse 64 64 10 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 66 -24 ) ( -16 12 -24 ) ( -16 12 -64 ) traverse 64 64 32 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "node_negotiation_end"
+"targetname" "auto1"
+"origin" "0.0 54.0 -22.8"
+"angles" "0 90 0"
+}
+// entity 2
+{
+"targetname" "traverse"
+"minUseDistSq" "4096"
+"classname" "node_negotiation_begin"
+"target" "auto1"
+"origin" "-9.0 -84.0 -23.8"
+"animscript" "slide_across_car"
+"angles" "0 90 0"
+}
+// entity 3
+{
+"_color" "0.000000 1.000000 0.250980"
+"origin" "-8.0 -34.0 -26.0"
+"targetname" "auto1"
+"classname" "script_origin"
+}

@@ -1,0 +1,38 @@
+	itemDef
+	{
+		name			end_game
+		text			"@PLATFORM_END_GAME"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_DEFAULT
+		origin			70 438
+		visible	when ( dvarbool( onlineunrankedgameandhost ) == 1 ); 
+		decoration
+		execKeyInt BUTTON_Y { play "mouse_click"; open popup_endgame; }
+	}
+
+	itemDef
+	{
+		name			leave_game
+		text			"@PLATFORM_LEAVE_GAME"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_DEFAULT
+		origin			70 438
+		visible when ( dvarbool( onlineunrankedgameandhost ) == 0 && ( !InPrivateParty() || PrivatePartyHost() || !PrivatePartyHostInLobby() ) );
+		decoration
+		execKeyInt BUTTON_Y { play "mouse_click"; open popup_leavegame; }
+	}
+
+	itemDef
+	{
+		name			leave_game_and_party
+		text			"@PLATFORM_LEAVE_GAME"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_DEFAULT
+		origin			70 438
+		visible when ( dvarbool( onlineunrankedgameandhost ) == 0 && ( InPrivateParty() && !PrivatePartyHost() && PrivatePartyHostInLobby() ) );
+		decoration
+		execKeyInt BUTTON_Y { play "mouse_click"; open popup_leavegameandparty; }
+	}
+	
+
+

@@ -1,0 +1,41 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"contrastGain" ".5"
+"sunRadiosity" "1.2"
+"brightness" "0.1"
+"sunlight" "0.8"
+"sundirection" "-45 60 0"
+"sundiffusecolor" "0.4 0.6 1"
+"suncolor" "0.8 0.9 1"
+"diffusefraction" "0.6"
+"ambient" "0.1"
+"_color" "0.717647 0.776471 1.000000"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 28 32 0 ) ( -40 32 0 ) ( -40 -12 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -12 10 ) ( -40 32 10 ) ( 28 32 10 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 -16 12 ) ( 28 -16 12 ) ( 28 -16 -12 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -12 12 ) ( 2 32 12 ) ( 2 32 -12 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 18 12 ) ( -40 18 12 ) ( -40 18 -12 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 16 12 ) ( -12 -28 12 ) ( -12 -28 -12 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 4 -16 0 ) ( -12 -16 0 ) ( -12 -24 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -24 8 ) ( 4 -24 8 ) ( 4 -24 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -16 8 ) ( -12 -16 8 ) ( -12 -16 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 -16 8 ) ( -12 -24 8 ) ( -12 -24 0 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -16 10 ) ( -8 -24 10 ) ( -4 -16 42 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -24 4 ) ( 4 -16 8 ) ( 36 -24 4 ) clip_nosight_dirt 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "ch_dead_cow_rotten"
+"origin" "0.0 0.0 0.0"
+}

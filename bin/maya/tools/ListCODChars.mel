@@ -1,0 +1,43 @@
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ListCODChars
+//
+//		This proc finds all the COD character rigs in a scene and returns there full path.
+//
+//		A COD character must have a locator with a extra int attribute called CODCharacter which contains the rig version number
+//		This extra attribute must be in the locators shape node, NOT the transform node.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc string[] ListCODChars ()
+{
+
+	string $Characters[0];
+	string $Locators[0];
+
+	// get all the locators in the scene
+	$Locators = `ls -type locator`;
+
+	// now for each locator, go through and find out if there's an attribute on
+	// it called CODCharacter.  If so, return the full path name
+	
+	int $cc = 0;
+	for ($loc in $Locators)
+	{
+		string $attributes[0];
+		$attributes = `listAttr -ud $loc`;
+		for ($attr in $attributes)
+		{
+			if ($attr == "CODCharacter")
+			{
+				$Characters[$cc] = $loc;
+				$cc = $cc+1;
+			}
+			if ( $attr == "CODViewModel")
+			{
+				$Characters[$cc] = $loc;
+				$cc = $cc+1;
+			}
+		}
+	}
+	return $Characters;
+}

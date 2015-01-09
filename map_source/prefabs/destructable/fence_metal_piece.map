@@ -1,0 +1,118 @@
+iwmap 4
+"000_Global" flags 
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 64 244 0 ) ( -64 244 0 ) ( -64 -28 0 ) caulk 64 64 0 -572 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -28 80 ) ( -64 244 80 ) ( 64 244 80 ) me_i_beam 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -104 -4 80 ) ( 24 -4 80 ) ( 24 -4 0 ) me_i_beam 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -28 80 ) ( 32 244 80 ) ( 32 244 0 ) me_i_beam 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 64 4 80 ) ( -64 4 80 ) ( -64 4 0 ) me_i_beam 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 236 80 ) ( 24 -36 80 ) ( 24 -36 0 ) me_i_beam 32 256 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -4 2 68 ) ( -56 2 68 ) ( -56 -2 68 ) me_i_beam 32 256 -24 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 72 ) ( -60 2 72 ) ( -8 2 72 ) me_i_beam 32 256 -24 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -2 138 ) ( -4 -2 138 ) ( -4 -2 58 ) me_i_beam 32 256 -20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -4 138 ) ( 24 0 138 ) ( 24 0 58 ) caulk 32 256 -20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 138 ) ( -56 2 138 ) ( -56 2 58 ) me_i_beam 32 256 -20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 2 138 ) ( -64 -2 138 ) ( -64 -2 58 ) caulk 32 256 -20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -4 2 12 ) ( -56 2 12 ) ( -56 -2 12 ) me_i_beam 32 256 80 -24 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 16 ) ( -60 2 16 ) ( -8 2 16 ) me_i_beam 32 256 80 -24 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -2 82 ) ( -4 -2 82 ) ( -4 -2 2 ) me_i_beam 32 256 80 -24 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -4 82 ) ( 24 0 82 ) ( 24 0 2 ) caulk 32 256 80 -24 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 82 ) ( -56 2 82 ) ( -56 2 2 ) me_i_beam 32 256 80 -24 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 2 82 ) ( -64 -2 82 ) ( -64 -2 2 ) caulk 32 256 80 -24 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+ ( -4 2 40 ) ( -56 2 40 ) ( -56 -2 40 ) me_i_beam 32 256 -24 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 44 ) ( -60 2 44 ) ( -8 2 44 ) me_i_beam 32 256 -24 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -56 -2 110 ) ( -4 -2 110 ) ( -4 -2 30 ) me_i_beam 32 256 -48 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 24 -4 110 ) ( 24 0 110 ) ( 24 0 30 ) caulk 32 256 -48 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 2 110 ) ( -56 2 110 ) ( -56 2 30 ) me_i_beam 32 256 -48 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 2 110 ) ( -64 -2 110 ) ( -64 -2 30 ) caulk 32 256 -48 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"script_accumulate" "300"
+"script_noteworthy" "destructable"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( -38 -2 36 ) ( -62 -2 36 ) ( -62 -4 36 ) me_corrugated_metal01 64 64 66 -37 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -4 79 ) ( -62 -2 79 ) ( -38 -2 79 ) me_corrugated_metal01 64 64 66 -37 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -4 76 ) ( -38 -4 76 ) ( -38 -4 36 ) me_corrugated_metal01 64 64 66 -39 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -4 76 ) ( -38 -2 76 ) ( -38 -2 36 ) me_corrugated_metal01 64 64 62 -39 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -38 -3 76 ) ( -62 -3 76 ) ( -62 -3 36 ) me_corrugated_metal01 64 64 66 -39 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -60 -2 76 ) ( -60 -4 76 ) ( -60 -4 36 ) me_corrugated_metal01 64 64 62 -39 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 2
+{
+"script_accumulate" "300"
+"script_noteworthy" "destructable"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( -10 -3 20 ) ( -24 -3 20 ) ( -24 -7 20 ) me_corrugated_metal01 64 64 -55 -30 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -7 74 ) ( -14 -3 74 ) ( 0 -3 74 ) me_corrugated_metal01 64 64 -55 -30 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -4 66 ) ( -2 -4 66 ) ( -2 -4 62 ) me_corrugated_metal01 64 64 -55 -29 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -7 90 ) ( -4 -3 90 ) ( -4 -3 86 ) me_corrugated_metal01 64 64 -38 -29 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -3 66 ) ( -10 -3 66 ) ( -10 -3 62 ) me_corrugated_metal01 64 64 -55 -29 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -3 50 ) ( -32 -7 50 ) ( -32 -7 46 ) me_corrugated_metal01 64 64 -38 -29 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 3
+{
+"script_accumulate" "300"
+"script_noteworthy" "destructable"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( -44 -1 10 ) ( -64 -1 10 ) ( -64 -3 10 ) me_corrugated_metal01 64 64 -76 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -3 54 ) ( -64 -1 54 ) ( -44 -1 54 ) me_corrugated_metal01 64 64 -76 -16 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -3 46 ) ( -44 -3 46 ) ( -44 -3 8 ) me_corrugated_metal01 64 64 -76 -17 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -3 46 ) ( -46 -1 46 ) ( -46 -1 8 ) me_corrugated_metal01 64 64 -79 -17 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -42 -2 46 ) ( -62 -2 46 ) ( -62 -2 8 ) me_corrugated_metal01 64 64 -76 -17 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -62 -1 46 ) ( -62 -3 46 ) ( -62 -3 8 ) me_corrugated_metal01 64 64 -79 -17 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 4
+{
+"script_accumulate" "300"
+"script_noteworthy" "destructable"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( -18 -1 6 ) ( -42 -1 6 ) ( -42 -3 6 ) me_corrugated_metal01 64 64 58 -14 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -57 -3 64 ) ( -57 -1 64 ) ( -33 -1 64 ) me_corrugated_metal01 64 64 58 -14 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -42 -3 46 ) ( -18 -3 46 ) ( -18 -3 6 ) me_corrugated_metal01 64 64 58 15 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -3 45 ) ( -18 -1 45 ) ( -18 -1 5 ) me_corrugated_metal01 64 64 47 15 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -2 46 ) ( -42 -2 46 ) ( -42 -2 6 ) me_corrugated_metal01 64 64 58 15 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -42 -1 46 ) ( -42 -3 46 ) ( -42 -3 6 ) me_corrugated_metal01 64 64 47 15 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 5
+{
+"script_accumulate" "300"
+"script_noteworthy" "destructable"
+"classname" "script_brushmodel"
+// brush 0
+{
+ ( 16 -2 4 ) ( 2 -2 4 ) ( 2 -6 4 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -6 76 ) ( 4 -2 76 ) ( 18 -2 76 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -3 68 ) ( 16 -3 68 ) ( 16 -3 64 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 -6 68 ) ( 22 -2 68 ) ( 22 -2 64 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 22 -2 68 ) ( 8 -2 68 ) ( 8 -2 64 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -2 52 ) ( -8 -6 52 ) ( -8 -6 48 ) me_corrugated_metal01 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

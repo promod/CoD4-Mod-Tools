@@ -1,0 +1,36 @@
+	//--- top ---
+	itemDef 
+	{
+		style			WINDOW_STYLE_FILLED
+		rect			-128 0 896 66
+		backcolor		0.1412 0.1412 0.1412 1
+		visible			1
+		decoration
+	}
+	itemDef
+	{
+		style			WINDOW_STYLE_SHADER
+		rect			-128 66 896 2
+		background		"line_horizontal"
+		forecolor		1 1 1 1
+		visible			1
+		decoration
+	}
+	//--- bottom ---
+	itemDef 
+	{
+		style			WINDOW_STYLE_FILLED
+		rect			-128 416 896 64
+		backcolor		0.1412 0.1412 0.1412 1
+		visible			1
+		decoration
+	}
+	itemDef
+	{
+		style			WINDOW_STYLE_SHADER
+		rect			-128 414 896 2
+		background		"line_horizontal"
+		forecolor		1 1 1 1
+		visible			1
+		decoration
+	}

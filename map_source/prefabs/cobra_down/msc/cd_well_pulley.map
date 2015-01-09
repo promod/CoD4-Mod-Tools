@@ -1,0 +1,37 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 14 2 0 ) ( 6 2 0 ) ( 6 -6 0 ) caulk 64 64 2 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -6 108 ) ( 4 2 108 ) ( 12 2 108 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -2 320 ) ( 2 -2 320 ) ( 2 -2 224 ) me_woodplanks01 128 128 20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -2 320 ) ( 2 6 320 ) ( 2 6 224 ) me_woodplanks01 128 128 20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 2 320 ) ( -2 2 320 ) ( -2 2 224 ) me_woodplanks01 128 128 20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 2 236 ) ( -2 -6 236 ) ( -2 -6 140 ) me_woodplanks01 128 128 20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 14 -6 98 ) ( 6 -6 98 ) ( 6 -14 98 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 -10 102 ) ( 4 -2 102 ) ( 12 -2 102 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -42 316 ) ( 2 -42 316 ) ( 2 -42 220 ) me_woodplanks01 128 128 20 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -6 314 ) ( 2 2 314 ) ( 2 2 218 ) me_woodplanks01 128 128 0 -20 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -2 314 ) ( -2 -2 314 ) ( -2 -2 218 ) caulk 64 64 2 -14 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2 230 ) ( -2 -10 230 ) ( -2 -10 134 ) me_woodplanks01 128 128 0 -20 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -2 -2 82 ) ( 2 -2 82 ) ( 2 -2 86 ) caulk 64 64 2 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -18 98 ) ( 2 -18 98 ) ( 2 -22 98 ) caulk 64 64 2 22 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -2 82 ) ( -2 -2 82 ) ( -2 -22 98 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -22 310 ) ( 2 -14 310 ) ( 2 -14 214 ) me_woodplanks01 163.92023 -128 -50.22551 -60.781849 -38.659878 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2 86 ) ( 2 -2 86 ) ( 2 -18 98 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -18 226 ) ( -2 -26 226 ) ( -2 -26 130 ) me_woodplanks01 163.92024 128 -50.225513 -60.781834 -38.65987 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

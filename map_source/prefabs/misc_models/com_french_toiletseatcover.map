@@ -1,0 +1,24 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 9 2.5 0 ) ( -9 2.5 0 ) ( -9 -2.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -2.5 23 ) ( -9 2.5 23 ) ( 9 2.5 23 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 -1 23.5 ) ( 9 -1 23.5 ) ( 9 -1 -0.5 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -2.5 24 ) ( 9 2.5 24 ) ( 9 2.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 0 24 ) ( -9 0 24 ) ( -9 0 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 2.5 24 ) ( -9 -2.5 24 ) ( -9 -2.5 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 3.5 15.5 ) ( 4.5 3.5 23 ) ( 4.5 35.5 23 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4.5 3.5 23 ) ( -9 3.5 15.5 ) ( -9 35.5 15.5 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_french_toiletseatcover"
+"classname" "misc_model"
+}

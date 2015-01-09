@@ -1,0 +1,27 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 27.5 12.5 49 ) ( 27.5 12.5 0 ) ( 27.5 -12.5 0 ) clip_nosight 64 -64 24.5 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -11 0 ) ( -29 11 0 ) ( -29 11 49 ) clip_nosight 64 -64 24.5 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 10.5 -29.5 49 ) ( 10.5 -29.5 0 ) ( -10.5 -29.5 0 ) clip_nosight 64 64 24.5 30 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27.5 -12.5 49 ) ( 10.5 -29.5 49 ) ( -10.5 -29.5 49 ) clip_nosight 64 64 0 30 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10.5 29.5 49 ) ( -10.5 29.5 0 ) ( 10.5 29.5 0 ) clip_nosight 64 64 24.5 30 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27.5 12.5 0 ) ( 10.5 29.5 0 ) ( -10.5 29.5 0 ) clip_nosight 64 64 0 30 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -10.5 29.5 0 ) ( -10.5 29.5 49 ) ( -29 11 49 ) clip_nosight 64 -64 24.5 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -11 49 ) ( -10.5 -29.5 49 ) ( -10.5 -29.5 0 ) clip_nosight 64 -64 24.5 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27.5 -12.5 0 ) ( 10.5 -29.5 0 ) ( 10.5 -29.5 49 ) clip_nosight 64 -64 24.5 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27.5 12.5 0 ) ( 27.5 12.5 49 ) ( 10.5 29.5 49 ) clip_nosight 64 -64 24.5 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"angles" "270 0 0"
+"origin" "30.0 0.0 24.5"
+"model" "ch_hayroll_03"
+"classname" "misc_model"
+}

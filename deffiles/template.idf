@@ -1,0 +1,113 @@
+#name "template"
+
+string name
+string filename
+
+map data filedata
+[
+	event "newentry"
+	{
+		newentry2(name, current_typename)
+	}
+
+	event "deleteEntry"
+	{
+		deleteEntry(name, current_typename)
+	}
+
+	event "renameEntry"
+	{
+		renameEntry(name, current_typename)
+	}
+
+	event "copyEntry"
+	{
+		copyEntry(name, current_typename)
+	}
+	
+	event "findEntry"
+	{
+		findEntry(name, current_typename)
+	}
+
+	exec
+	{
+		archive()
+	}
+]
+
+string current_typename
+
+map struct
+{
+	string filename
+} types
+[
+	exec
+	{
+		deffile() // name -> filename
+	}
+]
+
+string iter_key
+
+ref(data) ref_var(filedata, name)
+
+ref(data) iter(filedata, iter_key)
+
+dataname iter_name(iter)
+
+hcontainer
+{
+	vcontainer
+	{
+		edit(name)
+		[
+			exec
+			{
+				labelwidth(48)
+				width(360)
+				entryname()
+			}
+		]
+
+		hcontainer
+		{
+			vcontainer
+			{
+				button("New Entry", "newentry")
+				button("Rename Entry", "renameEntry")
+			}
+			vcontainer
+			{
+				button("Delete Entry", "deleteEntry")
+				button("Copy Entry", "copyEntry")
+			}
+			button("Find Entry", "findEntry")
+		}
+
+		listbox(types, current_typename)
+		[
+			exec
+			{
+				height(64)
+				unsorted()
+				typename()
+			}
+		]
+
+		listbox(filedata, name)
+		[
+			filter(iter_name == current_typename, iter_key)
+
+			exec
+			{
+				syncheighttomainwindowheight()
+				width(360)
+				height(600)
+			}
+		]
+	}
+
+	dataview(ref_var)
+}

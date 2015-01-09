@@ -1,0 +1,38 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -14 -8 3 ) ( -14 10 3 ) ( -3 10 14 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 10 -4 ) ( -9 -8 -4 ) ( 5 -8 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -18 -8 2 ) ( -2 -8 14 ) ( 5 -8 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 -8 14 ) ( -3 10 14 ) ( 5 10 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 8 14 ) ( -18 8 2 ) ( -9 8 -4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 10 3 ) ( -14 -8 3 ) ( -9 -8 -4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 2 14 ) ( 5 8 8 ) ( 37 2 14 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -8 8 ) ( 5 -2 14 ) ( 37 -2 14 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 8 14 ) ( 8 2 14 ) ( 2 8 46 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -2 14 ) ( 2 -8 14 ) ( 2 -8 46 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 8 10 -12 ) ( -8 10 -12 ) ( -8 -8 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 10 2 ) ( 5 -8 2 ) ( -9 -8 -4 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 -2 ) ( 8 -8 -2 ) ( 8 -8 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 5 -8 2 ) ( 5 10 2 ) ( 8 10 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 -2 ) ( -8 8 -2 ) ( -8 8 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -9 10 -4 ) ( -9 -8 -4 ) ( -8 -8 -12 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 8 14 ) ( 8 2 14 ) ( 2 8 46 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -2 14 ) ( 2 -8 14 ) ( 2 -8 46 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"angles" "270 0 0"
+"model" "com_pipe_8_45angle_metal"
+"classname" "misc_model"
+}

@@ -1,0 +1,23 @@
+{
+		stateMap "zfeather_add";
+
+	vertexShader 2.0 "zfeather_foa_nf_dtex.hlsl"
+	{
+		featherParms = material.featherParms;
+		falloffParms = material.falloffParms;
+		falloffBeginColor = material.falloffBeginColor;
+		falloffEndColor = material.falloffEndColor;
+	}
+
+	pixelShader 2.0 "zfeather_add_nf.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		featherParms = material.featherParms;
+	}
+
+	vertex.position = code.position;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.normal = code.normal;
+
+}

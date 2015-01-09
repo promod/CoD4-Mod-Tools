@@ -1,0 +1,31 @@
+#include "commonsetup.template"
+
+#if "@blendFunc@" == "Replace"
+	#if "@alphaTest@" == "Always"
+		techniqueSet( "unlit_replace" );
+	#elif "@alphaTest@" == "GT0" || "@alphaTest@" == "GE128"
+		techniqueSet( "unlit_alphatest" );
+        #else
+		#error "blendFunc '@blendFunc@' with alphaTest '@alphaTest@' not supported for unlit materials"
+	#endif
+#else 
+	techniqueSet( "unlit_blend" );
+#endif
+
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in unlit materials"
+	#endif
+	"colorMap" = streamable map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+}
+
+
+constantTable
+{
+	"colorTint" = float4( @,colorTint@ );
+}
+
+
+refImage( "$colorMap$" );

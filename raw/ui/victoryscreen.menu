@@ -1,0 +1,602 @@
+#include "ui/menudef.h"
+
+{
+	assetGlobalDef
+	{
+		fadeClamp			1					// sets the fadeup alpha
+		fadeCycle			1					// how often fade happens in milliseconds
+		fadeAmount			0.1					// amount to adjust alpha per cycle
+		fadeInAmount		0.002				// amount to adjust fadein alpha per cycle
+	}
+
+	menuDef 
+	{
+		name			"victoryscreen"
+		fullScreen		1				
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		soundloop		""
+		onOpen 
+		{ 
+			execondvarintvalue ui_arcade_lost 1 "disconnect";
+			uiScript closemenuondvar ui_arcade_lost 1 "victoryscreen";
+			uiScript openmenuondvar ui_arcade_lost 1 "main";
+			
+			setdvar			cl_paused "1"; // pause the game
+			setitemcolor	fadebox backcolor 0 0 0 1;
+			fadeout			fadebox;
+			exec			"updategamerprofile";
+			//profileshow		main_profile;
+			//profileshow		main_profile_nosave;
+			//profilehide		main_no_profile;
+			//profileshow		select_mission_profile; 
+			//profilehide		select_mission_no_profile; 
+			//profileshow		next_vignette_profile; 
+			//profileshow		next_vignette_profile_nosave;
+			//profilehide		next_vignette_no_profile; 
+			//setfocus		select_mission_profile; // MENU_MISSION_SELECT_MENU
+			//setfocus		select_mission_no_profile; // MENU_MISSION_SELECT_MENU
+			//setfocus		continue_credits; // MENU_CONTINUE
+			//setfocus		next_vignette_profile;    // MENU_NEXT_MISSION
+			//setfocus		next_vignette_no_profile;    // MENU_NEXT_MISSION
+			//setfocus		continue_vignette; // MENU_CONTINUE_MISSION
+			execOnDvarIntValue ui_showpopup 1 "openmenu victory_notice_popmenu";
+		}
+		
+		onClose
+		{
+			setdvar cl_paused "0"; // unpause the game
+			setdvar ui_requiredtraining ""
+		}
+
+		// default background
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			FULLSCREEN_WIDE
+			backcolor		0.2 0.2 0.2 1
+			visible			1
+			decoration
+		}
+
+		// custom background
+		itemDef 
+		{
+			rect			-128 0 896 480
+			backcolor		1 1 1 1
+			style			WINDOW_STYLE_SHADER
+			background		"$victoryBackdrop"
+			visible			when( !dvarBool( ui_arcade_lost ) );
+			decoration
+		}
+		
+        
+		/*
+		// Quote from a famous dead guy    	
+		itemDef 
+		{
+			name			quote
+			dvar			"ui_victoryquote"
+			autowrapped
+			textscale		TEXTSIZE_DEFAULT
+			group			grpControlbutton
+			type			ITEM_TYPE_TEXT
+			rect			80 250 480 20
+			textalign		ITEM_ALIGN_CENTER
+			textstyle		ITEM_TEXTSTYLE_SHADOWEDMORE
+			forecolor		1 1 1 1
+			decoration 
+			visible			1
+		}
+		*/
+
+		/*
+		// credits next level
+		itemDef
+		{
+			name			continue_credits
+			rect			65 420 128 16
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			text 			"@MENU_CONTINUE"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWED
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible			1 
+			dvarTest		"ui_nextMission"
+			showdvar		{ "2" }
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				nextlevel;
+				close victoryscreen;
+			}
+		}
+
+		// Continue Mission button (loads next level) only shown mid vignette
+		itemDef
+		{
+			name			continue_vignette
+			rect			65 420 128 16
+			type			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			text			"@MENU_CONTINUE_MISSION"
+			textfont		UI_FONT_BIG
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			textalign		ITEM_ALIGN_TOP_CENTER
+			textscale		TEXTSIZE_DEFAULT
+			forecolor		0.65 0.65 0.65 1
+			visible			1 
+			dvarTest		"ui_nextMission"
+			showdvar		{ "1" }
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				nextlevel;
+				close victoryscreen;
+			}
+		}
+		*/
+		
+		// Mission Select Menu button (goes to mission_select screen) only shown at end of vignette, and only if the 
+		// player has a profile logged in
+/*		itemDef
+		{
+			name 			select_mission_profile
+			rect 			65 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style 			WINDOW_STYLE_EMPTY
+			text 			"@MENU_MISSION_SELECT_MENU"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWED
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible 		1 
+			dvarTest 		"ui_nextMission"
+			showdvar 		{ "0" }
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				setSaveExecOnSuccess "disconnect;wait;closemenu main_lockout;openmenu mission_select";
+				open savegameinfo;
+			}
+		}
+		
+		itemDef
+		{
+			name 			select_mission_no_profile
+			rect 			65 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style 			WINDOW_STYLE_EMPTY
+			text 			"@MENU_MISSION_SELECT_MENU"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWED
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible 		1 
+			dvarTest 		"ui_nextMission"
+			` 		{ "0" }
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				exec "disconnect;wait;closemenu main_lockout;openmenu mission_select";
+			}
+		}
+*/
+		/*
+		// Next Mission button (loads next level in next vignette) only shown at end of vignette if profile
+		itemDef
+		{
+			name 			next_vignette_profile
+			rect 			250 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style 			WINDOW_STYLE_EMPTY
+			text 			"@MENU_NEXT_MISSION"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWED
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible			when ( dvarbool( ui_nextMission ) == 0 && dvarbool( sv_saveGameAvailable ) != 0 );
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				setSaveExecOnSuccess "nextlevel";
+				open savegameinfo;
+			}
+		}
+		
+		// Next Mission button (loads next level in next vignette) only shown at end of vignette if profile but no save
+		itemDef
+		{
+			name 			next_vignette_profile_nosave
+			rect 			250 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style 			WINDOW_STYLE_EMPTY
+			text 			"@MENU_NEXT_MISSION"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWED
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible			when ( dvarbool( ui_nextMission ) == 0 && dvarbool( sv_saveGameAvailable ) == 0 );
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				nextlevel; 
+				close victoryscreen;
+			}
+		}		
+		// Next Mission button (loads next level in next vignette) only shown at end of vignette if no profile
+		itemDef
+		{
+			name 			next_vignette_no_profile
+			rect 			250 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style			WINDOW_STYLE_EMPTY
+			text 			"@MENU_NEXT_MISSION"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWED
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible			when ( dvarbool( ui_nextMission ) == 0 );
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				nextlevel;
+				close victoryscreen;
+			}
+		}
+
+		// Main menu button (returns player to the main menu)
+		itemDef
+		{
+			name 			main_no_profile
+			rect 			480 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style 			WINDOW_STYLE_EMPTY
+			text 			"@MENU_MAIN_MENU"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWEDMORE
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible			when ( dvarstring( "mapname" ) != "credits" );
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				exec "disconnect;wait;closemenu main;openmenu victoryscreen;openmenu main";
+			}
+		}
+		*/
+		
+		/*
+		// Main menu button (returns player to the main menu)
+		itemDef
+		{
+			name 			main_profile
+			rect 			250 420 128 16 //480 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style 			WINDOW_STYLE_EMPTY
+			text 			"@PLATFORM_SAVE_AND_QUIT"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWEDMORE
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible			when ( dvarstring( "credits" ) != "1" && dvarbool( sv_saveGameAvailable ) );
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				//setdvar ui_victory_screen "1"; // used by savegame_warning.menu to not open paused menu when ESC
+				//open "savegame_warning";
+				
+				play "mouse_click";
+				setSaveExecOnSuccess "disconnect"
+				open "savegameinfo";
+			}
+		}
+		
+		
+		itemDef
+		{
+			name 			main_profile_nosave
+			rect 			250 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style 			WINDOW_STYLE_EMPTY
+			text 			"@MENU_MAIN_MENU"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWEDMORE
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.65 0.65 0.65 1
+			visible			when ( dvarstring( "credits" ) != "1" && !dvarbool( sv_saveGameAvailable ) );
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				exec "disconnect;wait;closemenu main;openmenu victoryscreen;openmenu main";
+			}
+		}*/
+				
+		itemDef
+		{
+			name 			mainb
+			rect 			250 420 128 16
+			type 			ITEM_TYPE_BUTTON
+			style 			WINDOW_STYLE_EMPTY
+			text 			"@MENU_MAIN_MENU"
+			textfont 		UI_FONT_BIG
+			textstyle 		ITEM_TEXTSTYLE_SHADOWEDMORE
+			textalign 		ITEM_ALIGN_TOP_CENTER
+			textscale 		TEXTSIZE_DEFAULT
+			forecolor 		0.9 0.9 0.9 0.9
+			visible 		1 
+			//visible		when ( dvarstring( "credits" ) == "1" );
+			onfocus 
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				exec "disconnect";
+				close victoryscreen;
+				open main;
+			}
+		}
+		
+		// Box for fading in menus, this needs to come last
+		itemDef 	
+		{
+		   	name			fadebox
+		   	style			WINDOW_STYLE_FILLED
+	 		background		"white"
+			forecolor		0 0 0 1
+			backcolor		0 0 0 1
+			rect			-128 0 896 480
+			visible			1 
+			decoration
+    	}
+    	
+		#include "ui/safearea.menu"
+	}
+
+	menuDef 
+	{
+		name			victory_notice_popmenu
+		visible			0
+		fullscreen		0
+		rect			204 140 235 135
+		focusColor		COLOR_FOCUSED
+		style 			WINDOW_STYLE_FILLED
+		border			1
+		popup
+		onOpen
+		{
+			setfocus ok;
+		}
+		onESC
+		{
+			close victory_notice_popmenu;
+		}
+
+		itemDef 
+		{
+			name 			window
+			group 			grpControlbutton
+			rect 			0 2 235 135
+			style 			WINDOW_STYLE_FILLED
+			border 			1
+			bordercolor 	0.5 0.5 0.5 0.5
+			forecolor 		1 1 1 1
+			backcolor 		0 0 0 0.5
+			visible 		0
+			decoration
+		}
+
+		itemDef 
+		{
+			name 			backimage2fade
+			style 			WINDOW_STYLE_SHADER
+			rect 			-332 -162 896 484
+	 		background 		"white"
+			forecolor 		0 0 0 0.3
+			backcolor 		0 0 0 0.3
+			visible 		1
+			decoration
+		}
+
+		itemDef 
+		{
+			name 			window2
+			group 			grpControlbutton
+			rect 			2 3 231 20	
+			style 			WINDOW_STYLE_FILLED
+			border 			1
+			bordercolor 	0.1 0.1 0.1 0.2
+			forecolor 		1 1 1 1
+			backcolor 		1 1 0.3 0.3
+			visible 		0
+			decoration
+		}
+
+		itemDef 
+		{
+			name 			backimage2fade
+			style 			WINDOW_STYLE_SHADER
+			rect 			-150 2 535 150
+	 		background 		"popmenu_bg"
+			visible 		1
+			decoration
+		}
+
+		itemDef 
+		{
+			name			confirm
+			text			"@MENU_CONGRATULATIONS" 
+			style 			WINDOW_STYLE_EMPTY
+			textscale		0.5 
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			rect			126 25 110 20
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		-62
+			textaligny		5
+			decoration
+			forecolor		COLOR_TITLE
+			visible			1
+		}
+
+		itemDef 
+		{
+			text			"@MENU_VICTORY_BRITISH_UNLOCKED"
+			type			ITEM_TYPE_BUTTON
+			autowrapped
+			textscale		0.3
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			rect			67 35 200 100
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		-50
+			textaligny		19
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			dvarTest		"ui_popupstring"
+			showDvar		{ "british_unlocked" }
+			decoration
+		}
+
+		itemDef 
+		{
+			text			"@MENU_VICTORY_AMERICAN_UNLOCKED"
+			type			ITEM_TYPE_BUTTON
+			autowrapped
+			textscale		0.3
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			rect			67 35 200 100
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		-50
+			textaligny		19
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			dvarTest		"ui_popupstring"
+			showDvar		{ "american_unlocked"; "american_unlockedbritish_completed" }
+			decoration
+		}
+
+		itemDef 
+		{
+			text			"@MENU_VICTORY_BRITISH_COMPLETED"
+			type			ITEM_TYPE_BUTTON
+			autowrapped
+			textscale		0.3
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			rect			67 35 200 100
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		-50
+			textaligny		19
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			dvarTest		"ui_popupstring"
+			showDvar		{ "british_completed" }
+			decoration
+		}
+
+		itemDef 
+		{
+			text			"@MENU_VICTORY_RUSSIAIN_COMPLETED"
+			type			ITEM_TYPE_BUTTON
+			autowrapped
+			textscale		.3
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			rect			67 35 200 100
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		-50
+			textaligny		19
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			dvarTest		"ui_popupstring"
+			showDvar		{ "russian_completed" }
+			decoration
+		}
+
+		itemDef 
+		{
+			text			"@MENU_VICTORY_AMERICAN_RUSSIAN"
+			type			ITEM_TYPE_BUTTON
+			autowrapped
+			textscale		0.3
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			rect			67 35 200 100
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		-50
+			textaligny		19
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			dvarTest		"ui_popupstring"
+			showDvar		{ "american_unlocked_russian_completed" }
+			decoration
+		}
+
+		itemDef 
+		{
+			name			ok
+			text			"@MENU_OK"
+			type			ITEM_TYPE_BUTTON
+			textscale		TEXTSIZE_DEFAULT
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			rect			90 115 60 30
+			textalign		ITEM_ALIGN_CENTER
+			textaligny		21
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+
+			action 
+			{ 
+				play "mouse_click";
+				setdvar ui_showpopup 0;
+				close victory_notice_popmenu; 
+			}
+			mouseEnter { play "mouse_over";  } 
+		}
+	}
+}

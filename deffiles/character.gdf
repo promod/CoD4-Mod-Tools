@@ -1,0 +1,517 @@
+#name "character"
+#dll "all" "character"
+#target_dir "character/"
+#file_ext "*"
+#version 11
+
+string body
+keyenum("xmodelalias.gdf") bodyAlias
+string head
+keyenum("xmodelalias.gdf") headAlias
+string hat
+keyenum("xmodelalias.gdf") hatAlias
+string viewmodel
+
+string TAG_BELT_BACK
+int 0 0 1 TAG_BELT_BACK_required
+string TAG_BELT_BACKLEFT
+int 0 0 1 TAG_BELT_BACKLEFT_required
+string TAG_BELT_BACKRIGHT
+int 0 0 1 TAG_BELT_BACKRIGHT_required
+string TAG_BELT_FRONT
+int 0 0 1 TAG_BELT_FRONT_required
+string TAG_BELT_FRONTLEFT
+int 0 0 1 TAG_BELT_FRONTLEFT_required
+string TAG_BELT_FRONTRIGHT
+int 0 0 1 TAG_BELT_FRONTRIGHT_required
+string TAG_BELT_LEFT
+int 0 0 1 TAG_BELT_LEFT_required
+string TAG_BELT_RIGHT
+int 0 0 1 TAG_BELT_RIGHT_required
+string TAG_BREASTPOCKET_LEFT
+int 0 0 1 TAG_BREASTPOCKET_LEFT_required
+string TAG_BREASTPOCKET_RIGHT
+int 0 0 1 TAG_BREASTPOCKET_RIGHT_required
+string TAG_CALF_LEFT
+int 0 0 1 TAG_CALF_LEFT_required
+string TAG_CALF_RIGHT
+int 0 0 1 TAG_CALF_RIGHT_required
+string TAG_HELMET
+int 0 0 1 TAG_HELMET_required
+string TAG_HELMETSIDE
+int 0 0 1 TAG_HELMETSIDE_required
+string TAG_SHIN_LEFT
+int 0 0 1 TAG_SHIN_LEFT_required
+string TAG_SHIN_RIGHT
+int 0 0 1 TAG_SHIN_RIGHT_required
+string TAG_THIGH_LEFT
+int 0 0 1 TAG_THIGH_LEFT_required
+string TAG_THIGH_RIGHT
+int 0 0 1 TAG_THIGH_RIGHT_required
+string TAG_WEAPON_LEFT
+int 0 0 1 TAG_WEAPON_LEFT_required
+string TAG_WEAPON_RIGHT
+int 0 0 1 TAG_WEAPON_RIGHT_required
+string TAG_ORIGIN
+int 0 0 1 TAG_ORIGIN_required
+
+string misc1
+int 0 0 1 misc1_required
+string misc2
+int 0 0 1 misc2_required
+string misc3
+int 0 0 1 misc3_required
+
+enum { "american", "british", "arab", "russian", "mp" } voice
+
+vcontainer
+{
+	scrollbox(voice)
+
+	fileedit(body)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+
+	scrollbox(bodyAlias)
+	[
+		exec
+		{
+			labelwidth(200)
+			width(640)
+		}
+	]
+
+	fileedit(head)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+
+	scrollbox(headAlias)
+	[
+		exec
+		{
+			labelwidth(200)
+			width(640)
+		}
+	]
+
+	fileedit(hat)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	
+	scrollbox(hatAlias)
+	[
+		exec
+		{
+			labelwidth(200)
+			width(640)
+		}
+	]
+	
+	fileedit(viewmodel)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+
+	fileedit(TAG_BELT_BACK)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BELT_BACK_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BELT_BACKLEFT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BELT_BACKLEFT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BELT_BACKRIGHT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BELT_BACKRIGHT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BELT_FRONT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BELT_FRONT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BELT_FRONTLEFT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BELT_FRONTLEFT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BELT_FRONTRIGHT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BELT_FRONTRIGHT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BELT_LEFT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BELT_LEFT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BELT_RIGHT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BELT_RIGHT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BREASTPOCKET_LEFT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BREASTPOCKET_LEFT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_BREASTPOCKET_RIGHT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_BREASTPOCKET_RIGHT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_CALF_LEFT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_CALF_LEFT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_CALF_RIGHT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_CALF_RIGHT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_HELMET)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_HELMET_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_HELMETSIDE)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_HELMETSIDE_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_SHIN_LEFT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_SHIN_LEFT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_SHIN_RIGHT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_SHIN_RIGHT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_THIGH_LEFT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_THIGH_LEFT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_THIGH_RIGHT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_THIGH_RIGHT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_WEAPON_LEFT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_WEAPON_LEFT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_WEAPON_RIGHT)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_WEAPON_RIGHT_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(TAG_ORIGIN)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(TAG_ORIGIN_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(misc1)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(misc1_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(misc2)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(misc2_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+
+	fileedit(misc3)
+	[
+		exec
+		{
+			reldir("raw/xmodel/")
+			labelwidth(200)
+		}
+	]
+	checkbox(misc3_required)
+	[
+		exec
+		{
+			labelwidth(256)
+		}
+	]
+}

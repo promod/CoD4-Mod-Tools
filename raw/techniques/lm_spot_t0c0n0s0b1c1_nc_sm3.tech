@@ -1,0 +1,28 @@
+{
+	stateMap "premulalpha";
+
+	vertexShader 3.0 "lm_omni_s_tc0n0_tc1_nc_sm3.hlsl"
+	{
+	}
+
+	pixelShader 3.0 "lm_spot_t0c0n0s0b1c1_nc_sm3.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		colorTint = material.colorTint;
+		normalMapSampler = material.normalMap;
+		specularMapSampler = material.specularMap;
+		envMapParms = material.envMapParms;
+
+		colorMapSampler1 = material.colorMap1;
+		colorTint1 = material.colorTint1;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.texcoord[2] = code.tangent;
+	vertex.texcoord[3] = code.texcoord[1];
+
+}

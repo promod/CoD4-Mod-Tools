@@ -1,0 +1,435 @@
+/*
+#include "ui/menudef.h"
+
+#define ORIGIN_CHOICE1		80 80
+#define ORIGIN_CHOICE2		80 100
+#define ORIGIN_CHOICE3		80 120
+#define ORIGIN_CHOICE4		80 140
+#define ORIGIN_CHOICE5		80 160
+#define ORIGIN_CHOICE6		80 180
+#define ORIGIN_CHOICE7		80 200
+
+#define ORIGIN_CHOICE8		80 330
+#define ORIGIN_CHOICE9		80 350
+#define ORIGIN_CHOICE10		80 370
+
+#define ORIGIN_PRIMARYBUTTON		192 80
+#define ORIGIN_SECONDARYBUTTON		192 160
+#define ORIGIN_OFFHANDBUTTON		192 240
+
+#define ORIGIN_PRIMARYWEAPONTEXT	192 100
+#define ORIGIN_SECONDARYWEAPONTEXT	192 180
+#define ORIGIN_OFFHANDWEAPONTEXT	192 260
+
+#define ORIGIN_POPUPTITLE		320 160
+
+#define ORIGIN_POPUPCHOICE1		180 200
+#define ORIGIN_POPUPCHOICE2		180 220
+#define ORIGIN_POPUPCHOICE3		180 240
+
+{
+	menuDef
+	{
+		name			"class_custom"
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		5.0
+		legacySplitScreenScale
+		onEsc 
+		{
+			scriptMenuResponse "back";
+		}
+
+		// background overlay
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.50
+			visible			1
+			decoration
+		}
+
+		// gradient_top
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 55 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_top"
+			visible			1
+			decoration
+		}
+
+		// gradient_bottom
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 351 854 75 HORIZONTAL_ALIGN_FULLSCREEN 0
+			background		"gradient_bottom"
+			visible			1
+			decoration
+		}
+
+		
+		#include "ui/navcontrols.menu"
+		#include "ui_mp/leavegame.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			ORIGIN_TITLE
+			forecolor		COLOR_TITLE
+			text			"@CLASS_MARINES_CLASSES"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			decoration
+		}
+
+// MENU CHOICES
+		itemDef 
+		{
+			name			"button_primary_type"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_PRIMARYBUTTON
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"Primary Weapon Type:"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			execKeyInt DPAD_RIGHT
+			{
+				play "mouse_click";
+				execnow "toggle ui_primary_type smg rifle shotgun sniper";
+				execOnDvarStringValue ui_primary_type "smg" "set ui_class_primary mp5_mp";
+				execOnDvarStringValue ui_primary_type "rifle" "set ui_class_primary m16_m203_mp";
+				execOnDvarStringValue ui_primary_type "shotgun" "set ui_class_primary winchester1200_mp";
+				execOnDvarStringValue ui_primary_type "sniper" "set ui_class_primary m14_scoped_mp";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				play "mouse_click";
+				execnow "toggle ui_primary_type sniper rifle shotgun smg";
+				execOnDvarStringValue ui_primary_type "smg" "set ui_class_primary mp5_mp";
+				execOnDvarStringValue ui_primary_type "rifle" "set ui_class_primary m16_m203_mp";
+				execOnDvarStringValue ui_primary_type "shotgun" "set ui_class_primary winchester1200_mp";
+				execOnDvarStringValue ui_primary_type "sniper" "set ui_class_primary m14_scoped_mp";
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				execNow "set ui_primary_type smg";
+				execNow "set ui_class_primary mp5_mp";
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"button_primary"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_PRIMARYBUTTON
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"SMG: "
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			dvartest		"ui_primary_type"
+			showdvar		{ "smg" }
+			execKeyInt DPAD_RIGHT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_primary mp5_mp mac10_mp p90_mp skorpion_mp uzi_mp bizon_mp";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_primary bizon_mp uzi_mp skorpion_mp p90_mp mac10_mp mp5_mp";
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"button_primary"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_PRIMARYBUTTON
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"Assault Rifle: "
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			dvartest		"ui_primary_type"
+			showdvar		{ "rifle" }
+			execKeyInt DPAD_RIGHT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_primary m16_m203_mp g36c_ag36_mp scar_eglm_mp ak47_gp25_mp g3_hk79_mp famas_m203_mp m4_mp sa80_mp ak74u_mp groza_mp";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_primary groza_mp ak74u_mp sa80_mp m4_mp famas_m203_mp g3_hk79_mp ak47_gp25_mp scar_eglm_mp g36c_ag36_mp m16_m203_mp";
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"button_primary"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_PRIMARYBUTTON
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"Shotgun: "
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			dvartest		"ui_primary_type"
+			showdvar		{ "shotgun" }
+			execKeyInt DPAD_RIGHT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_primary winchester1200_mp m1014_mp";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_primary m1014_mp winchester1200_mp";
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"button_primary"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_PRIMARYBUTTON
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"Sniper Rifle: "
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			dvartest		"ui_primary_type"
+			showdvar		{ "sniper" }
+			execKeyInt DPAD_RIGHT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_primary m14_scoped_mp m40a3_mp barrett_mp dragunov_mp remington700_mp aw50_mp";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_primary aw50_mp remington700_mp dragunov_mp barrett_mp m40a3_mp m14_scoped_mp";
+			}
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"button_secondary"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_SECONDARYBUTTON
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"Secondary Weapon:"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			execKeyInt DPAD_RIGHT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_weapon 0 1 2";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_weapon 2 1 0";
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuRespondOnDvarIntValue ui_class_weapon 0 "closequarters_mp,0";
+				scriptMenuRespondOnDvarIntValue ui_class_weapon 1 "closequarters_mp,1";
+				scriptMenuRespondOnDvarIntValue ui_class_weapon 2 "closequarters_mp,2";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				hide loadout_info;
+				execnow "set ui_class_weapon 0";
+				show closequarters_loadout;
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_offhand"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_OFFHANDBUTTON
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"Offhand Grenade:"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			execKeyInt DPAD_RIGHT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_weapon 0 1 2";
+			}
+			execKeyInt DPAD_LEFT
+			{
+				play "mouse_click";
+				exec "toggle ui_class_weapon 2 1 0";
+			}
+			action
+			{
+				play "mouse_click";
+				scriptMenuRespondOnDvarIntValue ui_class_weapon 0 "closequarters_mp,0";
+				scriptMenuRespondOnDvarIntValue ui_class_weapon 1 "closequarters_mp,1";
+				scriptMenuRespondOnDvarIntValue ui_class_weapon 2 "closequarters_mp,2";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				hide loadout_info;
+				execnow "set ui_class_weapon 0";
+				show closequarters_loadout;
+			}
+		}
+
+		itemDef 
+		{
+			name			"mp5"
+			group			"primary_info"
+			visible			1
+			type			ITEM_TYPE_TEXT
+			rect			0 0 128 24
+			origin			ORIGIN_PRIMARYWEAPONTEXT
+			forecolor		COLOR_UNFOCUSED
+			text			"@WEAPON_MP5"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			decoration
+			dvartest		"ui_class_primary"
+			showdvar		{ "mp5" }
+		}
+		
+		itemDef 
+		{
+			name			"button_controls"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE8
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"@MENU_CONTROLS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				open ingame_controls;
+				close class_custom;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_options"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE9
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"Options"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				open ingame_options;
+				close class_custom;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		
+		itemDef 
+		{
+			name			"button_changeteam"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE10
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_CHANGE_TEAM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "changeteam";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+}
+*/

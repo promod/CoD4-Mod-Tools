@@ -1,0 +1,52 @@
+#ifdef CONSOLE
+	itemDef
+	{
+		style			WINDOW_STYLE_FILLED
+		rect			48 36 544 408
+		backcolor		1 0 0 0.5
+		visible			0
+		decoration
+	}
+
+	itemDef
+	{
+		name			select
+		text			"@PLATFORM_SELECT"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_DEFAULT
+		textalign		ITEM_ALIGN_TOP_LEFT
+		origin			415 422
+		visible	when ( !menuisopen( menu_xboxlive_party ) );
+		decoration
+	}
+
+	itemDef
+	{
+		name			cancel
+		text			"@PLATFORM_BACK"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_DEFAULT
+		textalign		ITEM_ALIGN_TOP_LEFT
+		origin			505 422
+		visible			1
+		decoration
+	}
+#endif // #ifdef CONSOLE
+
+#ifdef PC
+	itemDef
+	{
+		name			cancel
+		type			ITEM_TYPE_BUTTON
+		text			"@PLATFORM_BACK"
+		textfont		UI_FONT_NORMAL
+		textscale		TEXTSIZE_DEFAULT
+		textalign		ITEM_ALIGN_MIDDLE_CENTER
+		rect			505 422 100 16
+		visible			when !localVarBool( ui_hideBack );
+		action
+		{
+			close		self;
+		}
+	}
+#endif // #ifdef PC

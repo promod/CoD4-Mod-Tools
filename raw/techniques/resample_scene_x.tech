@@ -1,0 +1,17 @@
+{
+	stateMap "default2d";
+
+	vertexShader 2.0 "resample_scene.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "resample_scene_x.hlsl"
+	{
+		colorMapSampler = sampler.feedback;
+		resampleSceneConsts = constant.resampleSceneConstsX;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

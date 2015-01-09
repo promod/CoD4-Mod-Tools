@@ -1,0 +1,437 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"physPreset" "picture_frame"
+"health" "20"
+"type" "clutter"
+"destroyEfx" "props\\wallExp_concrete.efx"
+"classname" "dyn_brushmodel"
+// brush 0
+{
+ ( 4 0 71 ) ( 4 1 71 ) ( 4 1 52 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 11 1 5 ) ( 3 1 5 ) ( 3 1 1 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -97 -3 180 0
+ ( 3 0 52 ) ( 3 1 52 ) ( 3 1 71 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 3 0 5 ) ( 11 0 5 ) ( 11 0 1 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -97 -3 180 0
+ ( 4 1 71 ) ( 4 0 71 ) ( 3 0 71 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -126 2 0 0
+ ( 3 1 52 ) ( 3 0 52 ) ( 4 0 52 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -363 128 0 0
+}
+// brush 1
+{
+ ( 1 0 5 ) ( 1 1 5 ) ( 1 1 1 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 8 1 6 ) ( 0 1 6 ) ( 0 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -94 -2 180 0
+ ( 0 1 70 ) ( 0 0 70 ) ( 0 0 55 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 0 0 6 ) ( 8 0 6 ) ( 8 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -94 -2 180 0
+ ( 0 0 70 ) ( 0 1 70 ) ( 1 1 72 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -128 2 0 0
+ ( 0 1 55 ) ( 0 0 55 ) ( 1 0 53 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -128 2 0 0
+}
+// brush 2
+{
+ ( 2 0 71 ) ( 2 1 71 ) ( 2 1 53 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 9 1 6 ) ( 1 1 6 ) ( 1 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -95 -2 180 0
+ ( 1 0 53 ) ( 1 1 53 ) ( 1 1 72 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 1 0 6 ) ( 9 0 6 ) ( 9 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -95 -2 180 0
+ ( 1 0 72 ) ( 1 1 72 ) ( 2 1 71 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -365 128 0 0
+ ( 1 1 53 ) ( 1 0 53 ) ( 2 0 53 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -365 128 0 0
+}
+// brush 3
+{
+ ( 3 0 71 ) ( 3 1 71 ) ( 3 1 52 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 10 1 5 ) ( 2 1 5 ) ( 2 1 1 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -96 -3 180 0
+ ( 2 0 53 ) ( 2 1 53 ) ( 2 1 71 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 2 0 5 ) ( 10 0 5 ) ( 10 0 1 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -96 -3 180 0
+ ( 3 1 71 ) ( 3 0 71 ) ( 2 0 71 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -364 128 0 0
+ ( 2 1 53 ) ( 2 0 53 ) ( 3 0 52 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -364 128 0 0
+}
+// brush 4
+{
+ ( 5 1 52 ) ( 5 0 52 ) ( 5 0 71 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 12 1 5 ) ( 4 1 5 ) ( 4 1 1 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -98 -3 180 0
+ ( 4 1 73 ) ( 4 0 73 ) ( 4 0 52 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 4 0 5 ) ( 12 0 5 ) ( 12 0 1 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -98 -3 180 0
+ ( 4 0 71 ) ( 4 1 71 ) ( 5 1 71 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -363 128 0 0
+ ( 5 0 54 ) ( 5 1 54 ) ( 4 1 52 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -125 2 0 0
+}
+// brush 5
+{
+ ( 6 0 72 ) ( 6 1 72 ) ( 6 1 54 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 13 1 5 ) ( 5 1 5 ) ( 5 1 1 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -99 -3 180 0
+ ( 5 1 71 ) ( 5 0 71 ) ( 5 0 54 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 5 0 5 ) ( 13 0 5 ) ( 13 0 1 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -99 -3 180 0
+ ( 5 0 71 ) ( 5 1 71 ) ( 6 1 72 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -362 128 0 0
+ ( 5 1 54 ) ( 5 0 54 ) ( 6 0 54 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -362 128 0 0
+}
+// brush 6
+{
+ ( 7 1 53 ) ( 7 0 53 ) ( 7 0 72 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 14 1 5 ) ( 6 1 5 ) ( 6 1 1 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -100 -3 180 0
+ ( 6 1 72 ) ( 6 0 72 ) ( 6 0 54 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 6 0 5 ) ( 14 0 5 ) ( 14 0 1 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -100 -3 180 0
+ ( 6 0 72 ) ( 6 1 72 ) ( 7 1 72 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -361 128 0 0
+ ( 7 0 53 ) ( 7 1 53 ) ( 6 1 54 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -361 128 0 0
+}
+// brush 7
+{
+ ( 8 0 70 ) ( 8 1 70 ) ( 8 1 55 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 15 1 5 ) ( 7 1 5 ) ( 7 1 1 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -101 -3 -180 0
+ ( 7 0 53 ) ( 7 1 53 ) ( 7 1 72 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 3 0 0
+ ( 7 0 5 ) ( 15 0 5 ) ( 15 0 1 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -101 -3 -180 0
+ ( 8 1 70 ) ( 8 0 70 ) ( 7 0 72 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -123 2 0 0
+ ( 8 0 55 ) ( 8 1 55 ) ( 7 1 53 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -123 2 0 0
+}
+}
+// entity 2
+{
+"physPreset" "picture_frame"
+"health" "20"
+"type" "clutter"
+"destroyEfx" "props\\wallExp_concrete.efx"
+"classname" "dyn_brushmodel"
+// brush 0
+{
+  contents detail;
+ ( 15 -1 90 ) ( 7 -1 90 ) ( 7 0 90 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 101 90 0
+ ( 8 1 78 ) ( 8 0 78 ) ( 8 0 86 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 15 1 6 ) ( 7 1 6 ) ( 7 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -101 -2 180 0
+ ( 7 0 80 ) ( 7 1 80 ) ( 7 1 90 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 7 0 6 ) ( 15 0 6 ) ( 15 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -101 -2 180 0
+ ( 8 0 78 ) ( 8 1 78 ) ( 7 1 76 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -123 2 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 14 -1 90 ) ( 6 -1 90 ) ( 6 0 90 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 100 90 0
+ ( 7 1 80 ) ( 7 0 80 ) ( 7 0 90 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 14 1 6 ) ( 6 1 6 ) ( 6 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -100 -2 180 0
+ ( 6 0 81 ) ( 6 1 81 ) ( 6 1 90 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 6 0 6 ) ( 14 0 6 ) ( 14 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -100 -2 180 0
+ ( 7 0 76 ) ( 7 1 76 ) ( 6 1 77 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -361 128 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 13 -1 90 ) ( 5 -1 90 ) ( 5 0 90 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 99 90 0
+ ( 6 1 81 ) ( 6 0 81 ) ( 6 0 90 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 13 1 6 ) ( 5 1 6 ) ( 5 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -99 -2 180 0
+ ( 5 0 81 ) ( 5 1 81 ) ( 5 1 90 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 5 0 6 ) ( 13 0 6 ) ( 13 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -99 -2 180 0
+ ( 5 1 77 ) ( 5 0 77 ) ( 6 0 77 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -362 128 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 12 -1 90 ) ( 4 -1 90 ) ( 4 0 90 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 98 90 0
+ ( 5 1 81 ) ( 5 0 81 ) ( 5 0 90 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 12 1 6 ) ( 4 1 6 ) ( 4 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -98 -2 180 0
+ ( 4 0 79 ) ( 4 1 79 ) ( 4 1 90 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 4 0 6 ) ( 12 0 6 ) ( 12 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -98 -2 180 0
+ ( 5 0 77 ) ( 5 1 77 ) ( 4 1 75 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -125 2 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 11 -1 89 ) ( 3 -1 89 ) ( 3 0 89 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 97 90 0
+ ( 4 1 79 ) ( 4 0 79 ) ( 4 0 90 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 11 1 6 ) ( 3 1 6 ) ( 3 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -97 -2 180 0
+ ( 3 0 78 ) ( 3 1 78 ) ( 3 1 89 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 3 0 6 ) ( 11 0 6 ) ( 11 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -97 -2 180 0
+ ( 3 1 75 ) ( 3 0 75 ) ( 4 0 75 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -363 128 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 10 -1 89 ) ( 2 -1 89 ) ( 2 0 89 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 96 90 0
+ ( 3 1 78 ) ( 3 0 78 ) ( 3 0 89 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 10 1 6 ) ( 2 1 6 ) ( 2 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -96 -2 180 0
+ ( 2 0 79 ) ( 2 1 79 ) ( 2 1 89 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 2 0 6 ) ( 10 0 6 ) ( 10 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -96 -2 180 0
+ ( 3 0 75 ) ( 3 1 75 ) ( 2 1 76 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -364 128 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( 9 -1 89 ) ( 1 -1 89 ) ( 1 0 89 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 95 90 0
+ ( 2 0 8 ) ( 2 1 8 ) ( 2 1 4 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 9 1 6 ) ( 1 1 6 ) ( 1 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -95 -2 180 0
+ ( 1 0 79 ) ( 1 1 79 ) ( 1 1 89 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 1 0 6 ) ( 9 0 6 ) ( 9 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -95 -2 180 0
+ ( 1 1 76 ) ( 1 0 76 ) ( 2 0 76 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -365 128 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( 8 -1 89 ) ( 0 -1 89 ) ( 0 0 89 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 94 90 0
+ ( 1 0 8 ) ( 1 1 8 ) ( 1 1 4 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 8 1 6 ) ( 0 1 6 ) ( 0 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -94 -2 180 0
+ ( 0 0 80 ) ( 0 1 80 ) ( 0 1 86 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 0 0 6 ) ( 8 0 6 ) ( 8 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -94 -2 180 0
+ ( 0 1 80 ) ( 0 0 80 ) ( 1 0 76 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -128 2 0 0
+}
+}
+// entity 3
+{
+"physPreset" "picture_frame"
+"health" "20"
+"classname" "dyn_brushmodel"
+// brush 0
+{
+  contents detail;
+ ( 8 0 6 ) ( 8 1 6 ) ( 8 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 8 1 6 ) ( 0 1 6 ) ( 0 1 2 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -94 -2 180 0
+ ( 0 1 6 ) ( 0 0 6 ) ( 0 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 16384 -2 2 0 0
+ ( 0 0 6 ) ( 8 0 6 ) ( 8 0 2 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -94 -2 180 0
+ ( 7 1 51 ) ( 4 1 51 ) ( 4 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -365 128 0 0
+ ( 0 1 29 ) ( 5 1 29 ) ( 0 33 29 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -365 128 0 0
+}
+// brush 1
+{
+  contents weaponClip;
+ ( 0 0 55 ) ( 0 1 55 ) ( 1 1 53 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 35 -337 -90 0
+ ( 0 1 55 ) ( 0 0 55 ) ( 0 0 51 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 1 1 52 ) ( 0 1 52 ) ( 0 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -93 -91 0 0
+ ( 1 0 53 ) ( 1 1 53 ) ( 1 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 1 0 83 ) ( -7 0 83 ) ( -7 0 87 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -93 -91 0 0
+ ( -2 1 51 ) ( 1 1 51 ) ( -2 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -366 -128 180 0
+}
+// brush 2
+{
+  contents weaponClip;
+ ( 2 1 53 ) ( 2 0 53 ) ( 1 0 53 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -91 90 0
+ ( 1 1 52 ) ( 1 0 52 ) ( 1 0 50 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 2 1 52 ) ( 1 1 52 ) ( 1 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -92 -91 0 0
+ ( 2 0 53 ) ( 2 1 53 ) ( 2 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 2 0 83 ) ( -6 0 83 ) ( -6 0 87 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -92 -91 0 0
+ ( -1 1 51 ) ( 2 1 51 ) ( -1 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -367 -128 180 0
+}
+// brush 3
+{
+  contents weaponClip;
+ ( 2 0 53 ) ( 2 1 53 ) ( 3 1 52 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -90 90 0
+ ( 2 1 53 ) ( 2 0 53 ) ( 2 0 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 3 1 52 ) ( 2 1 52 ) ( 2 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -91 -91 0 0
+ ( 3 0 54 ) ( 3 1 54 ) ( 3 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 3 0 83 ) ( -5 0 83 ) ( -5 0 87 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -91 -91 0 0
+ ( 0 1 51 ) ( 3 1 51 ) ( 0 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -368 -128 180 0
+}
+// brush 4
+{
+  contents weaponClip;
+ ( 4 1 52 ) ( 4 0 52 ) ( 3 0 52 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -89 90 0
+ ( 3 1 54 ) ( 3 0 54 ) ( 3 0 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 4 1 53 ) ( 3 1 54 ) ( 3 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -90 -91 0 0
+ ( 4 0 54 ) ( 4 1 54 ) ( 4 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 4 0 83 ) ( -4 0 83 ) ( -4 0 87 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -90 -91 0 0
+ ( 1 1 51 ) ( 4 1 51 ) ( 1 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -369 -128 180 0
+}
+// brush 5
+{
+  contents weaponClip;
+ ( 4 0 52 ) ( 4 1 52 ) ( 5 1 54 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 35 -333 -90 0
+ ( 4 1 52 ) ( 4 0 52 ) ( 4 0 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 5 1 53 ) ( 4 1 54 ) ( 4 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -89 -91 0 0
+ ( 5 0 54 ) ( 5 1 54 ) ( 5 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 5 0 83 ) ( -3 0 83 ) ( -3 0 87 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -89 -91 0 0
+ ( 2 1 51 ) ( 5 1 51 ) ( 2 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -370 -128 180 0
+}
+// brush 6
+{
+  contents weaponClip;
+ ( 6 1 54 ) ( 6 0 54 ) ( 5 0 54 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -87 90 0
+ ( 5 1 54 ) ( 5 0 54 ) ( 5 0 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 6 1 53 ) ( 5 1 54 ) ( 5 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -88 -91 0 0
+ ( 6 0 54 ) ( 6 1 54 ) ( 6 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 6 0 83 ) ( -2 0 83 ) ( -2 0 87 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -88 -91 0 0
+ ( 3 1 51 ) ( 6 1 51 ) ( 3 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -371 -128 180 0
+}
+// brush 7
+{
+  contents weaponClip;
+ ( 6 0 54 ) ( 6 1 54 ) ( 7 1 53 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -86 90 0
+ ( 6 1 54 ) ( 6 0 54 ) ( 6 0 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( -1 1 83 ) ( 7 1 83 ) ( 7 1 87 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -87 -91 0 0
+ ( 7 0 53 ) ( 7 1 53 ) ( 7 1 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 7 0 83 ) ( -1 0 83 ) ( -1 0 87 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -87 -91 0 0
+ ( 4 1 51 ) ( 7 1 51 ) ( 4 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -372 -128 180 0
+}
+// brush 8
+{
+  contents weaponClip;
+ ( 7 0 53 ) ( 7 1 53 ) ( 8 1 55 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 35 -331 -90 0
+ ( 7 1 53 ) ( 7 0 53 ) ( 7 0 51 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 0 1 83 ) ( 8 1 83 ) ( 8 1 87 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -86 -91 0 0
+ ( 8 1 83 ) ( 8 0 83 ) ( 8 0 87 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -91 0 0
+ ( 8 0 83 ) ( 0 0 83 ) ( 0 0 87 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -86 -91 0 0
+ ( 5 1 51 ) ( 8 1 51 ) ( 5 33 51 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -373 -128 180 0
+}
+}
+// entity 4
+{
+"physPreset" "picture_frame"
+"health" "20"
+"classname" "dyn_brushmodel"
+// brush 0
+{
+  contents weaponClip;
+ ( 2 1 76 ) ( 2 0 76 ) ( 1 0 76 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -91 90 0
+ ( 1 1 75 ) ( 1 0 75 ) ( 1 0 73 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 2 1 75 ) ( 1 1 75 ) ( 1 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -92 -114 0 0
+ ( 2 0 76 ) ( 2 1 76 ) ( 2 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 2 0 106 ) ( -6 0 106 ) ( -6 0 110 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -92 -114 0 0
+ ( -1 1 74 ) ( 2 1 74 ) ( -1 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -367 -128 180 0
+}
+// brush 1
+{
+  contents weaponClip;
+ ( 2 0 76 ) ( 2 1 76 ) ( 3 1 75 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -90 90 0
+ ( 2 1 76 ) ( 2 0 76 ) ( 2 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 3 1 75 ) ( 2 1 75 ) ( 2 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -91 -114 0 0
+ ( 3 0 77 ) ( 3 1 77 ) ( 3 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 3 0 106 ) ( -5 0 106 ) ( -5 0 110 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -91 -114 0 0
+ ( 0 1 74 ) ( 3 1 74 ) ( 0 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -368 -128 180 0
+}
+// brush 2
+{
+  contents weaponClip;
+ ( 4 1 75 ) ( 4 0 75 ) ( 3 0 75 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -89 90 0
+ ( 3 1 77 ) ( 3 0 77 ) ( 3 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 4 1 76 ) ( 3 1 77 ) ( 3 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -90 -114 0 0
+ ( 4 0 77 ) ( 4 1 77 ) ( 4 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 4 0 106 ) ( -4 0 106 ) ( -4 0 110 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -90 -114 0 0
+ ( 1 1 74 ) ( 4 1 74 ) ( 1 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -369 -128 180 0
+}
+// brush 3
+{
+  contents weaponClip;
+ ( 6 1 77 ) ( 6 0 77 ) ( 5 0 77 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -87 90 0
+ ( 5 1 77 ) ( 5 0 77 ) ( 5 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 6 1 76 ) ( 5 1 77 ) ( 5 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -88 -114 0 0
+ ( 6 0 77 ) ( 6 1 77 ) ( 6 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 6 0 106 ) ( -2 0 106 ) ( -2 0 110 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -88 -114 0 0
+ ( 3 1 74 ) ( 6 1 74 ) ( 3 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -371 -128 180 0
+}
+// brush 4
+{
+  contents weaponClip;
+ ( 4 0 75 ) ( 4 1 75 ) ( 5 1 77 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 12 -333 -90 0
+ ( 4 1 75 ) ( 4 0 75 ) ( 4 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 5 1 76 ) ( 4 1 77 ) ( 4 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -89 -114 0 0
+ ( 5 0 77 ) ( 5 1 77 ) ( 5 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 5 0 106 ) ( -3 0 106 ) ( -3 0 110 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -89 -114 0 0
+ ( 2 1 74 ) ( 5 1 74 ) ( 2 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -370 -128 180 0
+}
+// brush 5
+{
+  contents weaponClip;
+ ( 6 0 77 ) ( 6 1 77 ) ( 7 1 76 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 -2 -86 90 0
+ ( 6 1 77 ) ( 6 0 77 ) ( 6 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( -1 1 106 ) ( 7 1 106 ) ( 7 1 110 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -87 -114 0 0
+ ( 7 0 76 ) ( 7 1 76 ) ( 7 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 7 0 106 ) ( -1 0 106 ) ( -1 0 110 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -87 -114 0 0
+ ( 4 1 74 ) ( 7 1 74 ) ( 4 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -372 -128 180 0
+}
+// brush 6
+{
+  contents weaponClip;
+ ( 7 0 76 ) ( 7 1 76 ) ( 8 1 78 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 12 -331 -90 0
+ ( 7 1 76 ) ( 7 0 76 ) ( 7 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 0 1 106 ) ( 8 1 106 ) ( 8 1 110 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -86 -114 0 0
+ ( 8 1 106 ) ( 8 0 106 ) ( 8 0 110 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 8 0 106 ) ( 0 0 106 ) ( 0 0 110 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -86 -114 0 0
+ ( 5 1 74 ) ( 8 1 74 ) ( 5 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -373 -128 180 0
+}
+// brush 7
+{
+  contents weaponClip;
+ ( 0 0 80 ) ( 0 1 80 ) ( 1 1 76 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 -16384 12 -337 -90 0
+ ( 0 1 80 ) ( 0 0 80 ) ( 0 0 74 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 1 1 75 ) ( 0 1 75 ) ( 0 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -93 -114 0 0
+ ( 1 0 76 ) ( 1 1 76 ) ( 1 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -2 -114 0 0
+ ( 1 0 106 ) ( -7 0 106 ) ( -7 0 110 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -93 -114 0 0
+ ( -2 1 74 ) ( 1 1 74 ) ( -2 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 -16384 -366 -128 180 0
+}
+// brush 8
+{
+  contents weaponClip;
+ ( 8 0 70 ) ( 8 1 70 ) ( 7 1 72 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 160 337 90 0
+ ( 8 1 70 ) ( 8 0 70 ) ( 8 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 7 1 73 ) ( 8 1 73 ) ( 8 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -101 34 180 0
+ ( 7 0 72 ) ( 7 1 72 ) ( 7 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 7 0 42 ) ( 15 0 42 ) ( 15 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -101 34 -180 0
+ ( 10 1 74 ) ( 7 1 74 ) ( 10 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -358 128 0 0
+}
+// brush 9
+{
+  contents weaponClip;
+ ( 1 0 72 ) ( 1 1 72 ) ( 0 1 70 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 160 331 90 0
+ ( 1 1 72 ) ( 1 0 72 ) ( 1 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 8 1 42 ) ( 0 1 42 ) ( 0 1 38 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -94 34 -180 0
+ ( 0 1 42 ) ( 0 0 42 ) ( 0 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 0 0 42 ) ( 8 0 42 ) ( 8 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -94 34 180 0
+ ( 3 1 74 ) ( 0 1 74 ) ( 3 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -365 128 0 0
+}
+// brush 10
+{
+  contents weaponClip;
+ ( 2 0 71 ) ( 2 1 71 ) ( 1 1 72 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 94 90 0
+ ( 2 1 71 ) ( 2 0 71 ) ( 2 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 9 1 42 ) ( 1 1 42 ) ( 1 1 38 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -95 34 -180 0
+ ( 1 0 72 ) ( 1 1 72 ) ( 1 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 1 0 42 ) ( 9 0 42 ) ( 9 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -95 34 180 0
+ ( 4 1 74 ) ( 1 1 74 ) ( 4 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -364 128 0 0
+}
+// brush 11
+{
+  contents weaponClip;
+ ( 4 0 73 ) ( 4 1 73 ) ( 3 1 71 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 160 333 90 0
+ ( 4 1 73 ) ( 4 0 73 ) ( 4 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 3 1 72 ) ( 4 1 71 ) ( 4 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -97 34 180 0
+ ( 3 0 71 ) ( 3 1 71 ) ( 3 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 3 0 42 ) ( 11 0 42 ) ( 11 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -97 34 180 0
+ ( 6 1 74 ) ( 3 1 74 ) ( 6 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -362 128 0 0
+}
+// brush 12
+{
+  contents weaponClip;
+ ( 2 1 71 ) ( 2 0 71 ) ( 3 0 71 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 95 90 0
+ ( 3 1 71 ) ( 3 0 71 ) ( 3 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 2 1 72 ) ( 3 1 71 ) ( 3 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -96 34 180 0
+ ( 2 0 71 ) ( 2 1 71 ) ( 2 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 2 0 42 ) ( 10 0 42 ) ( 10 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -96 34 -180 0
+ ( 5 1 74 ) ( 2 1 74 ) ( 5 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -363 128 0 0
+}
+// brush 13
+{
+  contents weaponClip;
+ ( 4 1 73 ) ( 4 0 73 ) ( 5 0 73 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 97 90 0
+ ( 5 1 71 ) ( 5 0 71 ) ( 5 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 4 1 72 ) ( 5 1 71 ) ( 5 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -98 34 180 0
+ ( 4 0 71 ) ( 4 1 71 ) ( 4 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 4 0 42 ) ( 12 0 42 ) ( 12 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -98 34 -180 0
+ ( 7 1 74 ) ( 4 1 74 ) ( 7 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -361 128 0 0
+}
+// brush 14
+{
+  contents weaponClip;
+ ( 6 0 72 ) ( 6 1 72 ) ( 5 1 73 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 98 90 0
+ ( 6 1 72 ) ( 6 0 72 ) ( 6 0 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 5 1 73 ) ( 6 1 73 ) ( 6 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -99 34 180 0
+ ( 5 0 71 ) ( 5 1 71 ) ( 5 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 5 0 42 ) ( 13 0 42 ) ( 13 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -99 34 180 0
+ ( 8 1 74 ) ( 5 1 74 ) ( 8 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -360 128 0 0
+}
+// brush 15
+{
+  contents weaponClip;
+ ( 6 1 72 ) ( 6 0 72 ) ( 7 0 72 ) me_woodbeam_end_01 16 16 0 0 0 0 lightmap_gray 16384 16384 -2 99 90 0
+ ( 7 1 73 ) ( 7 0 73 ) ( 7 0 75 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 6 1 73 ) ( 7 1 73 ) ( 7 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 -16384 -100 34 180 0
+ ( 6 0 72 ) ( 6 1 72 ) ( 6 1 74 ) me_woodbeam_01 256 16 0 0 90 0 lightmap_gray 16384 16384 -2 -34 0 0
+ ( 6 0 42 ) ( 14 0 42 ) ( 14 0 38 ) me_woodbeam_01 256 16 -12 37 90 0 lightmap_gray 16384 -16384 -100 34 180 0
+ ( 9 1 74 ) ( 6 1 74 ) ( 9 33 74 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 -359 128 0 0
+}
+}

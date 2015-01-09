@@ -1,0 +1,23 @@
+#include "commonsetup.template"
+
+techniqueSet( "reflexsight" );
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in reflexsight materials"
+	#endif
+	"colorMap" = map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+	#if ("$detailMap$" == "")
+		#error "detail map may not be blank in reflexsight materials"
+	#endif
+	"detailMap" = map( "tile both", "@filterDetail@", "$detailMap$", @nopicmipDetail@ ) "@formatDetail@" : "colorMap";
+}
+
+constantTable
+{
+		"detailScale" = float4( @detailScaleX@, @detailScaleY@, 0, 0 );
+}
+
+
+refImage( "$colorMap$" );

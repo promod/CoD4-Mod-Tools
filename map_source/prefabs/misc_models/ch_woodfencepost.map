@@ -1,0 +1,22 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 54 8 0 ) ( -37 8 0 ) ( -37 -6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -37 -6 52 ) ( -37 8 52 ) ( 54 8 52 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 -2 52 ) ( 55 -2 52 ) ( 55 -2 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 -6 51 ) ( 3 8 51 ) ( 3 8 -1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 54 2 53 ) ( -37 2 53 ) ( -37 2 1 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -3 8 52 ) ( -3 -6 52 ) ( -3 -6 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "ch_woodfencepost"
+"origin" "0.0 0.0 0.0"
+}

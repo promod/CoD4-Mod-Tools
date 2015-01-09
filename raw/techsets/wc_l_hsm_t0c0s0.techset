@@ -1,0 +1,65 @@
+"fakelight normal":
+	fakelight_normal;
+
+"fakelight view":
+	fakelight_view;
+
+"case texture":
+	case_texture;
+
+"shaded wireframe":
+	wireframe_shaded;
+
+"solid wireframe":
+	wireframe_solid;
+
+"debug bumpmap":
+	debug_bumpmap;
+
+"depth prepass":
+	zprepass_test;
+
+"build shadowmap depth":
+	build_shadowmap_depth_test;
+
+"build shadowmap color":
+	build_shadowmap_color_test_sm3;
+
+"build floatz":
+	build_floatz_test;
+
+"unlit":
+	vcsh;
+
+"lit":
+	lm_t0c0s0_sm3;
+
+"lit sun":
+	lm_sun_t0c0s0_sm3;
+
+"lit sun shadow":
+	lm_hsm_sun_t0c0s0_sm3;
+
+"lit spot":
+	lm_spot_t0c0s0_sm3;
+
+"lit spot shadow":
+	lm_hsm_spot_t0c0s0_sm3;
+
+"lit omni":
+	lm_omni_t0c0s0_sm3;
+
+"lit omni shadow":
+	lm_hsm_omni_t0c0s0_sm3;
+
+"light omni":
+	l_omni_t0c0;
+
+"light spot":
+	l_spot_t0c0;
+
+"light spot shadow":
+	l_spot_shad_hsm_t0c0;
+
+"sunlight preview":
+	sunpre_t0c0s0;

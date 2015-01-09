@@ -1,0 +1,28 @@
+forModel( 0 );
+forWorld( 1 );
+refBlend( "Opaque" );
+
+#include "sort.template"
+#include "clamp.template"
+
+tessSize( 0 );
+
+#include "textureAtlas.template"
+
+hasEditorMaterial( @hasEditorMaterial@ );
+allocLightmap( false );
+
+#include "statebits.template"
+
+techniqueSet( "sky" );
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in sky materials"
+	#endif
+	"colorMap" = cubemap( "no tile", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "colorMap";
+}
+
+
+refCubeImage( "$colorMap$" );

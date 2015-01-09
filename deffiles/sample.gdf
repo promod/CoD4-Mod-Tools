@@ -1,0 +1,102 @@
+//******************************************************************************************
+// file info
+//******************************************************************************************
+
+#name "Sample Name"                  // name that appears in asset manager list box
+#dll "all" "sampleconvert"           // name of dll in deffiles directory - uses the ConvertValue interface specified in library.h
+                                     // first argument is platform ("xenon","pc"), or "all".
+#source_dir "sample_source_files/"
+//#target_dir "sample_game_files/"
+#file_ext "*.txt"                    // Specifies extensions of generated files in the directory specified by #target_dir.
+                                     // If an extension becomes obsolete, leave it in #file_ext so that a clean build of converter will remove the obsolete files.
+                                     // ';' may be used to separate multiple extensions.
+                                     // "*" may be used to specify files with no extension.
+
+//******************************************************************************************
+// variable declarations
+//******************************************************************************************
+
+int 100 1 500 myInteger              			// type default min max name
+float 2.5 -25.5 50 myFloat           			// type default min max name
+int 0 0 1 myBool 			                    // type default min max name - this is how you do a boolean value (defaulted to false)
+int 1 0 1 myBool2			                    // type default min max name - this is how you do a boolean value (defaulted to true)
+enum { "hello", "world", "a", "b", "c" } myEnum // type name
+string "Default value" myString      			// type default name
+string myFilename                    			// type name
+color 0.5 0.5 0.5 0.5 myColorVariable			// type red green blue alpha name
+
+//******************************************************************************************
+// component definition
+//******************************************************************************************
+
+vcontainer // arrange all included components vertically
+{
+	scrollbox(myEnum)                   // component(variable name)
+	[
+		exec
+		{
+			width(300)              	// optional custom width
+			height(100)             	// optional custom height
+			tooltip("my tooltip here")	// optional tooltip, works inside any control
+			unsorted()					// optionally specify that this list is unsorted; by default lists are sorted alphabetically
+
+			visible("hide" != myString)	// optional visibility check, works inside any control
+										// gets passed an expression which is of type integer
+										// (includes integer, '==', '&&', '||')
+										// useful for conditional visibility of a component or container
+										// based on the current state of some other variable
+		}
+	]
+	edit(myString)                       // component(variable name)
+	[                                    // optional section
+		exec
+		{
+			labelwidth(200)          // specifies label width (can use this for any component which has a label) - default is 128
+			label("alternate label") // optional label override
+		}
+	]
+	spinedit(myInteger, 1, 10)           // component(variable name, slow spin, fast spin)
+	floatedit(myFloat, .25, 10)          // component(variable name, slow spin, fast spin)
+	fileedit(myString)                   // component(variable name)
+	colorpicker(myColorVariable)		 // component(variable name)
+	hcontainer // arrange all included components horizontally
+	{
+		checkbox(myBool)               // component(variable name)
+		checkbox(myBool2)              // component(variable name)
+		[
+			exec
+			{
+				righttext()
+			}
+		]
+
+		// the following spinedit will appear with the value of myBool2 when myBool == 1 or myInteger == 100
+		spinedit(myBool == 1 || myInteger == 100 ? myBool2 : NULL, 1, 1)     // conditional expression, slow spin, fast spin
+	}
+	[
+		exec
+		{
+			groupBox("my groupBox title here", 1)	// displays a grouping frame around the contents of the
+													// (h/v)container with the supplied title
+													// useful for logically grouping similar components
+													// 2nd parameter specifies if the groupBox should start collapsed (0) or not (1)
+													// defaults to 1
+		}
+	]
+
+	fileedit(myFilename)
+	[
+		exec
+		{
+			reldir("model_export/")  // specifies directory myFilename will be relative to
+		}		
+	]
+
+	multifileedit(myFilename)
+	[
+		exec
+		{
+			reldir("model_export/")  // specifies directory myFilename will be relative to; can select more than one file
+		}		
+	]
+}

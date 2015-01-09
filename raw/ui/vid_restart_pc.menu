@@ -1,0 +1,64 @@
+//====================================
+// Vid restart for single player only
+//====================================
+
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			150
+
+#define CHOICE_GROUP			"apply_settings"
+#define CHOICE_SEP_1			3
+#define CHOICE_SEP_2			5
+
+#define STYLE_PC	1
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+	
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X			250
+
+#define LOCAL_SETTING_ACTION \
+	exec "exec options_graphics_set.cfg"; \
+	execondvarstringvalue ui_zfeather 0 "set cg_laserLight 0"; \
+	execondvarstringvalue ui_zfeather 1 "set cg_laserLight 1"; \
+	close self; \
+	exec "vid_restart";
+
+{
+	menuDef 
+	{
+		IMPROVED_POPUP_SETUP( vid_restart_popmenu, 3, 230, 170, ;, 1 )
+
+		CHOICE_POPMENU_TITLE( "@MENU_APPLY_SETTINGS" )
+
+		CHOICE_BUTTON( 2, "@MENU_YES", LOCAL_SETTING_ACTION )
+		CHOICE_BUTTON( 3, "@MENU_NO", close self )
+	}
+
+	menuDef 
+	{
+		IMPROVED_POPUP_SETUP( vid_restart_popmenu_listen, 3, 230, 170, ;, 1 )
+
+		CHOICE_POPMENU_TITLE( "@MENU_APPLY_SETTINGS" )
+
+		CHOICE_BUTTON( 2, "@MENU_YES", LOCAL_SETTING_ACTION )
+		CHOICE_BUTTON( 3, "@MENU_NO", close self )
+	}
+	
+	#undef CHOICE_SIZE_X
+	#define CHOICE_SIZE_X			290
+
+	menuDef 
+	{
+		IMPROVED_POPUP_SETUP( vid_restart_popmenu_dead, 2, 210, 170, ;, 1 )
+
+		CHOICE_POPMENU_TITLE( "@MENU_CANT_CHANGE_SETTINGS_WHILE_DEAD" )
+
+		CHOICE_BUTTON( 2, "@MENU_OK", close self )
+	}
+}

@@ -1,0 +1,680 @@
+#include "ui/menudef.h"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_GROUP			"xboxlive_privatematch"
+
+#define CHOICE_SEP_1			2
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#define MENU_FONT_SIZE			TEXTSIZE_DEFAULT
+#define HIGHLIGHT_SIZE			210 24
+
+#define ORIGIN_MENU_TREE		54 64
+#define ORIGIN_MENU_TITLE		152 64
+#define TREE_COLOR				1 1 1 0.5
+
+#define ORIGIN_BUTTON_BACK		52 438
+
+//--------------------------------------
+
+#define ORIGIN_PLAYER1FRAME	0 50
+#define ORIGIN_PLAYER2FRAME	260 50
+#define ORIGIN_PLAYER3FRAME	0 240
+#define ORIGIN_PLAYER4FRAME	260 240
+
+#ifdef PS3
+	#define ORIGIN_CONTROL1 	294 232
+	#define ORIGIN_CONTROL2 	334 232
+	#define ORIGIN_CONTROL3 	294 272
+	#define ORIGIN_CONTROL4 	334 272
+#else
+	#define ORIGIN_CONTROL1 	288 228
+	#define ORIGIN_CONTROL2 	340 228
+	#define ORIGIN_CONTROL3 	288 274
+	#define ORIGIN_CONTROL4 	340 274
+#endif
+
+{
+	menuDef 
+	{
+		name			menu_splitscreensignin
+   		fullscreen		1
+		rect			0 0 640 480
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			0
+		soundloop 		"music_mainmenu_mp"
+	    visible			0 //?
+		popup
+		onEsc
+		{
+			exec "splitscreen 0";
+			exec "splitscreencontrols";
+			exec "endsplitscreensignin";
+			close menu_splitscreensignin;
+		}
+		onOpen
+		{
+			exec "startsplitscreensignin";
+		}
+
+		// background
+#include "ui/blurredbg.inc"
+
+		CHOICE_MENU_TITLE( "@MENU_SPLIT_SCREEN_SIGNIN" )
+
+		// --------------------- Controller indicators ---------------------
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			55 239 500 2
+			forecolor		0.5 0.5 0.5 1
+			visible			1
+			background		line_horizontal
+			decoration
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			319 64 2 352
+			forecolor		0.5 0.5 0.5 1
+			visible			1
+			background		line_vertical
+			decoration
+		}
+		#ifndef PS3
+			itemDef
+			{
+				style			WINDOW_STYLE_SHADER
+				rect			300 220 40 40
+				background		"xenon_controller_button_bg"
+				forecolor		1 1 1 1
+				visible			1
+				decoration
+			}
+		#endif
+		#include "ui_mp/navcontrols.inc"
+
+// Player 1 -----------------------------------------------------------------------
+		itemDef
+		{
+			name			playername0
+			dvar			"playername0"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			74 64 0 0
+			origin			ORIGIN_PLAYER1FRAME
+			visible			1
+			decoration
+			dvartest		"leavegame0_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			74 68 160 1
+			origin			ORIGIN_PLAYER1FRAME
+			forecolor		1 1 1 0.35
+			visible			1
+			background		"white"
+			decoration
+			dvartest		"leavegame0_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			text			"1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_BIG
+			forecolor		0.3 0.3 0.3 1
+			origin			ORIGIN_CONTROL1
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			text			"1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_BIG
+			forecolor		0.3 0.9 0.3 1
+			origin			ORIGIN_CONTROL1
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+			dvartest		"leavegame0_vis"
+			showDvar		{ "1" }
+		}
+		#ifndef PS3
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			300 220 20 20
+			background		"xenon_controller1"
+			forecolor		1 1 1 1
+			visible			1
+			dvartest		"leavegame0_vis"
+			showDvar		{ "1" }
+			decoration
+		}
+		#endif
+		itemDef
+		{
+			name			joingame0
+			text			"@XBOXLIVE_JOINSPLITSCREENGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER1FRAME
+			visible			1
+			decoration
+			dvartest		"joingame0_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			waiting0
+			text			"@MENU_WAITING_FOR_MORE_PLAYERS1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER1FRAME
+			visible			1
+			decoration
+			dvartest		"waiting0_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			startmatch0
+			text			"@XBOXLIVE_STARTGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER1FRAME
+			visible			1
+			decoration
+			dvartest		"startgame0_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			leavegame0
+			text			"@XBOXLIVE_LEAVESPLITSCREENGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 112 0 0
+			origin			ORIGIN_PLAYER1FRAME
+			visible			1
+			decoration
+			dvartest		"leavegame0_vis"
+			showDvar		{ "1" }
+		}
+#ifdef XENON
+		itemDef
+		{
+			name			signin0
+			text			"@XBOXLIVE_SIGNINPROFILE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 136 0 0
+			origin			ORIGIN_PLAYER1FRAME
+			visible			1
+			decoration
+			dvartest		"signin0_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			changeusers0
+			text			"@XBOXLIVE_CHANGEPROFILE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 136 0 0
+			origin			ORIGIN_PLAYER1FRAME
+			visible			1
+			decoration
+			dvartest		"changeusers0_vis"
+			showDvar		{ "1" }
+		}
+#endif // #ifdef XENON
+// Player 2 -----------------------------------------------------------------------
+		itemDef
+		{
+			name			playername1
+			dvar			"playername1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			74 64 0 0
+			origin			ORIGIN_PLAYER2FRAME
+			visible			1
+			decoration
+			dvartest		"leavegame1_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			74 68 160 1
+			origin			ORIGIN_PLAYER2FRAME
+			forecolor		1 1 1 0.35
+			visible			1
+			background		"white"
+			decoration
+			dvartest		"leavegame1_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			text			"2"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_BIG
+			forecolor		0.3 0.3 0.3 1
+			origin			ORIGIN_CONTROL2
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			text			"2"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_BIG
+			forecolor		0.3 0.9 0.3 1
+			origin			ORIGIN_CONTROL2
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+			dvartest		"leavegame1_vis"
+			showDvar		{ "1" }
+		}
+		#ifndef PS3
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			320 220 20 20
+			background		"xenon_controller2"
+			forecolor		1 1 1 1
+			visible			1
+			dvartest		"leavegame1_vis"
+			showDvar		{ "1" }
+			decoration
+		}
+		#endif
+		itemDef
+		{
+			name			joingame1
+			text			"@XBOXLIVE_JOINSPLITSCREENGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			134 88 0 0
+			origin			ORIGIN_PLAYER2FRAME
+			visible			1
+			decoration
+			dvartest		"joingame1_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			waiting1
+			text			"@MENU_WAITING_FOR_MORE_PLAYERS1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER2FRAME
+			visible			1
+			decoration
+			dvartest		"waiting1_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			startmatch1
+			text			"@XBOXLIVE_STARTGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER2FRAME
+			visible			1
+			decoration
+			dvartest		"startgame1_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			leavegame1
+			text			"@XBOXLIVE_LEAVESPLITSCREENGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 112 0 0
+			origin			ORIGIN_PLAYER2FRAME
+			visible			1
+			decoration
+			dvartest		"leavegame1_vis"
+			showDvar		{ "1" }
+		}
+#ifdef XENON
+		itemDef
+		{
+			name			signin1
+			text			"@XBOXLIVE_SIGNINPROFILE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 136 0 0
+			origin			ORIGIN_PLAYER2FRAME
+			visible			1
+			decoration
+			dvartest		"signin1_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			changeusers1
+			text			"@XBOXLIVE_CHANGEPROFILE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 136 0 0
+			origin			ORIGIN_PLAYER2FRAME
+			visible			1
+			decoration
+			dvartest		"changeusers1_vis"
+			showDvar		{ "1" }
+		}
+#endif // #ifdef XENON
+
+// Player 3 -----------------------------------------------------------------------
+		itemDef
+		{
+			name			playername2
+			dvar			"playername2"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			74 64 0 0
+			origin			ORIGIN_PLAYER3FRAME
+			visible			1
+			decoration
+			dvartest		"leavegame2_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			74 68 160 1
+			origin			ORIGIN_PLAYER3FRAME
+			forecolor		1 1 1 0.35
+			visible			1
+			background		"white"
+			decoration
+			dvartest		"leavegame2_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			text			"3"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_BIG
+			forecolor		0.3 0.3 0.3 1
+			origin			ORIGIN_CONTROL3
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			text			"3"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_BIG
+			forecolor		0.3 0.9 0.3 1
+			origin			ORIGIN_CONTROL3
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+			dvartest		"leavegame2_vis"
+			showDvar		{ "1" }
+		}
+		#ifndef PS3
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			300 240 20 20
+			background		"xenon_controller3"
+			forecolor		1 1 1 1
+			visible			1
+			dvartest		"leavegame2_vis"
+			showDvar		{ "1" }
+			decoration
+		}
+		#endif
+		itemDef
+		{
+			name			joingame2
+			text			"@XBOXLIVE_JOINSPLITSCREENGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER3FRAME
+			visible			1
+			decoration
+			dvartest		"joingame2_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			waiting2
+			text			"@MENU_WAITING_FOR_MORE_PLAYERS1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER3FRAME
+			visible			1
+			decoration
+			dvartest		"waiting2_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			startmatch2
+			text			"@XBOXLIVE_STARTGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER3FRAME
+			visible			1
+			decoration
+			dvartest		"startgame2_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			leavegame2
+			text			"@XBOXLIVE_LEAVESPLITSCREENGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 112 0 0
+			origin			ORIGIN_PLAYER3FRAME
+			visible			1
+			decoration
+			dvartest		"leavegame2_vis"
+			showDvar		{ "1" }
+		}
+#ifdef XENON
+		itemDef
+		{
+			name			signin2
+			text			"@XBOXLIVE_SIGNINPROFILE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 136 0 0
+			origin			ORIGIN_PLAYER3FRAME
+			visible			1
+			decoration
+			dvartest		"signin2_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			changeusers2
+			text			"@XBOXLIVE_CHANGEPROFILE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 136 0 0
+			origin			ORIGIN_PLAYER3FRAME
+			visible			1
+			decoration
+			dvartest		"changeusers2_vis"
+			showDvar		{ "1" }
+		}
+#endif // #ifdef XENON
+
+// Player 4 -----------------------------------------------------------------------
+		itemDef
+		{
+			name			playername3
+			dvar			"playername3"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			74 64 0 0
+			origin			ORIGIN_PLAYER4FRAME
+			visible			1
+			decoration
+			dvartest		"leavegame3_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			74 68 160 1
+			origin			ORIGIN_PLAYER4FRAME
+			forecolor		1 1 1 0.35
+			visible			1
+			background		"white"
+			decoration
+			dvartest		"leavegame3_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			text			"4"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_BIG
+			forecolor		0.3 0.3 0.3 1
+			origin			ORIGIN_CONTROL4
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+		}
+		itemDef
+		{
+			text			"4"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_BIG
+			forecolor		0.3 0.9 0.3 1
+			origin			ORIGIN_CONTROL4
+			textstyle		ITEM_TEXTSTYLE_SHADOWED
+			visible			1
+			decoration
+			dvartest		"leavegame3_vis"
+			showDvar		{ "1" }
+		}
+		#ifndef PS3
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			320 240 20 20
+			background		"xenon_controller4"
+			forecolor		1 1 1 1
+			visible			1
+			dvartest		"leavegame3_vis"
+			showDvar		{ "1" }
+			decoration
+		}
+		#endif
+		itemDef
+		{
+			name			joingame3
+			text			"@XBOXLIVE_JOINSPLITSCREENGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			rect			134 88 0 0
+			origin			ORIGIN_PLAYER4FRAME
+			visible			1
+			decoration
+			dvartest		"joingame3_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			waiting3
+			text			"@MENU_WAITING_FOR_MORE_PLAYERS1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER4FRAME
+			visible			1
+			decoration
+			dvartest		"waiting3_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			startmatch3
+			text			"@XBOXLIVE_STARTGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 88 0 0
+			origin			ORIGIN_PLAYER4FRAME
+			visible			1
+			decoration
+			dvartest		"startgame3_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			leavegame3
+			text			"@XBOXLIVE_LEAVESPLITSCREENGAME"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 112 0 0
+			origin			ORIGIN_PLAYER4FRAME
+			visible			1
+			decoration
+			dvartest		"leavegame3_vis"
+			showDvar		{ "1" }
+		}
+#ifdef XENON
+		itemDef
+		{
+			name			signin3
+			text			"@XBOXLIVE_SIGNINPROFILE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 136 0 0
+			origin			ORIGIN_PLAYER4FRAME
+			visible			1
+			decoration
+			dvartest		"signin3_vis"
+			showDvar		{ "1" }
+		}
+		itemDef
+		{
+			name			changeusers3
+			text			"@XBOXLIVE_CHANGEPROFILE"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			rect			74 136 0 0
+			origin			ORIGIN_PLAYER4FRAME
+			visible			1
+			decoration
+			dvartest		"changeusers3_vis"
+			showDvar		{ "1" }
+		}
+#endif // #ifdef XENON
+	}
+}

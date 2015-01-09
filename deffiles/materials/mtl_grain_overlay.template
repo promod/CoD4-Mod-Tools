@@ -1,0 +1,15 @@
+#include "commonsetup.template"
+
+techniqueSet( "grain_overlay" );
+
+
+textureTable
+{
+	#if "$colorMap$" == ""
+		#error "colorMap may not be blank in 2d materials"
+	#endif
+	"colorMap" = map( "@tileColor@", "@filterColor@", "$colorMap$", @nopicmipColor@ ) "@formatColor@" : "2d";
+}
+
+
+refImage( "$colorMap$" );

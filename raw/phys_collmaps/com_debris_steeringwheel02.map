@@ -1,0 +1,27 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+  {
+    physics_cylinder
+    {
+      -0.432139 -0.245490 0.867750 -3.055027 0.077715 3.846243 1.999995 6.981530
+    }
+  }
+// brush 1
+  {
+    physics_box
+    {
+      0.967617 0.000000 -0.252422 0.000000 1.000000 0.000000 0.252422 0.000000 0.967617 3.469388 0.000000 2.375000 6.426240 1.000000 1.030723
+    }
+  }
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_debris_steeringwheel02"
+"classname" "misc_model"
+}

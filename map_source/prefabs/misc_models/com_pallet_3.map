@@ -1,0 +1,33 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"radiosityScale" "1"
+"sunRadiosity" "1.2"
+"contrastGain" "0.5"
+"diffusefraction" "0.2"
+"_color" "1 1 1"
+"sunlight" "1.2"
+"sundirection" "-35 290 0"
+"sundiffusecolor" "1 1 1"
+"suncolor" "0.95 0.85 0.65"
+"ambient" "0.00"
+"bouncefraction" ".2"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 29 34 0 ) ( -29 34 0 ) ( -29 -32 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -32 6 ) ( -29 34 6 ) ( 29 34 6 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -32 6 ) ( 29 -32 6 ) ( 29 -32 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 29 -32 6 ) ( 29 34 6 ) ( 29 34 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 29 34 6 ) ( -29 34 6 ) ( -29 34 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 34 6 ) ( -29 -32 6 ) ( -29 -32 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_wooden_pallet"
+"classname" "misc_model"
+}

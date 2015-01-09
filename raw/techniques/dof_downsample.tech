@@ -1,0 +1,16 @@
+{
+	stateMap "default2d";
+
+	vertexShader 1.1 "dof_downsample.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "dof_downsample.hlsl"
+	{
+		colorMapSampler = sampler.resolvedScene;
+	}
+
+	vertex.position = code.position;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

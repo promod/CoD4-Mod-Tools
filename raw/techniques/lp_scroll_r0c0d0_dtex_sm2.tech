@@ -1,0 +1,22 @@
+{
+
+	stateMap "default";
+
+	vertexShader 2.0 "lp_scroll_tc0_dtex_sm2.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "lp_r0c0d0_sm2.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+		detailMapSampler = material.detailMap;
+		detailScale = material.detailScale;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

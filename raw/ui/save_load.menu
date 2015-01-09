@@ -1,0 +1,1195 @@
+#include "ui/menudef.h"
+
+
+
+
+{
+
+/////////////////////
+//
+//	main load/save menu
+//
+/////////////////////
+
+menuDef {
+   	name "save_load_menu"
+   	visible 0
+   	fullscreen 0
+//	outOfBoundsClick			// this closes the window if it gets a click out of the rectangle
+	rect 0 0 640 480
+   	focusColor COLOR_FOCUSED
+   	style 1
+   	border 0
+	onEsc
+	{
+		close save_load_menu ;
+		open main
+	}
+	onOpen
+	{
+		uiScript loadSavegames
+		setdvar ui_savegameListAutosave 1;	// also show autosaves
+		uiScript update ui_savegameListAutosave
+		execOnDvarIntValue cl_paused 0 "set ui_hidesave 1";
+		execOnDvarIntValue cl_paused 1 "set ui_hidesave 0";
+
+		setdvar ui_background "background_american_w";
+		setdvar ui_logo_show "1";
+		setdvar ui_version_show "0";
+		setdvar ui_separator_show "1";
+		setdvar ui_background_gradient_show "0";
+	}
+
+	// Temp full screen backdrop image
+/*
+	itemDef
+	{
+		name backimage2fade
+		style WINDOW_STYLE_SHADER
+		rect 0 0 640 480
+		background "white"
+		forecolor 0 0 0 0.4
+		backcolor 0 0 0 0.4
+		visible 1
+		decoration
+	}
+*/
+/////////////
+
+/*
+	itemDef {
+		name window
+		group ingamebox
+		rect 88 120 463 300
+//		background "ui/assets/testmap1"
+//		style WINDOW_STYLE_SHADER
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .25
+		visible 1
+		decoration
+		}
+*/
+/*
+	itemDef
+	{
+		name window
+		group ingamebox2
+		rect 90 122 459 20
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25
+		visible 1
+		decoration
+	}
+*/
+/*
+	itemDef
+	{
+		name window
+//		group ingamebox2
+		text "Save"
+		type 1
+		textscale .25
+		style WINDOW_STYLE_EMPTY
+//		group grpControlbutton
+		rect 297 129 31 10
+		textalign ITEM_ALIGN_CENTER
+		textalignx -2
+		textaligny 9
+//		border 1
+//		bordercolor .1 .1 .1 0
+		forecolor 1 1 1 1
+		visible 1
+		decoration
+	}
+*/
+//////////////// image box ///////////////////
+
+//
+// 'episode shot'
+//
+	itemDef { //border around screenshot
+			name window
+			group ingamebox4
+			rect 378 130 240 300
+			style WINDOW_STYLE_FILLED
+			border 0
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .6
+			visible 1
+			decoration
+		}
+	itemDef { // screenshot for savegame
+			name window
+			group ingamebox3
+			rect 400 150 192 144
+			ownerdraw UI_SAVEGAME_SHOT		// screenshot for savegame.  			//located in /save/images/<savegamename>.tga
+		//		style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor .10 .10 .10 .5
+			visible 1
+			decoration
+		}
+	itemDef { // screenshot for savegame
+			name window
+			group ingamebox3
+			rect 377 130 256 192
+			forecolor 1 1 1 0
+			backcolor .10 .10 .10 0
+			visible 1
+			action { uiScript Loadgame }
+		}
+
+
+//////////////// save game info /////////////////
+		itemDef
+		{
+			name mapname
+			ownerdraw UI_SAVEGAMENAME
+			rect 378 290 240 30
+			backcolor 1 1 1 .25
+			autowrapped
+//			border 1
+//			bordersize 1
+//			bordercolor .1 .1 .1 .7
+			visible MENU_TRUE
+			textalign ITEM_ALIGN_CENTER
+			textscale .25
+//			textfont UI_FONT_HANDWRITING
+			textfont UI_FONT_NORMAL
+			textstyle 6
+			textaligny 10
+			textalignx -5
+			decoration
+		}
+
+		itemDef
+		{
+			name mapinfo
+
+//			ownerdraw UI_SAVEGAMEINFO
+//			text "savegameinfo"
+			textsavegame	// get text from current savegame file
+			autowrapped
+			rect 378 320 230 70
+			backcolor 1 1 1 .25
+//			border 1
+//			bordersize 1
+//			bordercolor .1 .1 .1 .7
+			visible MENU_TRUE
+			textalign ITEM_ALIGN_CENTER
+			textscale .25
+//			textfont UI_FONT_HANDWRITING
+			textfont UI_FONT_NORMAL
+			textstyle 6
+			textaligny 10
+			decoration
+		}
+
+
+
+/*
+	itemDef //green vertical background behind name
+	{
+		name window2
+		group grpControlbutton
+		rect 42 429 140 222
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.4 0.2 .25
+		visible 1
+		decoration
+	}
+*/
+///////////// name and date ////////////////
+		itemDef
+		{
+			name window
+			group grpControlbutton
+			rect 20 75 325 325
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .6
+			visible MENU_TRUE
+			decoration
+		}
+		itemDef
+		{
+			name window2
+			group grpControlbutton
+			rect 24 130 317 20
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .2
+			forecolor 1 1 1 1
+			backcolor 1 1 .3 .3
+			visible 1
+			decoration
+		}
+		itemDef
+		{
+			name savemain
+			text "@MENU_SAVEGAMELIST"
+			type 1
+			textfont UI_FONT_NORMAL
+			style 0
+			textstyle 6
+//			rect 180 110 40 14
+			rect 125 90 40 14
+			textalign ITEM_ALIGN_LEFT
+			textscale .30
+			textalignx 6
+			textaligny 12
+			forecolor 1 1 1 1
+			visible MENU_TRUE
+			decoration
+		}
+// the actual switch
+/*
+		itemDef
+		{
+			name autosave
+//			type ITEM_TYPE_BUTTON
+			rect 25 110 135 19
+//			dvar ui_savegameListAutosave
+			type ITEM_TYPE_MULTI
+			dvar "ui_savegameListAutosave"
+			dvarFloatList { "" 0 "" 1  }	// no text, just toggle
+			style WINDOW_STYLE_FILLED
+
+			backcolor 0 0 0 0
+			mouseEnter { play "mouse_over"; }
+			action {play "mouse_click";	uiScript update "ui_savegameListAutosave" }	// update the feeder
+			visible MENU_TRUE
+		}
+*/
+// the 'off' button
+/*
+		itemDef
+		{
+			name autosave_off
+			group showgametype
+			text "@MENU_SHOWAUTOSAVES"
+			rect 25 110 135 19
+			dvarTest "ui_savegameListAutosave"
+			showdvar { "0" }
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			textscale .25
+			forecolor	.9 .9 .95 1
+			textaligny 13
+			textalignx -2
+			textalign ITEM_ALIGN_CENTER
+			visible MENU_TRUE
+			decoration
+		}
+*/
+// the 'on' button
+/*
+		itemDef
+		{
+			name autosave_on
+			group showgametype
+			text "@MENU_SHOWMANUALSAVES"
+			rect 25 110 135 19
+			dvarTest "ui_savegameListAutosave"
+			showdvar { "1" }
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			textscale .25
+			forecolor	.9 .9 .95 1
+			textaligny 13
+			textalignx -2
+			textalign ITEM_ALIGN_CENTER
+			visible MENU_TRUE
+			decoration
+		}
+*/
+		itemDef
+		{
+			name levelbar
+			text "@MENU_NAME"
+			textscale .23
+			style 0
+			type ITEM_TYPE_BUTTON
+			textfont UI_FONT_NORMAL
+			textstyle 6
+			rect 90 134 100 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -25
+			textaligny 12
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible MENU_TRUE
+//			decoration
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				uiScript SavegameSort 0
+			}
+		}
+
+
+
+		itemDef
+		{
+			name levelbar
+			text "@MENU_DATE"
+			textscale .23
+			style 0
+			type ITEM_TYPE_BUTTON
+			textfont UI_FONT_NORMAL
+			textstyle 6
+			rect 230 134 100 20
+			textalign ITEM_ALIGN_CENTER
+			textaligny 12
+			backcolor 0 0 0 0
+			forecolor 1 1 1 1
+			visible MENU_TRUE
+//			decoration
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				uiScript SavegameSort 1
+			}
+		}
+////////////////////////////////////////
+
+		itemDef
+		{
+			name savegamelist
+			rect 24 150 319 200
+			type ITEM_TYPE_LISTBOX
+			style WINDOW_STYLE_FILLED
+			elementwidth 120
+			elementheight 14
+			textscale .23
+
+			columns 2    2 65 22
+			           162 40 21
+
+			elementtype LISTBOX_TEXT
+			feeder FEEDER_SAVEGAMES
+			doubleclick { play "mouse_click"; open load_sure_popmenu; }
+			textalign ITEM_ALIGN_CENTER
+			textaligny 10
+			forecolor 1 1 1 .9
+//			backcolor .10 .10 .1 .5
+			backcolor 0 0 .05 .4
+			outlinecolor .9 .9 .9 .2
+			visible MENU_TRUE
+			mouseEnter {  setitemcolor savegamelist bordercolor .7 0 0 1 }
+			mouseExit {  setitemcolor savegamelist bordercolor .5 .5 .5 .5 }
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////
+
+
+
+	itemDef {
+		name savename
+		group "loadsavegroup"
+//		type ITEM_TYPE_EDITFIELD
+		type ITEM_TYPE_VALIDFILEFIELD	// only take text that's valid for a savegame
+		text "@MENU_SAVEAS"
+		dvar "ui_savegame"
+		style 1
+		maxchars 14			// (SA)
+		maxPaintChars 14	// (SA)
+		rect 24 350 317 18
+		border 1
+		bordercolor .5 .5 .5 .5
+		textalign ITEM_ALIGN_LEFT
+		textaligny 14
+		textalignx 10
+		textscale .25
+		outlinecolor 1 .5 .5 .5
+		forecolor .9 .9 .9 1
+		backcolor 0 0 0 0
+		mouseEnter { setitemcolor loadname backcolor .3 .5 .2 .25
+		play "mouse_over"}
+		mouseExit { setitemcolor loadname backcolor 0 0 0 .25 }
+		action { play "mouse_click"; uiScript Savegame }
+		visible 1
+		dvarTest "ui_hidesave"
+		hideDvar { "1" }
+	}
+
+//
+
+//
+// save
+//
+/*
+	itemDef {
+		name save
+		text "Save"
+		type ITEM_TYPE_BUTTON
+   		rect 325 350 40 18
+		textscale .25
+		style 1
+		border 1
+		bordercolor .5 .5 .5 .5
+		backcolor 0 0 0 .25
+		textaligny 13
+		textalignx 44
+		textalign ITEM_ALIGN_CENTER
+		mouseEnter { setitemcolor save backcolor .3 .5 .2 .25 }
+	      	mouseExit { setitemcolor save backcolor 0 0 0 .25 }
+
+		action { uiScript Savegame }
+		visible 1
+	}
+*/
+		itemDef
+		{
+			name back
+			text "@MENU_BACK"
+			type 1
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 30 375 60 20
+			textalign ITEM_ALIGN_CENTER
+			textscale .3
+			textaligny 15
+			forecolor .9 .9 .95 1
+			visible MENU_TRUE
+			action { play "mouse_click"; close save_load_menu ; open main }
+			mouseEnter { play "mouse_over"; }
+		}
+/*
+		itemDef
+		{
+			name back_alt
+			text "@MENU_BACK"
+			type 1
+			textfont UI_FONT_NORMAL
+			style 0
+			textstyle 0
+			border 0
+			bordercolor 1 1 1 .1
+			rect 30 383 47 14
+			textalign ITEM_ALIGN_LEFT
+			textscale .3
+			textalignx 6
+			textaligny 12
+			forecolor .6 .6 .6 .6
+			visible MENU_TRUE
+			type ITEM_TYPE_BUTTON
+			mouseExit { hide back_alt ; show back ; }
+			action { play "mouse_click"; close save_load_menu ; open main }
+		}
+*/
+	itemDef
+		{
+			name del
+			text "@MENU_DELETE"
+			type 1
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 113 375 60 20
+			textalign ITEM_ALIGN_CENTER
+			textscale .3
+			textaligny 15
+			forecolor .9 .9 .95 1
+			visible MENU_TRUE
+			mouseEnter { play "mouse_over"; }
+			action { play "mouse_click"; open save_del_sure_popmenu }
+  		}
+/*
+		itemDef
+		{
+			name del_alt
+			text "@MENU_DELETE"
+			type 1
+			textfont UI_FONT_NORMAL
+			style 0
+			textstyle 0
+			border 0
+			bordercolor 1 1 1 .1
+			rect 100 383 57 14
+			textalign ITEM_ALIGN_LEFT
+			textscale .3
+			textalignx 6
+			textaligny 12
+			forecolor .6 .6 .6 .6
+			visible MENU_TRUE
+			action { play "mouse_click"; open save_del_sure_popmenu }
+			mouseExit { hide del_alt ; show del ;  }
+	  	}
+*/
+		itemDef
+		{
+			name load
+			text "@MENU_LOAD"
+			type 1
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 196 375 60 20
+			textalign ITEM_ALIGN_CENTER
+			textscale .3
+			textaligny 15
+			forecolor .9 .9 .95 1
+			visible MENU_TRUE
+			mouseEnter { play "mouse_over"; }
+//			action { play "mouse_click"; uiScript Loadgame ; close save_load_menu; close main; }
+			action { play "mouse_click"; open load_sure_popmenu; }
+
+  		}
+/*
+		itemDef
+		{
+			name accept_alt
+			text "@MENU_LOAD"
+			type 1
+			textfont UI_FONT_NORMAL
+			style 0
+			textstyle 0
+			border 0
+			bordercolor 1 1 1 .1
+			rect 220 383 47 14
+			textalign ITEM_ALIGN_LEFT
+			textscale .3
+			textalignx 6
+			textaligny 12
+			forecolor .6 .6 .6 .6
+			visible MENU_TRUE
+			action { play "mouse_click"; uiScript Loadgame ; close save_load_menu; close main; }
+			mouseExit { hide accept_alt ; show accept ;  }
+	  	}
+*/
+		itemDef
+		{
+			name save
+			text "@MENU_SAVE"
+			type 1
+			textfont UI_FONT_NORMAL
+			style WINDOW_STYLE_FILLED
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 276 375 60 20
+			textalign ITEM_ALIGN_CENTER
+			textscale .3
+			textaligny 15
+			forecolor .9 .9 .95 1
+			visible MENU_TRUE
+			mouseEnter { play "mouse_over"; }
+			action { play "mouse_click"; close save_load_menu ; close main; uiScript Savegame; }
+			dvarTest "ui_hidesave"
+			hideDvar { "1" }
+  		}
+/*
+		itemDef
+		{
+			name save_alt
+			text "@MENU_SAVE"
+			type 1
+			textfont UI_FONT_NORMAL
+			style 0
+			textstyle 0
+			border 0
+			bordercolor 1 1 1 .1
+			rect 290 383 47 14
+			textalign ITEM_ALIGN_LEFT
+			textscale .3
+			textalignx 6
+			textaligny 12
+			forecolor .6 .6 .6 .6
+			visible MENU_TRUE
+			action { play "mouse_click"; close save_load_menu ; uiScript Savegame }
+			mouseExit { hide save_alt ; show save ;  }
+			dvarTest "cl_paused"
+			showDvar { "1" }
+	  	}
+*/
+//
+// delete
+//
+
+/*
+		itemDef
+		{
+			name del
+			text "Delete"
+			type 1
+			textfont UI_FONT_NORMAL
+			style 0
+			textstyle 0
+			border 0
+			bordercolor 1 1 1 .1
+			rect 160 383 57 14
+			textalign ITEM_ALIGN_LEFT
+			textscale .3
+			textalignx 6
+			textaligny 12
+			forecolor .9 .9 .9 .9
+			visible MENU_TRUE
+			action { open save_del_sure_popmenu }
+	  	}
+*/
+/*
+		itemDef {
+			name del
+			text "Delete..."
+			type ITEM_TYPE_BUTTON
+			rect 401 143 148 18
+			textscale .25
+			style 1
+			border 1
+			bordercolor .5 .5 .5 .5
+			backcolor 0 0 0 .25
+			textaligny 13
+			textalignx 6
+			textalign ITEM_ALIGN_CENTER
+			mouseEnter { setitemcolor del backcolor .3 .5 .2 .25 }
+			mouseExit { setitemcolor del backcolor 0 0 0 .25 }
+
+			action { open save_del_sure_popmenu }
+			visible 1
+		}
+*/
+
+
+
+
+
+
+
+}	// end menudef
+
+menuDef {
+	name "load_sure_popmenu"
+	visible 0
+	fullscreen 0
+
+	rect 220 220 200 80
+
+	focusColor COLOR_FOCUSED
+
+	backcolor .1 .15 .1 1
+	border 1
+	bordercolor .5 .5 .5 .5
+	style WINDOW_STYLE_FILLED
+	popup
+	onESC {	close load_sure_popmenu; open save_load_menu;	}
+
+
+
+	itemDef {
+		name confirm
+		text "@MENU_LOAD_SELECTED_GAME"
+		style 0
+		textscale .25
+		textstyle 3
+		rect 0 0 212 60
+		textalign ITEM_ALIGN_CENTER
+		textalignx 6
+		textaligny 20
+		decoration
+//		forecolor 1 1 1 1
+		visible 1
+		}
+
+
+	itemDef {
+		name sdelsure_yes
+		text "@MENU_YES"
+		type 1
+		textfont UI_FONT_NORMAL
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textscale .25
+		rect 18 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+
+
+		// delete the selected savegame and update the list
+		action
+		{
+			play "mouse_click";
+			setdvar cl_paused 0;
+			exec "set cl_paused 0";
+			close victoryscreen;
+			close deadscreen;
+			close save_load_menu;
+			close load_sure_popmenu;
+			close main;
+			uiScript Loadgame;
+		}
+		mouseEnter
+		{
+			play "mouse_over";
+		}
+	}
+
+	itemDef
+	{
+		name sdelsure_no
+		text "@MENU_NO"
+		type 1
+		textfont UI_FONT_NORMAL
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textscale .25
+		rect 128 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+//		dvartest "ui_savegameListAutosave"
+//		showDvar { "1" }
+
+		// delete the selected savegame and update the list
+		action
+		{
+			play "mouse_click";
+			close load_sure_popmenu ;
+			open save_load_menu
+			uiScript loadSavegames;
+//			setdvar ui_savegameListAutosave 1;
+			uiScript update ui_savegameListAutosave;
+
+		}
+		mouseEnter
+		{
+			play "mouse_over";
+		}
+	}
+/*
+	itemDef
+	{
+		name sdelsure_no
+		text "@MENU_NO"
+		type 1
+		textfont UI_FONT_NORMAL
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textscale .25
+		rect 128 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+		dvartest "ui_savegameListAutosave"
+		showDvar { "0" }
+
+		// delete the selected savegame and update the list
+		action
+		{
+			play "mouse_click";
+			close load_sure_popmenu ;
+			open save_load_menu
+			uiScript loadSavegames;
+			setdvar ui_savegameListAutosave 0;
+			uiScript update ui_savegameListAutosave;
+
+		}
+		mouseEnter
+		{
+			play "mouse_over";
+		}
+	}
+*/
+	}	// end menudef
+/////////////////////
+//
+// Delete for sure? popup
+//
+/////////////////////
+
+
+menuDef {
+	name "save_del_sure_popmenu"
+	visible 0
+	fullscreen 0
+
+	rect 220 220 200 80
+
+	focusColor COLOR_FOCUSED
+
+	backcolor .1 .15 .1 1
+	border 1
+	bordercolor .5 .5 .5 .5
+	style WINDOW_STYLE_FILLED
+	popup
+	onESC {
+		close save_del_sure_popmenu;
+//		open save_load_menu;
+		}
+
+
+
+	itemDef {
+		name confirm
+		text "@MENU_DEL_SEL_SAVEGAME"
+		style 0
+		textscale .25
+		textstyle 3
+		rect 0 0 212 60
+		textalign ITEM_ALIGN_CENTER
+		textalignx 6
+		textaligny 20
+		decoration
+//		forecolor 1 1 1 1
+		visible 1
+		}
+
+//		uiScript loadSavegames
+//		setdvar ui_savegameListAutosave 0;	// hmm
+//		uiScript update ui_savegameListAutosave
+	itemDef
+	{
+		name sdelsure_yes
+		text "@MENU_YES"
+		type 1
+		textfont UI_FONT_NORMAL
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textscale .25
+		rect 18 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+//		dvartest "ui_savegameListAutosave"
+//		showDvar { "0" }
+
+		// delete the selected savegame and update the list
+		action
+		{
+			play "mouse_click";
+			uiScript DelSavegame;
+			close save_del_sure_popmenu ;
+			close save_load_menu;
+			open save_load_menu;
+			uiScript loadSavegames;
+//			setdvar ui_savegameListAutosave 0;
+			uiScript update ui_savegameListAutosave;
+
+		}
+		mouseEnter
+		{
+			play "mouse_over";
+		}
+	}
+/*
+	itemDef
+	{
+		name sdelsure_yes
+		text "@MENU_YES"
+		type 1
+		textfont UI_FONT_NORMAL
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textscale .25
+		rect 18 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+		dvartest "ui_savegameListAutosave"
+		showDvar { "1" }
+
+		// delete the selected savegame and update the list
+		action
+		{
+			play "mouse_click";
+			uiScript DelSavegame;
+			close save_del_sure_popmenu ;
+			close save_load_menu;
+			open save_load_menu
+			uiScript loadSavegames;
+			setdvar ui_savegameListAutosave 1;
+			uiScript update ui_savegameListAutosave;
+
+		}
+		mouseEnter
+		{
+			play "mouse_over";
+		}
+	}
+*/
+	itemDef {
+		name sdelsure_no
+		text "@MENU_NO"
+		type 1
+		textfont UI_FONT_NORMAL
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textscale .25
+		rect 128 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+//		dvartest "ui_savegameListAutosave"
+//		showDvar { "1" }
+		action
+		{
+			play "mouse_click";
+			close save_del_sure_popmenu ;
+			open save_load_menu
+			uiScript loadSavegames;
+//			setdvar ui_savegameListAutosave 1;
+			uiScript update ui_savegameListAutosave;
+		}
+		mouseEnter
+		{
+			play "mouse_over";
+		}
+		}	// end item
+/*
+	itemDef {
+		name sdelsure_no
+		text "@MENU_NO"
+		type 1
+		textfont UI_FONT_NORMAL
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textscale .25
+		rect 128 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+		dvartest "ui_savegameListAutosave"
+		showDvar { "0" }
+		action
+		{
+			play "mouse_click";
+			close save_del_sure_popmenu ;
+			open save_load_menu
+			uiScript loadSavegames;
+			setdvar ui_savegameListAutosave 0;
+			uiScript update ui_savegameListAutosave;
+		}
+		mouseEnter { play "mouse_over"; }
+
+		}	// end item
+*/
+	}	// end menudef
+
+
+
+
+
+menuDef {
+	name save_overwrite_popmenu
+	visible 0
+	fullscreen 0
+	rect 220 220 200 80
+	focusColor COLOR_FOCUSED
+
+	backcolor .1 .15 .1 1
+	border 1
+	bordercolor .5 .5 .5 .5
+	style WINDOW_STYLE_FILLED
+	popup
+	onESC {
+		close save_overwrite_popmenu;
+		open save_load_menu
+		}
+//	onOpen { open save_load_menu; }
+
+
+	itemDef {
+		name confirm
+		text "@MENU_OVERWRITE_EXISTING_FILE"
+		style 0
+		textscale .24
+		textstyle 3
+		rect 0 0 212 60
+		textalign ITEM_ALIGN_CENTER
+		textalignx 6
+		textaligny 20
+		decoration
+		forecolor 1 1 1 1
+		visible 1
+		}
+
+
+
+	itemDef {
+		name overwrite_ok
+		text "@MENU_YES"
+		type 1
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textfont UI_FONT_NORMAL
+		textscale .25
+		rect 25 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textalignx -2
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+		action { play "mouse_click"; close save_overwrite_popmenu; close save_load_menu; close main; uiScript forcesave;}
+		mouseEnter { play "mouse_over"; }
+		}
+
+	itemDef {
+		name overwrite_no
+		text "@MENU_NO"
+		type 1
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textfont UI_FONT_NORMAL
+		textscale .25
+		rect 120 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textalignx -2
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+//		dvartest "ui_savegameListAutosave"
+//		showDvar { "0" }
+		action
+		{
+			play "mouse_click";
+			open save_load_menu
+			close save_overwrite_popmenu;
+//			open save_load_menu;
+//			close save_del_sure_popmenu ;
+//			open save_load_menu
+			uiScript loadSavegames;
+//			setdvar ui_savegameListAutosave 0;
+			uiScript update ui_savegameListAutosave;
+		}
+		mouseEnter { play "mouse_over"; }
+		}
+/*
+	itemDef {
+		name overwrite_no
+		text "@MENU_NO"
+		type 1
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		textfont UI_FONT_NORMAL
+		textscale .25
+		rect 120 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textalignx -2
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+		dvartest "ui_savegameListAutosave"
+		showDvar { "1" }
+		action
+		{
+			play "mouse_click";
+			open save_load_menu
+			close save_overwrite_popmenu;
+//			open save_load_menu;
+//			close save_del_sure_popmenu ;
+//			open save_load_menu
+			uiScript loadSavegames;
+			setdvar ui_savegameListAutosave 1;
+			uiScript update ui_savegameListAutosave;
+		}
+		mouseEnter { play "mouse_over"; }
+		}
+*/
+	}	// end menudef
+
+
+menuDef {
+	name save_name_popmenu
+	visible 0
+	fullscreen 0
+	rect 220 220 200 80
+	focusColor COLOR_FOCUSED
+
+	backcolor .1 .15 .1 1
+	border 1
+	bordercolor .5 .5 .5 .5
+	style WINDOW_STYLE_FILLED
+	popup
+	onESC {
+		close save_name_popmenu;
+		open save_load_menu
+		}
+
+
+
+	itemDef {
+		name confirm
+		text "@MENU_YOU_MUST_SPECIFY_A_FILENAME"
+		style 0
+		textscale .24
+		textstyle 3
+		rect 0 0 212 60
+		textalign ITEM_ALIGN_CENTER
+		textalignx 6
+		textaligny 20
+		decoration
+		forecolor 1 1 1 1
+		visible 1
+		}
+
+
+
+
+	itemDef {
+		name savename_ok
+		text "@MENU_OK"
+		style WINDOW_STYLE_FILLED
+		textstyle ITEM_TEXTSTYLE_SHADOWED
+		type 1
+		textfont UI_FONT_NORMAL
+		textscale .25
+		rect 78 35 50 20
+		textalign ITEM_ALIGN_CENTER
+		textalignx -2
+		textaligny 15
+		forecolor .9 .9 .95 1
+		visible 1
+		action
+		{
+			play "mouse_click";
+			close save_name_popmenu;
+			open save_load_menu;
+		}
+		mouseEnter { play "mouse_over"; }
+
+	}	// end menudef
+
+}	// end menu

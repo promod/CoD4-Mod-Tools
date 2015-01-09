@@ -1,0 +1,157 @@
+#include "ui/menudef.h"
+
+{
+	menuDef 
+	{
+		name savegame_warning
+	    visible 0
+   		fullscreen 0
+		rect 204 135 235 160
+		focusColor COLOR_FOCUSED
+   		style WINDOW_STYLE_FILLED
+   		border 1
+		popup
+		blurWorld		4.8
+		onOpen
+		{ 
+			setfocus re;
+		}
+		onEsc
+		{
+			close "savegame_warning";
+			//uiScript openMenuOnDvarNot ui_victory_screen 1 "pausedmenu"
+			open "pausedmenu";
+		}
+	
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -160 2 555 180
+	 		background "popmenu_bg"
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MENU_CONTINUE_SAVING" 
+			style WINDOW_STYLE_EMPTY
+			textscale TEXTSIZE_TITLE 
+			rect 126 25 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -62
+			textaligny 5
+			decoration
+			forecolor		COLOR_TITLE
+			visible 1
+		}
+		
+		itemDef 
+		{
+			name txt
+			text "@MENU_SAVEQUIT_TEXT_1"
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 35 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			decoration
+		}
+		
+		itemDef 
+		{
+			name txt
+			text "@MENU_SAVEQUIT_TEXT_2"
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 50 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			decoration
+		}
+		
+		itemDef 
+		{
+			name txt
+			text "@MENU_SAVEQUIT_TEXT_3"
+			type ITEM_TYPE_BUTTON
+			textscale .35
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 65 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -5
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			decoration
+		}
+		
+		itemDef 
+		{
+			name re
+			text "@MENU_RESUMEGAME"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 100 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "savegame_warning";
+				close "pausedmenu";
+				uiScript saveRevert;
+			}
+		}
+		
+		itemDef 
+		{
+			name rs
+			text "@CGAME_CONTINUE_SAVING"
+			type ITEM_TYPE_BUTTON
+			textscale TEXTSIZE_DEFAULT
+			style WINDOW_STYLE_FILLED
+			textfont UI_FONT_NORMAL
+			rect 70 125 220 15
+			textalign ITEM_ALIGN_CENTER
+			textalignx -60
+			textaligny 19
+			forecolor COLOR_UNFOCUSED
+			visible 1
+			onFocus
+			{
+				play "mouse_over";
+			}
+			action 
+			{ 
+				play "mouse_click";
+				close "savegame_warning";
+				setSaveExecOnSuccess "disconnect"
+				open "savegameinfo";
+				setdvar ui_skipMainLockout "1";
+			}
+		}
+	}
+}

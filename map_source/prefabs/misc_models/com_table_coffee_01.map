@@ -1,0 +1,293 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 8 0 0 ) ( -48 0 0 ) ( -48 -24 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 -16 32 ) ( 8 -16 32 ) ( 8 -16 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 -24 32 ) ( -32 0 32 ) ( -32 0 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -12 32 ) ( -48 -12 32 ) ( -48 -12 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 0 32 ) ( -36 -24 32 ) ( -36 -24 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 44 16 ) ( -36 44 16 ) ( -36 76 16 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 8 28 0 ) ( -48 28 0 ) ( -48 4 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 12 32 ) ( 8 12 32 ) ( 8 12 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -32 4 32 ) ( -32 28 32 ) ( -32 28 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 16 32 ) ( -48 16 32 ) ( -48 16 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 28 32 ) ( -36 4 32 ) ( -36 4 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -28 72 16 ) ( -36 72 16 ) ( -36 104 16 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 76 28 0 ) ( 20 28 0 ) ( 20 4 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 12 32 ) ( 76 12 32 ) ( 76 12 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 4 32 ) ( 36 28 32 ) ( 36 28 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 16 32 ) ( 20 16 32 ) ( 20 16 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 28 32 ) ( 32 4 32 ) ( 32 4 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 72 16 ) ( 32 72 16 ) ( 32 104 16 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 76 0 0 ) ( 20 0 0 ) ( 20 -24 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 -16 32 ) ( 76 -16 32 ) ( 76 -16 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 36 -24 32 ) ( 36 0 32 ) ( 36 0 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 76 -12 32 ) ( 20 -12 32 ) ( 20 -12 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 32 ) ( 32 -24 32 ) ( 32 -24 0 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 40 44 16 ) ( 32 44 16 ) ( 32 76 16 ) me_cargocontainer_interiorfloor 128 128 192 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+ {
+  curve
+  {
+  contents detail;
+   me_cargocontainer_interiorfloor
+   lightmap_gray
+   3 3 16 8
+   (
+	v 0 24 18 t 0 0 -3.25 1.5
+	v 0 24 17 t 0 -8 -3.25 0
+	v 0 24 16 t 0 -16 -3.25 -1.5
+   )
+   (
+	v 52 24 18 t 416 0 0 1.5
+	v 52 24 17 t 416 -8 0 0
+	v 52 24 16 t 416 -16 0 -1.5
+   )
+   (
+	v 52 0 18 t 608 0 3.25 1.5
+	v 52 0 17 t 608 -8 3.25 0
+	v 52 0 16 t 608 -16 3.25 -1.5
+   )
+  }
+ }
+// brush 5
+ {
+  curve
+  {
+  contents detail;
+   me_cargocontainer_interiorfloor
+   lightmap_gray
+   3 3 16 8
+   (
+	v -52 0 16 t 0 -16 -3.25 -1.5
+	v -52 0 17 t 0 -8 -3.25 0
+	v -52 0 18 t 0 0 -3.25 1.5
+   )
+   (
+	v -52 -24 16 t 192 -16 0 -1.5
+	v -52 -24 17 t 192 -8 0 0
+	v -52 -24 18 t 192 0 0 1.5
+   )
+   (
+	v 0 -24 16 t 608 -16 3.25 -1.5
+	v 0 -24 17 t 608 -8 3.25 0
+	v 0 -24 18 t 608 0 3.25 1.5
+   )
+  }
+ }
+// brush 6
+ {
+  curve
+  {
+  contents detail;
+   me_cargocontainer_interiorfloor
+   lightmap_gray
+   3 3 0 8
+   (
+	v 0 -24 18 t 0 0 0 0
+	v 52 -24 18 t 0 -416 0 -3.25
+	v 52 0 18 t 0 -608 0 -4.75
+   )
+   (
+	v 0 -24 17 t 8 0 0.0625 0
+	v 52 -24 17 t 8 -416 0.0625 -3.25
+	v 52 0 17 t 8 -608 0.0625 -4.75
+   )
+   (
+	v 0 -24 16 t 16 0 0.125 0
+	v 52 -24 16 t 16 -416 0.125 -3.25
+	v 52 0 16 t 16 -608 0.125 -4.75
+   )
+  }
+ }
+// brush 7
+ {
+  curve
+  {
+  contents detail;
+   me_cargocontainer_interiorfloor
+   lightmap_gray
+   3 3 0 8
+   (
+	v 0 24 18 t 0 -608 0 0
+	v -52 24 18 t 0 -192 0 -3.25
+	v -52 0 18 t 0 0 0 -4.75
+   )
+   (
+	v 0 24 17 t 8 -608 0.0625 0
+	v -52 24 17 t 8 -192 0.0625 -3.25
+	v -52 0 17 t 8 0 0.0625 -4.75
+   )
+   (
+	v 0 24 16 t 16 -608 0.125 0
+	v -52 24 16 t 16 -192 0.125 -3.25
+	v -52 0 16 t 16 0 0.125 -4.75
+   )
+  }
+ }
+// brush 8
+ {
+  curve
+  {
+  contents detail;
+   me_cargocontainer_interiorfloor
+   lightmap_gray
+   3 3 16 8
+   (
+	v 0 24 16 t 0 -160 0 -1.5
+	v -52 24 16 t -352 -160 -3.25 -1.5
+	v -52 0 16 t -352 0 -3.25 0
+   )
+   (
+	v 52 24 16 t 352 -160 3.25 -1.5
+	v 0 0 16 t 0 0 0 0
+	v -52 -24 16 t -352 160 -3.25 1.5
+   )
+   (
+	v 52 0 16 t 352 0 3.25 0
+	v 52 -24 16 t 352 160 3.25 1.5
+	v 0 -24 16 t 0 160 0 1.5
+   )
+  }
+ }
+// brush 9
+ {
+  curve
+  {
+   clip_nosight
+   lightmap_gray
+   3 3 16 8
+   (
+	v 0 24 18 t 0 -1216 -3.25 -1.5
+	v -52 24 18 t 0 -384 -3.25 0
+	v -52 0 18 t 0 0 -3.25 1.5
+   )
+   (
+	v 0 24 9 t 288 -1216 0 -1.5
+	v -52 24 9 t 288 -384 0 0
+	v -52 0 9 t 288 0 0 1.5
+   )
+   (
+	v 0 24 0 t 576 -1216 3.25 -1.5
+	v -52 24 0 t 576 -384 3.25 0
+	v -52 0 0 t 576 0 3.25 1.5
+   )
+  }
+ }
+// brush 10
+ {
+  curve
+  {
+   clip_nosight
+   lightmap_gray
+   3 3 16 8
+   (
+	v 0 -24 18 t 0 0 -3.25 1.5
+	v 52 -24 18 t 0 -832 -3.25 0
+	v 52 0 18 t 0 -1216 -3.25 -1.5
+   )
+   (
+	v 0 -24 9 t 288 0 0 1.5
+	v 52 -24 9 t 288 -832 0 0
+	v 52 0 9 t 288 -1216 0 -1.5
+   )
+   (
+	v 0 -24 0 t 576 0 3.25 1.5
+	v 52 -24 0 t 576 -832 3.25 0
+	v 52 0 0 t 576 -1216 3.25 -1.5
+   )
+  }
+ }
+// brush 11
+ {
+  curve
+  {
+   clip_nosight
+   lightmap_gray
+   3 3 16 8
+   (
+	v -52 0 0 t 0 -576 -3.25 -1.5
+	v -52 0 9 t 0 -288 -3.25 0
+	v -52 0 18 t 0 0 -3.25 1.5
+   )
+   (
+	v -52 -24 0 t 384 -576 0 -1.5
+	v -52 -24 9 t 384 -288 0 0
+	v -52 -24 18 t 384 0 0 1.5
+   )
+   (
+	v 0 -24 0 t 1216 -576 3.25 -1.5
+	v 0 -24 9 t 1216 -288 3.25 0
+	v 0 -24 18 t 1216 0 3.25 1.5
+   )
+  }
+ }
+// brush 12
+ {
+  curve
+  {
+   clip_nosight
+   lightmap_gray
+   3 3 16 8
+   (
+	v 0 24 18 t 0 0 -3.25 1.5
+	v 0 24 9 t 0 -288 -3.25 0
+	v 0 24 0 t 0 -576 -3.25 -1.5
+   )
+   (
+	v 52 24 18 t 832 0 0 1.5
+	v 52 24 9 t 832 -288 0 0
+	v 52 24 0 t 832 -576 0 -1.5
+   )
+   (
+	v 52 0 18 t 1216 0 3.25 1.5
+	v 52 0 9 t 1216 -288 3.25 0
+	v 52 0 0 t 1216 -576 3.25 -1.5
+   )
+  }
+ }
+// brush 13
+ {
+  curve
+  {
+  contents detail;
+   me_cargocontainer_interiorfloor
+   lightmap_gray
+   3 3 16 8
+   (
+	v -52 0 18 t -352 0 -2.75 0
+	v -52 24 18 t -352 -160 -2.75 -1.25
+	v 0 24 18 t 0 -160 0 -1.25
+   )
+   (
+	v -52 -24 18 t -352 160 -2.75 1.25
+	v 0 0 18 t 0 0 0 0
+	v 52 24 18 t 352 -160 2.75 -1.25
+   )
+   (
+	v 0 -24 18 t 0 160 0 1.25
+	v 52 -24 18 t 352 160 2.75 1.25
+	v 52 0 18 t 352 0 2.75 0
+   )
+  }
+ }
+}

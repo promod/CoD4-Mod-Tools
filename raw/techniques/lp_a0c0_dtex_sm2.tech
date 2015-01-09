@@ -1,0 +1,20 @@
+{
+
+	stateMap "default";
+
+	vertexShader 2.0 "lp_tc0_dtex_sm2.hlsl"
+	{
+	}
+
+	pixelShader 2.0 "lp_a0c0_sm2.hlsl"
+	{
+		colorMapSampler = material.colorMap;
+
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.color[0] = code.color;
+	vertex.texcoord[0] = code.texcoord[0];
+
+}

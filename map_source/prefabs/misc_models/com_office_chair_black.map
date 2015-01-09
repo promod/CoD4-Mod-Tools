@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 16 0 ) ( -16 16 0 ) ( -16 -16 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -16 27 ) ( -16 16 27 ) ( 16 16 27 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -14 48 ) ( 16 -14 48 ) ( 16 -14 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -16 48 ) ( 16 16 48 ) ( 16 16 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 10 48 ) ( -16 10 48 ) ( -16 10 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 16 48 ) ( -16 -16 48 ) ( -16 -16 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -16 3 27 ) ( 16 3 27 ) ( 16 10 27 ) clip 64 64 0 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 7 50 ) ( -16 7 50 ) ( -16 10 50 ) clip 64 64 0 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 -18 75 ) ( 16 14 75 ) ( 16 14 27 ) clip 64 64 -2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 10 50 ) ( -16 10 50 ) ( -16 10 27 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 14 75 ) ( -16 -18 75 ) ( -16 -18 27 ) clip 64 64 -2 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 25.5 6 28 ) ( 25.5 6 38 ) ( 57.5 6 28 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "com_office_chair_black"
+"origin" "0.0 0.0 0.0"
+}

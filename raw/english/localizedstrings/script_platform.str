@@ -1,0 +1,232 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd_PC.cfg"
+FILENOTES           "All game messages made by script should go in this file."
+
+REFERENCE           HINT_OBJECTIVEKEY
+LANG_ENGLISH        "Press^3 &&1 ^7to see your objectives."
+
+REFERENCE           HINT_PRONEKEY
+LANG_ENGLISH        "Press^3 &&1 ^7to go prone"
+
+REFERENCE           HINT_DOUBLETAPPRONEKEY
+LANG_ENGLISH        "Double tap^3 &&1 ^7to go prone"
+
+REFERENCE           HINT_HOLDDOWNPRONEKEY
+LANG_ENGLISH        "Hold down^3 &&1 ^7to go prone"
+
+REFERENCE           HINT_ADSKEY
+LANG_ENGLISH        "Press^3 &&1 ^7to aim down the sight"
+
+REFERENCE           HINT_HOLDDOWNADSKEY
+LANG_ENGLISH        "Hold down^3 &&1 ^7to aim down the sight"
+
+REFERENCE           HINT_STANDFROMPRONEKEY
+LANG_ENGLISH        "Press^3 &&1 ^7to stand up from prone"
+
+REFERENCE           HINT_DOUBLETAPSTANDKEY
+LANG_ENGLISH        "Double tap^3 &&1 ^7to stand from prone"
+
+REFERENCE           HINT_SWITCHTOGRENADE
+LANG_ENGLISH        "Press^3 &&1 ^7to switch to grenades"
+
+REFERENCE           HINT_MELEEATTACK
+LANG_ENGLISH        "Press^3 &&1 ^7to do a melee attack"
+
+REFERENCE           DOG_DEATH_TOO_SOON
+LANG_ENGLISH        "Wait for the dog to bite to grab its throat. ^3( [{+melee}] )^7 "
+
+REFERENCE           DOG_DEATH_TOO_LATE
+LANG_ENGLISH        "Melee the dog before it bites to grab its throat. ^3( [{+melee}] )^7 "
+
+REFERENCE           DOG_DEATH_DO_NOTHING
+LANG_ENGLISH        "Melee the dog right when it bites to grab its throat. ^3( [{+melee}] )^7 "
+
+REFERENCE           DOG_HINT
+LANG_ENGLISH        "Press ^3( [{+melee}] )^7"
+
+REFERENCE           HINT_LEANOUTWINDOW
+LANG_ENGLISH        "Press USE^3 &&1 ^7to lean out of the window"
+
+REFERENCE           HINT_FIRSTOBJECTIVE
+LANG_ENGLISH        "Look at your first objective and press USE^3 &&1 ^7to retrieve"
+
+REFERENCE           HINT_STRAFELEFT
+LANG_ENGLISH        "Press your Move Left key^3 &&1 ^7to move left."
+
+REFERENCE           HINT_STRAFERIGHT
+LANG_ENGLISH        "Press your Move Right key^3 &&1 ^7to move right."
+
+REFERENCE           HINT_MOVEFORWARD
+LANG_ENGLISH        "Press your Move Forward key^3 &&1 ^7to move forward."
+
+REFERENCE           HINT_MOVEBACKWARD
+LANG_ENGLISH        "Press your Move Back key^3 &&1 ^7to move backwards."
+
+REFERENCE           HINT_CHECKCURRENTOBJECTIVE
+LANG_ENGLISH        "Press^3 &&1 ^7to check your current objective."
+
+REFERENCE           HINT_SWITCHTOSECONDWEAPON
+LANG_ENGLISH        "You now have two weapons. Press^3 &&1 ^7to switch to your second weapon."
+
+REFERENCE           HINT_TRAINING_SWITCHTOGRENADE
+LANG_ENGLISH        "Press^3 &&1 ^7to switch to your grenades."
+
+REFERENCE           HINT_USECINDERBLOCKWALL
+LANG_ENGLISH        "Approach the cinder block wall and press your USE key^3 &&1 ^7to plant the explosives."
+
+REFERENCE           HINT_CROUCHKEY
+LANG_ENGLISH        "Press^3 &&1 ^7to crouch."
+
+REFERENCE           HINT_CROUCHTOGGLEFROM
+LANG_ENGLISH        "Press^3 &&1 ^7a second time to stand up from crouch."
+
+REFERENCE           HINT_HOLDDOWNCROUCHKEY
+LANG_ENGLISH        "Hold down^3 &&1 ^7to crouch."
+
+REFERENCE           HINT_RAISEFROMPRONETOCROUCH
+LANG_ENGLISH        "Press^3 &&1 ^7to switch from crouch from prone."
+
+REFERENCE           HINT_STANDKEY
+LANG_ENGLISH        "Press^3 &&1 ^7to stand up."
+
+REFERENCE           HINT_STANDLETGOCROUCHKEY
+LANG_ENGLISH        "Let go of^3 &&1 ^7to stop crouching."
+
+REFERENCE           HINT_STANDLETGOSECONDKEY
+LANG_ENGLISH        "If this makes you go prone, double tap^3 &&1]."
+
+REFERENCE           HINT_STANDFROMCROUCHKEY
+LANG_ENGLISH        "Double tap^3 &&1 ^7to stand up from crouch."
+
+REFERENCE           HINT_RAISEFROMCROUCHTOSTAND
+LANG_ENGLISH        "Single tap^3 &&1 ^7to stand from crouch."
+
+REFERENCE           HINT_STANDLETGOPRONEKEY
+LANG_ENGLISH        "Let go of^3 &&1 ^7to come out of prone."
+
+REFERENCE           HINT_ADSSTOP
+LANG_ENGLISH        "Press^3 &&1 ^7a second time to stop aiming down the sight."
+
+REFERENCE           HINT_FIRSTWEAPONKEY
+LANG_ENGLISH        "Press^3 &&1 ^7to switch to your first weapon."
+
+REFERENCE           HINT_SECONDWEAPONKEY
+LANG_ENGLISH        "Press^3 &&1 ^7to switch to your second weapon."
+
+REFERENCE           HINT_SWAPWEAPONSKEY
+LANG_ENGLISH        "HOLD USE^3 &&1 ^7to swap your current weapon for another that you are looking at."
+
+REFERENCE           HINT_PICKUPWEAPONKEY
+LANG_ENGLISH        "To pickup a weapon, look at it and press USE^3 &&1]."
+
+REFERENCE           HINT_JUMPSTANDKEY
+LANG_ENGLISH        "While standing, press^3 &&1 ^7to jump."
+
+REFERENCE           HINT_LEANLEFTKEY
+LANG_ENGLISH        "Hold down^3 &&1 ^7to lean to the left."
+
+REFERENCE           HINT_LEANRIGHTKEY
+LANG_ENGLISH        "Hold down^3 &&1 ^7to lean to the right."
+
+REFERENCE           HINTSTR_PICKUPGRENADES
+LANG_ENGLISH        "Press^3 &&1 ^7to pick up the grenades."
+
+REFERENCE           HINTSTR_PLANTEXPLOSIVES
+LANG_ENGLISH        "Press^3 &&1 ^7to plant the explosives."
+
+REFERENCE           HINTSTR_DOCUMENTS
+LANG_ENGLISH        "Press^3 &&1 ^7to pick up the documents."
+
+REFERENCE           HINTSTR_PICKUPEXPLOSIVES
+LANG_ENGLISH        "Press^3 &&1 ^7to pick up the explosives."
+
+REFERENCE           HINTSTR_PICKUPPATROLLOGS
+LANG_ENGLISH        "Press^3 &&1 ^7to pick up the patrol log."
+
+REFERENCE           HINTSTR_USEELEVATOR
+LANG_ENGLISH        "Press^3 &&1 ^7to activate the elevator."
+
+REFERENCE           HINT_RELOAD
+LANG_ENGLISH        "Press^3 &&1 ^7to reload at any time."
+
+REFERENCE           HINTSTR_BINOCULAR
+LANG_ENGLISH        "Look through your binoculars by pressing^3 &&1]."
+
+REFERENCE           HINTSTR_TAKEEXPLOSIVES
+LANG_ENGLISH        "Press^3 &&1 ^7to take the explosives."
+
+REFERENCE           HINT_SIGHTARTILLERY
+LANG_ENGLISH        "Press^3 [{+binoculars}] ^7to look through your binoculars and direct artillery."
+
+REFERENCE           HINT_SIGHTARTILLERY_BREATH
+LANG_ENGLISH        "Press^3 [{+breath_binoculars}] ^7to look through your binoculars and direct artillery."
+
+REFERENCE           HINT_USEARTILLERY
+LANG_ENGLISH        "Press^3 [{+activate}] ^7to call in Artillery."
+
+REFERENCE           PIANO
+LANG_ENGLISH        "Press^3 &&1]"
+
+REFERENCE           HINT_PICKUP_PANZERSCHRECK
+LANG_ENGLISH        "Press^3 &&1 ^7to pickup the Panzerschreck."
+
+REFERENCE           HINT_USERADIO
+LANG_ENGLISH        "Press^3 &&1 ^7to use the radio."
+
+REFERENCE           FIRE_TO_SKIP
+LANG_ENGLISH        "Click FIRE to Skip."
+
+REFERENCE           AC130_HINT_ZOOM_AND_FIRE
+LANG_ENGLISH        "Press ^3[{+speed}]^7 to control zoom and press ^3[{+attack}]^7 to fire."
+
+REFERENCE           AC130_HINT_TOGGLE_THERMAL
+LANG_ENGLISH        "Press ^3[{+activate}]^7 to toggle thermal vision\nbetween white hot and black hot."
+
+REFERENCE           HINT_PLANTBEACON
+LANG_ENGLISH        "Press^3 &&1 ^7to plant the IR beacon."
+
+REFERENCE           LAUNCHFACILITY_A_HINT_PLANT_C4_GLOW
+LANG_ENGLISH        "To plant C4, approach the glowing objective marker and press^3 [{+activate}] ^7."
+
+REFERENCE           AIRLIFT_HINT_PICKUP_PILOT
+LANG_ENGLISH        "Hold^3 &&1 ^7to pickup the pilot."
+
+REFERENCE           HINTSTR_RAPPEL
+LANG_ENGLISH        "Hold^3 &&1 ^7to rappel."
+
+REFERENCE           LAUNCHFACILITY_A_HINT_SMOKE
+LANG_ENGLISH        "Throw smoke^3 [{+smoke}] ^7to safely approach the enemy vehicle."
+
+REFERENCE           AIRLIFT_HINT_GETPILOT
+LANG_ENGLISH        "Approach the pilot and press^3 [{+activate}] ^7to pull her out."
+
+REFERENCE           HINT_PLANTEXPLOSIVES
+LANG_ENGLISH        "Look at the explosives spot and press^3 &&1 ^7to plant the explosives."
+
+REFERENCE           HINT_GET_DETONATOR
+LANG_ENGLISH        "Hold down^3 &&1 ^7to pick up the detonator."
+
+REFERENCE           SPOOL_MINIGUN
+LANG_ENGLISH        "Press and hold ^3[{+speed_throw}]^7 to spool up the minigun."
+
+REFERENCE           CHEAT_USETOSLOWMO
+LANG_ENGLISH        "Use ^3[{+melee}]^7 to start or stop Slow-Mo."
+
+REFERENCE           LEARN_CHOPPER_AIR_SUPPORT2
+LANG_ENGLISH        "Press^3 [{+attack}] ^7to give attack coordinates."
+
+
+ENDMARKER
+
+

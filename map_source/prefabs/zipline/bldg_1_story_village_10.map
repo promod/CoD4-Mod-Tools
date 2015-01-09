@@ -1,0 +1,1489 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 128 8 0 ) ( 128 0 0 ) ( 384 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 0 128 ) ( 128 0 128 ) ( 128 8 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 64 ) ( 264 8 0 ) ( 504 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 0 ) ( 8 8 64 ) ( 0 0 64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 0 64 ) ( 384 0 64 ) ( 384 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 8 30 ) ( 120 -8 30 ) ( 120 -8 62 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 20 7 120 ) ( 0 7 120 ) ( 0 -1 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -1 128 ) ( 0 7 128 ) ( 20 7 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 -1 120 ) ( -1 -1 128 ) ( 513 -1 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 513 -1 120 ) ( 513 -1 128 ) ( 512 0 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 19 0 128 ) ( -1 0 128 ) ( -1 0 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 -1 128 ) ( -1 -1 120 ) ( 0 0 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 0 393 120 ) ( 0 385 120 ) ( 20 385 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 20 385 128 ) ( 0 385 128 ) ( 0 393 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 513 393 128 ) ( -1 393 128 ) ( -1 393 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 392 128 ) ( 513 393 128 ) ( 513 393 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 392 120 ) ( -1 392 128 ) ( 19 392 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 392 120 ) ( -1 393 120 ) ( -1 393 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 513 512 120 ) ( 505 512 120 ) ( 505 492 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 505 492 128 ) ( 505 512 128 ) ( 513 512 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 513 -1 128 ) ( 513 513 128 ) ( 513 513 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 128 ) ( 513 -1 128 ) ( 513 -1 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 513 120 ) ( 512 513 128 ) ( 512 493 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 508 388 120 ) ( 509 389 120 ) ( 509 389 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 7 492 120 ) ( 7 512 120 ) ( -1 512 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 512 128 ) ( 7 512 128 ) ( 7 492 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 513 120 ) ( -1 513 128 ) ( -1 -1 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 -1 120 ) ( -1 -1 128 ) ( 0 0 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 493 128 ) ( 0 513 128 ) ( 0 513 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 3 389 128 ) ( 3 389 120 ) ( 4 388 120 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -152 0 128 ) ( -408 0 128 ) ( -408 0 512 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -360 8 208 ) ( -112 8 208 ) ( -112 8 576 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 12 48 ) ( 184 12 16 ) ( 184 -4 16 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 8 48 ) ( 120 0 16 ) ( 120 8 16 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 196 208 104 ) ( 140 176 104 ) ( 196 176 104 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 164 11 128 ) ( 164 43 128 ) ( 168 43 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( 512 8 128 ) ( 0 8 128 ) ( 0 0 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 -4 136 ) ( 0 -4 136 ) ( 8 8 136 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -4 136 ) ( 512 -4 136 ) ( 512 0 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 136 ) ( 504 8 128 ) ( 512 0 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 128 ) ( 504 8 136 ) ( 8 8 136 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 128 ) ( 8 8 136 ) ( 0 0 136 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( 0 392 128 ) ( 0 384 128 ) ( 512 384 128 ) caulk 64 -64 0 -392 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 136 ) ( 0 396 136 ) ( 512 396 136 ) caulk 64 -64 0 -392 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 392 128 ) ( 512 396 136 ) ( 0 396 136 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 392 128 ) ( 504 384 128 ) ( 504 384 136 ) caulk 64 -64 -392 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 136 ) ( 504 384 136 ) ( 504 384 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 392 136 ) ( 8 384 136 ) ( 8 384 128 ) caulk 64 -64 -392 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( 512 512 128 ) ( 504 512 128 ) ( 504 0 128 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 504 136 ) ( 516 512 136 ) ( 516 0 136 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 128 ) ( 516 0 136 ) ( 516 512 136 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 128 ) ( 504 8 128 ) ( 504 8 136 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 504 136 ) ( 504 8 136 ) ( 504 8 128 ) caulk 64 -64 -512 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 520 400 136 ) ( 512 392 136 ) ( 512 392 128 ) caulk 64 -64 -512 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( 8 0 128 ) ( 8 512 128 ) ( 0 512 128 ) caulk 64 64 -512 0 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 0 136 ) ( -4 512 136 ) ( 8 504 136 ) caulk 64 64 -512 0 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 512 136 ) ( -4 0 136 ) ( 0 0 128 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 136 ) ( 8 8 128 ) ( 0 0 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 128 ) ( 8 8 136 ) ( 8 504 136 ) caulk 64 -64 -512 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 392 128 ) ( 0 392 136 ) ( -8 400 136 ) caulk 64 -64 -512 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 10
+{
+  contents detail;
+ ( 516 0 136 ) ( 516 392 136 ) ( 504 384 136 ) me_woodplanks01 128 -128 0 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 504 144 ) ( 516 512 144 ) ( 516 0 144 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 520 392 136 ) ( 520 0 136 ) ( 520 -4 144 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 136 ) ( 504 8 136 ) ( 504 8 144 ) caulk 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 504 144 ) ( 504 8 144 ) ( 504 8 136 ) caulk 64 -64 -512 8 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 520 400 144 ) ( 512 392 144 ) ( 512 392 136 ) caulk 64 -64 -512 8 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 11
+{
+  contents detail;
+ ( -4 392 136 ) ( -4 0 136 ) ( 8 8 136 ) me_woodplanks01 128 -128 0 384 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -112 144 ) ( -4 -120 144 ) ( -4 392 144 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 136 ) ( -8 392 136 ) ( -8 396 144 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 392 136 ) ( 8 384 136 ) ( 8 384 144 ) caulk 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -112 144 ) ( 8 384 144 ) ( 8 384 136 ) caulk 64 -64 -512 8 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 144 ) ( 0 0 144 ) ( 0 0 136 ) caulk 64 -64 -512 8 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 12
+{
+  contents detail;
+ ( 392 396 136 ) ( 0 396 136 ) ( 8 384 136 ) me_woodplanks01 128 128 0 -264 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -112 384 144 ) ( -120 396 144 ) ( 392 396 144 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 400 136 ) ( 392 400 136 ) ( 396 400 144 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 392 136 ) ( 504 384 136 ) ( 504 384 144 ) caulk 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -112 384 144 ) ( 384 384 144 ) ( 384 384 136 ) caulk 64 -64 -512 8 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 400 144 ) ( 0 392 144 ) ( 0 392 136 ) caulk 64 -64 -512 8 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 13
+{
+  contents detail;
+ ( 8 8 136 ) ( 0 -4 136 ) ( 392 -4 136 ) me_woodplanks01 128 -128 0 -128 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 392 -4 144 ) ( -120 -4 144 ) ( -112 8 144 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 396 -8 144 ) ( 392 -8 136 ) ( 0 -8 136 ) me_woodplanks01 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 144 ) ( 504 8 136 ) ( 512 0 136 ) caulk 64 64 0 -8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 8 136 ) ( 384 8 144 ) ( -112 8 144 ) caulk 64 -64 -512 8 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 136 ) ( 0 0 144 ) ( -8 -8 144 ) caulk 64 -64 -512 8 180 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 14
+{
+  contents detail;
+ ( -4 400 144 ) ( -8 400 144 ) ( -8 -8 144 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 148 ) ( -8 400 148 ) ( -4 400 148 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -8 148 ) ( -4 -8 148 ) ( -4 -8 144 ) me_corrugated_metal01 64 64 -16 40.518101 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 520 -8 144 ) ( 520 400 144 ) ( 520 400 140 ) me_corrugated_metal01 64 64 -16 40.518101 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 400 148 ) ( -8 400 148 ) ( -8 400 144 ) me_corrugated_metal01 64 64 -16 40.518101 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 400 148 ) ( -8 -8 148 ) ( -8 -8 144 ) me_corrugated_metal01 64 64 -16 40.518101 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 15
+{
+  contents detail;
+ ( 504 0 0 ) ( 512 0 0 ) ( 512 256 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 256 128 ) ( 512 0 128 ) ( 504 0 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 384 64 ) ( 504 384 0 ) ( 512 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 144 64 ) ( 504 144 0 ) ( 504 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 64 ) ( 512 256 64 ) ( 512 256 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 336 28 ) ( 504 336 28 ) ( 504 336 60 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 16
+{
+  contents detail;
+ ( 504 -32 0 ) ( 512 -32 0 ) ( 512 224 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 224 128 ) ( 512 -32 128 ) ( 504 -32 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 112 64 ) ( 504 112 0 ) ( 504 352 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 -32 64 ) ( 512 224 64 ) ( 512 224 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 288 28 ) ( 512 288 28 ) ( 504 288 60 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 520 216 128 ) ( 512 216 128 ) ( 512 216 160 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 17
+{
+  contents detail;
+ ( 504 0 0 ) ( 512 0 0 ) ( 512 256 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 256 128 ) ( 512 0 128 ) ( 504 0 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 144 64 ) ( 504 144 0 ) ( 504 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 0 ) ( 504 8 64 ) ( 512 0 64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 64 ) ( 512 256 64 ) ( 512 256 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 488 168 128 ) ( 504 168 128 ) ( 488 168 160 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 18
+{
+  contents detail;
+ ( 512 32 128 ) ( 0 32 128 ) ( 0 8 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 8 136 ) ( 0 32 136 ) ( 512 32 136 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 8 136 ) ( 512 8 136 ) ( 512 8 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 136 ) ( 504 32 136 ) ( 504 32 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 384 128 ) ( 0 384 128 ) ( 0 384 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 32 136 ) ( 8 8 136 ) ( 8 8 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 19
+{
+  contents detail;
+ ( 384 384 0 ) ( 384 392 0 ) ( 128 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 128 392 128 ) ( 384 392 128 ) ( 384 384 128 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 248 384 64 ) ( 248 384 0 ) ( 8 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 504 384 0 ) ( 504 384 64 ) ( 512 392 64 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 64 ) ( 128 392 64 ) ( 128 392 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 344 384 60 ) ( 344 384 28 ) ( 344 392 28 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 20
+{
+  contents detail;
+ ( 136 88 228 ) ( 376 88 228 ) ( 376 304 228 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 376 280 228 ) ( 376 120 228 ) ( 376 120 292 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 136 280 300 ) ( 136 120 300 ) ( 136 120 236 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 136 196 276 ) ( 376 196 276 ) ( 376 88 228 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 376 196 276 ) ( 136 196 276 ) ( 136 304 228 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 21
+{
+  contents detail;
+ ( 512 392 0 ) ( 256 392 0 ) ( 256 384 0 ) caulk 64 64 256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 256 384 128 ) ( 256 392 128 ) ( 512 392 128 ) caulk 64 64 256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 632 384 0 ) ( 392 384 0 ) ( 392 384 64 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 512 392 0 ) ( 512 392 64 ) ( 256 392 64 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 296 392 28 ) ( 296 384 28 ) ( 296 384 60 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 216 384 28 ) ( 216 392 28 ) ( 216 384 60 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 22
+{
+  contents detail;
+ ( 8 256 0 ) ( 0 256 0 ) ( 0 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 128 ) ( 0 256 128 ) ( 8 256 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 64 ) ( 8 8 0 ) ( 0 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 64 ) ( 8 384 0 ) ( 8 144 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 64 ) ( 0 0 64 ) ( 0 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 40 28 ) ( 16 40 28 ) ( 8 40 60 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 23
+{
+  contents detail;
+ ( 8 256 0 ) ( 0 256 0 ) ( 0 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 128 ) ( 0 256 128 ) ( 8 256 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 64 ) ( 8 384 0 ) ( 8 144 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 0 ) ( 8 384 64 ) ( 0 392 64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 64 ) ( 0 0 64 ) ( 0 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 88 28 ) ( 8 88 28 ) ( 8 88 60 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 24
+{
+  contents detail;
+ ( 8 256 0 ) ( 0 256 0 ) ( 0 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 64 ) ( 8 8 0 ) ( 0 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 64 ) ( 8 384 0 ) ( 8 144 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 64 ) ( 0 0 64 ) ( 0 0 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 40 28 ) ( 16 40 28 ) ( 8 40 60 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 25
+{
+  contents detail;
+ ( 8 256 0 ) ( 0 256 0 ) ( 0 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 64 ) ( 8 384 0 ) ( 8 144 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 0 ) ( 8 384 64 ) ( 0 392 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 64 ) ( 0 0 64 ) ( 0 0 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 88 28 ) ( 8 88 28 ) ( 8 88 60 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 26
+{
+  contents detail;
+ ( 512 392 0 ) ( 256 392 0 ) ( 256 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 632 384 0 ) ( 392 384 0 ) ( 392 384 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 512 392 0 ) ( 512 392 64 ) ( 256 392 64 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 296 392 28 ) ( 296 384 28 ) ( 296 384 60 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 216 384 28 ) ( 216 392 28 ) ( 216 384 60 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 27
+{
+  contents detail;
+ ( 384 384 0 ) ( 384 392 0 ) ( 128 392 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 248 384 64 ) ( 248 384 0 ) ( 8 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 504 384 0 ) ( 504 384 64 ) ( 512 392 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 64 ) ( 128 392 64 ) ( 128 392 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 344 384 60 ) ( 344 384 28 ) ( 344 392 28 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 28
+{
+  contents detail;
+ ( 504 0 0 ) ( 512 0 0 ) ( 512 256 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 384 64 ) ( 504 384 0 ) ( 512 392 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 144 64 ) ( 504 144 0 ) ( 504 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 64 ) ( 512 256 64 ) ( 512 256 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 336 28 ) ( 504 336 28 ) ( 504 336 60 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 29
+{
+  contents detail;
+ ( 504 -32 0 ) ( 512 -32 0 ) ( 512 224 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 112 64 ) ( 504 112 0 ) ( 504 352 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 -32 64 ) ( 512 224 64 ) ( 512 224 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 288 28 ) ( 512 288 28 ) ( 504 288 60 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 520 216 128 ) ( 512 216 128 ) ( 512 216 160 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 30
+{
+  contents detail;
+ ( 504 0 0 ) ( 512 0 0 ) ( 512 256 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 144 64 ) ( 504 144 0 ) ( 504 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 0 ) ( 504 8 64 ) ( 512 0 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 64 ) ( 512 256 64 ) ( 512 256 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 488 168 128 ) ( 504 168 128 ) ( 488 168 160 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 31
+{
+  contents detail;
+ ( 128 8 0 ) ( 128 0 0 ) ( 384 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 64 ) ( 264 8 0 ) ( 504 8 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 0 ) ( 8 8 64 ) ( 0 0 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 0 64 ) ( 384 0 64 ) ( 384 0 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 8 30 ) ( 120 -8 30 ) ( 120 -8 62 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 32
+{
+  contents detail;
+ ( 128 8 0 ) ( 128 0 0 ) ( 384 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 0 128 ) ( 128 0 128 ) ( 128 8 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 64 ) ( 264 8 0 ) ( 504 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 0 64 ) ( 440 0 64 ) ( 440 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -8 120 ) ( 184 8 120 ) ( 184 -8 152 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 336 16 120 ) ( 336 8 120 ) ( 336 8 152 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 33
+{
+  contents detail;
+ ( 128 8 0 ) ( 128 0 0 ) ( 384 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 64 ) ( 264 8 0 ) ( 504 8 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 0 64 ) ( 440 0 64 ) ( 440 0 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -8 120 ) ( 184 8 120 ) ( 184 -8 152 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 336 16 120 ) ( 336 8 120 ) ( 336 8 152 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 34
+{
+  contents detail;
+ ( 128 8 0 ) ( 128 0 0 ) ( 384 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 0 128 ) ( 128 0 128 ) ( 128 8 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 64 ) ( 504 8 0 ) ( 512 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 64 ) ( 264 8 0 ) ( 504 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 240 0 64 ) ( 496 0 64 ) ( 496 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 464 8 128 ) ( 464 16 128 ) ( 464 8 160 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 35
+{
+  contents detail;
+ ( 128 8 0 ) ( 128 0 0 ) ( 384 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 64 ) ( 504 8 0 ) ( 512 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 64 ) ( 264 8 0 ) ( 504 8 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 240 0 64 ) ( 496 0 64 ) ( 496 0 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 464 8 128 ) ( 464 16 128 ) ( 464 8 160 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 36
+{
+  contents detail;
+ ( 208 8 0 ) ( 208 0 0 ) ( 464 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 464 0 128 ) ( 208 0 128 ) ( 208 8 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 344 8 64 ) ( 344 8 0 ) ( 584 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 0 64 ) ( 520 0 64 ) ( 520 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 -8 120 ) ( 384 8 120 ) ( 384 -8 152 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 416 16 120 ) ( 416 8 120 ) ( 416 8 152 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 37
+{
+  contents detail;
+ ( 208 8 0 ) ( 208 0 0 ) ( 464 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 344 8 64 ) ( 344 8 0 ) ( 584 8 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 0 64 ) ( 520 0 64 ) ( 520 0 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 -8 120 ) ( 384 8 120 ) ( 384 -8 152 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 416 16 120 ) ( 416 8 120 ) ( 416 8 152 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 38
+{
+  contents detail;
+ ( 312 8 0 ) ( 248 8 0 ) ( 248 0 0 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 248 0 384 ) ( 312 0 384 ) ( 312 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 312 8 384 ) ( 248 8 384 ) ( 248 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 416 8 80 ) ( 416 8 64 ) ( 416 40 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 464 8 56 ) ( 464 8 72 ) ( 464 40 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 448 8 32 ) ( 432 8 32 ) ( 432 40 32 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 39
+{
+  contents detail;
+ ( 808 0 128 ) ( 808 8 128 ) ( 872 8 128 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 248 0 384 ) ( 312 0 384 ) ( 312 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 312 8 384 ) ( 248 8 384 ) ( 248 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 416 8 80 ) ( 416 8 64 ) ( 416 40 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 464 8 56 ) ( 464 8 72 ) ( 464 40 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 424 8 104 ) ( 440 8 104 ) ( 424 40 104 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 40
+{
+  contents detail;
+ ( 312 8 0 ) ( 248 8 0 ) ( 248 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 248 0 384 ) ( 312 0 384 ) ( 312 0 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 312 8 384 ) ( 248 8 384 ) ( 248 8 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 416 8 80 ) ( 416 8 64 ) ( 416 40 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 464 8 56 ) ( 464 8 72 ) ( 464 40 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 448 8 32 ) ( 432 8 32 ) ( 432 40 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 41
+{
+  contents detail;
+ ( 808 2 120 ) ( 808 10 120 ) ( 872 10 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 248 0 384 ) ( 312 0 384 ) ( 312 0 0 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 312 8 384 ) ( 248 8 384 ) ( 248 8 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 416 8 80 ) ( 416 8 64 ) ( 416 40 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 464 8 56 ) ( 464 8 72 ) ( 464 40 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 424 8 104 ) ( 440 8 104 ) ( 424 40 104 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 42
+{
+  contents detail;
+ ( 232 8 0 ) ( 168 8 0 ) ( 168 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 168 0 384 ) ( 232 0 384 ) ( 232 0 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 232 8 384 ) ( 168 8 384 ) ( 168 8 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 336 8 80 ) ( 336 8 64 ) ( 336 40 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 8 56 ) ( 384 8 72 ) ( 384 40 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 368 8 32 ) ( 352 8 32 ) ( 352 40 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 43
+{
+  contents detail;
+ ( 232 8 0 ) ( 168 8 0 ) ( 168 0 0 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 168 0 384 ) ( 232 0 384 ) ( 232 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 232 8 384 ) ( 168 8 384 ) ( 168 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 336 8 80 ) ( 336 8 64 ) ( 336 40 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 8 56 ) ( 384 8 72 ) ( 384 40 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 368 8 32 ) ( 352 8 32 ) ( 352 40 32 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 44
+{
+  contents detail;
+ ( 728 2 120 ) ( 728 10 120 ) ( 792 10 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 168 0 384 ) ( 232 0 384 ) ( 232 0 0 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 232 8 384 ) ( 168 8 384 ) ( 168 8 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 336 8 80 ) ( 336 8 64 ) ( 336 40 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 8 56 ) ( 384 8 72 ) ( 384 40 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 344 8 104 ) ( 360 8 104 ) ( 344 40 104 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 45
+{
+  contents detail;
+ ( 728 0 128 ) ( 728 8 128 ) ( 792 8 128 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 168 0 384 ) ( 232 0 384 ) ( 232 0 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 232 8 384 ) ( 168 8 384 ) ( 168 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 336 8 80 ) ( 336 8 64 ) ( 336 40 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 8 56 ) ( 384 8 72 ) ( 384 40 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 344 8 104 ) ( 360 8 104 ) ( 344 40 104 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 46
+{
+  contents detail;
+ ( 8 192 0 ) ( 8 256 0 ) ( 0 256 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 384 ) ( 0 192 384 ) ( 0 192 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 192 384 ) ( 8 256 384 ) ( 8 256 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 88 80 ) ( 8 88 64 ) ( 40 88 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 40 56 ) ( 8 40 72 ) ( 40 40 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 56 32 ) ( 8 72 32 ) ( 40 72 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 47
+{
+  contents detail;
+ ( 8 192 0 ) ( 8 256 0 ) ( 0 256 0 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 384 ) ( 0 192 384 ) ( 0 192 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 192 384 ) ( 8 256 384 ) ( 8 256 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 88 80 ) ( 8 88 64 ) ( 40 88 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 40 56 ) ( 8 40 72 ) ( 40 40 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 56 32 ) ( 8 72 32 ) ( 40 72 32 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 48
+{
+  contents detail;
+ ( 2 -304 120 ) ( 10 -304 120 ) ( 10 -368 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 384 ) ( 0 192 384 ) ( 0 192 0 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 192 384 ) ( 8 256 384 ) ( 8 256 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 88 80 ) ( 8 88 64 ) ( 40 88 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 40 56 ) ( 8 40 72 ) ( 40 40 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 80 104 ) ( 8 64 104 ) ( 40 80 104 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 49
+{
+  contents detail;
+ ( 0 -304 128 ) ( 8 -304 128 ) ( 8 -368 128 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 384 ) ( 0 192 384 ) ( 0 192 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 192 384 ) ( 8 256 384 ) ( 8 256 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 88 80 ) ( 8 88 64 ) ( 40 88 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 40 56 ) ( 8 40 72 ) ( 40 40 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 80 104 ) ( 8 64 104 ) ( 40 80 104 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 50
+{
+  contents detail;
+ ( 320 384 0 ) ( 384 384 0 ) ( 384 392 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 384 ) ( 320 392 384 ) ( 320 392 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 320 384 384 ) ( 384 384 384 ) ( 384 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 216 384 80 ) ( 216 384 64 ) ( 216 352 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 168 384 56 ) ( 168 384 72 ) ( 168 352 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 184 384 32 ) ( 200 384 32 ) ( 200 352 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 51
+{
+  contents detail;
+ ( 320 384 0 ) ( 384 384 0 ) ( 384 392 0 ) caulk 64 64 -8 248 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 384 ) ( 320 392 384 ) ( 320 392 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 320 384 384 ) ( 384 384 384 ) ( 384 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 216 384 80 ) ( 216 384 64 ) ( 216 352 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 168 384 56 ) ( 168 384 72 ) ( 168 352 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 184 384 32 ) ( 200 384 32 ) ( 200 352 32 ) caulk 64 64 -8 256 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 52
+{
+  contents detail;
+ ( -176 390 120 ) ( -176 382 120 ) ( -240 382 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 384 ) ( 320 392 384 ) ( 320 392 0 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 320 384 384 ) ( 384 384 384 ) ( 384 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 216 384 80 ) ( 216 384 64 ) ( 216 352 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 168 384 56 ) ( 168 384 72 ) ( 168 352 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 208 384 104 ) ( 192 384 104 ) ( 208 352 104 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 53
+{
+  contents detail;
+ ( -176 392 128 ) ( -176 384 128 ) ( -240 384 128 ) caulk 64 64 -8 248 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 384 ) ( 320 392 384 ) ( 320 392 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 320 384 384 ) ( 384 384 384 ) ( 384 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 216 384 80 ) ( 216 384 64 ) ( 216 352 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 168 384 56 ) ( 168 384 72 ) ( 168 352 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 208 384 104 ) ( 192 384 104 ) ( 208 352 104 ) caulk 64 64 -8 256 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 54
+{
+  contents detail;
+ ( 448 384 0 ) ( 512 384 0 ) ( 512 392 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 512 392 384 ) ( 448 392 384 ) ( 448 392 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 448 384 384 ) ( 512 384 384 ) ( 512 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 344 384 80 ) ( 344 384 64 ) ( 344 352 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 296 384 56 ) ( 296 384 72 ) ( 296 352 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 312 384 32 ) ( 328 384 32 ) ( 328 352 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 55
+{
+  contents detail;
+ ( 448 384 0 ) ( 512 384 0 ) ( 512 392 0 ) caulk 64 64 -8 248 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 512 392 384 ) ( 448 392 384 ) ( 448 392 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 448 384 384 ) ( 512 384 384 ) ( 512 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 344 384 80 ) ( 344 384 64 ) ( 344 352 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 296 384 56 ) ( 296 384 72 ) ( 296 352 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 312 384 32 ) ( 328 384 32 ) ( 328 352 32 ) caulk 64 64 -8 256 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 56
+{
+  contents detail;
+ ( -48 390 120 ) ( -48 382 120 ) ( -112 382 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 512 392 384 ) ( 448 392 384 ) ( 448 392 0 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 448 384 384 ) ( 512 384 384 ) ( 512 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 344 384 80 ) ( 344 384 64 ) ( 344 352 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 296 384 56 ) ( 296 384 72 ) ( 296 352 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 336 384 104 ) ( 320 384 104 ) ( 336 352 104 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 57
+{
+  contents detail;
+ ( -48 392 128 ) ( -48 384 128 ) ( -112 384 128 ) caulk 64 64 -8 248 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 512 392 384 ) ( 448 392 384 ) ( 448 392 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 448 384 384 ) ( 512 384 384 ) ( 512 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 344 384 80 ) ( 344 384 64 ) ( 344 352 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 296 384 56 ) ( 296 384 72 ) ( 296 352 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 336 384 104 ) ( 320 384 104 ) ( 336 352 104 ) caulk 64 64 -8 256 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 58
+{
+  contents detail;
+ ( 504 184 0 ) ( 504 120 0 ) ( 512 120 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 120 384 ) ( 512 184 384 ) ( 512 184 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 184 384 ) ( 504 120 384 ) ( 504 120 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 288 80 ) ( 504 288 64 ) ( 472 288 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 336 56 ) ( 504 336 72 ) ( 472 336 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 320 32 ) ( 504 304 32 ) ( 472 304 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 59
+{
+  contents detail;
+ ( 504 184 0 ) ( 504 120 0 ) ( 512 120 0 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 120 384 ) ( 512 184 384 ) ( 512 184 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 184 384 ) ( 504 120 384 ) ( 504 120 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 288 80 ) ( 504 288 64 ) ( 472 288 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 336 56 ) ( 504 336 72 ) ( 472 336 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 320 32 ) ( 504 304 32 ) ( 472 304 32 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 60
+{
+  contents detail;
+ ( 510 680 120 ) ( 502 680 120 ) ( 502 744 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 120 384 ) ( 512 184 384 ) ( 512 184 0 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 184 384 ) ( 504 120 384 ) ( 504 120 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 288 80 ) ( 504 288 64 ) ( 472 288 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 336 56 ) ( 504 336 72 ) ( 472 336 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 296 104 ) ( 504 312 104 ) ( 472 296 104 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 61
+{
+  contents detail;
+ ( 512 680 128 ) ( 504 680 128 ) ( 504 744 128 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 120 384 ) ( 512 184 384 ) ( 512 184 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 184 384 ) ( 504 120 384 ) ( 504 120 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 288 80 ) ( 504 288 64 ) ( 472 288 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 336 56 ) ( 504 336 72 ) ( 472 336 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 296 104 ) ( 504 312 104 ) ( 472 296 104 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 62
+{
+  contents detail;
+ ( 504 64 0 ) ( 504 0 0 ) ( 512 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 384 ) ( 512 64 384 ) ( 512 64 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 64 384 ) ( 504 0 384 ) ( 504 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 168 80 ) ( 504 168 64 ) ( 472 168 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 216 56 ) ( 504 216 72 ) ( 472 216 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 200 32 ) ( 504 184 32 ) ( 472 184 32 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 63
+{
+  contents detail;
+ ( 504 64 0 ) ( 504 0 0 ) ( 512 0 0 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 384 ) ( 512 64 384 ) ( 512 64 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 64 384 ) ( 504 0 384 ) ( 504 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 168 80 ) ( 504 168 64 ) ( 472 168 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 216 56 ) ( 504 216 72 ) ( 472 216 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 200 32 ) ( 504 184 32 ) ( 472 184 32 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 64
+{
+  contents detail;
+ ( 510 560 120 ) ( 502 560 120 ) ( 502 624 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 384 ) ( 512 64 384 ) ( 512 64 0 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 64 384 ) ( 504 0 384 ) ( 504 0 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 168 80 ) ( 504 168 64 ) ( 472 168 80 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 216 56 ) ( 504 216 72 ) ( 472 216 72 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 176 104 ) ( 504 192 104 ) ( 472 176 104 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 65
+{
+  contents detail;
+ ( 512 560 128 ) ( 504 560 128 ) ( 504 624 128 ) caulk 64 64 -8 248 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 384 ) ( 512 64 384 ) ( 512 64 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 64 384 ) ( 504 0 384 ) ( 504 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 168 80 ) ( 504 168 64 ) ( 472 168 80 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 216 56 ) ( 504 216 72 ) ( 472 216 72 ) caulk 64 64 -256 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 176 104 ) ( 504 192 104 ) ( 472 176 104 ) caulk 64 64 -8 256 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 66
+{
+  contents detail;
+ ( 180 10 0 ) ( 160 10 0 ) ( 160 2 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 160 2 101 ) ( 160 10 101 ) ( 180 10 101 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 160 2 102 ) ( 180 2 102 ) ( 180 2 0 ) ch_door_10 -58 101 -51 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 181 2 102 ) ( 181 10 102 ) ( 181 10 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 180 4 102 ) ( 160 4 102 ) ( 160 4 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 123 10 104 ) ( 123 2 104 ) ( 123 2 2 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 67
+{
+  contents detail;
+ ( 128 196 276 ) ( 384 196 276 ) ( 384 304 228 ) me_corrugated_metal01 64 64 0 -32 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 196 284 ) ( 128 196 284 ) ( 128 304 236 ) ch_church_roof 32 32 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 344 304 228 ) ( 344 304 264 ) ( 168 304 264 ) me_corrugated_metal01 64 64 0 56.518101 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 196 276 ) ( 384 196 284 ) ( 384 304 236 ) me_corrugated_metal01 64 -70.036316 -52.184875 -112.45522 66.037506 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 168 196 280 ) ( 168 196 316 ) ( 344 196 316 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 196 284 ) ( 128 196 276 ) ( 128 304 228 ) me_corrugated_metal01 64 70.036316 -459.81512 112.45522 -113.96249 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 68
+{
+  contents detail;
+ ( 384 196 276 ) ( 128 196 276 ) ( 128 88 228 ) me_corrugated_metal01 64 64 0 40 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 196 284 ) ( 384 196 284 ) ( 384 88 236 ) ch_church_roof 32 32 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 88 228 ) ( 128 88 228 ) ( 128 88 236 ) me_corrugated_metal01 64 64 0 56.518101 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 196 284 ) ( 384 196 276 ) ( 384 88 228 ) me_corrugated_metal01 64 70.036316 -300.60886 -32.942348 -66.037506 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 196 276 ) ( 384 196 276 ) ( 384 196 284 ) caulk 64 85.629112 -253.37061 -75.885139 -48.36644 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 196 276 ) ( 128 196 284 ) ( 128 88 236 ) me_corrugated_metal01 64 70.036316 -300.60886 -32.942348 -66.037506 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 69
+{
+  contents detail;
+ ( -8 -8 148 ) ( 520 -8 148 ) ( 520 400 148 ) caulk 64 -64 -512 -512 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 304 228 ) ( 384 304 228 ) ( 384 88 228 ) me_corrugated_metal01 64 76.918427 0 56.518108 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 88 228 ) ( 384 88 228 ) ( 520 -8 148 ) ch_church_roof 32 32 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 120 228 ) ( 384 280 228 ) ( 520 400 148 ) ch_church_roof 32 32 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 304 228 ) ( 128 304 228 ) ( -8 400 148 ) ch_church_roof 32 32 0 0 180 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 280 228 ) ( 128 120 228 ) ( -8 -8 148 ) ch_church_roof 32 32 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 70
+{
+  contents detail;
+ ( 384 240 -64 ) ( 0 240 -64 ) ( 0 0 -64 ) caulk 64 64 0 0 0 0 lightmap_gray 8192 8192 0 0 0 0
+ ( 0 0 0 ) ( 0 240 0 ) ( 384 240 0 ) caulk 64 64 0 0 0 0 lightmap_gray 8192 8192 0 0 0 0
+ ( 0 0 0 ) ( 384 0 0 ) ( 384 0 -16 ) ch_stonewall_02 128 128 0 0 0 0 lightmap_gray 8192 8192 0 0 0 0
+ ( 456 392 0 ) ( 72 392 0 ) ( 72 392 -16 ) ch_stonewall_02 128 128 0 0 0 0 lightmap_gray 8192 8192 0 0 0 0
+ ( 0 240 0 ) ( 0 0 0 ) ( 0 0 -16 ) ch_stonewall_02 128 128 0 0 0 0 lightmap_gray 8192 8192 0 0 0 0
+ ( 512 -8 0 ) ( 512 232 0 ) ( 512 232 -16 ) ch_stonewall_02 128 128 0 0 0 0 lightmap_gray 8192 8192 0 0 0 0
+}
+// brush 71
+{
+  contents detail;
+ ( 384 384 0 ) ( 384 392 0 ) ( 128 392 0 ) caulk 64 -64 -512 0 -180 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 128 392 128 ) ( 384 392 128 ) ( 384 384 128 ) caulk 64 -64 -512 0 -180 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 8 384 64 ) ( 8 384 0 ) ( 0 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 248 384 64 ) ( 248 384 0 ) ( 8 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 64 ) ( 128 392 64 ) ( 128 392 0 ) ch_concretewall05 128 128 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 168 384 60 ) ( 168 392 28 ) ( 168 384 28 ) caulk 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 72
+{
+  contents detail;
+ ( 384 384 0 ) ( 384 392 0 ) ( 128 392 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 8 384 64 ) ( 8 384 0 ) ( 0 392 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 248 384 64 ) ( 248 384 0 ) ( 8 384 0 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 64 ) ( 128 392 64 ) ( 128 392 0 ) me_decal_adobe_bottom_01 256 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 168 384 60 ) ( 168 392 28 ) ( 168 384 28 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 16 8 64 ) ( 0 8 64 ) ( 0 40 64 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 0 -2 0 ) ( 8 -2 0 ) ( 8 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 6 32 ) ( 8 4 32 ) ( 0 4 32 ) me_woodplanks01 128 128 -34 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 96 ) ( -2 -2 96 ) ( -2 -2 -32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 0 -32 ) ( 8 0 32 ) ( 0 0 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 -2 -32 ) ( 9 -2 32 ) ( 9 0 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -2 -32 ) ( -2 -2 -32 ) ( -2 -2 96 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 0 8 0 ) ( -2 8 0 ) ( -2 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 0 32 ) ( 4 8 32 ) ( 6 8 32 ) me_woodplanks01 128 -128 -34 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2 -32 ) ( -2 -2 96 ) ( 0 0 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 0 ) ( 0 8 0 ) ( 0 8 -64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 9 32 ) ( -2 9 32 ) ( -2 9 -32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2 96 ) ( -2 -2 -32 ) ( -2 8 -32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 0 8 32 ) ( -2 8 32 ) ( -2 0 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 0 120 ) ( 4 8 120 ) ( 6 8 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2 -8 ) ( -2 -2 120 ) ( 0 0 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 88 ) ( 0 8 88 ) ( 0 8 24 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 8 64 ) ( -2 8 64 ) ( -2 8 0 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 -2 128 ) ( -1 -2 0 ) ( -1 8 0 ) me_woodplanks01 128 128 -1 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 0 -2 32 ) ( 8 -2 32 ) ( 8 0 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 6 120 ) ( 8 4 120 ) ( 0 4 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 0 120 ) ( -2 -2 120 ) ( -2 -2 -8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 0 0 ) ( 8 0 64 ) ( 0 0 64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -2 -8 ) ( 8 -2 56 ) ( 8 0 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -1 0 ) ( -2 -1 0 ) ( -2 -1 128 ) me_woodplanks01 128 128 -1 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 2
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( -2 392 0 ) ( -2 384 0 ) ( 0 384 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 384 32 ) ( 4 384 32 ) ( 4 392 32 ) me_woodplanks01 128 128 -34 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 392 96 ) ( -2 394 96 ) ( -2 394 -32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 384 -32 ) ( 0 384 32 ) ( 0 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 383 -32 ) ( -2 383 32 ) ( 0 383 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 384 -32 ) ( -2 394 -32 ) ( -2 394 96 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 8 392 0 ) ( 8 394 0 ) ( 0 394 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 388 32 ) ( 8 388 32 ) ( 8 386 32 ) me_woodplanks01 128 -128 -34 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 394 -32 ) ( -2 394 96 ) ( 0 392 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 392 0 ) ( 8 392 0 ) ( 8 392 -64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 9 392 32 ) ( 9 394 32 ) ( 9 394 -32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 394 96 ) ( -2 394 -32 ) ( 8 394 -32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 8 392 32 ) ( 8 394 32 ) ( 0 394 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 388 120 ) ( 8 388 120 ) ( 8 386 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 394 0 ) ( -2 394 128 ) ( 0 392 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 392 96 ) ( 8 392 96 ) ( 8 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 392 56 ) ( 8 394 56 ) ( 8 394 -8 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 393 128 ) ( -2 393 0 ) ( 8 393 0 ) me_woodplanks01 128 128 -1 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( -2 392 32 ) ( -2 384 32 ) ( 0 384 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 384 120 ) ( 4 384 120 ) ( 4 392 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 392 128 ) ( -2 394 128 ) ( -2 394 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 384 -8 ) ( 0 384 56 ) ( 0 392 56 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 384 -8 ) ( -2 384 56 ) ( 0 384 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 384 0 ) ( -1 394 0 ) ( -1 394 128 ) me_woodplanks01 128 128 -1 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 3
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 512 394 32 ) ( 504 394 32 ) ( 504 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 386 120 ) ( 504 388 120 ) ( 512 388 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 392 128 ) ( 514 394 128 ) ( 514 394 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 392 0 ) ( 504 392 64 ) ( 512 392 64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 394 -8 ) ( 504 394 56 ) ( 504 392 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 393 0 ) ( 514 393 0 ) ( 514 393 128 ) me_woodplanks01 128 128 -1 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 512 384 32 ) ( 514 384 32 ) ( 514 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 508 392 120 ) ( 508 384 120 ) ( 506 384 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 394 0 ) ( 514 394 128 ) ( 512 392 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 392 88 ) ( 512 384 88 ) ( 512 384 24 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 384 56 ) ( 514 384 56 ) ( 514 384 -8 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 513 394 128 ) ( 513 394 0 ) ( 513 384 0 ) me_woodplanks01 128 128 -1 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 512 384 0 ) ( 514 384 0 ) ( 514 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 508 392 32 ) ( 508 384 32 ) ( 506 384 32 ) me_woodplanks01 128 -128 -34 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 394 -32 ) ( 514 394 96 ) ( 512 392 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 392 0 ) ( 512 384 0 ) ( 512 384 -64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 383 32 ) ( 514 383 32 ) ( 514 383 -32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 394 96 ) ( 514 394 -32 ) ( 514 384 -32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 512 394 0 ) ( 504 394 0 ) ( 504 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 386 32 ) ( 504 388 32 ) ( 512 388 32 ) me_woodplanks01 128 128 -34 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 392 96 ) ( 514 394 96 ) ( 514 394 -32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 392 -32 ) ( 504 392 32 ) ( 512 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 503 394 -32 ) ( 503 394 32 ) ( 503 392 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 394 -32 ) ( 514 394 -32 ) ( 514 394 96 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 4
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 514 0 0 ) ( 514 8 0 ) ( 512 8 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 506 8 32 ) ( 508 8 32 ) ( 508 0 32 ) me_woodplanks01 128 128 -34 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 96 ) ( 514 -2 96 ) ( 514 -2 -32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 8 -32 ) ( 512 8 32 ) ( 512 0 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 9 -32 ) ( 514 9 32 ) ( 512 9 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 8 -32 ) ( 514 -2 -32 ) ( 514 -2 96 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 504 0 0 ) ( 504 -2 0 ) ( 512 -2 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 4 32 ) ( 504 4 32 ) ( 504 6 32 ) me_woodplanks01 128 -128 -34 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 -2 -32 ) ( 514 -2 96 ) ( 512 0 96 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 0 ) ( 504 0 0 ) ( 504 0 -64 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 503 0 32 ) ( 503 -2 32 ) ( 503 -2 -32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 -2 96 ) ( 514 -2 -32 ) ( 504 -2 -32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 504 0 32 ) ( 504 -2 32 ) ( 512 -2 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 4 120 ) ( 504 4 120 ) ( 504 6 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 -2 -8 ) ( 514 -2 120 ) ( 512 0 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 96 ) ( 504 0 96 ) ( 504 0 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 0 56 ) ( 504 -2 56 ) ( 504 -2 -8 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 -1 128 ) ( 514 -1 0 ) ( 504 -1 0 ) me_woodplanks01 128 128 -1 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 514 0 32 ) ( 514 8 32 ) ( 512 8 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 506 8 120 ) ( 508 8 120 ) ( 508 0 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 120 ) ( 514 -2 120 ) ( 514 -2 -8 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 8 -8 ) ( 512 8 56 ) ( 512 0 56 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 514 8 0 ) ( 514 8 64 ) ( 512 8 64 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 513 8 0 ) ( 513 -2 0 ) ( 513 -2 128 ) me_woodplanks01 128 128 -1 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 5
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 283 -2 32 ) ( 291 -2 32 ) ( 291 0 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 291 6 120 ) ( 291 4 120 ) ( 283 4 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 281 0 32 ) ( 281 0 120 ) ( 281 -1 120 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 282 0 120 ) ( 282 0 32 ) ( 291 0 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 291 -2 -8 ) ( 291 -2 56 ) ( 291 0 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 291 -1 0 ) ( 281 -1 0 ) ( 281 -1 128 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 283 -2 0 ) ( 291 -2 0 ) ( 291 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 291 6 32 ) ( 291 4 32 ) ( 283 4 32 ) me_woodplanks01 128 128 -33 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 280 0 0 ) ( 280 0 32 ) ( 280 -2 32 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 281 0 32 ) ( 281 0 0 ) ( 293 0 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 292 -2 -32 ) ( 292 -2 32 ) ( 292 0 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 291 -2 -32 ) ( 281 -2 -32 ) ( 281 -2 96 ) me_woodplanks01 128 128 1 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 6
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 389 394 32 ) ( 381 394 32 ) ( 381 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 381 386 120 ) ( 381 388 120 ) ( 389 388 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 391 392 32 ) ( 391 392 120 ) ( 391 393 120 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 390 392 120 ) ( 390 392 32 ) ( 381 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 381 394 -8 ) ( 381 394 56 ) ( 381 392 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 381 393 0 ) ( 391 393 0 ) ( 391 393 128 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 389 394 0 ) ( 381 394 0 ) ( 381 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 381 386 32 ) ( 381 388 32 ) ( 389 388 32 ) me_woodplanks01 128 128 -33 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 392 392 0 ) ( 392 392 32 ) ( 392 394 32 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 391 392 32 ) ( 391 392 0 ) ( 379 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 380 394 -32 ) ( 380 394 32 ) ( 380 392 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 381 394 -32 ) ( 391 394 -32 ) ( 391 394 96 ) me_woodplanks01 128 128 1 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 7
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 261 394 0 ) ( 253 394 0 ) ( 253 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 253 386 32 ) ( 253 388 32 ) ( 261 388 32 ) me_woodplanks01 128 128 -33 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 392 0 ) ( 264 392 32 ) ( 264 394 32 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 263 392 32 ) ( 263 392 0 ) ( 251 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 252 394 -32 ) ( 252 394 32 ) ( 252 392 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 253 394 -32 ) ( 263 394 -32 ) ( 263 394 96 ) me_woodplanks01 128 128 1 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 261 394 32 ) ( 253 394 32 ) ( 253 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 253 386 120 ) ( 253 388 120 ) ( 261 388 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 263 392 32 ) ( 263 392 120 ) ( 263 393 120 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 262 392 120 ) ( 262 392 32 ) ( 253 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 253 394 -8 ) ( 253 394 56 ) ( 253 392 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 253 393 0 ) ( 263 393 0 ) ( 263 393 128 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 8
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 133 394 32 ) ( 125 394 32 ) ( 125 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 125 386 120 ) ( 125 388 120 ) ( 133 388 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 135 392 32 ) ( 135 392 120 ) ( 135 393 120 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 134 392 120 ) ( 134 392 32 ) ( 125 392 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 125 394 -8 ) ( 125 394 56 ) ( 125 392 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 125 393 0 ) ( 135 393 0 ) ( 135 393 128 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 133 394 0 ) ( 125 394 0 ) ( 125 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 125 386 32 ) ( 125 388 32 ) ( 133 388 32 ) me_woodplanks01 128 128 -33 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 136 392 0 ) ( 136 392 32 ) ( 136 394 32 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 135 392 32 ) ( 135 392 0 ) ( 123 392 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 124 394 -32 ) ( 124 394 32 ) ( 124 392 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 125 394 -32 ) ( 135 394 -32 ) ( 135 394 96 ) me_woodplanks01 128 128 1 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 9
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( -2 253 0 ) ( -2 245 0 ) ( 0 245 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 245 32 ) ( 4 245 32 ) ( 4 253 32 ) me_woodplanks01 128 128 -33 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 0 ) ( 0 256 32 ) ( -2 256 32 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 255 32 ) ( 0 255 0 ) ( 0 243 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 244 -32 ) ( -2 244 32 ) ( 0 244 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 245 -32 ) ( -2 255 -32 ) ( -2 255 96 ) me_woodplanks01 128 128 1 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -2 253 32 ) ( -2 245 32 ) ( 0 245 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 245 120 ) ( 4 245 120 ) ( 4 253 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 255 32 ) ( 0 255 120 ) ( -1 255 120 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 254 120 ) ( 0 254 32 ) ( 0 245 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 245 -8 ) ( -2 245 56 ) ( 0 245 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 245 0 ) ( -1 255 0 ) ( -1 255 128 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 10
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( -2 137 32 ) ( -2 129 32 ) ( 0 129 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 129 120 ) ( 4 129 120 ) ( 4 137 120 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 139 32 ) ( 0 139 120 ) ( -1 139 120 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 138 120 ) ( 0 138 32 ) ( 0 129 32 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 129 -8 ) ( -2 129 56 ) ( 0 129 56 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -1 129 0 ) ( -1 139 0 ) ( -1 139 128 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( -2 137 0 ) ( -2 129 0 ) ( 0 129 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 129 32 ) ( 4 129 32 ) ( 4 137 32 ) me_woodplanks01 128 128 -33 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 140 0 ) ( 0 140 32 ) ( -2 140 32 ) me_woodplanks01 128 128 0 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 139 32 ) ( 0 139 0 ) ( 0 127 0 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 128 -32 ) ( -2 128 32 ) ( 0 128 32 ) me_woodplanks01 128 128 0 0 90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 129 -32 ) ( -2 139 -32 ) ( -2 139 96 ) me_woodplanks01 128 128 1 -12 90 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 11
+{
+"origin" "76.0 84.0 208.0"
+"model" "com_roofvent1"
+"classname" "misc_model"
+}
+// entity 12
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( 120 -41 106 ) ( 118 -41 106 ) ( 118 0 120 ) me_metal_rust_02 64 64 342 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 118 -41 104 ) ( 120 -41 104 ) ( 120 0 118 ) me_metal_rust_02 64 64 342 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 -41 103 ) ( 118 -41 104 ) ( 118 -41 107 ) me_metal_rust_02 64 -64 342 -224 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 -41 104 ) ( 120 -41 106 ) ( 120 0 120 ) me_metal_rust_02 64 -64 0 -224 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 123 0 120 ) ( 121 0 121 ) ( 121 0 118 ) me_metal_rust_02 64 -64 342 -224 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 118 -41 106 ) ( 118 -41 104 ) ( 118 0 118 ) me_metal_rust_02 64 -64 0 -224 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 186 -41 106 ) ( 184 -41 106 ) ( 184 0 120 ) me_metal_rust_02 64 64 86 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -41 104 ) ( 186 -41 104 ) ( 186 0 118 ) me_metal_rust_02 64 64 86 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 186 -41 103 ) ( 184 -41 104 ) ( 184 -41 107 ) me_metal_rust_02 64 -64 86 -224 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 186 -41 104 ) ( 186 -41 106 ) ( 186 0 120 ) me_metal_rust_02 64 -64 0 -224 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 189 0 120 ) ( 187 0 121 ) ( 187 0 118 ) me_metal_rust_02 64 -64 86 -224 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -41 106 ) ( 184 -41 104 ) ( 184 0 118 ) me_metal_rust_02 64 -64 0 -224 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( -132 -43 106 ) ( -132 -41 106 ) ( -16 -41 106 ) me_metal_rust_02 64 64 92 -40 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -132 -41 104 ) ( -132 -43 104 ) ( -16 -43 104 ) me_metal_rust_02 64 64 92 -40 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 186 -41 103 ) ( 186 -43 104 ) ( 186 -43 107 ) me_metal_rust_02 64 -64 40 -210 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 434 -41 104 ) ( 434 -41 106 ) ( 318 -41 106 ) me_metal_rust_02 64 -64 92 -210 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 118 -41 106 ) ( 118 -43 107 ) ( 118 -43 104 ) me_metal_rust_02 64 -64 40 -210 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -43 107 ) ( -8 -43 104 ) ( -124 -43 104 ) me_metal_rust_02 64 -64 92 -210 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 184 -41 104 ) ( 186 -41 104 ) ( 186 -43 104 ) me_metal_rust_02 64 64 86 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 186 0 74.5 ) ( 184 0 74.5 ) ( 184 0 72.5 ) me_metal_rust_02 64 -64 86 -236 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 0 73 ) ( 184 0 75 ) ( 184 -41 113 ) me_metal_rust_02 64 -64 0 -236 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 186 0 75 ) ( 186 0 73 ) ( 186 -43 113 ) me_metal_rust_02 64 -64 0 -236 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -43 104 ) ( 186 -43 104 ) ( 186 0 73 ) me_metal_rust_02 64 64 86 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 186 -41 104 ) ( 184 -41 104 ) ( 184 0 75 ) me_metal_rust_02 64 64 86 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 118 -41 104 ) ( 120 -41 104 ) ( 120 -43 104 ) me_metal_rust_02 64 64 120 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 0 74.5 ) ( 118 0 74.5 ) ( 118 0 72.5 ) me_metal_rust_02 64 -64 120 -236 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 118 0 73 ) ( 118 0 75 ) ( 118 -41 113 ) me_metal_rust_02 64 -64 0 -236 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 0 75 ) ( 120 0 73 ) ( 120 -43 113 ) me_metal_rust_02 64 -64 0 -236 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 118 -43 104 ) ( 120 -43 104 ) ( 120 0 73 ) me_metal_rust_02 64 64 120 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 -41 104 ) ( 118 -41 104 ) ( 118 0 75 ) me_metal_rust_02 64 64 120 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 13
+{
+"classname" "misc_model"
+"model" "me_corrugated_metal4x4"
+"angles" "1.06319e-005 180 71"
+"origin" "139.0 -22.0 114.0"
+}
+// entity 14
+{
+"classname" "misc_model"
+"model" "me_corrugated_metal2x4"
+"angles" "1.06319e-005 180 71"
+"origin" "175.0 -22.0 114.0"
+}
+// entity 15
+{
+"classname" "func_group"
+// brush 0
+ {
+  mesh
+  {
+  contents detail;
+   me_corrugated_metal01
+   lightmap_gray
+   3 2 16 8
+   (
+	v 128 296 228 t 0 0 8 -18.5
+	v -8 396 148 t 0 -2988.8755 -0.5 -24.75
+   )
+   (
+	v 128 304 230 t 131.93938 0 8 -19 f 1
+	v -8 400 150 t 131.93938 -2988.8755 -0.5 -25
+   )
+   (
+	v 136 304 228 t 263.87875 0 8.5 -19
+	v -4 400 148 t 263.87875 -2988.8755 -0.25 -25
+   )
+  }
+ }
+// brush 1
+ {
+  mesh
+  {
+  contents detail;
+   me_corrugated_metal01
+   lightmap_gray
+   4 3 16 8
+   (
+	v 128 296 228 t 0 0 8 -18.5 f 1
+	v 128 304 230 t 0 -131.93938 8 -19
+	v 136 304 228 t 0 -263.87875 8.5 -19
+   )
+   (
+	v 136 296 228 t 128 0 8.5 -18.5
+	v 136 300 232 t 128 -131.93938 8.5 -18.75
+	v 136 304 228 t 128 -263.87875 8.5 -19
+   )
+   (
+	v 376 296 228 t 3968 0 23.5 -18.5
+	v 376 300 232 t 3968 -131.93938 23.5 -18.75
+	v 376 304 228 t 3968 -263.87875 23.5 -19
+   )
+   (
+	v 384 296 228 t 4096 0 24 -18.5
+	v 384 304 230 t 4096 -131.93938 24 -19
+	v 376 304 228 t 4096 -263.87875 23.5 -19
+   )
+  }
+ }
+// brush 2
+ {
+  mesh
+  {
+  contents detail;
+   me_corrugated_metal01
+   lightmap_gray
+   3 2 16 8
+   (
+	v 520 396 148 t 0 0 32.5 -24.75
+	v 384 296 228 t 0 -2988.8755 24 -18.5
+   )
+   (
+	v 520 400 150 t 71.554176 0 32.5 -25 f 1
+	v 384 304 230 t 71.554176 -2988.8755 24 -19 f 1
+   )
+   (
+	v 516 400 148 t 143.10835 0 32.25 -25
+	v 376 304 228 t 143.10835 -2988.8755 23.5 -19
+   )
+  }
+ }
+// brush 3
+ {
+  mesh
+  {
+  contents detail;
+   me_corrugated_metal01
+   lightmap_gray
+   3 2 16 8
+   (
+	v 384 96 228 t 0 0 24 -6
+	v 520 -4 148 t 0 -2988.8755 32.5 0.25
+   )
+   (
+	v 384 88 230 t 131.93938 0 24 -5.5 f 1
+	v 520 -8 150 t 131.93938 -2988.8755 32.5 0.5
+   )
+   (
+	v 376 88 228 t 263.87875 0 23.5 -5.5
+	v 516 -8 148 t 263.87875 -2988.8755 32.25 0.5
+   )
+  }
+ }
+// brush 4
+ {
+  mesh
+  {
+  contents detail;
+   me_corrugated_metal01
+   lightmap_gray
+   4 3 16 8
+   (
+	v 136 88 228 t 0 0 8.5 -5.5
+	v 128 88 230 t 0 -131.93938 8 -5.5
+	v 128 96 228 t 0 -263.87875 8 -6 f 1
+   )
+   (
+	v 136 88 228 t 0 0 8.5 -5.5
+	v 136 92 232 t 0 -131.93938 8.5 -5.75
+	v 136 96 228 t 0 -263.87875 8.5 -6
+   )
+   (
+	v 376 88 228 t 3840 0 23.5 -5.5
+	v 376 92 232 t 3840 -131.93938 23.5 -5.75 f 1
+	v 376 96 228 t 3840 -263.87875 23.5 -6
+   )
+   (
+	v 376 88 228 t 3840 0 23.5 -5.5
+	v 384 88 230 t 3840 -131.93938 24 -5.5
+	v 384 96 228 t 3840 -263.87875 24 -6
+   )
+  }
+ }
+// brush 5
+ {
+  mesh
+  {
+  contents detail;
+   me_corrugated_metal01
+   lightmap_gray
+   3 2 16 8
+   (
+	v -8 -4 148 t 0 0 -0.5 0.25
+	v 128 96 228 t 0 -2988.8755 8 -6
+   )
+   (
+	v -8 -8 150 t 71.554176 0 -0.5 0.5 f 1
+	v 128 88 230 t 71.554176 -2988.8755 8 -5.5 f 1
+   )
+   (
+	v -4 -8 148 t 143.10835 0 -0.25 0.5
+	v 136 88 228 t 143.10835 -2988.8755 8.5 -5.5
+   )
+  }
+ }
+}
+// entity 16
+{
+"origin" "152.0 8.0 0.0"
+"model" "prefabs/zipline/door_64_frame_02.map"
+"classname" "misc_prefab"
+}
+// entity 17
+{
+"classname" "func_group"
+// brush 0
+{
+  contents detail;
+ ( -152 0 120 ) ( -408 0 120 ) ( -408 0 504 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -360 8 200 ) ( -112 8 200 ) ( -112 8 568 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 12 48 ) ( 184 12 16 ) ( 184 -4 16 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 8 40 ) ( 120 0 8 ) ( 120 8 8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 196 208 104 ) ( 140 176 104 ) ( 196 176 104 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 164 11 120 ) ( 164 43 120 ) ( 168 43 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+  contents detail;
+ ( 512 -112 120 ) ( 512 -368 120 ) ( 512 -368 504 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 -320 208 ) ( 504 -72 208 ) ( 504 -72 576 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 500 216 40 ) ( 500 216 8 ) ( 516 216 8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 168 40 ) ( 512 168 8 ) ( 504 168 8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 304 228 110 ) ( 336 172 110 ) ( 336 228 110 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 501 204 120 ) ( 469 204 120 ) ( 469 208 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+  contents detail;
+ ( 512 8 120 ) ( 512 -248 120 ) ( 512 -248 504 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 -200 208 ) ( 504 48 208 ) ( 504 48 576 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 500 336 40 ) ( 500 336 8 ) ( 516 336 8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 288 40 ) ( 512 288 8 ) ( 504 288 8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 304 348 110 ) ( 336 292 110 ) ( 336 348 110 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 501 324 120 ) ( 469 324 120 ) ( 469 328 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( 256 384 120 ) ( 256 392 120 ) ( 512 392 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 632 384 -8 ) ( 392 384 -8 ) ( 392 384 56 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 512 392 -8 ) ( 512 392 56 ) ( 256 392 56 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 296 392 20 ) ( 296 384 20 ) ( 296 384 52 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 216 384 20 ) ( 216 392 20 ) ( 216 384 52 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 4
+{
+  contents detail;
+ ( 128 392 120 ) ( 384 392 120 ) ( 384 384 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 248 384 56 ) ( 248 384 -8 ) ( 8 384 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 504 384 -8 ) ( 504 384 56 ) ( 512 392 56 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 56 ) ( 128 392 56 ) ( 128 392 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 344 384 52 ) ( 344 384 20 ) ( 344 392 20 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( 512 256 120 ) ( 512 0 120 ) ( 504 0 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 384 56 ) ( 504 384 -8 ) ( 512 392 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 144 56 ) ( 504 144 -8 ) ( 504 384 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 56 ) ( 512 256 56 ) ( 512 256 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 336 20 ) ( 504 336 20 ) ( 504 336 52 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 6
+{
+  contents detail;
+ ( 512 224 120 ) ( 512 -32 120 ) ( 504 -32 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 112 56 ) ( 504 112 -8 ) ( 504 352 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 -32 56 ) ( 512 224 56 ) ( 512 224 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 288 20 ) ( 512 288 20 ) ( 504 288 52 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 520 216 120 ) ( 512 216 120 ) ( 512 216 152 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 7
+{
+  contents detail;
+ ( 512 256 120 ) ( 512 0 120 ) ( 504 0 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 144 56 ) ( 504 144 -8 ) ( 504 384 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 -8 ) ( 504 8 56 ) ( 512 0 56 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 512 0 56 ) ( 512 256 56 ) ( 512 256 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 488 168 120 ) ( 504 168 120 ) ( 488 168 152 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 8
+{
+  contents detail;
+ ( 384 0 120 ) ( 128 0 120 ) ( 128 8 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 504 8 56 ) ( 504 8 -8 ) ( 512 0 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 56 ) ( 264 8 -8 ) ( 504 8 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 240 0 56 ) ( 496 0 56 ) ( 496 0 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 464 8 120 ) ( 464 16 120 ) ( 464 8 152 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 9
+{
+  contents detail;
+ ( 464 0 120 ) ( 208 0 120 ) ( 208 8 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 344 8 56 ) ( 344 8 -8 ) ( 584 8 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 0 56 ) ( 520 0 56 ) ( 520 0 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 384 -8 112 ) ( 384 8 112 ) ( 384 -8 144 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 416 16 112 ) ( 416 8 112 ) ( 416 8 144 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 10
+{
+  contents detail;
+ ( 384 0 120 ) ( 128 0 120 ) ( 128 8 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 56 ) ( 264 8 -8 ) ( 504 8 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 0 56 ) ( 440 0 56 ) ( 440 0 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 184 -8 112 ) ( 184 8 112 ) ( 184 -8 144 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 336 16 112 ) ( 336 8 112 ) ( 336 8 144 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 11
+{
+  contents detail;
+ ( 384 0 120 ) ( 128 0 120 ) ( 128 8 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 264 8 56 ) ( 264 8 -8 ) ( 504 8 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 -8 ) ( 8 8 56 ) ( 0 0 56 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 128 0 56 ) ( 384 0 56 ) ( 384 0 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 120 8 22 ) ( 120 -8 22 ) ( 120 -8 54 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 12
+{
+  contents detail;
+ ( 0 0 120 ) ( 0 256 120 ) ( 8 256 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 8 56 ) ( 8 8 -8 ) ( 0 0 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 56 ) ( 8 384 -8 ) ( 8 144 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 56 ) ( 0 0 56 ) ( 0 0 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 40 20 ) ( 16 40 20 ) ( 8 40 52 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 13
+{
+  contents detail;
+ ( 0 0 120 ) ( 0 256 120 ) ( 8 256 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 56 ) ( 8 384 -8 ) ( 8 144 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 384 -8 ) ( 8 384 56 ) ( 0 392 56 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 256 56 ) ( 0 0 56 ) ( 0 0 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 88 20 ) ( 8 88 20 ) ( 8 88 52 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 14
+{
+  contents detail;
+ ( 128 392 120 ) ( 384 392 120 ) ( 384 384 120 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 8 384 56 ) ( 8 384 -8 ) ( 0 392 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 248 384 56 ) ( 248 384 -8 ) ( 8 384 -8 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 384 392 56 ) ( 128 392 56 ) ( 128 392 -8 ) me_decal_adobe_top_01 256 32 0 8 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 168 384 52 ) ( 168 392 20 ) ( 168 384 20 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+ ( 32 392 88 ) ( 16 392 88 ) ( 48 88 88 ) nodraw_decal 64 64 0 0 0 0 lightmap_gray 2048 2048 0 0 0 0
+}
+}
+// entity 18
+{
+"classname" "misc_prefab"
+"model" "prefabs/zipline/window_14_open.map"
+"origin" "440.0 4.0 31.0"
+}
+// entity 19
+{
+"classname" "misc_prefab"
+"model" "prefabs/zipline/window_14_closed.map"
+"origin" "508.0 192.0 31.0"
+"angles" "0 90 0"
+}
+// entity 20
+{
+"classname" "misc_prefab"
+"model" "prefabs/zipline/window_14_closed.map"
+"origin" "508.0 312.0 31.0"
+"angles" "0 90 0"
+}
+// entity 21
+{
+"classname" "misc_prefab"
+"model" "prefabs/zipline/window_14_closed.map"
+"origin" "320.0 388.0 31.0"
+"angles" "0 180 0"
+}
+// entity 22
+{
+"classname" "misc_prefab"
+"model" "prefabs/zipline/window_14_closed.map"
+"origin" "192.0 388.0 31.0"
+"angles" "0 180 0"
+}
+// entity 23
+{
+"classname" "misc_prefab"
+"model" "prefabs/zipline/window_14_closed.map"
+"origin" "4.0 64.0 31.0"
+"angles" "0 270 0"
+}
+// entity 24
+{
+"origin" "360.0 4.0 31.0"
+"model" "prefabs/zipline/window_14_open.map"
+"classname" "misc_prefab"
+}

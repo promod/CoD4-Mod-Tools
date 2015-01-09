@@ -1,0 +1,67 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 14 60 0 ) ( -2 60 0 ) ( -2 -44 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 0 0 0
+ ( -6 8 64 ) ( 14 8 64 ) ( 14 -6 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 0 0 0
+ ( -6 -6 64 ) ( 14 -6 64 ) ( 14 -14 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 0 0 0
+ ( 14 -44 24 ) ( 14 60 24 ) ( 14 60 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 8 64 ) ( -6 8 64 ) ( -6 12 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 0 0 0
+ ( -6 60 24 ) ( -6 -44 24 ) ( -6 -44 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -6 -6 64 ) ( 14 -6 64 ) ( 14 8 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 0 0 0
+ ( 62 -30 100 ) ( 62 74 100 ) ( 78 74 100 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 0 0 0
+ ( 14 -6 64 ) ( -6 -6 64 ) ( 46 0 100 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 -64 0 0
+ ( 66 0 100 ) ( 66 26 100 ) ( 14 12 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -64 0 0
+ ( -6 8 64 ) ( 14 8 64 ) ( 66 26 100 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 -64 0 0
+ ( 46 26 100 ) ( 46 0 100 ) ( -6 -14 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -64 0 0
+}
+// brush 2
+{
+ ( 66 74 100 ) ( 50 74 100 ) ( 50 -30 100 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 58 -14 0 0
+ ( 72 4 134 ) ( 72 108 134 ) ( 88 108 134 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 58 -14 0 0
+ ( 56 34 134 ) ( 76 34 134 ) ( 66 0 100 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 58 -100 0 0
+ ( 76 34 134 ) ( 76 60 134 ) ( 66 26 100 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 66 -64 0 0
+ ( 76 60 134 ) ( 56 60 134 ) ( 46 26 100 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 58 -100 0 0
+ ( 56 60 134 ) ( 56 34 134 ) ( 46 0 100 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 66 -64 0 0
+}
+// brush 3
+{
+ ( 56 34 134 ) ( 76 34 134 ) ( 76 60 134 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 82 -48 0 0
+ ( 88 44 176 ) ( 68 44 176 ) ( 68 70 176 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 82 -48 0 0
+ ( 76 34 134 ) ( 56 34 134 ) ( 68 44 176 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 82 -134 0 0
+ ( 76 60 134 ) ( 76 34 134 ) ( 88 44 176 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 100 -98 0 0
+ ( 56 60 134 ) ( 76 60 134 ) ( 88 70 176 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 82 -134 0 0
+ ( 56 34 134 ) ( 56 60 134 ) ( 68 70 176 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 100 -98 0 0
+}
+// brush 4
+{
+ ( 14 60 64 ) ( -2 60 64 ) ( -2 -44 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 0 0 0
+ ( 4 -26 116 ) ( 4 78 116 ) ( 20 78 116 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 0 0 0
+ ( -12 12 116 ) ( 8 12 116 ) ( 14 -6 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 -64 0 0
+ ( 8 4 116 ) ( 8 30 116 ) ( 14 12 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -64 0 0
+ ( 8 26 116 ) ( -12 26 116 ) ( -6 8 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 6 -64 0 0
+ ( -12 30 116 ) ( -12 4 116 ) ( -6 -14 64 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -64 0 0
+}
+// brush 5
+{
+ ( 8 78 116 ) ( -8 78 116 ) ( -8 -26 116 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -18 0 0
+ ( -24 -26 170 ) ( -24 78 170 ) ( -8 78 170 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -18 0 0
+ ( -40 12 170 ) ( -20 12 170 ) ( 8 12 116 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -116 0 0
+ ( -20 4 170 ) ( -20 30 170 ) ( 8 30 116 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 18 -116 0 0
+ ( -20 26 170 ) ( -40 26 170 ) ( -12 26 116 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 -116 0 0
+ ( -40 30 170 ) ( -40 4 170 ) ( -12 4 116 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 18 -116 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 16.0"
+"model" "foliage_dead_pine_xl"
+"classname" "misc_model"
+}

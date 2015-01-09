@@ -1,0 +1,14 @@
+#define LEVELS_CHOICES_SETUP( nameArg ) \
+		name			nameArg \
+		fullScreen		1 \
+		rect			0 0 640 480 HORIZONTAL_ALIGN_DEFAULT VERTICAL_ALIGN_DEFAULT \
+		focusColor		COLOR_FOCUSED \
+		soundloop		"" \
+		onOpen \
+		{ \
+			focusFirst; \
+		} \
+		onESC \
+		{ \
+			close self; \
+		}

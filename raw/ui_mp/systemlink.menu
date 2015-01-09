@@ -1,0 +1,185 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_SIZE_X			150
+#define CHOICE_SIZE_Y			22
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			34
+
+#define CHOICE_SEP_OFFSET_Y		-2
+
+#define CHOICE_GROUP			"xboxlive"
+
+#define CHOICE_SEP_1			2
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#define ORIGIN_MENU_TREE		54 64
+#define ORIGIN_MENU_TITLE		151 64
+#define TREE_COLOR				1 1 1 0.5
+
+#define ORIGIN_BUTTON_BACK		52 438
+#define ORIGIN_BUTTON_CONTINUE	508 438
+#define ORIGIN_POPUPTITLE		320 160
+
+{
+	menuDef
+	{
+		name			menu_systemlink
+		fullscreen		1
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		soundloop 		"music_mainmenu_mp"
+		onOpen
+		{
+            execnow "nosplitscreen";
+			exec "selectStringTableEntryInDvar mp/didyouknow.csv 0 didyouknow";
+			uiScript UpdateFilter;
+			setfocus serverlist;
+		}
+		onEsc
+		{
+			close menu_systemlink;
+			setdvar systemlink 0;
+			exec "splitscreencontrols";
+		}
+
+		// ------------------  statics ------------------------
+		#include "ui/blurredbg.inc"
+	
+		CHOICE_MENU_TITLE( "@PLATFORM_SYSTEM_LINK" )
+		
+		#define BUTTON_REFRESH	1
+		#include "ui_mp/navcontrols.inc"
+		
+		PREPROC_SHADER_DRAW_ALIGNED( -304 34 612 18 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_TOP, 0 0, "line_horizontal", 0.9 0.9 0.925 0.5, 0, 0, 0 0 0 0 )
+		
+		// --------------------------- buttons ----------------------------
+		itemDef
+		{
+			name			refresh
+			type			ITEM_TYPE_BUTTON
+			rect			270 438 0 0
+			visible			1
+			decoration
+			execKeyInt BUTTON_X
+			{
+				play "mouse_click";
+				uiScript RefreshServers;
+			}
+		}
+		
+		//SERVER LIST HEADER SORT TABS -----------------------------------
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			64 86
+			text			"@MENU_HOST_NAME"
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 0.65
+			textfont		UI_FONT_NORMAL
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			268 86
+			text			"@MENU_MAP_NAME"
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 0.65
+			textfont		UI_FONT_NORMAL
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			366 86
+			text			"@MENU_NUMPLAYERS"
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 0.65
+			textfont		UI_FONT_NORMAL
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			450 86
+			text			"@MENU_TYPE1"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_SMALL
+			forecolor		1 1 1 0.65
+			visible			1
+			decoration
+		}
+
+		// column dividers --------------------------------
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			262 92 1 318
+			backcolor		1 1 1 .2
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			362 92 1 318
+			backcolor		1 1 1 .2
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			442 92 1 318
+			backcolor		1 1 1 .2
+			visible			1
+			decoration
+		}
+
+		// SERVER LIST TEXT --------------------------------
+		itemDef
+		{
+			name			serverlist
+			rect			36 88 574 324
+			type			ITEM_TYPE_LISTBOX
+			style			WINDOW_STYLE_FILLED
+			elementwidth	120
+			elementheight	18
+			textfont		UI_FONT_NORMAL
+			textalignx		1
+			textscale		TEXTSIZE_SMALL
+			elementtype		LISTBOX_TEXT
+			feeder			FEEDER_SERVERS
+			forecolor		CHOICE_TEXTCOLOR
+			outlinecolor	0.9 0.9 0.925 0.2//0.3 0.3 0.35 0.55
+			selectBorder	0.8 0.95 1 0
+			//selectIcon	ALTERNATE_HINT_SHADER	
+//			numcols			xpos	xwidth	textlen
+			columns	4		26		203		40
+							229		98		25
+							327		85		10
+							412		35		35
+			visible			1
+			noscrollbars
+			doubleClick
+			{
+				uiScript JoinServer
+			}
+		}
+
+		#include "ui/safearea.menu"
+	}
+}

@@ -1,0 +1,571 @@
+#name "turretweapon"
+#dll "all" "weapon"
+#target_dir "weapons/sp/" // target location 1 (single-player)
+#target_dir "weapons/mp/" // target location 2 (multi-player)
+#target_dir "xmodel/"
+#target_dir ""
+#target_dir "xanim/"
+#file_ext "*"
+#version 24
+
+// This tells the configstring converter what the file type identifier should be
+string "WEAPONFILE" configstringFileType
+
+// This uses the config string convert's multi-target folder
+// mechanism to make the weapon either a single-player weapon
+// or a multi-player weapon.
+// The first character is used to specify which target folder to go in
+enum { "1: Single-Player", "2: Multi-Player" } targetFolder
+
+string "none" projectileTrail
+
+enum { "turret" } weaponClass
+enum { "bullet", "projectile" } weaponType
+enum { "stand", "prone", "duck" } stance
+enum { "none", "bullet_small", "bullet_large", "bullet_ap", "shotgun", "grenade_bounce", "grenade_explode", "rocket_explode", "projectile_dud" } impactType
+enum { "none", "small", "medium", "large" } penetrateType
+enum { "primary" } inventoryType
+enum { "Full Auto", "Single Shot" } fireType
+
+string adsOverlayShader
+int 320 1 640 adsOverlayWidth
+int 240 1 480 adsOverlayHeight
+enum { "none", "Turret Scope" } adsOverlayInterface
+
+int 1 0 1 projImpactExplode
+int 600 0 10000 projectileSpeed
+int 300 0 10000 explosionRadius
+int 10 0 10000 explosionInnerDamage
+int 10 0 10000 explosionOuterDamage
+float 180 0 180 damageConeAngle
+
+string script
+
+int 30 0 1000 damage
+int 30 0 1000 playerDamage
+
+int 30 0 1000 minDamage
+int 30 0 1000 minPlayerDamage
+
+float 15000 1 15000 maxDamageRange
+float 16000 1 16000 minDamageRange
+
+float 1600 0 10000 enemyCrosshairRange
+
+float 1600 0 8000 autoAimRange
+float 3200 0 8000 aimAssistRange
+float 3200 0 8000 aimAssistRangeAds
+
+int 115 0 360 leftArc
+int 115 0 360 rightArc
+int 90 0 360 topArc
+int 90 0 360 bottomArc
+int 0 0 360 grabarc
+float 1 0 1 accuracy
+float 2 0 180 aiSpread
+float 1 0 180 playerSpread
+
+float 0.05 0.0 10.0 fireTime
+int 20 0 180 animHorRotateInc
+int 5 1 720 minHorTurnSpeed
+int 5 1 720 minVertTurnSpeed
+int 360 1 720 maxHorTurnSpeed
+int 360 1 720 maxVertTurnSpeed
+int 100 1 720 horTurnSpeed
+int 100 1 720 vertTurnSpeed
+float 0.3 0 60 pitchConvergenceTime
+float 2 0 60 yawConvergenceTime
+float 2 0 60 suppressionTime
+float 0 0 1000000 maxRange
+float 0.5 0 5 horizViewJitter
+float 0.5 0 5 vertViewJitter
+
+int 0 0 1 rifleBullet
+int 0 0 1 armorPiercing
+
+string fireSound
+string fireSoundPlayer
+string loopFireSound
+string loopFireSoundPlayer
+string stopFireSound
+string stopFireSoundPlayer
+
+string viewFlashEffect
+string worldFlashEffect
+
+string reticleCenter
+int 32 1 480 reticleCenterSize
+
+string idleAnim
+string fireAnim
+float 46 1 128 playerPositionDist
+
+string hudIcon
+string killIcon
+enum { "4:1", "1:1", "2:1" } hudIconRatio
+enum { "4:1", "1:1", "2:1" } killIconRatio
+int 1 0 1 flipKillIcon
+
+string useHintString
+string dropHintString
+
+keyenum("rumble.gdf") fireRumble
+
+float 0 0 100 adsDofStart
+float 0 0 100 adsDofEnd
+
+vcontainer
+{
+	scrollbox(targetFolder)
+	[
+		exec
+		{
+			width(300)
+		}
+	]
+	
+	scrollbox(stance)
+	[
+		exec
+		{
+			width(300)
+		}
+	]
+
+	scrollbox(weaponType)
+	[
+		exec
+		{
+			width(300)
+		}
+	]
+	
+	scrollbox(impactType)
+	[
+		exec
+		{
+			width(300)
+			label("Impact type")
+			tooltip("The impact type, used to play impact effects based on surfacetype")
+		}
+	]
+
+	scrollbox(penetrateType)
+	[
+		exec
+		{
+			label("Penetration")
+			tooltip("Type of bullet penetration.")
+		}
+	]
+
+	scrollbox(fireType)
+	[
+		exec
+		{
+			width(300)
+			label("Fire Type")
+			tooltip("Behavior of the weapon when the trigger is held down.")
+		}
+	]
+
+	////////////////////////////////////////
+	// Aim Assist
+	////////////////////////////////////////
+	vcontainer
+	{
+		floatedit(autoAimRange, 1, 100)
+		[
+			exec
+			{
+				label("Auto Aim Range")
+				tooltip("(Console only.) The range in world units up to which entering ADS will lock-on to enemies. (1 world unit = 1 inch)")
+			}
+		]
+		
+		hcontainer
+		{
+			floatedit(aimAssistRange, 1, 100)
+			[
+				exec
+				{
+					label("Aim Assist Range")
+					tooltip("(Console only.) The range in world units up to which the crosshair will stick to targets. (1 world unit = 1 inch)")
+				}
+			]
+			
+			floatedit(aimAssistRangeAds, 1, 100)
+			[
+				exec
+				{
+					label("Aim Assist Range ADS")
+					tooltip("(Console only.) The range in world units up to which the crosshair will stick to targets in ADS. (1 world unit = 1 inch)")
+					width(260)
+					labelwidth(160)
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Aim Assist (Console only)")
+		}
+	]
+	
+	
+	spinedit(damage, 1, 10)
+	[
+    	exec
+    	{
+    		tooltip("The maximum amount of per-bullet damage done to anything other than the player at maxDamageRange.")
+    	}
+	]
+	spinedit(playerDamage, 1, 10)
+	[
+    	exec
+    	{
+    		tooltip("The maximum amount of per-bullet damage done only to the player at maxDamageRange.")
+    	}
+	]
+	spinedit(minDamage, 1, 10)
+	[
+    	exec
+    	{
+    		tooltip("The minimum amount of per-bullet damage done to anything other than the player at minDamageRange.")
+    	}
+	]
+	spinedit(minPlayerDamage, 1, 10)
+	[
+    	exec
+    	{
+    		tooltip("The minimum amount of per-bullet damage done only to the player at minDamageRange.")
+    	}
+	]
+
+	floatedit(maxDamageRange, 120, 8000)
+	[
+    	exec
+    	{
+    		tooltip("Distance specified in world units. 1 world unit = 1 inch.")
+    	}
+	]
+	floatedit(minDamageRange, 120, 8000)
+	[
+    	exec
+    	{
+    		tooltip("Distance specified in world units. 1 world unit = 1 inch.")
+    	}
+	]
+	
+	floatedit(enemyCrosshairRange, 1, 100)
+	[
+		exec
+		{
+			label("Enemy Crosshair Range")
+			tooltip("The range in world units at which an enemy will change your crosshair color. (1 world unit = 1 inch)")
+			width(280)
+			labelwidth(180)
+		}
+	]
+
+	spinedit(projectileSpeed, 10, 100)
+	spinedit(explosionRadius, 10, 50)
+	
+	spinedit(explosionInnerDamage, 1, 10)
+	[
+		exec
+		{
+			width(300)
+			labelwidth(160)
+		}
+	]
+	
+	spinedit(explosionOuterDamage, 1, 10)
+	[
+		exec
+		{
+			width(300)
+			labelwidth(160)
+		}
+	]
+	
+	spinedit(leftArc, 1, 10)
+	spinedit(rightArc, 1, 10)
+	spinedit(topArc, 1, 10)
+	spinedit(bottomArc, 1, 10)
+
+	floatedit(accuracy, 0.1, 0.2)
+	[
+    	exec
+    	{
+    		tooltip("The probability between 0 and 1 that for any bullet the AI will aim at the player")
+    	}
+	]
+	floatedit(aiSpread, 0.1, 0.2)
+	[
+    	exec
+    	{
+    		label("ai spread")
+    		width(270)
+    		tooltip("The bullet spread in degrees when the gun is used by AI")
+    	}
+	]
+	floatedit(playerSpread, 0.1, 0.2)
+	[
+    	exec
+    	{
+    		label("player spread")
+    		width(270)
+    		tooltip("The bullet spread in degrees when the gun is used by the player")
+    	}
+	]
+	floatedit(fireTime, 0.05, 0.2)
+
+	spinedit(animHorRotateInc, 1, 10)
+
+	spinedit(minHorTurnSpeed, 1, 10)
+	spinedit(minVertTurnSpeed, 1, 10)
+	spinedit(maxHorTurnSpeed, 1, 10)
+	spinedit(maxVertTurnSpeed, 1, 10)
+	
+	floatedit(pitchConvergenceTime, 0.1, 1)
+	floatedit(yawConvergenceTime, 0.1, 1)
+	floatedit(suppressionTime, 0.1, 1)
+	floatedit(maxRange, 1, 10)
+	floatedit(horizViewJitter, 0.1, 1)
+	floatedit(vertViewJitter, 0.1, 1)
+
+	edit(script)
+
+	checkbox(rifleBullet)
+	checkbox(armorPiercing)
+	checkbox(projImpactExplode)
+
+	edit(fireSound)
+	edit(fireSoundPlayer)
+	[
+		exec
+		{
+			label("fire (Player)")
+		}
+	]	
+	edit(loopFireSound)
+	edit(loopFireSoundPlayer)
+	[
+		exec
+		{
+			label("loopFire (Player)")
+		}
+	]
+	edit(stopFireSound)
+	edit(stopFireSoundPlayer)
+	[
+		exec
+		{
+			label("stopFire (Player)")
+		}
+	]
+
+	fileedit(viewFlashEffect)
+	[
+		exec
+		{
+			reldir("raw/")
+		}
+	]
+	fileedit(worldFlashEffect)
+	[
+		exec
+		{
+			reldir("raw/")
+		}
+	]
+	fileedit(reticleCenter)
+	[
+		exec
+		{
+			reldir("raw/")
+		}
+	]
+	spinedit(reticleCenterSize, 1, 2)
+
+	fileedit(idleAnim)
+	[
+		exec
+		{
+			reldir("raw/xanim/")
+			width(500)
+		}
+	]
+	fileedit(fireAnim)
+	[
+		exec
+		{
+			reldir("raw/xanim/")
+			width(500)
+		}
+	]
+	floatedit(playerPositionDist, 1, 10)
+
+	////////////////////////////////////////
+	// UI
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			fileedit(hudIcon)
+			[
+				exec
+				{
+					label("Hud Icon")
+					reldir("raw/")
+					width(450)
+					labelwidth(130)
+				}
+			]
+			scrollbox(hudIconRatio)
+			[
+				exec
+				{
+					label(" Aspect:")
+					width(110)
+					labelwidth(60)
+				}
+			]
+		}
+		hcontainer
+		{
+			fileedit(killIcon)
+			[
+				exec
+				{
+					label("Kill Icon")
+					reldir("raw/")
+					width(450)
+					labelwidth(130)
+				}
+			]
+			scrollbox(killIconRatio)
+			[
+				exec
+				{
+					label(" Aspect:")
+					width(110)
+					labelwidth(60)
+				}
+			]
+			checkbox(flipKillIcon)
+			[
+				exec
+				{
+					label(" Flip:")
+					tooltip("Used for weapons that need to have their kill icon horizontally flipped before displaying. (For MP obituaries).")
+					lefttext()
+					width(65)
+					labelwidth(40)
+				}
+			]
+		}
+	    edit(useHintString)
+	    edit(dropHintString)
+	}
+	[
+		exec
+		{
+			groupBox("User Interface")
+		}
+	]
+	
+	scrollbox(fireRumble)
+	[
+		exec
+		{
+			width(500)
+		}
+	]
+
+	////////////////////////////////////////
+	// Depth of Field Settings
+	////////////////////////////////////////
+	vcontainer
+	{
+		hcontainer
+		{
+			floatedit(adsDofStart, 0.1, 0.5)
+			[
+				exec
+				{
+					label("ADS Start")
+				}
+			]
+			
+			floatedit(adsDofEnd, 0.1, 0.5)
+			[
+				exec
+				{
+					label("ADS End")
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("Depth of Field Settings")
+		}
+	]
+
+	////////////////////////////////////////
+	// ADS Overlay Settings
+	////////////////////////////////////////
+	vcontainer
+	{
+		edit(adsOverlayShader)
+		[
+			exec
+			{
+				label("Shader")
+				tooltip("Overlay for sniper rifles in ADS. Uses a quarter circle image to construct a full scope view.")
+				width(500)
+			}
+		]
+		
+		scrollbox(adsOverlayInterface)
+		[
+			exec
+			{
+				label("Interface")
+				tooltip("Interactive Interface for Overlay")
+			}
+		]
+		
+		hcontainer
+		{
+			spinedit(adsOverlayWidth, 1, 10)
+			[
+				exec
+				{
+					label("Width")
+				}
+			]
+			
+			spinedit(adsOverlayHeight, 1, 10)
+			[
+				exec
+				{
+					label("Height")
+				}
+			]
+		}
+	}
+	[
+		exec
+		{
+			groupBox("ADS Overlay Settings")
+		}
+	]
+
+}
+

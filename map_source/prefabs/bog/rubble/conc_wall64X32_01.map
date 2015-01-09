@@ -1,0 +1,64 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+  contents detail;
+ ( 32 -16 -8 ) ( 32 -16 8 ) ( 0 -32 8 ) caulk 64 64 -192 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -24 0 ) ( 8 -36 0 ) ( 8 -36 4 ) me_concrete_dest1 137.59598 64 595.88287 136 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 32 -24 4 ) ( 8 -36 4 ) ( 0 -32 8 ) me_concrete_dest1 153.83698 55.864021 648.32758 157.98062 26.563053 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 32 -16 -8 ) ( 0 -32 -8 ) ( 8 -36 0 ) me_concrete_dest1 153.83667 -42.666649 648.3252 -53.349892 26.565491 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 0 -32 -8 ) ( 0 -32 8 ) ( 8 -36 4 ) me_concrete_dest1 137.59485 64 595.87842 136 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 32 -16 8 ) ( 24 -28 8 ) ( 24 -28 40 ) me_concrete_dest1 128 64 504 136 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 1
+{
+  contents detail;
+ ( 32 -16 -8 ) ( 48 -8 -8 ) ( 48 -8 8 ) caulk 64 64 -168 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -16 8 ) ( 48 -8 8 ) ( 44 -18 -2 ) me_concrete_dest1 145.21278 49.317886 623.70416 97.407127 -10.25 -0.092724741 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 32 -16 -8 ) ( 44 -18 -6 ) ( 48 -8 -8 ) me_concrete_dest1 152.625 -62.126499 652.60571 -108.40797 -0.28002954 -0.012613139 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 32 -16 -8 ) ( 32 -16 8 ) ( 44 -18 -2 ) me_concrete_dest1 151.74213 64 648.45239 136 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 48 -8 -8 ) ( 44 -18 -6 ) ( 44 -18 -2 ) me_concrete_dest1 142.83344 64 550.96527 136 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 2
+{
+  contents detail;
+ ( -96 720 -8 ) ( -56 720 -8 ) ( -96 752 -8 ) me_asphalt_01 128 128 -192 -448 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 720 8 ) ( -64 720 8 ) ( -64 752 8 ) me_asphalt_01 128 128 -192 -448 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -32 -8 ) ( 0 -32 8 ) ( 64 0 8 ) caulk 64 64 -132 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 -2 8 ) ( 48 -8 8 ) ( 48 -2 40 ) me_concrete_dest1 153.83755 64 594.02826 136 0 0 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 32 -16 8 ) ( 32 -2 8 ) ( 32 -16 40 ) caulk 64 64 504 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -8 8 ) ( 32 0 -8 ) ( 64 0 -8 ) caulk 64 64 -132 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 3
+{
+  contents detail;
+ ( -24 720 8 ) ( -40 720 8 ) ( -40 752 8 ) me_asphalt_01 128 128 -168 -448 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 80 0 -8 ) ( 104 0 -8 ) ( 80 0 24 ) caulk 64 64 -168 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 -32 8 ) ( 48 -32 -8 ) ( 48 0 -8 ) caulk 64 64 448 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 0 -8 ) ( 48 -8 8 ) ( 80 -8 8 ) me_concrete_dest1 150.72888 58.423679 628.00946 104.55675 -24.094847 0.034668893 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+ ( 64 0 8 ) ( 48 -8 8 ) ( 48 -8 40 ) me_concrete_dest1 139.62889 63.068195 589.63721 116.25655 -22.344629 -0.032709442 lightmap_gray 16384 16384 0 0 0 0 smoothing smoothing_smooth
+}
+// brush 4
+{
+  contents detail;
+ ( -48 720 8 ) ( -64 720 8 ) ( -64 752 8 ) me_asphalt_01 128 128 -192 -448 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 0 -8 ) ( 80 0 -8 ) ( 56 0 24 ) caulk 64 64 -192 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 48 -2 8 ) ( 48 -8 8 ) ( 48 -2 40 ) caulk 64 64 504 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -16 8 ) ( 32 -2 8 ) ( 32 -16 40 ) caulk 64 64 504 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 0 -8 ) ( 32 -8 8 ) ( 64 0 -8 ) caulk 64 64 -132 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 5
+{
+  contents detail;
+ ( -96 720 -8 ) ( -56 720 -8 ) ( -96 752 -8 ) me_asphalt_01 128 128 -192 -448 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -48 720 8 ) ( -64 720 8 ) ( -64 752 8 ) me_asphalt_01 128 128 -192 -448 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 0 -8 ) ( 80 0 -8 ) ( 56 0 24 ) caulk 64 64 -192 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -32 8 ) ( 0 -32 -8 ) ( 0 0 -8 ) caulk 64 64 448 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -32 -8 ) ( 0 -32 8 ) ( 64 0 8 ) caulk 64 64 -132 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 -2 8 ) ( 32 -16 8 ) ( 32 -16 40 ) caulk 64 64 504 136 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

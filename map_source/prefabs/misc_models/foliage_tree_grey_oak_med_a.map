@@ -1,0 +1,35 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 14 -8 -16 ) ( 14 0 -16 ) ( 6 6 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 0 158 ) ( 14 -8 158 ) ( 6 -14 158 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -14 158 ) ( 4 -14 158 ) ( 6 -14 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 -8 158 ) ( 14 0 158 ) ( 14 -2 -16 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 6 -16 ) ( 4 6 -16 ) ( 6 6 158 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -8 -16 ) ( -14 0 -16 ) ( -14 -2 158 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -12 0 288 ) ( -4 8 288 ) ( -12 0 320 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 8 288 ) ( 12 0 288 ) ( 4 8 320 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -8 288 ) ( 4 -16 288 ) ( 12 -8 320 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -4 -16 288 ) ( -12 -8 288 ) ( -4 -16 320 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 70 64 158 ) ( -66 64 158 ) ( -66 -48 158 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -66 -48 325 ) ( -66 64 325 ) ( 70 64 325 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -64 -32 408 ) ( 72 -32 408 ) ( 72 -32 104 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 56 -48 408 ) ( 56 64 408 ) ( 56 64 104 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 72 56 408 ) ( -64 56 408 ) ( -64 56 104 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -40 64 408 ) ( -40 -48 408 ) ( -40 -48 104 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "foliage_tree_grey_oak_med_a"
+"classname" "misc_model"
+}

@@ -1,0 +1,510 @@
+#include "ui/menudef.h"
+#include "ui_mp/common_macro.inc"
+
+#define CHOICE_X_START			0
+#define CHOICE_Y_START			150
+
+#define CHOICE_GROUP			"cdkey"
+
+#include "ui_mp/menustyle.inc"
+#include "ui/choices_setup_common.menu"
+
+#include "ui_mp/popupstyle.inc"	
+#include "ui/choices_setup_popmenu.menu"
+
+#undef CHOICE_HORIZONTAL_ALIGN
+#define CHOICE_HORIZONTAL_ALIGN	HORIZONTAL_ALIGN_CENTER
+#undef CHOICE_VERTICAL_ALIGN
+#define CHOICE_VERTICAL_ALIGN	VERTICAL_ALIGN_CENTER
+	
+#undef CHOICE_SIZE_X
+#define CHOICE_SIZE_X	400
+
+#undef CHOICE_POPUP_TITLE_HEIGHT
+#define CHOICE_POPUP_TITLE_HEIGHT 26
+
+#define SIDE_MARGIN		40
+
+{
+	menuDef
+	{
+		//#define NO_BG_CLOSE	1
+		//CENTER_POPUP_SETUP_ONOPEN( cdkey_menu, 6, ;, setfocus firstkey; setlocalvarint ui_show_cancel 1; uiScript getCDKey;, 1 )
+		
+		name "cdkey_menu"
+		fullscreen 0
+		rect	(0-(CHOICE_POPUP_WIDTH/2)) (0-(CHOICE_POPUP_HEIGHT( 6 )/2)) CHOICE_POPUP_WIDTH CHOICE_POPUP_HEIGHT( 6 ) HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+		focusColor COLOR_FOCUSED
+		style 1
+		border			1 
+		bordersize		CHOICE_POPUP_BORDER_WIDTH 
+		bordercolor		CHOICE_POPUP_BORDER_COLOR 
+		popup
+		onOpen
+		{
+			setfocus firstkey; setlocalvarint ui_show_cancel 1; uiScript getCDKey;
+		}
+		onEsc
+		{
+			close self;
+		}
+		itemDef
+		{
+			style			WINDOW_STYLE_SHADER
+			rect			0 0 (CHOICE_POPUP_WIDTH-(CHOICE_POPUP_BORDER_WIDTH*2)) (CHOICE_POPUP_HEIGHT( 6 )-(CHOICE_POPUP_BORDER_WIDTH*2)) HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_CENTER
+			background		"white"
+			forecolor		CHOICE_POPUP_BACKCOLOR
+			visible			1
+			decoration
+		} 
+		
+		CHOICE_POPMENU_TITLE( "@MENU_KEY_CODE" )
+		CHOICE_POPMENU_SUBTITLE_VIS( dvarString(ui_cdkeyvalid), when( localvarint( ui_show_cancel ) == 0 ); )
+		CHOICE_POPMENU_SUBTITLE_VIS( "@MENU_ENTER_YOUR_KEY_CODE_IN_THE_FIELD_BELOW", when( localvarint( ui_show_cancel ) == 1 ); )
+		
+		#define LOCAL_KEY_SEG( prect, pdvar, ex ) \
+		itemDef	{\
+			group grpcdkey \
+			type ITEM_TYPE_UPREDITFIELD \
+			style 1 \
+			text "" \
+			dvar pdvar \
+			maxchars 4 \
+			rect prect 0 0 \
+			textalign ITEM_ALIGN_CENTER \
+			textalignx -28 \
+			textaligny 14 \
+			textfont UI_FONT_NORMAL \
+			textscale .3 \
+			border 1 \
+			bordercolor .5 .5 .5 1 \
+			backcolor .1 0.1 0.1 .25 \
+			forecolor 1 1 1 1 \
+			visible 1 \
+			ex \
+		}			
+
+		#define LOCAL_ACCEPT \
+			accept\
+			{\
+				uiScript verifyCDKey; setlocalvarint ui_show_cancel 1; \
+			}
+			
+		//mouseenter { setcolor bordercolor 1 .75 0 1 }
+		//mouseexit { setcolor bordercolor .5 .5 .5 1 }		
+		
+		#define SEG_WIDTH	60
+		#define SEG_HEIGHT	20
+		#define SEG_SIZE	SEG_WIDTH SEG_HEIGHT
+		#define SEG_X_SPACE 4
+		
+		#define SEG_Y		60
+		
+		#define SEG1_X		SIDE_MARGIN
+		#define SEG2_X		(SEG1_X+SEG_WIDTH+SEG_X_SPACE)
+		#define SEG3_X		(SEG2_X+SEG_WIDTH+SEG_X_SPACE)
+		#define SEG4_X		(SEG3_X+SEG_WIDTH+SEG_X_SPACE)
+		#define SEG5_X		(SEG4_X+SEG_WIDTH+SEG_X_SPACE+12)
+				
+		LOCAL_KEY_SEG( SEG1_X SEG_Y SEG_SIZE, "cdkey1", name firstkey; maxCharsGotoNext )
+		LOCAL_KEY_SEG( SEG2_X SEG_Y SEG_SIZE, "cdkey2", maxCharsGotoNext )
+		LOCAL_KEY_SEG( SEG3_X SEG_Y SEG_SIZE, "cdkey3", maxCharsGotoNext )
+		LOCAL_KEY_SEG( SEG4_X SEG_Y SEG_SIZE, "cdkey4", maxCharsGotoNext )
+		
+		itemDef
+		{
+			name datafield
+			group grpcdkey
+			style 0
+			text "-"
+			maxchars 2
+			rect (SEG5_X-12) SEG_Y SEG_SIZE
+			textalign ITEM_ALIGN_LEFT
+			textalignx 3
+			textaligny 18
+			textfont UI_FONT_NORMAL
+			textscale .3
+			backcolor 0 0 0 0
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+		LOCAL_KEY_SEG( SEG5_X SEG_Y SEG_SIZE, "cdkey5", LOCAL_ACCEPT )
+		
+		CHOICE_BUTTON( 5, "@MENU_VERIFY", play "mouse_click"; uiScript verifyCDKey; setlocalvarint ui_show_cancel 0; )
+		CHOICE_BUTTON_BG( 6, 1 )
+		CHOICE_HIGHLIGHT( 6, 1 )
+		CHOICE_BUTTON_VIS_NOHI( 6, "@MENU_CANCEL", close self;, when( localvarint( ui_show_cancel ) ); )
+		CHOICE_BUTTON_VIS_NOHI( 6, "@MENU_CLOSE", close self;, when( localvarint( ui_show_cancel ) == 0 ); )
+		
+	}
+}
+
+/*
+{
+// SETUP MENU \\
+
+	menuDef
+	{
+		//CENTER_POPUP_SETUP_ONOPEN( cdkey_menu, 6, ;, setfocus firstkey; setlocalvarint ui_show_cancel 1; uiScript getCDKey;, 1 )
+		//CHOICE_POPMENU_TITLE( "@MENU_KEY_CODE" )
+		//CHOICE_POPMENU_SUBTITLE_VIS( dvarString(ui_cdkeyvalid), when( localvarint( ui_show_cancel ) == 0 ); )
+		//CHOICE_POPMENU_SUBTITLE_VIS( "@MENU_ENTER_YOUR_KEY_CODE_IN_THE_FIELD_BELOW", when( localvarint( ui_show_cancel ) == 1 ); )
+		
+		name "cdkey_menu"
+		fullscreen 0
+		rect 100 125 443 340
+		focusColor COLOR_FOCUSED
+		style 1
+		border 1
+		popup
+		onClose
+		{
+			uiScript verifyCDKey
+		}
+		onOpen
+		{
+
+			hide grpfinish ;
+			hide f_close;
+			uiScript getCDKey
+		}
+		onEsc
+		{
+			close cdkey_menu;
+		}
+		itemDef
+		{
+			name backimage2fade
+			style WINDOW_STYLE_FILLED
+			rect -105 -130 646 486
+			forecolor 0 0 0 0.7
+			backcolor 0 0 0 0.7
+			visible 1
+			decoration
+		}
+		itemDef
+		{
+			name window
+			group grpSystembutton
+			rect 0 2 443 300
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .8
+			visible 1
+			decoration
+		}
+
+		itemDef
+		{
+			name default
+			text "@MENU_KEY_CODE"
+			type 1
+			style 0
+			textstyle 6
+			rect 221 15 64 14
+			textalign ITEM_ALIGN_CENTER
+			textfont UI_FONT_NORMAL
+			textscale .3
+			textalignx -30
+			textaligny 12
+			forecolor .9 .9 .9 1
+			visible 1
+			decoration
+		}
+*/
+/*
+//	DEMO ONLY OPTION	//
+
+	itemDef {
+		name demo_only
+		group grpcdkey
+		rect 0 145 454 30
+		text"This Option is Not Available in Demo."
+		textalign ITEM_ALIGN_CENTER
+		textstyle 1
+		textscale .333
+		textalignx -10
+		textaligny 23
+		forecolor 1 1 1 1
+		visible 1
+		decoration
+		}
+*/
+/*
+		itemDef
+		{
+			name data
+			group grpcdkey
+			rect 0 50 454 12
+			text"@MENU_ENTER_YOUR_KEY_CODE_IN_THE_FIELD_BELOW"
+			textalign ITEM_ALIGN_CENTER
+			textfont UI_FONT_NORMAL
+			textscale .25
+			textalignx 13
+			textaligny 10
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+		itemDef
+		{
+			name datafield
+			group grpcdkey
+			style 0
+			text "@MENU_KEY"
+			maxchars 4
+			rect 40 75 50 12
+			textalign ITEM_ALIGN_LEFT
+			textalignx 2
+			textaligny 10
+			textfont UI_FONT_NORMAL
+			textscale .25
+			decoration
+			backcolor .1 .1 .1 .25
+			forecolor 1 1 1 1
+			visible 1
+		}
+
+		itemDef
+		{
+			name datafield
+			group grpcdkey
+			type ITEM_TYPE_UPREDITFIELD
+			style 1
+			text ""
+			dvar "cdkey1"
+			maxchars 4
+			maxCharsGotoNext
+			rect 80 69 60 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -28
+			textaligny 14
+			textfont UI_FONT_NORMAL
+//			textscale .255
+			textscale .3
+			border 1
+			bordercolor .5 .5 .5 1
+			backcolor .1 0.1 0.1 .25
+			forecolor 1 1 1 1
+			visible 1
+			//mouseenter { setcolor bordercolor 1 .75 0 1 }
+			//mouseexit { setcolor bordercolor .5 .5 .5 1 }
+		}
+		itemDef
+		{
+			name datafield
+			group grpcdkey
+			type ITEM_TYPE_UPREDITFIELD
+			style 1
+			text ""
+			dvar "cdkey2"
+			maxchars 4
+			maxCharsGotoNext
+			rect 145 69 60 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -28
+			textaligny 14
+			textfont UI_FONT_NORMAL
+//			textscale .255
+			textscale .3
+			border 1
+			bordercolor .5 .5 .5 1
+			backcolor .1 .10 .10 .25
+			forecolor 1 1 1 1
+			visible 1
+			//mouseenter { setcolor bordercolor 1 .75 0 1 }
+			//mouseexit { setcolor bordercolor .5 .5 .5 1 }
+		}
+		itemDef
+		{
+			name datafield
+			group grpcdkey
+			type ITEM_TYPE_UPREDITFIELD
+			style 1
+			text ""
+			dvar "cdkey3"
+			maxchars 4
+			maxCharsGotoNext
+			rect 210 69 60 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -28
+			textaligny 14
+			textfont UI_FONT_NORMAL
+//			textscale .255
+			textscale .3
+			border 1
+			bordercolor .5 .5 .5 1
+			backcolor .1 .10 .10 .25
+			forecolor 1 1 1 1
+			visible 1
+			//mouseenter { setcolor bordercolor 1 .75 0 1 }
+			//mouseexit { setcolor bordercolor .5 .5 .5 1 }
+		}
+		itemDef
+		{
+			name datafield
+			group grpcdkey
+			type ITEM_TYPE_UPREDITFIELD
+			style 1
+			text ""
+			dvar "cdkey4"
+			maxchars 4
+			maxCharsGotoNext
+			rect 275 69 60 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -28
+			textaligny 14
+			textfont UI_FONT_NORMAL
+//			textscale .255
+			textscale .3
+			border 1
+			bordercolor .5 .5 .5 1
+			backcolor .1 .10 .10 .25
+			forecolor 1 1 1 1
+			visible 1
+			//mouseenter { setcolor bordercolor 1 .75 0 1 }
+			//mouseexit { setcolor bordercolor .5 .5 .5 1 }
+		}
+		itemDef
+		{
+			name datafield
+			group grpcdkey
+			style 0
+			text "-"
+			maxchars 2
+			rect 328 69 60 20
+			textalign ITEM_ALIGN_LEFT
+			textalignx 10
+			textaligny 14
+			textfont UI_FONT_NORMAL
+			textscale .255
+			backcolor 0 0 0 0
+			decoration
+			forecolor 1 1 1 1
+			visible 1
+		}
+		itemDef
+		{
+			name datafield
+			group grpcdkey
+			type ITEM_TYPE_UPREDITFIELD
+			style 1
+			text ""
+			dvar "cdkey5"
+			maxchars 4
+			rect 345 69 50 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -23
+			textaligny 14
+			textfont UI_FONT_NORMAL
+//			textscale .255
+			textscale .3
+			border 1
+			bordercolor .5 .5 .5 1
+			forecolor 1 1 1 1
+			backcolor .1 .1 .1 .25
+			visible 1
+			//mouseenter { setcolor bordercolor 1 .75 0 1 }
+			//mouseexit { setcolor bordercolor .5 .5 .5 1 }
+		}
+		itemDef
+		{
+			name		cancel
+			text		"@MENU_CANCEL"
+			type		1
+			group		grpcdkey
+			textscale	.3
+			style		WINDOW_STYLE_FILLED
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		120 115 100 20
+			textalign	ITEM_ALIGN_CENTER
+			textalignx	-2
+			textaligny	14
+			forecolor	.9 .9 .95 1
+			visible		1
+			mouseEnter		{ play "mouse_over"; }
+			action
+			{
+			play "mouse_click";
+			close cdkey_menu;
+//			close options_menu;
+//			open options_menu;
+			open options_multi;
+			}
+
+		}
+		itemDef
+		{
+			name		verify
+			text		"@MENU_VERIFY"
+			type		1
+			group		grpcdkey
+			textscale	.3
+			style		WINDOW_STYLE_FILLED
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		250 115 100 20
+			textalign	ITEM_ALIGN_CENTER
+			textalignx	-2
+			textaligny	14
+			forecolor	.9 .9 .95 1
+			visible		1
+			mouseEnter		{ play "mouse_over"; }
+			action
+			{
+				play "mouse_click";
+				uiScript verifyCDKey ;
+				show finish_message ;
+				show f_close ;
+			}
+//			mouseexit { hide finish_message }
+		}
+
+		itemDef
+		{
+			name finish_message
+			group grpfinish
+			style 0
+			type ITEM_TYPE_EDITFIELD
+			text ""
+			dvar ui_cdkeyvalid
+			rect 0 140 443 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx 10
+			textaligny 20
+			textfont UI_FONT_NORMAL
+			textscale .25
+			forecolor 1 1 1 1
+			visible 1
+			decoration
+		}
+		itemDef
+		{
+			name		f_close
+			text		"@MENU_CLOSE"
+			type		1
+			group		grpcdkey
+			textscale	.3
+			style		WINDOW_STYLE_FILLED
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		180 170 100 20
+			textalign	ITEM_ALIGN_CENTER
+			textalignx	-2
+			textaligny	14
+			forecolor	.9 .9 .95 1
+			visible			0
+			mouseEnter		{ play "mouse_over"; }
+			action
+			{
+			play "mouse_click";
+			close cdkey_menu;
+//			close options_menu;
+//			open options_menu;
+			open options_multi;
+			}
+		}
+	}
+}
+*/

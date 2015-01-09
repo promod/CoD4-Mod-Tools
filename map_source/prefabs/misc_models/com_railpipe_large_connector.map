@@ -1,0 +1,26 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 45.5 22.5 -45 ) ( -52 22.5 -45 ) ( -52 -18 -45 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 -18 45 ) ( -52 22.5 45 ) ( 45.5 22.5 45 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -52 -17.5 45 ) ( 45.5 -17.5 45 ) ( 45.5 -17.5 -45 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 45 -18 45 ) ( 45 22.5 45 ) ( 45 22.5 -45 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 45.5 17.5 45 ) ( -52 17.5 45 ) ( -52 17.5 -45 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -45 21 45 ) ( -45 -19.5 45 ) ( -45 -19.5 -45 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 45 17.5 16.5 ) ( 16.5 17.5 45 ) ( 16.5 49.5 45 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16.5 17.5 45 ) ( -45 17.5 16.5 ) ( -16.5 49.5 45 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16.5 17.5 -45 ) ( 45 17.5 -16.5 ) ( 45 49.5 -16.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -45 17.5 -16.5 ) ( -16.5 17.5 -45 ) ( -45 49.5 -16.5 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_railpipe_large_connector"
+"classname" "misc_model"
+}

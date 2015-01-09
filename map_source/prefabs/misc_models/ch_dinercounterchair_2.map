@@ -1,0 +1,52 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"northyaw" "225"
+"radiosityScale" "1"
+"sunRadiosity" "2.5"
+"contrastGain" "0.15"
+"diffusefraction" "0.2"
+"_color" "0.90 0.90 1"
+"sunlight" "1"
+"sundirection" "-155 136 0"
+"sundiffusecolor" "0.87 0.77 .65"
+"suncolor" "1 .85 .67"
+"ambient" "0"
+"bouncefraction" ".3"
+"classname" "worldspawn"
+// brush 0
+{
+ ( 11 18 30 ) ( -11 18 30 ) ( -11 12 30 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 12 47 ) ( -11 18 47 ) ( 11 18 47 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 12 45 ) ( 11 12 45 ) ( 11 12 30 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 11 12 45 ) ( 11 18 45 ) ( 11 18 30 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 11 18 45 ) ( -11 18 45 ) ( -11 18 30 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 18 45 ) ( -11 12 45 ) ( -11 12 30 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -5 32 22 ) ( -14 32 22 ) ( -14 -31 22 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -29 30 ) ( -14 34 30 ) ( -5 34 30 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 -11 44 ) ( -5 -11 44 ) ( -5 -11 18 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 11 -32 45 ) ( 11 31 45 ) ( 11 31 19 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -5 18 46 ) ( -14 18 46 ) ( -14 18 20 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 32 45 ) ( -11 -31 45 ) ( -11 -31 19 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( 2 28 2 ) ( -2 28 2 ) ( -2 -26 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -26 22 ) ( -2 28 22 ) ( 2 28 22 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 -2 30 ) ( 2 -2 30 ) ( 2 -2 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 -26 30 ) ( 2 28 30 ) ( 2 28 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 2 2 20 ) ( -2 2 20 ) ( -2 2 -8 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -2 28 30 ) ( -2 -26 30 ) ( -2 -26 2 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "ch_dinercounterchair_2"
+"classname" "misc_model"
+}

@@ -1,0 +1,33 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 12 0 ) ( -16 12 0 ) ( -16 -16 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -16 88 ) ( -16 12 88 ) ( 16 12 88 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -16 88 ) ( 12 12 88 ) ( 12 12 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 16 18 88 ) ( -16 18 88 ) ( -16 18 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 12 88 ) ( -14 -16 88 ) ( -14 -16 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12.5 -2 76 ) ( 12.5 -2 84 ) ( 44.5 -2 84 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 16 12 0 ) ( -16 12 0 ) ( -16 -16 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -16 -14 88 ) ( 16 -14 88 ) ( 16 -14 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -16 88 ) ( 12 12 88 ) ( 12 12 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -14 12 88 ) ( -14 -16 88 ) ( -14 -16 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12.5 -2 84 ) ( 12.5 -2 76 ) ( 44.5 -2 84 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -10 60 ) ( 12 -6 60 ) ( 44 -10 60 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 12 -10 60 ) ( 2 -14 60 ) ( 2 -14 92 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"classname" "misc_model"
+"model" "com_water_heater"
+"angles" "0 360 0"
+"origin" "0.0 0.0 0.0"
+}

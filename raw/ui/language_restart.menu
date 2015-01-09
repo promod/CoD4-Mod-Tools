@@ -1,0 +1,145 @@
+#include "ui/menudef.h"
+
+{
+// LANGUAGE RESTART POPUP MENU //
+
+	menuDef 
+	{
+		name language_restart_popmenu
+		visible 0
+		fullscreen 0
+		//rect 217 200 210 85
+		rect 204 140 235 135
+		focusColor COLOR_FOCUSED
+		style 1
+		border 1
+		popup
+		onESC { close language_restart_popmenu;  }
+		onOpen { setfocus yes; }
+
+		itemDef 
+		{
+			name window
+			group grpControlbutton
+			rect 0 2 235 135
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .5 .5 .5 .5
+			forecolor 1 1 1 1
+			backcolor 0 0 0 .5
+			visible 0
+			decoration
+		}
+
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -332 -162 896 484
+	 		background "white"
+			forecolor 0 0 0 0.3
+			backcolor 0 0 0 0.3
+			visible 1
+			decoration
+		}
+	
+		itemDef 
+		{
+			name window2
+			group grpControlbutton
+			rect 2 3 231 20	
+			style WINDOW_STYLE_FILLED
+			border 1
+			bordercolor .1 .1 .1 .2
+			forecolor 1 1 1 1
+			backcolor 1 1 .3 .3
+			visible 0
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -150 2 535 150
+	 		background "popmenu_bg"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+		itemDef 
+		{
+			name backimage2fade
+			style WINDOW_STYLE_SHADER
+			rect -50 20 335 24
+	 		background "popmenu_goldline"
+//			forecolor 0 0 0 0.4
+//			backcolor 0 0 0 0.4
+			visible 1
+			decoration
+		}
+
+		itemDef 
+		{
+			name confirm
+			text "@MENU_APPLY_LANGUAGE_SETTINGS" 
+			style 0
+			textscale TEXTSIZE_TITLE 
+			textstyle ITEM_TEXTSTYLE_SHADOWED
+			rect 126 25 110 20
+			textalign ITEM_ALIGN_CENTER
+			textalignx -62
+			textaligny 5
+			decoration
+			forecolor		COLOR_TITLE
+			visible 1
+		}
+
+		itemDef 
+		{
+			name		yes
+			text		"@MENU_YES"
+			type		1
+			textscale	.45
+			style		WINDOW_STYLE_FILLED
+			textfont	UI_FONT_NORMAL
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		90 45 60 30
+			textalign	ITEM_ALIGN_CENTER
+			textaligny	21
+			forecolor	.9 .9 .95 1
+			visible		1
+
+			action 
+			{ 
+				play "mouse_click";
+				close language_restart_popmenu;
+				uiScript updateLanguage; 
+			}
+			mouseEnter { play "mouse_over";  } 
+		}
+
+		itemDef 
+		{
+			name		no
+			text		"@MENU_NO"
+			type		1
+			textscale	.45
+			style		WINDOW_STYLE_FILLED
+			textfont	UI_FONT_NORMAL
+			textstyle	ITEM_TEXTSTYLE_SHADOWED
+			rect		91 85 60 30
+			textalign	ITEM_ALIGN_CENTER
+			textaligny	21
+			forecolor	.9 .9 .95 1
+			visible		1
+
+			action 
+			{ 
+				play "mouse_click";
+				close language_restart_popmenu;
+			}
+			mouseEnter { play "mouse_over";  } 
+		}	
+	}
+}

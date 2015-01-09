@@ -1,0 +1,29 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 8 -32 ) ( -8 8 -32 ) ( -8 -8 -32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -8 32 ) ( 0 8 32 ) ( 16 8 32 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 -6 48 ) ( 0 -8 48 ) ( 0 -8 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 0 48 ) ( 6 -6 48 ) ( 6 -6 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 6 6 48 ) ( 8 0 48 ) ( 8 0 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 8 48 ) ( 6 6 48 ) ( 6 6 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 6 48 ) ( 0 8 48 ) ( 0 8 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 0 48 ) ( -6 6 48 ) ( -6 6 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -6 -6 48 ) ( -8 0 48 ) ( -8 0 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -8 48 ) ( -6 -6 48 ) ( -6 -6 80 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"targetname" "pipe_break"
+"script_noteworthy" "fire64"
+"angles" "270 270 -6.83245e-007"
+"model" "com_pipe_break_64_gas"
+"classname" "script_model"
+}

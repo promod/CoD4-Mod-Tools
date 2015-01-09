@@ -1,0 +1,43 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 16 48 0 ) ( 16 -208 0 ) ( 96 -208 0 ) ch_wall_floor_destroyed 256 16 0 0 90 0 lightmap_gray 16384 16384 112 528 0 0
+ ( 16 -208 128 ) ( 16 48 128 ) ( 96 48 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 112 528 0 0
+ ( 32 -152 -208 ) ( 32 40 -208 ) ( 32 40 -464 ) ch_concretewall03 128 128 0 0 0 0 lightmap_gray 16384 16384 -528 120 0 0
+ ( 0 48 144 ) ( 0 48 16 ) ( 48 48 16 ) ch_concretewall03 128 128 0 0 0 0 lightmap_gray 16384 16384 112 120 0 0
+ ( 0 48 16 ) ( 0 48 144 ) ( 16 32 144 ) ch_concretewall03 128 128 0 0 0 0 lightmap_gray 16384 16384 -528 120 0 0
+ ( 168 40 152 ) ( 160 40 152 ) ( 160 40 184 ) ch_concretewall03 128 128 0 0 0 0 lightmap_gray 16384 16384 112 120 0 0
+}
+// brush 1
+{
+ ( 0 48 0 ) ( 0 -208 0 ) ( 80 -208 0 ) ch_wall_floor_destroyed 256 16 0 0 90 0 lightmap_gray 16384 16384 96 528 0 0
+ ( 0 -208 128 ) ( 0 48 128 ) ( 80 48 128 ) caulk 64 64 0 0 0 0 lightmap_gray 16384 16384 96 528 0 0
+ ( 8 -136 -252 ) ( 8 56 -252 ) ( 8 56 -508 ) ch_concretewall03 128 128 0 0 0 0 lightmap_gray 16384 16384 -528 120 0 0
+ ( 0 48 144 ) ( 0 48 16 ) ( 16 32 16 ) ch_concretewall03 128 128 0 0 0 0 lightmap_gray 16384 16384 -528 120 0 0
+ ( 0 48 16 ) ( 0 48 144 ) ( 0 0 144 ) ch_concretewall03 128 128 0 0 0 0 lightmap_gray 16384 16384 -528 120 0 0
+ ( 112 16 144 ) ( 104 16 144 ) ( 104 16 176 ) ch_concretewall03 128 128 0 0 0 0 lightmap_gray 16384 16384 96 120 0 0
+}
+// brush 2
+{
+ ( 32 32 0 ) ( 0 32 0 ) ( 0 16 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 16 0 0
+ ( 8 16 128 ) ( 8 32 128 ) ( 40 32 128 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 16 0 0
+ ( 0 16 40 ) ( 32 16 40 ) ( 32 16 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 16 40 ) ( 8 32 40 ) ( 8 32 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -16 0 0 0
+ ( 32 40 40 ) ( 0 40 40 ) ( 0 40 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 32 40 ) ( 0 16 40 ) ( 0 16 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 -16 0 0 0
+}
+// brush 3
+{
+ ( 32 48 0 ) ( 0 48 0 ) ( 0 32 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 32 128 ) ( 8 48 128 ) ( 40 48 128 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 40 40 ) ( 32 40 40 ) ( 32 40 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 32 40 ) ( 32 48 40 ) ( 32 48 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 32 48 40 ) ( 0 48 40 ) ( 0 48 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 48 40 ) ( 0 32 40 ) ( 0 32 32 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}

@@ -1,0 +1,40 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( -36 -38 -1 ) ( -36 36 -1 ) ( -42 36 8 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27 -38 57 ) ( 27 36 57 ) ( 33 36 49 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 3 50 ) ( 33 3 50 ) ( -21 3 3 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -36 36 -1 ) ( -36 -38 -1 ) ( 33 -38 49 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 33 10 47 ) ( 8 10 47 ) ( -46 10 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -42 -38 8 ) ( -42 36 8 ) ( 27 36 57 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( -23 -31 46 ) ( -13 -31 46 ) ( 21 31 -1 ) clip_nosight_metal 64 64 0 1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -11 -26 51 ) ( -21 -26 51 ) ( 12 36 4 ) clip_nosight_metal 64 64 0 1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 -31 44 ) ( -19 -26 49 ) ( -12 -26 51 ) clip_nosight_metal 64 64 0 1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 21 36 4 ) ( 20 31 -1 ) ( -13 -31 46 ) clip_nosight_metal 64 64 -1 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 14 36 0 ) ( 12 31 -5 ) ( 20 31 -1 ) clip_nosight_metal 64 64 0 1 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -19 -26 49 ) ( -21 -31 44 ) ( 13 33 -3 ) clip_nosight_metal 64 64 -1 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 2
+{
+ ( -16 26 47 ) ( -17 21 48 ) ( 18 -36 1 ) clip_nosight_metal 64 64 -2 2 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 27.5 -31.5 1.5 ) ( 24 -36.5 4 ) ( -11.5 19 53 ) clip_nosight_metal 64 64 -2 2 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -15 20 57 ) ( -21 19 51 ) ( -18 24 47 ) clip_nosight_metal 64 64 -3 4 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -21 19 52 ) ( -15 20 58 ) ( 21 -36 8 ) clip_nosight_metal 64 64 -4 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 18 -36 1 ) ( 24 -36.5 5 ) ( 27.5 -31.5 2.5 ) clip_nosight_metal 64 64 -3 4 -90 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 26 51 ) ( -15 24 44 ) ( 20 -32 -3 ) clip_nosight_metal 64 64 -4 2 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "mil_hedgehog"
+"classname" "misc_model"
+}

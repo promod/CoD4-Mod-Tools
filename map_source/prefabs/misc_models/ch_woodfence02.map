@@ -1,0 +1,31 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 45 8 0 ) ( -46 8 0 ) ( -46 -6 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 -6 52 ) ( -46 8 52 ) ( 45 8 52 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -45 -4 52 ) ( 46 -4 52 ) ( 46 -4 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 47 -6 52 ) ( 47 8 52 ) ( 47 8 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 45 4 52 ) ( -46 4 52 ) ( -46 4 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -47 8 52 ) ( -47 -6 52 ) ( -47 -6 0 ) clip 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+// brush 1
+{
+ ( 4 10 0 ) ( -44 10 0 ) ( -44 -12 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 -12 36 ) ( -44 10 36 ) ( 4 10 36 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -44 -12 52 ) ( 4 -12 52 ) ( 4 -12 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 46 -12 52 ) ( 46 10 52 ) ( 46 10 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 4 12 52 ) ( -44 12 52 ) ( -44 12 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -46 10 52 ) ( -46 -12 52 ) ( -46 -12 0 ) mantle_over 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "ch_woodfence02"
+"classname" "misc_model"
+}

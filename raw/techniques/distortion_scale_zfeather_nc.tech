@@ -1,0 +1,20 @@
+{
+	stateMap "default";
+
+	vertexShader 2.0 "distortion_scale_zfeather_nc.hlsl"
+	{
+		distortionScale = material.distortionScale;
+	}
+
+	pixelShader 2.0 "distortion_zfeather_nc.hlsl"
+	{
+		colorMapSampler = sampler.resolvedPostSun;
+		normalMapSampler = material.colorMap;
+	}
+
+	vertex.position = code.position;
+	vertex.normal = code.normal;
+	vertex.texcoord[0] = code.texcoord[0];
+	vertex.texcoord[1] = code.tangent;
+
+}

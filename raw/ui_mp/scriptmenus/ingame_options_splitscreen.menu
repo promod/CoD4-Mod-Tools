@@ -1,0 +1,157 @@
+/*
+#include "ui/menudef.h"
+
+#define ORIGIN_CHOICE1		34 66
+#define ORIGIN_CHOICE2		34 96
+#define ORIGIN_CHOICE3		34 126
+
+{
+	menuDef
+	{
+		name			"ingame_options_splitscreen"
+		rect			-272 -204 544 408 HORIZONTAL_ALIGN_CENTER_SAFEAREA VERTICAL_ALIGN_CENTER_SAFEAREA
+		focuscolor		COLOR_FOCUSED
+		style			WINDOW_STYLE_EMPTY
+		blurWorld		6.0
+		onEsc
+		{
+			scriptMenuResponse "back";
+		}
+		
+		// background overlay
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			272 204 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+			backcolor		0 0 0 0.75
+			visible			1
+			decoration
+		}
+
+		// top gray bar
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-640 -71 2560 121
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+
+		// bottom gray bar
+		itemDef
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-640 358 2560 121
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+
+		#include "ui/navcontrols_splitscreen.menu"
+
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			visible			1
+			origin			30 49
+			forecolor		COLOR_TITLE
+			text			"OPTIONS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE_SS
+			decoration
+		}
+
+		itemDef 
+		{
+			name			"button_controls"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE1
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"@MENU_CONTROLS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT_SS
+			textaligny		20
+			dvartest		"ui_allow_controlschange"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				close ingame_options_splitscreen;
+				uiScript openMenuOnDvar "ui_allow_controlschange" 0 "ingame_options_splitscreen";
+				uiScript openMenuOnDvar "ui_allow_controlschange" 1 "ingame_controls_splitscreen";
+				setDvar ui_allow_controlschange "0";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef 
+		{
+			name			"button_controls"
+			visible			1
+			origin			ORIGIN_CHOICE1
+			forecolor		COLOR_DISABLED
+			type			ITEM_TYPE_BUTTON
+			text			"@MENU_CONTROLS"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT_SS
+			textaligny		20
+			dvartest		"ui_allow_controlschange"
+			hideDvar		{ "1" }
+			decoration
+		}
+
+		itemDef 
+		{
+			name			"button_leavegame"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE2
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"Leave Game"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT_SS
+			textaligny		20
+			action
+			{
+				play "mouse_click";
+				open popup_leavegame_splitscreen;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+
+		itemDef 
+		{
+			name			"button_changeteam"
+			visible			1
+			rect			0 0 128 24
+			origin			ORIGIN_CHOICE3
+			forecolor		COLOR_UNFOCUSED
+			type			ITEM_TYPE_BUTTON
+			text			"@MPUI_CHANGE_TEAM"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT_SS
+			textaligny		20
+			dvartest		"ui_allow_teamchange"
+			showDvar		{ "1" }
+			action
+			{
+				play "mouse_click";
+				scriptMenuResponse "changeteam";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+	}
+}
+*/

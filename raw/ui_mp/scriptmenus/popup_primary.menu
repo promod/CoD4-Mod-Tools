@@ -1,0 +1,156 @@
+#include "ui/menudef.h"
+
+#define ORIGIN_POPUPTITLE		320 110
+
+#define ORIGIN_POPUPCHOICE1		180 140
+#define ORIGIN_POPUPCHOICE2		180 160
+#define ORIGIN_POPUPCHOICE3		180 180
+#define ORIGIN_POPUPCHOICE4		180 200
+#define ORIGIN_POPUPCHOICE5		180 220
+#define ORIGIN_POPUPCHOICE6		180 240
+#define ORIGIN_POPUPCHOICE7		180 260
+#define ORIGIN_POPUPCHOICE8		180 280
+#define ORIGIN_POPUPCHOICE9		180 300
+#define ORIGIN_POPUPCHOICE10	180 320
+#define ORIGIN_POPUPCHOICE11	180 340
+#define ORIGIN_POPUPCHOICE12	180 360
+#define ORIGIN_POPUPCHOICE13	180 380
+
+{
+	menuDef 
+	{
+		name			"popup_primary"
+		visible			0
+		fullscreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+		style			WINDOW_STYLE_FILLED
+		border			1
+		popup
+		onOpen
+		{
+		}
+		onESC
+		{
+			close popup_primary;
+		}
+
+		itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			160 80 320 320
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+	
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			ORIGIN_POPUPTITLE
+			forecolor		COLOR_TITLE
+			text			"Primary Weapon?"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_TITLE
+			textalign		ITEM_ALIGN_CENTER
+			visible			1
+			decoration
+		}
+
+		itemDef 
+		{
+			type			ITEM_TYPE_BUTTON
+			text			"Assault Rifle: m16"
+			origin			ORIGIN_POPUPCHOICE12
+			textscale		TEXTSIZE_DEFAULT
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		140
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			action
+			{ 
+				play "mouse_click";
+				scriptMenuResponse "mp5_mp";
+				close popup_primary;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			} 
+		}
+
+		itemDef 
+		{
+			type			ITEM_TYPE_BUTTON
+			text			"SMG: Mac10"
+			origin			ORIGIN_POPUPCHOICE2
+			textscale		TEXTSIZE_DEFAULT
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		140
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			action
+			{ 
+				play "mouse_click";
+				scriptMenuResponse "mac10_mp";
+				close popup_primary;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			} 
+		}
+		
+		itemDef 
+		{
+			type			ITEM_TYPE_BUTTON
+			text			"SMG: P90"
+			origin			ORIGIN_POPUPCHOICE3
+			textscale		TEXTSIZE_DEFAULT
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		140
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			action
+			{ 
+				play "mouse_click";
+				scriptMenuResponse "p90_mp";
+				close popup_primary;
+			}
+			onFocus
+			{
+				play "mouse_over";
+			} 
+		}
+
+		itemDef 
+		{
+			name			popup_leavegame_focus
+			type			ITEM_TYPE_BUTTON
+			text			"@MENU_NO"
+			origin			ORIGIN_POPUPCHOICE2
+			textscale		TEXTSIZE_DEFAULT
+			style			WINDOW_STYLE_FILLED
+			textfont		UI_FONT_NORMAL
+			textalign		ITEM_ALIGN_CENTER
+			textalignx		140
+			forecolor		COLOR_UNFOCUSED
+			visible			1
+			action
+			{ 
+				play "mouse_click"; 
+				close popup_leavegame; 
+			}
+			onFocus
+			{
+				play "mouse_over";
+			} 
+		}	
+	}
+}

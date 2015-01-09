@@ -1,0 +1,511 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "C:\trees\cod3\cod3\bin\StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           SERVERISFULL
+LANG_ENGLISH        "Server is full."
+
+REFERENCE           KEYWAIT
+LANG_ENGLISH        "Waiting for new key. Press ESCAPE to cancel or BACKSPACE to clear"
+
+REFERENCE           KEYCHANGE
+LANG_ENGLISH        "Press ENTER or CLICK to change"
+
+REFERENCE           YES
+LANG_ENGLISH        "Yes"
+
+REFERENCE           NO
+LANG_ENGLISH        "No"
+
+REFERENCE           ALL
+LANG_ENGLISH        "All"
+
+REFERENCE           WAITINGFORMASTERSERVERRESPONSE
+LANG_ENGLISH        "Waiting for response from Master Server"
+
+REFERENCE           GETTINGINFOFORSERVERS
+LANG_ENGLISH        "Getting info for &&1 servers (ESC to cancel)"
+
+REFERENCE           REFRESHTIME
+LANG_ENGLISH        "Refresh Time: &&1"
+
+REFERENCE           CDKEYVALID
+LANG_ENGLISH        "Key code appears to be valid."
+
+REFERENCE           CDKEYINVALID
+LANG_ENGLISH        "Key code does not appear to be valid."
+
+REFERENCE           ERR_NO_LAST_SAVE
+LANG_ENGLISH        "The lastsave game seems to have been deleted. Load a different save game from the Load Game menu, or start a new game."
+
+REFERENCE           FAVORITELISTFULL
+LANG_ENGLISH        "Favorite list is full."
+
+REFERENCE           FAVORITEADDED
+LANG_ENGLISH        "Added favorite server."
+
+REFERENCE           DOWNLOADINGUPDATE
+LANG_ENGLISH        "Downloading Update: &&1"
+
+REFERENCE           CONNECTINGTO
+LANG_ENGLISH        "Connecting to &&1"
+
+REFERENCE           AWAITINGCONNECTION
+LANG_ENGLISH        "Awaiting connection...&&1"
+
+REFERENCE           AWAITINGCHALLENGE
+LANG_ENGLISH        "Awaiting challenge...&&1"
+
+REFERENCE           AWAITINGGAMESTATE
+LANG_ENGLISH        "Setting up game"
+
+REFERENCE           SAYTEAM
+LANG_ENGLISH        "say_team"
+
+REFERENCE           SAY
+LANG_ENGLISH        "say"
+
+REFERENCE           GAMESAVED
+LANG_ENGLISH        "Game Saved"
+
+REFERENCE           PLAYERKICKED
+LANG_ENGLISH        "Player kicked."
+
+REFERENCE           CANNOTKICKHOSTPLAYER
+LANG_ENGLISH        "Cannot kick the host player."
+
+REFERENCE           SERVERKILLED
+LANG_ENGLISH        "Server killed."
+
+REFERENCE           SERVERQUIT
+LANG_ENGLISH        "Server quit"
+
+REFERENCE           DISCONNECTEDFROMOWNLISTENSERVER
+LANG_ENGLISH        "Client told to disconnect from its own listen server."
+
+REFERENCE           ENDOFGAME
+LANG_ENGLISH        "End of Game"
+
+REFERENCE           SERVERDIDNTHAVECD
+LANG_ENGLISH        "Server didn't have CD"
+
+REFERENCE           SERVERRESTARTTIMEWRAP
+LANG_ENGLISH        "Restarting server due to time wrapping"
+
+REFERENCE           SERVERRESTARTMISC
+LANG_ENGLISH        "Restarting server due to &&1 wrapping."
+
+REFERENCE           INVALIDUPDATESERVERDOWNLOAD
+LANG_ENGLISH        "Invalid download from update server"
+
+REFERENCE           AUTODL_CLIENTDISABLED
+LANG_ENGLISH        "Could not download &&1 because autodownloading is disabled on the client.\n\nYou will need to get this file elsewhere before you can connect to this server, or set autodownload to Yes in your settings."
+
+REFERENCE           CANTAUTODLGAMEPAK
+LANG_ENGLISH        "Cannot auto-download game IWD file &&1."
+
+REFERENCE           AUTODL_SERVERDISABLED_PURE
+LANG_ENGLISH        "Could not download &&1 because autodownloading is disabled on the server.\n\nYou will need to get this file elsewhere before you can connect to this pure server."
+
+REFERENCE           AUTODL_SERVERDISABLED
+LANG_ENGLISH        "Could not download &&1 because autodownloading is disabled on the server.\n\nSet autodownload to No in your settings and you might be able to connect if you do have the file."
+
+REFERENCE           AUTODL_FILENOTONSERVER
+LANG_ENGLISH        "File &&1 not found on server for autodownloading."
+
+REFERENCE           DISCONNECTED
+LANG_ENGLISH        "Host has left the game"
+
+REFERENCE           UNPURECLIENTDETECTED
+LANG_ENGLISH        "Impure client detected. Invalid .IWD files referenced!"
+
+REFERENCE           LOSTRELIABLECOMMANDS
+LANG_ENGLISH        "Lost reliable commands"
+
+REFERENCE           CANNOTVALIDATEPURECLIENT
+LANG_ENGLISH        "Cannot validate pure client!"
+
+REFERENCE           SERVERCOMMANDOVERFLOW
+LANG_ENGLISH        "Server command overflow"
+
+REFERENCE           TIMEDOUT
+LANG_ENGLISH        "Timed out"
+
+REFERENCE           SERVERMESSAGEOVERFLOW
+LANG_ENGLISH        "Server message overflow"
+
+REFERENCE           LOCAL
+LANG_ENGLISH        "Local"
+
+REFERENCE           INTERNET
+LANG_ENGLISH        "Internet"
+
+REFERENCE           FAVORITES
+LANG_ENGLISH        "Favorites"
+
+REFERENCE           NETSOURCE
+LANG_ENGLISH        "Source:     &&1"
+
+REFERENCE           SERVERFILTER
+LANG_ENGLISH        "Filter: &&1"
+
+REFERENCE           NOSAVEGAMES
+LANG_ENGLISH        "(no savegames)"
+
+REFERENCE           AWAITINGCDKEYAUTH
+LANG_ENGLISH        "Awaiting key code authorization"
+
+REFERENCE           SERVERDISCONNECTREASON
+LANG_ENGLISH        "&&1"
+
+REFERENCE           SERVER_DISCONNECTED
+LANG_ENGLISH        "Server Disconnected"
+
+REFERENCE           ERR_COULDNT_LOAD
+LANG_ENGLISH        "Couldn't load &&1"
+
+REFERENCE           ERR_CORRECT_FOLDER
+LANG_ENGLISH        "Make sure Call of Duty is run from the correct folder."
+
+REFERENCE           ERR_OUT_OF_MEMORY
+LANG_ENGLISH        "Out of memory."
+
+REFERENCE           ERR_HUNK_ALLOC_FAILED
+LANG_ENGLISH        "Hunk data failed to allocate &&1 megs."
+
+REFERENCE           ERR_COULDNT_LOAD_OPENGL
+LANG_ENGLISH        "Could not load OpenGL.  Make sure that you have the latest drivers for your video card from the manufacturer's web site."
+
+REFERENCE           ERR_COULDNT_REGISTER_WINDOW
+LANG_ENGLISH        "Could not register a window class. This is a Microsoft Windows(TM) error. You may need to reboot."
+
+REFERENCE           ERR_COULDNT_CREATE_WINDOW
+LANG_ENGLISH        "Could not create a window. This is a Microsoft Windows(TM) error. You may need to reboot."
+
+REFERENCE           ERR_GET_NEWEST_DRIVERS
+LANG_ENGLISH        "You should install the latest drivers for your video card, being sure to uninstall the old drivers first.  If you already have the latest drivers, you should completely uninstall the drivers and then reinstall them.  This fixes most problems.  If the game still doesn't work, it may be that your video card does not have the minimum features required.  Please check the readme for more information, including a list of supported video cards."
+
+REFERENCE           ERR_VIDEOCARD_MISSING_FEATURE
+LANG_ENGLISH        "Your video card appears to be missing one or more features required to run Call of Duty."
+
+REFERENCE           ERR_MULTITEX_INIT_FAIL
+LANG_ENGLISH        "OpenGL 1.3 multitexture found, but it failed to initialize."
+
+REFERENCE           ERR_MULTITEX_BAD_MAX
+LANG_ENGLISH        "OpenGL 1.3 multitexture found, but it doesn't allow multiple textures."
+
+REFERENCE           ERR_ARB_MULTITEX_INIT_FAILED
+LANG_ENGLISH        "GL_ARB_multitexture found, but it failed to initialize."
+
+REFERENCE           ERR_ARB_MULTITEX_BAD_MAX
+LANG_ENGLISH        "GL_ARB_multitexture found, but it doesn't allow multiple textures."
+
+REFERENCE           ERR_BAD_WINDOWS_VER
+LANG_ENGLISH        "Your version of Microsoft Windows(TM) does not support Call of Duty."
+
+REFERENCE           ERR_COULDNT_INIT_REFRESH
+LANG_ENGLISH        "Couldn't initialize refresh"
+
+REFERENCE           ERR_JOURNAL_FILE_READ
+LANG_ENGLISH        "Error reading from journal file"
+
+REFERENCE           ERR_JOURNAL_FILE_WRITE
+LANG_ENGLISH        "Error writing to journal file"
+
+REFERENCE           ERR_NOT_FOUND
+LANG_ENGLISH        "&&1 not found."
+
+REFERENCE           ERR_COULDNT_CONFIGURE
+LANG_ENGLISH        "Couldn't configure:"
+
+REFERENCE           ERR_HUNGUSAGE_CORRUPT
+LANG_ENGLISH        "hunkusage.dat file is corrupt."
+
+REFERENCE           ERR_CANT_CREATE
+LANG_ENGLISH        "Cannot create &&1."
+
+REFERENCE           ERR_CANT_WRITE
+LANG_ENGLISH        "Cannot write to &&1."
+
+REFERENCE           ERR_HUNKUSAGE_CANT_WRITE
+LANG_ENGLISH        "Cannot write to hunkusage.dat, check disk full."
+
+REFERENCE           ERR_CLIENT_CMD_OVERFLOW
+LANG_ENGLISH        "Client command overflow"
+
+REFERENCE           ERR_RELIABLE_CYCLED_OUT
+LANG_ENGLISH        "A reliable command was cycled out."
+
+REFERENCE           ERR_NOT_RECEIVED
+LANG_ENGLISH        "Requested a command not received."
+
+REFERENCE           ERR_INVALID_CD_KEY
+LANG_ENGLISH        "Key Code is not valid.\nPlease enter your Key Code in the Multiplayer Options/Enter Key Code menu and then try connecting to the server again."
+
+REFERENCE           ERR_WRONG_MAP_VERSION_NUM
+LANG_ENGLISH        "Map &&1 has the wrong version number."
+
+REFERENCE           ERR_SHOULD_BE
+LANG_ENGLISH        "should be"
+
+REFERENCE           ERR_BAD_GAME_FOLDER
+LANG_ENGLISH        "Invalid game folder"
+
+REFERENCE           ERR_GAME_FAILED_PURE_CHECK
+LANG_ENGLISH        "Game code(&&1) failed Pure Server check"
+
+REFERENCE           ERR_COULDNT_START_PROCESS
+LANG_ENGLISH        "Could not start process: &&1"
+
+REFERENCE           ERR_COULDNT_OPEN_URL
+LANG_ENGLISH        "Could not open url: '&&1'"
+
+REFERENCE           SERVER_FATAL_CRASHED
+LANG_ENGLISH        "Server fatal crashed:"
+
+REFERENCE           ERR_CDKEY_IN_USE
+LANG_ENGLISH        "Key Code in use. Please try reconnecting later."
+
+REFERENCE           ERR_NOT_A_DEMO_SERVER
+LANG_ENGLISH        "Server is not a demo server."
+
+REFERENCE           SERVER_IS_DIFFERENT_VER
+LANG_ENGLISH        "Server is a different version:\n&&1"
+
+REFERENCE           BAD_CHALLENGE
+LANG_ENGLISH        "No or bad challenge for address."
+
+REFERENCE           ERR_HIGH_PING_ONLY
+LANG_ENGLISH        "Server is for high ping players only."
+
+REFERENCE           ERR_LOW_PING_ONLY
+LANG_ENGLISH        "Server is for low ping players only."
+
+REFERENCE           MONTH_ABV_JANUARY
+LANG_ENGLISH        "Jan"
+
+REFERENCE           MONTH_ABV_FEBRUARY
+LANG_ENGLISH        "Feb"
+
+REFERENCE           MONTH_ABV_MARCH
+LANG_ENGLISH        "Mar"
+
+REFERENCE           MONTH_ABV_APRIL
+LANG_ENGLISH        "Apr"
+
+REFERENCE           MONTH_ABV_MAY
+LANG_ENGLISH        "May"
+
+REFERENCE           MONTH_ABV_JUN
+LANG_ENGLISH        "Jun"
+
+REFERENCE           MONTH_ABV_JUNE
+LANG_ENGLISH        "Jun"
+
+REFERENCE           MONTH_ABV_JULY
+LANG_ENGLISH        "Jul"
+
+REFERENCE           MONTH_ABV_AUGUST
+LANG_ENGLISH        "Aug"
+
+REFERENCE           MONTH_ABV_SEPTEMBER
+LANG_ENGLISH        "Sep"
+
+REFERENCE           MONTH_ABV_OCTOBER
+LANG_ENGLISH        "Oct"
+
+REFERENCE           MONTH_ABV_NOVEMBER
+LANG_ENGLISH        "Nov"
+
+REFERENCE           MONTH_ABV_DECEMBER
+LANG_ENGLISH        "Dec"
+
+REFERENCE           COD_MULTIPLAYER
+LANG_ENGLISH        "COD2 Multiplayer"
+
+REFERENCE           SV_INFO_SERVERNAME
+LANG_ENGLISH        "Server Name"
+
+REFERENCE           SV_INFO_ADDRESS
+LANG_ENGLISH        "IP Address"
+
+REFERENCE           SV_INFO_GAMENAME
+LANG_ENGLISH        "Game Name"
+
+REFERENCE           SV_INFO_GAMETYPE
+LANG_ENGLISH        "Game Type"
+
+REFERENCE           SV_INFO_MAP
+LANG_ENGLISH        "Map"
+
+REFERENCE           SV_INFO_VERSION
+LANG_ENGLISH        "Version"
+
+REFERENCE           SV_INFO_PROTOCOL
+LANG_ENGLISH        "Protocol Version"
+
+REFERENCE           SV_INFO_NUM
+LANG_ENGLISH        "num"
+
+REFERENCE           SV_INFO_SCORE
+LANG_ENGLISH        "score"
+
+REFERENCE           SV_INFO_PING
+LANG_ENGLISH        "ping"
+
+REFERENCE           SV_INFO_NAME
+LANG_ENGLISH        "name"
+
+REFERENCE           SV_INFO_MAXPING
+LANG_ENGLISH        "Max Ping"
+
+REFERENCE           SV_INFO_MINPING
+LANG_ENGLISH        "Min Ping"
+
+REFERENCE           SV_INFO_MAXRATE
+LANG_ENGLISH        "Max Rate"
+
+REFERENCE           SV_INFO_FLOODPROTECT
+LANG_ENGLISH        "Flood Protect"
+
+REFERENCE           SV_INFO_ALLOWANON
+LANG_ENGLISH        "Allow Anonymous"
+
+REFERENCE           SV_INFO_MAXCLIENTS
+LANG_ENGLISH        "Max Clients"
+
+REFERENCE           SV_INFO_PRIVATECLIENTS
+LANG_ENGLISH        "Private Clients"
+
+REFERENCE           SV_INFO_FRIENDLY_FIRE
+LANG_ENGLISH        "Friendly Fire"
+
+REFERENCE           SV_INFO_MOD
+LANG_ENGLISH        "Mod"
+
+REFERENCE           SV_INFO_KILLCAM
+LANG_ENGLISH        "Killcam"
+
+REFERENCE           GIGABYTE
+LANG_ENGLISH        "GB"
+
+REFERENCE           MEGABYTE
+LANG_ENGLISH        "MB"
+
+REFERENCE           KILOBYTE
+LANG_ENGLISH        "KB"
+
+REFERENCE           BYTES
+LANG_ENGLISH        "bytes"
+
+REFERENCE           HOURS
+LANG_ENGLISH        "hr"
+
+REFERENCE           MINUTES
+LANG_ENGLISH        "min"
+
+REFERENCE           SECONDS
+LANG_ENGLISH        "sec"
+
+REFERENCE           DOWNLOADING
+LANG_ENGLISH        "Downloading:"
+
+REFERENCE           EST_TIME_LEFT
+LANG_ENGLISH        "Estimated time left:"
+
+REFERENCE           TRANS_RATE
+LANG_ENGLISH        "Transfer rate:"
+
+REFERENCE           ESTIMATING
+LANG_ENGLISH        "estimating"
+
+REFERENCE           OF
+LANG_ENGLISH        "of"
+
+REFERENCE           COPIED
+LANG_ENGLISH        "copied"
+
+REFERENCE           BADSERVERADDRESS
+LANG_ENGLISH        "Bad server address."
+
+REFERENCE           ERR_BAD_CDKEY
+LANG_ENGLISH        "Bad Key Code."
+
+REFERENCE           ERR_SERVER_TIMEOUT
+LANG_ENGLISH        "Server connection timed out."
+
+REFERENCE           SV_INFO_PASSWORD
+LANG_ENGLISH        "Password Protected"
+
+REFERENCE           FAVORITEINLIST
+LANG_ENGLISH        "This server is already a favorite server."
+
+REFERENCE           SV_INFO_PURE
+LANG_ENGLISH        "Pure Server"
+
+REFERENCE           FAVORITENAMEEMPTY
+LANG_ENGLISH        "Server name is empty."
+
+REFERENCE           FAVORITEADDRESSEMPTY
+LANG_ENGLISH        "Server address is empty."
+
+REFERENCE           SV_INFO_ANTILAG
+LANG_ENGLISH        "Anti Lag"
+
+REFERENCE           SV_INFO_VOICE
+LANG_ENGLISH        "Voice"
+
+REFERENCE           TRANSMITERROR
+LANG_ENGLISH        "Disconnected due to transmission error"
+
+REFERENCE           CHECKPOINT_REACHED
+LANG_ENGLISH        "Checkpoint Reached."
+
+REFERENCE           HOSTUNREACH
+LANG_ENGLISH        "Unable to connect to host"
+
+REFERENCE           MATCHENDED
+LANG_ENGLISH        "The match has ended"
+
+REFERENCE           LOSTCONNECTION
+LANG_ENGLISH        "Network connection lost"
+
+REFERENCE           UPLOADINGSTATS
+LANG_ENGLISH        "Synchronizing game settings"
+
+REFERENCE           NEEDSTATS
+LANG_ENGLISH        "Error synchronizing game settings"
+
+REFERENCE           SV_INFO_COMPASS_ENEMIES
+LANG_ENGLISH        "Compass Enemies"
+
+REFERENCE           SV_INFO_CLIENT_CONSOLE
+LANG_ENGLISH        "Client Console"
+
+REFERENCE           AWAITINGHOST
+LANG_ENGLISH        "Waiting for other players"
+
+REFERENCE           GAMEISENDING
+LANG_ENGLISH        "Join failed - game is about to end"
+
+REFERENCE           ERR_QPORT
+LANG_ENGLISH        "Unable to connect.  Duplicate qport on server."
+
+REFERENCE           LEFTGAME
+LANG_ENGLISH        "left the game"
+
+
+ENDMARKER
+
+

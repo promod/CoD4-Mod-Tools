@@ -1,0 +1,17 @@
+#if "@polygonOffset@" == "None"
+
+	polygonOffset( 0 );
+
+#elif "@polygonOffset@" == "Static Decal"
+
+	polygonOffset( 1 );
+
+#elif "@polygonOffset@" == "Weapon Impact"
+
+	polygonOffset( 2 );
+
+#else
+
+	#error "unknown polygonOffset \"@polygonOffset@\""
+
+#endif

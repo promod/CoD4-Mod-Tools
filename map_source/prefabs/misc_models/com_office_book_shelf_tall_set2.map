@@ -1,0 +1,95 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 8 26 0 ) ( -8 26 0 ) ( -8 -26 0 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -26 68 ) ( -8 26 68 ) ( 8 26 68 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 -26 84 ) ( 8 -26 84 ) ( 8 -26 16 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 -26 84 ) ( 8 26 84 ) ( 8 26 16 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 8 26 84 ) ( -8 26 84 ) ( -8 26 16 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -8 26 84 ) ( -8 -26 84 ) ( -8 -26 16 ) clip_nosight_metal 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "prefabs/misc_models/com_office_book_shelf.map"
+"classname" "misc_prefab"
+}
+// entity 2
+{
+"origin" "0.0 0.0 33.0"
+"model" "prefabs/misc_models/com_office_book_shelf.map"
+"classname" "misc_prefab"
+}
+// entity 3
+{
+"origin" "0.0 -18.0 5.0"
+"model" "prefabs/misc_models/com_office_book_set1.map"
+"classname" "misc_prefab"
+}
+// entity 4
+{
+"angles" "0 16 0"
+"origin" "2.0 -9.0 38.0"
+"model" "prefabs/misc_models/com_office_book_red_flat.map"
+"classname" "misc_prefab"
+}
+// entity 5
+{
+"origin" "0.0 18.0 38.0"
+"model" "prefabs/misc_models/com_office_book_set1.map"
+"classname" "misc_prefab"
+}
+// entity 6
+{
+"origin" "2.0 24.0 38.0"
+"model" "prefabs/misc_models/com_office_book_blue_standing.map"
+"classname" "misc_prefab"
+}
+// entity 7
+{
+"angles" "0 0 -17.3001"
+"origin" "1.0 5.9 38.5"
+"model" "prefabs/misc_models/com_office_book_red_standing.map"
+"classname" "misc_prefab"
+}
+// entity 8
+{
+"angles" "0 69.6 0"
+"origin" "0.0 13.0 21.0"
+"model" "prefabs/misc_models/com_office_book_blue_paper_folder.map"
+"classname" "misc_prefab"
+}
+// entity 9
+{
+"angles" "0 44.5 0"
+"origin" "1.0 5.0 21.0"
+"model" "prefabs/misc_models/com_office_book_beige_paper_folder.map"
+"classname" "misc_prefab"
+}
+// entity 10
+{
+"angles" "0 8.49999 -90"
+"origin" "1.0 -2.1 6.0"
+"model" "prefabs/misc_models/com_office_book_black_standing.map"
+"classname" "misc_prefab"
+}
+// entity 11
+{
+"angles" "0 0 39.8"
+"origin" "0.0 -15.4 54.7"
+"model" "prefabs/misc_models/com_office_book_black_standing.map"
+"classname" "misc_prefab"
+}
+// entity 12
+{
+"classname" "misc_prefab"
+"model" "prefabs/misc_models/com_office_book_blue_standing.map"
+"origin" "-1.0 -13.6 54.3"
+"angles" "0 0 39.8"
+}

@@ -1,0 +1,21 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+}
+// entity 1
+{
+"angles" "0 0 0"
+"origin" "0.0 0.0 0.0"
+"model" "prefabs/misc_models/bathroom_tub.map"
+"classname" "misc_prefab"
+}
+// entity 2
+{
+"angles" "0 360 0"
+"origin" "-45.0 0.0 20.0"
+"model" "prefabs/misc_models/bathroom_faucet.map"
+"classname" "misc_prefab"
+}

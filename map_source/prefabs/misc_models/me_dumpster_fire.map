@@ -1,0 +1,29 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 28 -48 0 ) ( 28 48 0 ) ( -29 48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 48 56 ) ( 28 -48 56 ) ( -29 -48 67 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -48 67 ) ( 28 -48 67 ) ( 28 -48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 -48 56 ) ( 28 48 56 ) ( 28 48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 28 48 67 ) ( -29 48 67 ) ( -29 48 0 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -29 -48 0 ) ( -29 48 0 ) ( -29 48 67 ) clip_nosight_metal 128 128 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "me_dumpster"
+"classname" "misc_model"
+}
+// entity 2
+{
+"targetname" "me_dumpster_fire_FX_origin"
+"origin" "-2.0 22.0 38.5"
+"angles" "270 337.822 22.1777"
+"classname" "script_struct"
+}

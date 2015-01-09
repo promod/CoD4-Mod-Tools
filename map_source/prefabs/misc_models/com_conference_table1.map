@@ -1,0 +1,24 @@
+iwmap 4
+"000_Global" flags  active
+"The Map" flags 
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+ ( 131 28 0 ) ( -125 28 0 ) ( -125 -23 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -125 -23 34 ) ( -125 28 34 ) ( 131 28 34 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -124 -33 34 ) ( 132 -33 34 ) ( 132 -33 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 123 -22 34 ) ( 123 29 34 ) ( 123 29 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 132 33 34 ) ( -124 33 34 ) ( -124 33 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( -124 28 34 ) ( -124 -23 34 ) ( -124 -23 0 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 0 -33 162 ) ( -124 -29 162 ) ( -124 -29 194 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+ ( 123 -28 34 ) ( 0 -34 34 ) ( 123 -28 66 ) clip_nosight 64 64 0 0 0 0 lightmap_gray 16384 16384 0 0 0 0
+}
+}
+// entity 1
+{
+"origin" "0.0 0.0 0.0"
+"model" "com_conference_table1"
+"classname" "misc_model"
+}

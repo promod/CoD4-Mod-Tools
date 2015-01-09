@@ -1,0 +1,67 @@
+#include "ui/menudef.h"
+
+{	
+	menuDef
+	{
+		name			popup_gettinglb
+    	visible			0
+   		fullscreen		0
+		rect			0 0 640 480
+		focusColor		COLOR_FOCUSED
+   		style			WINDOW_STYLE_FILLED
+		popup
+		onESC 
+		{ 
+			close popup_gettinglb;
+		}
+
+		/*itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			160 120 320 224
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}*/
+	
+		itemDef
+		{
+			type			ITEM_TYPE_TEXT
+			origin			320 254
+			forecolor		COLOR_UNFOCUSED
+			text			"DOWNLOADING..."
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			textalign		ITEM_ALIGN_CENTER
+			visible			1
+			decoration
+		}
+		
+		// bottom bar
+		/*itemDef 
+		{
+			style			WINDOW_STYLE_FILLED
+			rect			-128 416 896 64
+			backcolor		0.1412 0.1412 0.1412 1
+			visible			1
+			decoration
+		}
+		
+		itemDef
+		{
+			text			"@PLATFORM_BACK"
+			textfont		UI_FONT_NORMAL
+			textscale		TEXTSIZE_DEFAULT
+			origin			505 438
+			visible			1
+			decoration
+		}
+
+		itemDef 
+		{
+			name			popup_gettinglb_focus
+			type			ITEM_TYPE_BUTTON
+			visible			1
+		}*/
+	}
+}

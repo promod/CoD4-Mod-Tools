@@ -1,0 +1,1982 @@
+// Anim exporter 
+
+// Notes:
+//
+// We need a window that can export animations
+//
+//
+// The animation file needs to store,
+//
+/*
+
+	1.	A list of objects that make up the skeleton.
+	2.	A list of export files.
+		
+		These need to store: 
+		
+		1.	File name
+		2.	Start frame
+		3.	End frame
+		4.	Sample rate
+		5.	Skeleton list
+
+		6.	Note track
+	3.	
+
+ 
+Vars in renderGlobal
+
+Skeleton sets:
+
+	SkelNumber		: int		Number of skeleton sets stored in the file.
+
+
+	NumOfJointsSkelxx	: int		The number of joints or nodes that are stored in the skeleton set. xx is the skeleton number.
+	
+	Jointxx			: message	Connection to joint or node. The xx is the number of the joint/node in the skeleton list.
+						This uses the message attribute so that the object it is connected to can be re-named.
+
+
+Animation export data
+
+	AnimationNumber		: int		The number of animations in the export settings
+
+
+	AnimFileNamexx		: string	The file name for the exporter. xx is the animation number
+
+	AnimStartxx		: int		The start frame of animation xx
+
+	AnimEndxx		: int		The end frame of animation xx
+
+	AnimSamplexx		: int		The sample rate of the animation export xx
+
+	AnimSkeletonxx		: int		The skeleton number to use in the animation export xx
+
+	
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+Added so far:
+
+int renderGlobal.AnimationCount		the number of animation export settings stored in the renderGlobals
+
+	Each animation entry has these attributes so far :
+
+		FileName#
+
+		FrameStart#
+
+		FrameEnd#
+
+		ExportNodes#	-type string . MEL dosen't allow string arrays as dynamic attributes, so the export nodes are stored as one big 
+						string which is a select command so that the string can use eval
+
+		ExportNoteTrack#		- Which note track, if any, to be exported with the animation.
+
+
+IMPORTANT
+
+To add or remove attributes to the main list, the following procs have to be altered
+
+RemoveAnimationAttributes
+AddAnimationAttributes
+DeleteSelectedAnimations
+DisplayAnimationLine
+
+
+
+
+
+
+Global Proc List
+
+CheckExportAttributes
+SelectListNoteTrack
+SelectListExportNodes
+AddSelNoteTrack
+ExportAnimation
+StartTheExport
+ListExportNodes
+SetExportNodes
+SelectExportNodes
+CODExporterFileBrowes
+UpdateNameFromBroweser
+DeleteSelectedAnimations
+DisplayAnimationList
+DisplayAnimationLine
+ChangeFileName
+ChangeFrameStart
+ChangeFrameEnd
+RemoveAnimationAttributes
+AddAnimationAttributes
+AddAnimation
+CreateCODExportWindow
+CreateCODExportWindowCB
+CODExportAnimationWindow
+RemoveNoteTrack
+
+*/
+
+
+global proc SwapAnimationSettings(int $FirstAnimation)
+{
+	// First off store the first animation settings so we can over write them with the second settings
+
+	string $FileName;
+	int $FrameStart;
+	int $FrameEnd;
+	string $ExportNodes;
+	string $NoteTrack;
+	int $GunNumber;
+	string $AnimGroupColor;
+
+	$FileName = `getAttr ("IWGlobalNode.FileName" + $FirstAnimation)`; 
+	$FrameStart = `getAttr ("IWGlobalNode.FrameStart" + $FirstAnimation)`; 
+	$FrameEnd = `getAttr ("IWGlobalNode.FrameEnd" + $FirstAnimation)`; 
+	$ExportNodes = `getAttr ("IWGlobalNode.ExportNodes" + $FirstAnimation)`;
+	$NoteTrack = `getAttr ("IWGlobalNode.ExportNoteTrack" + $FirstAnimation)`;
+	$GunNumber = `getAttr ("IWGlobalNode.GunNumber" + $FirstAnimation)`;
+	$AnimGroupColor = `getAttr ("IWGlobalNode.AnimGroupColor" + $FirstAnimation)`;
+
+	// Next copy the second animaiton settings to the first.
+
+	setAttr -type "string" ("IWGlobalNode.FileName" + ($FirstAnimation))  (`getAttr ("IWGlobalNode.FileName" + ($FirstAnimation + 1))`);
+	setAttr  ("IWGlobalNode.FrameStart" + ($FirstAnimation))  (`getAttr ("IWGlobalNode.FrameStart" + ($FirstAnimation + 1))`);
+	setAttr  ("IWGlobalNode.FrameEnd" + ($FirstAnimation))  (`getAttr ("IWGlobalNode.FrameEnd" + ($FirstAnimation + 1))`);
+	setAttr  -type "string" ("IWGlobalNode.ExportNodes" + ($FirstAnimation))  (`getAttr ("IWGlobalNode.ExportNodes" + ($FirstAnimation + 1))`);
+	setAttr  -type "string" ("IWGlobalNode.ExportNoteTrack" + ($FirstAnimation))  (`getAttr ("IWGlobalNode.ExportNoteTrack" + ($FirstAnimation + 1))`);
+	setAttr  ("IWGlobalNode.GunNumber" + ($FirstAnimation))  (`getAttr ("IWGlobalNode.GunNumber" + ($FirstAnimation + 1))`);
+	setAttr  -type "string" ("IWGlobalNode.AnimGroupColor" + ($FirstAnimation))  (`getAttr ("IWGlobalNode.AnimGroupColor" + ($FirstAnimation + 1))`);
+
+
+	// Now copy the stored original values to the second animation settings.
+
+	setAttr -type "string" ("IWGlobalNode.FileName" + ($FirstAnimation + 1))  $FileName;
+	setAttr  ("IWGlobalNode.FrameStart" + ($FirstAnimation + 1))  $FrameStart;
+	setAttr  ("IWGlobalNode.FrameEnd" + ($FirstAnimation + 1))  $FrameEnd;
+	setAttr  -type "string" ("IWGlobalNode.ExportNodes" + ($FirstAnimation + 1))  $ExportNodes;
+	setAttr  -type "string" ("IWGlobalNode.ExportNoteTrack" + ($FirstAnimation + 1))  $NoteTrack;
+	setAttr  ("IWGlobalNode.GunNumber" + ($FirstAnimation + 1))  $GunNumber;	
+	setAttr  -type "string" ("IWGlobalNode.AnimGroupColor" + ($FirstAnimation + 1))  $AnimGroupColor;
+
+
+}
+
+
+global proc ReorderExports()
+{
+
+	// Get the number of animations in the file
+		int $AnimNumber = `getAttr IWGlobalNode.AnimationCount`;
+
+	// Check that there are enough animation export settings to re-order
+		if ($AnimNumber < 2) return;
+
+	// Loop through each setting and check the animation start frame is not smaller on the next entry, if it is, swap them over and start again
+
+		int $loop;
+		int $CheckStartFrame;
+		int $CheckStartFrame2;
+
+		for ($loop = 1; $loop < $AnimNumber; $loop ++)
+		{
+			// Get the animation start frame
+				$CheckStartFrame = `getAttr ("IWGlobalNode.FrameStart" + $loop)`; 
+				
+			// Get the animation start frame of the next animation
+				$CheckStartFrame2 = `getAttr ("IWGlobalNode.FrameStart" + ($loop+1))`; 
+
+			// If the second start frame is smaller than the first swap them over.
+				if ($CheckStartFrame2 < $CheckStartFrame)
+				{
+					// Do the swap
+						SwapAnimationSettings $loop;
+					
+					// Restart the loop
+						$loop = 0;
+				}
+		}
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	doubleCheckStuff
+//
+//	This is called just before the export so extra checks can be added.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc doubleCheckStuff( int $ExportNumber) 
+{
+
+	// Check to see if the helmet joint is in the list.
+	// This joint was missing from a lot of the earlier export settings which messed up the animation export.
+
+	// Get the list of export nodes
+
+		string $ExportNodes = `getAttr ("IWGlobalNode.ExportNodes" + $ExportNumber)`;
+
+		print $ExportNodes;
+
+	// Check to see if DefMesh:J_Helmet is in the list
+
+		if (`gmatch $ExportNodes "*DefMesh:J_Helmet*"`) 
+		{
+			// Check that the problem joint, rig:DefMesh:J_Head_END is also in there, if not add it.
+
+			if (`gmatch $ExportNodes "*DefMesh:J_Head_END*"` == 0) 
+			{
+				print "\nThe head end joint is missing";
+				// Need to add the head end joint.
+				// First calc the prefex
+
+				string $Pref[];
+
+				tokenize $ExportNodes ":" $Pref;
+				
+				print "\n";
+				print $Pref[0];
+
+				// Add the joint to the list
+
+				$ExportNodes = $ExportNodes + (" " + $Pref[0] + ":" + "DefMesh:J_Head_END");
+				setAttr -type "string"   ("IWGlobalNode.ExportNodes" + $ExportNumber) $ExportNodes;
+			}
+			else print "\nThe head end joint is there";
+		}
+
+}
+
+
+
+
+global proc SelectListNoteTrack (int $AnimNum)
+{
+	// Get a list of the note tracks from the note track mel script
+
+		source NoteTrack;
+
+		string $NoteTrackList[] = `GetNoteTrackList`;
+
+		string $EachNote;
+
+		print "\n\n\n";
+		print $NoteTrackList;
+	
+
+	// Open a selection confirmDialog to select the Note Track using a created Eval command
+
+		string $DialogEval = ("confirmDialog -title \"Prefix\" -message \"Select a Note Track\" ");
+
+		
+		for ($EachNote in  $NoteTrackList) 
+		{
+			$DialogEval = $DialogEval + (" -button \"" + $EachNote + ":\" ");
+		}
+
+		$DialogEval = $DialogEval + (" -b \"Cancel\" -cb \"Cancel\"");
+
+		string $SelNoteTrack = `eval $DialogEval`;
+
+		if ($SelNoteTrack != "Cancel" && $SelNoteTrack != "dismiss") 
+		{
+
+			select -r $SelNoteTrack;
+
+			AddSelNoteTrack $AnimNum;
+
+			select -cl;
+		}
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	SelectListExportNodes
+//
+//		This procedure opens a selection window similar to the List COD Character button in the GUI.
+//		It is used to select a deformation skeleton set for the export nodes in the exporter
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc SelectListExportNodes(int $AnimNum) 
+{
+	source ListCODChars;
+
+	string $AllChars[] = `ListCODChars`;
+
+	// Tokenize the list with : to get the prefix
+
+	string $EachChar;
+	string $CharList[];
+	int $CharCount = 0;
+	int $getCharType;
+
+	print "\nStart COD list\n";
+
+	for ($EachChar in $AllChars) 
+	{
+		string $Tokenize[];
+		clear $Tokenize;
+
+		tokenize $EachChar ":" $Tokenize;
+
+		// If this is a viewmodel then just set it from the button and return
+
+		if($AllChars[0] == "rig:CODViewModelLocatorShape") 
+		{
+			select -r "VM_Gun:J_Gun";
+			select -hi;
+			string $gunJoints[] = `ls -sl -type joint`;
+
+			select -r ($Tokenize[0] + ":DefMesh:DefViewSkeleton");
+			select -add $gunJoints;
+
+			SetExportNodes $AnimNum;
+
+			return;
+		}
+		
+		// Make sure the size of $Tokenize is > 1 meaning there was a : in the original name.
+
+		if (`size $Tokenize` > 1 ) 
+		{
+			$CharList[$CharCount] = $Tokenize[0];
+			$CharCount++;
+		}
+
+		else 
+		{
+			warning ($Tokenize[0] + " is not referenced.");
+		}
+
+	}
+
+	// Open a selection confirmDialog to select the prefix using a created Eval command
+
+		string $DialogEval = ("confirmDialog -title \"Prefix\" -message \"Select a Character\" ");
+
+		
+		for ($EachChar in  $CharList) 
+		{
+			$DialogEval = $DialogEval + (" -button \"" + $EachChar + ":\" ");
+		}
+
+		$DialogEval = $DialogEval + (" -b \"Cancel\" -cb \"Cancel\"");
+
+		print "\n\n";
+
+
+		string $Prefix = `eval $DialogEval`;
+
+		if ($Prefix != "Cancel" && $Prefix != "dismiss") 
+		{
+		
+			// Need to add in the root tag node to this first because it is not in the deformation skeleton
+			
+			select -r ($Prefix + "DefMesh:TAG_ORIGIN");
+			
+			select -add ($Prefix + "DefMesh:DefSkeleton");
+		
+		
+			SetExportNodes $AnimNum;
+
+			select -cl;
+			
+		}
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	RemoveNoteTrack
+//
+//		This procedure removes the note track from the export window
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc RemoveNoteTrack(int $AnimNumber) 
+{
+
+		setAttr -type "string" ("IWGlobalNode.ExportNoteTrack" + $AnimNumber) "NO NOTE TRACK";
+
+		// update the text in the window
+		text -e -bgc 1 0 0.7 -label " NO NOTE TRACK" ("NoteTrackWindowText" + $AnimNumber);
+
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	AddSelNoteTrack
+//
+//		This procedure adds the selected note track to the exporter settings.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc AddSelNoteTrack(int $AnimNumber) 
+{
+
+	string $Sel[] = `ls -sl`;
+	
+	//First check somthing is selected
+	if (`size $Sel[0]` == 0) 
+	{
+		warning "Please select a NoteTrack";
+		return;
+	}
+
+
+	// Check the selected node is a NoteTrack
+
+	string $CheckNote = `substring $Sel[0] 1 9`; 
+
+	print ("Checking note track : " + $CheckNote);
+
+	if ($CheckNote == "NoteTrack" ) 
+	{
+		setAttr -type "string" ("IWGlobalNode.ExportNoteTrack" + $AnimNumber) $Sel[0];
+
+		// update the text in the window
+		text -e -bgc 0.9 0.9 0.9 -label ("  " + $Sel[0] + "  ") ("NoteTrackWindowText" + $AnimNumber);
+
+	}
+	else 
+	{
+		warning "Please select a NoteTrack";
+		return;
+	}
+
+
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ExportAnimation
+//
+//		This procedure calls the exporter and exports a animation from the animation window.
+//		The animation it exports is passed into this function in (int $AnimNumber)
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ExportAnimation(int $AnimNumber) 
+{
+	
+			// Collect all the export data from the window
+
+//			int $StartFrame[] = `intFieldGrp -q -v ("FrameStart" + $AnimNumber)`;
+//			int $EndFrame[] = `intFieldGrp -q -v ("FrameEnd" + $AnimNumber)`;
+
+	//global int $skipPerforceEdit;
+
+			int $FrameRate;
+			string $timeUnit;
+
+			int $StartFrame = `getAttr ("IWGlobalNode.FrameStart" + $AnimNumber)`;
+			int $EndFrame = `getAttr ("IWGlobalNode.FrameEnd" + $AnimNumber)`;
+			
+			$timeUnit = `currentUnit -q -time`;
+			switch ( $timeUnit ) 
+			{
+				case "2fps":
+					$FrameRate = 2;
+					break;				
+				case "3fps":
+					$FrameRate = 3;
+					break;				
+				case "4fps":
+					$FrameRate = 4;
+					break;				
+				case "5fps":
+					$FrameRate = 5;
+					break;				
+				case "6fps":
+					$FrameRate = 6;
+					break;				
+				case "8fps":
+					$FrameRate = 8;
+					break;				
+				case "10fps":
+					$FrameRate = 10;
+					break;				
+				case "12fps":
+					$FrameRate = 12;
+					break;				
+				case "16fps":
+					$FrameRate = 16;
+					break;				
+				case "20fps":
+					$FrameRate = 20;
+					break;				
+				case "40fps":
+					$FrameRate = 40;
+					break;				
+				case "game":
+					$FrameRate = 15;
+					break;
+				case "film":
+					$FrameRate = 24;
+					break;
+				case "pal":
+					$FrameRate = 25;
+					break;
+				case "ntsc":
+					$FrameRate = 30;
+					break;
+				case "show":
+					$FrameRate = 48;
+					break;
+				case "palf":
+					$FrameRate = 50;
+					break;
+				case "ntscf":
+					$FrameRate = 60;
+					break;
+				default:
+					error ("Invalid time unit " + $timeUnit  );
+					break;
+			}
+			
+			string $PartsArray[];
+			clear $PartsArray;
+			string $Parts = `getAttr ("IWGlobalNode.ExportNodes" + $AnimNumber)`;
+
+			tokenize $Parts " " $PartsArray;
+
+			string $FileName = `getAttr ("IWGlobalNode.FileName" + $AnimNumber)`;
+
+			string $NoteTrack = `getAttr ("IWGlobalNode.ExportNoteTrack" + $AnimNumber)`;
+
+		// Test prints
+			print ("\n\nExport animation number " + $AnimNumber + "\n");
+			print ("\nStart frame = " + $StartFrame);
+			print ("\nEnd frame = " + $EndFrame);
+			print ("\nExport joints : \n");
+			print $PartsArray;
+			print ("\nPartsArry size = " + (`size $PartsArray`));
+			print ("\nFilename : " + $FileName);
+			print ("\nNoteTrack : " + $NoteTrack);
+
+	// Double check that the helmet will work because I'm fed up with this problem croping up all the time.
+
+			doubleCheckStuff $AnimNumber;
+
+
+
+
+	// Switch the gun to the correct gun for export
+
+		// Get the prefix of the exporting animation
+			
+			string $PartsTok[];
+
+			tokenize $PartsArray[0] ":" $PartsTok;
+
+			string $PartsPref = ($PartsTok[0] + ":");
+
+			print "\n\nParts prefix = ";
+			print $PartsPref;
+			print "\n\n";
+
+
+		// Get the gun to switch to.
+		
+			// First check that the attribute exists - Brians script wont open the window which adds the attribute
+			// The attribute does not exist, then skip the gun switching which is the same as default
+
+			if (`attributeExists ("GunNumber" + $AnimNumber) IWGlobalNode`) 
+			{
+				int $GunSelection = `getAttr ("IWGlobalNode.GunNumber" + $AnimNumber)`;
+
+				// check for gun default, which is 1.
+
+				if ($GunSelection > 1) 
+				{
+					// If this is greater than 1, then a gun has been selected, so swith to it.
+
+					$GunSelection = $GunSelection -1; // Dec by 1 because the default setting adds 1 to the gun list.
+
+					// Make the switch
+					COD2_SwitchGun $GunSelection $PartsPref;
+				}
+			}
+			
+	string $FileNameArray[];
+	int $FileNameArraySize;
+	int $FileNameArrayIndex;
+	string $upperCaseFileName;
+	string $command;
+	string $dirPath;
+			
+	$FileNameArraySize = `tokenize $FileName "\\" $FileNameArray`;
+	$FileName = "";
+	
+	if ( $FileNameArraySize > 1 ) 
+	{
+		for ( $FileNameArrayIndex = 0; $FileNameArrayIndex < $FileNameArraySize; $FileNameArrayIndex++ ) 
+		{
+			$FileName += $FileNameArray[$FileNameArrayIndex];
+			if ( $FileNameArrayIndex < $FileNameArraySize - 1 )
+				$FileName += "/";
+		}
+	}
+	else 
+	{
+		$FileName = `getAttr ("IWGlobalNode.FileName" + $AnimNumber)`;
+	}
+	
+	// change forward slashes to backslashes so we could pass it into "dirname"
+	$FileName = `substituteAllString $FileName "/" "\\"`;
+
+	// get the directory name, but it's going to give it to us in forward slashes
+	$dirPath = `dirname $FileName`;
+
+	// change forward slashes to backslashes because "mkdir" accepts only backslashes
+	$dirPath = `substituteAllString $dirPath "/" "\\"`;
+	system ( "mkdir " + "\"" + $dirPath + "\"" );
+		
+	// change backslashes to forward slash for writing the file
+	$FileName = `substituteAllString $FileName "\\" "/"`;
+		
+	// since there's a directory called xanim_export and our extension is XANIM_EXPORT, 
+	// we can't just use "match" function like we did in model window...
+	// so get the filename without its full path and see if we need extension or not.
+	
+	// periodCount and periods are used to tokenize the periods in the file name so that 
+	// if an extension exists then it can be stripped out automatically and updated to a clean
+	// extension-less name in the exporter. 
+	
+	string $tokens[];
+	string $periods[];
+	int $periodCount = `tokenize $FileName "." $periods`;
+	int $tokenCount = `tokenize $FileName "/" $tokens`; 
+	if ( $tokenCount > 0 ) 
+	{
+		
+		if ($periodCount < 3) 
+		{ 
+			$FileName = $periods[0];
+		}
+		
+		else 
+		{
+			$FileName = $periods[0] + ".";	
+			
+			for($i=1; $i<$periodCount-1; $i++) 
+			{
+				if ($i == $periodCount-2) 
+				{
+					$FileName += $periods[$i];
+				}
+				
+				else 
+				{
+					$FileName += $periods[$i] + ".";
+				}
+			}
+		}
+		
+		
+		setAttr -type "string" ("IWGlobalNode.FileName" + $AnimNumber) $FileName;
+
+		$tokenCount = `tokenize $FileName "/" $tokens`;
+		$upperCaseFileName = `toupper $tokens[$tokenCount - 1]`;
+		if ( `match ".XANIM_EXPORT" $upperCaseFileName` == "" )
+			$FileName += ".XANIM_EXPORT";
+	}
+		
+	//if ( $skipPerforceEdit == 0 )
+	//	PerforceEdit $FileName;
+		
+	ExportXAnim $StartFrame $EndFrame $FrameRate $Parts $FileName $NoteTrack;
+	
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ExportEverything
+//
+//		This procedure exports all the animations. It is called by the batch exporter script only.
+//	The other proc StartTheExport needs the window open to check to selcted animations, so
+//	this version skips past that part and doesn't need the window open
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc ExportEverything()
+{
+	// Set up vars
+
+		int $loop;
+
+		int $AnimationCount;
+
+	// Get the animation list number
+
+			$AnimationCount = `getAttr IWGlobalNode.AnimationCount`;
+
+
+	// if animation count is 0, return
+
+		if ($AnimationCount < 1) 
+		{
+			return;
+		}
+
+
+	for ($loop = 1; $loop <= $AnimationCount ;$loop++ ) 
+	{
+	// Just export it because we don't care if it's selected or not
+		ExportAnimation $loop;
+	}
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	StartTheExport
+//
+//		This procedure calls the ExportAnimation function and exports all the selected animations
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc StartTheExport( int $Selected ) 
+{
+	// Set up vars
+
+	int $loop;
+	int $CheckBox;
+	int $AnimationCount;
+	int $pluginLoaded;
+	string $currentSceneName;
+	//int $perforceResult;
+	string $confirmResult;
+	//global string $perforceOptionGlobal;
+	//global int $skipPerforceEdit;
+	string $saveMessage;
+	string $saveConfirmResult;
+
+
+	// Find out if any animations are selected.
+	// Get the animation list number
+	$AnimationCount = `getAttr IWGlobalNode.AnimationCount`;
+
+	// if animation count is 0, return
+	if ($AnimationCount < 1)
+		return;
+		
+	$currentSceneName = `file -q -sn`;
+	//$skipPerforceEdit = 0;
+	
+	//$perforceResult = `PerforceEdit $currentSceneName`;
+	//if ( $perforceResult == 0 ) 
+	//{
+		//$confirmResult = `confirmDialog -title "Continue?" -message "Would you like to continue with the export process?" -button "Yes" -button "No" -defaultButton "No" -cancelButton "No" -dismissString "No"`;
+		//if ( $confirmResult == "No" )
+		//	return;
+	//}
+	//else 
+	//{
+		if ( `file -q -anyModified` > 0 ) 
+		{
+			$saveMessage = "Save changes to " + $currentSceneName + " ?";
+			$saveConfirmResult = `confirmDialog -title "Save Changes" -message $saveMessage -button "Yes" -button "No" -button "Cancel Export" -defaultButton "Yes" -cancelButton "Yes" -dismissString "No"`;
+			if ( $saveConfirmResult == "Yes" ) 
+			{
+				file -save;
+			}
+			if ( $saveConfirmResult == "Cancel Export" ) 
+			{
+				return;
+			}
+		}
+	//}
+	
+	// check if the plugin is loaded.  If not, load it.  If that fails, error out
+	$pluginLoaded = `pluginInfo -q -loaded XAnimExport`;
+	if ( $pluginLoaded == 0 )
+		loadPlugin XAnimExport;
+		
+	$pluginLoaded = `pluginInfo -q -loaded XAnimExport`;
+	if ( $pluginLoaded == 0 )
+		error ("XAnimExport plugin is not loaded");
+
+	//$perforceOptionGlobal = "";
+	for ($loop = 1; $loop <= $AnimationCount ;$loop++ ) 
+	{
+
+		// get checkbox of animation #loop if the selected flag is set
+
+		if ($Selected == 1) 
+		{
+		
+			$CheckBox = `checkBox -q -v ("Entry" + $loop)`;
+
+			if ($CheckBox == 1)
+			{
+				// Ths is a selected animation, so export it
+				ExportAnimation $loop;
+			}
+		}
+		else 
+		{
+			// Just export it because we don't care if it's selected or not
+			ExportAnimation $loop;
+		}
+	
+	}
+/*
+	string $convert;
+	$convert = `getAttr "IWGlobalNode.postExportConvert"`;
+	if ( $convert == "PC Convert" )
+		RunConverter "PC";
+	else if ( $convert == "Xenon Convert" )
+		RunConverter "Xenon";
+*/
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ListExportNodes
+//
+//		This procedure prints the list of export nodes to the script editor.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ListExportNodes (int $FileNumber) 
+{
+	
+	string $Each;
+
+	string $ExportNodes = `getAttr  ("IWGlobalNode.ExportNodes " + $FileNumber)`;
+	string $ExportNodesList[];
+
+	string $FileName = `textFieldButtonGrp -q -text ("FileNameTextField" + $FileNumber)`;
+
+	tokenize $ExportNodes " " $ExportNodesList;
+
+	print ("\n\nList of Export nodes for export #" + $FileNumber);
+	print "\nFilename : ";
+	print $FileName;
+	print "\n";
+
+
+	print $ExportNodesList;
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	SetExportNodes
+//
+//		This procedure loads the export list string (ExportNodes#) with the selected objects.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc SetExportNodes (int $FileNumber) 
+{
+	
+	// Set up vars
+		string $Sel[] = `ls -sl`;
+
+		string $Each;
+
+		string $ExportNodes;
+		
+		for ($Each in $Sel) 
+		{
+			$ExportNodes = $ExportNodes + $Each + " ";
+		}
+
+	// Get the prefix of the exported asset
+	
+		string $Pref = "";
+		string $tokPrefix[];
+		clear $tokPrefix;
+		
+		string $tokExportNodeList[];
+		tokenize $ExportNodes " " $tokExportNodeList;
+		
+		for( $tokcount=0; $tokcount < `size $tokExportNodeList`; $tokcount++ ) 
+		{
+			clear $tokPrefix;
+			tokenize $tokExportNodeList[$tokcount++] ":" $tokPrefix;
+			
+			if($tokPrefix[1] == "DefMesh") 
+			{
+				$Pref = ( $tokPrefix[0] );
+				continue;
+			}
+		}
+
+
+	// Check the export nodes list to update the status line
+			
+		if (`size $ExportNodes`) 
+		{
+			text -e -bgc 0.9 0.9 0.9 -e -label ("  Prefix is " + $Pref + ":  ") ("ExportNodeCheck" + $FileNumber);
+			setAttr -type "string" ("IWGlobalNode.ExportNodes" + $FileNumber) $ExportNodes;
+		}
+		else  
+		{
+			text -e -bgc 1 0 0.7 -label " NO EXPORT NODES" ("ExportNodeCheck" + $FileNumber);
+			setAttr -type "string" ("IWGlobalNode.ExportNodes" + $FileNumber) "";
+			return;
+		}
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	SelectExportNodes
+//
+//		This procedure selects all the nodes stored in the export list string (ExportNodes#) 
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc SelectExportNodes( int $FileNumber) 
+{
+	string $ExportNodes = `getAttr  ("IWGlobalNode.ExportNodes " + $FileNumber)`;
+
+	string $SelEval = ("select -r " + $ExportNodes);
+
+	eval $SelEval;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CODExporterFileBrowes
+//
+//		This procedure opens a file broweser window so that a file name can be selected
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc CODExporterFileBrowes(int $FileNumber) 
+{
+	//	"fileBrowserDialog -m 1 -fc \"CODSavePose\" -ft \".hand\" -an \"Save\"");
+
+	print "Testing call to CODExporterFileBrowes";
+
+	//fileBrowserDialog -mode 1 -fc ("UpdateNameFromBroweser " + $FileNumber) -an "Save");
+
+	fileBrowserDialog -m 1 -fc ("UpdateNameFromBroweser " + $FileNumber)  -an "Set";
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	UpdateNameFromBroweser
+//
+//		This procedure is called by the fileBrowserDialog.
+//		It loads the file name into the filename test box.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc UpdateNameFromBroweser( int $FileNameNumber, string $filename, string $fileType ) 
+{
+
+		print ("\nTest proc call to UpdateNameFromBroweser");
+		
+		print ("\nFile number = " + $FileNameNumber);
+		print ("\nFileName = " + $filename);
+
+	// Set the text box file name
+
+		textFieldButtonGrp -e -text $filename   ("FileNameTextField" + $FileNameNumber);
+
+	// Call the ChangeFileName function because changing the name above does not force the call like typing in a new name.
+
+		ChangeFileName $FileNameNumber;
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	DeleteSelectedAnimations
+//
+//		This procedure deletes any selected animation entrys and redraws the window.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc DeleteSelectedAnimations() 
+{
+	// Unlock the node to add an attribute
+		
+		lockNode -lock off IWGlobalNode;
+
+	// Set up vars
+
+		int $loop;
+		int $DelLoop;
+
+		int $CheckBox;
+
+	// Find out if any animations are selected.
+
+		// Get the animation list number
+
+		$AnimationCount = `getAttr IWGlobalNode.AnimationCount`;
+
+
+	// if animation count is 0, return
+
+		if ($AnimationCount < 1) 
+		{
+			return;
+		}
+
+
+	for ($loop = 1; $loop <= $AnimationCount ;$loop++ ) 
+	{
+		// get checkbox of animation #loop
+
+		$CheckBox = `checkBox -q -v ("Entry" + $loop)`;
+
+		if ($CheckBox) 
+		{
+			// delete the animation entry #loop
+			// need to move any entrys after this one down one and delete the last entry
+
+				
+			for ($DelLoop = $loop; $DelLoop < $AnimationCount ; $DelLoop ++ ) 
+			{
+				// Testing, this is what I need to do
+				print "\n";
+				print ("Moving line " + ($DelLoop + 1) + " to line " + $DelLoop );
+
+				setAttr -type "string" ("IWGlobalNode.FileName" + $DelLoop) (`getAttr ("IWGlobalNode.FileName" + ($DelLoop + 1))`);
+				checkBox -e -v (`checkBox -q -v ("Entry" + ($DelLoop + 1))`) ("Entry" + $DelLoop);
+
+				setAttr ("IWGlobalNode.FrameStart" + $DelLoop) (`getAttr ("IWGlobalNode.FrameStart" + ($DelLoop + 1))`);
+				
+				setAttr ("IWGlobalNode.FrameEnd" + $DelLoop) (`getAttr ("IWGlobalNode.FrameEnd" + ($DelLoop + 1))`);
+
+				setAttr -type "string" ("IWGlobalNode.ExportNodes" + $DelLoop) (`getAttr  ("IWGlobalNode.ExportNodes" + ($DelLoop + 1))`);
+
+				setAttr -type "string" ("IWGlobalNode.ExportNoteTrack" + $DelLoop) (`getAttr  ("IWGlobalNode.ExportNoteTrack" + ($DelLoop + 1))`);
+
+				setAttr ("IWGlobalNode.GunNumber" + $DelLoop) (`getAttr  ("IWGlobalNode.GunNumber" + ($DelLoop + 1))`);
+			}
+
+			// Delete the last animation entry's attributes
+
+			RemoveAnimationAttributes $AnimationCount;
+
+
+			$AnimationCount -- ;
+
+			setAttr IWGlobalNode.AnimationCount $AnimationCount;
+
+		// Force the loop to recheck the same checkbox in case the next one, which has just moved,
+		// was also checked for delete
+
+			$loop--;
+		}
+	}
+
+
+	// Redraw the window
+		
+		CODExportAnimationWindow;
+
+	
+	// Relock the node to protect it
+		
+		lockNode IWGlobalNode;
+}
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	DisplayAnimationList
+//
+//		This procedure creates the animation list in the main window by gathering all the information it needs from the renderGlobals
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+
+global proc DisplayAnimationList() 
+{
+	// Set up some vars
+
+		int $loop;
+
+
+	// First get the number of animation export settings that are stored in the renderGlobals.
+	// If there are none, add 1 and set it to blank
+
+		int $AnimationCount;
+
+		if ( `attributeExists AnimationCount IWGlobalNode`) 
+		{
+
+			$AnimationCount = `getAttr IWGlobalNode.AnimationCount`;
+		}
+		
+		else 
+		{
+			// Unlock the node to add an attribute
+			
+			lockNode -lock off IWGlobalNode;
+
+			// If there isn't a AnimationCount attribute, make one and set it to 1
+		
+			addAttr -ln AnimationCount -at byte IWGlobalNode;
+			setAttr IWGlobalNode.AnimationCount 0;
+
+			$AnimationCount = 0;
+			return;
+
+			// Relock the node to protect it
+			
+			lockNode IWGlobalNode;
+		}
+
+
+	// Create all the animation export buttons etc.
+
+		for ($loop = 1; $loop <= $AnimationCount ; $loop++) 
+		{
+			if ( `attributeExists ( "FileName" + $loop ) IWGlobalNode` == 0 )
+				AddAnimationAttributes $loop;
+
+			CheckExportAttributes $loop;
+			DisplayAnimationLine $loop;
+		}
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CheckExportAttributes
+//
+//		This procedure checks for attributes in the IWGlobalNode to see if they all exist.
+//		The real reason for this check is to be able to add new attributes and not kill the exporter.
+//		Any new attributes that are added in the future can be checked for here so old animations will still export
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CheckExportAttributes (int $ExportNumber) 
+{
+	// Check for gun number
+
+	if (`attributeExists ("GunNumber" + $ExportNumber) IWGlobalNode` == 0) 
+	{
+		print ("\nMissing GunNumber attribute in export settings " + $ExportNumber + " so adding it\n");
+		addAttr -ln ("GunNumber" + $ExportNumber) -at long IWGlobalNode;
+		setAttr ("IWGlobalNode.GunNumber" + $ExportNumber) 1;
+	}
+}
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	DisplayAnimationLine
+//
+//		This procedure adds the animation line to the window. It is called from the DisplayAnimationList proc
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc DisplayAnimationLine(int $loop) 
+{
+
+	// First get the data from the IWGlobalNode so the fields can be loaded
+	string $FileName = `getAttr ("IWGlobalNode.FileName" + $loop)`;
+	string $ExportNodeCheck = `getAttr ("IWGlobalNode.ExportNodes" + $loop)`;
+	string $NoteTrack = `getAttr ("IWGlobalNode.ExportNoteTrack" + $loop)`;
+	if ( `attributeExists ("AnimGroupColor" + $loop) "IWGlobalNode"` == 0) 
+	{
+		addAttr -ln ("AnimGroupColor" + $loop) -dt "string" IWGlobalNode;
+		setAttr -type "string" ("IWGlobalNode.AnimGroupColor" + $loop) ("Red");
+	}
+	string $groupColor = `getAttr ("IWGlobalNode.AnimGroupColor" + $loop)`;
+
+	// Build the fields
+	rowLayout -nc 4 -columnWidth4 60 480 80 90;
+		checkBox ("Entry" + $loop);
+		textFieldButtonGrp -bc ("CODExporterFileBrowes " + $loop) -cc ("ChangeFileName " + $loop) -text $FileName -columnWidth2 450 30 -buttonLabel "..."  ("FileNameTextField" + $loop);
+		intFieldGrp -cc ("ChangeFrameStart " + $loop) -v1 (`getAttr ("IWGlobalNode.FrameStart" + $loop)`) -numberOfFields 1 -columnWidth2 35 40 -label "Start" ("FrameStart" + $loop);
+		intFieldGrp -cc ("ChangeFrameEnd " + $loop) -v1 (`getAttr ("IWGlobalNode.FrameEnd" + $loop)`)-numberOfFields 1 -columnWidth2 35 40 -label "End" ("FrameEnd" + $loop);
+		setParent ..;
+		
+	rowLayout -nc 1 -columnWidth1 725 ;
+		separator -w 725;
+	setParent ..;
+			
+	rowLayout -nc 6 -columnWidth6 60 70 75 75 295 120;
+		text -width 60 -label "Group" -align "center" ("GroupColor" + $loop);
+		optionMenu -w 70 -changeCommand ( "SetGroupColor " + $loop ) ( "SetGroupOption" + $loop );
+			menuItem -label "Red";
+			menuItem -label "Green";
+			menuItem -label "Blue";
+			menuItem -label "Yellow";
+			menuItem -label "Purple";
+			menuItem -label "Orange";
+		optionMenu -e -value $groupColor ( "SetGroupOption" + $loop );
+			SetGroupColor $loop;
+			
+		button -w 70 -label "Move Up" -c ("MoveAnimEntry Up " + $loop ) ("MoveEntryUp" + $loop);
+		button -w 70 -label "Move Down" -c ("MoveAnimEntry Down " + $loop ) ("MoveEntryDown" + $loop);
+		separator;
+		button -w 120 -label "     Set To Timeline" -c ("SetAnimationTimeline " + $loop) ("SetAnimNumber" + $loop);
+
+	setParent ..;
+
+	rowLayout -nc 1 -columnWidth1 725 ;
+		separator -w 725;
+	setParent ..;
+			
+	rowLayout -nc 5 -columnWidth5 150 60 95 110 110 ;
+	separator -style "none";
+	separator -style "none";
+	/*
+		button -w 70 -label "Export nodes : " -c ("SelectListExportNodes " + $loop);
+		
+	
+	// Get the prefix of the exported asset
+	
+		string $Pref = "";
+		string $tokPrefix[];
+		clear $tokPrefix;
+		
+		string $tokExportNodeList[];
+		tokenize $ExportNodeCheck " " $tokExportNodeList;
+		
+		for( $tokcount=0; $tokcount < `size $tokExportNodeList`; $tokcount++ ) 
+		{
+			clear $tokPrefix;
+			tokenize $tokExportNodeList[$tokcount++] ":" $tokPrefix;
+			
+			if($tokPrefix[1] == "DefMesh") 
+			{
+				$Pref = ( $tokPrefix[0] );
+				continue;
+			}
+		}
+	
+	// Check the export nodes list (read in above) to see if it needs setting.
+		if (`size $ExportNodeCheck`) 
+		{
+			text -bgc 0.9 0.9 0.9 -label ("  Prefix is " + $Pref + ":  ") ("ExportNodeCheck" + $loop);
+		}
+		else 
+		{
+			text -bgc 1 0 0.7 -label " NO EXPORT NODES" ("ExportNodeCheck" + $loop);
+		}
+		*/
+		
+		
+		button -label "Set Export Nodes" -c ("SetExportNodes " + $loop);
+		button -label "Select Export Nodes" -c ("SelectExportNodes " + $loop);
+		button -label "List Export Nodes" -c ("ListExportNodes " + $loop);
+	setParent ..;
+	
+	rowLayout -nc 7 -cw 1 90 -cw 2 145 -cw 3 127 -cw 4 110 -cw 5 40 -cw 6 110 -cw 7 110 ;
+		button -w 90 -label "Add Note Track" -c ("SelectListNoteTrack " + $loop);
+		text -label ("  " + $NoteTrack + "  ") ("NoteTrackWindowText" + $loop);
+			
+		// Calc the color for the note track
+		if ($NoteTrack == "NO NOTE TRACK" )
+			text -e -bgc 1 0 0.7 ("NoteTrackWindowText" + $loop);
+		else
+			text -e -bgc 0.9 0.9 0.9  ("NoteTrackWindowText" + $loop);
+		
+		button -l "Add Selected NoteTrack";
+		button -l "Remove NoteTrack" -c ("RemoveNoteTrack "  + $loop);
+		text -l "------";
+			
+		// Build the gun selection list.
+		optionMenuGrp -label "Gun"  -columnWidth 1 50 -columnWidth 2 120 -cc ("ChangeExportedGun " + $loop) ("AnimationExportGunMenu" + $loop);
+
+		// Get a list of all the loaded COD characters
+		string $CODChars[] = `ls ("*:*CODCharacterLocatorShape") ("*CODCharacterLocatorShape") `;
+
+		// Check a character was loaded
+		if (`size $CODChars` == 0) 
+		{
+			// There are no COD chars loaded so ignore the gun selection
+			menuItem -label "Default Gun";
+		}
+		else 
+		{
+			// A character is loaded so get the list of guns
+			int $GunNumber = `getAttr ($CODChars[0] + ".NumOfGun")`;
+			int $GunLoop;
+			string $GunName;
+
+			// Add the default gun setting first
+			menuItem -label "Default Gun";
+
+			for ($GunLoop = 0; $GunLoop < $GunNumber ; $GunLoop++ ) 
+			{
+				$GunName = `getAttr ($CODChars[0] + ".GunList" + $GunLoop)`;
+				menuItem -label $GunName;
+			}
+
+			// If gun number happens to be 0, change it to 1
+			
+			int $getGunNum = `getAttr ("IWGlobalNode.GunNumber" + $loop)`;
+			if($getGunNum == 0) 
+			{
+				setAttr ("IWGlobalNode.GunNumber" + $loop) 1;
+			}
+
+
+			// Set the correct gun in the menu. Dont forget to add 1 to skip the default gun
+			int $GunSelection = `getAttr ("IWGlobalNode.GunNumber" + $loop)`;
+			optionMenuGrp -e -sl $GunSelection ("AnimationExportGunMenu" + $loop);
+		}
+	setParent ..;
+	
+	rowLayout -nc 1 -columnWidth1 725 ;
+		separator -w 725;
+	setParent ..;
+	
+	rowLayout -nc 1 -columnWidth1 725 ;
+		separator -w 725;
+	setParent ..;
+	
+	rowLayout -nc 1 -columnWidth1 725 ;
+		separator -w 725;
+	setParent ..;
+}
+
+
+
+global proc SetAnimationTimeline(int $animationNumber) 
+{
+	int $startFrame = `getAttr ("IWGlobalNode.FrameStart" + $animationNumber)`;
+	int $endFrame = `getAttr ("IWGlobalNode.FrameEnd" + $animationNumber)`;
+		
+	playbackOptions -ast $startFrame -aet $endFrame -min $startFrame -max $endFrame;
+	currentTime $startFrame;
+}
+
+
+
+global proc MoveAnimEntry( string $direction, int $index ) 
+{
+	// Declare vars
+
+		int $animCount;
+		int $swapIndex;
+
+		$animCount = `getAttr IWGlobalNode.AnimationCount`;
+		
+		if ( $direction == "Up" ) 
+		{
+			if ( $index == 1 )
+				return;
+			
+			$swapIndex = $index - 1;
+		}
+
+		if ( $direction == "Down" ) 
+		{
+			if ( $index == $animCount )
+				return;
+			
+			$swapIndex = $index + 1;
+		}
+
+	// get all the attributes
+		string $fileName1 = `getAttr ("IWGlobalNode.FileName" + $index)`;
+		string $exportNode1 = `getAttr ("IWGlobalNode.ExportNodes" + $index)`;
+		string $exportNodeTrack1 = `getAttr ("IWGlobalNode.ExportNoteTrack" + $index)`;
+		int $frameStart1 = `getAttr ("IWGlobalNode.FrameStart" + $index)`;
+		int $frameEnd1 = `getAttr ("IWGlobalNode.FrameEnd" + $index)`;
+		int $gunNumber1 = `getAttr ("IWGlobalNode.GunNumber" + $index)`;
+		string $groupColor1 = `getAttr ("IWGlobalNode.AnimGroupColor" + $index)`;
+
+		string $fileName2 = `getAttr ("IWGlobalNode.FileName" + $swapIndex)`;
+		string $exportNode2 = `getAttr ("IWGlobalNode.ExportNodes" + $swapIndex)`;
+		string $exportNodeTrack2 = `getAttr ("IWGlobalNode.ExportNoteTrack" + $swapIndex)`;
+		int $frameStart2 = `getAttr ("IWGlobalNode.FrameStart" + $swapIndex)`;
+		int $frameEnd2 = `getAttr ("IWGlobalNode.FrameEnd" + $swapIndex)`;
+		int $gunNumber2 = `getAttr ("IWGlobalNode.GunNumber" + $swapIndex)`;
+		string $groupColor2 = `getAttr ("IWGlobalNode.AnimGroupColor" + $swapIndex)`;
+
+	
+	// swap the attributes
+
+		setAttr -type "string" ("IWGlobalNode.FileName" + $swapIndex) $fileName1;
+		setAttr -type "string" ("IWGlobalNode.ExportNodes" + $swapIndex) $exportNode1;
+		setAttr -type "string" ("IWGlobalNode.ExportNoteTrack" + $swapIndex) $exportNodeTrack1;
+		setAttr -type "string" ("IWGlobalNode.AnimGroupColor" + $swapIndex) $groupColor1;
+		setAttr ("IWGlobalNode.FrameStart" + $swapIndex) $frameStart1;
+		setAttr ("IWGlobalNode.FrameEnd" + $swapIndex) $frameEnd1;
+		setAttr ("IWGlobalNode.GunNumber" + $swapIndex) $gunNumber1;
+			
+		setAttr -type "string" ("IWGlobalNode.FileName" + $index) $fileName2;
+		setAttr -type "string" ("IWGlobalNode.ExportNodes" + $index) $exportNode2;
+		setAttr -type "string" ("IWGlobalNode.ExportNoteTrack" + $index) $exportNodeTrack2;
+		setAttr -type "string" ("IWGlobalNode.AnimGroupColor" + $index) $groupColor2;
+		setAttr ("IWGlobalNode.FrameStart" + $index) $frameStart2;
+		setAttr ("IWGlobalNode.FrameEnd" + $index) $frameEnd2;
+		setAttr ("IWGlobalNode.GunNumber" + $index) $gunNumber2;
+	
+
+	// set correct fields
+
+		textFieldButtonGrp -e -text $fileName2 ("FileNameTextField" + $index);
+		intFieldGrp -e -value1 $frameStart2 ("FrameStart" + $index );
+		intFieldGrp -e -value1 $frameEnd2 ("FrameEnd" + $index );
+		optionMenu -e -value $groupColor2 ( "SetGroupOption" + $index );
+		SetGroupColor $index;
+		optionMenuGrp -e -sl $gunNumber2 ("AnimationExportGunMenu" + $index);
+		if ($exportNodeTrack2 == "NO NOTE TRACK" )
+			text -e -bgc 1 0 0.7 -label ("  " + $exportNodeTrack2 + "  ") ("NoteTrackWindowText" + $index);
+		else
+			text -e -bgc 0.9 0.9 0.9 -label ("  " + $exportNodeTrack2 + "  ") ("NoteTrackWindowText" + $index);
+		text -e -en 0 ("NoteTrackWindowText" + $index);
+		text -e -en 1 ("NoteTrackWindowText" + $index);
+	
+	
+
+
+	// Get the prefix of the exported asset
+	
+		string $Pref = "";
+		string $tokPrefix[];
+		clear $tokPrefix;
+		
+		string $tokExportNodeList[];
+		tokenize $exportNode2 " " $tokExportNodeList;
+		
+		for( $tokcount=0; $tokcount < `size $tokExportNodeList`; $tokcount++ ) 
+		{
+			clear $tokPrefix;
+			tokenize $tokExportNodeList[$tokcount++] ":" $tokPrefix;
+			
+			if($tokPrefix[1] == "DefMesh") 
+			{
+				$Pref = ( $tokPrefix[0] );
+				continue;
+			}
+		}
+
+	if (`size $exportNode2`) 
+	{
+		text -e -bgc 0.9 0.9 0.9 -label ("  Prefix is " + $Pref + ":  ") ("ExportNodeCheck" + $index);
+	}
+	else 
+	{
+		text -e -bgc 1 0 0.7 -label " NO EXPORT NODES" ("ExportNodeCheck" + $index);
+	}
+
+
+	text -e -en 0 ("ExportNodeCheck" + $index);
+	text -e -en 1 ("ExportNodeCheck" + $index);
+		
+	textFieldButtonGrp -e -text $fileName1 ("FileNameTextField" + $swapIndex);
+	intFieldGrp -e -value1 $frameStart1 ("FrameStart" + $swapIndex );
+	intFieldGrp -e -value1 $frameEnd1 ("FrameEnd" + $swapIndex );
+	optionMenu -e -value $groupColor1 ( "SetGroupOption" + $swapIndex );
+	SetGroupColor $swapIndex;
+	optionMenuGrp -e -sl $gunNumber1 ("AnimationExportGunMenu" + $swapIndex);
+	if ($exportNodeTrack1 == "NO NOTE TRACK" )
+		text -e -bgc 1 0 0.7 -label ("  " + $exportNodeTrack1 + "  ") ("NoteTrackWindowText" + $swapIndex);
+	else
+		text -e -bgc 0.9 0.9 0.9 -label ("  " + $exportNodeTrack1 + "  ") ("NoteTrackWindowText" + $swapIndex);
+	text -e -en 0 ("NoteTrackWindowText" + $swapIndex);
+	text -e -en 1 ("NoteTrackWindowText" + $swapIndex);
+
+	
+	// Get the prefix of the exported asset
+
+	if (`size $exportNode1`) 
+	{
+		text -e -bgc 0.9 0.9 0.9 -label ("  Prefix is " + $Pref + ":  ") ("ExportNodeCheck" + $swapIndex);
+	}
+	else 
+	{
+		text -e -bgc 1 0 0.7 -label " NO EXPORT NODES" ("ExportNodeCheck" + $swapIndex);
+	}
+
+	text -e -en 0 ("ExportNodeCheck" + $swapIndex);
+	text -e -en 1 ("ExportNodeCheck" + $swapIndex);
+
+}
+
+
+global proc SetGroupColor( int $index ) 
+{
+	string $groupColor;
+	$groupColor = `optionMenu -q -value ("SetGroupOption"+$index)`;
+	
+	switch ( $groupColor ) 
+	{
+		case "Yellow":
+			text -e -bgc 0.9 0.9 0.1 ("GroupColor" + $index);
+			break;
+	
+		case "Red":
+			text -e -bgc 0.9 0.1 0.1 ("GroupColor" + $index);
+			break;
+	
+		case "Blue":
+			text -e -bgc 0.1 0.1 0.9 ("GroupColor" + $index);
+			break;
+			
+		case "Green":
+			text -e -bgc 0.1 0.9 0.1 ("GroupColor" + $index);
+			break;
+	
+		case "Orange":
+			text -e -bgc 1.0 0.5 0.0 ("GroupColor" + $index);
+			break;
+			
+		case "Purple":
+			text -e -bgc 0.5 0.0 0.5 ("GroupColor" + $index);
+			break;
+		
+		default:
+			text -e -bgc 0.5 0.5 0.5 ("GroupColor" + $index);
+			break;
+	}
+	
+	setAttr -type "string" ("IWGlobalNode.AnimGroupColor" + $index) $groupColor;
+	
+	text -e -en 0 ("GroupColor" + $index);
+	text -e -en 1 ("GroupColor" + $index);
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ChangeExportedGun
+//
+//	This proc updates the GunNumber varible when the value changes
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ChangeExportedGun (int $AnimNumber) 
+{
+	int $GunSelection = `optionMenuGrp -q -sl  ("AnimationExportGunMenu" + $AnimNumber)`;
+
+	setAttr ("IWGlobalNode.GunNumber" + $AnimNumber) $GunSelection;
+
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ChangeFileName
+//
+//	This proc updates the intFieldGrp varible when the value changes
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ChangeFileName (int $AnimNumber) 
+{
+	int $animCount;
+	int $animIndex;
+	string $changedFileName;
+	string $compareFileName;	
+	
+	setAttr -type "string" ("IWGlobalNode.FileName" + $AnimNumber) (`textFieldButtonGrp -q -text ("FileNameTextField" + $AnimNumber)`);
+
+ 	$changedFileName = `getAttr ("IWGlobalNode.FileName" + $AnimNumber)`;
+ 	
+	$animCount = `getAttr IWGlobalNode.AnimationCount`;
+	
+	for ( $animIndex = 1; $animIndex <= $animCount; $animIndex++ ) 
+	{
+		if ( $animIndex != $AnimNumber ) 
+		{
+			$compareFileName = `getAttr ("IWGlobalNode.FileName" + $animIndex)`;
+			if ( $compareFileName == $changedFileName ) 
+			{
+				confirmDialog -title "Warning" -message "There are entries with duplicate export file names\nDuplicate file names are not allowed.";
+				break;
+			}
+		}	
+	}
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ChangeFrameStart
+//
+//	This proc updates the intFieldGrp varible when the value changes
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ChangeFrameStart (int $AnimNumber) 
+{
+	setAttr ("IWGlobalNode.FrameStart" + $AnimNumber) (`intFieldGrp -q -v1 ("FrameStart" + $AnimNumber)`);
+}
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	ChangeFrameEnd
+//
+//	This proc updates the intFieldGrp varible when the value changes
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc ChangeFrameEnd (int $AnimNumber) 
+{
+	setAttr ("IWGlobalNode.FrameEnd" + $AnimNumber) (`intFieldGrp -q -v1 ("FrameEnd" + $AnimNumber)`);
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	RemoveAnimationAttributes
+//
+//		This procedure removes all the extra attributes from the IWGlobalNode for a animation file entry
+//		It is the reverse of 	AddAnimationAttributes
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc RemoveAnimationAttributes(int $AnimNumber) 
+{
+
+	// Attributes so far :
+	//
+	// FileName#
+
+
+	deleteAttr ("IWGlobalNode.FileName" + $AnimNumber);
+
+	deleteAttr  ("IWGlobalNode.FrameStart" + $AnimNumber) ;
+		
+	deleteAttr  ("IWGlobalNode.FrameEnd" + $AnimNumber) ;
+
+	deleteAttr ("IWGlobalNode.ExportNodes" + $AnimNumber);
+
+	deleteAttr ("IWGlobalNode.ExportNoteTrack" + $AnimNumber);
+
+	deleteAttr ("IWGlobalNode.GunNumber" + $AnimNumber);
+
+	deleteAttr ("IWGlobalNode.AnimGroupColor" + $AnimNumber);
+}
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	AddAnimationAttributes
+//
+//		This procedure adds all the extra attributes to the IWGlobalNode for a new animation file
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc AddAnimationAttributes(int $AnimNumber) 
+{
+
+	// Attributes so far :
+	//
+	// FileName#
+
+
+
+	addAttr -ln ("FileName" + $AnimNumber) -dt "string" IWGlobalNode;
+	setAttr -type "string" ("IWGlobalNode.FileName" + $AnimNumber) ("Click on [...] button to locate the file");
+
+	addAttr -ln ("FrameStart" + $AnimNumber) -at long   IWGlobalNode;
+		
+	addAttr -ln ("FrameEnd" + $AnimNumber) -at long   IWGlobalNode;
+
+	addAttr -ln ("ExportNodes" + $AnimNumber) -dt "string" IWGlobalNode;
+
+	addAttr -ln  ("ExportNoteTrack" + $AnimNumber) -dt "string" IWGlobalNode;
+	setAttr -type "string" ("IWGlobalNode.ExportNoteTrack" + $AnimNumber) ("NO NOTE TRACK");
+
+	addAttr -ln ("GunNumber" + $AnimNumber) -at long IWGlobalNode;
+	setAttr ("IWGlobalNode.GunNumber" + $AnimNumber) 1;
+
+	addAttr -ln ("AnimGroupColor" + $AnimNumber) -dt "string" IWGlobalNode;
+	setAttr -type "string" ("IWGlobalNode.AnimGroupColor" + $AnimNumber) ("Red");
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	AddAnimation
+//
+//		This procedure adds a animation to the list in the IWGlobalNode and re-draws the main window to make it visible
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc AddAnimation() 
+{
+	// Unlock the node to add an attribute
+		
+		lockNode -lock off IWGlobalNode;
+
+	// Add 1 to the animation count attribute
+
+		int $AnimationCount = `getAttr IWGlobalNode.AnimationCount`;
+
+		$AnimationCount ++;
+
+		setAttr  IWGlobalNode.AnimationCount $AnimationCount;
+
+	// Add all the extra attributes to the IWGlobalNode for the new animation
+
+		AddAnimationAttributes $AnimationCount;
+		
+	// add the new animation to the window so it's visible in the list
+
+		setParent AnimationListColumnLayout;
+		DisplayAnimationLine $AnimationCount;
+
+
+	// Relock the node to protect it
+		
+		lockNode IWGlobalNode;
+}
+
+
+/*
+global proc SavePostExportConvertAnim() 
+{
+	string $convert;
+	$convert = `optionMenu -q -value animPostExportConvertMenu`;
+	setAttr -type "string" "IWGlobalNode.postExportConvert" $convert;
+}
+*/
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CreateCODExportWindow
+//
+//		This procedure creates the window.
+//	
+//	IN:	string $win - the name of the window that's getting created.
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CreateCODExportWindow ( string $win ) 
+{
+
+	// define the window;
+		window 
+		-title "COD Export Window"
+		$win;
+
+	//create a columnLayout for the top level layout
+
+
+
+		scrollLayout ;
+
+		columnLayout -columnAttach "both" 5 -rowSpacing 10 -columnWidth 725  ExportMainLayout;
+
+		// Create a frame layout for the export list
+
+			frameLayout -label "Animation List" -borderStyle "etchedIn"  -collapsable true -collapse false -p ExportMainLayout AnimationListFrameLayout;
+
+			//Create a column layout 
+
+			columnLayout TopExportColLayout;
+
+				columnLayout -p TopExportColLayout AnimationListColumnLayout;
+
+				// Create the list of animations and there data
+
+				DisplayAnimationList;
+
+		// Create column layout for the export buttons
+			
+		//	columnLayout -p ExportMainLayout  -rowSpacing 10 -columnWidth 500 ExportButtonColumnLayout;
+
+			rowColumnLayout -p TopExportColLayout -w 500 -columnWidth 1 200 -columnWidth 2 200 -cs 1 100 -cs 2 100  -numberOfColumns 2 ExporterButtonsLayout;
+
+
+			button -w 100 -label "Add New Entry" -p ExporterButtonsLayout AddAnimationButton;
+
+			button -w 150 -label "Delete Selected Entries" -p ExporterButtonsLayout  DeleteSelectedButton;
+
+			separator -p ExporterButtonsLayout; separator -p ExporterButtonsLayout ;
+
+			button -w 150 -label "Export Selected Entries" -p ExporterButtonsLayout ExportSelectedButton;
+
+			button -w 150 -label "Export All Entries" -p ExporterButtonsLayout ExportAllButton;
+
+			button -label "Re-order Export Settings" -p ExporterButtonsLayout ReOrderButton;
+			
+			
+/*
+			optionMenu -cc "SavePostExportConvertAnim" animPostExportConvertMenu;
+			menuItem -label "Export Only";
+			menuItem -label "PC Convert";
+			menuItem -label "Xenon Convert";
+
+			if ( `attributeExists ( "postExportConvert" ) IWGlobalNode` > 0 ) 
+			{
+				string $convert;
+				$convert = `getAttr "IWGlobalNode.postExportConvert"`;
+				optionMenu -e -value $convert animPostExportConvertMenu;
+			}
+			else 
+			{
+				addAttr -ln "postExportConvert" -dt "string" IWGlobalNode;
+				setAttr -type "string" "IWGlobalNode.postExportConvert" "Export Only";
+
+			}
+*/
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CreateCODExportWindowCB
+//
+//		This procedure sets up the callbacks for the buttons.
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CreateCODExportWindowCB () 
+{
+	
+	button -e -c AddAnimation AddAnimationButton;
+
+	button -e -c DeleteSelectedAnimations DeleteSelectedButton;
+
+	button -e -c ("StartTheExport 1") ExportSelectedButton;
+
+	button -e -c ("StartTheExport 0 ") ExportAllButton;
+
+	button -e -c ("ReorderExports; CODExportAnimationWindow") ReOrderButton;
+}
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CODExportAnimationCheckReference
+//
+//		Check each reference files if it is under C:\
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CODExportAnimationCheckReference() 
+{
+	string $referenceFiles[];
+	string $driveLetter;
+	int $referenceFilesCount;
+	int $referenceFileIndex;
+	
+	$referenceFiles = `file -q -reference`;
+	
+	$referenceFilesCount = `size $referenceFiles`;
+	
+	for( $referenceFileIndex = 0; $referenceFileIndex < $referenceFilesCount; $referenceFileIndex++ ) 
+	{
+		$driveLetter = `startString $referenceFiles[$referenceFileIndex] 1`;
+		if ( $driveLetter != "c" && $driveLetter != "C" )
+			error ("Reference file: [" + $referenceFiles[$referenceFileIndex] + "] needs to be under C:/."  );					
+	}
+}
+
+
+global proc UpdateXAnimExportPath()
+{
+	int $animCount;
+	int $animIndex;
+	string $fileName;
+	//string $perforceRootDir;
+	
+	if ( `attributeExists AnimationCount IWGlobalNode` == 0)
+		return;
+		
+	$animCount = `getAttr IWGlobalNode.AnimationCount`;
+	if ($animCount < 1)
+		return;
+
+	//$perforceRootDir = `PerforceGetRootDir`;
+	for ($i = 1; $i <= $animCount; $i++) 
+	{
+		
+		/*
+		$fileName = `getAttr ("IWGlobalNode.FileName" + $animIndex)`;
+		$fileName = `substitute "exported_anims" $fileName "xanim_export"`;
+		
+		$fileName = `UpdateExportPathWithPerforceRootDir $perforceRootDir $fileName "xanim_export"`;		
+		setAttr -type "string" ("IWGlobalNode.FileName" + $animIndex) $fileName;
+		*/
+
+		$fileName=`getAttr ("IWGlobalNode.FileName" + $i)`;	
+		$fileName = `substitute "C:/trees/cod2/" $fileName "C:/trees/cod3/cod3/"`;
+		setAttr -type "string" ("IWGlobalNode.FileName" + $i) $fileName;
+
+		// Relock the node to protect it
+		
+	}
+}
+
+
+
+
+global proc createIWGlobalNodeAnimationProtect() 
+{
+	$iwGlobalNodeArray = `ls IWGlobalNode`;
+	if ( `size $iwGlobalNodeArray`) 
+	{	
+
+	// Lock the IWGlobalNode and then clear to have node deselected
+		
+		lockNode IWGlobalNode;
+		select -cl;
+	}
+}
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+//	PROC:	CODExportAnimationWindow
+//
+//		This script builds the export window
+//	
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+global proc CODExportAnimationWindow() 
+{
+	int $pluginLoaded;
+	string $iwGlobalNodeArray[];
+	
+	// check if the plugin is loaded.  If not, load it.  If that fails, error out
+	//$pluginLoaded = `pluginInfo -q -loaded PerforceMaya`;
+	//if ( $pluginLoaded == 0 )
+	///	loadPlugin PerforceMaya;
+		
+	//$pluginLoaded = `pluginInfo -q -loaded PerforceMaya`;
+	//if ( $pluginLoaded == 0 )
+	//	error ("PerforceMaya plugin is not loaded");
+
+	$iwGlobalNodeArray = `ls IWGlobalNode`;
+	if ( `size $iwGlobalNodeArray` == 0 )
+		createNode "renderLayer" -n "IWGlobalNode";
+		
+	//source PerforceMaya;
+	source CODExportCommon;
+
+
+	// Check lockNode first 
+
+	int $checkLockNode[];
+	$checkLockNode = `lockNode -q IWGlobalNode`;
+
+	if($checkLockNode[0]) 
+	{
+		// If it's locked, unlock to build the window
+
+		lockNode -lock off IWGlobalNode;		
+	}
+	
+	UpdateXAnimExportPath();
+	
+	
+	// Create a window 
+		string $win = "CODExportWindow";
+
+	// check and see if the window exists.  if it does, then delete it.
+		if (`window -exists $win`)
+			deleteUI $win;
+
+		CODExportAnimationCheckReference();
+	
+	// create the window
+		CreateCODExportWindow $win;
+
+	// make the callbacks
+		CreateCODExportWindowCB;
+
+	// Protect the IWGlobalNode from being deleted
+		createIWGlobalNodeAnimationProtect();
+
+	// show the window
+		showWindow $win;
+}
+
