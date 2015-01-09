@@ -1,0 +1,1 @@
+Fix for shader_bin error in CoD4Radiant and CoD4EffectsEd
